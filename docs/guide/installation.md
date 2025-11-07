@@ -347,6 +347,6 @@ bunx tailwindcss init -p
 ## Having Issues?
 
 If you encounter any problems:
-- Check [GitHub Issues](https://github.com/buikevin/galaxy-ui-cli/issues)
+- Check [GitHub Issues](https://github.com/buikevin/galaxy-design/issues)
 - Create a new issue with detailed information
 - Contact: kevinbui210191@gmail.com

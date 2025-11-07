@@ -241,11 +241,11 @@ ChartColorSchemes.monochrome  // Grayscale
 
 - [ECharts Documentation](https://echarts.apache.org/)
 - [fl_chart Documentation](https://github.com/imaNNeo/fl_chart)
-- [Chart Implementation Guide](https://github.com/buikevin/galaxy-ui-cli/blob/main/CHARTS_IMPLEMENTATION_GUIDE.md)
+- [Chart Implementation Guide](https://github.com/buikevin/galaxy-design/blob/main/CHARTS_IMPLEMENTATION_GUIDE.md)
 
 ## Need Help?
 
-- [GitHub Issues](https://github.com/buikevin/galaxy-ui-cli/issues)
+- [GitHub Issues](https://github.com/buikevin/galaxy-design/issues)
 - [Discord Community](https://discord.gg/galaxy-ui)
 
 ## Author

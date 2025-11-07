@@ -537,4 +537,4 @@ npm install radix-vue@latest
 - [React Guide](/guide/frameworks/react) - Learn about React integration
 - [Angular Guide](/guide/frameworks/angular) - Learn about Angular integration
 - [Components](/components/overview) - Explore available components
-- [Examples](https://github.com/buikevin/galaxy-ui-cli/tree/main/examples/vue-example) - View Vue examples
+- [Examples](https://github.com/buikevin/galaxy-design/tree/main/examples/vue-example) - View Vue examples

@@ -17,7 +17,7 @@ hero:
       link: /components/overview
     - theme: alt
       text: GitHub
-      link: https://github.com/buikevin/galaxy-ui-cli
+      link: https://github.com/buikevin/galaxy-design
 
 features:
   - icon: 🎨
@@ -204,7 +204,7 @@ Created by **Bùi Trọng Hiếu (kevinbui)**
 
 - GitHub: [@buikevin](https://github.com/buikevin)
 - Email: kevinbui210191@gmail.com
-- Repository: [buikevin/galaxy-ui-cli](https://github.com/buikevin/galaxy-ui-cli)
+- Repository: [buikevin/galaxy-design](https://github.com/buikevin/galaxy-design)
 
 ## License
 

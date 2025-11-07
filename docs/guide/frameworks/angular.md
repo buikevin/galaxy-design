@@ -491,4 +491,4 @@ npm install
 - [Vue Guide](/guide/frameworks/vue) - Learn about Vue integration
 - [React Guide](/guide/frameworks/react) - Learn about React integration
 - [Components](/components/overview) - Explore available components
-- [Examples](https://github.com/buikevin/galaxy-ui-cli/tree/main/examples/angular-example) - View Angular examples
+- [Examples](https://github.com/buikevin/galaxy-design/tree/main/examples/angular-example) - View Angular examples

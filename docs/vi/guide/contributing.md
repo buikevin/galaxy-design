@@ -14,19 +14,19 @@ Cảm ơn bạn đã quan tâm đến việc đóng góp cho Galaxy UI! Hướng
 
 1. **Fork repository**
 
-   Truy cập [github.com/buikevin/galaxy-ui-cli](https://github.com/buikevin/galaxy-ui-cli) và nhấp "Fork"
+   Truy cập [github.com/buikevin/galaxy-design](https://github.com/buikevin/galaxy-design) và nhấp "Fork"
 
 2. **Clone fork của bạn**
 
    ```bash
-   git clone https://github.com/TEN_CUA_BAN/galaxy-ui-cli.git
+   git clone https://github.com/TEN_CUA_BAN/galaxy-design.git
    cd galaxy-ui-cli
    ```
 
 3. **Thêm upstream remote**
 
    ```bash
-   git remote add upstream https://github.com/buikevin/galaxy-ui-cli.git
+   git remote add upstream https://github.com/buikevin/galaxy-design.git
    ```
 
 ### Cài Đặt Dependencies
@@ -604,7 +604,7 @@ Bằng việc đóng góp, bạn đồng ý rằng các đóng góp của bạn 
 ## Có Câu Hỏi?
 
 - Đọc [tài liệu](/)
-- Tìm kiếm [issue hiện có](https://github.com/buikevin/galaxy-ui-cli/issues)
-- Mở [discussion mới](https://github.com/buikevin/galaxy-ui-cli/discussions)
+- Tìm kiếm [issue hiện có](https://github.com/buikevin/galaxy-design/issues)
+- Mở [discussion mới](https://github.com/buikevin/galaxy-design/discussions)
 
 Cảm ơn bạn đã đóng góp! 🎉

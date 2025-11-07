@@ -209,12 +209,12 @@ Components built with Radix primitives include:
 
 ## 📚 Documentation
 
-Full documentation available at: **https://galaxy-ui-cli.vercel.app**
+Full documentation available at: **https://galaxy-design.vercel.app**
 
-- [Getting Started](https://galaxy-ui-cli.vercel.app/guide/introduction)
-- [Installation](https://galaxy-ui-cli.vercel.app/guide/installation)
-- [Components](https://galaxy-ui-cli.vercel.app/components/overview)
-- [CLI Usage](https://galaxy-ui-cli.vercel.app/guide/cli-usage)
+- [Getting Started](https://galaxy-design.vercel.app/guide/introduction)
+- [Installation](https://galaxy-design.vercel.app/guide/installation)
+- [Components](https://galaxy-design.vercel.app/components/overview)
+- [CLI Usage](https://galaxy-design.vercel.app/guide/cli-usage)
 
 ## 📖 Usage Examples
 
@@ -296,8 +296,8 @@ This is an Nx monorepo managed with Bun.
 
 ```bash
 # Clone repository
-git clone https://github.com/buikevin/galaxy-ui-cli
-cd galaxy-ui-cli
+git clone https://github.com/buikevin/galaxy-design
+cd galaxy-design
 
 # Install dependencies
 bun install
@@ -410,9 +410,9 @@ MIT © 2025 Bùi Trọng Hiếu (kevinbui)
 
 ## 🔗 Links
 
-- **Repository**: https://github.com/buikevin/galaxy-ui-cli
-- **Documentation**: https://galaxy-ui-cli.vercel.app
-- **npm Package**: https://www.npmjs.com/package/galaxy-ui-cli (Coming Soon)
+- **Repository**: https://github.com/buikevin/galaxy-design
+- **Documentation**: https://galaxy-design.vercel.app
+- **npm Package**: https://www.npmjs.com/package/galaxy-design (Coming Soon)
 - **Changelog**: See [CHANGELOG.md](CHANGELOG.md)
 
 ---

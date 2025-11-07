@@ -452,4 +452,4 @@ content: [
 
 ## Support
 
-Having issues? Check our [GitHub Issues](https://github.com/buikevin/galaxy-ui-cli/issues) or contact kevinbui210191@gmail.com
+Having issues? Check our [GitHub Issues](https://github.com/buikevin/galaxy-design/issues) or contact kevinbui210191@gmail.com

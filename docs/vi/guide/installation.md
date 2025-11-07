@@ -311,6 +311,6 @@ export class AppComponent {}
 ## Gặp Vấn Đề?
 
 Nếu bạn gặp vấn đề, vui lòng:
-- Kiểm tra [GitHub Issues](https://github.com/buikevin/galaxy-ui-cli/issues)
+- Kiểm tra [GitHub Issues](https://github.com/buikevin/galaxy-design/issues)
 - Tạo issue mới với thông tin chi tiết
 - Liên hệ: kevinbui210191@gmail.com
