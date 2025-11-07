@@ -1,0 +1,89 @@
+{
+  "$schema": "../schemas/registry-schema.json",
+  "name": "vue-blocks",
+  "components": {
+    "chat-ui": {
+      "name": "Chat UI",
+      "type": "block",
+      "description": "Complete chat interface with message list, input, user avatars and auto-scroll",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["avatar", "button", "scroll-area", "textarea"],
+      "files": [
+        "types.ts",
+        "ChatMessage.vue",
+        "MessageList.vue",
+        "MessageInput.vue",
+        "ChatUI.vue",
+        "index.ts"
+      ],
+      "category": "blocks"
+    },
+    "sidebar": {
+      "name": "Sidebar",
+      "type": "block",
+      "description": "Collapsible navigation sidebar with nested menu items, badges, and icons",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button", "separator"],
+      "files": [
+        "types.ts",
+        "SidebarItem.vue",
+        "Sidebar.vue",
+        "index.ts"
+      ],
+      "category": "blocks"
+    },
+    "authentication": {
+      "name": "Authentication",
+      "type": "block",
+      "description": "Complete authentication forms with login, register, validation, and social login",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button", "input", "label", "checkbox", "separator"],
+      "files": [
+        "types.ts",
+        "LoginForm.vue",
+        "RegisterForm.vue",
+        "AuthForm.vue",
+        "index.ts"
+      ],
+      "category": "blocks"
+    },
+    "email": {
+      "name": "Email Client",
+      "type": "block",
+      "description": "Gmail-like email interface with inbox, folders, email list, and reading pane",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button", "input", "avatar", "separator", "scroll-area"],
+      "files": [
+        "types.ts",
+        "EmailClient.vue",
+        "index.ts"
+      ],
+      "category": "blocks"
+    },
+    "featured": {
+      "name": "Featured Sections",
+      "type": "block",
+      "description": "Landing page sections including hero and features grid with multiple variants",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        "types.ts",
+        "HeroSection.vue",
+        "FeaturedSection.vue",
+        "index.ts"
+      ],
+      "category": "blocks"
+    }
+  },
+  "groups": {
+    "all-blocks": {
+      "name": "All Blocks",
+      "components": ["chat-ui", "sidebar", "authentication", "email", "featured"]
+    }
+  }
+}

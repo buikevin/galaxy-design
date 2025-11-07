@@ -1,0 +1,5 @@
+export { default as ChatUI } from './ChatUI.vue'
+export { default as ChatMessage } from './ChatMessage.vue'
+export { default as MessageList } from './MessageList.vue'
+export { default as MessageInput } from './MessageInput.vue'
+export type { Message, ChatUser, ChatUIProps } from './types'

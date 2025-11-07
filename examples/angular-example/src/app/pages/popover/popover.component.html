@@ -1,0 +1,55 @@
+<div class="space-y-8">
+	<div>
+		<h1 class="text-3xl font-bold">Popover</h1>
+		<p class="text-muted-foreground mt-2">
+			Displays rich content in a portal, triggered by a button.
+		</p>
+	</div>
+
+	<div class="space-y-4">
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Default</h2>
+			<div class="rounded-lg border p-6 flex justify-center">
+				<ui-popover [(open)]="open">
+					<ui-popover-trigger>
+						<ui-button variant="outline">Open popover</ui-button>
+					</ui-popover-trigger>
+					<ui-popover-content>
+						<div class="grid gap-4">
+							<div class="space-y-2">
+								<h4 class="font-medium leading-none">Dimensions</h4>
+								<p class="text-sm text-muted-foreground">
+									Set the dimensions for the layer.
+								</p>
+							</div>
+							<div class="grid gap-2">
+								<div class="grid grid-cols-3 items-center gap-4">
+									<label class="text-sm">Width</label>
+									<input class="col-span-2 h-8 rounded-md border px-3" value="100%" />
+								</div>
+								<div class="grid grid-cols-3 items-center gap-4">
+									<label class="text-sm">Height</label>
+									<input class="col-span-2 h-8 rounded-md border px-3" value="25px" />
+								</div>
+							</div>
+						</div>
+					</ui-popover-content>
+				</ui-popover>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Simple Popover</h2>
+			<div class="rounded-lg border p-6 flex justify-center">
+				<ui-popover>
+					<ui-popover-trigger>
+						<ui-button>Info</ui-button>
+					</ui-popover-trigger>
+					<ui-popover-content>
+						<p class="text-sm">This is a simple popover with some information.</p>
+					</ui-popover-content>
+				</ui-popover>
+			</div>
+		</div>
+	</div>
+</div>

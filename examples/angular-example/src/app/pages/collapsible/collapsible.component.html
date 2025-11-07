@@ -1,0 +1,58 @@
+<div class="space-y-8">
+	<div>
+		<h1 class="text-3xl font-bold">Collapsible</h1>
+		<p class="text-muted-foreground mt-2">
+			An interactive component which expands/collapses a panel.
+		</p>
+	</div>
+
+	<div class="space-y-4">
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Default</h2>
+			<div class="rounded-lg border p-6">
+				<ui-collapsible [(open)]="isOpen" class="w-full max-w-md space-y-2">
+					<div class="flex items-center justify-between space-x-4 px-4">
+						<h4 class="text-sm font-semibold">@peduarte starred 3 repositories</h4>
+						<ui-collapsible-trigger>
+							<ui-button variant="ghost" size="sm">
+								<span *ngIf="!isOpen">Show</span>
+								<span *ngIf="isOpen">Hide</span>
+							</ui-button>
+						</ui-collapsible-trigger>
+					</div>
+					<div class="rounded-md border px-4 py-3 text-sm">
+						@radix-ui/primitives
+					</div>
+					<ui-collapsible-content class="space-y-2">
+						<div class="rounded-md border px-4 py-3 text-sm">
+							@radix-ui/colors
+						</div>
+						<div class="rounded-md border px-4 py-3 text-sm">
+							@stitches/react
+						</div>
+					</ui-collapsible-content>
+				</ui-collapsible>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Controlled</h2>
+			<div class="rounded-lg border p-6">
+				<div class="space-y-4">
+					<ui-collapsible [open]="true" class="w-full max-w-md space-y-2">
+						<ui-collapsible-trigger>
+							<ui-button variant="outline" size="sm" class="w-full">
+								Toggle FAQ
+							</ui-button>
+						</ui-collapsible-trigger>
+						<ui-collapsible-content>
+							<div class="rounded-md border px-4 py-3 text-sm">
+								This collapsible is always open by default.
+							</div>
+						</ui-collapsible-content>
+					</ui-collapsible>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

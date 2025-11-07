@@ -1,0 +1,29 @@
+{
+  "name": "@galaxy-ui-cli/react-native",
+  "version": "0.1.0",
+  "description": "React Native components for Galaxy UI CLI",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-native": ">=0.70.0",
+    "nativewind": "^4.0.0"
+  },
+  "dependencies": {
+    "@wuba/react-native-echarts": "^3.0.1",
+    "echarts": "^5.5.1",
+    "@shopify/react-native-skia": "^1.6.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-native": "^0.72.0",
+    "typescript": "^5.0.0"
+  },
+  "keywords": [
+    "galaxy-ui",
+    "react-native",
+    "ui-components",
+    "nativewind",
+    "rn-primitives"
+  ]
+}

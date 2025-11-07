@@ -1,0 +1,60 @@
+{
+  "$schema": "../schemas/registry-schema.json",
+  "name": "flutter-blocks",
+  "components": {
+    "chat-ui": {
+      "name": "Chat UI (Mobile)",
+      "type": "block",
+      "description": "Mobile-optimized chat interface with Material Design 3 styling",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["avatar", "button"],
+      "files": [
+        "types.dart",
+        "chat_message.dart",
+        "message_list.dart",
+        "message_input.dart",
+        "chat_ui.dart",
+        "index.dart"
+      ],
+      "category": "mobile-blocks"
+    },
+    "sidebar": {
+      "name": "Navigation Drawer (Mobile)",
+      "type": "block",
+      "description": "Flutter drawer navigation with Material Design components",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        "types.dart",
+        "drawer_item.dart",
+        "navigation_drawer.dart",
+        "index.dart"
+      ],
+      "category": "mobile-blocks"
+    },
+    "authentication": {
+      "name": "Authentication (Mobile)",
+      "type": "block",
+      "description": "Mobile authentication forms with Flutter form validation",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button", "input", "checkbox"],
+      "files": [
+        "types.dart",
+        "login_form.dart",
+        "register_form.dart",
+        "auth_form.dart",
+        "index.dart"
+      ],
+      "category": "mobile-blocks"
+    }
+  },
+  "groups": {
+    "all-mobile-blocks": {
+      "name": "All Mobile Blocks",
+      "components": ["chat-ui", "sidebar", "authentication"]
+    }
+  }
+}

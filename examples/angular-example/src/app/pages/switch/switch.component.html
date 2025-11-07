@@ -1,0 +1,28 @@
+<div class="space-y-8">
+	<div>
+		<h1 class="text-3xl font-bold">Switch</h1>
+		<p class="text-muted-foreground mt-2">
+			A control that allows the user to toggle between checked and not checked.
+		</p>
+	</div>
+
+	<div class="space-y-4">
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Example</h2>
+			<div class="rounded-lg border p-6 flex flex-col gap-4">
+				<div class="flex items-center space-x-2">
+					<ui-switch id="airplane" [(checked)]="checked1"></ui-switch>
+					<label ui-label for="airplane">Airplane Mode</label>
+				</div>
+				<div class="flex items-center space-x-2">
+					<ui-switch id="notifications" [(checked)]="checked2"></ui-switch>
+					<label ui-label for="notifications">Enable Notifications</label>
+				</div>
+				<div class="flex items-center space-x-2">
+					<ui-switch id="disabled" [disabled]="true" [(checked)]="checked3"></ui-switch>
+					<label ui-label for="disabled">Disabled Switch</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

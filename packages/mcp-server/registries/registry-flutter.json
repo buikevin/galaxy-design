@@ -1,0 +1,491 @@
+{
+  "platform": "flutter",
+  "version": "1.0.0",
+  "components": {
+    "accordion": {
+      "name": "Accordion",
+      "type": "layout",
+      "description": "Collapsible accordion component for expandable content sections",
+      "files": ["accordion/accordion.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyAccordion", "GalaxyAccordionItem"]
+    },
+    "alert": {
+      "name": "Alert",
+      "type": "feedback",
+      "description": "Alert component for displaying important messages with variants",
+      "files": ["alert/alert.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyAlert"]
+    },
+    "alert-dialog": {
+      "name": "Alert Dialog",
+      "type": "overlay",
+      "description": "Modal alert dialog for important confirmations and decisions",
+      "files": ["alert-dialog/alert_dialog.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyAlertDialog"]
+    },
+    "aspect-ratio": {
+      "name": "Aspect Ratio",
+      "type": "layout",
+      "description": "Container that maintains a specific aspect ratio for its content",
+      "files": ["aspect-ratio/aspect_ratio.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyAspectRatio"]
+    },
+    "avatar": {
+      "name": "Avatar",
+      "type": "data-display",
+      "description": "Avatar component for displaying user profile images with fallback",
+      "files": ["avatar/avatar.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyAvatar", "GalaxyAvatarGroup"]
+    },
+    "badge": {
+      "name": "Badge",
+      "type": "data-display",
+      "description": "Badge component for status indicators, counts, and labels",
+      "files": ["badge/badge.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyBadge", "GalaxyBadgePositioned"]
+    },
+    "button": {
+      "name": "Button",
+      "type": "form",
+      "description": "Button component with multiple variants, sizes, and states",
+      "files": ["button/button.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyButton"]
+    },
+    "card": {
+      "name": "Card",
+      "type": "layout",
+      "description": "Card container with header, content, and footer sections",
+      "files": ["card/card.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyCard", "GalaxyCardHeader", "GalaxyCardContent", "GalaxyCardFooter"]
+    },
+    "checkbox": {
+      "name": "Checkbox",
+      "type": "form",
+      "description": "Checkbox input with label and indeterminate state support",
+      "files": ["checkbox/checkbox.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyCheckbox"]
+    },
+    "collapsible": {
+      "name": "Collapsible",
+      "type": "layout",
+      "description": "Collapsible container for showing and hiding content",
+      "files": ["collapsible/collapsible.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyCollapsible"]
+    },
+    "context-menu": {
+      "name": "Context Menu",
+      "type": "overlay",
+      "description": "Context menu triggered by long press gesture",
+      "files": ["context-menu/context_menu.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyContextMenu", "GalaxyContextMenuItem"]
+    },
+    "date-picker": {
+      "name": "Date Picker",
+      "type": "form",
+      "description": "Date picker with single date and date range selection",
+      "files": ["date-picker/date_picker.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter", "intl"],
+      "exports": ["GalaxyDatePicker", "GalaxyDateRangePicker"]
+    },
+    "dialog": {
+      "name": "Dialog",
+      "type": "overlay",
+      "description": "Modal dialog for displaying content over the main interface",
+      "files": ["dialog/dialog.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyDialog"]
+    },
+    "dropdown-menu": {
+      "name": "Dropdown Menu",
+      "type": "overlay",
+      "description": "Dropdown menu for displaying a list of actions or options",
+      "files": ["dropdown-menu/dropdown_menu.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyDropdownMenu", "GalaxyDropdownMenuItem"]
+    },
+    "empty": {
+      "name": "Empty",
+      "type": "data-display",
+      "description": "Empty state component with presets for no data, errors, and offline states",
+      "files": ["empty/empty.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyEmpty"]
+    },
+    "hover-card": {
+      "name": "Hover Card",
+      "type": "overlay",
+      "description": "Hover card for displaying additional information on press",
+      "files": ["hover-card/hover_card.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyHoverCard"]
+    },
+    "input": {
+      "name": "Input",
+      "type": "form",
+      "description": "Text input component with label, placeholder, and error states",
+      "files": ["input/input.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyInput"]
+    },
+    "label": {
+      "name": "Label",
+      "type": "form",
+      "description": "Label component for form inputs",
+      "files": ["label/label.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyLabel"]
+    },
+    "menubar": {
+      "name": "Menubar",
+      "type": "navigation",
+      "description": "Menubar component for horizontal navigation menus",
+      "files": ["menubar/menubar.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyMenubar", "GalaxyMenubarItem"]
+    },
+    "navigation-menu": {
+      "name": "Navigation Menu",
+      "type": "navigation",
+      "description": "Navigation menu with bottom tab and drawer variants",
+      "files": ["navigation-menu/navigation_menu.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyNavigationMenu", "NavigationMenuItem"]
+    },
+    "pagination": {
+      "name": "Pagination",
+      "type": "navigation",
+      "description": "Pagination component with compact, full, and load more variants",
+      "files": ["pagination/pagination.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyPagination"]
+    },
+    "popover": {
+      "name": "Popover",
+      "type": "overlay",
+      "description": "Popover component for displaying floating content",
+      "files": ["popover/popover.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyPopover"]
+    },
+    "progress": {
+      "name": "Progress",
+      "type": "feedback",
+      "description": "Progress bar and circular progress component",
+      "files": ["progress/progress.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyProgress"]
+    },
+    "radio-group": {
+      "name": "Radio Group",
+      "type": "form",
+      "description": "Radio button group for single selection from multiple options",
+      "files": ["radio-group/radio_group.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyRadioGroup", "GalaxyRadio"]
+    },
+    "select": {
+      "name": "Select",
+      "type": "form",
+      "description": "Select dropdown component for choosing from a list of options",
+      "files": ["select/select.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxySelect", "GalaxySelectItem"]
+    },
+    "separator": {
+      "name": "Separator",
+      "type": "layout",
+      "description": "Visual separator line for dividing content",
+      "files": ["separator/separator.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxySeparator"]
+    },
+    "sheet": {
+      "name": "Sheet",
+      "type": "overlay",
+      "description": "Bottom sheet and side sheet component with header and footer",
+      "files": ["sheet/sheet.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxySheet", "GalaxySheetContent"]
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "type": "feedback",
+      "description": "Skeleton loading placeholder component",
+      "files": ["skeleton/skeleton.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxySkeleton"]
+    },
+    "slider": {
+      "name": "Slider",
+      "type": "form",
+      "description": "Slider component for selecting a value from a range",
+      "files": ["slider/slider.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxySlider"]
+    },
+    "switch": {
+      "name": "Switch",
+      "type": "form",
+      "description": "Toggle switch component for boolean input",
+      "files": ["switch/switch.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxySwitch"]
+    },
+    "table": {
+      "name": "Table",
+      "type": "data-display",
+      "description": "Table component for displaying structured data",
+      "files": ["table/table.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyTable", "GalaxyTableRow", "GalaxyTableCell"]
+    },
+    "tabs": {
+      "name": "Tabs",
+      "type": "navigation",
+      "description": "Tabs component for organizing content into sections",
+      "files": ["tabs/tabs.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyTabs", "GalaxyTab"]
+    },
+    "textarea": {
+      "name": "Textarea",
+      "type": "form",
+      "description": "Multi-line text input component",
+      "files": ["textarea/textarea.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyTextarea"]
+    },
+    "toggle": {
+      "name": "Toggle",
+      "type": "form",
+      "description": "Toggle button for binary state changes",
+      "files": ["toggle/toggle.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyToggle"]
+    },
+    "toggle-group": {
+      "name": "Toggle Group",
+      "type": "form",
+      "description": "Group of toggle buttons for single or multiple selection",
+      "files": ["toggle-group/toggle_group.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyToggleGroup"]
+    },
+    "tooltip": {
+      "name": "Tooltip",
+      "type": "overlay",
+      "description": "Tooltip component for displaying helpful information on press",
+      "files": ["tooltip/tooltip.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyTooltip"]
+    },
+    "typography": {
+      "name": "Typography",
+      "type": "data-display",
+      "description": "Typography component with 11 text variants (h1-h4, p, lead, large, small, muted, blockquote, code)",
+      "files": ["typography/typography.dart"],
+      "dependencies": [],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyTypography"]
+    },
+    "line-chart": {
+      "name": "LineChart",
+      "type": "chart",
+      "description": "Display data as a responsive line chart with smooth curves and customizable styling",
+      "files": ["charts/line_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyLineChart"]
+    },
+    "bar-chart": {
+      "name": "BarChart",
+      "type": "chart",
+      "description": "Display data as vertical or horizontal bars with support for stacked and grouped layouts",
+      "files": ["charts/bar_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyBarChart"]
+    },
+    "pie-chart": {
+      "name": "PieChart",
+      "type": "chart",
+      "description": "Display proportional data as a pie or donut chart with customizable labels and legend",
+      "files": ["charts/pie_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyPieChart"]
+    },
+    "area-chart": {
+      "name": "AreaChart",
+      "type": "chart",
+      "description": "Visualize cumulative totals over time with filled areas and gradient support",
+      "files": ["charts/area_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyAreaChart"]
+    },
+    "radar-chart": {
+      "name": "RadarChart",
+      "type": "chart",
+      "description": "Display multi-dimensional data comparison on a radial grid",
+      "files": ["charts/radar_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyRadarChart"]
+    },
+    "scatter-chart": {
+      "name": "ScatterChart",
+      "type": "chart",
+      "description": "Display distribution and correlation analysis with scatter plots",
+      "files": ["charts/scatter_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyScatterChart"]
+    },
+    "mixed-chart": {
+      "name": "MixedChart",
+      "type": "chart",
+      "description": "Combine multiple chart types (line, bar, area) in a single visualization",
+      "files": ["charts/mixed_chart.dart", "charts/types.dart", "charts/utils.dart", "charts/index.dart"],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "peerDependencies": ["flutter"],
+      "exports": ["GalaxyMixedChart"]
+    }
+  },
+  "groups": {
+    "form": {
+      "name": "Form Components",
+      "description": "Input and form control components",
+      "components": [
+        "button",
+        "checkbox",
+        "date-picker",
+        "input",
+        "label",
+        "radio-group",
+        "select",
+        "slider",
+        "switch",
+        "textarea",
+        "toggle",
+        "toggle-group"
+      ]
+    },
+    "layout": {
+      "name": "Layout Components",
+      "description": "Components for structuring content",
+      "components": [
+        "accordion",
+        "aspect-ratio",
+        "card",
+        "collapsible",
+        "separator"
+      ]
+    },
+    "navigation": {
+      "name": "Navigation Components",
+      "description": "Components for navigation and routing",
+      "components": [
+        "menubar",
+        "navigation-menu",
+        "pagination",
+        "tabs"
+      ]
+    },
+    "data-display": {
+      "name": "Data Display Components",
+      "description": "Components for displaying data and content",
+      "components": [
+        "avatar",
+        "badge",
+        "empty",
+        "table",
+        "typography"
+      ]
+    },
+    "overlay": {
+      "name": "Overlay Components",
+      "description": "Modal dialogs, popovers, and floating content",
+      "components": [
+        "alert-dialog",
+        "context-menu",
+        "dialog",
+        "dropdown-menu",
+        "hover-card",
+        "popover",
+        "sheet",
+        "tooltip"
+      ]
+    },
+    "feedback": {
+      "name": "Feedback Components",
+      "description": "Components for user feedback and status",
+      "components": [
+        "alert",
+        "progress",
+        "skeleton"
+      ]
+    },
+    "charts": {
+      "name": "Chart Components",
+      "description": "Data visualization and chart components",
+      "components": [
+        "line-chart",
+        "bar-chart",
+        "pie-chart",
+        "donut-chart",
+        "area-chart",
+        "radar-chart",
+        "scatter-chart",
+        "mixed-chart"
+      ]
+    }
+  }
+}

@@ -1,0 +1,44 @@
+/* Custom styles for Galaxy UI CLI documentation */
+
+:root {
+  --vp-c-brand: #646cff;
+  --vp-c-brand-light: #747bff;
+  --vp-c-brand-lighter: #9499ff;
+  --vp-c-brand-dark: #535bf2;
+  --vp-c-brand-darker: #454ce1;
+}
+
+/* Component preview container enhancements */
+.vp-doc .component-preview {
+  margin: 20px 0;
+}
+
+/* Code block improvements */
+.vp-doc div[class*='language-'] {
+  margin: 16px 0;
+  border-radius: 8px;
+}
+
+/* Custom scrollbar for code blocks */
+.vp-doc div[class*='language-'] pre {
+  scrollbar-width: thin;
+  scrollbar-color: var(--vp-c-divider) transparent;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 4px;
+}
+
+.vp-doc div[class*='language-'] pre::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@galaxy-ui/docs",
+  "version": "1.0.0",
+  "description": "Galaxy UI documentation built with VitePress",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.7.3",
+    "vitepress": "^1.0.0",
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "echarts": "^5.5.1",
+    "lucide-vue-next": "^0.548.0",
+    "radix-vue": "^1.9.17",
+    "tailwind-merge": "^3.3.1",
+    "vue-echarts": "^7.0.3"
+  }
+}

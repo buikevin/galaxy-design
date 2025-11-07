@@ -1,0 +1,557 @@
+{
+  "components": {
+    "button": {
+      "name": "Button",
+      "selector": "gButton",
+      "type": "form",
+      "description": "Versatile button with 6 status variants and 5 sizes",
+      "files": ["button.component.ts", "index.ts", "variants.ts"],
+      "dependencies": ["@radix-ng/primitives", "class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["ButtonDirective"],
+      "category": "form"
+    },
+    "input": {
+      "name": "Input",
+      "selector": "g-input",
+      "type": "form",
+      "description": "Text input with label, hints, and error messages",
+      "files": ["index.ts", "input.component.ts"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["InputComponent"],
+      "category": "form"
+    },
+    "label": {
+      "name": "Label",
+      "selector": "ui-label",
+      "type": "form",
+      "description": "Accessible form label component",
+      "files": ["index.ts", "label.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "exports": ["LabelComponent"],
+      "category": "form"
+    },
+    "checkbox": {
+      "name": "Checkbox",
+      "selector": "g-checkbox",
+      "type": "form",
+      "description": "Checkbox with indeterminate state support",
+      "files": ["checkbox.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["CheckboxComponent"],
+      "category": "form"
+    },
+    "select": {
+      "name": "Select",
+      "selector": "g-select",
+      "type": "form",
+      "description": "Custom dropdown with search functionality",
+      "files": ["index.ts", "select.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["SelectComponent", "SelectItemComponent"],
+      "category": "form"
+    },
+    "radio-group": {
+      "name": "Radio Group",
+      "selector": "g-radio-group",
+      "type": "form",
+      "description": "Radio button group with single selection",
+      "files": ["index.ts", "radio-group.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["RadioGroupComponent"]
+    },
+    "switch": {
+      "name": "Switch",
+      "selector": "g-switch",
+      "type": "form",
+      "description": "Toggle switch with smooth animation",
+      "files": ["index.ts", "switch.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["SwitchComponent"]
+    },
+    "slider": {
+      "name": "Slider",
+      "selector": "g-slider",
+      "type": "form",
+      "description": "Range slider with min/max and step support",
+      "files": ["index.ts", "slider.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["SliderComponent"]
+    },
+    "textarea": {
+      "name": "Textarea",
+      "selector": "g-textarea",
+      "type": "form",
+      "description": "Multi-line text input component",
+      "files": ["index.ts", "textarea.component.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["TextareaComponent"]
+    },
+    "accordion": {
+      "name": "Accordion",
+      "selector": "g-accordion",
+      "type": "layout",
+      "description": "Collapsible sections with expand/collapse",
+      "files": ["accordion.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["AccordionComponent", "AccordionItemComponent"]
+    },
+    "collapsible": {
+      "name": "Collapsible",
+      "selector": "g-collapsible",
+      "type": "layout",
+      "description": "Collapsible content panel",
+      "files": ["collapsible.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["CollapsibleComponent"]
+    },
+    "separator": {
+      "name": "Separator",
+      "selector": "g-separator",
+      "type": "layout",
+      "description": "Horizontal or vertical separator",
+      "files": ["index.ts", "separator.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["SeparatorComponent"]
+    },
+    "tabs": {
+      "name": "Tabs",
+      "selector": "g-tabs",
+      "type": "navigation",
+      "description": "Tabbed content organization",
+      "files": ["index.ts", "tabs.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["TabsComponent", "TabComponent", "TabPanelComponent"]
+    },
+    "dropdown-menu": {
+      "name": "Dropdown Menu",
+      "selector": "g-dropdown-menu",
+      "type": "navigation",
+      "description": "Action menus and context menus",
+      "files": ["dropdown-menu.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["DropdownMenuComponent", "DropdownMenuItemComponent"]
+    },
+    "menubar": {
+      "name": "Menubar",
+      "selector": "g-menubar",
+      "type": "navigation",
+      "description": "Horizontal menubar with dropdown menus",
+      "files": ["index.ts", "menubar.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["MenubarComponent"]
+    },
+    "navigation-menu": {
+      "name": "Navigation Menu",
+      "selector": "g-navigation-menu",
+      "type": "navigation",
+      "description": "Navigation menu with nested items",
+      "files": ["index.ts", "navigation-menu.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["NavigationMenuComponent"]
+    },
+    "context-menu": {
+      "name": "Context Menu",
+      "selector": "g-context-menu",
+      "type": "navigation",
+      "description": "Right-click context menu",
+      "files": ["context-menu.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["ContextMenuComponent"]
+    },
+    "popover": {
+      "name": "Popover",
+      "selector": "g-popover",
+      "type": "modal-overlay",
+      "description": "Popover component for contextual information",
+      "files": ["index.ts", "popover.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["PopoverComponent"]
+    },
+    "tooltip": {
+      "name": "Tooltip",
+      "selector": "g-tooltip",
+      "type": "modal-overlay",
+      "description": "Tooltip component for hover information (shadcn style)",
+      "files": ["index.ts", "tooltip.component.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["TooltipComponent"]
+    },
+    "line-chart": {
+      "name": "LineChart",
+      "selector": "ui-line-chart",
+      "type": "chart",
+      "description": "Display data as a responsive line chart with smooth curves and customizable styling",
+      "files": ["charts/line-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["LineChartComponent"],
+      "category": "charts"
+    },
+    "bar-chart": {
+      "name": "BarChart",
+      "selector": "ui-bar-chart",
+      "type": "chart",
+      "description": "Display data as vertical or horizontal bars with support for stacked and grouped layouts",
+      "files": ["charts/bar-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["BarChartComponent"],
+      "category": "charts"
+    },
+    "pie-chart": {
+      "name": "PieChart",
+      "selector": "ui-pie-chart",
+      "type": "chart",
+      "description": "Display proportional data as a pie or donut chart with customizable labels and legend",
+      "files": ["charts/pie-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["PieChartComponent"],
+      "category": "charts"
+    },
+    "donut-chart": {
+      "name": "DonutChart",
+      "type": "chart",
+      "description": "Display proportional data as a donut chart with a hollow center",
+      "dependencies": ["vue-echarts", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/DonutChart.vue", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "area-chart": {
+      "name": "AreaChart",
+      "selector": "ui-area-chart",
+      "type": "chart",
+      "description": "Visualize cumulative totals over time with filled areas and gradient support",
+      "files": ["charts/area-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["AreaChartComponent"],
+      "category": "charts"
+    },
+    "radar-chart": {
+      "name": "RadarChart",
+      "selector": "ui-radar-chart",
+      "type": "chart",
+      "description": "Display multi-dimensional data comparison on a radial grid",
+      "files": ["charts/radar-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["RadarChartComponent"],
+      "category": "charts"
+    },
+    "scatter-chart": {
+      "name": "ScatterChart",
+      "selector": "ui-scatter-chart",
+      "type": "chart",
+      "description": "Display distribution and correlation analysis with scatter plots",
+      "files": ["charts/scatter-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["ScatterChartComponent"],
+      "category": "charts"
+    },
+    "mixed-chart": {
+      "name": "MixedChart",
+      "selector": "ui-mixed-chart",
+      "type": "chart",
+      "description": "Combine multiple chart types (line, bar, area) in a single visualization",
+      "files": ["charts/mixed-chart.component.ts", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "peerDependencies": [],
+      "exports": ["MixedChartComponent"],
+      "category": "charts"
+    },
+    "dialog": {
+      "name": "Dialog",
+      "selector": "g-dialog",
+      "type": "modal-overlay",
+      "description": "Modal dialog component",
+      "files": ["dialog.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["DialogComponent"]
+    },
+    "alert-dialog": {
+      "name": "Alert Dialog",
+      "selector": "g-alert-dialog",
+      "type": "modal-overlay",
+      "description": "Alert dialog for confirmations",
+      "files": ["alert-dialog.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["AlertDialogComponent"]
+    },
+    "progress": {
+      "name": "Progress",
+      "type": "feedback",
+      "description": "Displays an indicator showing the completion progress of a task",
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["progress.component.ts", "index.ts"],
+      "category": "feedback"
+    },
+    "hover-card": {
+      "name": "Hover Card",
+      "selector": "g-hover-card",
+      "type": "modal-overlay",
+      "description": "Hover card with rich content preview",
+      "files": ["hover-card.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["HoverCardComponent"]
+    },
+    "avatar": {
+      "name": "Avatar",
+      "selector": "g-avatar",
+      "type": "other",
+      "description": "Avatar component for user profile pictures",
+      "files": ["avatar.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": ["lucide-angular"],
+      "exports": ["AvatarComponent", "AvatarGroupComponent"]
+    },
+    "scroll-area": {
+      "name": "Scroll Area",
+      "selector": "ui-scroll-area",
+      "type": "layout",
+      "description": "Augments native scroll functionality for custom, cross-browser styling",
+      "files": ["scroll-area.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["ScrollAreaComponent"]
+    },
+    "aspect-ratio": {
+      "name": "Aspect Ratio",
+      "selector": "ui-aspect-ratio",
+      "type": "layout",
+      "description": "Displays content within a desired aspect ratio",
+      "files": ["aspect-ratio.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["AspectRatioComponent"]
+    },
+    "toggle": {
+      "name": "Toggle",
+      "selector": "ui-toggle",
+      "type": "interactive",
+      "description": "A two-state button that can be either on or off",
+      "files": ["toggle.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["ToggleComponent"]
+    },
+    "toggle-group": {
+      "name": "Toggle Group",
+      "selector": "ui-toggle-group",
+      "type": "interactive",
+      "description": "A set of two-state buttons that can be toggled on or off",
+      "files": ["toggle-group.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["ToggleGroupComponent", "ToggleGroupItemComponent"]
+    },
+    "resizable": {
+      "name": "Resizable",
+      "selector": "ui-resizable",
+      "type": "layout",
+      "description": "Accessible resizable panel groups and layouts with keyboard support",
+      "files": ["resizable.component.ts", "index.ts"],
+      "dependencies": ["@radix-ng/primitives"],
+      "peerDependencies": [],
+      "exports": ["ResizablePanelGroupComponent", "ResizablePanelComponent", "ResizableHandleComponent"]
+    },
+    "empty": {
+      "name": "Empty",
+      "selector": "ui-empty",
+      "type": "feedback",
+      "description": "Displays an empty state placeholder",
+      "files": ["empty.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["EmptyComponent"],
+      "category": "feedback"
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "selector": "ui-skeleton",
+      "type": "feedback",
+      "description": "Use to show a placeholder while content is loading",
+      "files": ["skeleton.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["SkeletonComponent"],
+      "category": "feedback"
+    },
+    "kbd": {
+      "name": "Kbd",
+      "selector": "ui-kbd",
+      "type": "data-display",
+      "description": "Displays keyboard key combinations",
+      "files": ["kbd.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["KbdComponent"],
+      "category": "data-display"
+    },
+    "typography": {
+      "name": "Typography",
+      "selector": "ui-typography",
+      "type": "data-display",
+      "description": "Text formatting and typography components",
+      "files": ["typography.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["TypographyComponent"],
+      "category": "data-display"
+    },
+    "pagination": {
+      "name": "Pagination",
+      "selector": "ui-pagination",
+      "type": "navigation",
+      "description": "Page navigation with previous, next, and page numbers",
+      "files": ["pagination.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["PaginationComponent"],
+      "category": "navigation"
+    },
+    "table": {
+      "name": "Table",
+      "selector": "ui-table",
+      "type": "data-display",
+      "description": "A responsive table component for displaying data",
+      "files": ["table.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["TableComponent", "TableHeaderDirective", "TableBodyDirective", "TableFooterDirective", "TableRowDirective", "TableHeadDirective", "TableCellDirective", "TableCaptionDirective"],
+      "category": "data-display"
+    },
+    "calendar": {
+      "name": "Calendar",
+      "selector": "ui-calendar",
+      "type": "form",
+      "description": "A date picker calendar component",
+      "files": ["calendar.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["CalendarComponent"],
+      "category": "form"
+    },
+    "calendar-range": {
+      "name": "Calendar Range",
+      "selector": "ui-calendar-range",
+      "type": "form",
+      "description": "A date range picker calendar component",
+      "files": ["calendar-range.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["CalendarRangeComponent"],
+      "category": "form"
+    },
+    "command": {
+      "name": "Command",
+      "selector": "ui-command",
+      "type": "navigation",
+      "description": "Command palette for keyboard-first navigation and search",
+      "files": ["command.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["CommandComponent"],
+      "category": "navigation"
+    },
+    "sheet": {
+      "name": "Sheet",
+      "selector": "ui-sheet",
+      "type": "layout",
+      "description": "Slide-over panel that slides in from the edge of the screen",
+      "files": ["sheet.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["SheetComponent"],
+      "category": "layout"
+    },
+    "toolbar": {
+      "name": "Toolbar",
+      "selector": "ui-toolbar",
+      "type": "layout",
+      "description": "A container for grouping a set of controls",
+      "files": ["toolbar.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["ToolbarComponent"],
+      "category": "layout"
+    },
+    "tags-input": {
+      "name": "Tags Input",
+      "selector": "ui-tags-input",
+      "type": "form",
+      "description": "Input field for entering multiple tags or values",
+      "files": ["tags-input.component.ts", "index.ts"],
+      "dependencies": [],
+      "peerDependencies": [],
+      "exports": ["TagsInputComponent"],
+      "category": "form"
+    }
+  },
+  "groups": {
+    "form": {
+      "name": "Form Components",
+      "components": ["button", "input", "label", "checkbox", "select", "radio-group", "switch", "slider", "textarea", "calendar", "calendar-range", "tags-input"]
+    },
+    "layout": {
+      "name": "Layout Components",
+      "components": ["accordion", "collapsible", "separator", "scroll-area", "aspect-ratio", "resizable", "sheet", "toolbar"]
+    },
+    "interactive": {
+      "name": "Interactive Components",
+      "components": ["toggle", "toggle-group"]
+    },
+    "navigation": {
+      "name": "Navigation Components",
+      "components": ["tabs", "dropdown-menu", "menubar", "navigation-menu", "context-menu", "pagination", "command"]
+    },
+    "modal-overlay": {
+      "name": "Modal & Overlay Components",
+      "components": ["popover", "tooltip", "dialog", "alert-dialog", "hover-card"]
+    },
+    "feedback": {
+      "name": "Feedback Components",
+      "components": ["progress", "empty", "skeleton"]
+    },
+    "data-display": {
+      "name": "Data Display Components",
+      "components": ["kbd", "typography", "table", "avatar"]
+    },
+    "charts": {
+      "name": "Chart Components",
+      "components": ["line-chart", "bar-chart", "pie-chart", "donut-chart", "area-chart", "radar-chart", "scatter-chart", "mixed-chart"]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<div class="space-y-8">
+	<div>
+		<h1 class="text-3xl font-bold">Scroll Area</h1>
+		<p class="text-muted-foreground mt-2">
+			Augments native scroll functionality for custom, cross-browser styling.
+		</p>
+	</div>
+
+	<div class="space-y-4">
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Default</h2>
+			<div class="rounded-lg border p-6">
+				<div class="h-72 w-96 rounded-md border overflow-auto">
+					<div class="p-4">
+						<h4 class="mb-4 text-sm font-medium leading-none">Tags</h4>
+						<div class="text-sm">
+							<div *ngFor="let tag of tags" class="py-2">
+								{{ tag }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

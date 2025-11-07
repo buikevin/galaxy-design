@@ -1,0 +1,63 @@
+<div class="space-y-8">
+	<div>
+		<h1 class="text-3xl font-bold">Table</h1>
+		<p class="text-muted-foreground mt-2">
+			A responsive table component.
+		</p>
+	</div>
+
+	<div class="space-y-4">
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Basic Table</h2>
+			<div class="rounded-lg border p-6">
+				<ui-table>
+					<thead uiTableHeader>
+						<tr uiTableRow>
+							<th uiTableHead>ID</th>
+							<th uiTableHead>Name</th>
+							<th uiTableHead>Email</th>
+							<th uiTableHead>Role</th>
+							<th uiTableHead>Status</th>
+						</tr>
+					</thead>
+					<tbody uiTableBody>
+						<tr uiTableRow *ngFor="let user of users">
+							<td uiTableCell>{{user.id}}</td>
+							<td uiTableCell>{{user.name}}</td>
+							<td uiTableCell>{{user.email}}</td>
+							<td uiTableCell>{{user.role}}</td>
+							<td uiTableCell>
+								<span [class]="user.status === 'Active' ? 'text-green-600' : 'text-gray-400'">
+									{{user.status}}
+								</span>
+							</td>
+						</tr>
+					</tbody>
+				</ui-table>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-xl font-semibold mb-4">With Caption</h2>
+			<div class="rounded-lg border p-6">
+				<ui-table>
+					<caption uiTableCaption>A list of recent users</caption>
+					<thead uiTableHeader>
+						<tr uiTableRow>
+							<th uiTableHead>Name</th>
+							<th uiTableHead>Email</th>
+							<th uiTableHead>Role</th>
+						</tr>
+					</thead>
+					<tbody uiTableBody>
+						<tr uiTableRow *ngFor="let user of users.slice(0, 3)">
+							<td uiTableCell>{{user.name}}</td>
+							<td uiTableCell>{{user.email}}</td>
+							<td uiTableCell>{{user.role}}</td>
+						</tr>
+					</tbody>
+				</ui-table>
+			</div>
+		</div>
+	</div>
+</div>

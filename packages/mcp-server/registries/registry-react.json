@@ -1,0 +1,526 @@
+{
+  "$schema": "../schemas/registry-schema.json",
+  "name": "react",
+  "components": {
+    "button": {
+      "name": "Button",
+      "type": "form",
+      "description": "Displays a button or a component that looks like a button",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Button.tsx", "variants.ts", "index.ts"],
+      "category": "form"
+    },
+    "input": {
+      "name": "Input",
+      "type": "form",
+      "description": "Displays a form input field or a component that looks like an input field",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Input.tsx", "index.ts"],
+      "category": "form"
+    },
+    "label": {
+      "name": "Label",
+      "type": "form",
+      "description": "Renders an accessible label associated with controls",
+      "dependencies": ["@radix-ui/react-label"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Label.tsx", "index.ts"],
+      "category": "form"
+    },
+    "select": {
+      "name": "Select",
+      "type": "form",
+      "description": "Displays a list of options for the user to pick from triggered by a button",
+      "dependencies": ["@radix-ui/react-select"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Select.tsx", "index.ts"],
+      "category": "form"
+    },
+    "checkbox": {
+      "name": "Checkbox",
+      "type": "form",
+      "description": "A control that allows the user to toggle between checked and not checked",
+      "dependencies": ["@radix-ui/react-checkbox"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Checkbox.tsx", "index.ts"],
+      "category": "form"
+    },
+    "radio-group": {
+      "name": "Radio Group",
+      "type": "form",
+      "description": "A set of checkable buttons where no more than one of the buttons can be checked at a time",
+      "dependencies": ["@radix-ui/react-radio-group"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["RadioGroup.tsx", "index.ts"],
+      "category": "form"
+    },
+    "switch": {
+      "name": "Switch",
+      "type": "form",
+      "description": "A control that allows the user to toggle between checked and not checked",
+      "dependencies": ["@radix-ui/react-switch"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Switch.tsx", "index.ts"],
+      "category": "form"
+    },
+    "slider": {
+      "name": "Slider",
+      "type": "form",
+      "description": "An input where the user selects a value from within a given range",
+      "dependencies": ["@radix-ui/react-slider"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Slider.tsx", "index.ts"],
+      "category": "form"
+    },
+    "textarea": {
+      "name": "Textarea",
+      "type": "form",
+      "description": "Displays a form textarea or a component that looks like a textarea",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Textarea.tsx", "index.ts"],
+      "category": "form"
+    },
+    "separator": {
+      "name": "Separator",
+      "type": "layout",
+      "description": "Visually or semantically separates content",
+      "dependencies": ["@radix-ui/react-separator"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Separator.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "accordion": {
+      "name": "Accordion",
+      "type": "layout",
+      "description": "A vertically stacked set of interactive headings that each reveal a section of content",
+      "dependencies": ["@radix-ui/react-accordion"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Accordion.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "tabs": {
+      "name": "Tabs",
+      "type": "layout",
+      "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time",
+      "dependencies": ["@radix-ui/react-tabs"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Tabs.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "dialog": {
+      "name": "Dialog",
+      "type": "layout",
+      "description": "A window overlaid on either the primary window or another dialog window",
+      "dependencies": ["@radix-ui/react-dialog"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Dialog.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "collapsible": {
+      "name": "Collapsible",
+      "type": "layout",
+      "description": "An interactive component which expands/collapses a panel",
+      "dependencies": ["@radix-ui/react-collapsible"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Collapsible.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "alert-dialog": {
+      "name": "Alert Dialog",
+      "type": "feedback",
+      "description": "A modal dialog that interrupts the user with important content and expects a response",
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["AlertDialog.tsx", "index.ts"],
+      "category": "feedback"
+    },
+    "progress": {
+      "name": "Progress",
+      "type": "feedback",
+      "description": "Displays an indicator showing the completion progress of a task",
+      "dependencies": ["@radix-ui/react-progress"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Progress.tsx", "index.ts"],
+      "category": "feedback"
+    },
+    "avatar": {
+      "name": "Avatar",
+      "type": "data-display",
+      "description": "An image element with a fallback for representing the user",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Avatar.tsx", "index.ts"],
+      "category": "data-display"
+    },
+    "hover-card": {
+      "name": "Hover Card",
+      "type": "data-display",
+      "description": "For sighted users to preview content available behind a link",
+      "dependencies": ["@radix-ui/react-hover-card"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["HoverCard.tsx", "index.ts"],
+      "category": "data-display"
+    },
+    "dropdown-menu": {
+      "name": "Dropdown Menu",
+      "type": "navigation",
+      "description": "Displays a menu to the user triggered by a button",
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["DropdownMenu.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "navigation-menu": {
+      "name": "Navigation Menu",
+      "type": "navigation",
+      "description": "A collection of links for navigating websites",
+      "dependencies": ["@radix-ui/react-navigation-menu"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["NavigationMenu.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "menubar": {
+      "name": "Menubar",
+      "type": "navigation",
+      "description": "A visually persistent menu common in desktop applications",
+      "dependencies": ["@radix-ui/react-menubar"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Menubar.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "context-menu": {
+      "name": "Context Menu",
+      "type": "navigation",
+      "description": "Displays a menu to the user triggered by right-click or long-press",
+      "dependencies": ["@radix-ui/react-context-menu"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["ContextMenu.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "popover": {
+      "name": "Popover",
+      "type": "navigation",
+      "description": "Displays rich content in a portal, triggered by a button",
+      "dependencies": ["@radix-ui/react-popover"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Popover.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "tooltip": {
+      "name": "Tooltip",
+      "type": "navigation",
+      "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it",
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Tooltip.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "line-chart": {
+      "name": "LineChart",
+      "type": "chart",
+      "description": "Display data as a responsive line chart with smooth curves and customizable styling",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/LineChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "bar-chart": {
+      "name": "BarChart",
+      "type": "chart",
+      "description": "Display data as vertical or horizontal bars with support for stacked and grouped layouts",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/BarChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "pie-chart": {
+      "name": "PieChart",
+      "type": "chart",
+      "description": "Display proportional data as a pie or donut chart with customizable labels and legend",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/PieChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "donut-chart": {
+      "name": "DonutChart",
+      "type": "chart",
+      "description": "Display proportional data as a donut chart with a hollow center",
+      "dependencies": ["vue-echarts", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/DonutChart.vue", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "area-chart": {
+      "name": "AreaChart",
+      "type": "chart",
+      "description": "Visualize cumulative totals over time with filled areas and gradient support",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/AreaChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "radar-chart": {
+      "name": "RadarChart",
+      "type": "chart",
+      "description": "Display multi-dimensional data comparison on a radial grid",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/RadarChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "scatter-chart": {
+      "name": "ScatterChart",
+      "type": "chart",
+      "description": "Display distribution and correlation analysis with scatter plots",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/ScatterChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "mixed-chart": {
+      "name": "MixedChart",
+      "type": "chart",
+      "description": "Combine multiple chart types (line, bar, area) in a single visualization",
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["charts/MixedChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "category": "charts"
+    },
+    "scroll-area": {
+      "name": "Scroll Area",
+      "type": "layout",
+      "description": "Augments native scroll functionality for custom, cross-browser styling",
+      "dependencies": ["@radix-ui/react-scroll-area"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["ScrollArea.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "aspect-ratio": {
+      "name": "Aspect Ratio",
+      "type": "layout",
+      "description": "Displays content within a desired aspect ratio",
+      "dependencies": ["@radix-ui/react-aspect-ratio"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["AspectRatio.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "toggle": {
+      "name": "Toggle",
+      "type": "interactive",
+      "description": "A two-state button that can be either on or off",
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Toggle.tsx", "variants.ts", "index.ts"],
+      "category": "interactive"
+    },
+    "toggle-group": {
+      "name": "Toggle Group",
+      "type": "interactive",
+      "description": "A set of two-state buttons that can be toggled on or off",
+      "dependencies": ["@radix-ui/react-toggle-group", "class-variance-authority"],
+      "devDependencies": [],
+      "registryDependencies": ["toggle"],
+      "files": ["ToggleGroup.tsx", "index.ts"],
+      "category": "interactive"
+    },
+    "resizable": {
+      "name": "Resizable",
+      "type": "layout",
+      "description": "Accessible resizable panel groups and layouts with keyboard support",
+      "dependencies": ["react-resizable-panels"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Resizable.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "empty": {
+      "name": "Empty",
+      "type": "feedback",
+      "description": "Displays an empty state placeholder",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Empty.tsx", "index.ts"],
+      "category": "feedback"
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "type": "feedback",
+      "description": "Use to show a placeholder while content is loading",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Skeleton.tsx", "index.ts"],
+      "category": "feedback"
+    },
+    "kbd": {
+      "name": "Kbd",
+      "type": "data-display",
+      "description": "Displays keyboard key combinations",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Kbd.tsx", "index.ts"],
+      "category": "data-display"
+    },
+    "typography": {
+      "name": "Typography",
+      "type": "data-display",
+      "description": "Text formatting and typography components",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Typography.tsx", "index.ts"],
+      "category": "data-display"
+    },
+    "pagination": {
+      "name": "Pagination",
+      "type": "navigation",
+      "description": "Page navigation with previous, next, and page numbers",
+      "dependencies": ["lucide-react"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Pagination.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "table": {
+      "name": "Table",
+      "type": "data-display",
+      "description": "A responsive table component for displaying data",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Table.tsx", "index.ts"],
+      "category": "data-display"
+    },
+    "calendar": {
+      "name": "Calendar",
+      "type": "form",
+      "description": "A date picker calendar component",
+      "dependencies": ["react-day-picker", "lucide-react"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Calendar.tsx", "index.ts"],
+      "category": "form"
+    },
+    "calendar-range": {
+      "name": "Calendar Range",
+      "type": "form",
+      "description": "A date range picker calendar component",
+      "dependencies": ["react-day-picker", "lucide-react"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["CalendarRange.tsx", "index.ts"],
+      "category": "form"
+    },
+    "command": {
+      "name": "Command",
+      "type": "navigation",
+      "description": "Command palette for keyboard-first navigation and search",
+      "dependencies": ["cmdk", "lucide-react"],
+      "devDependencies": [],
+      "registryDependencies": ["dialog"],
+      "files": ["Command.tsx", "index.ts"],
+      "category": "navigation"
+    },
+    "sheet": {
+      "name": "Sheet",
+      "type": "layout",
+      "description": "Slide-over panel that slides in from the edge of the screen",
+      "dependencies": ["@radix-ui/react-dialog", "class-variance-authority", "lucide-react"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Sheet.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "toolbar": {
+      "name": "Toolbar",
+      "type": "layout",
+      "description": "A container for grouping a set of controls",
+      "dependencies": ["@radix-ui/react-toolbar"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["Toolbar.tsx", "index.ts"],
+      "category": "layout"
+    },
+    "tags-input": {
+      "name": "Tags Input",
+      "type": "form",
+      "description": "Input field for entering multiple tags or values",
+      "dependencies": ["lucide-react"],
+      "devDependencies": [],
+      "registryDependencies": [],
+      "files": ["TagsInput.tsx", "index.ts"],
+      "category": "form"
+    }
+  },
+  "groups": {
+    "form": {
+      "name": "Form Components",
+      "components": ["button", "input", "label", "select", "checkbox", "radio-group", "switch", "slider", "textarea", "calendar", "calendar-range", "tags-input"]
+    },
+    "layout": {
+      "name": "Layout Components",
+      "components": ["separator", "accordion", "tabs", "dialog", "collapsible", "scroll-area", "aspect-ratio", "resizable", "sheet", "toolbar"]
+    },
+    "interactive": {
+      "name": "Interactive Components",
+      "components": ["toggle", "toggle-group"]
+    },
+    "feedback": {
+      "name": "Feedback Components",
+      "components": ["alert-dialog", "progress", "empty", "skeleton"]
+    },
+    "data-display": {
+      "name": "Data Display Components",
+      "components": ["avatar", "hover-card", "kbd", "typography", "table"]
+    },
+    "navigation": {
+      "name": "Navigation Components",
+      "components": ["dropdown-menu", "navigation-menu", "menubar", "context-menu", "popover", "tooltip", "pagination", "command"]
+    },
+    "charts": {
+      "name": "Chart Components",
+      "components": ["line-chart", "bar-chart", "pie-chart", "donut-chart", "area-chart", "radar-chart", "scatter-chart", "mixed-chart"]
+    }
+  }
+}

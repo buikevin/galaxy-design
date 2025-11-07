@@ -1,0 +1,51 @@
+{
+  "name": "@galaxy-ui/mcp-server",
+  "version": "0.1.0",
+  "description": "Model Context Protocol server for Galaxy UI - enables AI assistants to discover and use Galaxy UI components",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "galaxy-ui-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "registries"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "galaxy-ui",
+    "ai",
+    "claude",
+    "components",
+    "ui-components"
+  ],
+  "author": {
+    "name": "Bùi Trọng Hiếu (kevinbui)",
+    "email": "kevinbui210191@gmail.com",
+    "url": "https://github.com/buikevin"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buikevin/galaxy-ui",
+    "directory": "packages/mcp-server"
+  },
+  "bugs": {
+    "url": "https://github.com/buikevin/galaxy-ui/issues"
+  },
+  "homepage": "https://galaxy-ui.vercel.app",
+  "scripts": {
+    "build": "tsc && chmod +x dist/index.js",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.9",
+    "typescript": "^5.9.3"
+  }
+}

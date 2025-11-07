@@ -1,0 +1,80 @@
+{
+  "name": "@galaxy-ui/source",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Galaxy UI - Multi-framework component library (React, Vue, Angular, React Native, Flutter)",
+  "author": "Bùi Trọng Hiếu (kevinbui) <kevinbui210191@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buikevin/galaxy-design.git"
+  },
+  "homepage": "https://galaxy-design.vercel.app",
+  "bugs": {
+    "url": "https://github.com/buikevin/galaxy-design/issues"
+  },
+  "keywords": [
+    "galaxy-ui",
+    "ui-components",
+    "vue",
+    "react",
+    "angular",
+    "react-native",
+    "flutter",
+    "mobile",
+    "tailwind",
+    "nativewind",
+    "radix-ui",
+    "component-library",
+    "cross-platform"
+  ],
+  "scripts": {
+    "build": "nx run-many --target=build --all",
+    "test": "nx run-many --target=test --all",
+    "lint": "nx run-many --target=lint --all",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "private": false,
+  "packageManager": "bun@1.2.19",
+  "dependencies": {
+    "@angular/common": "~20.3.0",
+    "@angular/compiler": "~20.3.0",
+    "@angular/core": "~20.3.0",
+    "@angular/forms": "~20.3.0",
+    "@angular/platform-browser": "~20.3.0",
+    "@angular/router": "~20.3.0",
+    "lucide-angular": "^0.548.0",
+    "rxjs": "~7.8.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/core": "~20.3.0",
+    "@angular-devkit/schematics": "~20.3.0",
+    "@angular/cli": "~20.3.0",
+    "@angular/compiler-cli": "~20.3.0",
+    "@angular/language-service": "~20.3.0",
+    "@eslint/js": "^9.8.0",
+    "@nx/angular": "22.0.2",
+    "@nx/eslint": "22.0.2",
+    "@nx/eslint-plugin": "22.0.2",
+    "@nx/js": "22.0.2",
+    "@schematics/angular": "~20.3.0",
+    "@swc-node/register": "~1.9.1",
+    "@swc/cli": "~0.6.0",
+    "@swc/core": "~1.5.7",
+    "@swc/helpers": "~0.5.11",
+    "@types/node": "20.19.9",
+    "@typescript-eslint/utils": "^8.40.0",
+    "angular-eslint": "^20.3.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^10.0.0",
+    "nx": "22.0.2",
+    "prettier": "^2.6.2",
+    "tslib": "^2.3.0",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.40.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

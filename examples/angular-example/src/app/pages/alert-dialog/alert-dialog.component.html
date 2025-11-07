@@ -1,0 +1,66 @@
+<div class="space-y-8">
+	<div>
+		<h1 class="text-3xl font-bold">Alert Dialog</h1>
+		<p class="text-muted-foreground mt-2">
+			A modal dialog that interrupts the user with important content.
+		</p>
+	</div>
+
+	<div class="space-y-4">
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Basic Alert Dialog</h2>
+			<div class="rounded-lg border p-6">
+				<ui-alert-dialog [(open)]="open">
+					<ui-alert-dialog-trigger>
+						<ui-button>Show Dialog</ui-button>
+					</ui-alert-dialog-trigger>
+					<ui-alert-dialog-content>
+						<ui-alert-dialog-header>
+							<ui-alert-dialog-title>Are you absolutely sure?</ui-alert-dialog-title>
+							<ui-alert-dialog-description>
+								This action cannot be undone. This will permanently delete your account
+								and remove your data from our servers.
+							</ui-alert-dialog-description>
+						</ui-alert-dialog-header>
+						<ui-alert-dialog-footer>
+							<ui-alert-dialog-cancel>
+								<ui-button variant="outline">Cancel</ui-button>
+							</ui-alert-dialog-cancel>
+							<ui-alert-dialog-action>
+								<ui-button (click)="handleContinue()">Continue</ui-button>
+							</ui-alert-dialog-action>
+						</ui-alert-dialog-footer>
+					</ui-alert-dialog-content>
+				</ui-alert-dialog>
+			</div>
+		</div>
+
+		<div>
+			<h2 class="text-xl font-semibold mb-4">Destructive Action</h2>
+			<div class="rounded-lg border p-6">
+				<ui-alert-dialog [(open)]="destructiveOpen">
+					<ui-alert-dialog-trigger>
+						<ui-button variant="destructive">Delete Account</ui-button>
+					</ui-alert-dialog-trigger>
+					<ui-alert-dialog-content>
+						<ui-alert-dialog-header>
+							<ui-alert-dialog-title>Delete Account</ui-alert-dialog-title>
+							<ui-alert-dialog-description>
+								This will permanently delete your account. All your data will be lost.
+								This action is irreversible.
+							</ui-alert-dialog-description>
+						</ui-alert-dialog-header>
+						<ui-alert-dialog-footer>
+							<ui-alert-dialog-cancel>
+								<ui-button variant="outline">Cancel</ui-button>
+							</ui-alert-dialog-cancel>
+							<ui-alert-dialog-action>
+								<ui-button variant="destructive" (click)="handleDelete()">Delete</ui-button>
+							</ui-alert-dialog-action>
+						</ui-alert-dialog-footer>
+					</ui-alert-dialog-content>
+				</ui-alert-dialog>
+			</div>
+		</div>
+	</div>
+</div>

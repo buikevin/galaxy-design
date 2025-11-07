@@ -1,0 +1,60 @@
+{
+  "$schema": "../schemas/registry-schema.json",
+  "name": "react-native-blocks",
+  "components": {
+    "chat-ui": {
+      "name": "Chat UI (Mobile)",
+      "type": "block",
+      "description": "Mobile-optimized chat interface with message list, input, and touch-friendly controls",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["avatar", "button", "textarea"],
+      "files": [
+        "types.ts",
+        "ChatMessage.tsx",
+        "MessageList.tsx",
+        "MessageInput.tsx",
+        "ChatUI.tsx",
+        "index.ts"
+      ],
+      "category": "mobile-blocks"
+    },
+    "sidebar": {
+      "name": "Drawer Navigation (Mobile)",
+      "type": "block",
+      "description": "Mobile drawer navigation with swipe gestures and nested menu items",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        "types.ts",
+        "DrawerItem.tsx",
+        "Drawer.tsx",
+        "index.ts"
+      ],
+      "category": "mobile-blocks"
+    },
+    "authentication": {
+      "name": "Authentication (Mobile)",
+      "type": "block",
+      "description": "Mobile-optimized authentication forms with native keyboard handling",
+      "dependencies": [],
+      "devDependencies": [],
+      "registryDependencies": ["button", "input", "label", "checkbox"],
+      "files": [
+        "types.ts",
+        "LoginForm.tsx",
+        "RegisterForm.tsx",
+        "AuthForm.tsx",
+        "index.ts"
+      ],
+      "category": "mobile-blocks"
+    }
+  },
+  "groups": {
+    "all-mobile-blocks": {
+      "name": "All Mobile Blocks",
+      "components": ["chat-ui", "sidebar", "authentication"]
+    }
+  }
+}

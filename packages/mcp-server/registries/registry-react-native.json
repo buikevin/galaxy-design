@@ -1,0 +1,491 @@
+{
+  "platform": "react-native",
+  "version": "1.0.0",
+  "components": {
+    "accordion": {
+      "name": "Accordion",
+      "type": "layout",
+      "description": "Collapsible accordion component for expandable content sections",
+      "files": ["accordion/Accordion.tsx", "accordion/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Accordion", "AccordionItem", "AccordionTrigger", "AccordionContent"]
+    },
+    "alert": {
+      "name": "Alert",
+      "type": "feedback",
+      "description": "Alert component for displaying important messages with variants",
+      "files": ["alert/Alert.tsx", "alert/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Alert", "AlertTitle", "AlertDescription"]
+    },
+    "alert-dialog": {
+      "name": "Alert Dialog",
+      "type": "overlay",
+      "description": "Modal alert dialog for important confirmations and decisions",
+      "files": ["alert-dialog/AlertDialog.tsx", "alert-dialog/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["AlertDialog", "AlertDialogContent", "AlertDialogHeader", "AlertDialogFooter", "AlertDialogTitle", "AlertDialogDescription", "AlertDialogAction", "AlertDialogCancel"]
+    },
+    "aspect-ratio": {
+      "name": "Aspect Ratio",
+      "type": "layout",
+      "description": "Container that maintains a specific aspect ratio for its content",
+      "files": ["aspect-ratio/AspectRatio.tsx", "aspect-ratio/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["AspectRatio"]
+    },
+    "avatar": {
+      "name": "Avatar",
+      "type": "data-display",
+      "description": "Avatar component for displaying user profile images with fallback",
+      "files": ["avatar/Avatar.tsx", "avatar/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Avatar", "AvatarImage", "AvatarFallback", "AvatarGroup"]
+    },
+    "badge": {
+      "name": "Badge",
+      "type": "data-display",
+      "description": "Badge component for status indicators, counts, and labels",
+      "files": ["badge/Badge.tsx", "badge/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Badge"]
+    },
+    "button": {
+      "name": "Button",
+      "type": "form",
+      "description": "Button component with multiple variants, sizes, and states",
+      "files": ["button/Button.tsx", "button/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Button"]
+    },
+    "card": {
+      "name": "Card",
+      "type": "layout",
+      "description": "Card container with header, content, and footer sections",
+      "files": ["card/Card.tsx", "card/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Card", "CardHeader", "CardTitle", "CardDescription", "CardContent", "CardFooter"]
+    },
+    "checkbox": {
+      "name": "Checkbox",
+      "type": "form",
+      "description": "Checkbox input with label and indeterminate state support",
+      "files": ["checkbox/Checkbox.tsx", "checkbox/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Checkbox"]
+    },
+    "collapsible": {
+      "name": "Collapsible",
+      "type": "layout",
+      "description": "Collapsible container for showing and hiding content",
+      "files": ["collapsible/Collapsible.tsx", "collapsible/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Collapsible", "CollapsibleTrigger", "CollapsibleContent"]
+    },
+    "context-menu": {
+      "name": "Context Menu",
+      "type": "overlay",
+      "description": "Context menu triggered by long press gesture",
+      "files": ["context-menu/ContextMenu.tsx", "context-menu/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["ContextMenu", "ContextMenuTrigger", "ContextMenuContent", "ContextMenuItem", "ContextMenuSeparator"]
+    },
+    "date-picker": {
+      "name": "Date Picker",
+      "type": "form",
+      "description": "Date picker with single date and date range selection",
+      "files": ["date-picker/DatePicker.tsx", "date-picker/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native", "@react-native-community/datetimepicker"],
+      "exports": ["DatePicker", "DateRangePicker"]
+    },
+    "dialog": {
+      "name": "Dialog",
+      "type": "overlay",
+      "description": "Modal dialog for displaying content over the main interface",
+      "files": ["dialog/Dialog.tsx", "dialog/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Dialog", "DialogContent", "DialogHeader", "DialogFooter", "DialogTitle", "DialogDescription"]
+    },
+    "dropdown-menu": {
+      "name": "Dropdown Menu",
+      "type": "overlay",
+      "description": "Dropdown menu for displaying a list of actions or options",
+      "files": ["dropdown-menu/DropdownMenu.tsx", "dropdown-menu/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["DropdownMenu", "DropdownMenuTrigger", "DropdownMenuContent", "DropdownMenuItem", "DropdownMenuSeparator", "DropdownMenuLabel"]
+    },
+    "empty": {
+      "name": "Empty",
+      "type": "data-display",
+      "description": "Empty state component with presets for no data, errors, and offline states",
+      "files": ["empty/Empty.tsx", "empty/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Empty"]
+    },
+    "hover-card": {
+      "name": "Hover Card",
+      "type": "overlay",
+      "description": "Hover card for displaying additional information on press",
+      "files": ["hover-card/HoverCard.tsx", "hover-card/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["HoverCard", "HoverCardTrigger", "HoverCardContent"]
+    },
+    "input": {
+      "name": "Input",
+      "type": "form",
+      "description": "Text input component with label, placeholder, and error states",
+      "files": ["input/Input.tsx", "input/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Input"]
+    },
+    "label": {
+      "name": "Label",
+      "type": "form",
+      "description": "Label component for form inputs",
+      "files": ["label/Label.tsx", "label/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Label"]
+    },
+    "menubar": {
+      "name": "Menubar",
+      "type": "navigation",
+      "description": "Menubar component for horizontal navigation menus",
+      "files": ["menubar/Menubar.tsx", "menubar/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Menubar", "MenubarMenu", "MenubarTrigger", "MenubarContent", "MenubarItem", "MenubarSeparator"]
+    },
+    "navigation-menu": {
+      "name": "Navigation Menu",
+      "type": "navigation",
+      "description": "Navigation menu with bottom tab and drawer variants",
+      "files": ["navigation-menu/NavigationMenu.tsx", "navigation-menu/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["NavigationMenu", "NavigationMenuItem", "DrawerMenu"]
+    },
+    "pagination": {
+      "name": "Pagination",
+      "type": "navigation",
+      "description": "Pagination component with compact, full, and load more variants",
+      "files": ["pagination/Pagination.tsx", "pagination/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Pagination"]
+    },
+    "popover": {
+      "name": "Popover",
+      "type": "overlay",
+      "description": "Popover component for displaying floating content",
+      "files": ["popover/Popover.tsx", "popover/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Popover", "PopoverTrigger", "PopoverContent"]
+    },
+    "progress": {
+      "name": "Progress",
+      "type": "feedback",
+      "description": "Progress bar component for showing task completion",
+      "files": ["progress/Progress.tsx", "progress/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Progress"]
+    },
+    "radio-group": {
+      "name": "Radio Group",
+      "type": "form",
+      "description": "Radio button group for single selection from multiple options",
+      "files": ["radio-group/RadioGroup.tsx", "radio-group/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["RadioGroup", "RadioGroupItem"]
+    },
+    "select": {
+      "name": "Select",
+      "type": "form",
+      "description": "Select dropdown component for choosing from a list of options",
+      "files": ["select/Select.tsx", "select/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Select", "SelectTrigger", "SelectContent", "SelectItem", "SelectValue"]
+    },
+    "separator": {
+      "name": "Separator",
+      "type": "layout",
+      "description": "Visual separator line for dividing content",
+      "files": ["separator/Separator.tsx", "separator/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Separator"]
+    },
+    "sheet": {
+      "name": "Sheet",
+      "type": "overlay",
+      "description": "Bottom sheet and side sheet component with header and footer",
+      "files": ["sheet/Sheet.tsx", "sheet/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Sheet", "SheetContent", "SheetHeader", "SheetFooter", "SheetTitle", "SheetDescription"]
+    },
+    "skeleton": {
+      "name": "Skeleton",
+      "type": "feedback",
+      "description": "Skeleton loading placeholder component",
+      "files": ["skeleton/Skeleton.tsx", "skeleton/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Skeleton"]
+    },
+    "slider": {
+      "name": "Slider",
+      "type": "form",
+      "description": "Slider component for selecting a value from a range",
+      "files": ["slider/Slider.tsx", "slider/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Slider"]
+    },
+    "switch": {
+      "name": "Switch",
+      "type": "form",
+      "description": "Toggle switch component for boolean input",
+      "files": ["switch/Switch.tsx", "switch/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Switch"]
+    },
+    "table": {
+      "name": "Table",
+      "type": "data-display",
+      "description": "Table component for displaying structured data",
+      "files": ["table/Table.tsx", "table/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Table", "TableHeader", "TableBody", "TableRow", "TableHead", "TableCell"]
+    },
+    "tabs": {
+      "name": "Tabs",
+      "type": "navigation",
+      "description": "Tabs component for organizing content into sections",
+      "files": ["tabs/Tabs.tsx", "tabs/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"]
+    },
+    "textarea": {
+      "name": "Textarea",
+      "type": "form",
+      "description": "Multi-line text input component",
+      "files": ["textarea/Textarea.tsx", "textarea/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Textarea"]
+    },
+    "toggle": {
+      "name": "Toggle",
+      "type": "form",
+      "description": "Toggle button for binary state changes",
+      "files": ["toggle/Toggle.tsx", "toggle/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Toggle"]
+    },
+    "toggle-group": {
+      "name": "Toggle Group",
+      "type": "form",
+      "description": "Group of toggle buttons for single or multiple selection",
+      "files": ["toggle-group/ToggleGroup.tsx", "toggle-group/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["ToggleGroup", "ToggleGroupItem"]
+    },
+    "tooltip": {
+      "name": "Tooltip",
+      "type": "overlay",
+      "description": "Tooltip component for displaying helpful information on press",
+      "files": ["tooltip/Tooltip.tsx", "tooltip/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Tooltip", "TooltipTrigger", "TooltipContent"]
+    },
+    "typography": {
+      "name": "Typography",
+      "type": "data-display",
+      "description": "Typography component with 11 text variants (h1-h4, p, lead, large, small, muted, blockquote, code)",
+      "files": ["typography/Typography.tsx", "typography/index.ts"],
+      "dependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["Typography"]
+    },
+    "line-chart": {
+      "name": "LineChart",
+      "type": "chart",
+      "description": "Display data as a responsive line chart with smooth curves and customizable styling, optimized for mobile",
+      "files": ["charts/LineChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["LineChart"]
+    },
+    "bar-chart": {
+      "name": "BarChart",
+      "type": "chart",
+      "description": "Display data as vertical or horizontal bars with support for stacked and grouped layouts, optimized for mobile",
+      "files": ["charts/BarChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["BarChart"]
+    },
+    "pie-chart": {
+      "name": "PieChart",
+      "type": "chart",
+      "description": "Display proportional data as a pie or donut chart with customizable labels and legend, optimized for mobile",
+      "files": ["charts/PieChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["PieChart"]
+    },
+    "area-chart": {
+      "name": "AreaChart",
+      "type": "chart",
+      "description": "Visualize cumulative totals over time with filled areas and gradient support, optimized for mobile",
+      "files": ["charts/AreaChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["AreaChart"]
+    },
+    "radar-chart": {
+      "name": "RadarChart",
+      "type": "chart",
+      "description": "Display multi-dimensional data comparison on a radial grid, optimized for mobile",
+      "files": ["charts/RadarChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["RadarChart"]
+    },
+    "scatter-chart": {
+      "name": "ScatterChart",
+      "type": "chart",
+      "description": "Display distribution and correlation analysis with scatter plots, optimized for mobile",
+      "files": ["charts/ScatterChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["ScatterChart"]
+    },
+    "mixed-chart": {
+      "name": "MixedChart",
+      "type": "chart",
+      "description": "Combine multiple chart types (line, bar, area) in a single visualization, optimized for mobile",
+      "files": ["charts/MixedChart.tsx", "charts/types.ts", "charts/utils.ts", "charts/index.ts"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts", "@shopify/react-native-skia"],
+      "peerDependencies": ["react", "react-native"],
+      "exports": ["MixedChart"]
+    }
+  },
+  "groups": {
+    "form": {
+      "name": "Form Components",
+      "description": "Input and form control components",
+      "components": [
+        "button",
+        "checkbox",
+        "date-picker",
+        "input",
+        "label",
+        "radio-group",
+        "select",
+        "slider",
+        "switch",
+        "textarea",
+        "toggle",
+        "toggle-group"
+      ]
+    },
+    "layout": {
+      "name": "Layout Components",
+      "description": "Components for structuring content",
+      "components": [
+        "accordion",
+        "aspect-ratio",
+        "card",
+        "collapsible",
+        "separator"
+      ]
+    },
+    "navigation": {
+      "name": "Navigation Components",
+      "description": "Components for navigation and routing",
+      "components": [
+        "menubar",
+        "navigation-menu",
+        "pagination",
+        "tabs"
+      ]
+    },
+    "data-display": {
+      "name": "Data Display Components",
+      "description": "Components for displaying data and content",
+      "components": [
+        "avatar",
+        "badge",
+        "empty",
+        "table",
+        "typography"
+      ]
+    },
+    "overlay": {
+      "name": "Overlay Components",
+      "description": "Modal dialogs, popovers, and floating content",
+      "components": [
+        "alert-dialog",
+        "context-menu",
+        "dialog",
+        "dropdown-menu",
+        "hover-card",
+        "popover",
+        "sheet",
+        "tooltip"
+      ]
+    },
+    "feedback": {
+      "name": "Feedback Components",
+      "description": "Components for user feedback and status",
+      "components": [
+        "alert",
+        "progress",
+        "skeleton"
+      ]
+    },
+    "charts": {
+      "name": "Chart Components",
+      "description": "Data visualization and chart components",
+      "components": [
+        "line-chart",
+        "bar-chart",
+        "pie-chart",
+        "donut-chart",
+        "area-chart",
+        "radar-chart",
+        "scatter-chart",
+        "mixed-chart"
+      ]
+    }
+  }
+}
