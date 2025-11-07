@@ -1,9 +1,10 @@
 {
-  "buildCommand": "cd docs && npm run build",
-  "outputDirectory": "docs/.vitepress/dist",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".vitepress/dist",
+  "rootDirectory": "docs",
   "framework": "vitepress",
   "installCommand": "npm install",
-  "devCommand": "cd docs && npm run dev",
+  "devCommand": "npm run dev",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
