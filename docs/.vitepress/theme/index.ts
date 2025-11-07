@@ -53,15 +53,17 @@ import DialogDemoSimple from '../components/demos/DialogDemoSimple.vue'
 import DialogDemoDebug from '../components/demos/DialogDemoDebug.vue'
 import DialogDemoWorking from '../components/demos/DialogDemoWorking.vue'
 
-// Chart demo components
-import LineChartDemo from '../components/demos/LineChartDemo.vue'
-import BarChartDemo from '../components/demos/BarChartDemo.vue'
-import PieChartDemo from '../components/demos/PieChartDemo.vue'
-import DonutChartDemo from '../components/demos/DonutChartDemo.vue'
-import AreaChartDemo from '../components/demos/AreaChartDemo.vue'
-import RadarChartDemo from '../components/demos/RadarChartDemo.vue'
-import ScatterChartDemo from '../components/demos/ScatterChartDemo.vue'
-import MixedChartDemo from '../components/demos/MixedChartDemo.vue'
+// Chart demo components - use dynamic imports to avoid SSR issues with vue-echarts
+import { defineAsyncComponent } from 'vue'
+
+const LineChartDemo = defineAsyncComponent(() => import('../components/demos/LineChartDemo.vue'))
+const BarChartDemo = defineAsyncComponent(() => import('../components/demos/BarChartDemo.vue'))
+const PieChartDemo = defineAsyncComponent(() => import('../components/demos/PieChartDemo.vue'))
+const DonutChartDemo = defineAsyncComponent(() => import('../components/demos/DonutChartDemo.vue'))
+const AreaChartDemo = defineAsyncComponent(() => import('../components/demos/AreaChartDemo.vue'))
+const RadarChartDemo = defineAsyncComponent(() => import('../components/demos/RadarChartDemo.vue'))
+const ScatterChartDemo = defineAsyncComponent(() => import('../components/demos/ScatterChartDemo.vue'))
+const MixedChartDemo = defineAsyncComponent(() => import('../components/demos/MixedChartDemo.vue'))
 
 import './tailwind.css'
 import './style.css'
