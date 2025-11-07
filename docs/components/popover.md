@@ -139,24 +139,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add popover
+npx galaxy-design@latest add popover
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add popover
+pnpm dlx galaxy-design@latest add popover
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add popover
+yarn dlx galaxy-design@latest add popover
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add popover
+bunx galaxy-design@latest add popover
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add popover
+# If you have installed galaxy-design globally
+galaxy-design add popover
 ```
 
 :::

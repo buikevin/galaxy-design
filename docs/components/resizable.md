@@ -33,24 +33,24 @@ export class DemoComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add resizable
+npx galaxy-design@latest add resizable
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add resizable
+pnpm dlx galaxy-design@latest add resizable
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add resizable
+yarn dlx galaxy-design@latest add resizable
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add resizable
+bunx galaxy-design@latest add resizable
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add resizable
+# If you have installed galaxy-design globally
+galaxy-design add resizable
 ```
 
 :::

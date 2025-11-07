@@ -46,15 +46,15 @@ export class DemoComponent {
 
 ::: code-group
 ```bash [React]
-npx galaxy-ui-cli add pagination
+npx galaxy-design add pagination
 ```
 
 ```bash [Vue]
-npx galaxy-ui-cli add pagination
+npx galaxy-design add pagination
 ```
 
 ```bash [Angular]
-npx galaxy-ui-cli add pagination
+npx galaxy-design add pagination
 ```
 :::
 

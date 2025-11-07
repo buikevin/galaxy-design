@@ -40,16 +40,16 @@ You don't need to install Galaxy UI CLI globally. You can use it directly with y
 
 ```bash
 # npm
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 
 # pnpm
-pnpm dlx galaxy-ui-cli@latest init
+pnpm dlx galaxy-design@latest init
 
 # yarn
-yarn dlx galaxy-ui-cli@latest init
+yarn dlx galaxy-design@latest init
 
 # bun
-bunx galaxy-ui-cli@latest init
+bunx galaxy-design@latest init
 ```
 
 ### Add Components
@@ -58,27 +58,27 @@ After initialization, add components to your project:
 
 ```bash
 # npm
-npx galaxy-ui-cli@latest add button
+npx galaxy-design@latest add button
 
 # pnpm
-pnpm dlx galaxy-ui-cli@latest add button
+pnpm dlx galaxy-design@latest add button
 
 # yarn
-yarn dlx galaxy-ui-cli@latest add button
+yarn dlx galaxy-design@latest add button
 
 # bun
-bunx galaxy-ui-cli@latest add button
+bunx galaxy-design@latest add button
 ```
 
 ### Add Multiple Components
 
 ```bash
 # Add multiple components at once
-npx galaxy-ui-cli@latest add button input dialog
+npx galaxy-design@latest add button input dialog
 
 # Or use the shorthand with global installation
-npm install -g galaxy-ui-cli
-galaxy-ui-cli add button input select
+npm install -g galaxy-design
+galaxy-design add button input select
 ```
 
 ### Tailwind CSS Setup
@@ -105,7 +105,7 @@ bunx tailwindcss init -p
 
 ### What the Init Command Does
 
-The `galaxy-ui-cli init` command will:
+The `galaxy-design init` command will:
 
 1. ✅ Detect your framework (Vue, React, Angular, React Native, or Flutter)
 2. ✅ Create `components.json` configuration file
@@ -320,7 +320,7 @@ bun run dev
 
 | Package | Description | Status |
 |---------|-------------|--------|
-| `galaxy-ui-cli` | CLI tool (init, add commands) | ✅ Complete |
+| `galaxy-design` | CLI tool (init, add commands) | ✅ Complete |
 | Component Templates | 41 component templates (Vue, React, Angular) | ✅ Complete |
 
 ## 🗺️ Roadmap
@@ -331,8 +331,8 @@ bun run dev
 - ✅ Multi-framework architecture
 
 ### ✅ Phase 2: CLI Tool (Complete)
-- ✅ `galaxy-ui-cli init` command
-- ✅ `galaxy-ui-cli add` command
+- ✅ `galaxy-design init` command
+- ✅ `galaxy-design add` command
 - ✅ Framework auto-detection
 - ✅ Package manager detection
 
@@ -376,7 +376,7 @@ bun run dev
 - **Documentation**: 82+ pages (41 EN + 41 VI) in VitePress + mobile guides
 - **CLI**: ✅ Fully functional (init & add commands) with mobile support
 - **Build Status**: ✅ All components compile successfully
-- **Deployment**: ✅ Docs deployed at https://galaxy-ui-cli.vercel.app
+- **Deployment**: ✅ Docs deployed at https://galaxy-design.vercel.app
 - **Status**: Production-ready & ready for npm publish
 
 ## 🤝 Contributing

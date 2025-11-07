@@ -5,7 +5,7 @@ Mobile-optimized authentication forms with native keyboard handling, biometric s
 ## Installation
 
 ```bash
-npx galaxy-ui-cli add authentication
+npx galaxy-design add authentication
 ```
 
 ::: info Platform

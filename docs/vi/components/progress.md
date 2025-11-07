@@ -7,19 +7,19 @@ Hiển thị chỉ báo tiến trình hoàn thành của một tác vụ, thư�
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add progress
+npx galaxy-design@latest add progress
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add progress
+pnpm dlx galaxy-design@latest add progress
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add progress
+yarn dlx galaxy-design@latest add progress
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add progress
+bunx galaxy-design@latest add progress
 ```
 
 :::

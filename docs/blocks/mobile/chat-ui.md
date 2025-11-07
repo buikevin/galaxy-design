@@ -5,7 +5,7 @@ Mobile-optimized chat interface with touch-friendly controls, native keyboard ha
 ## Installation
 
 ```bash
-npx galaxy-ui-cli add chat-ui
+npx galaxy-design add chat-ui
 ```
 
 ::: info Platform

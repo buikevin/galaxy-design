@@ -210,13 +210,13 @@ Let me get the installation details.
 Here's how to set it up:
 
 1. First, install Galaxy UI CLI:
-   npm install -g galaxy-ui-cli
+   npm install -g galaxy-design
 
 2. Initialize Galaxy UI in your React project:
-   npx galaxy-ui-cli init --framework react
+   npx galaxy-design init --framework react
 
 3. Add the components:
-   npx galaxy-ui-cli add button input select
+   npx galaxy-design add button input select
 
 The Button component requires:
 - @radix-ui/react-slot

@@ -148,24 +148,24 @@ class _MyAppState extends State<MyApp> {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add toggle-group
+npx galaxy-design@latest add toggle-group
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add toggle-group
+pnpm dlx galaxy-design@latest add toggle-group
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add toggle-group
+yarn dlx galaxy-design@latest add toggle-group
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add toggle-group
+bunx galaxy-design@latest add toggle-group
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add toggle-group
+# If you have installed galaxy-design globally
+galaxy-design add toggle-group
 ```
 
 :::

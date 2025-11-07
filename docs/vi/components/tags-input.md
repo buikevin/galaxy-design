@@ -32,15 +32,15 @@ export class DemoComponent {}
 
 ::: code-group
 ```bash [React]
-npx galaxy-ui-cli add tags-input
+npx galaxy-design add tags-input
 ```
 
 ```bash [Vue]
-npx galaxy-ui-cli add tags-input
+npx galaxy-design add tags-input
 ```
 
 ```bash [Angular]
-npx galaxy-ui-cli add tags-input
+npx galaxy-design add tags-input
 ```
 :::
 

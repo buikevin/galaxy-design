@@ -66,19 +66,19 @@ export class AppComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add checkbox
+npx galaxy-design@latest add checkbox
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add checkbox
+pnpm dlx galaxy-design@latest add checkbox
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add checkbox
+yarn dlx galaxy-design@latest add checkbox
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add checkbox
+bunx galaxy-design@latest add checkbox
 ```
 
 :::

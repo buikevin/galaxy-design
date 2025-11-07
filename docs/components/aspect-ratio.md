@@ -112,24 +112,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add aspect-ratio
+npx galaxy-design@latest add aspect-ratio
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add aspect-ratio
+pnpm dlx galaxy-design@latest add aspect-ratio
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add aspect-ratio
+yarn dlx galaxy-design@latest add aspect-ratio
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add aspect-ratio
+bunx galaxy-design@latest add aspect-ratio
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add aspect-ratio
+# If you have installed galaxy-design globally
+galaxy-design add aspect-ratio
 ```
 
 :::

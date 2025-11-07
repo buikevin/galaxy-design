@@ -63,34 +63,34 @@ features:
 
 ```bash [npm]
 # Initialize your project
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 
 # Add components
-npx galaxy-ui-cli@latest add button input dialog
+npx galaxy-design@latest add button input dialog
 ```
 
 ```bash [pnpm]
 # Initialize your project
-pnpm dlx galaxy-ui-cli@latest init
+pnpm dlx galaxy-design@latest init
 
 # Add components
-pnpm dlx galaxy-ui-cli@latest add button input dialog
+pnpm dlx galaxy-design@latest add button input dialog
 ```
 
 ```bash [yarn]
 # Initialize your project
-yarn dlx galaxy-ui-cli@latest init
+yarn dlx galaxy-design@latest init
 
 # Add components
-yarn dlx galaxy-ui-cli@latest add button input dialog
+yarn dlx galaxy-design@latest add button input dialog
 ```
 
 ```bash [bun]
 # Initialize your project
-bunx galaxy-ui-cli@latest init
+bunx galaxy-design@latest init
 
 # Add components
-bunx galaxy-ui-cli@latest add button input dialog
+bunx galaxy-design@latest add button input dialog
 ```
 
 :::

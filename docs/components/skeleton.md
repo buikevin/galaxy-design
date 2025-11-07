@@ -128,20 +128,20 @@ class MyApp extends StatelessWidget {
 
 ::: code-group
 ```bash [React]
-npx galaxy-ui-cli add skeleton
+npx galaxy-design add skeleton
 ```
 
 ```bash [Vue]
-npx galaxy-ui-cli add skeleton
+npx galaxy-design add skeleton
 ```
 
 ```bash [Angular]
-npx galaxy-ui-cli add skeleton
+npx galaxy-design add skeleton
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add skeleton
+# If you have installed galaxy-design globally
+galaxy-design add skeleton
 ```
 :::
 

@@ -156,19 +156,19 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add radar-chart
+npx galaxy-design@latest add radar-chart
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add radar-chart
+pnpm dlx galaxy-design@latest add radar-chart
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add radar-chart
+yarn dlx galaxy-design@latest add radar-chart
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add radar-chart
+bunx galaxy-design@latest add radar-chart
 ```
 
 :::

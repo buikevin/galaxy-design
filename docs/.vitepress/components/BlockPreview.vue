@@ -22,7 +22,7 @@ const activeTab = ref<'preview' | 'code'>('preview')
 const activeFramework = ref(props.frameworks[0])
 
 const getInstallCommand = (framework: typeof activeFramework.value) => {
-  return `npx galaxy-ui-cli add ${props.name.toLowerCase().replace(/\s+/g, '-')}`
+  return `npx galaxy-design add ${props.name.toLowerCase().replace(/\s+/g, '-')}`
 }
 
 const getCode = (framework: typeof activeFramework.value) => {

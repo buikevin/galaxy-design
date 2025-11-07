@@ -24,7 +24,7 @@ export const sharedConfig = defineConfig({
     ['meta', { name: 'theme-color', content: '#06B6D4' }],
     ['meta', { name: 'og:type', content: 'website' }],
     ['meta', { name: 'og:site_name', content: 'Galaxy UI CLI' }],
-    ['meta', { name: 'og:image', content: 'https://galaxy-ui-cli.vercel.app/galaxy-logo.png' }],
+    ['meta', { name: 'og:image', content: 'https://galaxy-design.vercel.app/galaxy-logo.png' }],
     ['meta', { name: 'author', content: 'Bùi Trọng Hiếu (kevinbui)' }],
     ['meta', { name: 'og:author', content: 'Bùi Trọng Hiếu (kevinbui)' }],
   ],

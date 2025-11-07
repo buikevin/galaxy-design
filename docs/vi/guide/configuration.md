@@ -4,7 +4,7 @@ Tìm hiểu cách cấu hình Galaxy UI cho dự án của bạn bằng `compone
 
 ## components.json
 
-File `components.json` được tạo khi bạn chạy `galaxy-ui-cli init`. Nó lưu trữ cấu hình và tùy chọn của dự án.
+File `components.json` được tạo khi bạn chạy `galaxy-design init`. Nó lưu trữ cấu hình và tùy chọn của dự án.
 
 ### Vị Trí File
 

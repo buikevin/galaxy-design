@@ -65,19 +65,19 @@ export class AppComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add toggle
+npx galaxy-design@latest add toggle
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add toggle
+pnpm dlx galaxy-design@latest add toggle
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add toggle
+yarn dlx galaxy-design@latest add toggle
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add toggle
+bunx galaxy-design@latest add toggle
 ```
 
 :::

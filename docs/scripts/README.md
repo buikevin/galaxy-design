@@ -24,7 +24,7 @@ docs/scripts/
 ### 1. Generate docs cho 1 component
 
 ```bash
-cd /path/to/galaxy-ui-cli
+cd /path/to/galaxy-design
 bun run docs/scripts/generate-docs-bilingual.ts button
 ```
 
@@ -402,7 +402,7 @@ Cần thêm config cho các components sau:
 
 ## 📚 Resources
 
-- [Galaxy UI CLI Docs](https://galaxy-ui-cli.vercel.app)
+- [Galaxy UI CLI Docs](https://galaxy-design.vercel.app)
 - [Radix UI](https://radix-ui.com)
 - [Radix Vue](https://radix-vue.com)
 - [Spartan NG](https://spartan.ng)

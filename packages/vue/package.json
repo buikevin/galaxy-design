@@ -44,13 +44,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/buikevin/galaxy-ui-cli",
+    "url": "https://github.com/buikevin/galaxy-design",
     "directory": "packages/vue"
   },
   "bugs": {
-    "url": "https://github.com/buikevin/galaxy-ui-cli/issues"
+    "url": "https://github.com/buikevin/galaxy-design/issues"
   },
-  "homepage": "https://github.com/buikevin/galaxy-ui-cli#readme",
+  "homepage": "https://github.com/buikevin/galaxy-design#readme",
   "peerDependencies": {
     "vue": "^3.4.0"
   },

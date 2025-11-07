@@ -16,19 +16,19 @@ Initialize Galaxy UI in your React project:
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest init
+pnpm dlx galaxy-design@latest init
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest init
+yarn dlx galaxy-design@latest init
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest init
+bunx galaxy-design@latest init
 ```
 
 :::
@@ -57,7 +57,7 @@ cd my-app
 npm install
 
 # Initialize Galaxy UI
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 ```
 
 ### Vite Configuration
@@ -119,7 +119,7 @@ Update `tsconfig.json`:
 Add components to your project:
 
 ```bash
-npx galaxy-ui-cli@latest add button
+npx galaxy-design@latest add button
 ```
 
 This will:

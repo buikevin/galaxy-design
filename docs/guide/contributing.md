@@ -20,7 +20,7 @@ Thank you for your interest in contributing to Galaxy UI! This guide will help y
 
    ```bash
    git clone https://github.com/YOUR_USERNAME/galaxy-design.git
-   cd galaxy-ui-cli
+   cd galaxy-design
    ```
 
 3. **Add upstream remote**
@@ -42,7 +42,7 @@ bun install
 ## Project Structure
 
 ```
-galaxy-ui-cli/
+galaxy-design/
 ├── packages/
 │   ├── cli/                 # CLI tool source
 │   │   ├── src/

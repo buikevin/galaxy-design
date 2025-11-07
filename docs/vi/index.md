@@ -63,34 +63,34 @@ features:
 
 ```bash [npm]
 # Khởi tạo dự án
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 
 # Thêm components
-npx galaxy-ui-cli@latest add button input dialog
+npx galaxy-design@latest add button input dialog
 ```
 
 ```bash [pnpm]
 # Khởi tạo dự án
-pnpm dlx galaxy-ui-cli@latest init
+pnpm dlx galaxy-design@latest init
 
 # Thêm components
-pnpm dlx galaxy-ui-cli@latest add button input dialog
+pnpm dlx galaxy-design@latest add button input dialog
 ```
 
 ```bash [yarn]
 # Khởi tạo dự án
-yarn dlx galaxy-ui-cli@latest init
+yarn dlx galaxy-design@latest init
 
 # Thêm components
-yarn dlx galaxy-ui-cli@latest add button input dialog
+yarn dlx galaxy-design@latest add button input dialog
 ```
 
 ```bash [bun]
 # Khởi tạo dự án
-bunx galaxy-ui-cli@latest init
+bunx galaxy-design@latest init
 
 # Thêm components
-bunx galaxy-ui-cli@latest add button input dialog
+bunx galaxy-design@latest add button input dialog
 ```
 
 :::

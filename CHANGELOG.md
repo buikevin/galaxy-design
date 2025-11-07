@@ -22,7 +22,7 @@ Galaxy UI CLI now supports **Blocks** - composite UI patterns built from base co
 - ✅ **5 Web Blocks**: Chat UI, Sidebar, Authentication, Email Client, Featured Sections
 - ✅ **3 Mobile Blocks**: Chat UI (Mobile), Drawer Navigation, Authentication (Mobile)
 - ✅ **Multi-Framework Support**: Vue, React, Angular, React Native, Flutter
-- ✅ **CLI Integration**: `galaxy-ui-cli add chat-ui`, `galaxy-ui-cli add sidebar`
+- ✅ **CLI Integration**: `galaxy-design add chat-ui`, `galaxy-design add sidebar`
 - ✅ **Comprehensive Documentation**: Web/Mobile separation with preview, code, and install tabs
 
 ### ✨ New Blocks
@@ -167,13 +167,13 @@ Galaxy UI CLI now supports **Blocks** - composite UI patterns built from base co
 
 ```bash
 # Install a web block (auto-detects Vue/React/Angular)
-npx galaxy-ui-cli add chat-ui
-npx galaxy-ui-cli add sidebar
-npx galaxy-ui-cli add authentication
+npx galaxy-design add chat-ui
+npx galaxy-design add sidebar
+npx galaxy-design add authentication
 
 # Install a mobile block (auto-detects React Native/Flutter)
-npx galaxy-ui-cli add chat-ui
-npx galaxy-ui-cli add drawer
+npx galaxy-design add chat-ui
+npx galaxy-design add drawer
 ```
 
 ### 💡 Breaking Changes
@@ -364,15 +364,15 @@ Galaxy UI CLI now supports **React Native** and **Flutter** with complete compon
 ### 📝 Migration Guide
 
 **For Existing React Native Projects**:
-1. Run `npx galaxy-ui-cli@latest init` to detect React Native
+1. Run `npx galaxy-design@latest init` to detect React Native
 2. Choose your preferences (Tailwind config, icon library)
-3. Add components: `npx galaxy-ui-cli@latest add button input card`
+3. Add components: `npx galaxy-design@latest add button input card`
 4. Components copied to `src/components/` or `components/`
 
 **For Existing Flutter Projects**:
-1. Run `galaxy-ui-cli init` to detect Flutter
+1. Run `galaxy-design init` to detect Flutter
 2. Choose your preferences (base color, theme options)
-3. Add components: `galaxy-ui-cli add button input card`
+3. Add components: `galaxy-design add button input card`
 4. Components copied to `lib/components/`
 
 ### 💡 Breaking Changes
@@ -381,9 +381,9 @@ Galaxy UI CLI now supports **React Native** and **Flutter** with complete compon
 
 ### 🔗 Related Links
 
-- Documentation: https://galaxy-ui-cli.vercel.app
-- GitHub: https://github.com/buikevin/galaxy-ui-cli
-- npm: https://www.npmjs.com/package/galaxy-ui-cli
+- Documentation: https://galaxy-design.vercel.app
+- GitHub: https://github.com/buikevin/galaxy-design
+- npm: https://www.npmjs.com/package/galaxy-design
 
 ---
 
@@ -616,7 +616,7 @@ MIT © 2025 Bùi Trọng Hiếu (kevinbui)
 
 ### 🔗 Links
 
-- **Repository**: https://github.com/buikevin/galaxy-ui-cli
+- **Repository**: https://github.com/buikevin/galaxy-design
 - **Documentation**: [Coming Soon]
 - **npm Package**: [Coming Soon]
 

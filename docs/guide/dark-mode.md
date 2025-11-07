@@ -13,7 +13,7 @@ Galaxy UI components support dark mode out of the box using the `class` strategy
 Dark mode is already configured when you initialize Galaxy UI:
 
 ```bash
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 ```
 
 This creates the necessary CSS variables for both light and dark modes in your stylesheet.

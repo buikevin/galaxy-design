@@ -106,24 +106,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add tooltip
+npx galaxy-design@latest add tooltip
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add tooltip
+pnpm dlx galaxy-design@latest add tooltip
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add tooltip
+yarn dlx galaxy-design@latest add tooltip
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add tooltip
+bunx galaxy-design@latest add tooltip
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add tooltip
+# If you have installed galaxy-design globally
+galaxy-design add tooltip
 ```
 
 :::

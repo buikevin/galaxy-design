@@ -93,19 +93,19 @@ Charts are installed individually via the Galaxy UI CLI:
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add line-chart
+npx galaxy-design@latest add line-chart
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add line-chart
+pnpm dlx galaxy-design@latest add line-chart
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add line-chart
+yarn dlx galaxy-design@latest add line-chart
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add line-chart
+bunx galaxy-design@latest add line-chart
 ```
 
 :::

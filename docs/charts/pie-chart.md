@@ -140,24 +140,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add pie-chart
+npx galaxy-design@latest add pie-chart
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add pie-chart
+pnpm dlx galaxy-design@latest add pie-chart
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add pie-chart
+yarn dlx galaxy-design@latest add pie-chart
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add pie-chart
+bunx galaxy-design@latest add pie-chart
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add pie-chart
+# If you have installed galaxy-design globally
+galaxy-design add pie-chart
 ```
 
 :::

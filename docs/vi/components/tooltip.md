@@ -74,19 +74,19 @@ export class AppComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add tooltip
+npx galaxy-design@latest add tooltip
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add tooltip
+pnpm dlx galaxy-design@latest add tooltip
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add tooltip
+yarn dlx galaxy-design@latest add tooltip
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add tooltip
+bunx galaxy-design@latest add tooltip
 ```
 
 :::

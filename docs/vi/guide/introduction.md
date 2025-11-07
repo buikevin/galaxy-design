@@ -14,7 +14,7 @@ Galaxy UI là bộ sưu tập các component có thể tái sử dụng trải d
 - **🎭 Tùy Chỉnh** - Tailwind CSS (web) / NativeWind (RN) / Material 3 (Flutter)
 - **📦 Copy-Paste** - Sở hữu code của bạn, không phụ thuộc npm
 - **🌙 Dark Mode** - Hỗ trợ theme tối hạng nhất
-- **🚀 CLI Tool** - Cài đặt dễ dàng với lệnh `galaxy-ui-cli`
+- **🚀 CLI Tool** - Cài đặt dễ dàng với lệnh `galaxy-design`
 - **📱 Responsive** - Thiết kế mobile-first
 - **🔧 TypeScript** - Type safety đầy đủ trên tất cả nền tảng
 
@@ -35,7 +35,7 @@ npm install some-ui-library
 ### Cách Tiếp Cận của Galaxy UI
 
 ```bash
-galaxy-ui-cli add button
+galaxy-design add button
 ```
 
 **Lợi Ích:**
@@ -89,17 +89,17 @@ export class AppComponent {}
 
 ## Cách Hoạt Động
 
-1. **Khởi tạo** dự án với `galaxy-ui-cli init`
-2. **Thêm** components bạn cần với `galaxy-ui-cli add [component]`
+1. **Khởi tạo** dự án với `galaxy-design init`
+2. **Thêm** components bạn cần với `galaxy-design add [component]`
 3. **Tùy chỉnh** code đã sao chép theo nhu cầu
 4. **Deploy** ứng dụng của bạn
 
 ```bash
 # Bước 1: Khởi tạo
-galaxy-ui-cli init
+galaxy-design init
 
 # Bước 2: Thêm components
-galaxy-ui-cli add button input card
+galaxy-design add button input card
 
 # Bước 3: Sử dụng trong ứng dụng
 # Components hiện ở trong thư mục src/components/ui
@@ -176,7 +176,7 @@ Galaxy UI lấy cảm hứng và được xây dựng dựa trên công việc c
 **Bùi Trọng Hiếu (kevinbui)**
 - GitHub: [@buikevin](https://github.com/buikevin)
 - Email: kevinbui210191@gmail.com
-- Repository: [buikevin/galaxy-ui-cli](https://github.com/buikevin/galaxy-design)
+- Repository: [buikevin/galaxy-design](https://github.com/buikevin/galaxy-design)
 
 ## Giấy Phép
 

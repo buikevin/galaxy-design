@@ -98,13 +98,13 @@ Sử dụng Galaxy UI CLI để thêm components:
 
 ```bash
 # Thêm một component
-npx galaxy-ui-cli add button
+npx galaxy-design add button
 
 # Thêm nhiều components
-npx galaxy-ui-cli add button input card
+npx galaxy-design add button input card
 
 # Thêm tất cả components
-npx galaxy-ui-cli add --all
+npx galaxy-design add --all
 ```
 
 ## Customize
@@ -153,7 +153,7 @@ Configured trong `tsconfig.json`.
 
 ## Docs
 
-- [Galaxy UI CLI Docs](https://galaxy-ui-cli.vercel.app)
+- [Galaxy UI CLI Docs](https://galaxy-design.vercel.app)
 - [NativeWind Docs](https://www.nativewind.dev)
 - [Expo Docs](https://docs.expo.dev)
 - [React Navigation Docs](https://reactnavigation.org)

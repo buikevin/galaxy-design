@@ -11,23 +11,23 @@ Initialize your project for Galaxy UI components.
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest init
+pnpm dlx galaxy-design@latest init
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest init
+yarn dlx galaxy-design@latest init
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest init
+bunx galaxy-design@latest init
 ```
 
 ```bash [global]
-galaxy-ui-cli init
+galaxy-design init
 ```
 
 :::
@@ -50,7 +50,7 @@ This command will:
 Example:
 
 ```bash
-npx galaxy-ui-cli@latest init --yes
+npx galaxy-design@latest init --yes
 ```
 
 ### `add`
@@ -60,23 +60,23 @@ Add components to your project.
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add [components...]
+npx galaxy-design@latest add [components...]
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add [components...]
+pnpm dlx galaxy-design@latest add [components...]
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add [components...]
+yarn dlx galaxy-design@latest add [components...]
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add [components...]
+bunx galaxy-design@latest add [components...]
 ```
 
 ```bash [global]
-galaxy-ui-cli add [components...]
+galaxy-design add [components...]
 ```
 
 :::
@@ -86,19 +86,19 @@ galaxy-ui-cli add [components...]
 Add a single component:
 
 ```bash
-npx galaxy-ui-cli@latest add button
+npx galaxy-design@latest add button
 ```
 
 Add multiple components:
 
 ```bash
-npx galaxy-ui-cli@latest add button input dialog
+npx galaxy-design@latest add button input dialog
 ```
 
 Add all form components:
 
 ```bash
-npx galaxy-ui-cli@latest add button input checkbox radio-group select slider switch textarea label
+npx galaxy-design@latest add button input checkbox radio-group select slider switch textarea label
 ```
 
 #### Options
@@ -113,7 +113,7 @@ npx galaxy-ui-cli@latest add button input checkbox radio-group select slider swi
 Example:
 
 ```bash
-npx galaxy-ui-cli@latest add button --overwrite --yes
+npx galaxy-design@latest add button --overwrite --yes
 ```
 
 ### `list`
@@ -123,23 +123,23 @@ List all available components.
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest list
+npx galaxy-design@latest list
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest list
+pnpm dlx galaxy-design@latest list
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest list
+yarn dlx galaxy-design@latest list
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest list
+bunx galaxy-design@latest list
 ```
 
 ```bash [global]
-galaxy-ui-cli list
+galaxy-design list
 ```
 
 :::
@@ -153,23 +153,23 @@ Check for differences between local and registry versions.
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest diff [component]
+npx galaxy-design@latest diff [component]
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest diff [component]
+pnpm dlx galaxy-design@latest diff [component]
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest diff [component]
+yarn dlx galaxy-design@latest diff [component]
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest diff [component]
+bunx galaxy-design@latest diff [component]
 ```
 
 ```bash [global]
-galaxy-ui-cli diff [component]
+galaxy-design diff [component]
 ```
 
 :::
@@ -177,7 +177,7 @@ galaxy-ui-cli diff [component]
 Example:
 
 ```bash
-npx galaxy-ui-cli@latest diff button
+npx galaxy-design@latest diff button
 ```
 
 ## Configuration File
@@ -233,7 +233,7 @@ It will use the detected package manager for installing dependencies.
 Using `@latest` ensures you get the most recent version:
 
 ```bash
-npx galaxy-ui-cli@latest add button
+npx galaxy-design@latest add button
 ```
 
 ### Create aliases for convenience
@@ -241,7 +241,7 @@ npx galaxy-ui-cli@latest add button
 Add to your shell profile (`.bashrc`, `.zshrc`, etc.):
 
 ```bash
-alias gui="npx galaxy-ui-cli@latest"
+alias gui="npx galaxy-design@latest"
 ```
 
 Then use:
@@ -256,15 +256,15 @@ gui init
 In CI/CD environments, use the `--yes` flag to skip prompts:
 
 ```bash
-npx galaxy-ui-cli@latest init --yes
-npx galaxy-ui-cli@latest add button input --yes
+npx galaxy-design@latest init --yes
+npx galaxy-design@latest add button input --yes
 ```
 
 ## Troubleshooting
 
 ### "Component not found"
 
-Make sure you're using the correct component name. Use `galaxy-ui-cli list` to see all available components.
+Make sure you're using the correct component name. Use `galaxy-design list` to see all available components.
 
 ### "Framework not detected"
 

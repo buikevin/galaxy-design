@@ -102,24 +102,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add checkbox
+npx galaxy-design@latest add checkbox
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add checkbox
+pnpm dlx galaxy-design@latest add checkbox
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add checkbox
+yarn dlx galaxy-design@latest add checkbox
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add checkbox
+bunx galaxy-design@latest add checkbox
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add checkbox
+# If you have installed galaxy-design globally
+galaxy-design add checkbox
 ```
 
 :::

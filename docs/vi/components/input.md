@@ -53,23 +53,23 @@ export class AppComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add input
+npx galaxy-design@latest add input
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add input
+pnpm dlx galaxy-design@latest add input
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add input
+yarn dlx galaxy-design@latest add input
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add input
+bunx galaxy-design@latest add input
 ```
 
 ```bash [global]
-# Nếu bạn đã cài galaxy-ui-cli global
+# Nếu bạn đã cài galaxy-design global
 galaxy-ui add input
 ```
 

@@ -53,23 +53,23 @@ export class AppComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add accordion
+npx galaxy-design@latest add accordion
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add accordion
+pnpm dlx galaxy-design@latest add accordion
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add accordion
+yarn dlx galaxy-design@latest add accordion
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add accordion
+bunx galaxy-design@latest add accordion
 ```
 
 ```bash [global]
-# Nếu bạn đã cài galaxy-ui-cli global
+# Nếu bạn đã cài galaxy-design global
 galaxy-ui add accordion
 ```
 

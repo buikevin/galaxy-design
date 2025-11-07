@@ -87,24 +87,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add select
+npx galaxy-design@latest add select
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add select
+pnpm dlx galaxy-design@latest add select
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add select
+yarn dlx galaxy-design@latest add select
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add select
+bunx galaxy-design@latest add select
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add select
+# If you have installed galaxy-design globally
+galaxy-design add select
 ```
 
 :::

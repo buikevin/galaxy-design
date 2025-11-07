@@ -81,24 +81,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add textarea
+npx galaxy-design@latest add textarea
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add textarea
+pnpm dlx galaxy-design@latest add textarea
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add textarea
+yarn dlx galaxy-design@latest add textarea
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add textarea
+bunx galaxy-design@latest add textarea
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add textarea
+# If you have installed galaxy-design globally
+galaxy-design add textarea
 ```
 
 :::

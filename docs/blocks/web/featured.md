@@ -5,7 +5,7 @@ Landing page sections including hero and features grid with multiple variants fo
 ## Installation
 
 ```bash
-npx galaxy-ui-cli add featured
+npx galaxy-design add featured
 ```
 
 ## Features

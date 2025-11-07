@@ -145,24 +145,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add tabs
+npx galaxy-design@latest add tabs
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add tabs
+pnpm dlx galaxy-design@latest add tabs
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add tabs
+yarn dlx galaxy-design@latest add tabs
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add tabs
+bunx galaxy-design@latest add tabs
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add tabs
+# If you have installed galaxy-design globally
+galaxy-design add tabs
 ```
 
 :::

@@ -105,20 +105,20 @@ class _MyAppState extends State<MyApp> {
 
 ::: code-group
 ```bash [React]
-npx galaxy-ui-cli add calendar
+npx galaxy-design add calendar
 ```
 
 ```bash [Vue]
-npx galaxy-ui-cli add calendar
+npx galaxy-design add calendar
 ```
 
 ```bash [Angular]
-npx galaxy-ui-cli add calendar
+npx galaxy-design add calendar
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add calendar
+# If you have installed galaxy-design globally
+galaxy-design add calendar
 ```
 :::
 

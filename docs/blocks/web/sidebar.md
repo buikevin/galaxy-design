@@ -5,7 +5,7 @@ Collapsible navigation sidebar with nested menu items, badges, icons, and full k
 ## Installation
 
 ```bash
-npx galaxy-ui-cli add sidebar
+npx galaxy-design add sidebar
 ```
 
 ## Features

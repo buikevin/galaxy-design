@@ -85,24 +85,24 @@ export class AppComponent {}
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add menubar
+npx galaxy-design@latest add menubar
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add menubar
+pnpm dlx galaxy-design@latest add menubar
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add menubar
+yarn dlx galaxy-design@latest add menubar
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add menubar
+bunx galaxy-design@latest add menubar
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add menubar
+# If you have installed galaxy-design globally
+galaxy-design add menubar
 ```
 
 :::

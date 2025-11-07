@@ -246,7 +246,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
                 framework,
                 component: component.toLowerCase(),
                 details: componentInfo,
-                installation: `npx galaxy-ui-cli add ${component.toLowerCase()}`,
+                installation: `npx galaxy-design add ${component.toLowerCase()}`,
               }, null, 2),
             },
           ],
@@ -308,20 +308,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             {
               step: 1,
               title: 'Install Galaxy UI CLI',
-              command: 'npm install -g galaxy-ui-cli',
+              command: 'npm install -g galaxy-design',
               description: 'Install the CLI tool globally to manage Galaxy UI components',
             },
             {
               step: 2,
               title: 'Initialize your project',
-              command: `npx galaxy-ui-cli init --framework ${framework}`,
+              command: `npx galaxy-design init --framework ${framework}`,
               description: 'Set up Galaxy UI in your project with the required dependencies',
             },
             {
               step: 3,
               title: 'Add components',
-              command: 'npx galaxy-ui-cli add <component-name>',
-              description: 'Add any component to your project. Example: npx galaxy-ui-cli add button',
+              command: 'npx galaxy-design add <component-name>',
+              description: 'Add any component to your project. Example: npx galaxy-design add button',
             },
           ],
           documentation: 'https://galaxy-ui.vercel.app',
@@ -329,13 +329,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 Example usage:
 \`\`\`bash
 # Add a button component
-npx galaxy-ui-cli add button
+npx galaxy-design add button
 
 # Add multiple components
-npx galaxy-ui-cli add button input select
+npx galaxy-design add button input select
 
 # List available components
-npx galaxy-ui-cli list
+npx galaxy-design list
 \`\`\`
           `,
         };

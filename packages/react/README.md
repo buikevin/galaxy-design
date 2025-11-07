@@ -37,7 +37,7 @@ This package includes 23+ accessible components:
 
 ## Documentation
 
-Visit [Galaxy UI Documentation](https://github.com/buikevin/galaxy-ui-cli) for detailed guides and examples.
+Visit [Galaxy UI Documentation](https://github.com/buikevin/galaxy-design) for detailed guides and examples.
 
 ## Author
 

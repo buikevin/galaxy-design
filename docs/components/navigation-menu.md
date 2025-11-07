@@ -139,24 +139,24 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add navigation-menu
+npx galaxy-design@latest add navigation-menu
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add navigation-menu
+pnpm dlx galaxy-design@latest add navigation-menu
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add navigation-menu
+yarn dlx galaxy-design@latest add navigation-menu
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add navigation-menu
+bunx galaxy-design@latest add navigation-menu
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add navigation-menu
+# If you have installed galaxy-design globally
+galaxy-design add navigation-menu
 ```
 
 :::

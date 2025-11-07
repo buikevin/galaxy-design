@@ -13,7 +13,7 @@ Các component Galaxy UI hỗ trợ chế độ tối ngay từ đầu sử dụ
 Chế độ tối đã được cấu hình sẵn khi bạn khởi tạo Galaxy UI:
 
 ```bash
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 ```
 
 Lệnh này sẽ tạo các CSS variables cần thiết cho cả chế độ sáng và tối trong stylesheet của bạn.

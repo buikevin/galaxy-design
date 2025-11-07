@@ -157,19 +157,19 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add area-chart
+npx galaxy-design@latest add area-chart
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add area-chart
+pnpm dlx galaxy-design@latest add area-chart
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add area-chart
+yarn dlx galaxy-design@latest add area-chart
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add area-chart
+bunx galaxy-design@latest add area-chart
 ```
 
 :::

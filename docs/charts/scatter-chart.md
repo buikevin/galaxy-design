@@ -209,19 +209,19 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add scatter-chart
+npx galaxy-design@latest add scatter-chart
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add scatter-chart
+pnpm dlx galaxy-design@latest add scatter-chart
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add scatter-chart
+yarn dlx galaxy-design@latest add scatter-chart
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add scatter-chart
+bunx galaxy-design@latest add scatter-chart
 ```
 
 :::

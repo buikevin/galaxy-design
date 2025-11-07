@@ -92,24 +92,24 @@ class _MyAppState extends State<MyApp> {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add slider
+npx galaxy-design@latest add slider
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add slider
+pnpm dlx galaxy-design@latest add slider
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add slider
+yarn dlx galaxy-design@latest add slider
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add slider
+bunx galaxy-design@latest add slider
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add slider
+# If you have installed galaxy-design globally
+galaxy-design add slider
 ```
 
 :::

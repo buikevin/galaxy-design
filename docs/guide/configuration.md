@@ -4,7 +4,7 @@ Learn how to configure Galaxy UI for your project using `components.json`.
 
 ## components.json
 
-The `components.json` file is created when you run `galaxy-ui-cli init`. It stores your project configuration and preferences.
+The `components.json` file is created when you run `galaxy-design init`. It stores your project configuration and preferences.
 
 ### File Location
 

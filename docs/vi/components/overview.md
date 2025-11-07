@@ -21,23 +21,23 @@ Cài đặt từng component riêng lẻ bằng CLI:
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add button
+npx galaxy-design@latest add button
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add button
+pnpm dlx galaxy-design@latest add button
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add button
+yarn dlx galaxy-design@latest add button
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add button
+bunx galaxy-design@latest add button
 ```
 
 ```bash [global]
-galaxy-ui-cli add button
+galaxy-design add button
 ```
 
 :::
@@ -47,23 +47,23 @@ Hoặc cài đặt nhiều components cùng lúc:
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add button input dialog
+npx galaxy-design@latest add button input dialog
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add button input dialog
+pnpm dlx galaxy-design@latest add button input dialog
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add button input dialog
+yarn dlx galaxy-design@latest add button input dialog
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add button input dialog
+bunx galaxy-design@latest add button input dialog
 ```
 
 ```bash [global]
-galaxy-ui-cli add button input dialog
+galaxy-design add button input dialog
 ```
 
 :::

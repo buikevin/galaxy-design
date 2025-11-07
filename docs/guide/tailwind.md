@@ -19,19 +19,19 @@ The CLI automatically installs Tailwind CSS when you run `init`:
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest init
+pnpm dlx galaxy-design@latest init
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest init
+yarn dlx galaxy-design@latest init
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest init
+bunx galaxy-design@latest init
 ```
 
 :::

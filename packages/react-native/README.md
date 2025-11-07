@@ -1,10 +1,10 @@
-# @galaxy-ui-cli/react-native
+# @galaxy-design/react-native
 
 React Native components for Galaxy UI CLI.
 
 ## Overview
 
-This package contains React Native component templates that are copied into your project when you run `galaxy-ui-cli add [component]` in a React Native project.
+This package contains React Native component templates that are copied into your project when you run `galaxy-design add [component]` in a React Native project.
 
 ## Prerequisites
 
@@ -41,10 +41,10 @@ Components are designed to be copied into your project, not installed as depende
 
 ```bash
 # Initialize Galaxy UI in your React Native project
-npx galaxy-ui-cli@latest init
+npx galaxy-design@latest init
 
 # Add components
-npx galaxy-ui-cli@latest add button input
+npx galaxy-design@latest add button input
 ```
 
 ## Styling

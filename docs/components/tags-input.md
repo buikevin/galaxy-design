@@ -118,20 +118,20 @@ class _MyAppState extends State<MyApp> {
 
 ::: code-group
 ```bash [React]
-npx galaxy-ui-cli add tags-input
+npx galaxy-design add tags-input
 ```
 
 ```bash [Vue]
-npx galaxy-ui-cli add tags-input
+npx galaxy-design add tags-input
 ```
 
 ```bash [Angular]
-npx galaxy-ui-cli add tags-input
+npx galaxy-design add tags-input
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add tags-input
+# If you have installed galaxy-design globally
+galaxy-design add tags-input
 ```
 :::
 

@@ -90,19 +90,19 @@ function generateInstallationSection(kebabName: string, lang: Language): string 
 ::: code-group
 
 \`\`\`bash [${t.npm}]
-npx galaxy-ui-cli@latest add ${kebabName}
+npx galaxy-design@latest add ${kebabName}
 \`\`\`
 
 \`\`\`bash [${t.pnpm}]
-pnpm dlx galaxy-ui-cli@latest add ${kebabName}
+pnpm dlx galaxy-design@latest add ${kebabName}
 \`\`\`
 
 \`\`\`bash [${t.yarn}]
-yarn dlx galaxy-ui-cli@latest add ${kebabName}
+yarn dlx galaxy-design@latest add ${kebabName}
 \`\`\`
 
 \`\`\`bash [${t.bun}]
-bunx galaxy-ui-cli@latest add ${kebabName}
+bunx galaxy-design@latest add ${kebabName}
 \`\`\`
 
 \`\`\`bash [${t.global}]

@@ -145,20 +145,20 @@ class MyApp extends StatelessWidget {
 
 ::: code-group
 ```bash [React]
-npx galaxy-ui-cli add sheet
+npx galaxy-design add sheet
 ```
 
 ```bash [Vue]
-npx galaxy-ui-cli add sheet
+npx galaxy-design add sheet
 ```
 
 ```bash [Angular]
-npx galaxy-ui-cli add sheet
+npx galaxy-design add sheet
 ```
 
 ```bash [global]
-# If you have installed galaxy-ui-cli globally
-galaxy-ui-cli add sheet
+# If you have installed galaxy-design globally
+galaxy-design add sheet
 ```
 :::
 

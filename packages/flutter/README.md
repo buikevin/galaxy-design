@@ -4,7 +4,7 @@ Flutter components for Galaxy UI CLI.
 
 ## Overview
 
-This package contains Flutter component templates that are copied into your project when you run `galaxy-ui-cli add [component]` in a Flutter project.
+This package contains Flutter component templates that are copied into your project when you run `galaxy-design add [component]` in a Flutter project.
 
 ## Prerequisites
 
@@ -44,10 +44,10 @@ Components are designed to be copied into your project, not installed as depende
 
 ```bash
 # Initialize Galaxy UI in your Flutter project
-galaxy-ui-cli init
+galaxy-design init
 
 # Add components
-galaxy-ui-cli add button input
+galaxy-design add button input
 ```
 
 ## Styling

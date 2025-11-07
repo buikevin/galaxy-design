@@ -18,7 +18,7 @@ Beautiful, responsive chart components with **unified API** across all framework
 
 ```bash
 # Install the chart component
-galaxy-ui-cli add line-chart
+galaxy-design add line-chart
 
 # Dependencies will be automatically installed:
 # - vue-echarts
@@ -28,7 +28,7 @@ galaxy-ui-cli add line-chart
 ### React
 
 ```bash
-galaxy-ui-cli add line-chart
+galaxy-design add line-chart
 
 # Dependencies:
 # - echarts-for-react

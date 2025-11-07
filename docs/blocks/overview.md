@@ -38,7 +38,7 @@ Get complex UI patterns in minutes instead of hours:
 
 ```bash
 # Install a complete chat interface in one command
-npx galaxy-ui-cli add chat-ui
+npx galaxy-design add chat-ui
 ```
 
 ### 2. **Production-Ready**
@@ -67,13 +67,13 @@ Built on the same design system as base components:
 
 ```bash
 # Initialize Galaxy UI in your project
-npx galaxy-ui-cli init
+npx galaxy-design init
 
 # Add a block
-npx galaxy-ui-cli add chat-ui
+npx galaxy-design add chat-ui
 
 # Add multiple blocks at once
-npx galaxy-ui-cli add sidebar authentication email
+npx galaxy-design add sidebar authentication email
 ```
 
 ### File Structure
@@ -173,7 +173,7 @@ Use blocks for common patterns instead of building from scratch:
 
 ```bash
 # ✅ Good: Use the authentication block
-npx galaxy-ui-cli add authentication
+npx galaxy-design add authentication
 
 # ❌ Avoid: Building auth forms from scratch
 # Manually creating LoginForm, RegisterForm, validation logic, etc.
@@ -184,7 +184,7 @@ Install first, then customize to your needs:
 
 ```bash
 # 1. Install the block
-npx galaxy-ui-cli add chat-ui
+npx galaxy-design add chat-ui
 
 # 2. Customize in your project
 # Edit src/components/ui/chat-ui/ChatUI.vue

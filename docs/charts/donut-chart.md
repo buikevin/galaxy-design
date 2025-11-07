@@ -123,19 +123,19 @@ class MyApp extends StatelessWidget {
 ::: code-group
 
 ```bash [npm]
-npx galaxy-ui-cli@latest add donut-chart
+npx galaxy-design@latest add donut-chart
 ```
 
 ```bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add donut-chart
+pnpm dlx galaxy-design@latest add donut-chart
 ```
 
 ```bash [yarn]
-yarn dlx galaxy-ui-cli@latest add donut-chart
+yarn dlx galaxy-design@latest add donut-chart
 ```
 
 ```bash [bun]
-bunx galaxy-ui-cli@latest add donut-chart
+bunx galaxy-design@latest add donut-chart
 ```
 
 :::

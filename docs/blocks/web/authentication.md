@@ -5,7 +5,7 @@ Complete authentication forms with login, register, social login, validation, an
 ## Installation
 
 ```bash
-npx galaxy-ui-cli add authentication
+npx galaxy-design add authentication
 ```
 
 ## Features

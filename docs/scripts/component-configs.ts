@@ -1872,7 +1872,7 @@ export const TEMPLATES = {
       yarn: 'yarn',
       bun: 'bun',
       global: 'global',
-      globalComment: 'If you have installed galaxy-ui-cli globally',
+      globalComment: 'If you have installed galaxy-design globally',
       dependenciesTitle: 'Dependencies',
       dependenciesNote: 'This component automatically installs the following dependencies:',
       noManualInstall: 'No manual installation needed!'
@@ -1920,7 +1920,7 @@ export const TEMPLATES = {
       yarn: 'yarn',
       bun: 'bun',
       global: 'global',
-      globalComment: 'Nếu bạn đã cài galaxy-ui-cli global',
+      globalComment: 'Nếu bạn đã cài galaxy-design global',
       dependenciesTitle: 'Dependencies',
       dependenciesNote: 'Component này tự động cài đặt các dependencies sau:',
       noManualInstall: 'Không cần cài đặt thủ công!'

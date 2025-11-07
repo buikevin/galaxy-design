@@ -191,23 +191,23 @@ function generateInstallationSection(componentName: string): string {
 ::: code-group
 
 \`\`\`bash [npm]
-npx galaxy-ui-cli@latest add ${componentName}
+npx galaxy-design@latest add ${componentName}
 \`\`\`
 
 \`\`\`bash [pnpm]
-pnpm dlx galaxy-ui-cli@latest add ${componentName}
+pnpm dlx galaxy-design@latest add ${componentName}
 \`\`\`
 
 \`\`\`bash [yarn]
-yarn dlx galaxy-ui-cli@latest add ${componentName}
+yarn dlx galaxy-design@latest add ${componentName}
 \`\`\`
 
 \`\`\`bash [bun]
-bunx galaxy-ui-cli@latest add ${componentName}
+bunx galaxy-design@latest add ${componentName}
 \`\`\`
 
 \`\`\`bash [global]
-# If you have installed galaxy-ui-cli globally
+# If you have installed galaxy-design globally
 galaxy-ui add ${componentName}
 \`\`\`
 

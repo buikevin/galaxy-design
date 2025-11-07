@@ -14,7 +14,7 @@ Galaxy UI is a collection of re-usable components that spans both web and mobile
 - **🎭 Customizable** - Tailwind CSS (web) / NativeWind (RN) / Material 3 (Flutter)
 - **📦 Copy-Paste** - Own your code, no npm dependencies
 - **🌙 Dark Mode** - First-class dark theme support
-- **🚀 CLI Tool** - Easy installation with `galaxy-ui-cli` command
+- **🚀 CLI Tool** - Easy installation with `galaxy-design` command
 - **📱 Responsive** - Mobile-first design
 - **🔧 TypeScript** - Full type safety across all platforms
 
@@ -35,7 +35,7 @@ npm install some-ui-library
 ### Galaxy UI Approach
 
 ```bash
-galaxy-ui-cli add button
+galaxy-design add button
 ```
 
 **Benefits:**
@@ -128,17 +128,17 @@ class MyApp extends StatelessWidget {
 
 ## How It Works
 
-1. **Initialize** your project with `galaxy-ui-cli init`
-2. **Add** components you need with `galaxy-ui-cli add [component]`
+1. **Initialize** your project with `galaxy-design init`
+2. **Add** components you need with `galaxy-design add [component]`
 3. **Customize** the copied code as needed
 4. **Ship** your application
 
 ```bash
 # Step 1: Initialize
-galaxy-ui-cli init
+galaxy-design init
 
 # Step 2: Add components
-galaxy-ui-cli add button input card
+galaxy-design add button input card
 
 # Step 3: Use in your app
 # Components are now in your src/components/ui folder
