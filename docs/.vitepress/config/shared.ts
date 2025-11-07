@@ -9,6 +9,12 @@ export const sharedConfig = defineConfig({
       alias: {
         '@': path.resolve(__dirname, '../')
       }
+    },
+    ssr: {
+      noExternal: ['radix-vue'],
+    },
+    optimizeDeps: {
+      exclude: ['vue-echarts', 'echarts']
     }
   },
 
@@ -38,7 +44,7 @@ export const sharedConfig = defineConfig({
     logo: '/logo.png',
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/buikevin/galaxy-ui-cli' }
+      { icon: 'github', link: 'https://github.com/buikevin/galaxy-design' }
     ],
 
     search: {
