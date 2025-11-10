@@ -1,6 +1,6 @@
 # 🌌 Galaxy UI CLI
 
-> Beautiful, accessible components for Vue, React, Angular, **React Native**, and **Flutter** with unified design system
+> Beautiful, accessible components for Vue, React, Angular, **Next.js**, **Nuxt.js**, **React Native**, and **Flutter** with unified design system
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 [![Vue](https://img.shields.io/badge/Vue-3.5-42b883.svg)](https://vuejs.org/)
@@ -13,8 +13,8 @@
 
 ## ✨ Features
 
-- 🎨 **197 Production-Ready Components** - Complete component library across **5 platforms** (41 web per framework + 37 mobile per platform)
-- 🎯 **Universal Multi-Platform** - Vue 3, React 18+, Angular 20, **React Native**, and **Flutter**
+- 🎨 **197 Production-Ready Components** - Complete component library across **7 platforms** (41 web per framework + 37 mobile per platform)
+- 🎯 **Universal Multi-Platform** - Vue 3, React 18+, Angular 20, **Next.js**, **Nuxt.js**, **React Native**, and **Flutter**
 - 📋 **Copy-Paste Philosophy** - Own your code, no npm dependencies for components
 - ♿ **Accessible** - Built on Radix primitives (WAI-ARIA compliant, keyboard navigation)
 - 🌙 **Dark Mode** - First-class dark theme support with CSS variables
@@ -31,7 +31,7 @@
 Before you begin, make sure you have:
 
 - **Node.js 18+** installed
-- A **Vue 3**, **React 18+**, or **Angular 20** project
+- A **Vue 3**, **React 18+**, **Angular 20**, **Next.js**, or **Nuxt.js** project
 - **Tailwind CSS** configured in your project
 
 ### Installation
@@ -107,7 +107,7 @@ bunx tailwindcss init -p
 
 The `galaxy-design init` command will:
 
-1. ✅ Detect your framework (Vue, React, Angular, React Native, or Flutter)
+1. ✅ Detect your framework (Vue, React, Angular, Next.js, Nuxt.js, React Native, or Flutter)
 2. ✅ Create `components.json` configuration file
 3. ✅ Set up the `components/ui` directory (or platform-specific paths)
 4. ✅ Configure path aliases (`@/components`, `@/lib/utils`)
@@ -116,7 +116,7 @@ The `galaxy-design init` command will:
 
 ## 📦 Components (41)
 
-All components work identically across **Vue 3**, **React 18+**, and **Angular 20** with full Radix primitives integration:
+All components work identically across **Vue 3**, **React 18+**, **Angular 20**, **Next.js**, and **Nuxt.js** with full Radix primitives integration:
 
 ### 📝 Form Components (12)
 - **Button** - Clickable button with multiple variants and sizes
@@ -363,8 +363,8 @@ bun run dev
 ## 📊 Project Stats
 
 - **Components**: 197 total (41 per web framework + 37 per mobile platform)
-- **Platforms**: 5 (Vue 3, React 18+, Angular 20, React Native, Flutter)
-- **Total Implementations**: 197 unique component implementations
+- **Platforms**: 7 (Vue 3, React 18+, Angular 20, Next.js, Nuxt.js, React Native, Flutter)
+- **Total Implementations**: 197 unique component implementations (Next.js uses React templates, Nuxt.js uses Vue templates)
 - **Radix Integration**: Full coverage with Radix primitives for web
   - Vue: Radix Vue primitives
   - React: Radix UI primitives

@@ -64,6 +64,7 @@ const AreaChartDemo = defineAsyncComponent(() => import('../components/demos/Are
 const RadarChartDemo = defineAsyncComponent(() => import('../components/demos/RadarChartDemo.vue'))
 const ScatterChartDemo = defineAsyncComponent(() => import('../components/demos/ScatterChartDemo.vue'))
 const MixedChartDemo = defineAsyncComponent(() => import('../components/demos/MixedChartDemo.vue'))
+const GaugeChartDemo = defineAsyncComponent(() => import('../components/demos/GaugeChartDemo.vue'))
 
 import './tailwind.css'
 import './style.css'
@@ -134,5 +135,6 @@ export default {
     app.component('RadarChartDemo', RadarChartDemo)
     app.component('ScatterChartDemo', ScatterChartDemo)
     app.component('MixedChartDemo', MixedChartDemo)
+    app.component('GaugeChartDemo', GaugeChartDemo)
   }
 } satisfies Theme

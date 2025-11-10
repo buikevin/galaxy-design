@@ -232,6 +232,7 @@ function sidebarCharts(): DefaultTheme.SidebarItem[] {
         { text: 'Biểu đồ radar', link: 'radar-chart' },
         { text: 'Biểu đồ phân tán', link: 'scatter-chart' },
         { text: 'Biểu đồ kết hợp', link: '/charts/mixed-chart' },
+        { text: 'Biểu đồ đo', link: 'gauge-chart' },
       ],
     },
   ];

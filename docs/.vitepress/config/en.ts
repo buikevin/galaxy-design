@@ -235,6 +235,7 @@ function sidebarCharts(): DefaultTheme.SidebarItem[] {
         { text: 'Radar Chart', link: 'radar-chart' },
         { text: 'Scatter Chart', link: 'scatter-chart' },
         { text: 'Mixed Chart', link: '/charts/mixed-chart' },
+        { text: 'Gauge Chart', link: 'gauge-chart' },
       ],
     },
   ];

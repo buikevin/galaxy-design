@@ -25,6 +25,7 @@ Beautiful, responsive chart components powered by industry-leading charting libr
 | [Radar Chart](/charts/radar-chart) | ✅ Available | Multi-dimensional data comparison on radial grid |
 | [Scatter Chart](/charts/scatter-chart) | ✅ Available | Distribution and correlation analysis with scatter plots |
 | [Mixed Chart](/charts/mixed-chart) | ✅ Available | Combine multiple chart types (line, bar, area) in one visualization |
+| [Gauge Chart](/charts/gauge-chart) | ✅ Available | Circular gauge (speedometer) for metrics with min-max ranges and color zones |
 
 ## Design Philosophy
 
