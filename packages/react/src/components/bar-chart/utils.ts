@@ -4,7 +4,7 @@
  * Helper functions to transform unified API to ECharts options format
  */
 
-import type {
+import {
   ChartData,
   BaseChartProps,
   GridConfig,
@@ -18,7 +18,7 @@ import type {
  */
 export function transformDataToSeries(
   data: ChartData,
-  chartType: string,
+  chartType: 'line' | 'bar' | 'scatter' | 'radar' | 'pie' | 'area',
   additionalConfig: Record<string, any> = {}
 ) {
   return data.datasets.map((dataset, index) => ({
@@ -54,9 +54,30 @@ export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
 /**
  * Get theme colors based on light/dark theme
  */
-export function getThemeColors(theme: 'light' | 'dark' = 'light'): string[] {
-  const scheme = theme === 'dark' ? 'pastel' : 'default'
-  return getDefaultColors(scheme as ColorScheme)
+/**
+ * Get theme colors based on light/dark theme
+ */
+export function getThemeColors(theme: 'light' | 'dark' = 'light') {
+  if (theme === 'dark') {
+    return {
+      primary: '#3b82f6',
+      text: '#e5e7eb',
+      tooltipBg: '#1f2937',
+      tooltipBorder: '#374151',
+      tooltipText: '#f3f4f6',
+      grid: '#374151',
+      axis: '#9ca3af',
+    }
+  }
+  return {
+    primary: '#3b82f6',
+    text: '#374151',
+    tooltipBg: '#ffffff',
+    tooltipBorder: '#e5e7eb',
+    tooltipText: '#111827',
+    grid: '#e5e7eb',
+    axis: '#6b7280',
+  }
 }
 
 /**
