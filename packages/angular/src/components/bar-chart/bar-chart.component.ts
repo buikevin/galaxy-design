@@ -129,7 +129,7 @@ export class BarChartComponent implements OnInit, OnChanges, BarChartProps {
     if (this.horizontal) {
       this.chartOption = {
         ...baseOption,
-        xAxis: baseOption.yAxis,
+        xAxis: baseOption.yAxis as any,
         yAxis: {
           type: 'category',
           data: this.data.labels,

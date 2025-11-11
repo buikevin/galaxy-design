@@ -72,7 +72,7 @@ export class ScatterChartComponent implements OnInit, OnChanges, ScatterChartPro
 
       return {
         name: dataset.label,
-        type: 'scatter',
+        type: 'scatter' as any,
         data: seriesData,
         symbolSize: (dataItem: number[]) => {
           // If third value exists, use it for size scaling

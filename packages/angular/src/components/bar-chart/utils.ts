@@ -4,7 +4,7 @@
  * Helper functions to transform unified API to ECharts options format
  */
 
-import type {
+import {
   ChartData,
   BaseChartProps,
   GridConfig,
@@ -23,7 +23,7 @@ export function transformDataToSeries(
 ) {
   return data.datasets.map((dataset, index) => ({
     name: dataset.label,
-    type: chartType,
+    type: chartType as any,
     data: dataset.data,
     smooth: dataset.smooth,
     lineStyle: dataset.borderColor
@@ -48,7 +48,7 @@ export function transformDataToSeries(
  * Get default colors for charts
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
-  return ChartColorSchemes[scheme]
+  return [...ChartColorSchemes[scheme]] as string[]
 }
 
 /**

@@ -218,7 +218,7 @@ export class MixedChartComponent implements OnInit, OnChanges, MixedChartProps {
   private updateDimensions(): void {
     this.dimensions = {
       height: `${this.height}px`,
-      width: typeof this.width === 'number' ? `${this.width}px` : this.width,
+      width: typeof this.width === 'number' ? `${this.width}px` : this.width || '100%',
     }
   }
 }

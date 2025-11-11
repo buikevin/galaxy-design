@@ -4,7 +4,7 @@
  * Helper functions to transform unified API to ECharts options format
  */
 
-import type {
+import {
   ChartData,
   BaseChartProps,
   GridConfig,
@@ -48,7 +48,7 @@ export function transformDataToSeries(
  * Get default colors for charts
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
-  return ChartColorSchemes[scheme]
+  return [...ChartColorSchemes[scheme]] as string[]
 }
 
 /**
