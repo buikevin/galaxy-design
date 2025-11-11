@@ -1,6 +1,9 @@
 import { Component, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { AvatarComponent } from '@/components/ui/avatar/avatar.component';
+import { AvatarImageComponent } from '@/components/ui/avatar/avatar-image.component';
+import { AvatarFallbackComponent } from '@/components/ui/avatar/avatar-fallback.component';
 import { ButtonComponent } from '@/components/ui/button/button.component';
 import { ScrollAreaComponent } from '@/components/ui/scroll-area/scroll-area.component';
 import { TextareaComponent } from '@/components/ui/textarea/textarea.component';
@@ -11,7 +14,10 @@ import type { Message } from './types';
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     AvatarComponent,
+    AvatarImageComponent,
+    AvatarFallbackComponent,
     ButtonComponent,
     ScrollAreaComponent,
     TextareaComponent,

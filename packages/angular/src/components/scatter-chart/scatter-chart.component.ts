@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { NgxEchartsModule } from 'ngx-echarts'
 import type { EChartsOption } from 'echarts'
 import type { ScatterChartProps, ChartData } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors } from './utils'
 
 @Component({
   selector: 'ui-scatter-chart',
@@ -55,7 +55,7 @@ export class ScatterChartComponent implements OnInit, OnChanges, ScatterChartPro
       return
     }
 
-    const colors = getThemeColors(this.theme || 'light')
+    const colors = getDefaultColors('default')
 
     // Transform datasets to scatter series
     const series = this.data.datasets.map((dataset, index) => {

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { NgxEchartsModule } from 'ngx-echarts'
 import type { EChartsOption } from 'echarts'
 import type { RadarChartProps, ChartData } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors } from './utils'
 
 @Component({
   selector: 'ui-radar-chart',
@@ -56,7 +56,7 @@ export class RadarChartComponent implements OnInit, OnChanges, RadarChartProps {
       return
     }
 
-    const colors = getThemeColors(this.theme || 'light')
+    const colors = getDefaultColors('default')
 
     // Build radar indicators from labels
     const indicator = this.data.labels.map((label) => ({

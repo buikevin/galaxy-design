@@ -33,7 +33,7 @@ import type { MenuItem } from './types';
           *ngFor="let item of items"
           [item]="item"
           [collapsed]="isCollapsed"
-          (itemClick)="onItemClick.emit($event)"
+          (itemClick)="itemClick.emit($event)"
         />
       </nav>
 

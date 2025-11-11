@@ -163,7 +163,7 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
 /**
  * Build ECharts Y-axis configuration
  */
-export function buildYAxisConfig(type: 'value' | 'category' = 'value'): any {
+export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
   return {
     type,
     axisLine: {
