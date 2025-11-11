@@ -25,8 +25,8 @@ const delegatedProps = computed(() => {
   <ToggleGroupItemPrimitive
     :class="cn(
       toggleVariants({
-        variant: groupVariant?.value || props.variant,
-        size: groupSize?.value || props.size,
+        variant: (groupVariant?.value as any) || props.variant,
+        size: (groupSize?.value as any) || props.size,
       }),
       props.class
     )"
