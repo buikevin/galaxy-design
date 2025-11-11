@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, type HTMLAttributes } from 'vue'
 import Button from '@/components/ui/button/Button.vue'
-import Separator from '@/components/ui/separator/separator.vue'
+import Separator from '@/components/ui/separator/Separator.vue'
 import SidebarItem from './SidebarItem.vue'
 import { cn } from '@/lib/utils'
 import type { SidebarProps, MenuItem } from './types'
