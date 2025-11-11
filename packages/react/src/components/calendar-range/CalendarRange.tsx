@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { DayPicker, DateRange } from 'react-day-picker'
+import { DayPicker, type DateRange } from 'react-day-picker'
 import { cn } from '@/lib/utils'
 
 export interface CalendarRangeProps extends Omit<React.ComponentProps<typeof DayPicker>, 'mode'> {
@@ -57,7 +57,7 @@ function CalendarRange({
         ...classNames,
       }}
       components={{
-        Chevron: ({ orientation, ...props }) => {
+        Chevron: ({ orientation }) => {
           const Icon = orientation === 'left' ? ChevronLeft : ChevronRight
           return <Icon className="h-4 w-4" />
         },
