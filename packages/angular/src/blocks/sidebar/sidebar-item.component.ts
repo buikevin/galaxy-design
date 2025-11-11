@@ -8,8 +8,8 @@ import type { MenuItem } from './types'
   imports: [CommonModule],
   template: `
     <div class="sidebar-item-placeholder" (click)="itemClick.emit(item)">
-      <span *ngIf="!collapsed">{{ item?.label || 'Menu Item' }}</span>
-      <span *ngIf="collapsed" class="icon-only">{{ item?.icon || '•' }}</span>
+      <span *ngIf="!collapsed">{{ item.label || 'Menu Item' }}</span>
+      <span *ngIf="collapsed" class="icon-only">{{ item.icon || '•' }}</span>
     </div>
   `,
   styles: [`
