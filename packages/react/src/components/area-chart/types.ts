@@ -242,6 +242,12 @@ export interface AreaChartProps extends LineChartProps {
 
   /** Fill opacity (0-1) */
   fillOpacity?: number
+
+  /** Area opacity (alias for fillOpacity) */
+  opacity?: number
+
+  /** Enable gradient fill */
+  gradient?: boolean
 }
 
 /**

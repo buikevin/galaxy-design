@@ -4,21 +4,21 @@
  * Helper functions to transform unified API to ECharts options format
  */
 
-import {
+import type {
   ChartData,
   BaseChartProps,
   GridConfig,
   TooltipConfig,
-  ChartColorSchemes,
   ColorScheme,
 } from './types'
+import { ChartColorSchemes } from './types'
 
 /**
  * Transform unified ChartData to ECharts series format
  */
 export function transformDataToSeries(
   data: ChartData,
-  chartType: 'line' | 'bar' | 'scatter' | 'radar' | 'pie' | 'area',
+  chartType: 'line' | 'bar' | 'scatter' | 'radar' | 'pie',
   additionalConfig: Record<string, any> = {}
 ) {
   return data.datasets.map((dataset, index) => ({
@@ -66,6 +66,7 @@ export function getThemeColors(theme: 'light' | 'dark' = 'light') {
       tooltipBorder: '#374151',
       tooltipText: '#f3f4f6',
       grid: '#374151',
+      axisLabel: '#9ca3af',
       axis: '#9ca3af',
     }
   }
