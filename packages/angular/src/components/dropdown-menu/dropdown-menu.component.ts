@@ -23,17 +23,12 @@ export class DropdownMenuComponent {}
 
 /**
  * Dropdown Menu Trigger Button
- * Use with [rdxDropdownMenuTrigger] pointing to a template reference
- *
- * Example:
- * <ui-dropdown-menu-trigger [rdxDropdownMenuTrigger]="menuContent">
- *   Click me
- * </ui-dropdown-menu-trigger>
+ * Simple styled button wrapper
  */
 @Component({
   selector: 'ui-dropdown-menu-trigger',
   standalone: true,
-  imports: [CommonModule, RdxDropdownMenuTriggerDirective],
+  imports: [CommonModule],
   template: `
     <button [class]="triggerClasses">
       <ng-content></ng-content>
@@ -54,19 +49,12 @@ export class DropdownMenuTriggerComponent {
 
 /**
  * Dropdown Menu Content Container
- * Must be used inside an ng-template with rdxDropdownMenuContent directive
- *
- * Example:
- * <ng-template #menuContent>
- *   <ui-dropdown-menu-content rdxDropdownMenuContent>
- *     <ui-dropdown-menu-item>Item 1</ui-dropdown-menu-item>
- *   </ui-dropdown-menu-content>
- * </ng-template>
+ * Simple styled content wrapper
  */
 @Component({
   selector: 'ui-dropdown-menu-content',
   standalone: true,
-  imports: [CommonModule, RdxDropdownMenuContentDirective],
+  imports: [CommonModule],
   template: `
     <div [class]="contentClasses">
       <ng-content></ng-content>

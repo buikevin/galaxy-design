@@ -23,9 +23,9 @@ export class ContextMenuComponent {}
 @Component({
   selector: 'ui-context-menu-trigger',
   standalone: true,
-  imports: [CommonModule, RdxContextMenuTriggerDirective],
+  imports: [CommonModule],
   template: `
-    <div rdxContextMenuTrigger [class]="triggerClasses">
+    <div [class]="triggerClasses">
       <ng-content></ng-content>
     </div>
   `,
@@ -42,9 +42,9 @@ export class ContextMenuTriggerComponent {
 @Component({
   selector: 'ui-context-menu-content',
   standalone: true,
-  imports: [CommonModule, RdxContextMenuContentDirective],
+  imports: [CommonModule],
   template: `
-    <div rdxContextMenuContent [class]="contentClasses">
+    <div [class]="contentClasses">
       <ng-content></ng-content>
     </div>
   `,
