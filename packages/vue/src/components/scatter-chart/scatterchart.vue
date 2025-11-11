@@ -16,20 +16,20 @@ const chartOption = computed<EChartsOption>(() => {
 
   // Transform datasets to scatter series
   const series = props.data.datasets.map((dataset, index) => {
-    const seriesData = dataset.data.map((value, i) => {
+    const seriesData = dataset.data.map((value: any, i: number) => {
       // Support both simple array [x, y] or object {x, y, value}
       if (Array.isArray(value)) {
         return value
-      } else if (typeof value === 'object' && 'x' in value && 'y' in value) {
+      } else if (typeof value === 'object' && value && 'x' in value && 'y' in value) {
         return [value.x, value.y, value.value || 1]
       }
       // Fallback: use index as x, value as y
-      return [i, value]
+      return [i, value as number]
     })
 
     return {
       name: dataset.label,
-      type: 'scatter',
+      type: 'scatter' as const,
       data: seriesData,
       symbolSize: (data: number[]) => {
         // If third value exists, use it for size scaling
@@ -43,7 +43,7 @@ const chartOption = computed<EChartsOption>(() => {
         opacity: props.opacity || 0.8,
       },
       emphasis: {
-        focus: 'series',
+        focus: 'series' as any,
         itemStyle: {
           borderColor: '#333',
           borderWidth: 1,
