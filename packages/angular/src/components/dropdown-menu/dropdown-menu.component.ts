@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   RdxDropdownMenuTriggerDirective,
@@ -8,33 +8,34 @@ import {
 } from '@radix-ng/primitives/dropdown-menu';
 import { cn } from '@/lib/utils';
 
+/**
+ * Dropdown Menu Wrapper Component
+ * Simple container - actual dropdown logic is handled by Radix directives
+ */
 @Component({
   selector: 'ui-dropdown-menu',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div [attr.data-open]="open">
-      <ng-content></ng-content>
-    </div>
-  `,
+  template: `<ng-content></ng-content>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DropdownMenuComponent {
-  @Input() open = false;
-  @Output() openChange = new EventEmitter<boolean>();
+export class DropdownMenuComponent {}
 
-  onOpenChange(open: boolean): void {
-    this.open = open;
-    this.openChange.emit(open);
-  }
-}
-
+/**
+ * Dropdown Menu Trigger Button
+ * Use with [rdxDropdownMenuTrigger] pointing to a template reference
+ *
+ * Example:
+ * <ui-dropdown-menu-trigger [rdxDropdownMenuTrigger]="menuContent">
+ *   Click me
+ * </ui-dropdown-menu-trigger>
+ */
 @Component({
   selector: 'ui-dropdown-menu-trigger',
   standalone: true,
   imports: [CommonModule, RdxDropdownMenuTriggerDirective],
   template: `
-    <button rdxDropdownMenuTrigger [class]="triggerClasses">
+    <button [class]="triggerClasses">
       <ng-content></ng-content>
     </button>
   `,
@@ -42,15 +43,32 @@ export class DropdownMenuComponent {
 })
 export class DropdownMenuTriggerComponent {
   @Input() class?: string;
-  get triggerClasses(): string { return cn('', this.class); }
+
+  get triggerClasses(): string {
+    return cn(
+      'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+      this.class
+    );
+  }
 }
 
+/**
+ * Dropdown Menu Content Container
+ * Must be used inside an ng-template with rdxDropdownMenuContent directive
+ *
+ * Example:
+ * <ng-template #menuContent>
+ *   <ui-dropdown-menu-content rdxDropdownMenuContent>
+ *     <ui-dropdown-menu-item>Item 1</ui-dropdown-menu-item>
+ *   </ui-dropdown-menu-content>
+ * </ng-template>
+ */
 @Component({
   selector: 'ui-dropdown-menu-content',
   standalone: true,
   imports: [CommonModule, RdxDropdownMenuContentDirective],
   template: `
-    <div rdxDropdownMenuContent [class]="contentClasses">
+    <div [class]="contentClasses">
       <ng-content></ng-content>
     </div>
   `,
