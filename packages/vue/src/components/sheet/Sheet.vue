@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from 'radix-vue'
+import { DialogRoot, DialogPortal, DialogOverlay, DialogContent, DialogTitle, DialogDescription } from 'radix-vue'
 import { X } from 'lucide-vue-next'
 
 interface Props {
@@ -27,24 +27,27 @@ const sideClasses = {
 </script>
 
 <template>
-  <Dialog :open="open" @update:open="emit('update:open', $event)">
-    <DialogContent
-      :class="
-        cn(
-          'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out',
-          sideClasses[side],
-          props.class
-        )
-      "
-    >
-      <slot />
-      <button
-        class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-        @click="emit('update:open', false)"
+  <DialogRoot :open="open" @update:open="emit('update:open', $event)">
+    <DialogPortal>
+      <DialogOverlay class="fixed inset-0 z-50 bg-black/80" />
+      <DialogContent
+        :class="
+          cn(
+            'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out',
+            sideClasses[side],
+            props.class
+          )
+        "
       >
-        <X class="h-4 w-4" />
-        <span class="sr-only">Close</span>
-      </button>
-    </DialogContent>
-  </Dialog>
+        <slot />
+        <button
+          class="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          @click="emit('update:open', false)"
+        >
+          <X class="h-4 w-4" />
+          <span class="sr-only">Close</span>
+        </button>
+      </DialogContent>
+    </DialogPortal>
+  </DialogRoot>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, type HTMLAttributes } from 'vue'
-import Button from '@/components/button/Button.vue'
+import Button from '@/components/ui/button/Button.vue'
 import { cn } from '@/lib/utils'
 import type { MenuItem } from './types'
 

@@ -13,7 +13,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <Toaster
-    :theme="props.theme"
     class="toaster group"
     :toast-options="{
       classes: {

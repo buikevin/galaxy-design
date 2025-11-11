@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { AlertDialogRoot, type AlertDialogRootProps } from 'radix-vue'
-interface Props extends AlertDialogRootProps {}
+import { AlertDialogRoot, type AlertDialogProps } from 'radix-vue'
+interface Props extends AlertDialogProps {}
 defineProps<Props>()
 </script>
 
