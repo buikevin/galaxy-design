@@ -35,9 +35,11 @@ const handleKeyDown = (e: KeyboardEvent) => {
     inputValue.value = ''
   } else if (e.key === 'Backspace' && !inputValue.value && props.modelValue.length > 0) {
     const lastTag = props.modelValue[props.modelValue.length - 1]
-    const newTags = props.modelValue.slice(0, -1)
-    emit('update:modelValue', newTags)
-    emit('tagRemove', lastTag)
+    if (lastTag) {
+      const newTags = props.modelValue.slice(0, -1)
+      emit('update:modelValue', newTags)
+      emit('tagRemove', lastTag)
+    }
   }
 }
 

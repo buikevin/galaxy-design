@@ -13,6 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <Toaster
+    :theme="props.theme"
     class="toaster group"
     :toast-options="{
       classes: {
@@ -25,6 +26,5 @@ const props = withDefaults(defineProps<Props>(), {
           'group-[.toast]:bg-muted group-[.toast]:text-muted-foreground',
       },
     }"
-    v-bind="props"
   />
 </template>

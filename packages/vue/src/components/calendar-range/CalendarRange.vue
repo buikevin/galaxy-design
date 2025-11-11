@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
-import { RangeCalendar } from 'radix-vue'
+import { RangeCalendarRoot } from 'radix-vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
 interface Props {
@@ -16,7 +16,7 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <RangeCalendar
+  <RangeCalendarRoot
     v-bind="props"
     :class="cn('p-3', props.class)"
     @update:model-value="emit('update:modelValue', $event)"
@@ -79,5 +79,5 @@ const emit = defineEmits<{
         </table>
       </div>
     </template>
-  </RangeCalendar>
+  </RangeCalendarRoot>
 </template>
