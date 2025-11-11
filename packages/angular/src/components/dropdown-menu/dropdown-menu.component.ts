@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxDropdownMenuRootDirective,
   RdxDropdownMenuTriggerDirective,
   RdxDropdownMenuContentDirective,
   RdxDropdownMenuItemDirective,
@@ -12,9 +11,9 @@ import { cn } from '@/lib/utils';
 @Component({
   selector: 'ui-dropdown-menu',
   standalone: true,
-  imports: [CommonModule, RdxDropdownMenuRootDirective],
+  imports: [CommonModule],
   template: `
-    <div rdxDropdownMenuRoot [open]="open" (openChange)="onOpenChange($event)">
+    <div [attr.data-open]="open">
       <ng-content></ng-content>
     </div>
   `,

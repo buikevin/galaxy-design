@@ -1,7 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxContextMenuRootDirective,
   RdxContextMenuTriggerDirective,
   RdxContextMenuContentDirective,
   RdxContextMenuItemDirective,
@@ -11,9 +10,9 @@ import { cn } from '@/lib/utils';
 @Component({
   selector: 'ui-context-menu',
   standalone: true,
-  imports: [CommonModule, RdxContextMenuRootDirective],
+  imports: [CommonModule],
   template: `
-    <div rdxContextMenuRoot>
+    <div>
       <ng-content></ng-content>
     </div>
   `,
