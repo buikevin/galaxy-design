@@ -32,7 +32,8 @@ export const RadarChart = React.forwardRef<ReactECharts, RadarChartComponentProp
         return null
       }
 
-      const colors = getThemeColors(theme)
+      const colors = getDefaultColors()
+      const themeColors = getThemeColors(theme)
 
       // Build radar indicators from labels
       const indicator = data.labels.map((label) => ({

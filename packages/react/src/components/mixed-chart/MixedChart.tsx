@@ -149,6 +149,8 @@ export const MixedChart = React.forwardRef<ReactECharts, MixedChartComponentProp
           },
         },
         series,
+        animation: animation,
+        animationDuration: animation ? 1000 : 0,
         ...options,
       }
     }, [data, theme, legend, legendPosition, grid, tooltip, options])

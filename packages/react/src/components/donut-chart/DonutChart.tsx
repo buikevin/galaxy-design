@@ -3,7 +3,7 @@ import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import { cn } from '@/lib/utils'
 import type { DonutChartProps } from './types'
-import { getDefaultColors } from './utils'
+import { getDefaultColors, formatNumber } from './utils'
 
 export interface DonutChartComponentProps extends DonutChartProps {
   className?: string
@@ -106,6 +106,8 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
             },
           },
         ],
+        animation: animation,
+        animationDuration: animation ? 1000 : 0,
         ...options,
       }
     }, [

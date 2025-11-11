@@ -31,7 +31,8 @@ export const ScatterChart = React.forwardRef<ReactECharts, ScatterChartComponent
         return null
       }
 
-      const colors = getThemeColors(theme)
+      const colors = getDefaultColors()
+      const themeColors = getThemeColors(theme)
 
       // Transform datasets to scatter series
       const series = data.datasets.map((dataset, index) => {
