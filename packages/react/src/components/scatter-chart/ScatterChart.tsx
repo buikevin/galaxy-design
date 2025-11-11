@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import type { ScatterChartProps } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors, getThemeColors } from './utils'
 
 export interface ScatterChartComponentProps extends ScatterChartProps {
   className?: string
@@ -32,7 +32,6 @@ export const ScatterChart = React.forwardRef<ReactECharts, ScatterChartComponent
       }
 
       const colors = getDefaultColors()
-      const themeColors = getThemeColors(theme)
 
       // Transform datasets to scatter series
       const series = data.datasets.map((dataset, index) => {
