@@ -49,6 +49,7 @@ export function transformDataToSeries(
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
   return [...ChartColorSchemes[scheme]] as string[]
+}
 
 /**
  * Get theme colors based on light/dark theme
@@ -78,7 +79,6 @@ export function getThemeColors(theme: 'light' | 'dark' = 'light') {
     axisLabel: '#6b7280',
     axis: '#6b7280',
   }
-}
 }
 
 /**
