@@ -9,12 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vee-validate/zod": "^4.15.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "echarts": "^6.0.0",
     "lucide-vue-next": "^0.553.0",
     "radix-vue": "^1.9.17",
     "tailwind-merge": "^3.4.0",
-    "vue": "^3.5.24"
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.24",
+    "vue-echarts": "^8.0.1",
+    "vue-sonner": "^2.0.9"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
