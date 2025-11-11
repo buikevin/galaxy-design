@@ -48,7 +48,15 @@ export function transformDataToSeries(
  * Get default colors for charts
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
-  return ChartColorSchemes[scheme]
+  return [...ChartColorSchemes[scheme]] as string[]
+}
+
+/**
+ * Get theme colors based on light/dark theme
+ */
+export function getThemeColors(theme: 'light' | 'dark' = 'light'): string[] {
+  const scheme = theme === 'dark' ? 'pastel' : 'default'
+  return getDefaultColors(scheme as ColorScheme)
 }
 
 /**
