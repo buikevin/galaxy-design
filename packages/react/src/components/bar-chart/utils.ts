@@ -67,6 +67,7 @@ export function getThemeColors(theme: 'light' | 'dark' = 'light') {
       tooltipBorder: '#374151',
       tooltipText: '#f3f4f6',
       grid: '#374151',
+      gridLine: '#374151',
       axisLabel: '#9ca3af',
       axis: '#9ca3af',
     }
@@ -78,6 +79,7 @@ export function getThemeColors(theme: 'light' | 'dark' = 'light') {
     tooltipBorder: '#e5e7eb',
     tooltipText: '#111827',
     grid: '#e5e7eb',
+      gridLine: '#e5e7eb',
     axis: '#6b7280',
   }
 }
@@ -240,7 +242,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: 'line' |
     series: transformDataToSeries(data, chartType),
     animation: animation,
     animationDuration: animation ? 1000 : 0,
-    animationEasing: 'cubicOut',
+    animationEasing: 'cubicOut' as any,
   }
 
   // Add zoom/dataZoom if enabled

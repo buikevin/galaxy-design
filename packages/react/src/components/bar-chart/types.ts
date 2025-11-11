@@ -195,6 +195,12 @@ export interface BarChartProps extends BaseChartProps {
   /** Stack multiple datasets */
   stack?: boolean
 
+  /** Stack multiple datasets (alias) */
+  stacked?: boolean
+
+  /** Show data labels on bars */
+  showDataLabels?: boolean
+
   /** Bar width percentage */
   barWidth?: string | number
 

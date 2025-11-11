@@ -27,6 +27,7 @@ export const BarChart = React.forwardRef<ReactECharts, BarChartComponentProps>(
       horizontal = false,
       stacked = false,
       showDataLabels = false,
+      animation = true,
       loading = false,
       emptyText = 'No data available',
       className,

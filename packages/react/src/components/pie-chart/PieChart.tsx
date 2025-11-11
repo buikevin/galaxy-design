@@ -22,6 +22,7 @@ export const PieChart = React.forwardRef<ReactECharts, PieChartComponentProps>(
       outerRadius = 70,
       showPercentage = true,
       labelPosition = 'outside',
+      animation = true,
       loading = false,
       emptyText = 'No data available',
       className,

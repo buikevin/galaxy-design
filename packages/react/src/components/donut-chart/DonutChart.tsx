@@ -22,6 +22,7 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
       outerRadius = 70,
       showPercentage = true,
       labelPosition = 'outside',
+      animation = true,
       loading = false,
       emptyText = 'No data available',
       className,

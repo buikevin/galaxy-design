@@ -37,6 +37,7 @@ export const LineChart = React.forwardRef<ReactECharts, LineChartComponentProps>
       stack = false,
       zoom = false,
       dataLabels = false,
+      animation = true,
       loading = false,
       emptyText = 'No data available',
       className,
