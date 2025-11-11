@@ -4,13 +4,14 @@
  * This is a placeholder component. Full implementation coming soon.
  */
 
-import { Component, Input } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-export interface SidebarItemData {
+export interface MenuItem {
   label: string
   icon?: string
   link?: string
+  active?: boolean
 }
 
 @Component({
@@ -18,8 +19,9 @@ export interface SidebarItemData {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="sidebar-item-placeholder">
-      <span>{{ label }}</span>
+    <div class="sidebar-item-placeholder" (click)="itemClick.emit(item)">
+      <span *ngIf="!collapsed">{{ item?.label }}</span>
+      <span *ngIf="collapsed" class="icon-only">{{ item?.icon || '•' }}</span>
     </div>
   `,
   styles: [`
@@ -31,10 +33,15 @@ export interface SidebarItemData {
     .sidebar-item-placeholder:hover {
       background: #f5f5f5;
     }
+    .icon-only {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
   `]
 })
 export class SidebarItemComponent {
-  @Input() label: string = ''
-  @Input() icon?: string
-  @Input() link?: string
+  @Input() item: MenuItem = { label: '' }
+  @Input() collapsed: boolean = false
+  @Output() itemClick = new EventEmitter<MenuItem>()
 }
