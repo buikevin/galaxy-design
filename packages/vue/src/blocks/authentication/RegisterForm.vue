@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, type HTMLAttributes } from 'vue'
 import Button from '@/components/ui/button/Button.vue'
-import Input from '@/components/ui/input/input.vue'
+import Input from '@/components/ui/input/Input.vue'
 import Label from '@/components/ui/label/label.vue'
 import Checkbox from '@/components/ui/checkbox/checkbox.vue'
 import { cn } from '@/lib/utils'

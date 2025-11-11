@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, type HTMLAttributes } from 'vue'
 import Button from '@/components/ui/button/Button.vue'
-import Separator from '@/components/ui/separator/separator.vue'
+import Separator from '@/components/ui/separator/Separator.vue'
 import LoginForm from './LoginForm.vue'
 import RegisterForm from './RegisterForm.vue'
 import { cn } from '@/lib/utils'
