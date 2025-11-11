@@ -1,7 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxNavigationMenuRootDirective,
+  RdxNavigationMenuDirective,
   RdxNavigationMenuListDirective,
   RdxNavigationMenuItemDirective,
   RdxNavigationMenuTriggerDirective,
@@ -15,9 +15,9 @@ import { cn } from '@/lib/utils';
 @Component({
   selector: 'ui-navigation-menu',
   standalone: true,
-  imports: [CommonModule, RdxNavigationMenuRootDirective],
+  imports: [CommonModule, RdxNavigationMenuDirective],
   template: `
-    <nav rdxNavigationMenuRoot [class]="rootClasses">
+    <nav rdxNavigationMenu [class]="rootClasses">
       <ng-content></ng-content>
     </nav>
   `,

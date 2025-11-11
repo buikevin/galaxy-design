@@ -1,10 +1,10 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxMenubarTriggerDirective,
-  RdxMenubarContentDirective,
-  RdxMenubarItemDirective,
-  RdxMenubarSeparatorDirective,
+  RdxMenuBarTriggerDirective,
+  RdxMenuBarContentDirective,
+  RdxMenuBarItemDirective,
+  RdxMenuBarSeparatorDirective,
 } from '@radix-ng/primitives/menubar';
 import { cn } from '@/lib/utils';
 
@@ -33,9 +33,9 @@ export class MenubarComponent {
 @Component({
   selector: 'ui-menubar-trigger',
   standalone: true,
-  imports: [CommonModule, RdxMenubarTriggerDirective],
+  imports: [CommonModule, RdxMenuBarTriggerDirective],
   template: `
-    <button rdxMenubarTrigger [class]="triggerClasses">
+    <button rdxMenuBarTrigger [class]="triggerClasses">
       <ng-content></ng-content>
     </button>
   `,
@@ -55,9 +55,9 @@ export class MenubarTriggerComponent {
 @Component({
   selector: 'ui-menubar-content',
   standalone: true,
-  imports: [CommonModule, RdxMenubarContentDirective],
+  imports: [CommonModule, RdxMenuBarContentDirective],
   template: `
-    <div rdxMenubarContent [class]="contentClasses">
+    <div rdxMenuBarContent [class]="contentClasses">
       <ng-content></ng-content>
     </div>
   `,
@@ -77,9 +77,9 @@ export class MenubarContentComponent {
 @Component({
   selector: 'ui-menubar-item',
   standalone: true,
-  imports: [CommonModule, RdxMenubarItemDirective],
+  imports: [CommonModule, RdxMenuBarItemDirective],
   template: `
-    <div rdxMenubarItem [class]="itemClasses">
+    <div rdxMenuBarItem [class]="itemClasses">
       <ng-content></ng-content>
     </div>
   `,
@@ -101,8 +101,8 @@ export class MenubarItemComponent {
 @Component({
   selector: 'ui-menubar-separator',
   standalone: true,
-  imports: [CommonModule, RdxMenubarSeparatorDirective],
-  template: `<div rdxMenubarSeparator class="-mx-1 my-1 h-px bg-muted"></div>`,
+  imports: [CommonModule, RdxMenuBarSeparatorDirective],
+  template: `<div rdxMenuBarSeparator class="-mx-1 my-1 h-px bg-muted"></div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenubarSeparatorComponent {}
