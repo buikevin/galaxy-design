@@ -1,1 +1,0 @@
-export { GaugeChart } from './GaugeChart';

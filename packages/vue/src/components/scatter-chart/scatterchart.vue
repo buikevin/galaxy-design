@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import VChart from 'vue-echarts'
 import type { EChartsOption } from 'echarts'
 import type { ScatterChartProps } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors } from './utils'
 
 const props = defineProps<ScatterChartProps>()
 
@@ -12,7 +12,7 @@ const chartOption = computed<EChartsOption>(() => {
     return {}
   }
 
-  const colors = getThemeColors(props.theme || 'light')
+  const colors = getDefaultColors()
 
   // Transform datasets to scatter series
   const series = props.data.datasets.map((dataset, index) => {

@@ -48,6 +48,8 @@ const chartOption = computed(() => {
 
   const colors = getDefaultColors()
   const dataset = props.data.datasets[0] // Pie charts typically use first dataset
+  if (!dataset) return {}
+
   const total = dataset.data.reduce((sum, val) => sum + val, 0)
 
   const pieData = props.data.labels.map((label, index) => ({

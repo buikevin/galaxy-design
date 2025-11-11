@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, type HTMLAttributes } from 'vue'
-import Avatar from '@/components/avatar/avatar.vue'
-import AvatarImage from '@/components/avatar/avatar-image.vue'
-import AvatarFallback from '@/components/avatar/avatar-fallback.vue'
+import Avatar from '@/components/ui/avatar/Avatar.vue'
+import AvatarImage from '@/components/ui/avatar/AvatarImage.vue'
+import AvatarFallback from '@/components/ui/avatar/AvatarFallback.vue'
 import { cn } from '@/lib/utils'
 import type { Message } from './types'
 

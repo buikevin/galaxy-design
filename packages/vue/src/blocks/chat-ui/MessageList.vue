@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, type HTMLAttributes } from 'vue'
-import ScrollArea from '@/components/scroll-area/scroll-area.vue'
+import ScrollArea from '@/components/ui/scroll-area/ScrollArea.vue'
 import ChatMessage from './ChatMessage.vue'
 import { cn } from '@/lib/utils'
 import type { Message } from './types'

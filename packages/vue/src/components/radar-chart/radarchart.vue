@@ -3,7 +3,7 @@ import { computed, type PropType } from 'vue'
 import VChart from 'vue-echarts'
 import type { EChartsOption } from 'echarts'
 import type { RadarChartProps, ChartData } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors } from './utils'
 
 const props = defineProps<RadarChartProps>()
 
@@ -12,7 +12,7 @@ const chartOption = computed<EChartsOption>(() => {
     return {}
   }
 
-  const colors = getThemeColors(props.theme || 'light')
+  const colors = getDefaultColors()
 
   // Build radar indicators from labels
   const indicator = props.data.labels.map((label) => ({
