@@ -48,7 +48,7 @@ export const ScatterChart = React.forwardRef<ReactECharts, ScatterChartComponent
 
         return {
           name: dataset.label,
-          type: 'scatter',
+          type: 'scatter' as const,
           data: seriesData,
           symbolSize: (dataItem: number[]) => {
             // If third value exists, use it for size scaling
@@ -62,7 +62,7 @@ export const ScatterChart = React.forwardRef<ReactECharts, ScatterChartComponent
             opacity: opacity,
           },
           emphasis: {
-            focus: 'series',
+            focus: 'series' as const,
             itemStyle: {
               borderColor: '#333',
               borderWidth: 1,
