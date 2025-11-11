@@ -1,7 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxMenubarRootDirective,
   RdxMenubarTriggerDirective,
   RdxMenubarContentDirective,
   RdxMenubarItemDirective,
@@ -12,9 +11,9 @@ import { cn } from '@/lib/utils';
 @Component({
   selector: 'ui-menubar',
   standalone: true,
-  imports: [CommonModule, RdxMenubarRootDirective],
+  imports: [CommonModule],
   template: `
-    <div rdxMenubarRoot [class]="menubarClasses">
+    <div [class]="menubarClasses">
       <ng-content></ng-content>
     </div>
   `,

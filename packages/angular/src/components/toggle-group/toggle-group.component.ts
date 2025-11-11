@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxToggleGroupRootDirective,
+  RdxToggleGroupDirective,
   RdxToggleGroupItemDirective,
 } from '@radix-ng/primitives/toggle-group';
 import { cn } from '@/lib/utils';
@@ -13,10 +13,10 @@ type ToggleGroupSize = 'default' | 'sm' | 'lg';
 @Component({
   selector: 'ui-toggle-group',
   standalone: true,
-  imports: [CommonModule, RdxToggleGroupRootDirective],
+  imports: [CommonModule, RdxToggleGroupDirective],
   template: `
     <div
-      rdxToggleGroupRoot
+      rdxToggleGroup
       [type]="type"
       [value]="value"
       (valueChange)="onValueChange($event)"
