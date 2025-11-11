@@ -3,7 +3,7 @@ import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import { cn } from '@/lib/utils'
 import type { AreaChartProps } from './types'
-import { getDefaultColors, transformDataToSeries, getThemeColors, formatNumber } from './utils'
+import { getDefaultColors, transformDataToSeries, getThemeColors } from './utils'
 
 export interface AreaChartComponentProps extends AreaChartProps {
   className?: string
@@ -20,7 +20,6 @@ export const AreaChart = React.forwardRef<ReactECharts, AreaChartComponentProps>
       legendPosition = 'top',
       grid = true,
       tooltip = true,
-      animation = true,
       smooth = true,
       showPoints = true,
       pointSize = 6,

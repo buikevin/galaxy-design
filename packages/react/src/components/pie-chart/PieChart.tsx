@@ -3,7 +3,7 @@ import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import { cn } from '@/lib/utils'
 import type { PieChartProps } from './types'
-import { getDefaultColors, formatNumber } from './utils'
+import { getDefaultColors } from './utils'
 
 export interface PieChartComponentProps extends PieChartProps {
   className?: string
@@ -18,7 +18,6 @@ export const PieChart = React.forwardRef<ReactECharts, PieChartComponentProps>(
       theme = 'light',
       legend = true,
       legendPosition = 'right',
-      animation = true,
       innerRadius = 0,
       outerRadius = 70,
       showPercentage = true,

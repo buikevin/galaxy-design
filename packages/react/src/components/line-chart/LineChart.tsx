@@ -30,7 +30,6 @@ export const LineChart = React.forwardRef<ReactECharts, LineChartComponentProps>
       legendPosition = 'top',
       grid = true,
       tooltip = true,
-      animation = true,
       smooth = true,
       showPoints = true,
       pointSize = 6,

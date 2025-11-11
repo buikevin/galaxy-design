@@ -20,10 +20,10 @@ export function transformDataToSeries(
   data: ChartData,
   chartType: 'line' | 'bar' | 'scatter' | 'radar' | 'pie',
   additionalConfig: Record<string, any> = {}
-) {
-  return data.datasets.map((dataset, index) => ({
+): any[] {
+  return data.datasets.map((dataset) => ({
     name: dataset.label,
-    type: chartType,
+    type: chartType as any,
     data: dataset.data,
     smooth: dataset.smooth,
     lineStyle: dataset.borderColor
@@ -174,9 +174,9 @@ export function buildLegendConfig(
 /**
  * Build ECharts X-axis configuration
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category') {
+export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): any {
   return {
-    type,
+    type: type as any,
     data: type === 'category' ? labels : undefined,
     boundaryGap: type === 'category',
     axisLine: {
@@ -193,9 +193,9 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
 /**
  * Build ECharts Y-axis configuration
  */
-export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
+export function buildYAxisConfig(type: 'value' | 'category' = 'value'): any {
   return {
-    type,
+    type: type as any,
     axisLine: {
       lineStyle: {
         color: '#ddd',
@@ -216,11 +216,10 @@ export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
 /**
  * Build complete ECharts option from unified props
  */
-export function buildEChartsOption(props: BaseChartProps & { chartType: string }) {
+export function buildEChartsOption(props: BaseChartProps & { chartType: 'line' | 'bar' | 'pie' | 'radar' | 'scatter' }) {
   const {
     data,
     chartType,
-    theme = 'light',
     legend = true,
     legendPosition = 'top',
     grid = true,

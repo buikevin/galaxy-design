@@ -24,7 +24,6 @@ export const BarChart = React.forwardRef<ReactECharts, BarChartComponentProps>(
       legendPosition = 'top',
       grid,
       tooltip,
-      animation = true,
       horizontal = false,
       stacked = false,
       showDataLabels = false,

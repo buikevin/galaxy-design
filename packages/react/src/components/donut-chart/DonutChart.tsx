@@ -3,7 +3,7 @@ import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import { cn } from '@/lib/utils'
 import type { DonutChartProps } from './types'
-import { getDefaultColors, formatNumber } from './utils'
+import { getDefaultColors } from './utils'
 
 export interface DonutChartComponentProps extends DonutChartProps {
   className?: string
@@ -18,7 +18,6 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
       theme = 'light',
       legend = true,
       legendPosition = 'right',
-      animation = true,
       innerRadius = 50,
       outerRadius = 70,
       showPercentage = true,
