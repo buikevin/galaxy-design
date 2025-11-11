@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils';
   standalone: true,
   imports: [CommonModule, RdxNavigationMenuDirective],
   template: `
-    <nav rdxNavigationMenu [class]="rootClasses">
+    <nav rdxNavigationMenuRoot [class]="rootClasses">
       <ng-content></ng-content>
     </nav>
   `,

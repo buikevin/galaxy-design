@@ -4,7 +4,7 @@ import {
   RdxMenuBarTriggerDirective,
   RdxMenuBarContentDirective,
   RdxMenuBarItemDirective,
-  RdxMenuBarSeparatorDirective,
+  RdxMenubarSeparatorDirective,
 } from '@radix-ng/primitives/menubar';
 import { cn } from '@/lib/utils';
 
@@ -35,7 +35,7 @@ export class MenubarComponent {
   standalone: true,
   imports: [CommonModule, RdxMenuBarTriggerDirective],
   template: `
-    <button rdxMenuBarTrigger [class]="triggerClasses">
+    <button rdxMenubarTrigger [class]="triggerClasses">
       <ng-content></ng-content>
     </button>
   `,
@@ -57,7 +57,7 @@ export class MenubarTriggerComponent {
   standalone: true,
   imports: [CommonModule, RdxMenuBarContentDirective],
   template: `
-    <div rdxMenuBarContent [class]="contentClasses">
+    <div rdxMenubarContent [class]="contentClasses">
       <ng-content></ng-content>
     </div>
   `,
@@ -79,7 +79,7 @@ export class MenubarContentComponent {
   standalone: true,
   imports: [CommonModule, RdxMenuBarItemDirective],
   template: `
-    <div rdxMenuBarItem [class]="itemClasses">
+    <div rdxMenubarItem [class]="itemClasses">
       <ng-content></ng-content>
     </div>
   `,
@@ -101,8 +101,8 @@ export class MenubarItemComponent {
 @Component({
   selector: 'ui-menubar-separator',
   standalone: true,
-  imports: [CommonModule, RdxMenuBarSeparatorDirective],
-  template: `<div rdxMenuBarSeparator class="-mx-1 my-1 h-px bg-muted"></div>`,
+  imports: [CommonModule, RdxMenubarSeparatorDirective],
+  template: `<div rdxMenubarSeparator class="-mx-1 my-1 h-px bg-muted"></div>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenubarSeparatorComponent {}

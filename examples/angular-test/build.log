@@ -1,0 +1,1135 @@
+
+> angular-test@0.0.0 build
+> ng build
+
+❯ Building...
+✔ Building...
+Application bundle generation failed. [14.039 seconds] - 2025-11-11T09:42:28.654Z
+
+▲ [WARNING] NG8113: RdxMenubarSeparatorDirective is not used within the template of MenubarSeparatorComponent [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:105:26:
+      105 │   imports: [CommonModule, RdxMenubarSeparatorDirective],
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/accordion/accordion.component.ts:9:19:
+      9 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/alert-dialog/alert-dialog.component.ts:10:19:
+      10 │ import { cn } from '@/lib/utils';
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/alert/alert.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2305: Module '"./utils"' has no exported member 'getThemeColors'. [plugin angular-compiler]
+
+    src/components/ui/area-chart/area-chart.component.ts:6:50:
+      6 │ ...aultColors, transformDataToSeries, getThemeColors } from './utils';
+        ╵                                       ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/area-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/area-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/area-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/area-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2306: File '/Users/buitronghieu/Desktop/Project/person-work-project/galaxy-design/examples/angular-test/src/components/ui/authentication/auth-form.component.ts' is not a module. [plugin angular-compiler]
+
+    src/components/ui/authentication/index.ts:1:34:
+      1 │ export { AuthFormComponent } from './auth-form.component';
+        ╵                                   ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2306: File '/Users/buitronghieu/Desktop/Project/person-work-project/galaxy-design/examples/angular-test/src/components/ui/authentication/login-form.component.ts' is not a module. [plugin angular-compiler]
+
+    src/components/ui/authentication/index.ts:2:35:
+      2 │ export { LoginFormComponent } from './login-form.component';
+        ╵                                    ~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2306: File '/Users/buitronghieu/Desktop/Project/person-work-project/galaxy-design/examples/angular-test/src/components/ui/authentication/register-form.component.ts' is not a module. [plugin angular-compiler]
+
+    src/components/ui/authentication/index.ts:3:38:
+      3 │ export { RegisterFormComponent } from './register-form.component';
+        ╵                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/avatar/avatar.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/badge/badge.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '{ type: "category" | "value"; axisLine: { lineStyle: { color: string; }; }; axisLabel: { color: string; }; splitLine: { lineStyle: { color: string; type: string; }; }; }' is not assignable to type 'XAXisOption | XAXisOption[] | undefined'.
+  Type '{ type: "category" | "value"; axisLine: { lineStyle: { color: string; }; }; axisLabel: { color: string; }; splitLine: { lineStyle: { color: string; type: string; }; }; }' is not assignable to type '(ValueAxisBaseOption & { gridIndex?: number | undefined; gridId?: string | undefined; position?: CartesianAxisPosition | undefined; offset?: number | undefined; categorySortInfo?: OrdinalSortInfo | undefined; } & { ...; }) | (CategoryAxisBaseOption & ... 1 more ... & { ...; }) | XAXisOption[]'.
+    Type '{ type: "category" | "value"; axisLine: { lineStyle: { color: string; }; }; axisLabel: { color: string; }; splitLine: { lineStyle: { color: string; type: string; }; }; }' is not assignable to type 'CategoryAxisBaseOption & { gridIndex?: number | undefined; gridId?: string | undefined; position?: CartesianAxisPosition | undefined; offset?: number | undefined; categorySortInfo?: OrdinalSortInfo | undefined; } & { ...; }'.
+      Type '{ type: "category" | "value"; axisLine: { lineStyle: { color: string; }; }; axisLabel: { color: string; }; splitLine: { lineStyle: { color: string; type: string; }; }; }' is not assignable to type 'CategoryAxisBaseOption'.
+        Types of property 'type' are incompatible.
+          Type '"category" | "value"' is not assignable to type '"category" | undefined'.
+            Type '"value"' is not assignable to type '"category"'. [plugin angular-compiler]
+
+    src/components/ui/bar-chart/bar-chart.component.ts:132:8:
+      132 │         xAxis: baseOption.yAxis,
+          ╵         ~~~~~
+
+
+✘ [ERROR] TS2322: Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'SeriesOption | SeriesOption[] | undefined'.
+  Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'LineSeriesOption$1 | BarSeriesOption | PieSeriesOption$1 | RadarSeriesOption$1 | ScatterSeriesOption$1 | ... 18 more ... | SeriesOption[]'.
+    Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'SeriesOption[]'.
+      Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'SeriesOption'.
+        Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'LineSeriesOption$1'.
+          Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'LineSeriesOption'.
+            Types of property 'type' are incompatible.
+              Type 'string' is not assignable to type '"line"'. [plugin angular-compiler]
+
+    src/components/ui/bar-chart/bar-chart.component.ts:146:8:
+      146 │         series,
+          ╵         ~~~~~~
+
+
+✘ [ERROR] TS2322: Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'SeriesOption | SeriesOption[] | undefined'.
+  Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'LineSeriesOption$1 | BarSeriesOption | PieSeriesOption$1 | RadarSeriesOption$1 | ScatterSeriesOption$1 | ... 18 more ... | SeriesOption[]'.
+    Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'SeriesOption[]'.
+      Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'SeriesOption'.
+        Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'LineSeriesOption$1'.
+          Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'LineSeriesOption'.
+            Types of property 'type' are incompatible.
+              Type 'string' is not assignable to type '"line"'. [plugin angular-compiler]
+
+    src/components/ui/bar-chart/bar-chart.component.ts:151:8:
+      151 │         series,
+          ╵         ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/bar-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/bar-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/bar-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/bar-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/breadcrumb/breadcrumb.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/button/button.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/calendar-range/calendar-range.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/calendar/calendar.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/card/card.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/components/ui/avatar/avatar.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:3:32:
+      3 │ ...{ AvatarComponent } from '@/components/ui/avatar/avatar.component';
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/components/ui/button/button.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:4:32:
+      4 │ ...{ ButtonComponent } from '@/components/ui/button/button.component';
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/components/ui/scroll-area/scroll-area.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:5:36:
+      5 │ ...mponent } from '@/components/ui/scroll-area/scroll-area.component';
+        ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/components/ui/textarea/textarea.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:6:34:
+      6 │ ...areaComponent } from '@/components/ui/textarea/textarea.component';
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:14:4:
+      14 │     AvatarComponent,
+         ╵     ~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/chat-ui/chat-ui.component.ts:14:4:
+      14 │     AvatarComponent,
+         ╵     ~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:15:4:
+      15 │     ButtonComponent,
+         ╵     ~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/chat-ui/chat-ui.component.ts:15:4:
+      15 │     ButtonComponent,
+         ╵     ~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:16:4:
+      16 │     ScrollAreaComponent,
+         ╵     ~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/chat-ui/chat-ui.component.ts:16:4:
+      16 │     ScrollAreaComponent,
+         ╵     ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/chat-ui/chat-ui.component.ts:17:4:
+      17 │     TextareaComponent,
+         ╵     ~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/chat-ui/chat-ui.component.ts:17:4:
+      17 │     TextareaComponent,
+         ╵     ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/checkbox/checkbox.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/collapsible/collapsible.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/command/command.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/context-menu"' has no exported member named 'RdxContextMenuRootDirective'. Did you mean 'RdxContextMenuItemDirective'? [plugin angular-compiler]
+
+    src/components/ui/context-menu/context-menu.component.ts:4:2:
+      4 │   RdxContextMenuRootDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/context-menu/context-menu.component.ts:9:19:
+      9 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/context-menu/context-menu.component.ts:14:26:
+      14 │   imports: [CommonModule, RdxContextMenuRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/context-menu/context-menu.component.ts:14:26:
+      14 │   imports: [CommonModule, RdxContextMenuRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'string' is not assignable to type 'TemplateRef<unknown>'. [plugin angular-compiler]
+
+    src/components/ui/context-menu/context-menu.component.ts:29:9:
+      29 │     <div rdxContextMenuTrigger [class]="triggerClasses">
+         ╵          ~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/dialog/dialog.component.ts:9:19:
+      9 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/components/ui/donut-chart/donut-chart.component.ts:177:6:
+      177 │       width: typeof this.width === 'number' ? `${this.width}px` :...
+          ╵       ~~~~~
+
+  The expected type comes from property 'width' which is declared here on type '{ width: string; height: string; }'
+
+    src/components/ui/donut-chart/donut-chart.component.ts:72:16:
+      72 │   dimensions: { width: string; height: string } = { width: '100%',...
+         ╵                 ~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/donut-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/donut-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/donut-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/donut-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/dropdown-menu"' has no exported member named 'RdxDropdownMenuRootDirective'. Did you mean 'RdxDropdownMenuItemDirective'? [plugin angular-compiler]
+
+    src/components/ui/dropdown-menu/dropdown-menu.component.ts:4:2:
+      4 │   RdxDropdownMenuRootDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/dropdown-menu/dropdown-menu.component.ts:10:19:
+      10 │ import { cn } from '@/lib/utils';
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/dropdown-menu/dropdown-menu.component.ts:15:26:
+      15 │   imports: [CommonModule, RdxDropdownMenuRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/dropdown-menu/dropdown-menu.component.ts:15:26:
+      15 │   imports: [CommonModule, RdxDropdownMenuRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'string' is not assignable to type 'TemplateRef<unknown>'. [plugin angular-compiler]
+
+    src/components/ui/dropdown-menu/dropdown-menu.component.ts:38:12:
+      38 │     <button rdxDropdownMenuTrigger [class]="triggerClasses">
+         ╵             ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/empty/empty.component.ts:2:19:
+      2 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/form/form.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/components/ui/gauge-chart/gauge-chart.component.ts:232:6:
+      232 │       width: typeof this.width === 'number' ? `${this.width}px` :...
+          ╵       ~~~~~
+
+  The expected type comes from property 'width' which is declared here on type '{ width: string; height: string; }'
+
+    src/components/ui/gauge-chart/gauge-chart.component.ts:76:16:
+      76 │   dimensions: { width: string; height: string } = { width: '100%',...
+         ╵                 ~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/gauge-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/gauge-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/gauge-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/gauge-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/hover-card/hover-card.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2345: Argument of type 'Event' is not assignable to parameter of type 'boolean'. [plugin angular-compiler]
+
+    src/components/ui/hover-card/hover-card.component.ts:19:36:
+      19 │          (openChange)="onOpenChange($event)">
+         ╵                                     ~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/input/input.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/kbd/kbd.component.ts:2:19:
+      2 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/label/label.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/line-chart/line-chart.component.ts:18:19:
+      18 │ import { cn } from '@/lib/utils'
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'SeriesOption | SeriesOption[] | undefined'.
+  Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'LineSeriesOption$1 | BarSeriesOption | PieSeriesOption$1 | RadarSeriesOption$1 | ScatterSeriesOption$1 | ... 18 more ... | SeriesOption[]'.
+    Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }[]' is not assignable to type 'SeriesOption[]'.
+      Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'SeriesOption'.
+        Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'LineSeriesOption$1'.
+          Type '{ name: string; type: string; data: number[]; smooth: boolean | undefined; lineStyle: { color: string; width: number; } | undefined; itemStyle: { color: string | undefined; }; areaStyle: { color: string | ... 1 more ... | undefined; } | undefined; }' is not assignable to type 'LineSeriesOption'.
+            Types of property 'type' are incompatible.
+              Type 'string' is not assignable to type '"line"'. [plugin angular-compiler]
+
+    src/components/ui/line-chart/line-chart.component.ts:176:6:
+      176 │       series,
+          ╵       ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/line-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/line-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/line-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/line-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/menubar"' has no exported member named 'RdxMenubarRootDirective'. Did you mean 'RdxMenuBarRootDirective'? [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:4:2:
+      4 │   RdxMenubarRootDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/menubar"' has no exported member named 'RdxMenubarTriggerDirective'. Did you mean 'RdxMenuBarTriggerDirective'? [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:5:2:
+      5 │   RdxMenubarTriggerDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/menubar"' has no exported member named 'RdxMenubarContentDirective'. Did you mean 'RdxMenuBarContentDirective'? [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:6:2:
+      6 │   RdxMenubarContentDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/menubar"' has no exported member named 'RdxMenubarItemDirective'. Did you mean 'RdxMenuBarItemDirective'? [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:7:2:
+      7 │   RdxMenubarItemDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:10:19:
+      10 │ import { cn } from '@/lib/utils';
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:15:26:
+      15 │   imports: [CommonModule, RdxMenubarRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/menubar/menubar.component.ts:15:26:
+      15 │   imports: [CommonModule, RdxMenubarRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:37:26:
+      37 │   imports: [CommonModule, RdxMenubarTriggerDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/menubar/menubar.component.ts:37:26:
+      37 │   imports: [CommonModule, RdxMenubarTriggerDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:59:26:
+      59 │   imports: [CommonModule, RdxMenubarContentDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/menubar/menubar.component.ts:59:26:
+      59 │   imports: [CommonModule, RdxMenubarContentDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/menubar/menubar.component.ts:81:26:
+      81 │   imports: [CommonModule, RdxMenubarItemDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/menubar/menubar.component.ts:81:26:
+      81 │   imports: [CommonModule, RdxMenubarItemDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/components/ui/mixed-chart/mixed-chart.component.ts:221:6:
+      221 │       width: typeof this.width === 'number' ? `${this.width}px` :...
+          ╵       ~~~~~
+
+  The expected type comes from property 'width' which is declared here on type '{ width: string; height: string; }'
+
+    src/components/ui/mixed-chart/mixed-chart.component.ts:70:16:
+      70 │   dimensions: { width: string; height: string } = { width: '100%',...
+         ╵                 ~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/mixed-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/mixed-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/mixed-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/mixed-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/navigation-menu"' has no exported member named 'RdxNavigationMenuRootDirective'. Did you mean 'RdxNavigationMenuDirective'? [plugin angular-compiler]
+
+    src/components/ui/navigation-menu/navigation-menu.component.ts:4:2:
+      4 │   RdxNavigationMenuRootDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/navigation-menu/navigation-menu.component.ts:13:19:
+      13 │ import { cn } from '@/lib/utils';
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/navigation-menu/navigation-menu.component.ts:18:26:
+      18 │   imports: [CommonModule, RdxNavigationMenuRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/navigation-menu/navigation-menu.component.ts:18:26:
+      18 │   imports: [CommonModule, RdxNavigationMenuRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/pagination/pagination.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'. [plugin angular-compiler]
+
+    src/components/ui/pie-chart/pie-chart.component.ts:177:6:
+      177 │       width: typeof this.width === 'number' ? `${this.width}px` :...
+          ╵       ~~~~~
+
+  The expected type comes from property 'width' which is declared here on type '{ width: string; height: string; }'
+
+    src/components/ui/pie-chart/pie-chart.component.ts:72:16:
+      72 │   dimensions: { width: string; height: string } = { width: '100%',...
+         ╵                 ~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/pie-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/pie-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/pie-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/pie-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/popover/popover.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/progress/progress.component.ts:7:19:
+      7 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2305: Module '"./utils"' has no exported member 'getThemeColors'. [plugin angular-compiler]
+
+    src/components/ui/radar-chart/radar-chart.component.ts:6:9:
+      6 │ import { getThemeColors } from './utils'
+        ╵          ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/radar-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/radar-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/radar-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/radar-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/radio-group/radio-group.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/resizable/resizable.component.ts:12:19:
+      12 │ import { cn } from '@/lib/utils';
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2305: Module '"./utils"' has no exported member 'getThemeColors'. [plugin angular-compiler]
+
+    src/components/ui/scatter-chart/scatter-chart.component.ts:6:9:
+      6 │ import { getThemeColors } from './utils'
+        ╵          ~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '{ name: string; type: string; data: any[][]; symbolSize: (dataItem: number[]) => number; itemStyle: { color: any; opacity: number; }; emphasis: { focus: string; itemStyle: { borderColor: string; borderWidth: number; }; }; }[]' is not assignable to type 'SeriesOption | SeriesOption[] | undefined'.
+  Type '{ name: string; type: string; data: any[][]; symbolSize: (dataItem: number[]) => number; itemStyle: { color: any; opacity: number; }; emphasis: { focus: string; itemStyle: { borderColor: string; borderWidth: number; }; }; }[]' is not assignable to type 'LineSeriesOption$1 | BarSeriesOption | PieSeriesOption$1 | RadarSeriesOption$1 | ScatterSeriesOption$1 | ... 18 more ... | SeriesOption[]'.
+    Type '{ name: string; type: string; data: any[][]; symbolSize: (dataItem: number[]) => number; itemStyle: { color: any; opacity: number; }; emphasis: { focus: string; itemStyle: { borderColor: string; borderWidth: number; }; }; }[]' is not assignable to type 'SeriesOption[]'.
+      Type '{ name: string; type: string; data: any[][]; symbolSize: (dataItem: number[]) => number; itemStyle: { color: any; opacity: number; }; emphasis: { focus: string; itemStyle: { borderColor: string; borderWidth: number; }; }; }' is not assignable to type 'SeriesOption'.
+        Type '{ name: string; type: string; data: any[][]; symbolSize: (dataItem: number[]) => number; itemStyle: { color: any; opacity: number; }; emphasis: { focus: string; itemStyle: { borderColor: string; borderWidth: number; }; }; }' is not assignable to type 'PictorialBarSeriesOption$1'.
+          Type '{ name: string; type: string; data: any[][]; symbolSize: (dataItem: number[]) => number; itemStyle: { color: any; opacity: number; }; emphasis: { focus: string; itemStyle: { borderColor: string; borderWidth: number; }; }; }' is not assignable to type 'PictorialBarSeriesOption'.
+            Types of property 'type' are incompatible.
+              Type 'string' is not assignable to type '"pictorialBar"'. [plugin angular-compiler]
+
+    src/components/ui/scatter-chart/scatter-chart.component.ts:179:6:
+      179 │       series,
+          ╵       ~~~~~~
+
+  The expected type comes from property 'series' which is declared here on type 'EChartsOption'
+
+    node_modules/echarts/types/dist/echarts.d.ts:6772:4:
+      6772 │     series?: SeriesOption | SeriesOption[];
+           ╵     ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/scatter-chart/types.ts:348:2:
+      348 │   return ChartColorSchemes[scheme]
+          ╵   ~~~~~~
+
+
+✘ [ERROR] TS2322: Type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"] | readonly ["#93c5fd", "#86efac", "#fcd34d", "#fca5a5", "#c4b5fd", "#f9a8d4", "#67e8f9", "#fdba74"] | readonly [...] | readonly [...]' is not assignable to type 'string[]'.
+  The type 'readonly ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899", "#06b6d4", "#f97316"]' is 'readonly' and cannot be assigned to the mutable type 'string[]'. [plugin angular-compiler]
+
+    src/components/ui/scatter-chart/utils.ts:51:2:
+      51 │   return ChartColorSchemes[scheme]
+         ╵   ~~~~~~
+
+
+✘ [ERROR] TS1361: 'ChartColorSchemes' cannot be used as a value because it was imported using 'import type'. [plugin angular-compiler]
+
+    src/components/ui/scatter-chart/utils.ts:51:9:
+      51 │   return ChartColorSchemes[scheme]
+         ╵          ~~~~~~~~~~~~~~~~~
+
+  'ChartColorSchemes' was imported here.
+
+    src/components/ui/scatter-chart/utils.ts:12:2:
+      12 │   ChartColorSchemes,
+         ╵   ~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@radix-ng/primitives/scroll-area' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/scroll-area/scroll-area.component.ts:3:36:
+      3 │ import { RdxScrollAreaModule } from '@radix-ng/primitives/scroll-area'
+        ╵                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/scroll-area/scroll-area.component.ts:8:26:
+      8 │   imports: [CommonModule, RdxScrollAreaModule],
+        ╵                           ~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/scroll-area/scroll-area.component.ts:8:26:
+      8 │   imports: [CommonModule, RdxScrollAreaModule],
+        ╵                           ~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/select/select.component.ts:12:19:
+      12 │ import { cn } from '@/lib/utils';
+         ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/separator/separator.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/sheet/sheet.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2306: File '/Users/buitronghieu/Desktop/Project/person-work-project/galaxy-design/examples/angular-test/src/components/ui/sidebar/sidebar-item.component.ts' is not a module. [plugin angular-compiler]
+
+    src/components/ui/sidebar/index.ts:2:37:
+      2 │ export { SidebarItemComponent } from './sidebar-item.component';
+        ╵                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/components/ui/button/button.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/sidebar/sidebar.component.ts:3:32:
+      3 │ ...{ ButtonComponent } from '@/components/ui/button/button.component';
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/components/ui/separator/separator.component' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/sidebar/sidebar.component.ts:4:35:
+      4 │ ...orComponent } from '@/components/ui/separator/separator.component';
+        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2306: File '/Users/buitronghieu/Desktop/Project/person-work-project/galaxy-design/examples/angular-test/src/components/ui/sidebar/sidebar-item.component.ts' is not a module. [plugin angular-compiler]
+
+    src/components/ui/sidebar/sidebar.component.ts:5:37:
+      5 │ import { SidebarItemComponent } from './sidebar-item.component';
+        ╵                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/sidebar/sidebar.component.ts:11:26:
+      11 │   imports: [CommonModule, ButtonComponent, SeparatorComponent, Sid...
+         ╵                           ~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/sidebar/sidebar.component.ts:11:26:
+      11 │   imports: [CommonModule, ButtonComponent, SeparatorComponent, Sid...
+         ╵                           ~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/sidebar/sidebar.component.ts:11:43:
+      11 │ ...odule, ButtonComponent, SeparatorComponent, SidebarItemComponent],
+         ╵                            ~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/sidebar/sidebar.component.ts:11:43:
+      11 │ ...odule, ButtonComponent, SeparatorComponent, SidebarItemComponent],
+         ╵                            ~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/sidebar/sidebar.component.ts:11:63:
+      11 │ ...odule, ButtonComponent, SeparatorComponent, SidebarItemComponent],
+         ╵                                                ~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/sidebar/sidebar.component.ts:11:63:
+      11 │ ...odule, ButtonComponent, SeparatorComponent, SidebarItemComponent],
+         ╵                                                ~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/skeleton/skeleton.component.ts:2:19:
+      2 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/slider/slider.component.ts:9:19:
+      9 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/switch/switch.component.ts:7:19:
+      7 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/table/table.component.ts:2:19:
+      2 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/tabs/tabs.component.ts:9:19:
+      9 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/tags-input/tags-input.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/textarea/textarea.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and '"classNames"' does not exist in type 'ToastOptions'. [plugin angular-compiler]
+
+    src/components/ui/toast/toast.component.ts:14:20:
+      14 │         classNames: {
+         ╵                     ^
+
+
+✘ [ERROR] TS2724: '"@radix-ng/primitives/toggle-group"' has no exported member named 'RdxToggleGroupRootDirective'. Did you mean 'RdxToggleGroupDirective'? [plugin angular-compiler]
+
+    src/components/ui/toggle-group/toggle-group.component.ts:4:2:
+      4 │   RdxToggleGroupRootDirective,
+        ╵   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/toggle-group/toggle-group.component.ts:7:19:
+      7 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG1010: 'imports' must be an array of components, directives, pipes, or NgModules.
+  Value could not be determined statically. [plugin angular-compiler]
+
+    src/components/ui/toggle-group/toggle-group.component.ts:16:26:
+      16 │   imports: [CommonModule, RdxToggleGroupRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Unknown reference.
+
+    src/components/ui/toggle-group/toggle-group.component.ts:16:26:
+      16 │   imports: [CommonModule, RdxToggleGroupRootDirective],
+         ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/toggle/toggle.component.ts:4:19:
+      4 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/toolbar/toolbar.component.ts:2:19:
+      2 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/tooltip/tooltip.component.ts:8:19:
+      8 │ import { cn } from '@/lib/utils';
+        ╵                    ~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations. [plugin angular-compiler]
+
+    src/components/ui/typography/typography.component.ts:3:19:
+      3 │ import { cn } from '@/lib/utils'
+        ╵                    ~~~~~~~~~~~~~
+
+

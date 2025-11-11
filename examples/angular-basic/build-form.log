@@ -1,0 +1,17 @@
+
+> angular-basic@0.0.0 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-5R2IEOL6.js      | main          | 122.19 kB |                36.29 kB
+polyfills-5CFQRCPP.js | polyfills     |  34.59 kB |                11.33 kB
+styles-5INURTSO.css   | styles        |   0 bytes |                 0 bytes
+
+                      | Initial total | 156.77 kB |                47.63 kB
+
+Application bundle generation complete. [6.845 seconds] - 2025-11-11T09:55:00.789Z
+
+Output location: /Users/buitronghieu/Desktop/Project/person-work-project/galaxy-design/examples/angular-basic/dist/angular-basic
+
