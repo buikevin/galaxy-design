@@ -16,7 +16,7 @@ import { cn } from '@/lib/utils';
          [open]="open"
          [openDelay]="openDelay"
          [closeDelay]="closeDelay"
-         (openChange)="onOpenChange($event)">
+         (openChange)="onOpenChange($any($event))">
       <ng-content></ng-content>
     </div>
   `,
@@ -28,9 +28,10 @@ export class HoverCardComponent {
   @Input() closeDelay = 300;
   @Output() openChange = new EventEmitter<boolean>();
 
-  onOpenChange(open: boolean): void {
-    this.open = open;
-    this.openChange.emit(open);
+  onOpenChange(open: any): void {
+    const isOpen = typeof open === 'boolean' ? open : false;
+    this.open = isOpen;
+    this.openChange.emit(isOpen);
   }
 }
 
