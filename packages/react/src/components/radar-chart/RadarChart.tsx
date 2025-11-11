@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import type { RadarChartProps } from './types'
-import { getDefaultColors, getThemeColors } from './utils'
+import { getDefaultColors } from './utils'
 
 export interface RadarChartComponentProps extends RadarChartProps {
   className?: string
