@@ -144,7 +144,7 @@ export function buildLegendConfig(
 /**
  * Build ECharts X-axis configuration
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category') {
+export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): any {
   return {
     type,
     data: type === 'category' ? labels : undefined,
@@ -210,7 +210,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
     series: transformDataToSeries(data, chartType),
     animation: animation,
     animationDuration: animation ? 1000 : 0,
-    animationEasing: 'cubicOut',
+    animationEasing: 'cubicOut' as const,
   }
 
   // Add zoom/dataZoom if enabled

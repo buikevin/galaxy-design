@@ -210,7 +210,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
     series: transformDataToSeries(data, chartType),
     animation: animation,
     animationDuration: animation ? 1000 : 0,
-    animationEasing: 'cubicOut',
+    animationEasing: 'cubicOut' as const,
   }
 
   // Add zoom/dataZoom if enabled
