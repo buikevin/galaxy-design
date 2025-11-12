@@ -1,12 +1,13 @@
-import * as React from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { DayPicker, type DateRange } from 'react-day-picker'
-import 'react-day-picker/style.css'
-import { cn } from '@/lib/utils'
+import * as React from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { DayPicker, type DateRange } from 'react-day-picker';
+import 'react-day-picker/style.css';
+import { cn } from '@/lib/utils';
 
-export interface CalendarRangeProps extends Omit<React.ComponentProps<typeof DayPicker>, 'mode'> {
-  selected?: DateRange
-  onSelect?: (range: DateRange | undefined) => void
+export interface CalendarRangeProps
+  extends Omit<React.ComponentProps<typeof DayPicker>, 'mode'> {
+  selected?: DateRange;
+  onSelect?: (range: DateRange | undefined) => void;
 }
 
 function CalendarRange({
@@ -34,9 +35,15 @@ function CalendarRange({
           'rdp-button_next',
           'hover:bg-gray-100 rounded-md transition-colors'
         ),
-        day_button: 'rounded-md',
         selected:
           'bg-black text-white hover:bg-black hover:text-white focus:bg-black focus:text-white rounded-md !text-white',
+        range_middle:
+          ' text-white hover:bg-black hover:text-white focus:bg-black focus:text-white rounded-3xl !text-white',
+        range_start:
+          ' text-white hover:bg-black hover:text-white focus:bg-black focus:text-white rounded-3xl !text-white',
+        range_end:
+          ' text-white hover:bg-black hover:text-white focus:bg-black focus:text-white rounded-3xl !text-white',
+
         ...classNames,
       }}
       components={{
@@ -50,8 +57,8 @@ function CalendarRange({
       }}
       {...props}
     />
-  )
+  );
 }
-CalendarRange.displayName = 'CalendarRange'
+CalendarRange.displayName = 'CalendarRange';
 
-export { CalendarRange }
+export { CalendarRange };
