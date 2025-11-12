@@ -2,7 +2,6 @@ import * as React from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { DayPicker, type DateRange } from 'react-day-picker'
 import 'react-day-picker/style.css'
-import '../calendar/calendar.css'
 import { cn } from '@/lib/utils'
 
 export interface CalendarRangeProps extends Omit<React.ComponentProps<typeof DayPicker>, 'mode'> {
