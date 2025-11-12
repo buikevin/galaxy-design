@@ -1,0 +1,37 @@
+/* Calendar custom styles */
+.rdp-day_button {
+  border-radius: 0.375rem !important;
+}
+
+.rdp-day_button[aria-selected="true"],
+.rdp-day_button[aria-selected="true"]:hover,
+.rdp-day_button[aria-selected="true"]:focus {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.rdp-range_middle .rdp-day_button {
+  background-color: #f3f4f6 !important;
+  color: #000 !important;
+}
+
+/* Override today color */
+.rdp-today:not(.rdp-outside) {
+  font-weight: 500;
+}
+
+.rdp-today .rdp-day_button:not([aria-selected="true"]) {
+  background-color: #f3f4f6;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Today when selected - needs higher specificity */
+.rdp-day.rdp-today .rdp-day_button[aria-selected="true"],
+.rdp-day.rdp-today .rdp-day_button[aria-selected="true"]:hover,
+.rdp-day.rdp-today .rdp-day_button[aria-selected="true"]:focus {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: none !important;
+}
