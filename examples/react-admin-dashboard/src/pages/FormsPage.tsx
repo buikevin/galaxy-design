@@ -13,6 +13,8 @@ import { Switch } from '@/components/ui/switch'
 import { Slider } from '@/components/ui/slider'
 import { DatePicker } from '@/components/ui/date-picker'
 import { DateRangePicker } from '@/components/ui/date-range-picker'
+import { TimePicker } from '@/components/ui/time-picker'
+import { DateTimePicker } from '@/components/ui/date-time-picker'
 
 export function FormsPage() {
   const [inputValue, setInputValue] = useState('')
@@ -24,8 +26,8 @@ export function FormsPage() {
   const [sliderValue, setSliderValue] = useState([50])
   const [date, setDate] = useState<Date>()
   const [dateRange, setDateRange] = useState<DateRange | undefined>()
-  const [timeValue, setTimeValue] = useState('')
-  const [dateTimeValue, setDateTimeValue] = useState('')
+  const [time, setTime] = useState<string>()
+  const [dateTime, setDateTime] = useState<Date>()
 
   return (
     <div className="space-y-6">
@@ -400,31 +402,32 @@ export function FormsPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="time-input">Time Picker (Native)</Label>
-              <Input
-                id="time-input"
-                type="time"
-                value={timeValue}
-                onChange={(e) => setTimeValue(e.target.value)}
+              <Label htmlFor="time-input">Time Picker</Label>
+              <TimePicker
+                time={time}
+                onTimeChange={setTime}
+                placeholder="Pick a time"
+                format="24h"
               />
-              {timeValue && (
+              {time && (
                 <p className="text-sm text-gray-500">
-                  Selected: {timeValue}
+                  Selected: {time}
                 </p>
               )}
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="datetime-input">Date & Time (Native)</Label>
-              <Input
-                id="datetime-input"
-                type="datetime-local"
-                value={dateTimeValue}
-                onChange={(e) => setDateTimeValue(e.target.value)}
+              <Label htmlFor="datetime-input">Date & Time</Label>
+              <DateTimePicker
+                dateTime={dateTime}
+                onDateTimeChange={setDateTime}
+                datePlaceholder="Pick a date"
+                timePlaceholder="Pick a time"
+                timeFormat="24h"
               />
-              {dateTimeValue && (
+              {dateTime && (
                 <p className="text-sm text-gray-500">
-                  Selected: {new Date(dateTimeValue).toLocaleString()}
+                  Selected: {dateTime.toLocaleString()}
                 </p>
               )}
             </div>

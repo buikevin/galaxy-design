@@ -194,11 +194,16 @@
       "name": "Tooltip",
       "selector": "g-tooltip",
       "type": "modal-overlay",
-      "description": "Tooltip component for hover information (shadcn style)",
-      "files": ["index.ts", "tooltip.component.ts"],
+      "description": "Tooltip using Radix tooltip2 template-based API (use rdxTooltip, rdxTooltipTrigger, rdxTooltipContentWrapper, rdxTooltipContent from @radix-ng/primitives/tooltip2 - requires provideRdxTooltipConfig in app.config - see Angular docs for usage)",
+      "files": ["index.ts", "tooltip.component.ts", "tooltip.directive.ts"],
       "dependencies": ["@radix-ng/primitives"],
       "peerDependencies": [],
-      "exports": ["TooltipComponent"]
+      "exports": [
+        "TooltipComponent",
+        "UiTooltipRootDirective",
+        "UiTooltipTriggerDirective",
+        "UiTooltipContentDirective"
+      ]
     },
     "line-chart": {
       "name": "LineChart",

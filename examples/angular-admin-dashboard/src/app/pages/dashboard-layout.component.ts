@@ -24,9 +24,9 @@ import { SidebarComponent, type MenuItem } from '../../components/ui/sidebar';
       <div class="flex-1 flex flex-col">
         <header class="bg-white border-b p-4 flex justify-between items-center">
           <h1 class="text-xl font-bold">Galaxy UI Admin Dashboard</h1>
-          <ui-button variant="outline" (click)="handleLogout()">
+          <button ui-button variant="outline" (click)="handleLogout()">
             Logout
-          </ui-button>
+          </button>
         </header>
         <main class="flex-1 p-8 overflow-auto">
           <router-outlet />

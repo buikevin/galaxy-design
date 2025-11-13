@@ -6,7 +6,12 @@ import { AuthService } from '../services/auth.service';
 import { ButtonComponent } from '../../components/ui/button';
 import { InputComponent } from '../../components/ui/input';
 import { LabelComponent } from '../../components/ui/label';
-import { CardComponent, CardHeaderComponent, CardTitleComponent, CardContentComponent } from '../../components/ui/card';
+import {
+  CardComponent,
+  CardHeaderComponent,
+  CardTitleComponent,
+  CardContentComponent,
+} from '../../components/ui/card';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +25,7 @@ import { CardComponent, CardHeaderComponent, CardTitleComponent, CardContentComp
     CardComponent,
     CardHeaderComponent,
     CardTitleComponent,
-    CardContentComponent
+    CardContentComponent,
   ],
   template: `
     <div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
@@ -54,16 +59,11 @@ import { CardComponent, CardHeaderComponent, CardTitleComponent, CardContentComp
                 />
               </div>
               @if (error) {
-                <div class="text-sm text-red-600">
-                  {{ error }}
-                </div>
+              <div class="text-sm text-red-600">
+                {{ error }}
+              </div>
               }
-              <ui-button
-                type="submit"
-                [class]="'w-full'"
-              >
-                Login
-              </ui-button>
+              <button ui-button type="submit" class="w-full">Login</button>
               <div class="text-sm text-gray-600 text-center mt-4">
                 Default credentials: admin / Abc123@
               </div>
@@ -72,26 +72,29 @@ import { CardComponent, CardHeaderComponent, CardTitleComponent, CardContentComp
         </ui-card>
       </div>
     </div>
-  `
+  `,
 })
 export class LoginComponent {
   username = '';
   password = '';
   error = '';
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
-    this.error = '';
-    const success = this.authService.login(this.username, this.password);
+    try {
+      console.log('hihihihi');
+      this.error = '';
+      const success = this.authService.login(this.username, this.password);
+      console.log('🚀 ~ LoginComponent ~ onSubmit ~ success:', success);
 
-    if (success) {
-      this.router.navigate(['/dashboard']);
-    } else {
-      this.error = 'Invalid username or password';
+      if (success) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.error = 'Invalid username or password';
+      }
+    } catch (error) {
+      console.error('Login error:', error);
     }
   }
 }

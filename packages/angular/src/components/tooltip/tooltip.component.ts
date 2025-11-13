@@ -1,18 +1,18 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxTooltipRootDirective,
-  RdxTooltipTriggerDirective,
-  RdxTooltipContentDirective,
-} from '@radix-ng/primitives/tooltip';
+  RdxTooltip,
+  RdxTooltipTrigger,
+  RdxTooltipContent,
+} from '@radix-ng/primitives/tooltip2';
 import { cn } from '@/lib/utils';
 
 @Component({
   selector: 'ui-tooltip',
   standalone: true,
-  imports: [CommonModule, RdxTooltipRootDirective],
+  imports: [CommonModule, RdxTooltip],
   template: `
-    <span rdxTooltipRoot>
+    <span rdxTooltip>
       <ng-content></ng-content>
     </span>
   `,
@@ -23,7 +23,7 @@ export class TooltipComponent {}
 @Component({
   selector: 'ui-tooltip-trigger',
   standalone: true,
-  imports: [CommonModule, RdxTooltipTriggerDirective],
+  imports: [CommonModule, RdxTooltipTrigger],
   template: `
     <button rdxTooltipTrigger [class]="triggerClasses">
       <ng-content></ng-content>
@@ -42,7 +42,7 @@ export class TooltipTriggerComponent {
 @Component({
   selector: 'ui-tooltip-content',
   standalone: true,
-  imports: [CommonModule, RdxTooltipContentDirective],
+  imports: [CommonModule, RdxTooltipContent],
   template: `
     <div rdxTooltipContent [class]="contentClasses">
       <ng-content></ng-content>

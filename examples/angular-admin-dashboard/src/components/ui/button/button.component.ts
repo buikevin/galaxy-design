@@ -15,6 +15,7 @@ export class ButtonComponent {
   @Input() size: ButtonVariants['size'] = 'default';
   @Input() class?: string;
   @Input() disabled?: boolean;
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
 
   @HostBinding('class')
   get hostClasses(): string {
@@ -23,7 +24,7 @@ export class ButtonComponent {
 
   @HostBinding('attr.type')
   get buttonType(): string {
-    return 'button';
+    return this.type;
   }
 
   @HostBinding('attr.disabled')
