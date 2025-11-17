@@ -28,7 +28,7 @@ import { cn } from '@/lib/utils';
       (valueChange)="onValueChange($event)"
       [className]="sliderClasses"
     >
-      <rdx-slider-track>
+      <rdx-slider-track class="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary">
         <rdx-slider-range class="absolute h-full bg-primary"></rdx-slider-range>
       </rdx-slider-track>
       <rdx-slider-thumb class="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"></rdx-slider-thumb>

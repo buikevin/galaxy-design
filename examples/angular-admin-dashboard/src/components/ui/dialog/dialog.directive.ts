@@ -1,4 +1,4 @@
-import { Directive, Input, TemplateRef, inject } from '@angular/core';
+import { Directive, Input, TemplateRef } from '@angular/core';
 import {
   RdxDialogTriggerDirective,
   RdxDialogContentDirective,
@@ -22,7 +22,7 @@ import {
   hostDirectives: [
     {
       directive: RdxDialogTriggerDirective,
-      inputs: ['rdxDialogTrigger: uiDialogTrigger'],
+      inputs: ['id', 'rdxDialogTrigger: uiDialogTrigger', 'rdxDialogConfig: dialogConfig'],
     },
   ],
 })

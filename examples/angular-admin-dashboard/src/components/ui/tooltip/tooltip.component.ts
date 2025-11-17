@@ -4,9 +4,6 @@ import {
   RdxTooltip,
   RdxTooltipTrigger,
   RdxTooltipContent,
-  RdxTooltipContentWrapper,
-  RdxTooltipPortal,
-  RdxTooltipPortalPresence,
 } from '@radix-ng/primitives/tooltip2';
 import { cn } from '@/lib/utils';
 
@@ -45,33 +42,20 @@ export class TooltipTriggerComponent {
 @Component({
   selector: 'ui-tooltip-content',
   standalone: true,
-  imports: [
-    CommonModule,
-    RdxTooltipContent,
-    RdxTooltipContentWrapper,
-    RdxTooltipPortal,
-    RdxTooltipPortalPresence
-  ],
+  imports: [CommonModule, RdxTooltipContent],
   template: `
-    <ng-template rdxTooltipPortalPresence>
-      <div rdxTooltipPortal>
-        <div rdxTooltipContentWrapper [side]="side" [class]="wrapperClasses">
-          <div rdxTooltipContent>
-            <ng-content></ng-content>
-          </div>
-        </div>
-      </div>
-    </ng-template>
+    <div rdxTooltipContent [class]="contentClasses">
+      <ng-content></ng-content>
+    </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TooltipContentComponent {
   @Input() class?: string;
-  @Input() side: 'top' | 'right' | 'bottom' | 'left' = 'top';
 
-  get wrapperClasses(): string {
+  get contentClasses(): string {
     return cn(
-      'z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md',
+      'z-50 overflow-hidden rounded-md border bg-popover px-3 py-1.5 text-sm text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
       this.class
     );
   }

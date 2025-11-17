@@ -41,8 +41,7 @@ import type { MenuItem } from './types';
 
       <!-- Footer -->
       <div class="p-2">
-        <button
-          ui-button
+        <ui-button
           *ngIf="collapsible"
           variant="ghost"
           [class]="'w-full' + (isCollapsed ? ' justify-center px-2' : '')"
@@ -61,7 +60,7 @@ import type { MenuItem } from './types';
             <path d="m15 18-6-6 6-6" />
           </svg>
           <span *ngIf="!isCollapsed" class="ml-2">Collapse</span>
-        </button>
+        </ui-button>
       </div>
     </aside>
   `,

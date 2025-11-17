@@ -1,28 +1,46 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './guards/auth.guard';
-import { LoginComponent } from './pages/login.component';
-import { DashboardLayoutComponent } from './pages/dashboard-layout.component';
-import { DashboardHomeComponent } from './pages/dashboard-home.component';
-import { FormsComponent } from './pages/forms.component';
-import { DataComponent } from './pages/data.component';
-import { FeedbackComponent } from './pages/feedback.component';
-import { NavigationComponent } from './pages/navigation.component';
-import { LayoutComponent } from './pages/layout.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full',
+  },
   {
     path: 'dashboard',
-    component: DashboardLayoutComponent,
-    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./layouts/dashboard-layout').then((m) => m.DashboardLayoutComponent),
     children: [
-      { path: '', component: DashboardHomeComponent },
-      { path: 'forms', component: FormsComponent },
-      { path: 'data', component: DataComponent },
-      { path: 'feedback', component: FeedbackComponent },
-      { path: 'navigation', component: NavigationComponent },
-      { path: 'layout', component: LayoutComponent }
-    ]
-  }
+      {
+        path: '',
+        loadComponent: () =>
+          import('./pages/dashboard/dashboard-home').then((m) => m.DashboardHomeComponent),
+      },
+      {
+        path: 'forms',
+        loadComponent: () =>
+          import('./pages/forms/forms-page').then((m) => m.FormsPageComponent),
+      },
+      {
+        path: 'data',
+        loadComponent: () =>
+          import('./pages/data/data-page').then((m) => m.DataPageComponent),
+      },
+      {
+        path: 'feedback',
+        loadComponent: () =>
+          import('./pages/feedback/feedback-page').then((m) => m.FeedbackPageComponent),
+      },
+      {
+        path: 'navigation',
+        loadComponent: () =>
+          import('./pages/navigation/navigation-page').then((m) => m.NavigationPageComponent),
+      },
+      {
+        path: 'layout',
+        loadComponent: () =>
+          import('./pages/layout/layout-page').then((m) => m.LayoutPageComponent),
+      },
+    ],
+  },
 ];

@@ -90,8 +90,7 @@ import type { Message } from './types';
           class="min-h-[60px] max-h-[120px] resize-none"
           (keydown)="handleKeyDown($event)"
         />
-        <button
-          ui-button
+        <ui-button
           [disabled]="!messageContent.trim()"
           (click)="handleSend()"
           class="self-end"
@@ -111,7 +110,7 @@ import type { Message } from './types';
             <path d="M22 2 11 13" />
           </svg>
           <span class="ml-2">Send</span>
-        </button>
+        </ui-button>
       </div>
     </div>
   `,
