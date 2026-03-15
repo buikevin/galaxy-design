@@ -1,4 +1,4 @@
-import { Component, Input, HostBinding, forwardRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostBinding, forwardRef, ChangeDetectionStrategy } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';
@@ -9,12 +9,20 @@ import { cn } from '@/lib/utils';
   imports: [CommonModule],
   template: `
     <input
-      [type]="type"
+      [attr.type]="type"
       [value]="value"
-      [disabled]="disabled"
+      [attr.disabled]="disabled ? '' : null"
+      [attr.readonly]="readonly ? '' : null"
+      [attr.maxlength]="maxlength ?? null"
+      [attr.autocomplete]="autocomplete ?? null"
+      [attr.aria-invalid]="ariaInvalidAttr"
+      [attr.name]="name ?? null"
+      [attr.id]="id ?? null"
+      [attr.required]="required ? '' : null"
       [placeholder]="placeholder"
       (input)="onInput($event)"
-      (blur)="onTouched()"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
       [class]="inputClasses"
     />
   `,
@@ -25,13 +33,24 @@ import { cn } from '@/lib/utils';
       multi: true,
     },
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() type: string = 'text';
   @Input() placeholder?: string;
   @Input() class?: string;
   @Input() disabled: boolean = false;
+  @Input() readonly: boolean = false;
+  @Input() maxlength?: number;
+  @Input() autocomplete?: string;
+  @Input() ariaInvalid?: string | boolean;
+  @Input() name?: string;
+  @Input() id?: string;
+  @Input() required: boolean = false;
+
+  @Output() valueChange = new EventEmitter<string | number>();
+  @Output() inputFocus = new EventEmitter<void>();
+  @Output() inputBlur = new EventEmitter<void>();
 
   value: string | number = '';
   onChange: any = () => {};
@@ -48,6 +67,7 @@ export class InputComponent implements ControlValueAccessor {
     const target = event.target as HTMLInputElement;
     this.value = target.value;
     this.onChange(this.value);
+    this.valueChange.emit(this.value);
   }
 
   writeValue(value: any): void {
@@ -64,5 +84,19 @@ export class InputComponent implements ControlValueAccessor {
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
+  }
+
+  onFocus(): void {
+    this.inputFocus.emit();
+  }
+
+  onBlur(): void {
+    this.onTouched();
+    this.inputBlur.emit();
+  }
+
+  get ariaInvalidAttr(): string | null {
+    if (this.ariaInvalid === undefined || this.ariaInvalid === null) return null;
+    return String(this.ariaInvalid);
   }
 }

@@ -1690,8 +1690,8 @@ export const COMPONENT_CONFIGS: Record<string, ComponentConfig> = {
     ],
     dependencies: {
       react: ['react-resizable-panels'],
-      vue: [],
-      angular: []
+      vue: ['radix-vue'],
+      angular: ['angular-split']
     },
     props: [],
     hasAccessibilityInfo: true,
@@ -1747,6 +1747,27 @@ export const COMPONENT_CONFIGS: Record<string, ComponentConfig> = {
     accessibilityInfo: {
       keyboard: { en: 'Not interactive', vi: 'Không tương tác' },
       screenReader: { en: 'Uses aria-busy and aria-label', vi: 'Sử dụng aria-busy và aria-label' },
+      focus: { en: 'Not focusable', vi: 'Không thể focus' },
+      wcag: { en: 'WCAG 2.1 Level AA compliant', vi: 'Tuân thủ WCAG 2.1 cấp độ AA' }
+    }
+  },
+
+  'spinner': {
+    name: 'spinner',
+    description: {
+      en: 'Animated loading spinner for indeterminate progress states.',
+      vi: 'Spinner loading động cho các trạng thái tiến trình không xác định.'
+    },
+    hasSubcomponents: false,
+    dependencies: { react: [], vue: [], angular: [] },
+    props: [
+      { name: 'size', type: "'sm' | 'default' | 'lg'", default: "'default'", description: { en: 'Visual size of the spinner', vi: 'Kích thước hiển thị của spinner' }, frameworks: 'all' },
+      { name: 'label', type: 'string', default: "'Loading...'", description: { en: 'Accessible label for assistive technology', vi: 'Nhãn truy cập cho công nghệ hỗ trợ' }, frameworks: 'all' }
+    ],
+    hasAccessibilityInfo: true,
+    accessibilityInfo: {
+      keyboard: { en: 'Not interactive', vi: 'Không tương tác' },
+      screenReader: { en: 'Uses status/progress semantics with an accessible label', vi: 'Sử dụng semantics status/progress với nhãn truy cập' },
       focus: { en: 'Not focusable', vi: 'Không thể focus' },
       wcag: { en: 'WCAG 2.1 Level AA compliant', vi: 'Tuân thủ WCAG 2.1 cấp độ AA' }
     }

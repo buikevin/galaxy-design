@@ -1,23 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import { SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent, SelectValueComponent } from '../index'
+import { SelectComponent, SelectItemComponent } from '../index'
 import { Component } from '@angular/core'
 
 @Component({
   template: `
-    <ui-select [(ngModel)]="selectedValue">
-      <ui-select-trigger>
-        <ui-select-value [placeholder]="placeholder" />
-      </ui-select-trigger>
-      <ui-select-content>
-        <ui-select-item *ngFor="let option of options" [value]="option.value">
-          {{option.label}}
-        </ui-select-item>
-      </ui-select-content>
+    <ui-select [(ngModel)]="selectedValue" [placeholder]="placeholder">
+      <ui-select-item *ngFor="let option of options" [value]="option.value">
+        {{option.label}}
+      </ui-select-item>
     </ui-select>
   `,
   standalone: true,
-  imports: [SelectComponent, SelectTriggerComponent, SelectContentComponent, SelectItemComponent, SelectValueComponent, FormsModule],
+  imports: [SelectComponent, SelectItemComponent, CommonModule, FormsModule],
 })
 class TestHostComponent {
   selectedValue = ''
@@ -90,7 +86,12 @@ describe('SelectComponent', () => {
   })
 
   it('should show selected value in trigger', () => {
-    component.selectedValue = 'banana'
+    const trigger = compiled.querySelector('[role="combobox"]') as HTMLElement
+    trigger.click()
+    fixture.detectChanges()
+
+    const options = compiled.querySelectorAll('[role="option"]')
+    ;(options[1] as HTMLElement).click()
     fixture.detectChanges()
 
     expect(compiled.textContent).toContain('Banana')

@@ -27,6 +27,10 @@ export class DialogComponent {
     this.open = open;
     this.openChange.emit(open);
   }
+
+  setOpen(open: boolean): void {
+    this.onOpenChange(open);
+  }
 }
 
 @Component({

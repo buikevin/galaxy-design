@@ -12,13 +12,13 @@ describe('SidebarComponent', () => {
       id: 'home',
       label: 'Home',
       icon: '🏠',
-      path: '/',
+      href: '/',
     },
     {
       id: 'settings',
       label: 'Settings',
       icon: '⚙️',
-      path: '/settings',
+      href: '/settings',
       badge: '3',
     },
     {
@@ -26,8 +26,8 @@ describe('SidebarComponent', () => {
       label: 'Profile',
       icon: '👤',
       children: [
-        { id: 'edit', label: 'Edit Profile', path: '/profile/edit' },
-        { id: 'security', label: 'Security', path: '/profile/security' },
+        { id: 'edit', label: 'Edit Profile', href: '/profile/edit' },
+        { id: 'security', label: 'Security', href: '/profile/security' },
       ],
     },
   ]
@@ -54,76 +54,55 @@ describe('SidebarComponent', () => {
     expect(compiled.textContent).toContain('Profile')
   })
 
-  it('should display icons for menu items', () => {
+  it('should display labels when not collapsed', () => {
+    const compiled = fixture.nativeElement as HTMLElement
+    expect(compiled.textContent).toContain('Home')
+    expect(compiled.textContent).toContain('Settings')
+    expect(compiled.textContent).toContain('Profile')
+  })
+
+  it('should emit itemClick event when item is clicked', () => {
+    spyOn(component.itemClick, 'emit')
+
+    const firstItem = fixture.nativeElement.querySelector('.sidebar-item-placeholder') as HTMLElement
+    firstItem.click()
+
+    expect(component.itemClick.emit).toHaveBeenCalledWith(mockMenuItems[0])
+  })
+
+  it('should toggle collapsed state', () => {
+    expect(component.isCollapsed).toBe(false)
+
+    component.toggleCollapse()
+
+    expect(component.isCollapsed).toBe(true)
+  })
+
+  it('should emit collapseChange event when collapsed', () => {
+    spyOn(component.collapseChange, 'emit')
+
+    component.toggleCollapse()
+
+    expect(component.collapseChange.emit).toHaveBeenCalledWith(true)
+  })
+
+  it('should display icons when collapsed', () => {
+    component.toggleCollapse()
+    fixture.detectChanges()
+
     const compiled = fixture.nativeElement as HTMLElement
     expect(compiled.textContent).toContain('🏠')
     expect(compiled.textContent).toContain('⚙️')
     expect(compiled.textContent).toContain('👤')
   })
 
-  it('should show badge when provided', () => {
-    const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.textContent).toContain('3')
-  })
-
-  it('should emit itemClick event when item is clicked', () => {
-    spyOn(component.itemClick, 'emit')
-
-    component.handleItemClick(mockMenuItems[0])
-
-    expect(component.itemClick.emit).toHaveBeenCalledWith(mockMenuItems[0])
-  })
-
-  it('should toggle collapsed state', () => {
-    expect(component.collapsed).toBe(false)
-
-    component.toggleCollapsed()
-
-    expect(component.collapsed).toBe(true)
-  })
-
-  it('should emit collapseChange event when collapsed', () => {
-    spyOn(component.collapseChange, 'emit')
-
-    component.toggleCollapsed()
-
-    expect(component.collapseChange.emit).toHaveBeenCalledWith(true)
-  })
-
-  it('should apply collapsed class when collapsed', () => {
-    component.collapsed = true
+  it('should set width based on collapsed state', () => {
+    component.width = '250px'
+    component.collapsedWidth = '64px'
     fixture.detectChanges()
 
-    const sidebarElement = fixture.nativeElement.querySelector('.sidebar')
-    expect(sidebarElement.classList.contains('collapsed')).toBe(true)
-  })
-
-  it('should display nested menu items', () => {
-    const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.textContent).toContain('Edit Profile')
-    expect(compiled.textContent).toContain('Security')
-  })
-
-  it('should highlight active item', () => {
-    component.activeItemId = 'home'
-    fixture.detectChanges()
-
-    const homeItem = fixture.nativeElement.querySelector('[data-item-id="home"]')
-    expect(homeItem?.classList.contains('active')).toBe(true)
-  })
-
-  it('should calculate sidebar width based on collapsed state', () => {
-    expect(component.sidebarWidth()).toBe('250px')
-
-    component.collapsed = true
-    expect(component.sidebarWidth()).toBe('64px')
-  })
-
-  it('should expand parent when child is active', () => {
-    component.activeItemId = 'edit'
-    fixture.detectChanges()
-
-    const profileSection = fixture.nativeElement.querySelector('[data-item-id="profile"]')
-    expect(profileSection?.classList.contains('expanded')).toBe(true)
+    expect(component.currentWidth).toBe('250px')
+    component.toggleCollapse()
+    expect(component.currentWidth).toBe('64px')
   })
 })

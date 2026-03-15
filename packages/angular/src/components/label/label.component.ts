@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 })
 export class LabelComponent {
   @Input() for?: string;
+  @Input('htmlFor') htmlFor?: string;
   @Input() class?: string;
 
   @HostBinding('class')
@@ -25,6 +26,6 @@ export class LabelComponent {
 
   @HostBinding('attr.for')
   get forAttribute(): string | null {
-    return this.for || null;
+    return this.htmlFor || this.for || null;
   }
 }

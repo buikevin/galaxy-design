@@ -95,8 +95,8 @@ describe('InputComponent', () => {
     component.class = 'custom-input'
     fixture.detectChanges()
 
-    const wrapper = compiled.querySelector('.custom-input')
-    expect(wrapper).toBeTruthy()
+    const input = compiled.querySelector('input') as HTMLInputElement
+    expect(input.classList.contains('custom-input')).toBe(true)
   })
 
   it('should handle readonly state', () => {

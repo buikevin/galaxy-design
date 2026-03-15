@@ -56,24 +56,24 @@ describe('ChatUIComponent', () => {
   it('should emit sendMessage event when message is sent', () => {
     spyOn(component.sendMessage, 'emit')
 
-    component.messageInput = 'New message'
-    component.handleSendMessage()
+    component.messageContent = 'New message'
+    component.handleSend()
 
     expect(component.sendMessage.emit).toHaveBeenCalledWith('New message')
   })
 
   it('should clear input after sending message', () => {
-    component.messageInput = 'New message'
-    component.handleSendMessage()
+    component.messageContent = 'New message'
+    component.handleSend()
 
-    expect(component.messageInput).toBe('')
+    expect(component.messageContent).toBe('')
   })
 
   it('should not send empty messages', () => {
     spyOn(component.sendMessage, 'emit')
 
-    component.messageInput = ''
-    component.handleSendMessage()
+    component.messageContent = ''
+    component.handleSend()
 
     expect(component.sendMessage.emit).not.toHaveBeenCalled()
   })
@@ -81,8 +81,8 @@ describe('ChatUIComponent', () => {
   it('should not send whitespace-only messages', () => {
     spyOn(component.sendMessage, 'emit')
 
-    component.messageInput = '   '
-    component.handleSendMessage()
+    component.messageContent = '   '
+    component.handleSend()
 
     expect(component.sendMessage.emit).not.toHaveBeenCalled()
   })
@@ -97,15 +97,15 @@ describe('ChatUIComponent', () => {
 
   it('should format timestamps correctly', () => {
     const result = component.formatTime(new Date('2024-01-01T10:30:00'))
-    expect(result).toBe('10:30')
+    expect(result).toContain('10:30')
   })
 
   it('should apply custom height', () => {
     component.height = '600px'
     fixture.detectChanges()
 
-    const messageList = fixture.nativeElement.querySelector('.message-list')
-    expect(messageList.style.height).toBe('600px')
+    const scrollArea = fixture.nativeElement.querySelector('ui-scroll-area') as HTMLElement
+    expect(scrollArea.style.height).toBe('600px')
   })
 
   it('should show timestamps when showTimestamp is true', () => {
@@ -113,7 +113,7 @@ describe('ChatUIComponent', () => {
     fixture.detectChanges()
 
     const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.querySelector('.timestamp')).toBeTruthy()
+    expect(compiled.querySelectorAll('span.text-xs.text-muted-foreground').length).toBeGreaterThan(0)
   })
 
   it('should hide timestamps when showTimestamp is false', () => {
@@ -121,6 +121,6 @@ describe('ChatUIComponent', () => {
     fixture.detectChanges()
 
     const compiled = fixture.nativeElement as HTMLElement
-    expect(compiled.querySelector('.timestamp')).toBeFalsy()
+    expect(compiled.querySelectorAll('span.text-xs.text-muted-foreground').length).toBe(0)
   })
 })

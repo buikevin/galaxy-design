@@ -3,7 +3,7 @@ import { ButtonComponent } from '../button.component'
 import { Component } from '@angular/core'
 
 @Component({
-  template: `<ui-button [variant]="variant" [size]="size" [disabled]="disabled" (click)="onClick()">{{text}}</ui-button>`,
+  template: `<button ui-button [variant]="variant" [size]="size" [disabled]="disabled" (click)="onClick()">{{text}}</button>`,
   standalone: true,
   imports: [ButtonComponent],
 })
@@ -86,7 +86,7 @@ describe('ButtonComponent', () => {
     fixture.detectChanges()
 
     const button = compiled.querySelector('button') as HTMLButtonElement
-    expect(button.disabled).toBe(true)
+    expect(button.hasAttribute('disabled')).toBe(true)
   })
 
   it('should apply custom className', () => {
@@ -95,8 +95,8 @@ describe('ButtonComponent', () => {
     customComponent.class = 'custom-class'
     customFixture.detectChanges()
 
-    const button = customFixture.nativeElement.querySelector('button')
-    expect(button.classList.contains('custom-class')).toBe(true)
+    const host = customFixture.nativeElement as HTMLElement
+    expect(host.classList.contains('custom-class')).toBe(true)
   })
 
   it('should have correct type attribute', () => {
@@ -105,8 +105,8 @@ describe('ButtonComponent', () => {
     customComponent.type = 'submit'
     customFixture.detectChanges()
 
-    const button = customFixture.nativeElement.querySelector('button')
-    expect(button.getAttribute('type')).toBe('submit')
+    const host = customFixture.nativeElement as HTMLElement
+    expect(host.getAttribute('type')).toBe('submit')
   })
 
   it('should be accessible with aria-label', () => {
@@ -114,8 +114,8 @@ describe('ButtonComponent', () => {
     customFixture.componentInstance.ariaLabel = 'Close dialog'
     customFixture.detectChanges()
 
-    const button = customFixture.nativeElement.querySelector('button')
-    expect(button.getAttribute('aria-label')).toBe('Close dialog')
+    const host = customFixture.nativeElement as HTMLElement
+    expect(host.getAttribute('aria-label')).toBe('Close dialog')
   })
 
   it('should support keyboard interaction', () => {

@@ -1,14 +1,17 @@
 import {
+  AfterContentInit,
+  ChangeDetectionStrategy,
   Component,
+  ContentChildren,
+  EventEmitter,
   Input,
   Output,
-  EventEmitter,
-  ChangeDetectionStrategy,
-  HostListener,
-  ElementRef,
-  AfterViewInit,
+  QueryList,
+  TemplateRef,
+  ViewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AngularSplitModule } from 'angular-split';
 import { cn } from '@/lib/utils';
 
 type Direction = 'horizontal' | 'vertical';
@@ -16,17 +19,49 @@ type Direction = 'horizontal' | 'vertical';
 @Component({
   selector: 'ui-resizable-panel-group',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AngularSplitModule],
   template: `
-    <div [class]="groupClasses">
-      <ng-content></ng-content>
-    </div>
+    <as-split
+      [direction]="direction"
+      [unit]="'percent'"
+      [gutterSize]="computedGutterSize"
+      [class]="groupClasses"
+      (dragEnd)="handleDragEnd($event)"
+    >
+      <as-split-area
+        *ngFor="let panel of orderedPanels"
+        [size]="panel.initialSize"
+        [minSize]="panel.minSize"
+        [maxSize]="panel.maxSize"
+      >
+        <ng-container *ngTemplateOutlet="panel.templateRef"></ng-container>
+      </as-split-area>
+    </as-split>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ResizablePanelGroupComponent {
+export class ResizablePanelGroupComponent implements AfterContentInit {
   @Input() direction: Direction = 'horizontal';
+  @Input() gutterSize: number = 10;
   @Input() class?: string;
+  @Output() layoutChange = new EventEmitter<number[]>();
+
+  @ContentChildren(ResizablePanelComponent)
+  protected panels!: QueryList<ResizablePanelComponent>;
+
+  @ContentChildren(ResizableHandleComponent)
+  protected handles!: QueryList<ResizableHandleComponent>;
+
+  orderedPanels: ResizablePanelComponent[] = [];
+
+  ngAfterContentInit(): void {
+    this.updatePanels();
+    this.panels.changes.subscribe(() => this.updatePanels());
+  }
+
+  get computedGutterSize(): number {
+    return this.handles?.first?.disabled ? 0 : this.gutterSize;
+  }
 
   get groupClasses(): string {
     return cn(
@@ -35,6 +70,26 @@ export class ResizablePanelGroupComponent {
       this.class
     );
   }
+
+  handleDragEnd(event: { sizes?: number[] } | number[] | undefined): void {
+    if (Array.isArray(event)) {
+      this.layoutChange.emit(event);
+      return;
+    }
+
+    if (event?.sizes) {
+      this.layoutChange.emit(event.sizes);
+    }
+  }
+
+  private updatePanels(): void {
+    this.orderedPanels = [...(this.panels?.toArray() ?? [])].sort((a, b) => {
+      if (a.order == null && b.order == null) return 0;
+      if (a.order == null) return 1;
+      if (b.order == null) return -1;
+      return a.order - b.order;
+    });
+  }
 }
 
 @Component({
@@ -42,24 +97,33 @@ export class ResizablePanelGroupComponent {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div [class]="panelClasses" [style.flex]="flexValue">
-      <ng-content></ng-content>
-    </div>
+    <ng-template>
+      <div [class]="panelClasses">
+        <ng-content></ng-content>
+      </div>
+    </ng-template>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ResizablePanelComponent {
+  @ViewChild(TemplateRef, { static: true })
+  templateRef!: TemplateRef<unknown>;
+
+  @Input() defaultSize?: number;
   @Input() size?: number;
   @Input() minSize?: number;
   @Input() maxSize?: number;
+  @Input() collapsedSize?: number;
+  @Input() collapsible: boolean = false;
+  @Input() order?: number;
   @Input() class?: string;
 
   get panelClasses(): string {
-    return cn('relative', this.class);
+    return cn('relative h-full w-full overflow-auto', this.class);
   }
 
-  get flexValue(): string {
-    return this.size ? `${this.size} 1 0%` : '1 1 0%';
+  get initialSize(): number | undefined {
+    return this.defaultSize ?? this.size;
   }
 }
 
@@ -67,36 +131,11 @@ export class ResizablePanelComponent {
   selector: 'ui-resizable-handle',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <div [class]="handleClasses">
-      <div *ngIf="withHandle" class="z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border">
-        <svg
-          class="h-2.5 w-2.5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <circle cx="9" cy="12" r="1" />
-          <circle cx="9" cy="5" r="1" />
-          <circle cx="9" cy="19" r="1" />
-          <circle cx="15" cy="12" r="1" />
-          <circle cx="15" cy="5" r="1" />
-          <circle cx="15" cy="19" r="1" />
-        </svg>
-      </div>
-    </div>
-  `,
+  template: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ResizableHandleComponent {
+  @Input() disabled: boolean = false;
   @Input() withHandle: boolean = false;
   @Input() class?: string;
-
-  get handleClasses(): string {
-    return cn(
-      'relative flex w-px items-center justify-center bg-border after:absolute after:inset-y-0 after:left-1/2 after:w-1 after:-translate-x-1/2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-1 cursor-col-resize',
-      this.class
-    );
-  }
 }

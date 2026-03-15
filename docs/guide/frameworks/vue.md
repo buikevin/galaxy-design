@@ -439,7 +439,7 @@ defineProps<CustomButtonProps>()
 ```vue
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-import { Loader2 } from 'lucide-vue-next'
+import { Spinner } from '@/components/ui/spinner'
 
 defineProps<{
   loading?: boolean
@@ -448,7 +448,7 @@ defineProps<{
 
 <template>
   <Button :disabled="loading">
-    <Loader2 v-if="loading" class="mr-2 h-4 w-4 animate-spin" />
+    <Spinner v-if="loading" size="sm" class="mr-2" />
     <slot />
   </Button>
 </template>

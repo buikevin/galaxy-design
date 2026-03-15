@@ -17,3 +17,7 @@ export {
   UiDialogHeaderDirective,
   UiDialogFooterDirective,
 } from './dialog.directive'
+
+export {
+  UiDialogTriggerDirective as DialogTriggerDirective,
+} from './dialog.directive'

@@ -118,6 +118,12 @@ Interactive UI elements:
 - **[Toggle](./toggle)** - Two-state toggle button
 - **[Toggle Group](./toggle-group)** - Set of toggle buttons for single or multiple selection
 
+### Feedback Components
+
+Components for status, loading, and system feedback:
+
+- **[Spinner](./spinner)** - Indeterminate loading spinner
+
 ### Overlay Components
 
 Modal dialogs and popups:

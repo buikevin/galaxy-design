@@ -2,32 +2,6 @@
 
 Accessible resizable panel groups and layouts with keyboard support.
 
-
-<ComponentPreview name="ResizableDemo">
-  <template #preview>
-    <DemoContainer>
-      <ResizableDemo />
-    </DemoContainer>
-  </template>
-  <template #code>
-
-::: code-group
-```vue [Vue]
-<template><div>Demo</div></template>
-```
-
-```tsx [React]
-export default function App() { return <div>Demo</div> }
-```
-
-```typescript [Angular]
-@Component({ template: `<div>Demo</div>` })
-export class DemoComponent {}
-```
-:::
-
-  </template>
-</ComponentPreview>
 ## Installation
 
 ::: code-group
@@ -48,11 +22,6 @@ yarn dlx galaxy-design@latest add resizable
 bunx galaxy-design@latest add resizable
 ```
 
-```bash [global]
-# If you have installed galaxy-design globally
-galaxy-design add resizable
-```
-
 :::
 
 ## Usage
@@ -70,13 +39,13 @@ import {
 
 <template>
   <ResizablePanelGroup direction="horizontal" class="max-w-md rounded-lg border">
-    <ResizablePanel :size="50">
+    <ResizablePanel :default-size="50">
       <div class="flex h-[200px] items-center justify-center p-6">
         <span class="font-semibold">One</span>
       </div>
     </ResizablePanel>
     <ResizableHandle />
-    <ResizablePanel :size="50">
+    <ResizablePanel :default-size="50">
       <div class="flex h-[200px] items-center justify-center p-6">
         <span class="font-semibold">Two</span>
       </div>
@@ -132,13 +101,13 @@ import {
   ],
   template: `
     <ui-resizable-panel-group direction="horizontal" class="max-w-md rounded-lg border">
-      <ui-resizable-panel [size]="50">
+      <ui-resizable-panel [defaultSize]="50">
         <div class="flex h-[200px] items-center justify-center p-6">
           <span class="font-semibold">One</span>
         </div>
       </ui-resizable-panel>
       <ui-resizable-handle />
-      <ui-resizable-panel [size]="50">
+      <ui-resizable-panel [defaultSize]="50">
         <div class="flex h-[200px] items-center justify-center p-6">
           <span class="font-semibold">Two</span>
         </div>
@@ -159,13 +128,13 @@ export class AppComponent {}
 
 ```vue [Vue]
 <ResizablePanelGroup direction="vertical" class="min-h-[200px] max-w-md rounded-lg border">
-  <ResizablePanel :size="25">
+  <ResizablePanel :default-size="25">
     <div class="flex h-full items-center justify-center p-6">
       <span class="font-semibold">Header</span>
     </div>
   </ResizablePanel>
   <ResizableHandle />
-  <ResizablePanel :size="75">
+  <ResizablePanel :default-size="75">
     <div class="flex h-full items-center justify-center p-6">
       <span class="font-semibold">Content</span>
     </div>
@@ -194,13 +163,13 @@ export class AppComponent {}
 
 ```html [Angular]
 <ui-resizable-panel-group direction="vertical" class="min-h-[200px] max-w-md rounded-lg border">
-  <ui-resizable-panel [size]="25">
+  <ui-resizable-panel [defaultSize]="25">
     <div class="flex h-full items-center justify-center p-6">
       <span class="font-semibold">Header</span>
     </div>
   </ui-resizable-panel>
   <ui-resizable-handle />
-  <ui-resizable-panel [size]="75">
+  <ui-resizable-panel [defaultSize]="75">
     <div class="flex h-full items-center justify-center p-6">
       <span class="font-semibold">Content</span>
     </div>
@@ -212,19 +181,19 @@ export class AppComponent {}
 
 ### Handle
 
-You can set or hide the handle by using the `withHandle` prop.
+You can show the visual grip with `withHandle`.
 
 ::: code-group
 
 ```vue [Vue]
 <ResizablePanelGroup direction="horizontal" class="max-w-md rounded-lg border">
-  <ResizablePanel :size="50">
+  <ResizablePanel :default-size="50">
     <div class="flex h-[200px] items-center justify-center p-6">
       <span class="font-semibold">Sidebar</span>
     </div>
   </ResizablePanel>
-  <ResizableHandle :withHandle="true" />
-  <ResizablePanel :size="50">
+  <ResizableHandle :with-handle="true" />
+  <ResizablePanel :default-size="50">
     <div class="flex h-[200px] items-center justify-center p-6">
       <span class="font-semibold">Content</span>
     </div>
@@ -253,13 +222,13 @@ You can set or hide the handle by using the `withHandle` prop.
 
 ```html [Angular]
 <ui-resizable-panel-group direction="horizontal" class="max-w-md rounded-lg border">
-  <ui-resizable-panel [size]="50">
+  <ui-resizable-panel [defaultSize]="50">
     <div class="flex h-[200px] items-center justify-center p-6">
       <span class="font-semibold">Sidebar</span>
     </div>
   </ui-resizable-panel>
   <ui-resizable-handle [withHandle]="true" />
-  <ui-resizable-panel [size]="50">
+  <ui-resizable-panel [defaultSize]="50">
     <div class="flex h-[200px] items-center justify-center p-6">
       <span class="font-semibold">Content</span>
     </div>
@@ -273,44 +242,57 @@ You can set or hide the handle by using the `withHandle` prop.
 
 ### ResizablePanelGroup
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `direction` | `'horizontal' \| 'vertical'` | `'horizontal'` | The direction of the resizable panels |
+| Prop | Vue | React | Angular | Description |
+| --- | --- | --- | --- | --- |
+| `direction` | `'horizontal' \| 'vertical'` | `'horizontal' \| 'vertical'` | `'horizontal' \| 'vertical'` | Panel group layout direction |
+| `autoSaveId` | `string` | `string` | - | Persist layout using local storage |
+| `keyboardResizeBy` | `number` | `number` | - | Resize step when using keyboard interaction |
+| `gutterSize` | - | - | `number` | Gutter size in pixels for `angular-split` |
+| `class` / `className` | `string` | `string` | `string` | Container classes |
+| `layout` / `onLayout` / `layoutChange` | `(sizes: number[]) => void` | `(sizes: number[]) => void` | `(sizes: number[]) => void` | Emitted after layout changes |
 
 ### ResizablePanel
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `defaultSize` | `number` | - | The initial size of the panel (React only) |
-| `size` | `number` | - | The size of the panel (Vue/Angular) |
-| `minSize` | `number` | - | The minimum size of the panel |
-| `maxSize` | `number` | - | The maximum size of the panel |
+| Prop | Vue | React | Angular | Description |
+| --- | --- | --- | --- | --- |
+| `defaultSize` | `number` | `number` | `number` | Initial panel size percentage |
+| `size` | - | - | `number` | Angular backward-compatible alias for initial size |
+| `minSize` | `number` | `number` | `number` | Minimum panel size percentage |
+| `maxSize` | `number` | `number` | `number` | Maximum panel size percentage |
+| `collapsible` | `boolean` | `boolean` | `boolean` | Whether the panel may collapse |
+| `collapsedSize` | `number` | `number` | `number` | Size when collapsed |
+| `order` | `number` | `number` | `number` | Panel ordering index |
+| `class` / `className` | `string` | `string` | `string` | Panel classes |
+| `resize` / `onResize` | `(size: number, prevSize?: number) => void` | framework primitive event | - | Emitted when the panel resizes |
+| `collapse` / `expand` | `() => void` | framework primitive event | - | Emitted on collapse or expand |
 
 ### ResizableHandle
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `withHandle` | `boolean` | `false` | Whether to show a handle icon |
+| Prop | Vue | React | Angular | Description |
+| --- | --- | --- | --- | --- |
+| `disabled` | `boolean` | `boolean` | `boolean` | Disable resizing through the handle or gutter |
+| `withHandle` | `boolean` | `boolean` | `boolean` | Show visual handle affordance |
+| `class` / `className` | `string` | `string` | `string` | Handle classes |
+| `dragging` | `(dragging: boolean) => void` | framework primitive event | - | Emitted while dragging |
+
+## Notes
+
+- Vue now uses `Radix Vue Splitter`.
+- React uses `react-resizable-panels`.
+- Angular uses `angular-split` and is normalized toward the shared API.
+- Angular currently keeps `size` as a backward-compatible alias for `defaultSize`.
+- Angular exposes `collapsible` and `collapsedSize` in the normalized API, but they are not yet fully enforced by the wrapper.
 
 ## Accessibility
 
 ### Keyboard Interactions
 
 | Key | Description |
-|-----|-------------|
-| `ArrowLeft` | When focus is on a horizontal handle, decreases the size of the left panel |
-| `ArrowRight` | When focus is on a horizontal handle, increases the size of the left panel |
-| `ArrowUp` | When focus is on a vertical handle, decreases the size of the top panel |
-| `ArrowDown` | When focus is on a vertical handle, increases the size of the top panel |
-| `Enter` | Resets the panel sizes to their default values |
-| `Home` | Sets the left or top panel to its minimum size |
-| `End` | Sets the left or top panel to its maximum size |
-
-## Author
-
-**Bùi Trọng Hiếu (kevinbui)**
-- GitHub: [@buikevin](https://github.com/buikevin)
-- Email: kevinbui210191@gmail.com
+| --- | --- |
+| `ArrowLeft` / `ArrowRight` | Resize horizontal layouts |
+| `ArrowUp` / `ArrowDown` | Resize vertical layouts |
+| `Enter` | Reset toward default panel sizes when supported by the underlying primitive |
+| `Home` / `End` | Jump toward min/max panel sizes when supported by the underlying primitive |
 
 ## License
 

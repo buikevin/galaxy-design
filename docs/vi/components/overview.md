@@ -118,6 +118,12 @@ Các thành phần tương tác:
 - **[Toggle](./toggle)** - Nút bấm hai trạng thái
 - **[Toggle Group](./toggle-group)** - Nhóm nút toggle cho lựa chọn đơn hoặc nhiều
 
+### Feedback Components
+
+Components cho trạng thái, loading và phản hồi hệ thống:
+
+- **[Spinner](./spinner)** - Spinner loading không xác định tiến trình
+
 ### Overlay Components
 
 Hộp thoại modal và popup:

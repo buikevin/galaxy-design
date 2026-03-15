@@ -1,24 +1,27 @@
 <script setup lang="ts">
-import { type HTMLAttributes } from 'vue'
-import { Pane, Splitpanes } from 'splitpanes'
-import 'splitpanes/dist/splitpanes.css'
+import { type HTMLAttributes, computed } from 'vue'
+import { SplitterGroup, type SplitterGroupProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
-interface Props {
-  direction?: 'horizontal' | 'vertical'
+interface Props extends SplitterGroupProps {
   class?: HTMLAttributes['class']
 }
 
 const props = withDefaults(defineProps<Props>(), {
   direction: 'horizontal',
 })
+
+const delegatedProps = computed(() => {
+  const { class: _class, ...delegated } = props
+  return delegated
+})
 </script>
 
 <template>
-  <Splitpanes
-    :horizontal="direction === 'vertical'"
-    :class="cn('flex h-full w-full', direction === 'vertical' && 'flex-col', props.class)"
+  <SplitterGroup
+    v-bind="delegatedProps"
+    :class="cn('flex h-full w-full data-[orientation=vertical]:flex-col', props.class)"
   >
     <slot />
-  </Splitpanes>
+  </SplitterGroup>
 </template>

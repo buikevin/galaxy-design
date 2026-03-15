@@ -144,31 +144,23 @@ module.exports = {
 ### Button Component
 
 ```tsx
-import { Button, ButtonText } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { View } from 'react-native';
 
 export default function App() {
   return (
     <View className="flex-1 items-center justify-center gap-4 p-4">
       {/* Default button */}
-      <Button variant="default">
-        <ButtonText>Default Button</ButtonText>
-      </Button>
+      <Button variant="default">Default Button</Button>
 
       {/* Secondary button */}
-      <Button variant="secondary">
-        <ButtonText>Secondary Button</ButtonText>
-      </Button>
+      <Button variant="secondary">Secondary Button</Button>
 
       {/* Outline button */}
-      <Button variant="outline">
-        <ButtonText>Outline Button</ButtonText>
-      </Button>
+      <Button variant="outline">Outline Button</Button>
 
       {/* With custom handler */}
-      <Button onPress={() => console.log('Pressed!')}>
-        <ButtonText>Click Me</ButtonText>
-      </Button>
+      <Button onPress={() => console.log('Pressed!')}>Click Me</Button>
     </View>
   );
 }
@@ -225,15 +217,13 @@ import {
   DialogFooter,
   DialogClose,
 } from '@/components/ui/dialog';
-import { Button, ButtonText } from '@/components/ui/button';
+import { Button } from '@/components/ui/button';
 
 export default function DialogExample() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>
-          <ButtonText>Open Dialog</ButtonText>
-        </Button>
+        <Button>Open Dialog</Button>
       </DialogTrigger>
 
       <DialogContent>
@@ -246,14 +236,10 @@ export default function DialogExample() {
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">
-              <ButtonText>Cancel</ButtonText>
-            </Button>
+            <Button variant="outline">Cancel</Button>
           </DialogClose>
           <DialogClose asChild>
-            <Button variant="default">
-              <ButtonText>Confirm</ButtonText>
-            </Button>
+            <Button variant="default">Confirm</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>
@@ -353,14 +339,14 @@ const CustomButton: React.FC<ButtonProps> = ({ children, ...props }) => {
 ### 1. Use Composition
 
 ```tsx
-import { Button, ButtonText } from '@/components/ui/button';
-import { Loader } from '@/components/ui/loader';
+import { Button } from '@/components/ui/button';
+import { Spinner } from '@/components/ui/spinner';
 
 function LoadingButton({ loading, children, ...props }) {
   return (
     <Button disabled={loading} {...props}>
-      {loading && <Loader className="mr-2" />}
-      <ButtonText>{children}</ButtonText>
+      {loading && <Spinner size="sm" className="mr-2" />}
+      {children}
     </Button>
   );
 }
@@ -370,9 +356,7 @@ function LoadingButton({ loading, children, ...props }) {
 
 ```tsx
 <Button className="bg-purple-600 active:bg-purple-700">
-  <ButtonText className="text-white font-bold">
-    Custom Button
-  </ButtonText>
+  Custom Button
 </Button>
 ```
 
@@ -387,7 +371,7 @@ import { Platform } from 'react-native';
     android: 'rounded-md',
   })}
 >
-  <ButtonText>Platform Button</ButtonText>
+  Platform Button
 </Button>
 ```
 

@@ -16,6 +16,7 @@ export class ButtonComponent {
   @Input() class?: string;
   @Input() disabled?: boolean;
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() ariaLabel?: string;
 
   @HostBinding('class')
   get hostClasses(): string {
@@ -30,5 +31,10 @@ export class ButtonComponent {
   @HostBinding('attr.disabled')
   get isDisabled(): boolean | null {
     return this.disabled ? true : null;
+  }
+
+  @HostBinding('attr.aria-label')
+  get ariaLabelAttr(): string | null {
+    return this.ariaLabel || null;
   }
 }

@@ -10,8 +10,10 @@ import {
   ChangeDetectorRef,
   HostListener,
   ElementRef,
-  forwardRef
+  forwardRef,
+  OnInit
 } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';
 
@@ -21,18 +23,31 @@ import { cn } from '@/lib/utils';
   imports: [CommonModule],
   template: `
     <div [class]="selectClasses">
+      <input
+        type="hidden"
+        [attr.name]="name || null"
+        [attr.value]="value ?? ''"
+        [attr.form]="form || null"
+        [attr.required]="required ? '' : null"
+      />
       <button
         type="button"
         [class]="triggerClasses"
         [disabled]="disabled"
+        role="combobox"
+        aria-haspopup="listbox"
+        [attr.aria-expanded]="isOpenState ? 'true' : 'false'"
+        [attr.aria-disabled]="disabled ? 'true' : null"
+        [attr.data-disabled]="disabled ? '' : null"
         (click)="toggleDropdown()"
+        (keydown)="onTriggerKeydown($event)"
       >
         <span [class]="displayValue ? '' : 'text-muted-foreground'">
           {{ displayValue || placeholder }}
         </span>
         <svg
           class="h-4 w-4 opacity-50 transition-transform"
-          [class.rotate-180]="isOpen"
+          [class.rotate-180]="isOpenState"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -42,31 +57,52 @@ import { cn } from '@/lib/utils';
         </svg>
       </button>
 
-      @if (isOpen) {
-        <div [class]="contentClasses">
+      @if (isOpenState) {
+        <div [class]="contentClasses" role="listbox">
           <ng-content></ng-content>
         </div>
       }
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SelectComponent),
+      multi: true,
+    },
+  ],
 })
-export class SelectComponent implements AfterContentInit {
+export class SelectComponent implements AfterContentInit, OnInit, ControlValueAccessor {
   @Input() value?: string;
   @Input() placeholder: string = 'Select...';
   @Input() disabled: boolean = false;
+  @Input() required: boolean = false;
+  @Input() name?: string;
+  @Input() form?: string;
+  @Input() open?: boolean;
+  @Input() defaultOpen: boolean = false;
   @Input() class?: string;
   @Output() valueChange = new EventEmitter<string>();
+  @Output() openChange = new EventEmitter<boolean>();
 
   @ContentChildren(forwardRef(() => SelectItemComponent)) items!: QueryList<SelectItemComponent>;
 
   isOpen = false;
   displayValue = '';
+  private onChange: (value: string | null) => void = () => {};
+  private onTouched: () => void = () => {};
 
   constructor(
     private cdr: ChangeDetectorRef,
     private elementRef: ElementRef
   ) {}
+
+  ngOnInit() {
+    if (this.open === undefined) {
+      this.isOpen = this.defaultOpen;
+    }
+  }
 
   ngAfterContentInit() {
     this.updateDisplayValue();
@@ -82,23 +118,24 @@ export class SelectComponent implements AfterContentInit {
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.isOpen = false;
+      this.setOpen(false);
       this.cdr.markForCheck();
     }
   }
 
   toggleDropdown() {
     if (!this.disabled) {
-      this.isOpen = !this.isOpen;
+      this.setOpen(!this.isOpen);
       this.cdr.markForCheck();
     }
   }
 
   selectItem(value: string) {
     this.value = value;
-    this.isOpen = false;
+    this.setOpen(false);
     this.updateDisplayValue();
     this.valueChange.emit(value);
+    this.onChange(value);
     this.cdr.markForCheck();
   }
 
@@ -117,7 +154,7 @@ export class SelectComponent implements AfterContentInit {
   get triggerClasses(): string {
     return cn(
       'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-      this.isOpen && 'border-ring'
+      this.isOpenState && 'border-ring'
     );
   }
 
@@ -125,6 +162,54 @@ export class SelectComponent implements AfterContentInit {
     return cn(
       'absolute z-50 mt-1 w-full min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md animate-in fade-in-0 zoom-in-95'
     );
+  }
+
+  get isOpenState(): boolean {
+    return this.open ?? this.isOpen;
+  }
+
+  private setOpen(next: boolean) {
+    if (this.open === undefined) {
+      this.isOpen = next;
+    }
+    this.openChange.emit(next);
+  }
+
+  onTriggerKeydown(event: KeyboardEvent) {
+    if (this.disabled) return;
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      if (!this.isOpenState) {
+        this.setOpen(true);
+        this.cdr.markForCheck();
+      }
+    }
+    if (event.key === 'Escape') {
+      if (this.isOpenState) {
+        this.setOpen(false);
+        this.onTouched();
+        this.cdr.markForCheck();
+      }
+    }
+  }
+
+  writeValue(value: string | null): void {
+    this.value = value ?? undefined;
+    this.updateDisplayValue();
+    this.cdr.markForCheck();
+  }
+
+  registerOnChange(fn: (value: string | null) => void): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: () => void): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+    this.cdr.markForCheck();
   }
 }
 
@@ -137,6 +222,9 @@ export class SelectComponent implements AfterContentInit {
       [class]="itemClasses"
       [class.bg-accent]="isSelected"
       [class.text-accent-foreground]="isSelected"
+      role="option"
+      [attr.aria-selected]="isSelected ? 'true' : 'false'"
+      [attr.data-disabled]="disabled ? '' : null"
       (click)="onClick()"
     >
       <span
@@ -157,12 +245,15 @@ export class SelectComponent implements AfterContentInit {
 export class SelectItemComponent {
   @Input() value!: string;
   @Input() class?: string;
+  @Input() disabled: boolean = false;
   @Output() itemClick = new EventEmitter<string>();
 
   isSelected = false;
 
   onClick() {
-    this.itemClick.emit(this.value);
+    if (!this.disabled) {
+      this.itemClick.emit(this.value);
+    }
   }
 
   getLabel(): string {

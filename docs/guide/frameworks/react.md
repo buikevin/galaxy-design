@@ -431,12 +431,12 @@ function CustomButton({ loading, children, ...props }: CustomButtonProps) {
 ```tsx
 // ✅ Good: Compose components
 import { Button } from '@/components/ui/button'
-import { Loader2 } from 'lucide-react'
+import { Spinner } from '@/components/ui/spinner'
 
 function LoadingButton({ loading, children, ...props }) {
   return (
     <Button disabled={loading} {...props}>
-      {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+      {loading && <Spinner size="sm" className="mr-2" />}
       {children}
     </Button>
   )
