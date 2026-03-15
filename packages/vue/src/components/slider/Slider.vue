@@ -1,9 +1,40 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Slider component - Range slider input with min/max bounds and thumb control
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack, type SliderRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+/**
+ * Slider Props
+ * @prop modelValue - Controlled value
+ * @prop defaultValue - Default value
+ * @prop min - Minimum value
+ * @prop max - Maximum value
+ * @prop step - Step interval
+ * @prop disabled - Disables the slider
+ * @prop orientation - Slider orientation (horizontal or vertical)
+ * @prop class - CSS class names for the slider
+ */
 interface Props extends SliderRootProps {
+  /** Controlled value. */
+  modelValue?: number[]
+  /** Default value. */
+  defaultValue?: number[]
+  /** Minimum value. */
+  min?: number
+  /** Maximum value. */
+  max?: number
+  /** Step interval. */
+  step?: number
+  /** Disables the slider. */
+  disabled?: boolean
+  /** Slider orientation (horizontal or vertical). */
+  orientation?: 'horizontal' | 'vertical'
+  /** CSS class names for the slider. */
   class?: HTMLAttributes['class']
 }
 

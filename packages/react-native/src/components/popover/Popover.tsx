@@ -1,9 +1,24 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Popover component for displaying content in a floating popup
+ */
+
 import * as React from 'react';
 import * as PopoverPrimitive from '@rn-primitives/popover';
 import { cn } from '@/lib/utils';
 
+/**
+ * Popover root component
+ * @property open - Controlled open state
+ * @property defaultOpen - Uncontrolled initial open state
+ * @property onOpenChange - Called when the open state changes
+ */
 const Popover = PopoverPrimitive.Root;
 
+/**
+ * Popover trigger component - wraps the element that triggers the popover
+ */
 const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const PopoverContent = React.forwardRef<

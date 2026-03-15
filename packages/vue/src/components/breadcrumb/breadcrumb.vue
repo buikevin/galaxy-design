@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Breadcrumb component - Navigation trail showing current page location
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

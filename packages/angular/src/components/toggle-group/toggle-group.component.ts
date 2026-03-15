@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Group of toggles with single or multiple selection mode
+ */
+
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {

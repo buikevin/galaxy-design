@@ -1,3 +1,7 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc LineChart component - Biểu đồ đường với đường cong mượt và area fills
+
 /// Galaxy UI Charts - LineChart
 ///
 /// Line chart component with smooth curves and area fills
@@ -7,24 +11,26 @@ import 'package:fl_chart/fl_chart.dart';
 import 'types.dart';
 import 'utils.dart';
 
+/// GalaxyLineChart - Component biểu đồ đường với đường cong mượt và area fills
+/// 
+/// ## Props:
+/// - [data] - Dữ liệu biểu đồ
+/// - [height] - Chiều cao biểu đồ (default: 300)
+/// - [width] - Chiều rộng biểu đồ
+/// - [theme] - Chủ đề biểu đồ (default: ChartTheme.light)
+/// - [legend] - Hiển thị chú thích (default: true)
+/// - [legendPosition] - Vị trí chú thích (default: LegendPosition.top)
+/// - [grid] - Cấu hình lưới
+/// - [tooltip] - Cấu hình tooltip
+/// - [animation] - Hiệu ứng animation (default: true)
+/// - [smooth] - Đường cong mượt (default: true)
+/// - [showPoints] - Hiển thị các điểm (default: true)
+/// - [pointSize] - Kích thước điểm (default: 6)
+/// - [area] - Chế độ area fill (default: false)
+/// - [loading] - Trạng thái đang tải (default: false)
+/// - [emptyText] - Văn bản khi không có dữ liệu (default: 'No data available')
+/// - [padding] - Padding của biểu đồ
 class GalaxyLineChart extends StatelessWidget {
-  final ChartData data;
-  final double height;
-  final double? width;
-  final ChartTheme theme;
-  final bool legend;
-  final LegendPosition legendPosition;
-  final GridConfig? grid;
-  final TooltipConfig? tooltip;
-  final bool animation;
-  final bool smooth;
-  final bool showPoints;
-  final double pointSize;
-  final bool area;
-  final bool loading;
-  final String emptyText;
-  final EdgeInsets? padding;
-
   const GalaxyLineChart({
     Key? key,
     required this.data,
@@ -44,6 +50,54 @@ class GalaxyLineChart extends StatelessWidget {
     this.emptyText = 'No data available',
     this.padding,
   }) : super(key: key);
+
+  /// Dữ liệu biểu đồ
+  final ChartData data;
+
+  /// Chiều cao biểu đồ
+  final double height;
+
+  /// Chiều rộng biểu đồ
+  final double? width;
+
+  /// Chủ đề biểu đồ
+  final ChartTheme theme;
+
+  /// Hiển thị chú thích
+  final bool legend;
+
+  /// Vị trí chú thích
+  final LegendPosition legendPosition;
+
+  /// Cấu hình lưới
+  final GridConfig? grid;
+
+  /// Cấu hình tooltip
+  final TooltipConfig? tooltip;
+
+  /// Hiệu ứng animation
+  final bool animation;
+
+  /// Đường cong mượt
+  final bool smooth;
+
+  /// Hiển thị các điểm
+  final bool showPoints;
+
+  /// Kích thước điểm
+  final double pointSize;
+
+  /// Chế độ area fill
+  final bool area;
+
+  /// Trạng thái đang tải
+  final bool loading;
+
+  /// Văn bản khi không có dữ liệu
+  final String emptyText;
+
+  /// Padding của biểu đồ
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {

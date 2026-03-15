@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Badge component - Inline badge with variant styles (default, secondary, destructive, outline)
+-->
 <script setup lang="ts">
 import { computed } from 'vue'
 import { cn } from '@/lib/utils'

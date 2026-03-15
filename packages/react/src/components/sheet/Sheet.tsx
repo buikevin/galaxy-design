@@ -1,17 +1,54 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Sheet components - A side panel that slides in from the edge of the screen
+ */
+
 import * as React from 'react'
 import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Sheet Component
+ * 
+ * Root component for the sheet dialog. Manages the open/close state.
+ * Built on top of Radix UI Dialog primitive.
+ */
 const Sheet = SheetPrimitive.Root
 
+/**
+ * SheetTrigger Component
+ * 
+ * The trigger element that opens the sheet.
+ */
 const SheetTrigger = SheetPrimitive.Trigger
 
+/**
+ * SheetClose Component
+ * 
+ * The close button that dismisses the sheet.
+ */
 const SheetClose = SheetPrimitive.Close
 
+/**
+ * SheetPortal Component
+ * 
+ * Renders sheet content in a portal for proper z-index layering.
+ */
 const SheetPortal = SheetPrimitive.Portal
 
+/**
+ * SheetOverlay Component
+ * 
+ * The overlay backdrop that appears behind the sheet.
+ * 
+ * @param {React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>} props - SheetOverlay props
+ * @param {string} [props.className] - CSS class names for the overlay
+ * @param {React.RefObject<React.ElementRef<typeof SheetPrimitive.Overlay>>} ref - Reference to the overlay element
+ * @returns {JSX.Element} Sheet overlay element
+ */
 const SheetOverlay = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
@@ -46,10 +83,38 @@ const sheetVariants = cva(
   }
 )
 
+/**
+ * SheetContent Props interface
+ * @extends React.HTMLAttributes<HTMLDivElement> - All HTML div attributes
+ * @extends VariantProps<typeof sheetVariants> - Side variant configuration
+ */
 interface SheetContentProps
-  extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-    VariantProps<typeof sheetVariants> {}
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof sheetVariants> {
+  /**
+   * Side of the screen the sheet slides in from
+   * @default 'right'
+   */
+  side?: 'top' | 'right' | 'bottom' | 'left'
+  /**
+   * Content children
+   */
+  children?: React.ReactNode
+}
 
+/**
+ * SheetContent Component
+ * 
+ * The main content area of the sheet panel.
+ * Renders in a portal with overlay backdrop.
+ * 
+ * @param {SheetContentProps} props - SheetContent props
+ * @param {string} [props.className] - CSS class names for the content
+ * @param {React.ReactNode} [props.children] - Content children
+ * @param {'top' | 'right' | 'bottom' | 'left'} [props.side='right'] - Side of the screen the sheet slides in from
+ * @param {React.RefObject<React.ElementRef<typeof SheetPrimitive.Content>>} ref - Reference to the content element
+ * @returns {JSX.Element} Sheet content element
+ */
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps

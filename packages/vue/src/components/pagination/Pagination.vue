@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Pagination component - Navigation with previous/next buttons and page numbers
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'

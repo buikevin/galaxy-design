@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc BreadcrumbList component - Ordered list container for breadcrumb items
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

@@ -1,11 +1,21 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Skeleton component for loading placeholders with animation
+ */
+
 import * as React from 'react';
 import { View, Animated, Easing } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface SkeletonProps {
+  /** CSS class names for the skeleton */
   className?: string;
+  /** Explicit width for the skeleton */
   width?: number | string;
+  /** Explicit height for the skeleton */
   height?: number | string;
+  /** Render the skeleton with a circular shape */
   circle?: boolean;
 }
 

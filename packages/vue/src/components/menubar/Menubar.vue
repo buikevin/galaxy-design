@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Menubar component - Application menu bar with keyboard navigation
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { MenubarRoot, type MenubarRootProps } from 'radix-vue'

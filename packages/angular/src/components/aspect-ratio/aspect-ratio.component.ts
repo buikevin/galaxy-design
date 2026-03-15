@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Container for maintaining aspect ratio of embedded content
+ */
+
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdxAspectRatioDirective } from '@radix-ng/primitives/aspect-ratio';

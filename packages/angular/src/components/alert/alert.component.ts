@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Alert messages with 4 variants for different contexts
+ */
+
 import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { type AlertVariants, alertVariants } from './variants';

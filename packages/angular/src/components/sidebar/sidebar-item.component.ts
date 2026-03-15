@@ -1,7 +1,7 @@
 /**
- * Galaxy UI - Sidebar Item Component (Stub)
- *
- * This is a placeholder component. Full implementation coming soon.
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Sidebar menu item with label, icon, and active state
  */
 
 import { Component, Input, Output, EventEmitter } from '@angular/core'

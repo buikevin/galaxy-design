@@ -1,12 +1,37 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Text input component with label, placeholder, and error states
+ */
+
 import * as React from 'react';
 import { TextInput, TextInputProps, View, Text } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface InputProps extends TextInputProps {
+  /** Controlled value */
+  value?: string;
+  /** Placeholder text */
+  placeholder?: string;
+  /** Whether the input is editable */
+  editable?: boolean;
+  /** Change handler */
+  onChangeText?: (text: string) => void;
+  /** Blur handler */
+  onBlur?: (event: any) => void;
+  /** Focus handler */
+  onFocus?: (event: any) => void;
+  /** CSS class names for the input */
+  className?: string;
+  /** Label text */
   label?: string;
+  /** Error text */
   error?: string;
+  /** Wrapper class name */
   containerClassName?: string;
+  /** Label class name */
   labelClassName?: string;
+  /** Error text class name */
   errorClassName?: string;
 }
 

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Skeleton component - Display a placeholder while content is loading
+ */
+
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 

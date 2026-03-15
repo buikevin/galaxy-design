@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc SheetHeader component - Sheet header container with vertical spacing
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'

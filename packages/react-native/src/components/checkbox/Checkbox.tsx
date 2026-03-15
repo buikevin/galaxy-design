@@ -1,13 +1,25 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Checkbox input with label and indeterminate state support
+ */
+
 import * as React from 'react';
 import { Pressable, View, Text } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface CheckboxProps {
+  /** Controlled checked state */
   checked?: boolean;
+  /** Called when the checked state changes */
   onCheckedChange?: (checked: boolean) => void;
+  /** Disables the checkbox */
   disabled?: boolean;
+  /** Label text */
   label?: string;
+  /** CSS class names for the checkbox */
   className?: string;
+  /** CSS class names for the label */
   labelClassName?: string;
 }
 

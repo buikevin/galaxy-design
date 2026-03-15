@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Custom dropdown with search functionality
+ */
+
 import {
   Component,
   Input,

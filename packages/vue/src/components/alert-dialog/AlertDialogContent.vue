@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc AlertDialogContent component - Alert dialog content with overlay and portal support
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { AlertDialogContent, AlertDialogPortal, AlertDialogOverlay, type AlertDialogContentProps } from 'radix-vue'

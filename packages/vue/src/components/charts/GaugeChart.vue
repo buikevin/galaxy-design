@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc GaugeChart component - Gauge/speedometer chart with customizable zones powered by ECharts
+-->
 <script setup lang="ts">
 import { computed } from 'vue'
 import VChart from 'vue-echarts'

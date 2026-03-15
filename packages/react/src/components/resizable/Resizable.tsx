@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Resizable component - Accessible resizable panel groups and layouts with keyboard support
+ */
+
 import * as React from 'react'
 import { GripVertical } from 'lucide-react'
 import * as ResizablePrimitive from 'react-resizable-panels'

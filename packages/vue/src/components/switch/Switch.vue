@@ -1,8 +1,38 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Switch component - Toggle switch for binary on/off state
+-->
 <script setup lang="ts">
 import { SwitchRoot, SwitchThumb, type SwitchRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
-const props = defineProps<SwitchRootProps & { class?: string }>()
+/**
+ * Switch Props
+ * @prop checked - Controlled checked state
+ * @prop defaultChecked - Default checked state
+ * @prop disabled - Disables the switch
+ * @prop required - Makes the switch required
+ * @prop name - Name attribute for form submission
+ * @prop value - Value attribute for form submission
+ * @prop class - CSS class names for the switch
+ */
+const props = defineProps<SwitchRootProps & {
+  /** Controlled checked state. */
+  checked?: boolean
+  /** Default checked state. */
+  defaultChecked?: boolean
+  /** Disables the switch. */
+  disabled?: boolean
+  /** Makes the switch required. */
+  required?: boolean
+  /** Name attribute for form submission. */
+  name?: string
+  /** Value attribute for form submission. */
+  value?: string
+  /** CSS class names for the switch. */
+  class?: string
+}>()
 </script>
 
 <template>

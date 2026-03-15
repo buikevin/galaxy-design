@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Data table with header, body, row, cell, and footer directives
+ */
+
 import { Component, Input, Directive } from '@angular/core'
 import { cn } from '@/lib/utils'
 

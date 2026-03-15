@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Kbd component - Keyboard key display with 3 size variants (sm, default, lg)
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'

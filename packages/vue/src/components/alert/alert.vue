@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Alert component - Displays a callout for user attention with variant styles
+-->
 <script setup lang="ts">
 import { computed } from 'vue'
 import { cn } from '@/lib/utils'

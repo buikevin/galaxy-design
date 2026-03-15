@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Alert dialog component for displaying confirmation dialogs with actions
+ */
+
 import * as React from 'react';
 import * as AlertDialogPrimitive from '@rn-primitives/alert-dialog';
 import { View, Text } from 'react-native';

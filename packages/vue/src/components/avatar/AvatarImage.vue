@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc AvatarImage component - User profile image with aspect ratio support
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { AvatarImage, type AvatarImageProps } from 'radix-vue'

@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc BreadcrumbItem component - Individual breadcrumb item with flex layout
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

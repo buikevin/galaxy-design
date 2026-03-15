@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc ResizablePanelGroup component - Container for resizable panels with splitter support
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { SplitterGroup, type SplitterGroupProps } from 'radix-vue'

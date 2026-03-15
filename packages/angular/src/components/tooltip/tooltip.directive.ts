@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Tooltip directive - Shows tooltip on hover
+ */
+
 import { Directive } from '@angular/core';
 import {
   RdxTooltip,

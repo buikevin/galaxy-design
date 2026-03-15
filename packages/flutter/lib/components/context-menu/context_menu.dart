@@ -1,18 +1,34 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc ContextMenu component - Menu ngữ cảnh hiển thị khi long-press (mobile)
+
 import 'package:flutter/material.dart';
 
 // Note: Flutter mobile doesn't have native context menu support like desktop
 // This implementation uses long-press gesture as alternative
-class GalaxyContextMenu<T> extends StatelessWidget {
-  final Widget child;
-  final List<GalaxyContextMenuItem<T>> items;
-  final ValueChanged<T>? onSelected;
 
+/// GalaxyContextMenu - Component menu ngữ cảnh hiển thị khi long-press (mobile)
+/// 
+/// ## Props:
+/// - [child] - Widget con kích hoạt context menu
+/// - [items] - Danh sách các items trong menu
+/// - [onSelected] - Callback khi item được chọn
+class GalaxyContextMenu<T> extends StatelessWidget {
   const GalaxyContextMenu({
     Key? key,
     required this.child,
     required this.items,
     this.onSelected,
   }) : super(key: key);
+
+  /// Widget con kích hoạt context menu
+  final Widget child;
+
+  /// Danh sách các items trong menu
+  final List<GalaxyContextMenuItem<T>> items;
+
+  /// Callback khi item được chọn
+  final ValueChanged<T>? onSelected;
 
   void _showContextMenu(BuildContext context, TapDownDetails details) {
     final RenderBox overlay = Overlay.of(context).context.findRenderObject() as RenderBox;

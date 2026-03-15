@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Badge component for status indicators, counts, and labels
+ */
+
 import * as React from 'react';
 import { Text, TextProps } from 'react-native';
 import { cva, type VariantProps } from 'class-variance-authority';
@@ -20,7 +26,14 @@ const badgeVariants = cva(
   }
 );
 
-export interface BadgeProps extends TextProps, VariantProps<typeof badgeVariants> {}
+export interface BadgeProps extends TextProps, VariantProps<typeof badgeVariants> {
+  /** Visual style variant for the badge (default, secondary, destructive, outline) */
+  variant?: 'default' | 'secondary' | 'destructive' | 'outline';
+  /** CSS class names for the badge */
+  className?: string;
+  /** Badge content */
+  children?: React.ReactNode;
+}
 
 const Badge = React.forwardRef<Text, BadgeProps>(
   ({ className, variant, ...props }, ref) => {

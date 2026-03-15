@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc PieChart component - Pie chart with percentage display powered by ECharts
+-->
 <script setup lang="ts">
 import { computed } from 'vue'
 import VChart from 'vue-echarts'

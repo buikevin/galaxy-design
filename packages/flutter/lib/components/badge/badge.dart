@@ -1,6 +1,10 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Badge component - Badge hiển thị thông tin ngắn, status, notification count
+
 import 'package:flutter/material.dart';
 
-/// Variants for the badge component
+/// Badge variant options
 enum BadgeVariant {
   default_,
   secondary,
@@ -8,12 +12,24 @@ enum BadgeVariant {
   outline,
 }
 
-/// A badge component for displaying short pieces of information
-/// like notification counts, status indicators, or labels.
+/// GalaxyBadge - Component badge hiển thị thông tin ngắn như notification counts, status indicators, labels
+/// 
+/// ## Props:
+/// - [text] - Văn bản hiển thị trong badge
+/// - [child] - Widget tùy chỉnh hiển thị thay cho text
+/// - [variant] - Biến thể badge (default: BadgeVariant.default_)
+/// - [padding] - Padding tùy chỉnh
 class GalaxyBadge extends StatelessWidget {
+  /// Văn bản hiển thị trong badge
   final String? text;
+  
+  /// Widget tùy chỉnh hiển thị thay cho text
   final Widget? child;
+  
+  /// Biến thể badge
   final BadgeVariant variant;
+  
+  /// Padding tùy chỉnh
   final EdgeInsets? padding;
 
   const GalaxyBadge({

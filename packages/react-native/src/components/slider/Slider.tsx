@@ -1,7 +1,25 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Slider component for selecting a value from a range
+ */
+
 import * as React from 'react';
 import * as SliderPrimitive from '@rn-primitives/slider';
 import { cn } from '@/lib/utils';
 
+/**
+ * Slider props extending SliderPrimitive.Root props
+ * @property value - Controlled slider values
+ * @property defaultValue - Uncontrolled initial slider values
+ * @property onValueChange - Called when the slider values change
+ * @property onValueCommit - Called when the slider values are committed
+ * @property min - Minimum value
+ * @property max - Maximum value
+ * @property step - Stepping interval
+ * @property disabled - Disables the slider
+ * @property className - CSS class names for the slider root
+ */
 const Slider = React.forwardRef<
   React.ElementRef<typeof SliderPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>

@@ -1,11 +1,76 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Checkbox component - A control that allows the user to toggle between checked and not checked
+ */
+
 import * as React from 'react'
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
 import { Check } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Checkbox Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> - All standard checkbox root attributes
+ */
+export interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
+  /**
+   * Checked state (controlled)
+   */
+  checked?: boolean | 'indeterminate'
+  /**
+   * Uncontrolled initial checked state
+   */
+  defaultChecked?: boolean | 'indeterminate'
+  /**
+   * Called when the checked state changes
+   */
+  onCheckedChange?: (checked: boolean | 'indeterminate') => void
+  /**
+   * Disables the checkbox
+   * @default false
+   */
+  disabled?: boolean
+  /**
+   * Requires a value before form submission
+   */
+  required?: boolean
+  /**
+   * Name for form submission
+   */
+  name?: string
+  /**
+   * Value for form submission
+   * @default 'on'
+   */
+  value?: string
+  /**
+   * CSS class names for the checkbox
+   */
+  className?: string
+}
+
+/**
+ * Checkbox Component
+ * 
+ * A control that allows the user to toggle between checked and not checked state.
+ * Built on top of Radix UI Checkbox primitive.
+ * 
+ * @param {CheckboxProps} props - Checkbox component props
+ * @param {string} [props.className] - CSS class names for the checkbox
+ * @param {boolean|'indeterminate'} [props.checked] - Checked state (controlled)
+ * @param {boolean|'indeterminate'} [props.defaultChecked] - Uncontrolled initial checked state
+ * @param {(checked: boolean | 'indeterminate') => void} [props.onCheckedChange] - Checked state change handler
+ * @param {boolean} [props.disabled=false] - Disables the checkbox
+ * @param {boolean} [props.required] - Requires a value before form submission
+ * @param {string} [props.name] - Name for form submission
+ * @param {string} [props.value='on'] - Value for form submission
+ * @param {React.RefObject<React.ElementRef<typeof CheckboxPrimitive.Root>>} ref - Reference to the checkbox element
+ * @returns {JSX.Element} Checkbox element
+ */
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
-  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+  CheckboxProps
 >(({ className, ...props }, ref) => (
   <CheckboxPrimitive.Root
     ref={ref}

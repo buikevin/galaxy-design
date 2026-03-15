@@ -1,7 +1,7 @@
 /**
- * Galaxy UI - Register Form Component (Stub)
- *
- * This is a placeholder component. Full implementation coming soon.
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Register Form component - User registration form with email, password and confirm password
  */
 
 import { Component, Output, EventEmitter } from '@angular/core'

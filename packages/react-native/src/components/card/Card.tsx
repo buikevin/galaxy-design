@@ -1,8 +1,17 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Card container with header, content, and footer sections
+ */
+
 import * as React from 'react';
 import { View, Text, ViewProps, TextProps } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface CardProps extends ViewProps {
+  /** CSS class names for the card container */
+  className?: string;
+  /** Card content */
   children: React.ReactNode;
 }
 

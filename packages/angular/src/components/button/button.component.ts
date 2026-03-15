@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Versatile button with 6 status variants and 5 sizes
+ */
+
 import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { type ButtonVariants, buttonVariants } from './variants';

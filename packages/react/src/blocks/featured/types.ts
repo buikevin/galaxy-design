@@ -21,6 +21,9 @@ export interface HeroSectionProps {
   primaryCta?: { label: string; href?: string; onClick?: () => void }
   secondaryCta?: { label: string; href?: string; onClick?: () => void }
   image?: string
+  imageAlt?: string
+  badge?: string
+  children?: React.ReactNode
   variant?: 'default' | 'centered' | 'split'
   className?: string
 }

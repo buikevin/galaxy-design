@@ -1,7 +1,24 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Tabs component for organizing content into selectable panels
+ */
+
 import * as React from 'react';
 import * as TabsPrimitive from '@rn-primitives/tabs';
 import { cn } from '@/lib/utils';
 
+/**
+ * Tabs root component
+ * @property type - Accordion selection behavior (single or multiple)
+ * @property value - Controlled value for the open item or items
+ * @property defaultValue - Uncontrolled initial value for the open item or items
+ * @property onValueChange - Called when the open item or items change
+ * @property collapsible - When type is single, allows closing the open item
+ * @property disabled - Disables the accordion and all items
+ * @property orientation - Accordion orientation (vertical or horizontal)
+ * @property className - CSS class names for the root element
+ */
 const Tabs = TabsPrimitive.Root;
 
 const TabsList = React.forwardRef<

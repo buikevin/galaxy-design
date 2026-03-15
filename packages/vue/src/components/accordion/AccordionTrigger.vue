@@ -1,10 +1,26 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc AccordionTrigger component - Clickable header that toggles accordion content visibility
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { AccordionHeader, AccordionTrigger, type AccordionTriggerProps } from 'radix-vue'
 import { ChevronDown } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
+/**
+ * AccordionTrigger Props
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop class - CSS class names for the trigger
+ */
 interface Props extends AccordionTriggerProps {
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** CSS class names for the trigger. */
   class?: HTMLAttributes['class']
 }
 

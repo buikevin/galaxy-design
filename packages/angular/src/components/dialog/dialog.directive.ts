@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Dialog directive - Provides modal dialog functionality
+ */
+
 import { Directive, Input, TemplateRef } from '@angular/core';
 import {
   RdxDialogTriggerDirective,

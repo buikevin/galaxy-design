@@ -1,10 +1,26 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc SelectTrigger component - Button that opens select dropdown with chevron icon
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { SelectTrigger, SelectIcon, type SelectTriggerProps } from 'radix-vue'
 import { ChevronDown } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
+/**
+ * SelectTrigger Props
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop class - CSS class names for the trigger
+ */
 interface Props extends SelectTriggerProps {
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** CSS class names for the trigger. */
   class?: HTMLAttributes['class']
 }
 

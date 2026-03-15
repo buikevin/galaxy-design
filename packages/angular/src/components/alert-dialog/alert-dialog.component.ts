@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Alert Dialog component - Modal dialog for alerts and confirmations
+ */
+
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {

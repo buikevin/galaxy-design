@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Typography component - Text styles with variants (h1-h4, p, blockquote, code, lead, large, muted)
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Aspect ratio component for maintaining consistent width/height ratios
+ */
+
 import * as React from 'react';
 import * as AspectRatioPrimitive from '@rn-primitives/aspect-ratio';
 import { cn } from '@/lib/utils';

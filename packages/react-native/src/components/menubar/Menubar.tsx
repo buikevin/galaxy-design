@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Menubar component for displaying application menus with keyboard shortcuts
+ */
+
 import * as React from 'react';
 import * as MenubarPrimitive from '@rn-primitives/menubar';
 import { View, Text } from 'react-native';

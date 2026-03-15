@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc AlertTitle component - Alert heading text with medium font weight
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

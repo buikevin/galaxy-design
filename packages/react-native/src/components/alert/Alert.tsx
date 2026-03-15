@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Alert component for displaying important messages with variants
+ */
+
 import * as React from 'react';
 import { View, Text, ViewProps, TextProps } from 'react-native';
 import { cva, type VariantProps } from 'class-variance-authority';
@@ -18,7 +24,14 @@ const alertVariants = cva(
   }
 );
 
-export interface AlertProps extends ViewProps, VariantProps<typeof alertVariants> {}
+export interface AlertProps extends ViewProps, VariantProps<typeof alertVariants> {
+  /** Visual style variant for the alert */
+  variant?: 'default' | 'destructive';
+  /** CSS class names for the alert container */
+  className?: string;
+  /** Alert content */
+  children?: React.ReactNode;
+}
 
 const Alert = React.forwardRef<View, AlertProps>(
   ({ className, variant, ...props }, ref) => {

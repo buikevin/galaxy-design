@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Command component - Command palette with search and keyboard navigation
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed, ref } from 'vue'

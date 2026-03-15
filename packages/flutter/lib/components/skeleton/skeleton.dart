@@ -1,12 +1,18 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Skeleton component - Placeholder loading với shimmer effect
+
 import 'package:flutter/material.dart';
 
+/// GalaxySkeleton - Component placeholder loading với shimmer effect
+/// 
+/// ## Props:
+/// - [width] - Chiều rộng của skeleton
+/// - [height] - Chiều cao của skeleton (default: 16)
+/// - [borderRadius] - Bo góc của skeleton (default: 4)
+/// - [baseColor] - Màu cơ bản
+/// - [highlightColor] - Màu highlight cho shimmer effect
 class GalaxySkeleton extends StatefulWidget {
-  final double? width;
-  final double? height;
-  final double borderRadius;
-  final Color? baseColor;
-  final Color? highlightColor;
-
   const GalaxySkeleton({
     Key? key,
     this.width,
@@ -15,6 +21,21 @@ class GalaxySkeleton extends StatefulWidget {
     this.baseColor,
     this.highlightColor,
   }) : super(key: key);
+
+  /// Chiều rộng của skeleton
+  final double? width;
+
+  /// Chiều cao của skeleton
+  final double? height;
+
+  /// Bo góc của skeleton
+  final double borderRadius;
+
+  /// Màu cơ bản
+  final Color? baseColor;
+
+  /// Màu highlight cho shimmer effect
+  final Color? highlightColor;
 
   @override
   State<GalaxySkeleton> createState() => _GalaxySkeletonState();

@@ -1,11 +1,31 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Tooltip component for contextual information on hover or focus
+ */
+
 import * as React from 'react';
 import * as TooltipPrimitive from '@rn-primitives/tooltip';
 import { cn } from '@/lib/utils';
 
+/**
+ * Tooltip provider component - must wrap all tooltip components
+ */
 const TooltipProvider = TooltipPrimitive.Provider;
 
+/**
+ * Tooltip root component
+ * @property open - Controlled open state
+ * @property defaultOpen - Uncontrolled initial open state
+ * @property onOpenChange - Called when the open state changes
+ * @property delayDuration - Time to wait before showing tooltip
+ * @property skipDelayDuration - Time to skip delay for rapid hovers
+ */
 const Tooltip = TooltipPrimitive.Root;
 
+/**
+ * Tooltip trigger component - wraps the element that triggers the tooltip
+ */
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
 const TooltipContent = React.forwardRef<

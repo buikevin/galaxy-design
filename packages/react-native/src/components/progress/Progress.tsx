@@ -1,11 +1,21 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Progress bar component for showing completion percentage
+ */
+
 import * as React from 'react';
 import { View, Animated } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface ProgressProps {
+  /** Current progress value */
   value?: number;
+  /** Maximum progress value */
   max?: number;
+  /** CSS class names for the progress root */
   className?: string;
+  /** CSS class names for the progress indicator */
   indicatorClassName?: string;
 }
 

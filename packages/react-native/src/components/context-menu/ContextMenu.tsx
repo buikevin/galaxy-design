@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Context menu component for right-click action menus
+ */
+
 import * as React from 'react';
 import * as ContextMenuPrimitive from '@rn-primitives/context-menu';
 import { View, Text } from 'react-native';

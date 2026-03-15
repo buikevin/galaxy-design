@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Bar chart with horizontal/vertical orientation and stacked mode
+ */
+
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { NgxEchartsModule } from 'ngx-echarts'

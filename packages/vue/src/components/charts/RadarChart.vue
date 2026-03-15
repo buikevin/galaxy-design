@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc RadarChart component - Radar/spider chart for multivariate data powered by ECharts
+-->
 <script setup lang="ts">
 import { computed, type PropType } from 'vue'
 import VChart from 'vue-echarts'

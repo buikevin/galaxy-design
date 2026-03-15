@@ -1,14 +1,27 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Empty state component for displaying no data, no results, or error messages
+ */
+
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface EmptyProps {
+  /** Custom icon to display */
   icon?: React.ReactNode;
+  /** Title text */
   title?: string;
+  /** Description text */
   description?: string;
+  /** Action button or component */
   action?: React.ReactNode;
+  /** CSS class names for the container */
   className?: string;
+  /** Icon size in pixels */
   iconSize?: number;
+  /** Spacing between elements in pixels */
   spacing?: number;
 }
 

@@ -1,12 +1,23 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Navigation menu component for bottom navigation and drawer menus
+ */
+
 import * as React from 'react';
 import { View, Text, Pressable, ScrollView, Modal } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface NavigationMenuItem {
+  /** Unique identifier for the item */
   id: string;
+  /** Display label for the item */
   label: string;
-  icon: React.ReactNode | string; // React node or emoji
+  /** Icon to display (React node or emoji string) */
+  icon: React.ReactNode | string;
+  /** Optional badge count or text */
   badge?: number | string;
+  /** Disables the item */
   disabled?: boolean;
 }
 

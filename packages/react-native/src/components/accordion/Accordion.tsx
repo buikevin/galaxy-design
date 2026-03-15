@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Collapsible accordion component for expandable content sections
+ */
+
 import * as React from 'react';
 import * as AccordionPrimitive from '@rn-primitives/accordion';
 import { View, Text } from 'react-native';

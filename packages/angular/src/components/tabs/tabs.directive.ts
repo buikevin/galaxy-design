@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Tabs directive - Provides tab navigation functionality
+ */
+
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import {
   RdxTabsRootDirective,

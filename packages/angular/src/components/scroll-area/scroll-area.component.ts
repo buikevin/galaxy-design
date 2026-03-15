@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Scrollable container with custom scrollbar styling
+ */
+
 import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 

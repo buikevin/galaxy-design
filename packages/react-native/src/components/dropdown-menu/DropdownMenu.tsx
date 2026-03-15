@@ -1,18 +1,45 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Dropdown menu component for contextual action menus
+ */
+
 import * as React from 'react';
 import * as DropdownMenuPrimitive from '@rn-primitives/dropdown-menu';
 import { View, Text } from 'react-native';
 import { cn } from '@/lib/utils';
 
+/**
+ * Dropdown menu root component
+ * @property open - Controlled open state
+ * @property defaultOpen - Uncontrolled initial open state
+ * @property onOpenChange - Called when the open state changes
+ */
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
+/**
+ * Dropdown menu trigger component - wraps the element that triggers the menu
+ */
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 
+/**
+ * Dropdown menu group component - groups menu items
+ */
 const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 
+/**
+ * Dropdown menu portal component - renders menu content in a portal
+ */
 const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
 
+/**
+ * Dropdown menu sub component - creates submenus
+ */
 const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 
+/**
+ * Dropdown menu radio group component - groups radio items
+ */
 const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 
 const DropdownMenuSubTrigger = React.forwardRef<

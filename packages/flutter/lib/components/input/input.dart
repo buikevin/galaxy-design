@@ -1,5 +1,22 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Input component - Ô nhập liệu với label, placeholder, validation
+
 import 'package:flutter/material.dart';
 
+/// GalaxyInput - Ô nhập liệu với label, placeholder và validation
+/// 
+/// ## Props:
+/// - [controller] - TextEditingController để quản lý giá trị input
+/// - [label] - Nhãn hiển thị phía trên input
+/// - [placeholder] - Văn bản giữ chỗ khi input trống
+/// - [error] - Thông báo lỗi hiển thị phía dưới input
+/// - [enabled] - Trạng thái enabled của input (default: true)
+/// - [obscureText] - Chế độ ẩn văn bản (password) (default: false)
+/// - [keyboardType] - Loại bàn phím hiển thị
+/// - [maxLines] - Số dòng hiển thị (default: 1)
+/// - [onChanged] - Callback khi giá trị thay đổi
+/// - [onSubmitted] - Callback khi submit (nhấn Enter)
 class GalaxyInput extends StatefulWidget {
   const GalaxyInput({
     Key? key,
@@ -15,15 +32,34 @@ class GalaxyInput extends StatefulWidget {
     this.onSubmitted,
   }) : super(key: key);
 
+  /// TextEditingController để quản lý giá trị input
   final TextEditingController? controller;
+
+  /// Nhãn hiển thị phía trên input
   final String? label;
+
+  /// Văn bản giữ chỗ khi input trống
   final String? placeholder;
+
+  /// Thông báo lỗi hiển thị phía dưới input
   final String? error;
+
+  /// Trạng thái enabled của input
   final bool enabled;
+
+  /// Chế độ ẩn văn bản (password)
   final bool obscureText;
+
+  /// Loại bàn phím hiển thị
   final TextInputType? keyboardType;
+
+  /// Số dòng hiển thị
   final int? maxLines;
+
+  /// Callback khi giá trị thay đổi
   final ValueChanged<String>? onChanged;
+
+  /// Callback khi submit (nhấn Enter)
   final ValueChanged<String>? onSubmitted;
 
   @override

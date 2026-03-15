@@ -1,21 +1,47 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Empty component - Displays an empty state when no data is available
+ */
+
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Empty Props interface
+ * @extends React.HTMLAttributes<HTMLDivElement> - All standard div HTML attributes
+ */
 export interface EmptyProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
-   * Empty state description
+   * Empty state description text or component
    */
   description?: React.ReactNode
   /**
-   * Icon or image to display
+   * Icon or image to display above the description
    */
   image?: React.ReactNode
   /**
-   * Custom image alt text
+   * Alt text for the image
+   * @default "Empty"
    */
   imageAlt?: string
 }
 
+/**
+ * Empty Component
+ * 
+ * Displays an empty state when no data is available to show.
+ * Commonly used in lists, tables, or search results.
+ * 
+ * @param {EmptyProps} props - Empty component props
+ * @param {string} [props.className] - CSS class names for the empty container
+ * @param {React.ReactNode} [props.description] - Description text or component to display
+ * @param {React.ReactNode} [props.image] - Icon or image to display
+ * @param {string} [props.imageAlt] - Alt text for the image
+ * @param {React.ReactNode} [props.children] - Additional content (e.g., action buttons)
+ * @param {React.RefObject<HTMLDivElement>} ref - Reference to the empty element
+ * @returns {JSX.Element} Empty state container element
+ */
 const Empty = React.forwardRef<HTMLDivElement, EmptyProps>(
   ({ className, description, image, imageAlt = 'Empty', children, ...props }, ref) => {
     return (

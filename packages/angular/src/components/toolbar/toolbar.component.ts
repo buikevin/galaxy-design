@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Toolbar container for grouping action buttons
+ */
+
 import { Component, Input } from '@angular/core'
 import { cn } from '@/lib/utils'
 

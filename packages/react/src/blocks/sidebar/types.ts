@@ -13,6 +13,8 @@ export interface SidebarProps {
   items: MenuItem[]
   collapsible?: boolean
   defaultCollapsed?: boolean
+  collapsed?: boolean
+  activeItemId?: string
   width?: string
   collapsedWidth?: string
   onItemClick?: (item: MenuItem) => void

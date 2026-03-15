@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Pagination component for navigating through pages of data with multiple variants
+ */
+
 import * as React from 'react';
 import { View, Text, Pressable, ActivityIndicator } from 'react-native';
 import { cn } from '@/lib/utils';
@@ -5,13 +11,21 @@ import { cn } from '@/lib/utils';
 export type PaginationVariant = 'compact' | 'full' | 'loadMore';
 
 export interface PaginationProps {
+  /** Current page number */
   currentPage: number;
+  /** Total number of pages */
   totalPages: number;
+  /** Called when the page changes */
   onPageChange?: (page: number) => void;
+  /** Pagination variant (compact, full, loadMore) */
   variant?: PaginationVariant;
-  visiblePages?: number; // Number of visible page buttons in compact mode
+  /** Number of visible page buttons in compact mode */
+  visiblePages?: number;
+  /** Text for load more button */
   loadMoreText?: string;
+  /** Loading state for load more variant */
   isLoading?: boolean;
+  /** CSS class names for the container */
   className?: string;
 }
 

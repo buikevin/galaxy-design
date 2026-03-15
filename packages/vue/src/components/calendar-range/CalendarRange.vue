@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc CalendarRange component - Date range picker with start and end date selection
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { RangeCalendarRoot } from 'radix-vue'

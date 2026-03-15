@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Radio group with single selection support
+ */
+
 import {
   Component,
   Input,

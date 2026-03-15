@@ -1,5 +1,15 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Card component - Card container với header, title, description, content, footer
+
 import 'package:flutter/material.dart';
 
+/// GalaxyCard - Card container với header, title, description, content, footer
+/// 
+/// ## Props:
+/// - [child] - Widget con hiển thị bên trong card
+/// - [padding] - Padding tùy chỉnh (default: null)
+/// - [elevation] - Độ cao shadow của card (default: 1)
 class GalaxyCard extends StatelessWidget {
   const GalaxyCard({
     Key? key,
@@ -8,8 +18,13 @@ class GalaxyCard extends StatelessWidget {
     this.elevation = 1,
   }) : super(key: key);
 
+  /// Widget con hiển thị bên trong card
   final Widget child;
+
+  /// Padding tùy chỉnh
   final EdgeInsetsGeometry? padding;
+
+  /// Độ cao shadow của card
   final double elevation;
 
   @override
@@ -32,6 +47,11 @@ class GalaxyCard extends StatelessWidget {
   }
 }
 
+/// GalaxyCardHeader - Header section của card
+/// 
+/// ## Props:
+/// - [child] - Widget con hiển thị trong header
+/// - [padding] - Padding của header (default: EdgeInsets.all(24))
 class GalaxyCardHeader extends StatelessWidget {
   const GalaxyCardHeader({
     Key? key,
@@ -39,7 +59,10 @@ class GalaxyCardHeader extends StatelessWidget {
     this.padding = const EdgeInsets.all(24),
   }) : super(key: key);
 
+  /// Widget con hiển thị trong header
   final Widget child;
+
+  /// Padding của header
   final EdgeInsetsGeometry padding;
 
   @override
@@ -51,6 +74,11 @@ class GalaxyCardHeader extends StatelessWidget {
   }
 }
 
+/// GalaxyCardTitle - Title section của card
+/// 
+/// ## Props:
+/// - [title] - Tiêu đề của card
+/// - [style] - TextStyle tùy chỉnh
 class GalaxyCardTitle extends StatelessWidget {
   const GalaxyCardTitle({
     Key? key,
@@ -58,7 +86,10 @@ class GalaxyCardTitle extends StatelessWidget {
     this.style,
   }) : super(key: key);
 
+  /// Tiêu đề của card
   final String title;
+
+  /// TextStyle tùy chỉnh
   final TextStyle? style;
 
   @override
@@ -76,6 +107,11 @@ class GalaxyCardTitle extends StatelessWidget {
   }
 }
 
+/// GalaxyCardDescription - Description section của card
+/// 
+/// ## Props:
+/// - [description] - Mô tả của card
+/// - [style] - TextStyle tùy chỉnh
 class GalaxyCardDescription extends StatelessWidget {
   const GalaxyCardDescription({
     Key? key,
@@ -83,7 +119,10 @@ class GalaxyCardDescription extends StatelessWidget {
     this.style,
   }) : super(key: key);
 
+  /// Mô tả của card
   final String description;
+
+  /// TextStyle tùy chỉnh
   final TextStyle? style;
 
   @override
@@ -100,6 +139,11 @@ class GalaxyCardDescription extends StatelessWidget {
   }
 }
 
+/// GalaxyCardContent - Content section của card
+/// 
+/// ## Props:
+/// - [child] - Widget con hiển thị trong content
+/// - [padding] - Padding của content (default: EdgeInsets.fromLTRB(24, 0, 24, 24))
 class GalaxyCardContent extends StatelessWidget {
   const GalaxyCardContent({
     Key? key,
@@ -107,7 +151,10 @@ class GalaxyCardContent extends StatelessWidget {
     this.padding = const EdgeInsets.fromLTRB(24, 0, 24, 24),
   }) : super(key: key);
 
+  /// Widget con hiển thị trong content
   final Widget child;
+
+  /// Padding của content
   final EdgeInsetsGeometry padding;
 
   @override
@@ -119,6 +166,11 @@ class GalaxyCardContent extends StatelessWidget {
   }
 }
 
+/// GalaxyCardFooter - Footer section của card
+/// 
+/// ## Props:
+/// - [child] - Widget con hiển thị trong footer
+/// - [padding] - Padding của footer (default: EdgeInsets.fromLTRB(24, 0, 24, 24))
 class GalaxyCardFooter extends StatelessWidget {
   const GalaxyCardFooter({
     Key? key,
@@ -126,7 +178,10 @@ class GalaxyCardFooter extends StatelessWidget {
     this.padding = const EdgeInsets.fromLTRB(24, 0, 24, 24),
   }) : super(key: key);
 
+  /// Widget con hiển thị trong footer
   final Widget child;
+
+  /// Padding của footer
   final EdgeInsetsGeometry padding;
 
   @override

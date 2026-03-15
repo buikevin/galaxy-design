@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc SheetFooter component - Sheet footer container with flex layout for actions
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'

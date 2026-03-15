@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Date picker component for selecting single dates or date ranges
+ */
+
 import * as React from 'react';
 import { View, Text, Pressable, Platform } from 'react-native';
 import DateTimePicker, {
@@ -6,14 +12,23 @@ import DateTimePicker, {
 import { cn } from '@/lib/utils';
 
 export interface DatePickerProps {
+  /** Selected date */
   selected?: Date;
+  /** Callback when date changes */
   onChanged?: (date: Date | undefined) => void;
+  /** Minimum selectable date */
   minDate?: Date;
+  /** Maximum selectable date */
   maxDate?: Date;
+  /** Date format string */
   format?: string;
+  /** Placeholder text */
   placeholder?: string;
+  /** Header content */
   header?: React.ReactNode;
+  /** CSS class names for the container */
   className?: string;
+  /** Selection mode */
   mode?: 'single' | 'range';
 }
 

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Progress bar indicator with percentage display
+ */
+
 import { Component, Input, ChangeDetectionStrategy, computed, signal, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {

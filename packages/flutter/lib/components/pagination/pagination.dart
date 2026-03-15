@@ -1,3 +1,7 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Pagination component - Phân trang với multiple variants
+
 import 'package:flutter/material.dart';
 
 /// Pagination variant
@@ -7,16 +11,17 @@ enum PaginationVariant {
   loadMore, // Shows "Load More" button
 }
 
-/// A unified pagination component for mobile and web
+/// GalaxyPagination - Component phân trang với multiple variants
+/// 
+/// ## Props:
+/// - [currentPage] - Trang hiện tại
+/// - [totalPages] - Tổng số trang
+/// - [onPageChange] - Callback khi trang thay đổi
+/// - [variant] - Biến thể pagination (default: PaginationVariant.compact)
+/// - [visiblePages] - Số trang hiển thị trong compact mode (default: 5)
+/// - [loadMoreText] - Text cho load more button
+/// - [isLoading] - Trạng thái đang tải (default: false)
 class GalaxyPagination extends StatelessWidget {
-  final int currentPage;
-  final int totalPages;
-  final ValueChanged<int>? onPageChange;
-  final PaginationVariant variant;
-  final int visiblePages; // Number of visible page buttons in compact mode
-  final String? loadMoreText;
-  final bool isLoading;
-
   const GalaxyPagination({
     Key? key,
     required this.currentPage,
@@ -27,6 +32,27 @@ class GalaxyPagination extends StatelessWidget {
     this.loadMoreText,
     this.isLoading = false,
   }) : super(key: key);
+
+  /// Trang hiện tại
+  final int currentPage;
+
+  /// Tổng số trang
+  final int totalPages;
+
+  /// Callback khi trang thay đổi
+  final ValueChanged<int>? onPageChange;
+
+  /// Biến thể pagination
+  final PaginationVariant variant;
+
+  /// Số trang hiển thị trong compact mode
+  final int visiblePages;
+
+  /// Text cho load more button
+  final String? loadMoreText;
+
+  /// Trạng thái đang tải
+  final bool isLoading;
 
   /// Creates a compact pagination (mobile-friendly)
   const GalaxyPagination.compact({

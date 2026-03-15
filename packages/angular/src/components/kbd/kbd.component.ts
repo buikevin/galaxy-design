@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Keyboard key display with 3 size variants
+ */
+
 import { Component, Input } from '@angular/core'
 import { cn } from '@/lib/utils'
 

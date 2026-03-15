@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc DonutChart component - Donut chart with customizable inner/outer radius powered by ECharts
+-->
 <script setup lang="ts">
 import { computed } from 'vue'
 import VChart from 'vue-echarts'

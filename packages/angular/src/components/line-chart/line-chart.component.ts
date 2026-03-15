@@ -1,7 +1,7 @@
 /**
- * Galaxy UI Charts - Angular LineChart Component
- *
- * A responsive line chart component powered by ECharts
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Line Chart component - Responsive line chart powered by ECharts
  */
 
 import {

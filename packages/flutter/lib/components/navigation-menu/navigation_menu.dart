@@ -1,11 +1,31 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc NavigationMenu component - Menu navigation với bottom và drawer variants
+
 import 'package:flutter/material.dart';
 
-/// Navigation item model
+/// NavigationMenuItem - Item trong navigation menu
+/// 
+/// ## Props:
+/// - [id] - ID của item
+/// - [label] - Nhãn hiển thị
+/// - [icon] - Icon của item
+/// - [badge] - Badge hiển thị (số lượng, thông báo)
+/// - [disabled] - Trạng thái disabled của item (default: false)
 class NavigationMenuItem {
+  /// ID của item
   final String id;
+
+  /// Nhãn hiển thị
   final String label;
+
+  /// Icon của item
   final IconData icon;
+
+  /// Badge hiển thị
   final String? badge;
+
+  /// Trạng thái disabled của item
   final bool disabled;
 
   const NavigationMenuItem({
@@ -17,22 +37,22 @@ class NavigationMenuItem {
   });
 }
 
-/// Variant for navigation menu
+/// Navigation menu variant
 enum NavigationMenuVariant {
   bottom,
   drawer,
 }
 
-/// A unified navigation menu component for mobile
-/// Supports bottom navigation and drawer navigation
+/// GalaxyNavigationMenu - Component navigation menu với bottom và drawer variants
+/// 
+/// ## Props:
+/// - [items] - Danh sách các navigation items
+/// - [selectedId] - ID của item được chọn
+/// - [onSelect] - Callback khi item được chọn
+/// - [variant] - Biến thể navigation menu (default: NavigationMenuVariant.bottom)
+/// - [header] - Header widget cho drawer navigation
+/// - [footer] - Footer widget cho drawer navigation
 class GalaxyNavigationMenu extends StatelessWidget {
-  final List<NavigationMenuItem> items;
-  final String? selectedId;
-  final ValueChanged<String>? onSelect;
-  final NavigationMenuVariant variant;
-  final Widget? header; // For drawer
-  final Widget? footer; // For drawer
-
   const GalaxyNavigationMenu({
     Key? key,
     required this.items,
@@ -42,6 +62,24 @@ class GalaxyNavigationMenu extends StatelessWidget {
     this.header,
     this.footer,
   }) : super(key: key);
+
+  /// Danh sách các navigation items
+  final List<NavigationMenuItem> items;
+
+  /// ID của item được chọn
+  final String? selectedId;
+
+  /// Callback khi item được chọn
+  final ValueChanged<String>? onSelect;
+
+  /// Biến thể navigation menu
+  final NavigationMenuVariant variant;
+
+  /// Header widget cho drawer navigation
+  final Widget? header;
+
+  /// Footer widget cho drawer navigation
+  final Widget? footer;
 
   /// Creates a bottom navigation menu
   const GalaxyNavigationMenu.bottom({

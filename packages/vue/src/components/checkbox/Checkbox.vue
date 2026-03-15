@@ -1,10 +1,41 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Checkbox component - Accessible checkbox with Radix Vue primitive
+-->
 <script setup lang="ts">
 import { type HTMLAttributes } from 'vue'
 import { CheckboxIndicator, CheckboxRoot, type CheckboxRootEmits, type CheckboxRootProps } from 'radix-vue'
 import { Check } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
-const props = defineProps<CheckboxRootProps & { class?: HTMLAttributes['class'] }>()
+/**
+ * Checkbox Props
+ * @prop checked - Controlled checked state
+ * @prop defaultChecked - Default checked state
+ * @prop disabled - Disables the checkbox
+ * @prop required - Makes the checkbox required
+ * @prop name - Name attribute for form submission
+ * @prop value - Value attribute for form submission
+ * @prop class - CSS class names for the checkbox
+ * @event update:checked - Emitted when the checked state changes
+ */
+const props = defineProps<CheckboxRootProps & {
+  /** Controlled checked state. */
+  checked?: boolean
+  /** Default checked state. */
+  defaultChecked?: boolean
+  /** Disables the checkbox. */
+  disabled?: boolean
+  /** Makes the checkbox required. */
+  required?: boolean
+  /** Name attribute for form submission. */
+  name?: string
+  /** Value attribute for form submission. */
+  value?: string
+  /** CSS class names for the checkbox. */
+  class?: HTMLAttributes['class']
+}>()
 const emits = defineEmits<CheckboxRootEmits>()
 </script>
 

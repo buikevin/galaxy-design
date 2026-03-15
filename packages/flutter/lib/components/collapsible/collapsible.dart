@@ -1,11 +1,17 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Collapsible component - Component có thể mở rộng/thu gọn với trigger
+
 import 'package:flutter/material.dart';
 
+/// GalaxyCollapsible - Component có thể mở rộng/thu gọn với trigger
+/// 
+/// ## Props:
+/// - [trigger] - Widget kích hoạt collapsible
+/// - [content] - Nội dung hiển thị khi mở rộng
+/// - [initiallyExpanded] - Trạng thái mở rộng ban đầu (default: false)
+/// - [onExpansionChanged] - Callback khi trạng thái mở rộng thay đổi
 class GalaxyCollapsible extends StatefulWidget {
-  final Widget trigger;
-  final Widget content;
-  final bool initiallyExpanded;
-  final ValueChanged<bool>? onExpansionChanged;
-
   const GalaxyCollapsible({
     Key? key,
     required this.trigger,
@@ -13,6 +19,18 @@ class GalaxyCollapsible extends StatefulWidget {
     this.initiallyExpanded = false,
     this.onExpansionChanged,
   }) : super(key: key);
+
+  /// Widget kích hoạt collapsible
+  final Widget trigger;
+
+  /// Nội dung hiển thị khi mở rộng
+  final Widget content;
+
+  /// Trạng thái mở rộng ban đầu
+  final bool initiallyExpanded;
+
+  /// Callback khi trạng thái mở rộng thay đổi
+  final ValueChanged<bool>? onExpansionChanged;
 
   @override
   State<GalaxyCollapsible> createState() => _GalaxyCollapsibleState();

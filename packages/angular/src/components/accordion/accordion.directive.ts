@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Accordion directive - Provides accordion collapsible functionality
+ */
+
 import { Directive, Input, Output, EventEmitter } from '@angular/core';
 import {
   RdxAccordionRootDirective,

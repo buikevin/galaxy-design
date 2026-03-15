@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Table component for displaying data in rows and columns with scroll support
+ */
+
 import * as React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import { cn } from '@/lib/utils';

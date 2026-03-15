@@ -1,9 +1,26 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Hover card component for displaying preview content on hover
+ */
+
 import * as React from 'react';
 import * as HoverCardPrimitive from '@rn-primitives/hover-card';
 import { cn } from '@/lib/utils';
 
+/**
+ * Hover card root component
+ * @property open - Controlled open state
+ * @property defaultOpen - Uncontrolled initial open state
+ * @property onOpenChange - Called when the open state changes
+ * @property openDelay - Delay before opening
+ * @property closeDelay - Delay before closing
+ */
 const HoverCard = HoverCardPrimitive.Root;
 
+/**
+ * Hover card trigger component - wraps the element that triggers the hover card
+ */
 const HoverCardTrigger = HoverCardPrimitive.Trigger;
 
 const HoverCardContent = React.forwardRef<

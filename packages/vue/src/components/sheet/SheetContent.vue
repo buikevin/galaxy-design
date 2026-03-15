@@ -1,12 +1,30 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc SheetContent component - Side panel content with overlay and close button
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { DialogPortal, DialogOverlay, DialogContent } from 'radix-vue'
 import { X } from 'lucide-vue-next'
 import { computed } from 'vue'
 
+/**
+ * SheetContent Props
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop side - Side position (top, right, bottom, left)
+ * @prop class - CSS class names for the content
+ */
 interface Props {
-  class?: string
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** Side position (top, right, bottom, left). */
   side?: 'top' | 'right' | 'bottom' | 'left'
+  /** CSS class names for the content. */
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {

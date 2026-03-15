@@ -1,17 +1,177 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Select components - A select box component for choosing an option from a list
+ */
+
 import * as React from 'react'
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { Check, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Select Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> - All standard select root attributes
+ */
+export interface SelectProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> {
+  /**
+   * Controlled selected value
+   */
+  value?: string
+  /**
+   * Uncontrolled initial selected value
+   */
+  defaultValue?: string
+  /**
+   * Called when the value changes
+   */
+  onValueChange?: (value: string) => void
+  /**
+   * Disables the select
+   * @default false
+   */
+  disabled?: boolean
+  /**
+   * Requires a value before form submission
+   */
+  required?: boolean
+  /**
+   * Name for form submission
+   */
+  name?: string
+  /**
+   * Reading direction
+   */
+  dir?: 'ltr' | 'rtl'
+}
+
+/**
+ * SelectTrigger Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> - All standard select trigger attributes
+ */
+export interface SelectTriggerProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {
+  /**
+   * CSS class names for the trigger
+   */
+  className?: string
+  /**
+   * Disables the trigger
+   * @default false
+   */
+  disabled?: boolean
+}
+
+/**
+ * SelectContent Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> - All standard select content attributes
+ */
+export interface SelectContentProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> {
+  /**
+   * Positioning strategy
+   * @default 'popper'
+   */
+  position?: 'popper' | 'item-aligned'
+  /**
+   * CSS class names for the content
+   */
+  className?: string
+  /**
+   * Side offset from the trigger
+   */
+  sideOffset?: number
+}
+
+/**
+ * SelectItem Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> - All standard select item attributes
+ */
+export interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
+  /**
+   * Item value
+   */
+  value?: string
+  /**
+   * Disables the item
+   * @default false
+   */
+  disabled?: boolean
+  /**
+   * CSS class names for the item
+   */
+  className?: string
+}
+
+/**
+ * SelectLabel Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label> - All standard select label attributes
+ */
+export interface SelectLabelProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label> {
+  /**
+   * CSS class names for the label
+   */
+  className?: string
+}
+
+/**
+ * SelectSeparator Props interface
+ * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> - All standard select separator attributes
+ */
+export interface SelectSeparatorProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> {
+  /**
+   * CSS class names for the separator
+   */
+  className?: string
+}
+
+/**
+ * Select Component
+ * 
+ * Root component for the select box. Manages the state of the select.
+ * Built on top of Radix UI Select primitive.
+ * 
+ * @param {SelectProps} props - Select component props
+ * @param {string} [props.value] - Controlled selected value
+ * @param {string} [props.defaultValue] - Uncontrolled initial selected value
+ * @param {(value: string) => void} [props.onValueChange] - Called when the value changes
+ * @param {boolean} [props.disabled=false] - Disables the select
+ * @param {boolean} [props.required] - Requires a value before form submission
+ * @param {string} [props.name] - Name for form submission
+ * @param {'ltr' | 'rtl'} [props.dir] - Reading direction
+ */
 const Select = SelectPrimitive.Root
 
+/**
+ * SelectGroup Component
+ * 
+ * Groups multiple select items together.
+ * Use this to logically group related options.
+ */
 const SelectGroup = SelectPrimitive.Group
 
+/**
+ * SelectValue Component
+ * 
+ * Displays the currently selected value.
+ * Typically used within the SelectTrigger.
+ */
 const SelectValue = SelectPrimitive.Value
 
+/**
+ * SelectTrigger Component
+ * 
+ * The trigger element that opens the select dropdown.
+ * Displays the current selection and a dropdown icon.
+ * 
+ * @param {SelectTriggerProps} props - SelectTrigger component props
+ * @param {string} [props.className] - CSS class names for the trigger
+ * @param {React.ReactNode} [props.children] - Trigger content (usually SelectValue)
+ * @param {boolean} [props.disabled=false] - Disables the trigger
+ * @param {React.RefObject<React.ElementRef<typeof SelectPrimitive.Trigger>>} ref - Reference to the trigger element
+ * @returns {JSX.Element} Select trigger element
+ */
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+  SelectTriggerProps
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
@@ -29,9 +189,23 @@ const SelectTrigger = React.forwardRef<
 ))
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
+/**
+ * SelectContent Component
+ * 
+ * The dropdown content containing select items.
+ * Renders in a portal for proper z-index layering.
+ * 
+ * @param {SelectContentProps} props - SelectContent component props
+ * @param {string} [props.className] - CSS class names for the content
+ * @param {React.ReactNode} [props.children] - Content items (SelectItem components)
+ * @param {'popper' | 'item-aligned'} [props.position='popper'] - Positioning strategy
+ * @param {number} [props.sideOffset] - Offset from the trigger
+ * @param {React.RefObject<React.ElementRef<typeof SelectPrimitive.Content>>} ref - Reference to the content element
+ * @returns {JSX.Element} Select dropdown content element
+ */
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
+  SelectContentProps
 >(({ className, children, position = 'popper', ...props }, ref) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
@@ -59,9 +233,20 @@ const SelectContent = React.forwardRef<
 ))
 SelectContent.displayName = SelectPrimitive.Content.displayName
 
+/**
+ * SelectLabel Component
+ * 
+ * A label for a group of select items.
+ * 
+ * @param {SelectLabelProps} props - SelectLabel component props
+ * @param {string} [props.className] - CSS class names for the label
+ * @param {React.ReactNode} [props.children] - Label content
+ * @param {React.RefObject<React.ElementRef<typeof SelectPrimitive.Label>>} ref - Reference to the label element
+ * @returns {JSX.Element} Select label element
+ */
 const SelectLabel = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
+  SelectLabelProps
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
@@ -71,9 +256,23 @@ const SelectLabel = React.forwardRef<
 ))
 SelectLabel.displayName = SelectPrimitive.Label.displayName
 
+/**
+ * SelectItem Component
+ * 
+ * An option within the select dropdown.
+ * Displays a checkmark when selected.
+ * 
+ * @param {SelectItemProps} props - SelectItem component props
+ * @param {string} [props.className] - CSS class names for the item
+ * @param {string} [props.value] - The value of the option
+ * @param {boolean} [props.disabled=false] - Disables the item
+ * @param {React.ReactNode} [props.children] - Item content
+ * @param {React.RefObject<React.ElementRef<typeof SelectPrimitive.Item>>} ref - Reference to the item element
+ * @returns {JSX.Element} Select item element
+ */
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
+  SelectItemProps
 >(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
     ref={ref}
@@ -93,6 +292,16 @@ const SelectItem = React.forwardRef<
 ))
 SelectItem.displayName = SelectPrimitive.Item.displayName
 
+/**
+ * SelectSeparator Component
+ * 
+ * A visual separator between groups of select items.
+ * 
+ * @param {React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>} props - SelectSeparator props
+ * @param {string} [props.className] - CSS class names for the separator
+ * @param {React.RefObject<React.ElementRef<typeof SelectPrimitive.Separator>>} ref - Reference to the separator element
+ * @returns {JSX.Element} Select separator element
+ */
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>

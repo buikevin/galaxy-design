@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Animated spinner component for indicating loading state
+ */
+
 import * as React from 'react';
 import {
   AccessibilityProps,
@@ -11,9 +17,13 @@ import { cn } from '@/lib/utils';
 export type SpinnerSize = 'sm' | 'default' | 'lg';
 
 export interface SpinnerProps extends AccessibilityProps {
+  /** Visual size of the spinner (sm, default, lg) */
   size?: SpinnerSize;
+  /** Accessible label announced to assistive technology */
   label?: string;
+  /** NativeWind class names for the spinner */
   className?: string;
+  /** Additional React Native style for the spinner */
   style?: StyleProp<ViewStyle>;
 }
 

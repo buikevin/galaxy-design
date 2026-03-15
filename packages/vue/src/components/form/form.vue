@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Form component - Form container with validation context support
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { provide } from 'vue'

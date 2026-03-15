@@ -1,8 +1,30 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc ScrollBar component - Custom scrollbar with thumb for scroll area
+-->
 <script setup lang="ts">
 import { ScrollAreaScrollbar, ScrollAreaThumb, type ScrollAreaScrollbarProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+/**
+ * ScrollBar Props
+ * @prop orientation - Scrollbar orientation (vertical, horizontal)
+ * @prop forceMount - Force-mount the scrollbar even when not needed
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop class - CSS class names for the scrollbar
+ */
 interface Props extends ScrollAreaScrollbarProps {
+  /** Scrollbar orientation (vertical, horizontal). */
+  orientation?: 'vertical' | 'horizontal'
+  /** Force-mount the scrollbar even when not needed. */
+  forceMount?: boolean
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** CSS class names for the scrollbar. */
   class?: string
 }
 

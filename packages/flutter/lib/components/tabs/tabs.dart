@@ -1,16 +1,31 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Tabs component - Tab navigation với multiple tabs
+
 import 'package:flutter/material.dart';
 
+/// GalaxyTabs - Component tab navigation với multiple tabs
+/// 
+/// ## Props:
+/// - [tabs] - Danh sách các tab hiển thị
+/// - [initialIndex] - Index ban đầu được chọn (default: 0)
+/// - [onTabChanged] - Callback khi tab thay đổi
 class GalaxyTabs extends StatefulWidget {
-  final List<GalaxyTab> tabs;
-  final int initialIndex;
-  final ValueChanged<int>? onTabChanged;
-
   const GalaxyTabs({
     Key? key,
     required this.tabs,
     this.initialIndex = 0,
     this.onTabChanged,
   }) : super(key: key);
+
+  /// Danh sách các tab hiển thị
+  final List<GalaxyTab> tabs;
+
+  /// Index ban đầu được chọn
+  final int initialIndex;
+
+  /// Callback khi tab thay đổi
+  final ValueChanged<int>? onTabChanged;
 
   @override
   State<GalaxyTabs> createState() => _GalaxyTabsState();
@@ -93,9 +108,20 @@ class _GalaxyTabsState extends State<GalaxyTabs>
   }
 }
 
+/// GalaxyTab - Tab item trong tabs
+/// 
+/// ## Props:
+/// - [label] - Nhãn hiển thị của tab
+/// - [content] - Nội dung hiển thị khi tab được chọn
+/// - [icon] - Icon tùy chỉnh của tab
 class GalaxyTab {
+  /// Nhãn hiển thị của tab
   final String label;
+
+  /// Nội dung hiển thị khi tab được chọn
   final Widget content;
+
+  /// Icon tùy chỉnh của tab
   final Widget? icon;
 
   const GalaxyTab({

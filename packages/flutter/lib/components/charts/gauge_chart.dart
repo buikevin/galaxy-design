@@ -1,3 +1,7 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc GaugeChart component - Biểu đồ đồng hồ hiển thị KPIs và metrics
+
 /// Galaxy UI Charts - GaugeChart
 ///
 /// Gauge chart for displaying KPIs and metrics with a gauge visualization
@@ -8,25 +12,27 @@ import 'dart:math' as math;
 import 'types.dart';
 import 'utils.dart';
 
+/// GalaxyGaugeChart - Component biểu đồ đồng hồ hiển thị KPIs và metrics
+/// 
+/// ## Props:
+/// - [value] - Giá trị hiện tại
+/// - [min] - Giá trị tối thiểu (default: 0)
+/// - [max] - Giá trị tối đa (default: 100)
+/// - [height] - Chiều cao biểu đồ (default: 300)
+/// - [width] - Chiều rộng biểu đồ
+/// - [theme] - Chủ đề biểu đồ (default: ChartTheme.light)
+/// - [startAngle] - Góc bắt đầu
+/// - [endAngle] - Góc kết thúc
+/// - [showProgress] - Hiển thị tiến trình (default: true)
+/// - [showPointer] - Hiển thị con trỏ (default: true)
+/// - [title] - Tiêu đề
+/// - [unit] - Đơn vị đo
+/// - [zones] - Danh sách các zones màu
+/// - [color] - Màu tùy chỉnh
+/// - [loading] - Trạng thái đang tải (default: false)
+/// - [emptyText] - Văn bản khi không có dữ liệu (default: 'No data available')
+/// - [padding] - Padding của biểu đồ
 class GalaxyGaugeChart extends StatelessWidget {
-  final double value;
-  final double? min;
-  final double? max;
-  final double height;
-  final double? width;
-  final ChartTheme theme;
-  final double? startAngle;
-  final double? endAngle;
-  final bool showProgress;
-  final bool showPointer;
-  final String? title;
-  final String? unit;
-  final List<GaugeZone>? zones;
-  final Color? color;
-  final bool loading;
-  final String emptyText;
-  final EdgeInsets? padding;
-
   const GalaxyGaugeChart({
     Key? key,
     required this.value,
@@ -47,6 +53,57 @@ class GalaxyGaugeChart extends StatelessWidget {
     this.emptyText = 'No data available',
     this.padding,
   }) : super(key: key);
+
+  /// Giá trị hiện tại
+  final double value;
+
+  /// Giá trị tối thiểu
+  final double? min;
+
+  /// Giá trị tối đa
+  final double? max;
+
+  /// Chiều cao biểu đồ
+  final double height;
+
+  /// Chiều rộng biểu đồ
+  final double? width;
+
+  /// Chủ đề biểu đồ
+  final ChartTheme theme;
+
+  /// Góc bắt đầu
+  final double? startAngle;
+
+  /// Góc kết thúc
+  final double? endAngle;
+
+  /// Hiển thị tiến trình
+  final bool showProgress;
+
+  /// Hiển thị con trỏ
+  final bool showPointer;
+
+  /// Tiêu đề
+  final String? title;
+
+  /// Đơn vị đo
+  final String? unit;
+
+  /// Danh sách các zones màu
+  final List<GaugeZone>? zones;
+
+  /// Màu tùy chỉnh
+  final Color? color;
+
+  /// Trạng thái đang tải
+  final bool loading;
+
+  /// Văn bản khi không có dữ liệu
+  final String emptyText;
+
+  /// Padding của biểu đồ
+  final EdgeInsets? padding;
 
   @override
   Widget build(BuildContext context) {

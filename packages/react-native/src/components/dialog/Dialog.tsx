@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Dialog component for modal overlays with header, content, and footer
+ */
+
 import * as React from 'react';
 import * as DialogPrimitive from '@rn-primitives/dialog';
 import { View, Text } from 'react-native';

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Collapsible directive - Provides collapsible content functionality
+ */
+
 import { Directive, Input } from '@angular/core';
 import {
   RdxCollapsibleRootDirective,

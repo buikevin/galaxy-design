@@ -1,11 +1,17 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Table component - Bảng dữ liệu với columns, rows, caption
+
 import 'package:flutter/material.dart';
 
+/// GalaxyTable - Component bảng dữ liệu với columns, rows, caption
+/// 
+/// ## Props:
+/// - [columns] - Danh sách các cột trong bảng
+/// - [rows] - Danh sách các hàng trong bảng
+/// - [caption] - Chú thích của bảng (optional)
+/// - [showBorder] - Hiển thị border của bảng (default: true)
 class GalaxyTable extends StatelessWidget {
-  final List<GalaxyTableColumn> columns;
-  final List<GalaxyTableRow> rows;
-  final String? caption;
-  final bool showBorder;
-
   const GalaxyTable({
     Key? key,
     required this.columns,
@@ -13,6 +19,18 @@ class GalaxyTable extends StatelessWidget {
     this.caption,
     this.showBorder = true,
   }) : super(key: key);
+
+  /// Danh sách các cột trong bảng
+  final List<GalaxyTableColumn> columns;
+
+  /// Danh sách các hàng trong bảng
+  final List<GalaxyTableRow> rows;
+
+  /// Chú thích của bảng
+  final String? caption;
+
+  /// Hiển thị border của bảng
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +83,12 @@ class GalaxyTable extends StatelessWidget {
   }
 }
 
+/// GalaxyTableColumn - Cột trong bảng
+/// 
+/// ## Props:
+/// - [label] - Nhãn hiển thị của cột
 class GalaxyTableColumn {
+  /// Nhãn hiển thị của cột
   final String label;
 
   const GalaxyTableColumn({
@@ -73,7 +96,12 @@ class GalaxyTableColumn {
   });
 }
 
+/// GalaxyTableRow - Hàng trong bảng
+/// 
+/// ## Props:
+/// - [cells] - Danh sách các cell trong hàng
 class GalaxyTableRow {
+  /// Danh sách các cell trong hàng
   final List<Widget> cells;
 
   const GalaxyTableRow({

@@ -1,6 +1,11 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Button component - Nút bấm với các variants và sizes khác nhau
+
 import 'package:flutter/material.dart';
 import 'button_theme.dart';
 
+/// Button variant options for visual styling
 enum ButtonVariant {
   primary,
   destructive,
@@ -10,6 +15,7 @@ enum ButtonVariant {
   link,
 }
 
+/// Button size options
 enum ButtonSize {
   defaultSize,
   sm,
@@ -17,6 +23,14 @@ enum ButtonSize {
   icon,
 }
 
+/// GalaxyButton - Nút bấm với các variants và sizes khác nhau
+/// 
+/// ## Props:
+/// - [onPressed] - Callback function khi button được nhấn
+/// - [child] - Widget con hiển thị bên trong button
+/// - [variant] - Biến thể hiển thị (default: ButtonVariant.primary)
+/// - [size] - Kích thước button (default: ButtonSize.defaultSize)
+/// - [disabled] - Trạng thái disabled của button (default: false)
 class GalaxyButton extends StatelessWidget {
   const GalaxyButton({
     Key? key,
@@ -27,10 +41,19 @@ class GalaxyButton extends StatelessWidget {
     this.disabled = false,
   }) : super(key: key);
 
+  /// Callback function khi button được nhấn
   final VoidCallback? onPressed;
+
+  /// Widget con hiển thị bên trong button
   final Widget child;
+
+  /// Biến thể hiển thị của button
   final ButtonVariant variant;
+
+  /// Kích thước của button
   final ButtonSize size;
+
+  /// Trạng thái disabled của button
   final bool disabled;
 
   @override

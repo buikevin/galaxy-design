@@ -1,13 +1,24 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Spinner component - Loading indicator với customizable sizes
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+/// Spinner size options
 enum SpinnerSize {
   sm,
   defaultSize,
   lg,
 }
 
+/// GalaxySpinner - Component loading indicator với customizable sizes
+/// 
+/// ## Props:
+/// - [size] - Kích thước spinner (default: SpinnerSize.defaultSize)
+/// - [label] - Label cho accessibility (default: 'Loading...')
+/// - [color] - Màu spinner tùy chỉnh
 class GalaxySpinner extends StatefulWidget {
   const GalaxySpinner({
     super.key,
@@ -16,8 +27,13 @@ class GalaxySpinner extends StatefulWidget {
     this.color,
   });
 
+  /// Kích thước spinner
   final SpinnerSize size;
+
+  /// Label cho accessibility
   final String label;
+
+  /// Màu spinner tùy chỉnh
   final Color? color;
 
   @override

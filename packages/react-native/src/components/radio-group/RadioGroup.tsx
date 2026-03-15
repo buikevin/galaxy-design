@@ -1,8 +1,22 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Radio group component for selecting a single option from multiple choices
+ */
+
 import * as React from 'react';
 import * as RadioGroupPrimitive from '@rn-primitives/radio-group';
 import { View } from 'react-native';
 import { cn } from '@/lib/utils';
 
+/**
+ * Radio group props extending RadioGroupPrimitive.Root props
+ * @property value - Controlled selected value
+ * @property defaultValue - Uncontrolled initial value
+ * @property onValueChange - Called when the value changes
+ * @property disabled - Disables the entire group
+ * @property className - CSS class names for the radio group
+ */
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>

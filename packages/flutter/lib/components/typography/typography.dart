@@ -1,3 +1,7 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Typography component - Component văn bản với các variants pre-defined
+
 import 'package:flutter/material.dart';
 
 /// Typography variant for different text styles
@@ -23,17 +27,18 @@ enum TypographyWeight {
   bold,
 }
 
-/// A unified typography component with pre-defined text styles
+/// GalaxyTypography - Component văn bản với các variants pre-defined
+/// 
+/// ## Props:
+/// - [text] - Văn bản hiển thị
+/// - [variant] - Biến thể typography (default: TypographyVariant.p)
+/// - [weight] - Độ đậm của chữ
+/// - [color] - Màu chữ tùy chỉnh
+/// - [textAlign] - Căn chỉnh văn bản
+/// - [maxLines] - Số dòng tối đa
+/// - [overflow] - Xử lý overflow
+/// - [softWrap] - Tự động xuống dòng
 class GalaxyTypography extends StatelessWidget {
-  final String text;
-  final TypographyVariant variant;
-  final TypographyWeight? weight;
-  final Color? color;
-  final TextAlign? textAlign;
-  final int? maxLines;
-  final TextOverflow? overflow;
-  final bool? softWrap;
-
   const GalaxyTypography({
     Key? key,
     required this.text,
@@ -45,6 +50,30 @@ class GalaxyTypography extends StatelessWidget {
     this.overflow,
     this.softWrap,
   }) : super(key: key);
+
+  /// Văn bản hiển thị
+  final String text;
+
+  /// Biến thể typography
+  final TypographyVariant variant;
+
+  /// Độ đậm của chữ
+  final TypographyWeight? weight;
+
+  /// Màu chữ tùy chỉnh
+  final Color? color;
+
+  /// Căn chỉnh văn bản
+  final TextAlign? textAlign;
+
+  /// Số dòng tối đa
+  final int? maxLines;
+
+  /// Xử lý overflow
+  final TextOverflow? overflow;
+
+  /// Tự động xuống dòng
+  final bool? softWrap;
 
   /// Heading 1 - Largest heading
   const GalaxyTypography.h1(

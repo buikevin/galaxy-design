@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc AvatarFallback component - Fallback content when avatar image fails to load
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { AvatarFallback, type AvatarFallbackProps } from 'radix-vue'

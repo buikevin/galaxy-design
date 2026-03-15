@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Kbd component - Displays keyboard keys with styled formatting
+ */
+
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 

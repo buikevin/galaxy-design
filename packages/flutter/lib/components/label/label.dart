@@ -1,11 +1,17 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Label component - Nhãn hiển thị với tùy chọn required marker
+
 import 'package:flutter/material.dart';
 
+/// GalaxyLabel - Component label hiển thị với tùy chọn required marker
+/// 
+/// ## Props:
+/// - [text] - Văn bản của label
+/// - [required] - Hiển thị dấu * required (default: false)
+/// - [style] - TextStyle tùy chỉnh
+/// - [color] - Màu chữ tùy chỉnh
 class GalaxyLabel extends StatelessWidget {
-  final String text;
-  final bool required;
-  final TextStyle? style;
-  final Color? color;
-
   const GalaxyLabel({
     Key? key,
     required this.text,
@@ -13,6 +19,18 @@ class GalaxyLabel extends StatelessWidget {
     this.style,
     this.color,
   }) : super(key: key);
+
+  /// Văn bản của label
+  final String text;
+
+  /// Hiển thị dấu * required
+  final bool required;
+
+  /// TextStyle tùy chỉnh
+  final TextStyle? style;
+
+  /// Màu chữ tùy chỉnh
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Typography component with 11 text style variants
+ */
+
 import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { cn } from '@/lib/utils'

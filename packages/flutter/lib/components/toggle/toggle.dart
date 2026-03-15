@@ -1,24 +1,32 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Toggle component - Nút bật/tắt với variants và sizes
+
 import 'package:flutter/material.dart';
 
+/// Toggle variant options
 enum ToggleVariant {
   default_,
   outline,
 }
 
+/// Toggle size options
 enum ToggleSize {
   default_,
   sm,
   lg,
 }
 
+/// GalaxyToggle - Component nút bật/tắt với variants và sizes
+/// 
+/// ## Props:
+/// - [value] - Trạng thái bật/tắt của toggle
+/// - [onPressed] - Callback khi trạng thái thay đổi
+/// - [child] - Widget con hiển thị bên trong toggle
+/// - [variant] - Biến thể toggle (default: ToggleVariant.default_)
+/// - [size] - Kích thước toggle (default: ToggleSize.default_)
+/// - [disabled] - Trạng thái disabled của toggle (default: false)
 class GalaxyToggle extends StatelessWidget {
-  final bool value;
-  final ValueChanged<bool>? onPressed;
-  final Widget child;
-  final ToggleVariant variant;
-  final ToggleSize size;
-  final bool disabled;
-
   const GalaxyToggle({
     Key? key,
     required this.value,
@@ -28,6 +36,24 @@ class GalaxyToggle extends StatelessWidget {
     this.size = ToggleSize.default_,
     this.disabled = false,
   }) : super(key: key);
+
+  /// Trạng thái bật/tắt của toggle
+  final bool value;
+
+  /// Callback khi trạng thái thay đổi
+  final ValueChanged<bool>? onPressed;
+
+  /// Widget con hiển thị bên trong toggle
+  final Widget child;
+
+  /// Biến thể toggle
+  final ToggleVariant variant;
+
+  /// Kích thước toggle
+  final ToggleSize size;
+
+  /// Trạng thái disabled của toggle
+  final bool disabled;
 
   double _getHeight() {
     switch (size) {

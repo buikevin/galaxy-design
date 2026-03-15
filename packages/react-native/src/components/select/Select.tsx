@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Select dropdown component for choosing from a list of options
+ */
+
 import * as React from 'react';
 import * as SelectPrimitive from '@rn-primitives/select';
 import { View, Text } from 'react-native';

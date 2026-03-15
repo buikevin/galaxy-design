@@ -1,7 +1,19 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Accordion component - accordion có thể mở rộng thu gọn với multiple items
+
 import 'package:flutter/material.dart';
 
+/// GalaxyAccordion - Component accordion có thể mở rộng/thu gọn với multiple items
+/// 
+/// ## Props:
+/// - [items] - Danh sách các item accordion hiển thị
+/// - [allowMultipleExpanded] - Cho phép nhiều items mở rộng cùng lúc (default: false)
 class GalaxyAccordion extends StatefulWidget {
+  /// Danh sách các item accordion
   final List<GalaxyAccordionItem> items;
+  
+  /// Cho phép nhiều items mở rộng cùng lúc
   final bool allowMultipleExpanded;
 
   const GalaxyAccordion({
@@ -63,8 +75,20 @@ class _GalaxyAccordionState extends State<GalaxyAccordion> {
   }
 }
 
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc AccordionItem - Item trong accordion với title và content
+
+/// GalaxyAccordionItem - Item trong accordion với title và content
+/// 
+/// ## Props:
+/// - [title] - Widget tiêu đề hiển thị khi accordion đóng/mở
+/// - [content] - Widget nội dung hiển thị khi accordion mở
 class GalaxyAccordionItem {
+  /// Widget tiêu đề hiển thị
   final Widget title;
+  
+  /// Widget nội dung hiển thị khi accordion mở
   final Widget content;
 
   const GalaxyAccordionItem({

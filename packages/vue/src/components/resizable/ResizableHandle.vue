@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc ResizableHandle component - Drag handle for resizing panels with optional grip
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { SplitterResizeHandle, type SplitterResizeHandleProps } from 'radix-vue'

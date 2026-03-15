@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc ToggleGroup component - Group of toggles with single or multiple mode
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, provide, computed } from 'vue'
 import { ToggleGroupRoot, type ToggleGroupRootProps } from 'radix-vue'

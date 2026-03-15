@@ -1,12 +1,37 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Textarea input component for multi-line text input with label and error states
+ */
+
 import * as React from 'react';
 import { TextInput, TextInputProps, View, Text } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface TextareaProps extends Omit<TextInputProps, 'multiline'> {
+  /** Controlled textarea value */
+  value?: string;
+  /** Uncontrolled initial textarea value */
+  defaultValue?: string;
+  /** Placeholder text */
+  placeholder?: string;
+  /** Whether the textarea is editable */
+  editable?: boolean;
+  /** Preferred visible number of lines */
+  numberOfLines?: number;
+  /** Optional label rendered above the textarea */
   label?: string;
+  /** Optional error message rendered below the textarea */
   error?: string;
+  /** Change handler */
+  onChangeText?: (value: string) => void;
+  /** CSS class names for the textarea */
+  className?: string;
+  /** Wrapper class name */
   containerClassName?: string;
+  /** Label class name */
   labelClassName?: string;
+  /** Error text class name */
   errorClassName?: string;
 }
 

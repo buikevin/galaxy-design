@@ -1,16 +1,31 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc DropdownMenu component - Menu dropdown với các items selectable
+
 import 'package:flutter/material.dart';
 
+/// GalaxyDropdownMenu - Component menu dropdown với các items selectable
+/// 
+/// ## Props:
+/// - [trigger] - Widget kích hoạt dropdown menu
+/// - [items] - Danh sách các items trong menu
+/// - [onSelected] - Callback khi item được chọn
 class GalaxyDropdownMenu<T> extends StatelessWidget {
-  final Widget trigger;
-  final List<GalaxyDropdownMenuItem<T>> items;
-  final ValueChanged<T>? onSelected;
-
   const GalaxyDropdownMenu({
     Key? key,
     required this.trigger,
     required this.items,
     this.onSelected,
   }) : super(key: key);
+
+  /// Widget kích hoạt dropdown menu
+  final Widget trigger;
+
+  /// Danh sách các items trong menu
+  final List<GalaxyDropdownMenuItem<T>> items;
+
+  /// Callback khi item được chọn
+  final ValueChanged<T>? onSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -45,11 +60,28 @@ class GalaxyDropdownMenu<T> extends StatelessWidget {
   }
 }
 
+/// GalaxyDropdownMenuItem - Item trong dropdown menu
+/// 
+/// ## Props:
+/// - [value] - Giá trị của item
+/// - [child] - Widget con hiển thị
+/// - [leading] - Widget leading (icon bên trái)
+/// - [trailing] - Widget trailing (icon bên phải)
+/// - [disabled] - Trạng thái disabled của item (default: false)
 class GalaxyDropdownMenuItem<T> {
+  /// Giá trị của item
   final T value;
+
+  /// Widget con hiển thị
   final Widget child;
+
+  /// Widget leading (icon bên trái)
   final Widget? leading;
+
+  /// Widget trailing (icon bên phải)
   final Widget? trailing;
+
+  /// Trạng thái disabled của item
   final bool disabled;
 
   const GalaxyDropdownMenuItem({

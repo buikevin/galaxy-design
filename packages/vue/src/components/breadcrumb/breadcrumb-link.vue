@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc BreadcrumbLink component - Clickable breadcrumb link with hover effect
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

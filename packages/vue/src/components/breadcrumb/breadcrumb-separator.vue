@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc BreadcrumbSeparator component - Visual separator between breadcrumb items
+-->
 <script setup lang="ts">
 import { ChevronRight } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'

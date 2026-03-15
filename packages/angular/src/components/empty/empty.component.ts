@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Empty state component with icon and description
+ */
+
 import { Component, Input } from '@angular/core'
 import { cn } from '@/lib/utils'
 import { CommonModule } from '@angular/common'

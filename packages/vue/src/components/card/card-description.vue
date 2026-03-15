@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc CardDescription component - Card description text with muted color
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc BreadcrumbPage component - Current page indicator in breadcrumb trail
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 

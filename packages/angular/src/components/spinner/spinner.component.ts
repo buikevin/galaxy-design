@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Loading spinner with 3 size variants
+ */
+
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { cn } from '@/lib/utils';
 

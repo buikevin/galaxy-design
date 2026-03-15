@@ -1,7 +1,21 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Toggle switch component for boolean input
+ */
+
 import * as React from 'react';
 import * as SwitchPrimitives from '@rn-primitives/switch';
 import { cn } from '@/lib/utils';
 
+/**
+ * Switch props extending SwitchPrimitives.Root props
+ * @property checked - Controlled checked state
+ * @property defaultChecked - Uncontrolled initial checked state
+ * @property onCheckedChange - Called when the checked state changes
+ * @property disabled - Disables the switch
+ * @property className - CSS class names for the switch
+ */
 const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>

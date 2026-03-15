@@ -1,11 +1,17 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc RadioGroup component - Nhóm radio buttons với options
+
 import 'package:flutter/material.dart';
 
+/// GalaxyRadioGroup - Component nhóm radio buttons với options
+/// 
+/// ## Props:
+/// - [value] - Giá trị được chọn hiện tại
+/// - [onChanged] - Callback khi giá trị thay đổi
+/// - [options] - Danh sách các radio options
+/// - [direction] - Hướng layout (default: Axis.vertical)
 class GalaxyRadioGroup<T> extends StatelessWidget {
-  final T? value;
-  final ValueChanged<T?>? onChanged;
-  final List<GalaxyRadioOption<T>> options;
-  final Axis direction;
-
   const GalaxyRadioGroup({
     Key? key,
     required this.value,
@@ -13,6 +19,18 @@ class GalaxyRadioGroup<T> extends StatelessWidget {
     required this.options,
     this.direction = Axis.vertical,
   }) : super(key: key);
+
+  /// Giá trị được chọn hiện tại
+  final T? value;
+
+  /// Callback khi giá trị thay đổi
+  final ValueChanged<T?>? onChanged;
+
+  /// Danh sách các radio options
+  final List<GalaxyRadioOption<T>> options;
+
+  /// Hướng layout
+  final Axis direction;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +57,20 @@ class GalaxyRadioGroup<T> extends StatelessWidget {
   }
 }
 
+/// GalaxyRadioOption - Option trong radio group
+/// 
+/// ## Props:
+/// - [value] - Giá trị của option
+/// - [label] - Nhãn hiển thị
+/// - [disabled] - Trạng thái disabled của option (default: false)
 class GalaxyRadioOption<T> {
+  /// Giá trị của option
   final T value;
+
+  /// Nhãn hiển thị
   final String label;
+
+  /// Trạng thái disabled của option
   final bool disabled;
 
   const GalaxyRadioOption({
@@ -51,13 +80,15 @@ class GalaxyRadioOption<T> {
   });
 }
 
+/// GalaxyRadioItem - Radio button item trong group
+/// 
+/// ## Props:
+/// - [value] - Giá trị của radio item
+/// - [groupValue] - Giá trị được chọn của group
+/// - [onChanged] - Callback khi thay đổi
+/// - [label] - Nhãn hiển thị
+/// - [disabled] - Trạng thái disabled (default: false)
 class GalaxyRadioItem<T> extends StatelessWidget {
-  final T value;
-  final T? groupValue;
-  final ValueChanged<T?>? onChanged;
-  final String label;
-  final bool disabled;
-
   const GalaxyRadioItem({
     Key? key,
     required this.value,
@@ -66,6 +97,21 @@ class GalaxyRadioItem<T> extends StatelessWidget {
     required this.label,
     this.disabled = false,
   }) : super(key: key);
+
+  /// Giá trị của radio item
+  final T value;
+
+  /// Giá trị được chọn của group
+  final T? groupValue;
+
+  /// Callback khi thay đổi
+  final ValueChanged<T?>? onChanged;
+
+  /// Nhãn hiển thị
+  final String label;
+
+  /// Trạng thái disabled
+  final bool disabled;
 
   @override
   Widget build(BuildContext context) {

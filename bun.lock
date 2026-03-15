@@ -82,20 +82,6 @@
         "@swc/helpers": "~0.5.11",
       },
     },
-    "packages/mcp-server": {
-      "name": "@galaxy-ui/mcp-server",
-      "version": "0.1.0",
-      "bin": {
-        "galaxy-ui-mcp": "./dist/index.js",
-      },
-      "dependencies": {
-        "@modelcontextprotocol/sdk": "^1.0.4",
-      },
-      "devDependencies": {
-        "@types/node": "^20.19.9",
-        "typescript": "^5.9.3",
-      },
-    },
     "packages/react": {
       "name": "@galaxy-ui/react",
       "version": "0.0.1",
@@ -610,8 +596,6 @@
     "@galaxy-design/tailwind-preset": ["@galaxy-design/tailwind-preset@workspace:packages/tailwind-preset"],
 
     "@galaxy-ui/angular": ["@galaxy-ui/angular@workspace:packages/angular"],
-
-    "@galaxy-ui/mcp-server": ["@galaxy-ui/mcp-server@workspace:packages/mcp-server"],
 
     "@galaxy-ui/react": ["@galaxy-ui/react@workspace:packages/react"],
 

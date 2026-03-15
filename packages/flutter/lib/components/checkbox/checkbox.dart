@@ -1,5 +1,16 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Checkbox component - Hộp kiểm với label tùy chọn
+
 import 'package:flutter/material.dart';
 
+/// GalaxyCheckbox - Hộp kiểm với label tùy chọn
+/// 
+/// ## Props:
+/// - [value] - Trạng thái được chọn của checkbox
+/// - [onChanged] - Callback khi trạng thái thay đổi
+/// - [label] - Nhãn hiển thị bên cạnh checkbox
+/// - [disabled] - Trạng thái disabled của checkbox (default: false)
 class GalaxyCheckbox extends StatelessWidget {
   const GalaxyCheckbox({
     Key? key,
@@ -9,9 +20,16 @@ class GalaxyCheckbox extends StatelessWidget {
     this.disabled = false,
   }) : super(key: key);
 
+  /// Trạng thái được chọn của checkbox
   final bool value;
+
+  /// Callback khi trạng thái thay đổi
   final ValueChanged<bool?>? onChanged;
+
+  /// Nhãn hiển thị bên cạnh checkbox
   final String? label;
+
+  /// Trạng thái disabled của checkbox
   final bool disabled;
 
   @override

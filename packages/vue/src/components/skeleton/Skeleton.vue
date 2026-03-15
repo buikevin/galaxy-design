@@ -1,16 +1,21 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Skeleton component - Loading placeholder with pulse animation and variants
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 
+/**
+ * Skeleton Props
+ * @prop class - CSS class names for the skeleton
+ * @prop variant - Skeleton variant (default, circle, text)
+ */
 interface Props {
-  /**
-   * CSS class
-   */
+  /** CSS class names for the skeleton. */
   class?: string
-  /**
-   * Skeleton variant
-   * @default "default"
-   */
+  /** Skeleton variant. */
   variant?: 'default' | 'circle' | 'text'
 }
 

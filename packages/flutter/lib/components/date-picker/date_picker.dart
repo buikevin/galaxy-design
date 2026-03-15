@@ -1,3 +1,7 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc DatePicker component - Bộ chọn ngày với single/range mode
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -7,18 +11,19 @@ enum DatePickerMode {
   range,
 }
 
-/// A date picker component that allows users to select a single date or date range
+/// GalaxyDatePicker - Component bộ chọn ngày với single/range mode
+/// 
+/// ## Props:
+/// - [selected] - Ngày được chọn hiện tại
+/// - [minDate] - Ngày tối thiểu
+/// - [maxDate] - Ngày tối đa
+/// - [onChanged] - Callback khi ngày thay đổi
+/// - [format] - Định dạng ngày hiển thị
+/// - [placeholder] - Văn bản giữ chỗ
+/// - [header] - Widget header tùy chỉnh
+/// - [mode] - Chế độ chọn ngày (default: DatePickerMode.single)
 class GalaxyDatePicker extends StatefulWidget {
-  final DateTime? selected;
-  final DateTime? minDate;
-  final DateTime? maxDate;
-  final ValueChanged<DateTime?>? onChanged;
-  final String? format;
-  final String? placeholder;
-  final Widget? header;
-  final DatePickerMode mode;
-
-  /// Creates a single date picker
+  /// Tạo single date picker
   const GalaxyDatePicker({
     Key? key,
     this.selected,
@@ -31,7 +36,7 @@ class GalaxyDatePicker extends StatefulWidget {
   })  : mode = DatePickerMode.single,
         super(key: key);
 
-  /// Creates a date range picker (not yet implemented in this version)
+  /// Tạo date range picker (not yet implemented in this version)
   const GalaxyDatePicker.range({
     Key? key,
     this.selected,
@@ -43,6 +48,30 @@ class GalaxyDatePicker extends StatefulWidget {
     this.header,
   })  : mode = DatePickerMode.range,
         super(key: key);
+
+  /// Ngày được chọn hiện tại
+  final DateTime? selected;
+
+  /// Ngày tối thiểu
+  final DateTime? minDate;
+
+  /// Ngày tối đa
+  final DateTime? maxDate;
+
+  /// Callback khi ngày thay đổi
+  final ValueChanged<DateTime?>? onChanged;
+
+  /// Định dạng ngày hiển thị
+  final String? format;
+
+  /// Văn bản giữ chỗ
+  final String? placeholder;
+
+  /// Widget header tùy chỉnh
+  final Widget? header;
+
+  /// Chế độ chọn ngày
+  final DatePickerMode mode;
 
   @override
   State<GalaxyDatePicker> createState() => _GalaxyDatePickerState();

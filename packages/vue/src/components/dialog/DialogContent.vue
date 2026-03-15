@@ -1,9 +1,28 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc DialogContent component - Modal dialog content with overlay and portal
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { DialogContent, DialogPortal, DialogOverlay, type DialogContentProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+/**
+ * DialogContent Props
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop forceMount - Force-mount the content even when closed
+ * @prop class - CSS class names for the content
+ */
 interface Props extends DialogContentProps {
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** Force-mount the content even when closed. */
+  forceMount?: boolean
+  /** CSS class names for the content. */
   class?: HTMLAttributes['class']
 }
 

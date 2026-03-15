@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Form container with item, label, description, and message components
+ */
+
 import { Component, Input, HostBinding, ChangeDetectionStrategy, Directive } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';

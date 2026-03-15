@@ -1,10 +1,21 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Alert component - Hiển thị thông báo quan trọng với variants
+
 import 'package:flutter/material.dart';
 
+/// Alert variant options
 enum AlertVariant {
   default_,
   destructive,
 }
 
+/// GalaxyAlert - Component hiển thị thông báo quan trọng với variants
+/// 
+/// ## Props:
+/// - [child] - Widget con hiển thị trong alert
+/// - [variant] - Biến thể alert (default: AlertVariant.default_)
+/// - [padding] - Padding của alert (default: EdgeInsets.all(16))
 class GalaxyAlert extends StatelessWidget {
   const GalaxyAlert({
     Key? key,
@@ -13,8 +24,13 @@ class GalaxyAlert extends StatelessWidget {
     this.padding = const EdgeInsets.all(16),
   }) : super(key: key);
 
+  /// Widget con hiển thị trong alert
   final Widget child;
+
+  /// Biến thể alert
   final AlertVariant variant;
+
+  /// Padding của alert
   final EdgeInsetsGeometry padding;
 
   @override
@@ -54,6 +70,11 @@ class GalaxyAlert extends StatelessWidget {
   }
 }
 
+/// GalaxyAlertTitle - Tiêu đề của alert
+/// 
+/// ## Props:
+/// - [title] - Tiêu đề hiển thị
+/// - [style] - TextStyle tùy chỉnh
 class GalaxyAlertTitle extends StatelessWidget {
   const GalaxyAlertTitle({
     Key? key,
@@ -61,7 +82,10 @@ class GalaxyAlertTitle extends StatelessWidget {
     this.style,
   }) : super(key: key);
 
+  /// Tiêu đề hiển thị
   final String title;
+
+  /// TextStyle tùy chỉnh
   final TextStyle? style;
 
   @override
@@ -82,6 +106,11 @@ class GalaxyAlertTitle extends StatelessWidget {
   }
 }
 
+/// GalaxyAlertDescription - Mô tả của alert
+/// 
+/// ## Props:
+/// - [description] - Mô tả hiển thị
+/// - [style] - TextStyle tùy chỉnh
 class GalaxyAlertDescription extends StatelessWidget {
   const GalaxyAlertDescription({
     Key? key,
@@ -89,7 +118,10 @@ class GalaxyAlertDescription extends StatelessWidget {
     this.style,
   }) : super(key: key);
 
+  /// Mô tả hiển thị
   final String description;
+
+  /// TextStyle tùy chỉnh
   final TextStyle? style;
 
   @override

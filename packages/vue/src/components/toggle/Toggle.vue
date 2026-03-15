@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Toggle component - Button that toggles pressed state with variants and sizes
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { Toggle as TogglePrimitive, type ToggleProps } from 'radix-vue'

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Placeholder component for loading states
+ */
+
 import { Component, Input } from '@angular/core'
 import { cn } from '@/lib/utils'
 

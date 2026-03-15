@@ -1,15 +1,18 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc HoverCard component - Card hiển thị khi hover (desktop) hoặc tap (mobile)
+
 import 'package:flutter/material.dart';
 
-// Note: Hover is not available on mobile devices
-// This implementation uses tap as alternative for mobile
-// and MouseRegion for web/desktop
+/// GalaxyHoverCard - Component card hiển thị khi hover (desktop) hoặc tap (mobile)
+/// 
+/// ## Props:
+/// - [trigger] - Widget kích hoạt hover card
+/// - [content] - Nội dung hiển thị trong hover card
+/// - [width] - Chiều rộng của hover card (default: 256)
+/// - [padding] - Padding của hover card content (default: EdgeInsets.all(16))
+/// - [openDelay] - Độ trễ khi mở card (default: Duration(milliseconds: 200))
 class GalaxyHoverCard extends StatefulWidget {
-  final Widget trigger;
-  final Widget content;
-  final double? width;
-  final EdgeInsets padding;
-  final Duration? openDelay;
-
   const GalaxyHoverCard({
     Key? key,
     required this.trigger,
@@ -18,6 +21,21 @@ class GalaxyHoverCard extends StatefulWidget {
     this.padding = const EdgeInsets.all(16),
     this.openDelay = const Duration(milliseconds: 200),
   }) : super(key: key);
+
+  /// Widget kích hoạt hover card
+  final Widget trigger;
+
+  /// Nội dung hiển thị trong hover card
+  final Widget content;
+
+  /// Chiều rộng của hover card
+  final double? width;
+
+  /// Padding của hover card content
+  final EdgeInsets padding;
+
+  /// Độ trễ khi mở card
+  final Duration? openDelay;
 
   @override
   State<GalaxyHoverCard> createState() => _GalaxyHoverCardState();

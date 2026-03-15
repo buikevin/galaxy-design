@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Separator component - Visual divider with horizontal or vertical orientation
+-->
 <script setup lang="ts">
 import { Separator as RadixSeparator, type SeparatorProps } from 'radix-vue'
 import { cn } from '@/lib/utils'

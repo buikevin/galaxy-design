@@ -1,18 +1,24 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Textarea component - Ô nhập liệu đa dòng với label, placeholder, validation
+
 import 'package:flutter/material.dart';
 
+/// GalaxyTextarea - Component ô nhập liệu đa dòng với label, placeholder và validation
+/// 
+/// ## Props:
+/// - [controller] - TextEditingController để quản lý giá trị textarea
+/// - [label] - Nhãn hiển thị phía trên textarea
+/// - [placeholder] - Văn bản giữ chỗ khi textarea trống
+/// - [error] - Thông báo lỗi hiển thị phía dưới textarea
+/// - [enabled] - Trạng thái enabled của textarea (default: true)
+/// - [maxLines] - Số dòng tối đa hiển thị
+/// - [minLines] - Số dòng tối thiểu hiển thị (default: 3)
+/// - [maxLength] - Độ dài ký tự tối đa
+/// - [keyboardType] - Loại bàn phím hiển thị
+/// - [onChanged] - Callback khi giá trị thay đổi
+/// - [onSubmitted] - Callback khi submit (nhấn Enter)
 class GalaxyTextarea extends StatefulWidget {
-  final TextEditingController? controller;
-  final String? label;
-  final String? placeholder;
-  final String? error;
-  final bool enabled;
-  final int? maxLines;
-  final int? minLines;
-  final int? maxLength;
-  final TextInputType? keyboardType;
-  final ValueChanged<String>? onChanged;
-  final ValueChanged<String>? onSubmitted;
-
   const GalaxyTextarea({
     Key? key,
     this.controller,
@@ -27,6 +33,39 @@ class GalaxyTextarea extends StatefulWidget {
     this.onChanged,
     this.onSubmitted,
   }) : super(key: key);
+
+  /// TextEditingController để quản lý giá trị textarea
+  final TextEditingController? controller;
+
+  /// Nhãn hiển thị phía trên textarea
+  final String? label;
+
+  /// Văn bản giữ chỗ khi textarea trống
+  final String? placeholder;
+
+  /// Thông báo lỗi hiển thị phía dưới textarea
+  final String? error;
+
+  /// Trạng thái enabled của textarea
+  final bool enabled;
+
+  /// Số dòng tối đa hiển thị
+  final int? maxLines;
+
+  /// Số dòng tối thiểu hiển thị
+  final int? minLines;
+
+  /// Độ dài ký tự tối đa
+  final int? maxLength;
+
+  /// Loại bàn phím hiển thị
+  final TextInputType? keyboardType;
+
+  /// Callback khi giá trị thay đổi
+  final ValueChanged<String>? onChanged;
+
+  /// Callback khi submit (nhấn Enter)
+  final ValueChanged<String>? onSubmitted;
 
   @override
   State<GalaxyTextarea> createState() => _GalaxyTextareaState();

@@ -1,13 +1,32 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Textarea component - Multi-line text input with auto-resize support
+-->
 <script setup lang="ts">
 import { type HTMLAttributes } from 'vue'
 import { useVModel } from '@vueuse/core'
 import { cn } from '@/lib/utils'
 
+/**
+ * Textarea Props
+ * @prop modelValue - Controlled value
+ * @prop class - CSS class names for the textarea
+ * @prop placeholder - Placeholder text
+ * @prop disabled - Disables the textarea
+ * @prop rows - Number of visible rows
+ * @event update:modelValue - Emitted when the value changes
+ */
 interface Props {
+  /** Controlled value. */
   modelValue?: string | number
+  /** CSS class names for the textarea. */
   class?: HTMLAttributes['class']
+  /** Placeholder text. */
   placeholder?: string
+  /** Disables the textarea. */
   disabled?: boolean
+  /** Number of visible rows. */
   rows?: number
 }
 

@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Spinner component - Loading indicator with 3 size variants (sm, default, lg)
+-->
 <script setup lang="ts">
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'

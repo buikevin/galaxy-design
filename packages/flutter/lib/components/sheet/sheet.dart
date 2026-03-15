@@ -1,3 +1,7 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Sheet component - Modal sheet trượt từ các hướng (top, bottom, left, right)
+
 import 'package:flutter/material.dart';
 
 /// Side from which the sheet should slide in
@@ -8,10 +12,23 @@ enum SheetSide {
   right,
 }
 
-/// A sheet component that slides in from a specific side
-/// Typically used as a bottom sheet on mobile
+/// GalaxySheet - Component modal sheet trượt từ các hướng (top, bottom, left, right)
+/// 
+/// ## Methods:
+/// - [show] - Hiển thị modal sheet với các tùy chọn cấu hình
+/// 
+/// ## Props cho show():
+/// - [context] - BuildContext
+/// - [builder] - Builder function tạo widget content
+/// - [side] - Hướng trượt của sheet (default: SheetSide.bottom)
+/// - [isDismissible] - Có thể đóng khi click outside (default: true)
+/// - [enableDrag] - Có thể kéo để đóng (default: true)
+/// - [backgroundColor] - Màu nền
+/// - [elevation] - Độ cao shadow
+/// - [shape] - Hình dạng border
+/// - [constraints] - Ràng buộc kích thước
 class GalaxySheet {
-  /// Shows a modal sheet that slides from the specified side
+  /// Hiển thị modal sheet với các tùy chọn cấu hình
   ///
   /// For mobile, [SheetSide.bottom] is the most common pattern
   static Future<T?> show<T>({
@@ -158,15 +175,16 @@ class GalaxySheet {
   }
 }
 
-/// A pre-built sheet content widget with header, body, and footer
+/// GalaxySheetContent - Widget content sheet với header, body, và footer
+/// 
+/// ## Props:
+/// - [header] - Widget header của sheet
+/// - [body] - Widget body chính của sheet
+/// - [footer] - Widget footer của sheet
+/// - [padding] - Padding của content (default: EdgeInsets.all(16))
+/// - [showCloseButton] - Hiển thị nút đóng (default: true)
+/// - [onClose] - Callback khi đóng sheet
 class GalaxySheetContent extends StatelessWidget {
-  final Widget? header;
-  final Widget body;
-  final Widget? footer;
-  final EdgeInsets padding;
-  final bool showCloseButton;
-  final VoidCallback? onClose;
-
   const GalaxySheetContent({
     Key? key,
     this.header,
@@ -176,6 +194,24 @@ class GalaxySheetContent extends StatelessWidget {
     this.showCloseButton = true,
     this.onClose,
   }) : super(key: key);
+
+  /// Widget header của sheet
+  final Widget? header;
+
+  /// Widget body chính của sheet
+  final Widget body;
+
+  /// Widget footer của sheet
+  final Widget? footer;
+
+  /// Padding của content
+  final EdgeInsets padding;
+
+  /// Hiển thị nút đóng
+  final bool showCloseButton;
+
+  /// Callback khi đóng sheet
+  final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc SelectItem component - Individual select option with check indicator
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { SelectItem, SelectItemIndicator, SelectItemText, type SelectItemProps } from 'radix-vue'

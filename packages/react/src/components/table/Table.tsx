@@ -1,6 +1,22 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Table components - A responsive table with header, body, footer, rows, and cells
+ */
+
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
+/**
+ * Table Component
+ * 
+ * A responsive table container with overflow handling.
+ * 
+ * @param {React.HTMLAttributes<HTMLTableElement>} props - Table props
+ * @param {string} [props.className] - CSS class names for the table
+ * @param {React.RefObject<HTMLTableElement>} ref - Reference to the table element
+ * @returns {JSX.Element} Table container element
+ */
 const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
@@ -15,6 +31,16 @@ const Table = React.forwardRef<
 ))
 Table.displayName = 'Table'
 
+/**
+ * TableHeader Component
+ * 
+ * The header section of a table.
+ * 
+ * @param {React.HTMLAttributes<HTMLTableSectionElement>} props - TableHeader props
+ * @param {string} [props.className] - CSS class names for the header
+ * @param {React.RefObject<HTMLTableSectionElement>} ref - Reference to the header element
+ * @returns {JSX.Element} Table header element
+ */
 const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -23,6 +49,16 @@ const TableHeader = React.forwardRef<
 ))
 TableHeader.displayName = 'TableHeader'
 
+/**
+ * TableBody Component
+ * 
+ * The body section of a table.
+ * 
+ * @param {React.HTMLAttributes<HTMLTableSectionElement>} props - TableBody props
+ * @param {string} [props.className] - CSS class names for the body
+ * @param {React.RefObject<HTMLTableSectionElement>} ref - Reference to the body element
+ * @returns {JSX.Element} Table body element
+ */
 const TableBody = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -35,6 +71,16 @@ const TableBody = React.forwardRef<
 ))
 TableBody.displayName = 'TableBody'
 
+/**
+ * TableFooter Component
+ * 
+ * The footer section of a table.
+ * 
+ * @param {React.HTMLAttributes<HTMLTableSectionElement>} props - TableFooter props
+ * @param {string} [props.className] - CSS class names for the footer
+ * @param {React.RefObject<HTMLTableSectionElement>} ref - Reference to the footer element
+ * @returns {JSX.Element} Table footer element
+ */
 const TableFooter = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
@@ -50,6 +96,16 @@ const TableFooter = React.forwardRef<
 ))
 TableFooter.displayName = 'TableFooter'
 
+/**
+ * TableRow Component
+ * 
+ * A row in a table.
+ * 
+ * @param {React.HTMLAttributes<HTMLTableRowElement>} props - TableRow props
+ * @param {string} [props.className] - CSS class names for the row
+ * @param {React.RefObject<HTMLTableRowElement>} ref - Reference to the row element
+ * @returns {JSX.Element} Table row element
+ */
 const TableRow = React.forwardRef<
   HTMLTableRowElement,
   React.HTMLAttributes<HTMLTableRowElement>
@@ -65,6 +121,16 @@ const TableRow = React.forwardRef<
 ))
 TableRow.displayName = 'TableRow'
 
+/**
+ * TableHead Component
+ * 
+ * A header cell in a table.
+ * 
+ * @param {React.ThHTMLAttributes<HTMLTableCellElement>} props - TableHead props
+ * @param {string} [props.className] - CSS class names for the header cell
+ * @param {React.RefObject<HTMLTableCellElement>} ref - Reference to the header cell element
+ * @returns {JSX.Element} Table header cell element
+ */
 const TableHead = React.forwardRef<
   HTMLTableCellElement,
   React.ThHTMLAttributes<HTMLTableCellElement>
@@ -80,6 +146,16 @@ const TableHead = React.forwardRef<
 ))
 TableHead.displayName = 'TableHead'
 
+/**
+ * TableCell Component
+ * 
+ * A standard cell in a table.
+ * 
+ * @param {React.TdHTMLAttributes<HTMLTableCellElement>} props - TableCell props
+ * @param {string} [props.className] - CSS class names for the cell
+ * @param {React.RefObject<HTMLTableCellElement>} ref - Reference to the cell element
+ * @returns {JSX.Element} Table cell element
+ */
 const TableCell = React.forwardRef<
   HTMLTableCellElement,
   React.TdHTMLAttributes<HTMLTableCellElement>
@@ -92,6 +168,16 @@ const TableCell = React.forwardRef<
 ))
 TableCell.displayName = 'TableCell'
 
+/**
+ * TableCaption Component
+ * 
+ * A caption/description for a table.
+ * 
+ * @param {React.HTMLAttributes<HTMLTableCaptionElement>} props - TableCaption props
+ * @param {string} [props.className] - CSS class names for the caption
+ * @param {React.RefObject<HTMLTableCaptionElement>} ref - Reference to the caption element
+ * @returns {JSX.Element} Table caption element
+ */
 const TableCaption = React.forwardRef<
   HTMLTableCaptionElement,
   React.HTMLAttributes<HTMLTableCaptionElement>

@@ -1,9 +1,20 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Label component for form field labels with required indicator support
+ */
+
 import * as React from 'react';
 import { Text, TextProps } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface LabelProps extends TextProps {
+  /** Label content */
+  children?: React.ReactNode;
+  /** Marks label as required and appends an asterisk */
   required?: boolean;
+  /** CSS class names for the label */
+  className?: string;
 }
 
 const Label = React.forwardRef<React.ElementRef<typeof Text>, LabelProps>(

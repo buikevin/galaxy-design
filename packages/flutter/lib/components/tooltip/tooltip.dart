@@ -1,15 +1,21 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Tooltip component - Hiển thị gợi ý khi hover
+
 import 'package:flutter/material.dart';
 
+/// GalaxyTooltip - Component hiển thị gợi ý khi hover
+/// 
+/// ## Props:
+/// - [child] - Widget con cần hiển thị tooltip
+/// - [message] - Nội dung tooltip hiển thị
+/// - [padding] - Padding của tooltip
+/// - [margin] - Margin của tooltip
+/// - [height] - Chiều cao của tooltip
+/// - [preferBelow] - Ưu tiên hiển thị bên dưới (default: true)
+/// - [waitDuration] - Thời gian chờ trước khi hiển thị
+/// - [showDuration] - Thời gian hiển thị tooltip
 class GalaxyTooltip extends StatelessWidget {
-  final Widget child;
-  final String message;
-  final EdgeInsetsGeometry? padding;
-  final EdgeInsetsGeometry? margin;
-  final double? height;
-  final bool? preferBelow;
-  final Duration? waitDuration;
-  final Duration? showDuration;
-
   const GalaxyTooltip({
     Key? key,
     required this.child,
@@ -21,6 +27,30 @@ class GalaxyTooltip extends StatelessWidget {
     this.waitDuration,
     this.showDuration,
   }) : super(key: key);
+
+  /// Widget con cần hiển thị tooltip
+  final Widget child;
+
+  /// Nội dung tooltip hiển thị
+  final String message;
+
+  /// Padding của tooltip
+  final EdgeInsetsGeometry? padding;
+
+  /// Margin của tooltip
+  final EdgeInsetsGeometry? margin;
+
+  /// Chiều cao của tooltip
+  final double? height;
+
+  /// Ưu tiên hiển thị bên dưới
+  final bool? preferBelow;
+
+  /// Thời gian chờ trước khi hiển thị
+  final Duration? waitDuration;
+
+  /// Thời gian hiển thị tooltip
+  final Duration? showDuration;
 
   @override
   Widget build(BuildContext context) {

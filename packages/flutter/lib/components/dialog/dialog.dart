@@ -1,11 +1,17 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Dialog component - Modal dialog với title, content, actions
+
 import 'package:flutter/material.dart';
 
+/// GalaxyDialog - Component modal dialog với title, content, actions
+/// 
+/// ## Props:
+/// - [title] - Tiêu đề của dialog
+/// - [content] - Nội dung của dialog
+/// - [actions] - Danh sách các action buttons
+/// - [contentPadding] - Padding của content
 class GalaxyDialog extends StatelessWidget {
-  final Widget? title;
-  final Widget? content;
-  final List<Widget>? actions;
-  final EdgeInsetsGeometry? contentPadding;
-
   const GalaxyDialog({
     Key? key,
     this.title,
@@ -13,6 +19,18 @@ class GalaxyDialog extends StatelessWidget {
     this.actions,
     this.contentPadding,
   }) : super(key: key);
+
+  /// Tiêu đề của dialog
+  final Widget? title;
+
+  /// Nội dung của dialog
+  final Widget? content;
+
+  /// Danh sách các action buttons
+  final List<Widget>? actions;
+
+  /// Padding của content
+  final EdgeInsetsGeometry? contentPadding;
 
   @override
   Widget build(BuildContext context) {

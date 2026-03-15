@@ -1,4 +1,10 @@
-import { Toaster as Sonner } from 'sonner';
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Toast components - A set of toast components for displaying notifications using Sonner
+ */
+
+import { Toaster as Sonner, toast } from 'sonner';
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
@@ -23,4 +29,4 @@ const Toaster = ({ ...props }: ToasterProps) => {
   );
 };
 
-export { Toaster };
+export { Toaster, toast };

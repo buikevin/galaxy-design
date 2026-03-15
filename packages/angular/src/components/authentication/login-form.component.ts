@@ -1,7 +1,7 @@
 /**
- * Galaxy UI - Login Form Component (Stub)
- *
- * This is a placeholder component. Full implementation coming soon.
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Login Form component - User login form with email and password
  */
 
 import { Component, Output, EventEmitter } from '@angular/core'

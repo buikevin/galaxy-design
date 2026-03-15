@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Typography component for displaying styled text with multiple variants and weights
+ */
+
 import * as React from 'react';
 import { Text, TextProps, View } from 'react-native';
 import { cn } from '@/lib/utils';
@@ -18,10 +24,15 @@ export type TypographyVariant =
 export type TypographyWeight = 'normal' | 'medium' | 'semiBold' | 'bold';
 
 export interface TypographyProps extends Omit<TextProps, 'children'> {
+  /** Text content to display */
   children: string;
+  /** Typography variant (h1, h2, h3, h4, p, lead, large, small, muted, blockquote, code) */
   variant?: TypographyVariant;
+  /** Font weight (normal, medium, semiBold, bold) */
   weight?: TypographyWeight;
+  /** Text color */
   color?: string;
+  /** CSS class names for the text */
   className?: string;
 }
 

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Donut Chart component - Responsive donut chart powered by ECharts
+ */
+
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { NgxEchartsModule } from 'ngx-echarts'

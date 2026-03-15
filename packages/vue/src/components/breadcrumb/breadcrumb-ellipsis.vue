@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc BreadcrumbEllipsis component - Ellipsis indicator for truncated breadcrumb paths
+-->
 <script setup lang="ts">
 import { MoreHorizontal } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'

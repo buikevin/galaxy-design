@@ -21,7 +21,12 @@ export interface EmailClientProps {
   emails: Email[]
   folders?: EmailFolder[]
   onEmailClick?: (email: Email) => void
+  onSelectEmail?: (email: Email) => void
   onCompose?: () => void
   onEmailAction?: (emailId: string, action: 'star' | 'delete' | 'archive') => void
+  onStarEmail?: (emailId: string) => void
+  onArchiveEmail?: (emailId: string) => void
+  onDeleteEmail?: (emailId: string) => void
+  onChangeFolder?: (folderId: string) => void
   className?: string
 }

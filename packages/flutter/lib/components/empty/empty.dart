@@ -1,15 +1,20 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Empty component - Empty state hiển thị khi không có dữ liệu
+
 import 'package:flutter/material.dart';
 
-/// Empty state component for displaying when there's no content
+/// GalaxyEmpty - Component empty state hiển thị khi không có dữ liệu
+/// 
+/// ## Props:
+/// - [icon] - Icon hiển thị
+/// - [title] - Tiêu đề của empty state
+/// - [description] - Mô tả của empty state
+/// - [action] - Action button tùy chỉnh
+/// - [padding] - Padding của empty state (default: EdgeInsets.all(32))
+/// - [iconSize] - Kích thước icon (default: 64)
+/// - [spacing] - Khoảng cách giữa các phần (default: 16)
 class GalaxyEmpty extends StatelessWidget {
-  final Widget? icon;
-  final String? title;
-  final String? description;
-  final Widget? action;
-  final EdgeInsets padding;
-  final double iconSize;
-  final double spacing;
-
   const GalaxyEmpty({
     Key? key,
     this.icon,
@@ -20,6 +25,27 @@ class GalaxyEmpty extends StatelessWidget {
     this.iconSize = 64,
     this.spacing = 16,
   }) : super(key: key);
+
+  /// Icon hiển thị
+  final Widget? icon;
+
+  /// Tiêu đề của empty state
+  final String? title;
+
+  /// Mô tả của empty state
+  final String? description;
+
+  /// Action button tùy chỉnh
+  final Widget? action;
+
+  /// Padding của empty state
+  final EdgeInsets padding;
+
+  /// Kích thước icon
+  final double iconSize;
+
+  /// Khoảng cách giữa các phần
+  final double spacing;
 
   /// Creates an empty state with default "no data" icon
   factory GalaxyEmpty.noData({

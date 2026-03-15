@@ -1,9 +1,31 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc TabsTrigger component - Clickable tab button that activates tab content
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { TabsTrigger, type TabsTriggerProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+/**
+ * TabsTrigger Props
+ * @prop value - Value of the tab to match a trigger
+ * @prop disabled - Disables the trigger
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop class - CSS class names for the trigger
+ */
 interface Props extends TabsTriggerProps {
+  /** Value of the tab to match a trigger. */
+  value: string
+  /** Disables the trigger. */
+  disabled?: boolean
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** CSS class names for the trigger. */
   class?: HTMLAttributes['class']
 }
 

@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Collapsible component for expandable and collapsible content sections
+ */
+
 import * as React from 'react';
 import * as CollapsiblePrimitive from '@rn-primitives/collapsible';
 import { cn } from '@/lib/utils';

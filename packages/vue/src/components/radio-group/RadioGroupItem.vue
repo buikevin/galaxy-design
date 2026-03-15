@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc RadioGroupItem component - Individual radio button with circle indicator
+-->
 <script setup lang="ts">
 import { RadioGroupIndicator, RadioGroupItem, type RadioGroupItemProps } from 'radix-vue'
 import { Circle } from 'lucide-vue-next'

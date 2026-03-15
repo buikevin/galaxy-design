@@ -1,5 +1,18 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Select component - Dropdown select với label và placeholder
+
 import 'package:flutter/material.dart';
 
+/// GalaxySelect - Component dropdown select với label và placeholder
+/// 
+/// ## Props:
+/// - [value] - Giá trị được chọn hiện tại
+/// - [items] - Danh sách các items selectable
+/// - [onChanged] - Callback khi giá trị thay đổi
+/// - [label] - Nhãn hiển thị phía trên select
+/// - [placeholder] - Văn bản giữ chỗ khi chưa chọn (default: 'Select an option')
+/// - [enabled] - Trạng thái enabled của select (default: true)
 class GalaxySelect<T> extends StatelessWidget {
   const GalaxySelect({
     Key? key,
@@ -11,11 +24,22 @@ class GalaxySelect<T> extends StatelessWidget {
     this.enabled = true,
   }) : super(key: key);
 
+  /// Giá trị được chọn hiện tại
   final T? value;
+
+  /// Danh sách các items selectable
   final List<GalaxySelectItem<T>> items;
+
+  /// Callback khi giá trị thay đổi
   final ValueChanged<T?>? onChanged;
+
+  /// Nhãn hiển thị phía trên select
   final String? label;
+
+  /// Văn bản giữ chỗ khi chưa chọn
   final String placeholder;
+
+  /// Trạng thái enabled của select
   final bool enabled;
 
   @override
@@ -67,12 +91,20 @@ class GalaxySelect<T> extends StatelessWidget {
   }
 }
 
+/// GalaxySelectItem - Item trong select dropdown
+/// 
+/// ## Props:
+/// - [value] - Giá trị của item
+/// - [label] - Nhãn hiển thị của item
 class GalaxySelectItem<T> {
   const GalaxySelectItem({
     required this.value,
     required this.label,
   });
 
+  /// Giá trị của item
   final T value;
+
+  /// Nhãn hiển thị của item
   final String label;
 }

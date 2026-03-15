@@ -10,7 +10,8 @@ export { PieChart } from './PieChart'
 export { DonutChart } from './DonutChart'
 export { AreaChart } from './AreaChart'
 export { RadarChart } from './RadarChart'
-export { ScatterChart } from './ScatterChart'export { MixedChart } from './MixedChart'
+export { ScatterChart } from './ScatterChart'
+export { MixedChart } from './MixedChart'
 export { GaugeChart } from './GaugeChart'
 
 // Export types

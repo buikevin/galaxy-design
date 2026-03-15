@@ -1,12 +1,32 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Sheet component - Side panel dialog with 4 side positions (top, right, bottom, left)
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { DialogRoot, DialogPortal, DialogOverlay, DialogContent } from 'radix-vue'
 import { X } from 'lucide-vue-next'
 
+/**
+ * Sheet Props
+ * @prop open - Controlled open state
+ * @prop defaultOpen - Initial open state for uncontrolled usage
+ * @prop modal - Whether interaction outside is disabled while open
+ * @prop side - Side position (top, right, bottom, left)
+ * @prop class - CSS class names for the sheet
+ */
 interface Props {
-  class?: string
+  /** Controlled open state. */
   open?: boolean
+  /** Initial open state for uncontrolled usage. */
+  defaultOpen?: boolean
+  /** Whether interaction outside is disabled while open. */
+  modal?: boolean
+  /** Side position (top, right, bottom, left). */
   side?: 'top' | 'right' | 'bottom' | 'left'
+  /** CSS class names for the sheet. */
+  class?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {

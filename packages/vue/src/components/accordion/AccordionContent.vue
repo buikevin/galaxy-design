@@ -1,9 +1,28 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc AccordionContent component - Collapsible content panel with animation support
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { AccordionContent, type AccordionContentProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+/**
+ * AccordionContent Props
+ * @prop as - Element or component to render
+ * @prop asChild - Render as child via Radix Primitive
+ * @prop forceMount - Force mount content even when closed
+ * @prop class - CSS class names for the content
+ */
 interface Props extends AccordionContentProps {
+  /** Element or component to render. */
+  as?: string
+  /** Render as child via Radix Primitive. */
+  asChild?: boolean
+  /** Force mount content even when closed. */
+  forceMount?: boolean
+  /** CSS class names for the content. */
   class?: HTMLAttributes['class']
 }
 

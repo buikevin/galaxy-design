@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Toggle group component for grouping multiple toggle buttons with exclusive or multiple selection
+ */
+
 import * as React from 'react';
 import * as ToggleGroupPrimitive from '@rn-primitives/toggle-group';
 import { type VariantProps } from 'class-variance-authority';

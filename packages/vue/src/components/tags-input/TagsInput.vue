@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc TagsInput component - Input field for adding/removing tags with keyboard support
+-->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 import { ref } from 'vue'

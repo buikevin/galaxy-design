@@ -1,5 +1,19 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Slider component - Thanh trượt chọn giá trị trong range
+
 import 'package:flutter/material.dart';
 
+/// GalaxySlider - Component thanh trượt chọn giá trị trong range
+/// 
+/// ## Props:
+/// - [value] - Giá trị hiện tại của slider
+/// - [onChanged] - Callback khi giá trị thay đổi
+/// - [min] - Giá trị tối thiểu (default: 0.0)
+/// - [max] - Giá trị tối đa (default: 100.0)
+/// - [divisions] - Số chia của slider
+/// - [label] - Nhãn hiển thị phía trên slider
+/// - [disabled] - Trạng thái disabled của slider (default: false)
 class GalaxySlider extends StatelessWidget {
   const GalaxySlider({
     Key? key,
@@ -12,12 +26,25 @@ class GalaxySlider extends StatelessWidget {
     this.disabled = false,
   }) : super(key: key);
 
+  /// Giá trị hiện tại của slider
   final double value;
+
+  /// Callback khi giá trị thay đổi
   final ValueChanged<double>? onChanged;
+
+  /// Giá trị tối thiểu
   final double min;
+
+  /// Giá trị tối đa
   final double max;
+
+  /// Số chia của slider
   final int? divisions;
+
+  /// Nhãn hiển thị phía trên slider
   final String? label;
+
+  /// Trạng thái disabled của slider
   final bool disabled;
 
   @override

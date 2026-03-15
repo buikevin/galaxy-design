@@ -1,5 +1,10 @@
+// * @author Bùi Trọng Hiếu
+// * @email kevinbui210191@gmail.com
+// * @desc Avatar component - Hiển thị avatar với image hoặc fallback text
+
 import 'package:flutter/material.dart';
 
+/// Avatar size options
 enum AvatarSize {
   sm,
   md,
@@ -7,6 +12,14 @@ enum AvatarSize {
   xl,
 }
 
+/// GalaxyAvatar - Component hiển thị avatar với image hoặc fallback text
+/// 
+/// ## Props:
+/// - [imageUrl] - URL của ảnh avatar
+/// - [fallbackText] - Văn bản hiển thị khi không có ảnh
+/// - [size] - Kích thước avatar (default: AvatarSize.md)
+/// - [backgroundColor] - Màu nền tùy chỉnh
+/// - [foregroundColor] - Màu chữ tùy chỉnh
 class GalaxyAvatar extends StatelessWidget {
   const GalaxyAvatar({
     Key? key,
@@ -17,10 +30,19 @@ class GalaxyAvatar extends StatelessWidget {
     this.foregroundColor,
   }) : super(key: key);
 
+  /// URL của ảnh avatar
   final String? imageUrl;
+
+  /// Văn bản hiển thị khi không có ảnh
   final String? fallbackText;
+
+  /// Kích thước của avatar
   final AvatarSize size;
+
+  /// Màu nền tùy chỉnh
   final Color? backgroundColor;
+
+  /// Màu chữ tùy chỉnh
   final Color? foregroundColor;
 
   double get _size {

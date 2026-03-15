@@ -1,3 +1,8 @@
+<!--
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc ResizablePanel component - Resizable panel with collapsible support
+-->
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from 'vue'
 import { SplitterPanel, type SplitterPanelProps } from 'radix-vue'

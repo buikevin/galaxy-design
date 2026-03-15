@@ -1,3 +1,9 @@
+/**
+ * @author Bùi Trọng Hiếu
+ * @email kevinbui210191@gmail.com
+ * @desc Resizable split panels with drag handles
+ */
+
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
