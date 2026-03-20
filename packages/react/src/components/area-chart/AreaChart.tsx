@@ -54,7 +54,7 @@ export const AreaChart = React.forwardRef<ReactECharts, AreaChartComponentProps>
 
       // Add gradient if enabled
       if (gradient) {
-        series.forEach((s: any, index: number) => {
+        series.forEach((s: Record<string, unknown>, index: number) => {
           const color = s.itemStyle?.color || colors[index % colors.length]
           s.areaStyle = {
             ...s.areaStyle,

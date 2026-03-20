@@ -19,11 +19,11 @@ import { ChartColorSchemes } from './types'
 export function transformDataToSeries(
   data: ChartData,
   chartType: 'line' | 'bar' | 'scatter' | 'radar' | 'pie',
-  additionalConfig: Record<string, any> = {}
-): any[] {
+  additionalConfig: Record<string, unknown> = {}
+): Array<Record<string, unknown>> {
   return data.datasets.map((dataset) => ({
     name: dataset.label,
-    type: chartType as any,
+    type: chartType as string,
     data: dataset.data,
     smooth: dataset.smooth,
     lineStyle: dataset.borderColor
@@ -89,7 +89,7 @@ export function getThemeColors(theme: 'light' | 'dark' = 'light') {
  */
 export function buildTooltipConfig(
   tooltip?: boolean | TooltipConfig
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (tooltip === false) {
     return undefined
   }
@@ -122,7 +122,7 @@ export function buildTooltipConfig(
 /**
  * Build ECharts grid configuration
  */
-export function buildGridConfig(grid?: boolean | GridConfig): Record<string, any> {
+export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unknown> {
   if (grid === false) {
     return {
       show: false,
@@ -156,7 +156,7 @@ export function buildLegendConfig(
   legend?: boolean,
   legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top',
   data?: string[]
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (legend === false) {
     return undefined
   }
@@ -177,9 +177,9 @@ export function buildLegendConfig(
 /**
  * Build ECharts X-axis configuration
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): any {
+export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): Record<string, unknown> {
   return {
-    type: type as any,
+    type: type as string,
     data: type === 'category' ? labels : undefined,
     boundaryGap: type === 'category',
     axisLine: {
@@ -196,9 +196,9 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
 /**
  * Build ECharts Y-axis configuration
  */
-export function buildYAxisConfig(type: 'value' | 'category' = 'value'): any {
+export function buildYAxisConfig(type: 'value' | 'category' = 'value'): Record<string, unknown> {
   return {
-    type: type as any,
+    type: type as string,
     axisLine: {
       lineStyle: {
         color: '#ddd',
@@ -219,7 +219,7 @@ export function buildYAxisConfig(type: 'value' | 'category' = 'value'): any {
 /**
  * Build complete ECharts option from unified props
  */
-export function buildEChartsOption(props: BaseChartProps & { chartType: 'line' | 'bar' | 'pie' | 'radar' | 'scatter' }) {
+export function buildEChartsOption(props: BaseChartProps & { chartType: 'line' | 'bar' | 'pie' | 'radar' | 'scatter' }): Record<string, unknown> {
   const {
     data,
     chartType,
@@ -242,7 +242,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: 'line' |
     series: transformDataToSeries(data, chartType),
     animation: animation,
     animationDuration: animation ? 1000 : 0,
-    animationEasing: 'cubicOut' as any,
+    animationEasing: 'cubicOut' as string,
   }
 
   // Add zoom/dataZoom if enabled

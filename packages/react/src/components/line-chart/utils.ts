@@ -20,11 +20,11 @@ import { ChartColorSchemes
 export function transformDataToSeries(
   data: ChartData,
   chartType: 'line' | 'bar' | 'scatter' | 'radar' | 'pie',
-  additionalConfig: Record<string, any> = {}
-): any[] {
+  additionalConfig: Record<string, unknown> = {}
+): Array<Record<string, unknown>> {
   return data.datasets.map((dataset) => ({
     name: dataset.label,
-    type: chartType as any,
+    type: chartType,
     data: dataset.data,
     smooth: dataset.smooth,
     lineStyle: dataset.borderColor
@@ -177,9 +177,9 @@ export function buildLegendConfig(
 /**
  * Build ECharts X-axis configuration
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): any {
+export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): Record<string, unknown> {
   return {
-    type: type as any,
+    type: type,
     data: type === 'category' ? labels : undefined,
     boundaryGap: type === 'category',
     axisLine: {
@@ -196,9 +196,9 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
 /**
  * Build ECharts Y-axis configuration
  */
-export function buildYAxisConfig(type: 'value' | 'category' = 'value'): any {
+export function buildYAxisConfig(type: 'value' | 'category' = 'value'): Record<string, unknown> {
   return {
-    type: type as any,
+    type: type,
     axisLine: {
       lineStyle: {
         color: '#ddd',

@@ -69,7 +69,7 @@ export interface TooltipConfig {
   /** Trigger type */
   trigger?: 'axis' | 'item'
   /** Custom formatter function */
-  formatter?: string | ((params: any) => string)
+  formatter?: string | ((params: unknown) => string)
 }
 
 /**
