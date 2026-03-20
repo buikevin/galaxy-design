@@ -19,11 +19,11 @@ import {
 export function transformDataToSeries(
   data: ChartData,
   chartType: string,
-  additionalConfig: Record<string, any> = {}
+  additionalConfig: Record<string, unknown> = {}
 ) {
   return data.datasets.map((dataset, index) => ({
     name: dataset.label,
-    type: chartType as any,
+    type: chartType as 'line' | 'bar' | 'area' | 'pie' | 'donut' | 'radar' | 'scatter',
     data: dataset.data,
     smooth: dataset.smooth,
     lineStyle: dataset.borderColor
@@ -56,7 +56,7 @@ export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
  */
 export function buildTooltipConfig(
   tooltip?: boolean | TooltipConfig
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (tooltip === false) {
     return undefined
   }
@@ -89,7 +89,7 @@ export function buildTooltipConfig(
 /**
  * Build ECharts grid configuration
  */
-export function buildGridConfig(grid?: boolean | GridConfig): Record<string, any> {
+export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unknown> {
   if (grid === false) {
     return {
       show: false,
@@ -123,7 +123,7 @@ export function buildLegendConfig(
   legend?: boolean,
   legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top',
   data?: string[]
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (legend === false) {
     return undefined
   }
@@ -144,7 +144,7 @@ export function buildLegendConfig(
 /**
  * Build ECharts X-axis configuration
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): any {
+export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category') {
   return {
     type,
     data: type === 'category' ? labels : undefined,
@@ -163,7 +163,7 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
 /**
  * Build ECharts Y-axis configuration
  */
-export function buildYAxisConfig(type: 'value' | 'category' = 'value'): any {
+export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
   return {
     type,
     axisLine: {

@@ -55,8 +55,8 @@ export class AreaChartComponent implements OnInit, OnChanges, AreaChartProps {
   @Input() theme: 'light' | 'dark' = 'light';
   @Input() legend: boolean = true;
   @Input() legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top';
-  @Input() grid: boolean | any = true;
-  @Input() tooltip: boolean | any = true;
+  @Input() grid: boolean | Record<string, unknown> = true;
+  @Input() tooltip: boolean | Record<string, unknown> = true;
   @Input() animation: boolean = true;
   @Input() smooth: boolean = true;
   @Input() showPoints: boolean = true;
@@ -67,7 +67,7 @@ export class AreaChartComponent implements OnInit, OnChanges, AreaChartProps {
   @Input() loading: boolean = false;
   @Input() emptyText: string = 'No data available';
   @Input() zoom: boolean = false;
-  @Input() options: Record<string, any> = {};
+  @Input() options: Record<string, unknown> = {};
 
   chartOption: EChartsOption | null = null;
   widthStyle: string = '100%';
@@ -108,10 +108,10 @@ export class AreaChartComponent implements OnInit, OnChanges, AreaChartProps {
 
     // Add gradient if enabled
     if (this.gradient) {
-      series.forEach((s: any, index: number) => {
+      series.forEach((s: { itemStyle?: { color?: string }; areaStyle?: Record<string, unknown> }, index: number) => {
         const color = s.itemStyle?.color || colors[index % colors.length];
         s.areaStyle = {
-          ...s.areaStyle,
+          ...(s.areaStyle || {}),
           color: {
             type: 'linear',
             x: 0,

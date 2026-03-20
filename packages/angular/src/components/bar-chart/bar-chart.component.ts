@@ -68,8 +68,8 @@ export class BarChartComponent implements OnInit, OnChanges, BarChartProps {
   @Input() theme: 'light' | 'dark' = 'light'
   @Input() legend: boolean = true
   @Input() legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top'
-  @Input() grid?: boolean | any
-  @Input() tooltip?: boolean | any
+  @Input() grid?: boolean | Record<string, unknown>
+  @Input() tooltip?: boolean | Record<string, unknown>
   @Input() animation: boolean = true
   @Input() horizontal: boolean = false
   @Input() stacked: boolean = false
@@ -77,7 +77,7 @@ export class BarChartComponent implements OnInit, OnChanges, BarChartProps {
   @Input() loading: boolean = false
   @Input() emptyText: string = 'No data available'
   @Input() class?: string
-  @Input() options?: any = {}
+  @Input() options?: Record<string, unknown> = {}
 
   chartOption: EChartsOption | null = null
   dimensions: { width: string; height: string } = { width: '100%', height: '300px' }
@@ -135,9 +135,9 @@ export class BarChartComponent implements OnInit, OnChanges, BarChartProps {
     if (this.horizontal) {
       this.chartOption = {
         ...baseOption,
-        xAxis: baseOption.yAxis as any,
+        xAxis: baseOption.yAxis,
         yAxis: {
-          type: 'category',
+          type: 'category' as const,
           data: this.data.labels,
           axisLine: {
             lineStyle: {
@@ -149,13 +149,13 @@ export class BarChartComponent implements OnInit, OnChanges, BarChartProps {
             fontSize: 12,
           },
         },
-        series,
-      }
+        series: series as EChartsOption['series'],
+      } as EChartsOption
     } else {
       this.chartOption = {
         ...baseOption,
         series,
-      }
+      } as EChartsOption
     }
   }
 

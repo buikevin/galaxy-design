@@ -65,7 +65,7 @@ export class ScatterChartComponent implements OnInit, OnChanges, ScatterChartPro
 
     // Transform datasets to scatter series
     const series = this.data.datasets.map((dataset, index) => {
-      const seriesData = dataset.data.map((value: any, i) => {
+      const seriesData = dataset.data.map((value: number | number[] | { x: number; y: number; value?: number }, i) => {
         // Support both simple array [x, y] or object {x, y, value}
         if (Array.isArray(value)) {
           return value
@@ -108,7 +108,7 @@ export class ScatterChartComponent implements OnInit, OnChanges, ScatterChartPro
         textStyle: {
           fontSize: 12,
         },
-        formatter: (params: any) => {
+        formatter: (params: { seriesName: string; data: number[] }) => {
           const dataPoint = params.data
           return `${params.seriesName}<br/>X: ${dataPoint[0]}<br/>Y: ${dataPoint[1]}${dataPoint[2] ? `<br/>Value: ${dataPoint[2]}` : ''}`
         },

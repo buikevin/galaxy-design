@@ -227,7 +227,7 @@ export class GaugeChartComponent implements OnInit, OnChanges, GaugeChartProps {
               name: this.title || '',
             },
           ],
-        } as any,
+        } as EChartsOption['series'][0],
       ],
     }
   }

@@ -162,7 +162,7 @@ export interface BaseChartProps {
   emptyText?: string
 
   /** Framework-specific advanced options */
-  options?: Record<string, any>
+  options?: Record<string, unknown>
 }
 
 /**
@@ -393,6 +393,6 @@ export type ColorScheme = keyof typeof ChartColorSchemes
 /**
  * Helper function to get colors from scheme
  */
-export function getColorScheme(scheme: ColorScheme = 'default'): string[] {
+export function getColorScheme(scheme: ColorScheme = 'default'): readonly string[] {
   return ChartColorSchemes[scheme]
 }

@@ -70,7 +70,7 @@ export class MixedChartComponent implements OnInit, OnChanges, MixedChartProps {
   @Input() loading: boolean = false
   @Input() emptyText: string = 'No data available'
   @Input() class?: string
-  @Input() options?: any = {}
+  @Input() options?: Record<string, unknown> = {}
 
   chartOption: EChartsOption | null = null
   dimensions: { width: string; height: string } = { width: '100%', height: '300px' }
@@ -102,11 +102,11 @@ export class MixedChartComponent implements OnInit, OnChanges, MixedChartProps {
     const colors = getDefaultColors()
 
     // Build series with mixed types
-    const series = this.data.datasets.map((dataset: any, index: number) => {
+    const series = this.data.datasets.map((dataset: { type?: string; color?: string; label: string; data: number[]; smooth?: boolean }, index: number) => {
       const chartType = dataset.type || 'line'
       const color = dataset.color || colors[index % colors.length]
 
-      const baseSeries: any = {
+      const baseSeries: Record<string, unknown> = {
         name: dataset.label,
         type: chartType === 'area' ? 'line' : chartType,
         data: dataset.data,
@@ -167,7 +167,7 @@ export class MixedChartComponent implements OnInit, OnChanges, MixedChartProps {
         : undefined,
       legend: this.legend
         ? {
-            data: this.data.datasets.map((d: any) => d.label),
+            data: this.data.datasets.map((d: { label: string }) => d.label),
             [this.legendPosition]:
               this.legendPosition === 'top' || this.legendPosition === 'bottom' ? 'center' : '5%',
             [this.legendPosition === 'left' || this.legendPosition === 'right' ? 'top' : this.legendPosition]:

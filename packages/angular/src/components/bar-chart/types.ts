@@ -69,7 +69,7 @@ export interface TooltipConfig {
   /** Trigger type */
   trigger?: 'axis' | 'item'
   /** Custom formatter function */
-  formatter?: string | ((params: any) => string)
+  formatter?: string | ((params: { seriesName: string; name: string; value: number | string }) => string)
 }
 
 /**
@@ -162,7 +162,7 @@ export interface BaseChartProps {
   emptyText?: string
 
   /** Framework-specific advanced options */
-  options?: Record<string, any>
+  options?: Record<string, unknown>
 }
 
 /**

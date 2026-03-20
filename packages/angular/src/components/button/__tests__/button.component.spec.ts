@@ -8,8 +8,8 @@ import { Component } from '@angular/core'
   imports: [ButtonComponent],
 })
 class TestHostComponent {
-  variant: any = 'default'
-  size: any = 'default'
+  variant: string = 'default'
+  size: string = 'default'
   disabled = false
   text = 'Click me'
   onClick() {}
