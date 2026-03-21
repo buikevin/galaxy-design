@@ -7,6 +7,10 @@
 import { SwitchRoot, SwitchThumb, type SwitchRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiSwitch',
+})
+
 /**
  * Switch Props
  * @prop checked - Controlled checked state

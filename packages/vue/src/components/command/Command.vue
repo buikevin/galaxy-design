@@ -8,6 +8,10 @@ import { cn } from '@/lib/utils'
 import { ref } from 'vue'
 import { Search } from 'lucide-vue-next'
 
+defineOptions({
+  name: 'UiCommand',
+})
+
 interface Props {
   class?: string
   placeholder?: string

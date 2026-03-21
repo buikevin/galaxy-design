@@ -32,7 +32,7 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
   theme = 'light',
   legend = true,
   legendPosition = 'bottom', // Mobile default to bottom
-  animation = true,
+  _animation = true,
   innerRadius = 50,
   outerRadius = 60, // Smaller for mobile
   showPercentage = true,
@@ -66,9 +66,9 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
       color: colors,
       tooltip: {
         trigger: 'item',
-        formatter: (params: any) => {
-          const percent = ((params.value / total) * 100).toFixed(1)
-          return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
+        formatter: (params: Record<string, unknown>) => {
+          const percent = (((params.value as number) / total) * 100).toFixed(1)
+          return `${params.name}: ${formatNumber(params.value as number)} (${percent}%)`
         },
         backgroundColor: theme === 'dark' ? '#18181b' : '#ffffff',
         borderColor: theme === 'dark' ? '#27272a' : '#e4e4e7',
@@ -112,8 +112,8 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
             show: labelPosition !== 'center',
             position: labelPosition === 'inside' ? 'inside' : 'outside',
             formatter: showPercentage
-              ? (params: any) => {
-                  const percent = ((params.value / total) * 100).toFixed(1)
+              ? (params: Record<string, unknown>) => {
+                  const percent = (((params.value as number) / total) * 100).toFixed(1)
                   return `${params.name}\n${percent}%`
                 }
               : '{b}',

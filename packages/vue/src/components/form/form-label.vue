@@ -2,6 +2,10 @@
 import { cn } from '@/lib/utils'
 import { inject } from 'vue'
 
+defineOptions({
+  name: 'UiFormLabel',
+})
+
 const props = withDefaults(defineProps<{
   class?: string
   for?: string

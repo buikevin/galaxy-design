@@ -5,6 +5,11 @@
 -->
 <script setup lang="ts">
 import { AlertDialogRoot, type AlertDialogProps } from 'radix-vue'
+
+defineOptions({
+  name: 'UiAlertDialog',
+})
+
 interface Props extends AlertDialogProps {}
 defineProps<Props>()
 </script>

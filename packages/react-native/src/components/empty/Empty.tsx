@@ -34,7 +34,7 @@ export const Empty = React.forwardRef<View, EmptyProps>(
       action,
       className,
       iconSize = 64,
-      spacing = 16,
+      _spacing = 16,
     },
     ref
   ) => {

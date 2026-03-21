@@ -13,6 +13,10 @@ import {
 import { CanvasRenderer } from 'echarts/renderers'
 import { cn } from '@/lib/utils'
 import type { AreaChartProps } from './types'
+
+defineOptions({
+  name: 'UiAreaChart',
+})
 import { getDefaultColors, transformDataToSeries, getThemeColors } from './utils'
 
 // Register ECharts components

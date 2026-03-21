@@ -65,14 +65,14 @@ export class TagsInputComponent {
 
   inputValue: string = ''
 
-  get containerClass() {
+  get containerClass(): string {
     return cn(
       'flex min-h-10 w-full flex-wrap gap-2 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2',
       this.class
     )
   }
 
-  handleKeyDown(e: KeyboardEvent) {
+  handleKeyDown(e: KeyboardEvent): void {
     if (e.key === 'Enter' && this.inputValue.trim()) {
       e.preventDefault()
       const newTag = this.inputValue.trim()
@@ -90,7 +90,7 @@ export class TagsInputComponent {
     }
   }
 
-  removeTag(tagToRemove: string) {
+  removeTag(tagToRemove: string): void {
     const newTags = this.value.filter((tag) => tag !== tagToRemove)
     this.valueChange.emit(newTags)
     this.tagRemove.emit(tagToRemove)

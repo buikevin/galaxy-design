@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiFormDescription',
+})
+
 const props = withDefaults(defineProps<{
   class?: string
 }>(), {})

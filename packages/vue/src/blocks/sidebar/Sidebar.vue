@@ -6,6 +6,10 @@ import SidebarItem from './SidebarItem.vue'
 import { cn } from '@/lib/utils'
 import type { SidebarProps, MenuItem } from './types'
 
+defineOptions({
+  name: 'UiSidebar',
+})
+
 interface Props extends SidebarProps {
   class?: HTMLAttributes['class']
 }

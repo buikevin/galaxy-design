@@ -69,7 +69,7 @@ export interface TooltipConfig {
   /** Trigger type */
   trigger?: 'axis' | 'item'
   /** Custom formatter function */
-  formatter?: string | ((params: any) => string)
+  formatter?: string | ((params: Record<string, unknown>) => string)
 }
 
 /**
@@ -162,7 +162,7 @@ export interface BaseChartProps {
   emptyText?: string
 
   /** Framework-specific advanced options */
-  options?: Record<string, any>
+  options?: Record<string, unknown>
 }
 
 /**
@@ -228,10 +228,7 @@ export interface PieChartProps extends BaseChartProps {
 /**
  * Donut chart specific props (extends PieChartProps with different defaults)
  */
-export interface DonutChartProps extends PieChartProps {
-  // Donut chart uses the same props as Pie chart
-  // but with a default innerRadius of 50% instead of 0%
-}
+export type DonutChartProps = PieChartProps;
 
 /**
  * Area chart specific props
@@ -285,10 +282,7 @@ export interface ScatterChartProps extends BaseChartProps {
  * Mixed/Combo chart specific props
  * Allows combining multiple chart types (line, bar, area) in one chart
  */
-export interface MixedChartProps extends BaseChartProps {
-  // Mixed chart uses base props
-  // Each dataset can specify its own type via ChartDataset.type
-}
+export type MixedChartProps = BaseChartProps;
 
 /**
  * Chart color schemes

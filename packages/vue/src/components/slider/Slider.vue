@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack, type SliderRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiSlider',
+})
+
 /**
  * Slider Props
  * @prop modelValue - Controlled value

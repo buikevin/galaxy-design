@@ -2,6 +2,10 @@
 import { cn } from '@/lib/utils'
 import { provide, ref } from 'vue'
 
+defineOptions({
+  name: 'UiFormItem',
+})
+
 const props = withDefaults(defineProps<{
   class?: string
 }>(), {})

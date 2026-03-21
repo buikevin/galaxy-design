@@ -9,6 +9,10 @@ import { Primitive, type PrimitiveProps } from 'radix-vue'
 import { type ButtonVariants, buttonVariants } from './variants'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiButton',
+})
+
 /**
  * Button Props
  * @prop variant - Visual style variant (default, destructive, outline, secondary, ghost, link)

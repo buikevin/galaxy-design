@@ -7,6 +7,10 @@
 import { type HTMLAttributes, computed } from 'vue'
 import { HoverCardRoot, type HoverCardRootProps } from 'radix-vue'
 
+defineOptions({
+  name: 'UiHoverCard',
+})
+
 /**
  * HoverCard Props
  * @prop open - Controlled open state

@@ -4,7 +4,7 @@
  * @desc Progress bar indicator with percentage display
  */
 
-import { Component, Input, ChangeDetectionStrategy, computed, signal, ViewChild } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, computed, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   RdxProgressRootDirective,

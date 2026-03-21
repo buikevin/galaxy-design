@@ -5,6 +5,10 @@ import type { EChartsOption } from 'echarts'
 import type { RadarChartProps } from './types'
 import { getDefaultColors } from './utils'
 
+defineOptions({
+  name: 'UiRadarChart',
+})
+
 const props = defineProps<RadarChartProps>()
 
 const chartOption = computed<EChartsOption>(() => {

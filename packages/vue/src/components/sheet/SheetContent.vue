@@ -9,6 +9,10 @@ import { DialogPortal, DialogOverlay, DialogContent } from 'radix-vue'
 import { X } from 'lucide-vue-next'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'UiSheetContent',
+})
+
 /**
  * SheetContent Props
  * @prop as - Element or component to render

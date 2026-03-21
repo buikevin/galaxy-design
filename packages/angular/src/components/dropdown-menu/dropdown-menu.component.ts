@@ -7,8 +7,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxDropdownMenuTriggerDirective,
-  RdxDropdownMenuContentDirective,
   RdxDropdownMenuItemDirective,
   RdxDropdownMenuSeparatorDirective,
 } from '@radix-ng/primitives/dropdown-menu';

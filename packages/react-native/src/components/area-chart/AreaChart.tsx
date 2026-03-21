@@ -18,7 +18,7 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
   legendPosition = 'top',
   grid = true,
   tooltip = true,
-  animation = true,
+  _animation = true,
   smooth = true,
   showPoints = true,
   pointSize = 4,
@@ -53,8 +53,8 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
 
     // Add gradient if enabled
     if (gradient) {
-      series.forEach((s: any, index: number) => {
-        const color = s.itemStyle?.color || colors[index % colors.length]
+      series.forEach((s: Record<string, unknown>, index: number) => {
+        const color = (s.itemStyle as Record<string, unknown>)?.color || colors[index % colors.length]
         s.areaStyle = {
           ...s.areaStyle,
           color: {

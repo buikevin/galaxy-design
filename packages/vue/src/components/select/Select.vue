@@ -7,6 +7,10 @@
 import { type HTMLAttributes, computed } from 'vue'
 import { SelectRoot, type SelectRootProps } from 'radix-vue'
 
+defineOptions({
+  name: 'UiSelect',
+})
+
 /**
  * Select Props
  * @prop modelValue - Controlled selected value

@@ -45,7 +45,7 @@ const Skeleton = React.forwardRef<View, SkeletonProps>(
       return () => animation.stop();
     }, [opacity]);
 
-    const style: any = {};
+    const style: Record<string, unknown> = {};
     if (width) style.width = width;
     if (height) style.height = height;
 

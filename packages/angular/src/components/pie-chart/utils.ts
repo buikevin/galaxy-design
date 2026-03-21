@@ -20,7 +20,7 @@ export function transformDataToSeries(
   data: ChartData,
   chartType: string,
   additionalConfig: Record<string, unknown> = {}
-) {
+): Record<string, unknown>[] {
   return data.datasets.map((dataset) => ({
     name: dataset.label,
     type: chartType,
@@ -144,7 +144,7 @@ export function buildLegendConfig(
 /**
  * Build ECharts X-axis configuration
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category') {
+export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category'): Record<string, unknown> {
   return {
     type,
     data: type === 'category' ? labels : undefined,
@@ -163,7 +163,7 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
 /**
  * Build ECharts Y-axis configuration
  */
-export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
+export function buildYAxisConfig(type: 'value' | 'category' = 'value'): Record<string, unknown> {
   return {
     type,
     axisLine: {
@@ -186,11 +186,11 @@ export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
 /**
  * Build complete ECharts option from unified props
  */
-export function buildEChartsOption(props: BaseChartProps & { chartType: string }) {
+export function buildEChartsOption(props: BaseChartProps & { chartType: string }): Record<string, unknown> {
   const {
     data,
     chartType,
-    theme = 'light',
+    theme: _theme = 'light',
     legend = true,
     legendPosition = 'top',
     grid = true,
@@ -270,7 +270,7 @@ export function calculatePercentage(value: number, total: number): string {
 /**
  * Generate gradient colors
  */
-export function generateGradient(color: string, direction: 'vertical' | 'horizontal' = 'vertical') {
+export function generateGradient(color: string, direction: 'vertical' | 'horizontal' = 'vertical'): Record<string, unknown> {
   return {
     type: 'linear',
     x: 0,

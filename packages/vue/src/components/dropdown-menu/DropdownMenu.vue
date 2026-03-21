@@ -7,6 +7,10 @@
 import { computed } from 'vue'
 import { DropdownMenuRoot, type DropdownMenuRootProps } from 'radix-vue'
 
+defineOptions({
+  name: 'UiDropdownMenu',
+})
+
 /**
  * DropdownMenu Props
  * @prop open - Controlled open state

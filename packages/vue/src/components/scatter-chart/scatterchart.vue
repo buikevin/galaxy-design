@@ -5,6 +5,10 @@ import type { EChartsOption } from 'echarts'
 import type { ScatterChartProps } from './types'
 import { getDefaultColors } from './utils'
 
+defineOptions({
+  name: 'UiScatterChart',
+})
+
 const props = defineProps<ScatterChartProps>()
 
 const chartOption = computed<EChartsOption>(() => {

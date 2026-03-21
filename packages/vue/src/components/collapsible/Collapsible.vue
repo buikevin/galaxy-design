@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { CollapsibleRoot, type CollapsibleRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiCollapsible',
+})
+
 /**
  * Collapsible Props
  * @prop open - Controlled open state

@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { MenubarRoot, type MenubarRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiMenubar',
+})
+
 interface Props extends MenubarRootProps {
   class?: HTMLAttributes['class']
 }

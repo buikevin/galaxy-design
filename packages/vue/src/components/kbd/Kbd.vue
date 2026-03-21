@@ -7,6 +7,10 @@
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'UiKbd',
+})
+
 interface Props {
   /**
    * CSS class

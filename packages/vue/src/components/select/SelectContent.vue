@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { SelectContent, SelectPortal, SelectViewport, type SelectContentProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiSelectContent',
+})
+
 /**
  * SelectContent Props
  * @prop position - Positioning strategy (popper, item-aligned)

@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { AvatarRoot, type AvatarRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiAvatar',
+})
+
 /**
  * Avatar Props
  * @prop delayMs - Delay before showing fallback

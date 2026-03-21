@@ -4,7 +4,7 @@
  * @desc Text input with label, hints, and error messages
  */
 
-import { Component, Input, Output, EventEmitter, HostBinding, forwardRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, forwardRef, ChangeDetectionStrategy } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';
@@ -59,8 +59,8 @@ export class InputComponent implements ControlValueAccessor {
   @Output() inputBlur = new EventEmitter<void>();
 
   value: string | number = '';
-  onChange: any = () => {};
-  onTouched: any = () => {};
+  onChange: (value: string | number) => void = () => {};
+  onTouched: () => void = () => {};
 
   get inputClasses(): string {
     return cn(
@@ -76,15 +76,15 @@ export class InputComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
   }
 
-  writeValue(value: any): void {
+  writeValue(value: string | number | null): void {
     this.value = value || '';
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: (value: string | number) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 

@@ -7,6 +7,10 @@
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'UiTypography',
+})
+
 interface Props {
   /**
    * CSS class

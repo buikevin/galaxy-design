@@ -8,6 +8,10 @@ import { type HTMLAttributes } from 'vue'
 import { useVModel } from '@vueuse/core'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiTextarea',
+})
+
 /**
  * Textarea Props
  * @prop modelValue - Controlled value

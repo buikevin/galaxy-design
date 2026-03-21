@@ -7,6 +7,10 @@
 import { cn } from '@/lib/utils'
 import { ToolbarRoot } from 'radix-vue'
 
+defineOptions({
+  name: 'UiToolbar',
+})
+
 interface Props {
   class?: string
 }

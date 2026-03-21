@@ -9,6 +9,10 @@ import { Toggle as TogglePrimitive, type ToggleProps } from 'radix-vue'
 import { type ToggleVariants, toggleVariants } from './variants'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiToggle',
+})
+
 interface Props extends ToggleProps {
   variant?: ToggleVariants['variant']
   size?: ToggleVariants['size']

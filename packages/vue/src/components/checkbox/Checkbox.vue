@@ -9,6 +9,10 @@ import { CheckboxIndicator, CheckboxRoot, type CheckboxRootEmits, type CheckboxR
 import { Check } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiCheckbox',
+})
+
 /**
  * Checkbox Props
  * @prop checked - Controlled checked state

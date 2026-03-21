@@ -8,6 +8,10 @@ import { computed } from 'vue';
 import { ProgressIndicator, ProgressRoot } from 'radix-vue';
 import { cn } from '@/lib/utils';
 
+defineOptions({
+  name: 'UiProgress',
+})
+
 /**
  * Progress Props
  * @prop modelValue - Current progress value (0-max)

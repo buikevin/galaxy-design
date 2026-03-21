@@ -52,7 +52,7 @@ export class TypographyComponent {
    */
   @Input() variant: TypographyVariant = 'p'
 
-  get className() {
+  get className(): string {
     return cn(variantStyles[this.variant], this.class)
   }
 }

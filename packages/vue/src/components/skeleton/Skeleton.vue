@@ -7,6 +7,10 @@
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'UiSkeleton',
+})
+
 /**
  * Skeleton Props
  * @prop class - CSS class names for the skeleton

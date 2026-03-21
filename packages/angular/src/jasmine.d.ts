@@ -11,8 +11,8 @@ declare function fit(name: string, fn: (done?: DoneFn) => void): void;
 declare function beforeEach(fn: (done?: DoneFn) => void): void;
 declare function afterEach(fn: (done?: DoneFn) => void): void;
 
-declare function expect(actual: any): any;
-declare function spyOn<T, K extends keyof T>(obj: T, methodName: K): any;
+declare function expect(actual: unknown): jasmine.Matchers<unknown>;
+declare function spyOn<T, K extends keyof T>(obj: T, methodName: K): jasmine.Spy;
 
 declare interface DoneFn {
   (): void;

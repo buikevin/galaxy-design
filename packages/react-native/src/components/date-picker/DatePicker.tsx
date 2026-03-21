@@ -43,7 +43,7 @@ export const DatePicker = React.forwardRef<View, DatePickerProps>(
       placeholder = 'Pick a date',
       header,
       className,
-      mode = 'single',
+      _mode = 'single',
     },
     ref
   ) => {

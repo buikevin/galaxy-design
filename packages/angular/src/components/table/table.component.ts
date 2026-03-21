@@ -21,7 +21,7 @@ import { cn } from '@/lib/utils'
 export class TableComponent {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn('w-full caption-bottom text-sm', this.class)
   }
 }
@@ -36,7 +36,7 @@ export class TableComponent {
 export class TableHeaderDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn('[&_tr]:border-b', this.class)
   }
 }
@@ -51,7 +51,7 @@ export class TableHeaderDirective {
 export class TableBodyDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn('[&_tr:last-child]:border-0', this.class)
   }
 }
@@ -66,7 +66,7 @@ export class TableBodyDirective {
 export class TableFooterDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn(
       'border-t bg-muted/50 font-medium [&>tr]:last:border-b-0',
       this.class
@@ -84,7 +84,7 @@ export class TableFooterDirective {
 export class TableRowDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn(
       'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
       this.class
@@ -102,7 +102,7 @@ export class TableRowDirective {
 export class TableHeadDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn(
       'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0',
       this.class
@@ -120,7 +120,7 @@ export class TableHeadDirective {
 export class TableCellDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn('p-4 align-middle [&:has([role=checkbox])]:pr-0', this.class)
   }
 }
@@ -135,7 +135,7 @@ export class TableCellDirective {
 export class TableCaptionDirective {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn('mt-4 text-sm text-muted-foreground', this.class)
   }
 }

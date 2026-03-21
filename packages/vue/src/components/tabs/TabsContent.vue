@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { TabsContent, type TabsContentProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiTabsContent',
+})
+
 /**
  * TabsContent Props
  * @prop value - Value of the content panel to match a trigger

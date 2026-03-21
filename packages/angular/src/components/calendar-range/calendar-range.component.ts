@@ -151,7 +151,7 @@ export class CalendarRangeComponent {
     return weeks
   }
 
-  previousMonth() {
+  previousMonth(): void {
     if (this.currentMonth === 0) {
       this.currentMonth = 11
       this.currentYear--
@@ -160,7 +160,7 @@ export class CalendarRangeComponent {
     }
   }
 
-  nextMonth() {
+  nextMonth(): void {
     if (this.currentMonth === 11) {
       this.currentMonth = 0
       this.currentYear++
@@ -169,7 +169,7 @@ export class CalendarRangeComponent {
     }
   }
 
-  selectDate(date: Date) {
+  selectDate(date: Date): void {
     if (!this.range.start || (this.range.start && this.range.end)) {
       this.range = { start: date, end: null }
     } else {

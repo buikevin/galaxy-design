@@ -6,7 +6,7 @@
 
 import * as React from 'react';
 import * as AlertDialogPrimitive from '@rn-primitives/alert-dialog';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { cn } from '@/lib/utils';
 
 const AlertDialog = AlertDialogPrimitive.Root;

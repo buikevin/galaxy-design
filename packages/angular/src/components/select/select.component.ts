@@ -103,13 +103,13 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
   private cdr = inject(ChangeDetectorRef);
   private elementRef = inject(ElementRef);
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.open === undefined) {
       this.isOpen = this.defaultOpen;
     }
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this.updateDisplayValue();
 
     // Subscribe to item clicks
@@ -121,21 +121,21 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
   }
 
   @HostListener('document:click', ['$event'])
-  onDocumentClick(event: MouseEvent) {
+  onDocumentClick(event: MouseEvent): void {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.setOpen(false);
       this.cdr.markForCheck();
     }
   }
 
-  toggleDropdown() {
+  toggleDropdown(): void {
     if (!this.disabled) {
       this.setOpen(!this.isOpen);
       this.cdr.markForCheck();
     }
   }
 
-  selectItem(value: string) {
+  selectItem(value: string): void {
     this.value = value;
     this.setOpen(false);
     this.updateDisplayValue();
@@ -144,7 +144,7 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
     this.cdr.markForCheck();
   }
 
-  updateDisplayValue() {
+  updateDisplayValue(): void {
     if (this.items) {
       const selectedItem = this.items.find(item => item.value === this.value);
       this.displayValue = selectedItem ? selectedItem.getLabel() : '';
@@ -173,14 +173,14 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
     return this.open ?? this.isOpen;
   }
 
-  private setOpen(next: boolean) {
+  private setOpen(next: boolean): void {
     if (this.open === undefined) {
       this.isOpen = next;
     }
     this.openChange.emit(next);
   }
 
-  onTriggerKeydown(event: KeyboardEvent) {
+  onTriggerKeydown(event: KeyboardEvent): void {
     if (this.disabled) return;
     if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
@@ -255,7 +255,7 @@ export class SelectItemComponent {
 
   isSelected = false;
 
-  onClick() {
+  onClick(): void {
     if (!this.disabled) {
       this.itemClick.emit(this.value);
     }

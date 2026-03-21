@@ -13,6 +13,10 @@ import { cn } from '@/lib/utils'
 import type { DonutChartProps } from './types'
 import { getDefaultColors, formatNumber } from './utils'
 
+defineOptions({
+  name: 'UiDonutChart',
+})
+
 // Register ECharts components
 use([
   PieChart,

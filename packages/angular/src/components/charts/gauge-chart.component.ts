@@ -127,7 +127,7 @@ export class GaugeChartComponent implements OnInit, OnChanges, GaugeChartProps {
       axisLineColors = [[1, c]]
     }
 
-    const valueFormatter = this.formatter || ((v: number) => `${v}${this.unit || ''}`)
+    const valueFormatter = this.formatter || ((v: number): string => `${v}${this.unit || ''}`)
 
     this.chartOption = {
       series: [

@@ -9,6 +9,10 @@ import { SelectTrigger, SelectIcon, type SelectTriggerProps } from 'radix-vue'
 import { ChevronDown } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiSelectTrigger',
+})
+
 /**
  * SelectTrigger Props
  * @prop as - Element or component to render

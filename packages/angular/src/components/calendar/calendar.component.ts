@@ -146,7 +146,7 @@ export class CalendarComponent {
     return weeks
   }
 
-  previousMonth() {
+  previousMonth(): void {
     if (this.currentMonth === 0) {
       this.currentMonth = 11
       this.currentYear--
@@ -155,7 +155,7 @@ export class CalendarComponent {
     }
   }
 
-  nextMonth() {
+  nextMonth(): void {
     if (this.currentMonth === 11) {
       this.currentMonth = 0
       this.currentYear++
@@ -164,7 +164,7 @@ export class CalendarComponent {
     }
   }
 
-  selectDate(date: Date) {
+  selectDate(date: Date): void {
     this.selectedDate = date
     this.dateChange.emit(date)
   }

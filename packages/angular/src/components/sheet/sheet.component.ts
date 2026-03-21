@@ -51,7 +51,7 @@ export class SheetComponent {
   @Input() side: 'top' | 'right' | 'bottom' | 'left' = 'right'
   @Output() openChange = new EventEmitter<boolean>()
 
-  get sheetClass() {
+  get sheetClass(): string {
     const sideClasses = {
       top: 'inset-x-0 top-0 border-b',
       bottom: 'inset-x-0 bottom-0 border-t',
@@ -66,7 +66,7 @@ export class SheetComponent {
     )
   }
 
-  close() {
+  close(): void {
     this.openChange.emit(false)
   }
 }

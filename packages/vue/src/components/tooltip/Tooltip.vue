@@ -5,6 +5,11 @@
 -->
 <script setup lang="ts">
 import { TooltipRoot, type TooltipRootProps } from 'radix-vue'
+
+defineOptions({
+  name: 'UiTooltip',
+})
+
 /**
  * Tooltip Props
  * @prop open - Controlled open state

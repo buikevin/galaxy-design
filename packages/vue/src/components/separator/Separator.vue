@@ -7,6 +7,10 @@
 import { Separator as RadixSeparator, type SeparatorProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiSeparator',
+})
+
 const props = withDefaults(defineProps<SeparatorProps & { class?: string }>(), {
   orientation: 'horizontal',
   decorative: true,

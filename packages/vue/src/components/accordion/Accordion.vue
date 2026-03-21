@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { AccordionRoot, type AccordionRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiAccordion',
+})
+
 /**
  * Accordion Props
  * @prop type - Single or multiple accordion mode

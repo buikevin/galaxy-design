@@ -12,6 +12,10 @@ import {
 import { CanvasRenderer } from 'echarts/renderers'
 import { cn } from '@/lib/utils'
 import type { LineChartProps } from './types'
+
+defineOptions({
+  name: 'UiLineChart',
+})
 import {
   buildEChartsOption,
   getResponsiveDimensions,

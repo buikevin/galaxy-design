@@ -13,6 +13,10 @@ import { cn } from '@/lib/utils'
 import type { PieChartProps } from './types'
 import { getDefaultColors, formatNumber } from './utils'
 
+defineOptions({
+  name: 'UiPieChart',
+})
+
 // Register ECharts components
 use([
   PieChart,

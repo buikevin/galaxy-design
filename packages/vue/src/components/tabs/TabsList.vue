@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { TabsList, type TabsListProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiTabsList',
+})
+
 /**
  * TabsList Props
  * @prop as - Element or component to render

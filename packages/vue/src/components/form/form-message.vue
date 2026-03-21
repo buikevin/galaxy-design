@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiFormMessage',
+})
+
 const props = withDefaults(defineProps<{
   class?: string
   message?: string

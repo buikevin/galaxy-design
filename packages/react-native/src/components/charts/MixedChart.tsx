@@ -6,7 +6,7 @@ import type { MixedChartProps } from './types'
 import { getThemeColors } from './utils'
 
 export interface MixedChartComponentProps extends MixedChartProps {
-  style?: any
+  style?: Record<string, unknown>
 }
 
 export const MixedChart: React.FC<MixedChartComponentProps> = ({
@@ -35,7 +35,7 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
       const chartType = dataset.type || 'line'
       const color = dataset.color || colors[index % colors.length]
 
-      const baseSeries: any = {
+      const baseSeries: Record<string, unknown> = {
         name: dataset.label,
         type: chartType === 'area' ? 'line' : chartType,
         data: dataset.data,

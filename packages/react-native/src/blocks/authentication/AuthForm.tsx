@@ -10,7 +10,7 @@ import {
   ScrollView,
   ActivityIndicator,
 } from 'react-native'
-import type { AuthFormProps, LoginFormData } from './types'
+import type { AuthFormProps } from './types'
 
 export const AuthForm: React.FC<AuthFormProps> = ({
   onSubmit,

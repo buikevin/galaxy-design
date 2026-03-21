@@ -7,6 +7,10 @@
 import { computed } from 'vue'
 import { ContextMenuRoot, type ContextMenuRootProps } from 'radix-vue'
 
+defineOptions({
+  name: 'UiContextMenu',
+})
+
 /**
  * ContextMenu Props
  * @prop open - Controlled open state

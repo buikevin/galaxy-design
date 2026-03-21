@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { TabsRoot, type TabsRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiTabs',
+})
+
 /**
  * Tabs Props
  * @prop modelValue - Controlled tab value

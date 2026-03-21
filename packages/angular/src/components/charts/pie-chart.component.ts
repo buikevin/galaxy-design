@@ -118,7 +118,7 @@ export class PieChartComponent implements OnInit, OnChanges, PieChartProps {
       color: colors,
       tooltip: {
         trigger: 'item',
-        formatter: (params: { name: string; value: number }) => {
+        formatter: (params: { name: string; value: number }): string => {
           const percent = ((params.value / total) * 100).toFixed(1)
           return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
         },
@@ -161,7 +161,7 @@ export class PieChartComponent implements OnInit, OnChanges, PieChartProps {
             show: this.labelPosition !== 'center',
             position: this.labelPosition === 'inside' ? 'inside' : 'outside',
             formatter: this.showPercentage
-              ? (params: { name: string; value: number }) => {
+              ? (params: { name: string; value: number }): string => {
                   const percent = ((params.value / total) * 100).toFixed(1)
                   return `${params.name}\n${percent}%`
                 }

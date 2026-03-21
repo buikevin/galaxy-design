@@ -8,6 +8,10 @@ import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-vue-next'
 
+defineOptions({
+  name: 'UiPagination',
+})
+
 interface Props {
   /**
    * CSS class

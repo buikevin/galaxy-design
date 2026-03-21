@@ -9,6 +9,10 @@ import { AccordionHeader, AccordionTrigger, type AccordionTriggerProps } from 'r
 import { ChevronDown } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiAccordionTrigger',
+})
+
 /**
  * AccordionTrigger Props
  * @prop as - Element or component to render

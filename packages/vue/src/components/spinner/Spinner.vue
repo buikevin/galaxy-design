@@ -7,6 +7,10 @@
 import { computed, type HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiSpinner',
+})
+
 export type SpinnerSize = 'sm' | 'default' | 'lg'
 
 interface Props {

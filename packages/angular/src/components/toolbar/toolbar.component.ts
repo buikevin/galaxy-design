@@ -19,7 +19,7 @@ import { cn } from '@/lib/utils'
 export class ToolbarComponent {
   @Input() class?: string
 
-  get className() {
+  get className(): string {
     return cn(
       'flex w-full min-w-max items-center gap-1 rounded-md bg-background p-1',
       this.class

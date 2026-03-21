@@ -28,7 +28,7 @@ export class SkeletonComponent {
    */
   @Input() variant: 'default' | 'circle' | 'text' = 'default'
 
-  get className() {
+  get className(): string {
     return cn(
       'animate-pulse bg-muted',
       {

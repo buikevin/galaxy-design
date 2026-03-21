@@ -14,6 +14,10 @@ import { cn } from '@/lib/utils'
 import type { MixedChartProps } from './types'
 import { getDefaultColors } from './utils'
 
+defineOptions({
+  name: 'UiMixedChart',
+})
+
 // Register ECharts components
 use([
   LineChart,

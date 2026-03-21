@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { TabsTrigger, type TabsTriggerProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiTabsTrigger',
+})
+
 /**
  * TabsTrigger Props
  * @prop value - Value of the tab to match a trigger

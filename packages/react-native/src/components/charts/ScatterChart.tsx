@@ -6,7 +6,7 @@ import type { ScatterChartProps } from './types'
 import { getThemeColors } from './utils'
 
 export interface ScatterChartComponentProps extends ScatterChartProps {
-  style?: any
+  style?: Record<string, unknown>
 }
 
 export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
@@ -36,7 +36,7 @@ export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
 
     // Transform datasets to scatter series
     const series = data.datasets.map((dataset, index) => {
-      const seriesData = dataset.data.map((value: any, i) => {
+      const seriesData = dataset.data.map((value: unknown, i) => {
         // Support both simple array [x, y] or object {x, y, value}
         if (Array.isArray(value)) {
           return value
@@ -79,8 +79,8 @@ export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
         textStyle: {
           fontSize: 11,
         },
-        formatter: (params: any) => {
-          const dataPoint = params.data
+        formatter: (params: Record<string, unknown>) => {
+          const dataPoint = params.data as number[]
           return `${params.seriesName}<br/>X: ${dataPoint[0]}<br/>Y: ${dataPoint[1]}${dataPoint[2] ? `<br/>Value: ${dataPoint[2]}` : ''}`
         },
       },

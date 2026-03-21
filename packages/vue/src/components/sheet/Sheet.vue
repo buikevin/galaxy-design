@@ -8,6 +8,10 @@ import { cn } from '@/lib/utils'
 import { DialogRoot, DialogPortal, DialogOverlay, DialogContent } from 'radix-vue'
 import { X } from 'lucide-vue-next'
 
+defineOptions({
+  name: 'UiSheet',
+})
+
 /**
  * Sheet Props
  * @prop open - Controlled open state

@@ -6,6 +6,10 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiCardContent',
+})
+
 const props = withDefaults(defineProps<{
   class?: string
 }>(), {})

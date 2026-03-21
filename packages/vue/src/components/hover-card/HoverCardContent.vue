@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { HoverCardContent, HoverCardPortal, type HoverCardContentProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiHoverCardContent',
+})
+
 /**
  * HoverCardContent Props
  * @prop as - Element or component to render

@@ -7,6 +7,10 @@
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'UiEmpty',
+})
+
 interface Props {
   /**
    * CSS class

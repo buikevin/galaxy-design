@@ -132,12 +132,12 @@ export class PaginationComponent {
    */
   @Output() pageChange = new EventEmitter<number>()
 
-  get className() {
+  get className(): string {
     return cn('flex items-center justify-center', this.class)
   }
 
   get pages(): (number | string)[] {
-    const range = (start: number, end: number) => {
+    const range = (start: number, end: number): number[] => {
       return Array.from({ length: end - start + 1 }, (_, i) => start + i)
     }
 
@@ -176,27 +176,27 @@ export class PaginationComponent {
     return []
   }
 
-  handlePageChange(page: number | string) {
+  handlePageChange(page: number | string): void {
     if (typeof page === 'number' && page >= 1 && page <= this.totalPages && page !== this.currentPage) {
       this.pageChange.emit(page)
     }
   }
 
-  getPrevButtonClass() {
+  getPrevButtonClass(): string {
     return cn(
       'inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
       this.currentPage === 1 && 'opacity-50 cursor-not-allowed'
     )
   }
 
-  getNextButtonClass() {
+  getNextButtonClass(): string {
     return cn(
       'inline-flex h-9 w-9 items-center justify-center rounded-md border border-input bg-background text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
       this.currentPage === this.totalPages && 'opacity-50 cursor-not-allowed'
     )
   }
 
-  getPageButtonClass(page: number | string) {
+  getPageButtonClass(page: number | string): string {
     return cn(
       'inline-flex h-9 min-w-[36px] items-center justify-center rounded-md border border-input bg-background px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
       this.currentPage === page &&

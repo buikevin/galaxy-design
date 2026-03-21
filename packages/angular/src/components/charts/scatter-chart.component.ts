@@ -80,7 +80,7 @@ export class ScatterChartComponent implements OnInit, OnChanges, ScatterChartPro
         name: dataset.label,
         type: 'scatter',
         data: seriesData,
-        symbolSize: (dataItem: number[]) => {
+        symbolSize: (dataItem: number[]): number => {
           // If third value exists, use it for size scaling
           if (dataItem[2]) {
             return Math.sqrt(dataItem[2]) * (this.symbolSize || 10) / 5
@@ -108,7 +108,7 @@ export class ScatterChartComponent implements OnInit, OnChanges, ScatterChartPro
         textStyle: {
           fontSize: 12,
         },
-        formatter: (params: { seriesName: string; data: number[] }) => {
+        formatter: (params: { seriesName: string; data: number[] }): string => {
           const dataPoint = params.data
           return `${params.seriesName}<br/>X: ${dataPoint[0]}<br/>Y: ${dataPoint[1]}${dataPoint[2] ? `<br/>Value: ${dataPoint[2]}` : ''}`
         },

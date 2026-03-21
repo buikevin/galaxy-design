@@ -28,7 +28,7 @@ export class KbdComponent {
    */
   @Input() size: 'sm' | 'default' | 'lg' = 'default'
 
-  get className() {
+  get className(): string {
     return cn(
       'inline-flex items-center justify-center rounded border border-border bg-muted px-2 font-mono text-sm font-medium text-muted-foreground shadow-sm',
       {

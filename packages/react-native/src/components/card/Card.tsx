@@ -34,9 +34,7 @@ const Card = React.forwardRef<View, CardProps>(
 
 Card.displayName = 'Card';
 
-export interface CardHeaderProps extends ViewProps {}
-
-const CardHeader = React.forwardRef<View, CardHeaderProps>(
+const CardHeader = React.forwardRef<View, ViewProps>(
   ({ className, ...props }, ref) => {
     return (
       <View
@@ -50,9 +48,7 @@ const CardHeader = React.forwardRef<View, CardHeaderProps>(
 
 CardHeader.displayName = 'CardHeader';
 
-export interface CardTitleProps extends TextProps {}
-
-const CardTitle = React.forwardRef<Text, CardTitleProps>(
+const CardTitle = React.forwardRef<Text, TextProps>(
   ({ className, ...props }, ref) => {
     return (
       <Text
@@ -66,9 +62,7 @@ const CardTitle = React.forwardRef<Text, CardTitleProps>(
 
 CardTitle.displayName = 'CardTitle';
 
-export interface CardDescriptionProps extends TextProps {}
-
-const CardDescription = React.forwardRef<Text, CardDescriptionProps>(
+const CardDescription = React.forwardRef<Text, TextProps>(
   ({ className, ...props }, ref) => {
     return (
       <Text
@@ -82,9 +76,7 @@ const CardDescription = React.forwardRef<Text, CardDescriptionProps>(
 
 CardDescription.displayName = 'CardDescription';
 
-export interface CardContentProps extends ViewProps {}
-
-const CardContent = React.forwardRef<View, CardContentProps>(
+const CardContent = React.forwardRef<View, ViewProps>(
   ({ className, ...props }, ref) => {
     return (
       <View
@@ -98,9 +90,7 @@ const CardContent = React.forwardRef<View, CardContentProps>(
 
 CardContent.displayName = 'CardContent';
 
-export interface CardFooterProps extends ViewProps {}
-
-const CardFooter = React.forwardRef<View, CardFooterProps>(
+const CardFooter = React.forwardRef<View, ViewProps>(
   ({ className, ...props }, ref) => {
     return (
       <View

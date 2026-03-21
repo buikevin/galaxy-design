@@ -22,12 +22,11 @@ export default defineConfig([
       vue: vuePlugin,
     },
     rules: {
-      'no-unused-vars': 'off',
-      'vue/multi-word-component-names': 'off',
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
       'vue/no-unused-vars': 'error',
-      'vue/no-unused-components': 'warn',
+      'vue/no-unused-components': 'error',
+      'vue/multi-word-component-names': 'error',
     },
   },
   {

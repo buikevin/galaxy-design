@@ -6,7 +6,7 @@ import type { RadarChartProps } from './types'
 import { getThemeColors } from './utils'
 
 export interface RadarChartComponentProps extends RadarChartProps {
-  style?: any
+  style?: Record<string, unknown>
 }
 
 export const RadarChart: React.FC<RadarChartComponentProps> = ({

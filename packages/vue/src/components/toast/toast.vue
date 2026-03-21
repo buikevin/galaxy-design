@@ -7,6 +7,10 @@
 import { Toaster } from 'vue-sonner'
 import type { ToasterProps } from 'vue-sonner'
 
+defineOptions({
+  name: 'UiToast',
+})
+
 /**
  * Toast Props
  * @prop theme - Color theme (light, dark, system)

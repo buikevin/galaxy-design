@@ -48,7 +48,7 @@ export class RadioGroupComponent implements AfterContentInit, OnDestroy {
 
   private cdr = inject(ChangeDetectorRef);
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this.setupSubscriptions();
     this.updateSelection();
 
@@ -60,11 +60,11 @@ export class RadioGroupComponent implements AfterContentInit, OnDestroy {
     this.subscriptions.push(itemsChangeSub);
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
-  private setupSubscriptions() {
+  private setupSubscriptions(): void {
     // Unsubscribe from previous item subscriptions (keep itemsChangeSub)
     this.subscriptions = this.subscriptions.slice(0, 1);
 
@@ -76,7 +76,7 @@ export class RadioGroupComponent implements AfterContentInit, OnDestroy {
     });
   }
 
-  selectItem(value: string) {
+  selectItem(value: string): void {
     if (this.disabled) return;
     this.value = value;
     this.updateSelection();
@@ -84,7 +84,7 @@ export class RadioGroupComponent implements AfterContentInit, OnDestroy {
     this.cdr.markForCheck();
   }
 
-  updateSelection() {
+  updateSelection(): void {
     if (this.items) {
       this.items.forEach(item => {
         item.isSelected = item.value === this.value;
@@ -146,7 +146,7 @@ export class RadioGroupItemComponent {
 
   private cdr = inject(ChangeDetectorRef);
 
-  onClick() {
+  onClick(): void {
     if (!this.disabled) {
       this.itemClick.emit(this.value);
     }

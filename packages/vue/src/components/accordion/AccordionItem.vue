@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { AccordionItem, type AccordionItemProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiAccordionItem',
+})
+
 /**
  * AccordionItem Props
  * @prop value - Unique value for the item

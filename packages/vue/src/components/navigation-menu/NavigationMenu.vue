@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { NavigationMenuRoot, type NavigationMenuRootProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiNavigationMenu',
+})
+
 /**
  * NavigationMenu Props
  * @prop modelValue - Controlled value of the active menu item

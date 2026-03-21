@@ -7,6 +7,10 @@
 import { cn } from '@/lib/utils'
 import { computed } from 'vue'
 
+defineOptions({
+  name: 'UiSheetFooter',
+})
+
 interface Props {
   class?: string
 }

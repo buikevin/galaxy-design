@@ -13,7 +13,6 @@ import type { EChartsOption } from 'echarts'
 import type { BarChartProps } from './types'
 import {
   buildEChartsOption,
-  getResponsiveDimensions,
   transformDataToSeries,
 } from './utils'
 

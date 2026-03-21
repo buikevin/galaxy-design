@@ -55,7 +55,7 @@ export class EmptyComponent {
    */
   @Input() imageAlt: string = 'Empty'
 
-  get className() {
+  get className(): string {
     return cn(
       'flex flex-col items-center justify-center p-8 text-center',
       this.class

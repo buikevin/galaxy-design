@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { Label as RadixLabel, type LabelProps as RadixLabelProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiLabel',
+})
+
 /**
  * Label Props
  * @prop for - Id of the element the label is associated with

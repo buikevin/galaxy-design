@@ -8,6 +8,10 @@ import { cn } from '@/lib/utils'
 import { CalendarRoot } from 'radix-vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
 
+defineOptions({
+  name: 'UiCalendar',
+})
+
 interface Props {
   class?: string
   modelValue?: Date

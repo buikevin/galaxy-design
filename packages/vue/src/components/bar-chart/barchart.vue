@@ -12,6 +12,10 @@ import {
 import { CanvasRenderer } from 'echarts/renderers'
 import { cn } from '@/lib/utils'
 import type { BarChartProps } from './types'
+
+defineOptions({
+  name: 'UiBarChart',
+})
 import {
   buildEChartsOption,
   getResponsiveDimensions,

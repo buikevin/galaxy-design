@@ -5,7 +5,7 @@
  */
 
 import * as React from 'react';
-import { View, Image, Text, ImageProps } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { cn } from '@/lib/utils';
 
 export interface AvatarProps {

@@ -5,7 +5,7 @@ import type { EChartsOption } from 'echarts'
 import type { GaugeChartProps } from './types'
 
 export interface GaugeChartComponentProps extends GaugeChartProps {
-  style?: any
+  style?: Record<string, unknown>
 }
 
 export const GaugeChart: React.FC<GaugeChartComponentProps> = ({

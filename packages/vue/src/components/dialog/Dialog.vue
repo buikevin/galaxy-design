@@ -6,6 +6,10 @@
 <script setup lang="ts">
 import { DialogRoot, type DialogRootProps } from 'radix-vue'
 
+defineOptions({
+  name: 'UiDialog',
+})
+
 /**
  * Dialog Props
  * @prop open - Controlled open state

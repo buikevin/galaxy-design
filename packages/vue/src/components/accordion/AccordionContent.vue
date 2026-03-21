@@ -8,6 +8,10 @@ import { type HTMLAttributes, computed } from 'vue'
 import { AccordionContent, type AccordionContentProps } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiAccordionContent',
+})
+
 /**
  * AccordionContent Props
  * @prop as - Element or component to render

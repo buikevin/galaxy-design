@@ -7,6 +7,10 @@
 import { ChevronRight } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 
+defineOptions({
+  name: 'UiBreadcrumbSeparator',
+})
+
 const props = withDefaults(defineProps<{
   class?: string
 }>(), {})
