@@ -5,7 +5,7 @@
 -->
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { Search } from 'lucide-vue-next'
 
 interface Props {
@@ -18,9 +18,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const searchTerm = ref('')
-const emit = defineEmits<{
-  select: [value: string]
-}>()
 </script>
 
 <template>

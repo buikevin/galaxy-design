@@ -10,7 +10,6 @@ import {
   RdxDialogContentDirective,
   RdxDialogTitleDirective,
   RdxDialogDescriptionDirective,
-  RdxDialogCloseDirective,
 } from '@radix-ng/primitives/dialog';
 import { cn } from '@/lib/utils';
 

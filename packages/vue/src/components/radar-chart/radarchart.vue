@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, type PropType } from 'vue'
+import { computed } from 'vue'
 import VChart from 'vue-echarts'
 import type { EChartsOption } from 'echarts'
-import type { RadarChartProps, ChartData } from './types'
+import type { RadarChartProps } from './types'
 import { getDefaultColors } from './utils'
 
 const props = defineProps<RadarChartProps>()

@@ -17,7 +17,8 @@ import {
   HostListener,
   ElementRef,
   forwardRef,
-  OnInit
+  OnInit,
+  inject
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -99,10 +100,8 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
   private onChange: (value: string | null) => void = () => {};
   private onTouched: () => void = () => {};
 
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private elementRef: ElementRef
-  ) {}
+  private cdr = inject(ChangeDetectorRef);
+  private elementRef = inject(ElementRef);
 
   ngOnInit() {
     if (this.open === undefined) {
@@ -273,5 +272,5 @@ export class SelectItemComponent {
     );
   }
 
-  constructor(private elementRef: ElementRef) {}
+  private elementRef = inject(ElementRef);
 }

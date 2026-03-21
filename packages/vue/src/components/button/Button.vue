@@ -45,7 +45,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
 })
 
 const delegatedProps = computed(() => {
-  const { class: _, variant, size, ...delegated } = props
+  const { class: _, ...delegated } = props
   return delegated
 })
 </script>

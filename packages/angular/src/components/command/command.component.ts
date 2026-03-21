@@ -52,7 +52,7 @@ import { cn } from '@/lib/utils'
 export class CommandComponent {
   @Input() class?: string
   @Input() placeholder: string = 'Type a command or search...'
-  @Output() search = new EventEmitter<string>()
+  @Output() searchChange = new EventEmitter<string>()
 
   searchTerm: string = ''
   cn = cn

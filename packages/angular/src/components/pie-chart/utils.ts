@@ -19,9 +19,9 @@ import {
 export function transformDataToSeries(
   data: ChartData,
   chartType: string,
-  additionalConfig: Record<string, any> = {}
+  additionalConfig: Record<string, unknown> = {}
 ) {
-  return data.datasets.map((dataset, index) => ({
+  return data.datasets.map((dataset) => ({
     name: dataset.label,
     type: chartType,
     data: dataset.data,
@@ -56,7 +56,7 @@ export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
  */
 export function buildTooltipConfig(
   tooltip?: boolean | TooltipConfig
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (tooltip === false) {
     return undefined
   }
@@ -89,7 +89,7 @@ export function buildTooltipConfig(
 /**
  * Build ECharts grid configuration
  */
-export function buildGridConfig(grid?: boolean | GridConfig): Record<string, any> {
+export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unknown> {
   if (grid === false) {
     return {
       show: false,
@@ -123,7 +123,7 @@ export function buildLegendConfig(
   legend?: boolean,
   legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top',
   data?: string[]
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (legend === false) {
     return undefined
   }

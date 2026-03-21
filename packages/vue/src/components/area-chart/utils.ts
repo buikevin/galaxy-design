@@ -21,7 +21,7 @@ export function transformDataToSeries(
   chartType: string,
   additionalConfig: Record<string, unknown> = {}
 ) {
-  return data.datasets.map((dataset, index) => ({
+  return data.datasets.map((dataset) => ({
     name: dataset.label,
     type: chartType as 'line' | 'bar' | 'area' | 'pie' | 'donut' | 'radar' | 'scatter',
     data: dataset.data,
@@ -220,7 +220,6 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
   const {
     data,
     chartType,
-    theme = 'light',
     legend = true,
     legendPosition = 'top',
     grid = true,

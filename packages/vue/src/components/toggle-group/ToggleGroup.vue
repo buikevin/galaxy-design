@@ -24,7 +24,7 @@ provide('toggleGroupVariant', computed(() => props.variant))
 provide('toggleGroupSize', computed(() => props.size))
 
 const delegatedProps = computed(() => {
-  const { class: _, variant, size, ...delegated } = props
+  const { class: _, ...delegated } = props
   return delegated
 })
 </script>

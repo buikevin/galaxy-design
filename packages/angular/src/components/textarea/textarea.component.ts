@@ -38,8 +38,8 @@ export class TextareaComponent implements ControlValueAccessor {
   @Input() class?: string;
 
   value: string | number = '';
-  onChange: any = () => {};
-  onTouched: any = () => {};
+  onChange: () => void = () => {};
+  onTouched: () => void = () => {};
 
   get textareaClasses(): string {
     return cn(
@@ -54,15 +54,15 @@ export class TextareaComponent implements ControlValueAccessor {
     this.onChange(this.value);
   }
 
-  writeValue(value: any): void {
+  writeValue(value: string | number): void {
     this.value = value || '';
   }
 
-  registerOnChange(fn: any): void {
+  registerOnChange(fn: () => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: any): void {
+  registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 

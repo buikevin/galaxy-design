@@ -4,7 +4,7 @@
  * @desc Collapsible directive - Provides collapsible content functionality
  */
 
-import { Directive, Input } from '@angular/core';
+import { Directive } from '@angular/core';
 import {
   RdxCollapsibleRootDirective,
   RdxCollapsibleTriggerDirective,

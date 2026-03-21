@@ -15,7 +15,8 @@ import {
   AfterContentInit,
   ChangeDetectorRef,
   forwardRef,
-  OnDestroy
+  OnDestroy,
+  inject
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -45,7 +46,7 @@ export class RadioGroupComponent implements AfterContentInit, OnDestroy {
 
   private subscriptions: Subscription[] = [];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  private cdr = inject(ChangeDetectorRef);
 
   ngAfterContentInit() {
     this.setupSubscriptions();
@@ -143,7 +144,7 @@ export class RadioGroupItemComponent {
 
   isSelected = false;
 
-  constructor(public cdr: ChangeDetectorRef) {}
+  private cdr = inject(ChangeDetectorRef);
 
   onClick() {
     if (!this.disabled) {

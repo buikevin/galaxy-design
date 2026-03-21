@@ -45,7 +45,7 @@ export class ToggleGroupComponent {
     return cn('flex items-center justify-center gap-1', this.class);
   }
 
-  onValueChange(value: any): void {
+  onValueChange(value: string | string[]): void {
     if (value !== undefined && value !== null) {
       this.value = value;
       this.valueChange.emit(value);

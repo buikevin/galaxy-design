@@ -64,8 +64,8 @@ const chartOption = computed<EChartsOption>(() => {
       textStyle: {
         fontSize: 12,
       },
-      formatter: (params: any) => {
-        const data = params.data
+      formatter: (params: Record<string, unknown>) => {
+        const data = params.data as unknown[]
         return `${params.seriesName}<br/>X: ${data[0]}<br/>Y: ${data[1]}${data[2] ? `<br/>Value: ${data[2]}` : ''}`
       },
     },

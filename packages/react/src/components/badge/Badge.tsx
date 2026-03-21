@@ -44,5 +44,5 @@ function Badge({ className, variant, size, dismissable, onDismiss, ...props }: B
   );
 }
 
-export { Badge, badgeVariants };
+export { Badge };
 export type { BadgeProps } from './variants';

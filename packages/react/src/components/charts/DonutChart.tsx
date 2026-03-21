@@ -18,7 +18,6 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
       theme = 'light',
       legend = true,
       legendPosition = 'right',
-      animation = true,
       innerRadius = 50,
       outerRadius = 70,
       showPercentage = true,
@@ -51,7 +50,7 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
         color: colors,
         tooltip: {
           trigger: 'item',
-          formatter: (params: any) => {
+          formatter: (params: { name: string; value: number }) => {
             const percent = ((params.value / total) * 100).toFixed(1)
             return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
           },
@@ -94,7 +93,7 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
               show: labelPosition !== 'center',
               position: labelPosition === 'inside' ? 'inside' : 'outside',
               formatter: showPercentage
-                ? (params: any) => {
+                ? (params: { name: string; value: number }) => {
                     const percent = ((params.value / total) * 100).toFixed(1)
                     return `${params.name}\n${percent}%`
                   }

@@ -190,7 +190,6 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
   const {
     data,
     chartType,
-    theme = 'light',
     legend = true,
     legendPosition = 'top',
     grid = true,

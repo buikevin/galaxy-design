@@ -32,5 +32,5 @@ export interface RegisterFormData {
   `]
 })
 export class RegisterFormComponent {
-  @Output() submit = new EventEmitter<RegisterFormData>()
+  @Output() submitForm = new EventEmitter<RegisterFormData>()
 }

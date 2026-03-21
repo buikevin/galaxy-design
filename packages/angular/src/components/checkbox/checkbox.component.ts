@@ -4,7 +4,7 @@
  * @desc Checkbox with indeterminate state and full keyboard support
  */
 
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, ViewChild, OnChanges, SimpleChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';
 
@@ -70,7 +70,7 @@ export class CheckboxComponent implements OnChanges {
   @ViewChild('hiddenInput', { static: true })
   hiddenInput?: ElementRef<HTMLInputElement>;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['checked']) {

@@ -72,7 +72,7 @@ export class DonutChartComponent implements OnInit, OnChanges, DonutChartProps {
   @Input() loading: boolean = false
   @Input() emptyText: string = 'No data available'
   @Input() class?: string
-  @Input() options?: any = {}
+  @Input() options?: Record<string, unknown> = {}
 
   chartOption: EChartsOption | null = null
   dimensions: { width: string; height: string } = { width: '100%', height: '300px' }
@@ -118,7 +118,7 @@ export class DonutChartComponent implements OnInit, OnChanges, DonutChartProps {
       color: colors,
       tooltip: {
         trigger: 'item',
-        formatter: (params: any) => {
+        formatter: (params: { name: string; value: number }) => {
           const percent = ((params.value / total) * 100).toFixed(1)
           return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
         },
@@ -161,7 +161,7 @@ export class DonutChartComponent implements OnInit, OnChanges, DonutChartProps {
             show: this.labelPosition !== 'center',
             position: this.labelPosition === 'inside' ? 'inside' : 'outside',
             formatter: this.showPercentage
-              ? (params: any) => {
+              ? (params: { name: string; value: number }) => {
                   const percent = ((params.value / total) * 100).toFixed(1)
                   return `${params.name}\n${percent}%`
                 }

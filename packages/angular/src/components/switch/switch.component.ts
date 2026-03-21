@@ -43,12 +43,10 @@ export class SwitchComponent {
   @Input() disabled: boolean = false;
   @Input() class?: string;
   @Output() checkedChange = new EventEmitter<boolean>();
-  @Output() onCheckedChange = new EventEmitter<boolean>();
 
   handleCheckedChange(checked: boolean): void {
     this.checked = checked;
     this.checkedChange.emit(checked);
-    this.onCheckedChange.emit(checked);
   }
 
   get switchClasses(): string {

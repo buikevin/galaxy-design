@@ -5,10 +5,9 @@ import Input from '@/components/ui/input/Input.vue'
 import Avatar from '@/components/ui/avatar/Avatar.vue'
 import AvatarImage from '@/components/ui/avatar/AvatarImage.vue'
 import AvatarFallback from '@/components/ui/avatar/AvatarFallback.vue'
-import Separator from '@/components/ui/separator/Separator.vue'
 import ScrollArea from '@/components/ui/scroll-area/ScrollArea.vue'
 import { cn } from '@/lib/utils'
-import type { EmailClientProps, Email, EmailFolder } from './types'
+import type { EmailClientProps, Email } from './types'
 
 interface Props extends EmailClientProps {
   class?: HTMLAttributes['class']

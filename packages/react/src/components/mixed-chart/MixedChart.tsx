@@ -39,7 +39,18 @@ export const MixedChart = React.forwardRef<ReactECharts, MixedChartComponentProp
         const chartType = dataset.type || 'line'
         const color = dataset.color || colors[index % colors.length]
 
-        const baseSeries: any = {
+        const baseSeries: {
+          name: string
+          type: string
+          data: number[]
+          itemStyle: { color: string }
+          smooth?: boolean
+          showSymbol?: boolean
+          symbolSize?: number
+          lineStyle?: { width: number }
+          barMaxWidth?: number
+          areaStyle?: { opacity: number }
+        } = {
           name: dataset.label,
           type: chartType === 'area' ? 'line' : chartType,
           data: dataset.data,
@@ -153,7 +164,7 @@ export const MixedChart = React.forwardRef<ReactECharts, MixedChartComponentProp
         animationDuration: animation ? 1000 : 0,
         ...options,
       }
-    }, [data, theme, legend, legendPosition, grid, tooltip, options])
+    }, [data, theme, legend, legendPosition, grid, tooltip, animation, options])
 
     const dimensions = useMemo(() => {
       return {

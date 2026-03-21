@@ -20,7 +20,6 @@ export const MixedChart = React.forwardRef<ReactECharts, MixedChartComponentProp
       legendPosition = 'top',
       grid = true,
       tooltip = true,
-      animation = true,
       loading = false,
       emptyText = 'No data available',
       className,
@@ -39,7 +38,7 @@ export const MixedChart = React.forwardRef<ReactECharts, MixedChartComponentProp
         const chartType = dataset.type || 'line'
         const color = dataset.color || colors[index % colors.length]
 
-        const baseSeries: any = {
+        const baseSeries: Record<string, unknown> = {
           name: dataset.label,
           type: chartType === 'area' ? 'line' : chartType,
           data: dataset.data,

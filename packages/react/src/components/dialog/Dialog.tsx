@@ -56,11 +56,11 @@ export interface DialogContentProps extends React.ComponentPropsWithoutRef<typeo
   /**
    * Called when pointer interaction happens outside the dialog
    */
-  onPointerDownOutside?: (event: any) => void
+  onPointerDownOutside?: (event: CustomEvent<PointerEvent>) => void
   /**
    * Called when focus or pointer interaction happens outside the dialog
    */
-  onInteractOutside?: (event: any) => void
+  onInteractOutside?: (event: CustomEvent<PointerEvent | FocusEvent>) => void
   /**
    * CSS class names for the dialog content
    */

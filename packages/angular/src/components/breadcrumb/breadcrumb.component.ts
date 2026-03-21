@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';
 
 @Component({
-  selector: 'nav[ui-breadcrumb]',
+  selector: 'ui-breadcrumb',
   standalone: true,
   imports: [CommonModule],
   template: `<ng-content></ng-content>`,
@@ -20,7 +20,7 @@ export class BreadcrumbComponent {
 }
 
 @Component({
-  selector: 'ol[ui-breadcrumb-list]',
+  selector: 'ui-breadcrumb-list',
   standalone: true,
   imports: [CommonModule],
   template: `<ng-content></ng-content>`,
@@ -39,7 +39,7 @@ export class BreadcrumbListComponent {
 }
 
 @Component({
-  selector: 'li[ui-breadcrumb-item]',
+  selector: 'ui-breadcrumb-item',
   standalone: true,
   imports: [CommonModule],
   template: `<ng-content></ng-content>`,
@@ -55,7 +55,7 @@ export class BreadcrumbItemComponent {
 }
 
 @Component({
-  selector: 'a[ui-breadcrumb-link]',
+  selector: 'ui-breadcrumb-link',
   standalone: true,
   imports: [CommonModule],
   template: `<ng-content></ng-content>`,
@@ -71,7 +71,7 @@ export class BreadcrumbLinkComponent {
 }
 
 @Component({
-  selector: 'span[ui-breadcrumb-page]',
+  selector: 'ui-breadcrumb-page',
   standalone: true,
   imports: [CommonModule],
   template: `<ng-content></ng-content>`,
@@ -91,7 +91,7 @@ export class BreadcrumbPageComponent {
 }
 
 @Component({
-  selector: 'li[ui-breadcrumb-separator]',
+  selector: 'ui-breadcrumb-separator',
   standalone: true,
   imports: [CommonModule],
   template: `
@@ -127,7 +127,7 @@ export class BreadcrumbSeparatorComponent {
 }
 
 @Component({
-  selector: 'span[ui-breadcrumb-ellipsis]',
+  selector: 'ui-breadcrumb-ellipsis',
   standalone: true,
   imports: [CommonModule],
   template: `

@@ -89,7 +89,7 @@ export function getThemeColors(theme: 'light' | 'dark' = 'light') {
  */
 export function buildTooltipConfig(
   tooltip?: boolean | TooltipConfig
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (tooltip === false) {
     return undefined
   }
@@ -122,7 +122,7 @@ export function buildTooltipConfig(
 /**
  * Build ECharts grid configuration
  */
-export function buildGridConfig(grid?: boolean | GridConfig): Record<string, any> {
+export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unknown> {
   if (grid === false) {
     return {
       show: false,
@@ -156,7 +156,7 @@ export function buildLegendConfig(
   legend?: boolean,
   legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top',
   data?: string[]
-): Record<string, any> | undefined {
+): Record<string, unknown> | undefined {
   if (legend === false) {
     return undefined
   }
@@ -242,7 +242,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: 'line' |
     series: transformDataToSeries(data, chartType),
     animation: animation,
     animationDuration: animation ? 1000 : 0,
-    animationEasing: 'cubicOut' as any,
+    animationEasing: 'cubicOut',
   }
 
   // Add zoom/dataZoom if enabled

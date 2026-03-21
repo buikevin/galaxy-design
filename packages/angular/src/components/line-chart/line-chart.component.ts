@@ -78,8 +78,8 @@ export class LineChartComponent implements OnInit, OnChanges {
   @Input() theme: 'light' | 'dark' = 'light'
   @Input() legend: boolean = true
   @Input() legendPosition: 'top' | 'bottom' | 'left' | 'right' = 'top'
-  @Input() grid: boolean | any = true
-  @Input() tooltip: boolean | any = true
+  @Input() grid: boolean | GridConfig = true
+  @Input() tooltip: boolean | TooltipConfig = true
   @Input() animation: boolean = true
   @Input() smooth: boolean = true
   @Input() showPoints: boolean = true
@@ -91,7 +91,7 @@ export class LineChartComponent implements OnInit, OnChanges {
   @Input() loading: boolean = false
   @Input() emptyText: string = 'No data available'
   @Input() className?: string
-  @Input() options: Record<string, any> = {}
+  @Input() options: Record<string, unknown> = {}
 
   chartOption: EChartsOption | null = null
   dimensions: { width: string; height: string } = { width: '100%', height: '300px' }

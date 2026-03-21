@@ -7,8 +7,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  RdxContextMenuTriggerDirective,
-  RdxContextMenuContentDirective,
   RdxContextMenuItemDirective,
 } from '@radix-ng/primitives/context-menu';
 import { cn } from '@/lib/utils';

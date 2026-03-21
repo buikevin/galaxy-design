@@ -13,10 +13,10 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { NgxEchartsModule, NgxEchartsDirective } from 'ngx-echarts'
+import { NgxEchartsModule } from 'ngx-echarts'
 import type { EChartsOption } from 'echarts'
 import { cn } from '@/lib/utils'
-import type { LineChartProps, ChartData } from './types'
+import type { ChartData } from './types'
 import {
   buildEChartsOption,
   getResponsiveDimensions,

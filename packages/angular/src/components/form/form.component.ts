@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import { cn } from '@/lib/utils';
 
 @Directive({
-  selector: 'form[ui-form]',
+  selector: '[uiForm]',
   standalone: true,
 })
 export class FormDirective {
@@ -38,7 +38,7 @@ export class FormItemComponent {
 }
 
 @Component({
-  selector: 'label[ui-form-label]',
+  selector: 'ui-form-label',
   standalone: true,
   imports: [CommonModule],
   template: `<ng-content></ng-content>`,

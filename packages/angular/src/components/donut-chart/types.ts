@@ -69,7 +69,7 @@ export interface TooltipConfig {
   /** Trigger type */
   trigger?: 'axis' | 'item'
   /** Custom formatter function */
-  formatter?: string | ((params: any) => string)
+  formatter?: string | ((params: { name: string; value: number; seriesName?: string }) => string)
 }
 
 /**
@@ -162,7 +162,7 @@ export interface BaseChartProps {
   emptyText?: string
 
   /** Framework-specific advanced options */
-  options?: Record<string, any>
+  options?: Record<string, unknown>
 }
 
 /**
@@ -231,6 +231,7 @@ export interface PieChartProps extends BaseChartProps {
 export interface DonutChartProps extends PieChartProps {
   // Donut chart uses the same props as Pie chart
   // but with a default innerRadius of 50% instead of 0%
+  _?: never // Prevent empty interface warning
 }
 
 /**
@@ -288,6 +289,7 @@ export interface ScatterChartProps extends BaseChartProps {
 export interface MixedChartProps extends BaseChartProps {
   // Mixed chart uses base props
   // Each dataset can specify its own type via ChartDataset.type
+  _?: never // Prevent empty interface warning
 }
 
 /**

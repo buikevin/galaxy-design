@@ -27,5 +27,5 @@ import type { AuthFormData } from './auth-form.component'
   `]
 })
 export class LoginFormComponent {
-  @Output() submit = new EventEmitter<AuthFormData>()
+  @Output() submitForm = new EventEmitter<AuthFormData>()
 }

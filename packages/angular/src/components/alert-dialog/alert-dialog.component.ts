@@ -4,7 +4,7 @@
  * @desc Alert Dialog component - Modal dialog for alerts and confirmations
  */
 
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   RdxAlertDialogRootDirective,
@@ -30,7 +30,7 @@ import { cn } from '@/lib/utils';
 export class AlertDialogComponent {
   @Input() open = false;
   @Output() openChange = new EventEmitter<boolean>();
-  @ViewChild('dialogContent', { static: true }) dialogContent!: TemplateRef<any>;
+  @ViewChild('dialogContent', { static: true }) dialogContent!: TemplateRef<unknown>;
 }
 
 @Component({

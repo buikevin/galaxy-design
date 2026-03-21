@@ -4,16 +4,14 @@
  * @desc ContextMenu component - Right-click menu with accessible keyboard navigation
 -->
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
+import { computed } from 'vue'
 import { ContextMenuRoot, type ContextMenuRootProps } from 'radix-vue'
-import { cn } from '@/lib/utils'
 
 /**
  * ContextMenu Props
  * @prop open - Controlled open state
  * @prop defaultOpen - Default open state
  * @prop modal - Modal behavior
- * @prop class - CSS class names for the context menu
  */
 interface Props extends ContextMenuRootProps {
   /** Controlled open state. */
@@ -27,7 +25,7 @@ interface Props extends ContextMenuRootProps {
 const props = defineProps<Props>()
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
+  const { ...delegated } = props
   return delegated
 })
 </script>

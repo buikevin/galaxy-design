@@ -51,7 +51,7 @@ export const PieChart = React.forwardRef<ReactECharts, PieChartComponentProps>(
         color: colors,
         tooltip: {
           trigger: 'item',
-          formatter: (params: any) => {
+          formatter: (params: { name: string; value: number }) => {
             const percent = ((params.value / total) * 100).toFixed(1)
             return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
           },
@@ -94,7 +94,7 @@ export const PieChart = React.forwardRef<ReactECharts, PieChartComponentProps>(
               show: labelPosition !== 'center',
               position: labelPosition === 'inside' ? 'inside' : 'outside',
               formatter: showPercentage
-                ? (params: any) => {
+                ? (params: { name: string; value: number }) => {
                     const percent = ((params.value / total) * 100).toFixed(1)
                     return `${params.name}\n${percent}%`
                   }
@@ -119,6 +119,7 @@ export const PieChart = React.forwardRef<ReactECharts, PieChartComponentProps>(
       outerRadius,
       showPercentage,
       labelPosition,
+      animation,
       options,
     ])
 

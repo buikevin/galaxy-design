@@ -18,8 +18,7 @@ import { cn } from '@/lib/utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LabelComponent {
-  @Input() for?: string;
-  @Input('htmlFor') htmlFor?: string;
+  @Input() htmlFor?: string;
   @Input() class?: string;
 
   @HostBinding('class')

@@ -95,7 +95,7 @@ const BreadcrumbLink = React.forwardRef<
     asChild?: boolean;
   }
 >(({ asChild, className, ...props }, ref) => {
-  const Comp = 'a';
+  const Comp = asChild ? React.Fragment : 'a';
 
   return (
     <Comp

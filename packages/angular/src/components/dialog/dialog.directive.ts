@@ -4,7 +4,7 @@
  * @desc Dialog directive - Provides modal dialog functionality
  */
 
-import { Directive, Input, TemplateRef } from '@angular/core';
+import { Directive } from '@angular/core';
 import {
   RdxDialogTriggerDirective,
   RdxDialogContentDirective,

@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "cd packages/react && npm run lint 2>&1 || pnpm run lint 2>&1 || yarn lint 2>&1",
+      "npx nx run react:lint 2>&1",
+      "cd packages/react && bun run lint 2>&1",
+      "cd packages/vue && bun add -d eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-vue @vue/eslint-config-typescript eslint-config-prettier",
+      "cd /Users/buitronghieu/Desktop/Project/galaxy/galaxy-design/packages/vue && bun add -d eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-plugin-vue @vue/eslint-config-typescript eslint-config-prettier",
+      "cd /Users/buitronghieu/Desktop/Project/galaxy/galaxy-design/packages/vue && bun run lint",
+      "cd packages/vue && bun run lint",
+      "cd packages/vue && bun run lint 2>&1 | head -100",
+      "cd packages/vue && bun run lint 2>&1 || npm run lint 2>&1 || pnpm run lint 2>&1 || yarn lint 2>&1",
+      "cd packages/angular && bun run lint 2>&1",
+      "bun run lint 2>&1",
+      "cd packages/angular && bun add -D @angular-eslint/builder @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint 2>&1",
+      "cd packages/angular && bun list --depth=0 2>&1 | grep angular-eslint",
+      "cd packages/angular && bun run lint 2>&1 | head -200",
+      "cd packages/angular && bun run lint 2>&1 | grep -E \"error|warning\" | wc -l",
+      "cd packages/angular && bun run lint 2>&1 > /tmp/angular-lint-output.txt && cat /tmp/angular-lint-output.txt | grep -E \"^\\s+\\d+:\\d+\" | sort | uniq -c | sort -rn | head -30",
+      "cd packages/angular && bun run lint 2>&1 | head -300",
+      "cd packages/angular && bun run lint 2>&1 | grep \"error\" | head -50",
+      "cd packages/angular && bun run lint 2>&1 | grep \"error\" | head -30",
+      "cd packages/angular && bun run lint 2>&1 | grep \"no-input-rename\" -B 3",
+      "cd packages/angular && bun run lint 2>&1 | grep \"no-empty-object-type\" -B 3",
+      "cd packages/angular && bun run lint 2>&1 | grep \"prefer-inject\" -B 3",
+      "cd packages/angular && bun run lint 2>&1 | grep \"no-output-on-prefix\" -B 3",
+      "cd packages/angular && bun run lint 2>&1 | grep \"error\" | head -20",
+      "cd packages/angular && bun run lint 2>&1 | tail -50",
+      "cd packages/angular && bun run lint 2>&1 | grep -E \"(no-explicit-any|warning)\" | head -100",
+      "cd packages/angular && bun run lint 2>&1 > /tmp/angular-lint-output.txt && cat /tmp/angular-lint-output.txt | grep \"no-explicit-any\" | head -80",
+      "cd packages/angular && bun run lint 2>&1 | grep -B1 \"no-explicit-any\" | head -100",
+      "cd packages/angular && bun run lint 2>&1 | grep -E \"no-explicit-any\" | head -50",
+      "cd packages/angular && bun run lint 2>&1 | grep -B1 \"no-explicit-any\" | head -60",
+      "cd packages/angular && bun run lint 2>&1 | grep -B1 \"no-explicit-any\" | head -40",
+      "cd packages/angular && cat -n src/components/hover-card/hover-card.component.ts | sed -n '60,90p'",
+      "cd packages/angular && bun run lint 2>&1 | grep -A2 \"hover-card.component.ts\"",
+      "cd packages/angular && bun run lint 2>&1 | grep -E \"warning.*no-explicit-any\" | wc -l",
+      "bun run lint"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

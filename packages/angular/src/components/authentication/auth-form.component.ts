@@ -32,5 +32,5 @@ export interface AuthFormData {
 })
 export class AuthFormComponent {
   @Input() mode: 'login' | 'register' = 'login'
-  @Output() submit = new EventEmitter<AuthFormData>()
+  @Output() submitForm = new EventEmitter<AuthFormData>()
 }

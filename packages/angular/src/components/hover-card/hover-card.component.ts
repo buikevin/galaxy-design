@@ -34,7 +34,7 @@ export class HoverCardComponent {
   @Input() closeDelay = 300;
   @Output() openChange = new EventEmitter<boolean>();
 
-  onOpenChange(open: any): void {
+  onOpenChange(open: unknown): void {
     const isOpen = typeof open === 'boolean' ? open : false;
     this.open = isOpen;
     this.openChange.emit(isOpen);

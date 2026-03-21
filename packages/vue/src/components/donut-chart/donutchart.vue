@@ -65,9 +65,9 @@ const chartOption = computed(() => {
     color: colors,
     tooltip: {
       trigger: 'item',
-      formatter: (params: any) => {
-        const percent = ((params.value / total) * 100).toFixed(1)
-        return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
+      formatter: (params: Record<string, unknown>) => {
+        const percent = (((params.value as number) / total) * 100).toFixed(1)
+        return `${params.name}: ${formatNumber(params.value as number)} (${percent}%)`
       },
       backgroundColor: props.theme === 'dark' ? '#18181b' : '#ffffff',
       borderColor: props.theme === 'dark' ? '#27272a' : '#e4e4e7',
@@ -108,8 +108,8 @@ const chartOption = computed(() => {
           show: props.labelPosition !== 'center',
           position: props.labelPosition === 'inside' ? 'inside' : 'outside',
           formatter: props.showPercentage
-            ? (params: any) => {
-                const percent = ((params.value / total) * 100).toFixed(1)
+            ? (params: Record<string, unknown>) => {
+                const percent = (((params.value as number) / total) * 100).toFixed(1)
                 return `${params.name}\n${percent}%`
               }
             : '{b}',
