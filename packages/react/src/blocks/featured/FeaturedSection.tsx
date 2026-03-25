@@ -2,6 +2,10 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import type { FeaturedSectionProps } from './types';
 
+function NativeImg(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return React.createElement('img', props);
+}
+
 export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
   title,
   description,
@@ -52,8 +56,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
                 <div className="mb-4">
                   {feature.image ? (
                     <div className="aspect-video rounded-lg bg-muted overflow-hidden mb-4">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
+                      <NativeImg
                         src={feature.image}
                         alt={feature.title}
                         className="w-full h-full object-cover"

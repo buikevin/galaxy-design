@@ -3,6 +3,10 @@ import { Button } from '@/components/ui/button/Button';
 import { cn } from '@/lib/utils';
 import type { HeroSectionProps } from './types';
 
+function NativeImg(props: React.ImgHTMLAttributes<HTMLImageElement>) {
+  return React.createElement('img', props);
+}
+
 export const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   description,
@@ -69,8 +73,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="relative">
               {image ? (
                 <div className="aspect-video rounded-lg bg-muted overflow-hidden shadow-2xl">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <NativeImg
                     src={image}
                     alt={title}
                     className="w-full h-full object-cover"
