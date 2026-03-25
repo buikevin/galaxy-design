@@ -50,6 +50,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
                 <div className="mb-4">
                   {feature.image ? (
                     <div className="aspect-video rounded-lg bg-muted overflow-hidden mb-4">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={feature.image}
                         alt={feature.title}

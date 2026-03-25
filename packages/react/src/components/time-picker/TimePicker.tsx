@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
@@ -24,33 +23,10 @@ function TimePicker({
   className,
   disabled = false,
 }: TimePickerProps) {
-  const [hour, setHour] = useState<string>('');
-  const [minute, setMinute] = useState<string>('');
-  const [period, setPeriod] = useState<'AM' | 'PM'>('AM');
-
-  // Parse time prop into hour, minute, period
-  useEffect(() => {
-    if (!time) {
-      setHour('');
-      setMinute('');
-      setPeriod('AM');
-      return;
-    }
-
-    if (format === '24h') {
-      const [h, m] = time.split(':');
-      setHour(h || '');
-      setMinute(m || '');
-    } else {
-      // Parse 12h format: "hh:mm AM/PM"
-      const match = time.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
-      if (match) {
-        setHour(match[1]);
-        setMinute(match[2]);
-        setPeriod(match[3].toUpperCase() as 'AM' | 'PM');
-      }
-    }
-  }, [time, format]);
+  const parsedTime = parseTimeValue(time, format);
+  const hour = parsedTime.hour;
+  const minute = parsedTime.minute;
+  const period = parsedTime.period;
 
   // Generate hour options based on format
   const hourOptions = format === '24h'
@@ -102,9 +78,8 @@ function TimePicker({
         <div className="flex items-center gap-2">
           <div className="flex-1">
             <Select
-              value={hour}
+              value={hour || undefined}
               onValueChange={(value: string) => {
-                setHour(value);
                 handleTimeChange(value, minute, period);
               }}
             >
@@ -125,9 +100,8 @@ function TimePicker({
 
           <div className="flex-1">
             <Select
-              value={minute}
+              value={minute || undefined}
               onValueChange={(value: string) => {
-                setMinute(value);
                 handleTimeChange(hour, value, period);
               }}
             >
@@ -151,7 +125,6 @@ function TimePicker({
                 <Select
                   value={period}
                   onValueChange={(value: 'AM' | 'PM') => {
-                    setPeriod(value);
                     handleTimeChange(hour, minute, value);
                   }}
                 >
@@ -170,6 +143,31 @@ function TimePicker({
       </PopoverContent>
     </Popover>
   );
+}
+
+function parseTimeValue(
+  value: string | undefined,
+  format: '12h' | '24h'
+): { hour: string; minute: string; period: 'AM' | 'PM' } {
+  if (!value) {
+    return { hour: '', minute: '', period: 'AM' };
+  }
+
+  if (format === '24h') {
+    const [hour = '', minute = ''] = value.split(':');
+    return { hour, minute, period: 'AM' };
+  }
+
+  const match = value.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!match) {
+    return { hour: '', minute: '', period: 'AM' };
+  }
+
+  return {
+    hour: match[1],
+    minute: match[2],
+    period: match[3].toUpperCase() as 'AM' | 'PM',
+  };
 }
 
 TimePicker.displayName = 'TimePicker';

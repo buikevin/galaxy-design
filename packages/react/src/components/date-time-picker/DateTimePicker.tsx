@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { format, isValid } from 'date-fns';
 import { DatePicker } from '@/components/ui/date-picker';
 import { TimePicker } from '@/components/ui/time-picker';
@@ -25,33 +25,27 @@ function DateTimePicker({
   className,
   disabled = false,
 }: DateTimePickerProps) {
-  const [date, setDate] = useState<Date | undefined>(dateTime);
-  const [time, setTime] = useState<string | undefined>();
+  const [internalDate, setInternalDate] = useState<Date | undefined>(dateTime);
+  const [internalTime, setInternalTime] = useState<string | undefined>(
+    formatTimeFromDate(dateTime, timeFormat)
+  );
 
-  // Initialize date and time from dateTime prop
-  useEffect(() => {
-    if (dateTime && isValid(dateTime)) {
-      setDate(dateTime);
-
-      if (timeFormat === '24h') {
-        setTime(format(dateTime, 'HH:mm'));
-      } else {
-        setTime(format(dateTime, 'hh:mm a'));
-      }
-    } else {
-      setDate(undefined);
-      setTime(undefined);
-    }
-  }, [dateTime, timeFormat]);
+  const isControlled = typeof dateTime !== 'undefined';
+  const date = isControlled ? dateTime : internalDate;
+  const time = isControlled ? formatTimeFromDate(dateTime, timeFormat) : internalTime;
 
   // Combine date and time into a single Date object
   const handleDateChange = (newDate: Date | undefined) => {
-    setDate(newDate);
+    if (!isControlled) {
+      setInternalDate(newDate);
+    }
     combineDateAndTime(newDate, time);
   };
 
   const handleTimeChange = (newTime: string | undefined) => {
-    setTime(newTime);
+    if (!isControlled) {
+      setInternalTime(newTime);
+    }
     combineDateAndTime(date, newTime);
   };
 
@@ -126,6 +120,14 @@ function DateTimePicker({
       </div>
     </div>
   );
+}
+
+function formatTimeFromDate(value: Date | undefined, timeFormat: '12h' | '24h') {
+  if (!value || !isValid(value)) {
+    return undefined;
+  }
+
+  return timeFormat === '24h' ? format(value, 'HH:mm') : format(value, 'hh:mm a');
 }
 
 DateTimePicker.displayName = 'DateTimePicker';
