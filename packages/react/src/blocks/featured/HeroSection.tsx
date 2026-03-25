@@ -1,7 +1,7 @@
-import React from 'react'
-import { Button } from '@/components/ui/button/Button'
-import { cn } from '@/lib/utils'
-import type { HeroSectionProps } from './types'
+import React from 'react';
+import { Button } from '@/components/ui/button/Button';
+import { cn } from '@/lib/utils';
+import type { HeroSectionProps } from './types';
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   title,
@@ -52,7 +52,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   </Button>
                 )}
                 {secondaryCta && (
-                  <Button variant="outline" size="lg" onClick={secondaryCta.onClick}>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    onClick={secondaryCta.onClick}
+                  >
                     {secondaryCta.label}
                   </Button>
                 )}
@@ -66,7 +70,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {image ? (
                 <div className="aspect-video rounded-lg bg-muted overflow-hidden shadow-2xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={image} alt={title} className="w-full h-full object-cover" />
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               ) : (
                 <div className="aspect-video rounded-lg bg-gradient-to-br from-primary/20 to-primary/5" />
@@ -83,5 +91,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};

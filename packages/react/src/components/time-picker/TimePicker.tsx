@@ -1,7 +1,17 @@
 import { Clock } from 'lucide-react';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { cn } from '@/lib/utils';
 
 export interface TimePickerProps {
@@ -29,14 +39,23 @@ function TimePicker({
   const period = parsedTime.period;
 
   // Generate hour options based on format
-  const hourOptions = format === '24h'
-    ? Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0'))
-    : Array.from({ length: 12 }, (_, i) => (i + 1).toString().padStart(2, '0'));
+  const hourOptions =
+    format === '24h'
+      ? Array.from({ length: 24 }, (_, i) => i.toString().padStart(2, '0'))
+      : Array.from({ length: 12 }, (_, i) =>
+          (i + 1).toString().padStart(2, '0')
+        );
 
   // Generate minute options (00-59)
-  const minuteOptions = Array.from({ length: 60 }, (_, i) => i.toString().padStart(2, '0'));
+  const minuteOptions = Array.from({ length: 60 }, (_, i) =>
+    i.toString().padStart(2, '0')
+  );
 
-  const handleTimeChange = (newHour: string, newMinute: string, newPeriod: 'AM' | 'PM') => {
+  const handleTimeChange = (
+    newHour: string,
+    newMinute: string,
+    newPeriod: 'AM' | 'PM'
+  ) => {
     if (!newHour || !newMinute) {
       onTimeChange?.(undefined);
       return;

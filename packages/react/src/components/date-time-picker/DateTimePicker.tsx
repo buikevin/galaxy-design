@@ -32,7 +32,9 @@ function DateTimePicker({
 
   const isControlled = typeof dateTime !== 'undefined';
   const date = isControlled ? dateTime : internalDate;
-  const time = isControlled ? formatTimeFromDate(dateTime, timeFormat) : internalTime;
+  const time = isControlled
+    ? formatTimeFromDate(dateTime, timeFormat)
+    : internalTime;
 
   // Combine date and time into a single Date object
   const handleDateChange = (newDate: Date | undefined) => {
@@ -49,7 +51,10 @@ function DateTimePicker({
     combineDateAndTime(date, newTime);
   };
 
-  const combineDateAndTime = (selectedDate: Date | undefined, selectedTime: string | undefined) => {
+  const combineDateAndTime = (
+    selectedDate: Date | undefined,
+    selectedTime: string | undefined
+  ) => {
     if (!selectedDate) {
       onDateTimeChange?.(undefined);
       return;
@@ -122,12 +127,17 @@ function DateTimePicker({
   );
 }
 
-function formatTimeFromDate(value: Date | undefined, timeFormat: '12h' | '24h') {
+function formatTimeFromDate(
+  value: Date | undefined,
+  timeFormat: '12h' | '24h'
+) {
   if (!value || !isValid(value)) {
     return undefined;
   }
 
-  return timeFormat === '24h' ? format(value, 'HH:mm') : format(value, 'hh:mm a');
+  return timeFormat === '24h'
+    ? format(value, 'HH:mm')
+    : format(value, 'hh:mm a');
 }
 
 DateTimePicker.displayName = 'DateTimePicker';

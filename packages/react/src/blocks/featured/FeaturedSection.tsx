@@ -1,6 +1,6 @@
-import React from 'react'
-import { cn } from '@/lib/utils'
-import type { FeaturedSectionProps } from './types'
+import React from 'react';
+import { cn } from '@/lib/utils';
+import type { FeaturedSectionProps } from './types';
 
 export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
   title,
@@ -14,7 +14,7 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
     2: 'md:grid-cols-2',
     3: 'md:grid-cols-2 lg:grid-cols-3',
     4: 'md:grid-cols-2 lg:grid-cols-4',
-  }[columns]
+  }[columns];
 
   return (
     <section className={cn('py-20 px-4 sm:px-6 lg:px-8', className)}>
@@ -27,7 +27,9 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
           )}
         >
           {title && (
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              {title}
+            </h2>
           )}
           {description && (
             <p className="mt-4 text-lg text-muted-foreground">{description}</p>
@@ -78,5 +80,5 @@ export const FeaturedSection: React.FC<FeaturedSectionProps> = ({
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
