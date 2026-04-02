@@ -4,9 +4,9 @@
  * @desc Switch component - A control that allows the user to toggle between checked and not checked
  */
 
-import * as React from 'react'
-import * as SwitchPrimitives from '@radix-ui/react-switch'
-import { cn } from '@/lib/utils'
+import * as React from 'react';
+import * as SwitchPrimitives from '@radix-ui/react-switch';
+import { cn } from '@/lib/utils';
 
 /**
  * Switch Props interface
@@ -18,44 +18,44 @@ export type SwitchProps = React.ComponentPropsWithoutRef<
   /**
    * Checked state (controlled)
    */
-  checked?: boolean
+  checked?: boolean;
   /**
    * Default checked state (uncontrolled)
    */
-  defaultChecked?: boolean
+  defaultChecked?: boolean;
   /**
    * Called when the checked state changes
    */
-  onCheckedChange?: (checked: boolean) => void
+  onCheckedChange?: (checked: boolean) => void;
   /**
    * Disables the switch
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Name for form submission
    */
-  name?: string
+  name?: string;
   /**
    * Value for form submission
    */
-  value?: string
+  value?: string;
   /**
    * Required attribute for form validation
    */
-  required?: boolean
+  required?: boolean;
   /**
    * CSS class names for the switch
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * Switch Component
- * 
+ *
  * A control that allows the user to toggle between checked and not checked state.
  * Built on top of Radix UI Switch primitive.
- * 
+ *
  * @param {SwitchProps} props - Switch component props
  * @param {string} [props.className] - CSS class names for the switch
  * @param {boolean} [props.checked] - Checked state (controlled)
@@ -86,7 +86,7 @@ const Switch = React.forwardRef<
       )}
     />
   </SwitchPrimitives.Root>
-))
-Switch.displayName = SwitchPrimitives.Root.displayName
+));
+Switch.displayName = SwitchPrimitives.Root.displayName;
 
-export { Switch }
+export { Switch };

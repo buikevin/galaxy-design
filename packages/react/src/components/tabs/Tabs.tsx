@@ -4,9 +4,9 @@
  * @desc Tabs components - A set of layered sections of content—known as tab panels—that are displayed one at a time
  */
 
-import * as React from 'react'
-import * as TabsPrimitive from '@radix-ui/react-tabs'
-import { cn } from '@/lib/utils'
+import * as React from 'react';
+import * as TabsPrimitive from '@radix-ui/react-tabs';
+import { cn } from '@/lib/utils';
 
 /**
  * Tabs Props interface
@@ -18,40 +18,40 @@ export type TabsProps = React.ComponentPropsWithoutRef<
   /**
    * Controlled active tab value
    */
-  value?: string
+  value?: string;
   /**
    * Uncontrolled initial active tab value
    */
-  defaultValue?: string
+  defaultValue?: string;
   /**
    * Called when the active tab changes
    */
-  onValueChange?: (value: string) => void
+  onValueChange?: (value: string) => void;
   /**
    * Disables the tabs
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Tabs orientation
    * @default 'horizontal'
    */
-  orientation?: 'horizontal' | 'vertical'
+  orientation?: 'horizontal' | 'vertical';
   /**
    * Reading direction
    * @default 'ltr'
    */
-  dir?: 'ltr' | 'rtl'
+  dir?: 'ltr' | 'rtl';
   /**
    * Whether to activate tab on focus
    * @default false
    */
-  activateOnFocus?: boolean
+  activateOnFocus?: boolean;
   /**
    * CSS class names for the tabs container
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * TabsList Props interface
@@ -63,8 +63,8 @@ export type TabsListProps = React.ComponentPropsWithoutRef<
   /**
    * CSS class names for the list container
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * TabsTrigger Props interface
@@ -76,17 +76,17 @@ export type TabsTriggerProps = React.ComponentPropsWithoutRef<
   /**
    * The value associated with the tab
    */
-  value?: string
+  value?: string;
   /**
    * Disables the trigger
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * CSS class names for the trigger button
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * TabsContent Props interface
@@ -98,23 +98,23 @@ export type TabsContentProps = React.ComponentPropsWithoutRef<
   /**
    * The value matching the trigger to associate this content with
    */
-  value?: string
+  value?: string;
   /**
    * Force mount the content
    */
-  forceMount?: boolean
+  forceMount?: boolean;
   /**
    * CSS class names for the content panel
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * Tabs Component
- * 
+ *
  * Root component for the tabs. Manages the state of the tabs (active tab).
  * Built on top of Radix UI Tabs primitive.
- * 
+ *
  * @param {TabsProps} props - Tabs component props
  * @param {string} [props.value] - Current active tab value (controlled)
  * @param {string} [props.defaultValue] - Default active tab value (uncontrolled)
@@ -126,13 +126,13 @@ export type TabsContentProps = React.ComponentPropsWithoutRef<
  * @param {React.RefObject<React.ElementRef<typeof TabsPrimitive.Root>>} ref - Reference to the tabs element
  * @returns {JSX.Element} Tabs container element
  */
-const Tabs = TabsPrimitive.Root
+const Tabs = TabsPrimitive.Root;
 
 /**
  * TabsList Component
- * 
+ *
  * A container for the tab triggers. Renders as a horizontal or vertical list.
- * 
+ *
  * @param {TabsListProps} props - TabsList component props
  * @param {string} [props.className] - CSS class names for the list container
  * @param {React.ReactNode} [props.children] - Tab trigger components
@@ -151,14 +151,14 @@ const TabsList = React.forwardRef<
     )}
     {...props}
   />
-))
-TabsList.displayName = TabsPrimitive.List.displayName
+));
+TabsList.displayName = TabsPrimitive.List.displayName;
 
 /**
  * TabsTrigger Component
- * 
+ *
  * A button that activates a tab. When clicked, displays the associated tab panel.
- * 
+ *
  * @param {TabsTriggerProps} props - TabsTrigger component props
  * @param {string} [props.className] - CSS class names for the trigger button
  * @param {string} [props.value] - The value associated with the tab
@@ -179,14 +179,14 @@ const TabsTrigger = React.forwardRef<
     )}
     {...props}
   />
-))
-TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+));
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName;
 
 /**
  * TabsContent Component
- * 
+ *
  * The content panel for a tab. Displays when the associated trigger is activated.
- * 
+ *
  * @param {TabsContentProps} props - TabsContent component props
  * @param {string} [props.className] - CSS class names for the content panel
  * @param {string} [props.value] - The value matching the trigger to associate this content with
@@ -207,7 +207,7 @@ const TabsContent = React.forwardRef<
     )}
     {...props}
   />
-))
-TabsContent.displayName = TabsPrimitive.Content.displayName
+));
+TabsContent.displayName = TabsPrimitive.Content.displayName;
 
-export { Tabs, TabsList, TabsTrigger, TabsContent }
+export { Tabs, TabsList, TabsTrigger, TabsContent };

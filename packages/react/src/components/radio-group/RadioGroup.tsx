@@ -4,10 +4,10 @@
  * @desc RadioGroup components - A set of checkable buttons, known as radio buttons, where no more than one of the buttons at a time can be checked
  */
 
-import * as React from 'react'
-import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
-import { Circle } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import * as React from 'react';
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
+import { Circle } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 /**
  * RadioGroup Props interface
@@ -19,33 +19,33 @@ export type RadioGroupProps = React.ComponentPropsWithoutRef<
   /**
    * Current selected value (controlled)
    */
-  value?: string
+  value?: string;
   /**
    * Uncontrolled initial value
    */
-  defaultValue?: string
+  defaultValue?: string;
   /**
    * Called when the value changes
    */
-  onValueChange?: (value: string) => void
+  onValueChange?: (value: string) => void;
   /**
    * Disables the entire group
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Name for form submission
    */
-  name?: string
+  name?: string;
   /**
    * Requires a value before form submission
    */
-  required?: boolean
+  required?: boolean;
   /**
    * CSS class names for the radio group
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * RadioGroupItem Props interface
@@ -57,28 +57,28 @@ export type RadioGroupItemProps = React.ComponentPropsWithoutRef<
   /**
    * Value of this radio item
    */
-  value?: string
+  value?: string;
   /**
    * Disables the radio item
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Name for form submission
    */
-  name?: string
+  name?: string;
   /**
    * CSS class names for the radio item
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * RadioGroup Component
- * 
+ *
  * A set of checkable buttons (radio buttons) where only one can be checked at a time.
  * Built on top of Radix UI RadioGroup primitive.
- * 
+ *
  * @param {RadioGroupProps} props - RadioGroup component props
  * @param {string} [props.className] - CSS class names for the radio group container
  * @param {string} [props.value] - Current selected value (controlled)
@@ -100,15 +100,15 @@ const RadioGroup = React.forwardRef<
       {...props}
       ref={ref}
     />
-  )
-})
-RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
+  );
+});
+RadioGroup.displayName = RadioGroupPrimitive.Root.displayName;
 
 /**
  * RadioGroupItem Component
- * 
+ *
  * An individual radio button item within the radio group.
- * 
+ *
  * @param {RadioGroupItemProps} props - RadioGroupItem component props
  * @param {string} [props.className] - CSS class names for the radio button
  * @param {string} [props.value] - Value of this radio item
@@ -134,8 +134,8 @@ const RadioGroupItem = React.forwardRef<
         <Circle className="h-2.5 w-2.5 fill-current text-current" />
       </RadioGroupPrimitive.Indicator>
     </RadioGroupPrimitive.Item>
-  )
-})
-RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
+  );
+});
+RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName;
 
-export { RadioGroup, RadioGroupItem }
+export { RadioGroup, RadioGroupItem };

@@ -4,10 +4,10 @@
  * @desc Accordion components - A vertically stacked set of interactive headings that each reveal an associated section of content
  */
 
-import * as React from 'react'
-import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ChevronDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import * as React from 'react';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 /**
  * Accordion Props interface
@@ -20,49 +20,49 @@ export type AccordionProps = React.ComponentPropsWithoutRef<
    * Accordion selection behavior
    * @default 'single'
    */
-  type?: 'single' | 'multiple'
+  type?: 'single' | 'multiple';
   /**
    * Controlled value for the open item or items
    */
-  value?: string | string[]
+  value?: string | string[];
   /**
    * Uncontrolled initial value for the open item or items
    */
-  defaultValue?: string | string[]
+  defaultValue?: string | string[];
   /**
    * Called when the open item or items change
    */
-  onValueChange?: (value: string | string[]) => void
+  onValueChange?: (value: string | string[]) => void;
   /**
    * When type is single, allows closing the open item
    * @default false
    */
-  collapsible?: boolean
+  collapsible?: boolean;
   /**
    * Disables the accordion and all items
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Reading direction for RTL or LTR layouts
    * @default 'ltr'
    */
-  dir?: 'ltr' | 'rtl'
+  dir?: 'ltr' | 'rtl';
   /**
    * Accordion orientation
    * @default 'vertical'
    */
-  orientation?: 'vertical' | 'horizontal'
+  orientation?: 'vertical' | 'horizontal';
   /**
    * Render the root as a child element
    * @default false
    */
-  asChild?: boolean
+  asChild?: boolean;
   /**
    * CSS class names for the root element
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * AccordionItem Props interface
@@ -74,22 +74,22 @@ export type AccordionItemProps = React.ComponentPropsWithoutRef<
   /**
    * Unique value for the item
    */
-  value?: string
+  value?: string;
   /**
    * Disables the item
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Render the item as a child element
    * @default false
    */
-  asChild?: boolean
+  asChild?: boolean;
   /**
    * CSS class names for the item
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * AccordionTrigger Props interface
@@ -102,12 +102,12 @@ export type AccordionTriggerProps = React.ComponentPropsWithoutRef<
    * Render the trigger as a child element
    * @default false
    */
-  asChild?: boolean
+  asChild?: boolean;
   /**
    * CSS class names for the trigger
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * AccordionContent Props interface
@@ -120,23 +120,23 @@ export type AccordionContentProps = React.ComponentPropsWithoutRef<
    * Render the content as a child element
    * @default false
    */
-  asChild?: boolean
+  asChild?: boolean;
   /**
    * Force mount content even when closed
    */
-  forceMount?: boolean
+  forceMount?: boolean;
   /**
    * CSS class names for the content container
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * Accordion Component
- * 
+ *
  * Root component for the accordion. Manages the state of all accordion items.
  * Built on top of Radix UI Accordion primitive.
- * 
+ *
  * @param {AccordionProps} props - Accordion component props
  * @param {string} [props.className] - CSS class names for the accordion
  * @param {'single' | 'multiple'} [props.type='single'] - Accordion selection behavior
@@ -151,14 +151,14 @@ export type AccordionContentProps = React.ComponentPropsWithoutRef<
  * @param {React.RefObject<React.ElementRef<typeof AccordionPrimitive.Root>>} ref - Reference to the accordion element
  * @returns {JSX.Element} Accordion root element
  */
-const Accordion = AccordionPrimitive.Root
+const Accordion = AccordionPrimitive.Root;
 
 /**
  * AccordionItem Component
- * 
+ *
  * An individual item within the accordion.
  * Each item contains a trigger and content.
- * 
+ *
  * @param {AccordionItemProps} props - AccordionItem component props
  * @param {string} [props.className] - CSS class names for the item
  * @param {string} [props.value] - Unique value for the item
@@ -176,15 +176,15 @@ const AccordionItem = React.forwardRef<
     className={cn('border-b', className)}
     {...props}
   />
-))
-AccordionItem.displayName = 'AccordionItem'
+));
+AccordionItem.displayName = 'AccordionItem';
 
 /**
  * AccordionTrigger Component
- * 
+ *
  * The interactive header that toggles the visibility of the content.
  * Displays a chevron icon that rotates when expanded.
- * 
+ *
  * @param {AccordionTriggerProps} props - AccordionTrigger component props
  * @param {string} [props.className] - CSS class names for the trigger
  * @param {boolean} [props.asChild=false] - Render the trigger as a child element
@@ -209,15 +209,15 @@ const AccordionTrigger = React.forwardRef<
       <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
-))
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+));
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 /**
  * AccordionContent Component
- * 
+ *
  * The collapsible content panel that is shown when the trigger is activated.
  * Animates open and closed with smooth transitions.
- * 
+ *
  * @param {AccordionContentProps} props - AccordionContent component props
  * @param {string} [props.className] - CSS class names for the content
  * @param {boolean} [props.asChild=false] - Render the content as a child element
@@ -240,7 +240,7 @@ const AccordionContent = React.forwardRef<
   >
     <div className="pb-4 pt-0">{children}</div>
   </AccordionPrimitive.Content>
-))
-AccordionContent.displayName = AccordionPrimitive.Content.displayName
+));
+AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

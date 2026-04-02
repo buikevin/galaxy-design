@@ -4,10 +4,10 @@
  * @desc Checkbox component - A control that allows the user to toggle between checked and not checked
  */
 
-import * as React from 'react'
-import * as CheckboxPrimitive from '@radix-ui/react-checkbox'
-import { Check } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import * as React from 'react';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import { Check } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 /**
  * Checkbox Props interface
@@ -19,45 +19,45 @@ export type CheckboxProps = React.ComponentPropsWithoutRef<
   /**
    * Checked state (controlled)
    */
-  checked?: boolean | 'indeterminate'
+  checked?: boolean | 'indeterminate';
   /**
    * Uncontrolled initial checked state
    */
-  defaultChecked?: boolean | 'indeterminate'
+  defaultChecked?: boolean | 'indeterminate';
   /**
    * Called when the checked state changes
    */
-  onCheckedChange?: (checked: boolean | 'indeterminate') => void
+  onCheckedChange?: (checked: boolean | 'indeterminate') => void;
   /**
    * Disables the checkbox
    * @default false
    */
-  disabled?: boolean
+  disabled?: boolean;
   /**
    * Requires a value before form submission
    */
-  required?: boolean
+  required?: boolean;
   /**
    * Name for form submission
    */
-  name?: string
+  name?: string;
   /**
    * Value for form submission
    * @default 'on'
    */
-  value?: string
+  value?: string;
   /**
    * CSS class names for the checkbox
    */
-  className?: string
-}
+  className?: string;
+};
 
 /**
  * Checkbox Component
- * 
+ *
  * A control that allows the user to toggle between checked and not checked state.
  * Built on top of Radix UI Checkbox primitive.
- * 
+ *
  * @param {CheckboxProps} props - Checkbox component props
  * @param {string} [props.className] - CSS class names for the checkbox
  * @param {boolean|'indeterminate'} [props.checked] - Checked state (controlled)
@@ -88,7 +88,7 @@ const Checkbox = React.forwardRef<
       <Check className="h-4 w-4" />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
-))
-Checkbox.displayName = CheckboxPrimitive.Root.displayName
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
 
-export { Checkbox }
+export { Checkbox };
