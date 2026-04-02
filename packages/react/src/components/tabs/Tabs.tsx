@@ -12,7 +12,9 @@ import { cn } from '@/lib/utils'
  * Tabs Props interface
  * @extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> - All standard tabs root attributes
  */
-export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> {
+export type TabsProps = React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Root
+> & {
   /**
    * Controlled active tab value
    */
@@ -55,7 +57,9 @@ export interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPri
  * TabsList Props interface
  * @extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> - All standard tabs list attributes
  */
-export interface TabsListProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> {
+export type TabsListProps = React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.List
+> & {
   /**
    * CSS class names for the list container
    */
@@ -66,7 +70,9 @@ export interface TabsListProps extends React.ComponentPropsWithoutRef<typeof Tab
  * TabsTrigger Props interface
  * @extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> - All standard tabs trigger attributes
  */
-export interface TabsTriggerProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {
+export type TabsTriggerProps = React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Trigger
+> & {
   /**
    * The value associated with the tab
    */
@@ -86,7 +92,9 @@ export interface TabsTriggerProps extends React.ComponentPropsWithoutRef<typeof 
  * TabsContent Props interface
  * @extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content> - All standard tabs content attributes
  */
-export interface TabsContentProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content> {
+export type TabsContentProps = React.ComponentPropsWithoutRef<
+  typeof TabsPrimitive.Content
+> & {
   /**
    * The value matching the trigger to associate this content with
    */

@@ -12,7 +12,9 @@ import { cn } from '@/lib/utils'
  * Slider Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> - All standard slider root attributes
  */
-export interface SliderProps extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root> {
+export type SliderProps = React.ComponentPropsWithoutRef<
+  typeof SliderPrimitive.Root
+> & {
   /**
    * Controlled slider values
    */

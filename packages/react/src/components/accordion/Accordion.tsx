@@ -13,7 +13,9 @@ import { cn } from '@/lib/utils'
  * Accordion Props interface
  * @extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> - All standard accordion root attributes
  */
-export interface AccordionProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root> {
+export type AccordionProps = React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Root
+> & {
   /**
    * Accordion selection behavior
    * @default 'single'
@@ -66,7 +68,9 @@ export interface AccordionProps extends React.ComponentPropsWithoutRef<typeof Ac
  * AccordionItem Props interface
  * @extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> - All standard accordion item attributes
  */
-export interface AccordionItemProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {
+export type AccordionItemProps = React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Item
+> & {
   /**
    * Unique value for the item
    */
@@ -91,7 +95,9 @@ export interface AccordionItemProps extends React.ComponentPropsWithoutRef<typeo
  * AccordionTrigger Props interface
  * @extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> - All standard accordion trigger attributes
  */
-export interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
+export type AccordionTriggerProps = React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Trigger
+> & {
   /**
    * Render the trigger as a child element
    * @default false
@@ -107,7 +113,9 @@ export interface AccordionTriggerProps extends React.ComponentPropsWithoutRef<ty
  * AccordionContent Props interface
  * @extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> - All standard accordion content attributes
  */
-export interface AccordionContentProps extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content> {
+export type AccordionContentProps = React.ComponentPropsWithoutRef<
+  typeof AccordionPrimitive.Content
+> & {
   /**
    * Render the content as a child element
    * @default false

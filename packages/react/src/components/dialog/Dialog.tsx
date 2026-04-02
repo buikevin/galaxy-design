@@ -12,7 +12,9 @@ import { cn } from '@/lib/utils'
  * Dialog Props interface
  * @extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> - All standard dialog root attributes
  */
-export interface DialogProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {
+export type DialogProps = React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Root
+> & {
   /**
    * Open state (controlled)
    */
@@ -36,7 +38,9 @@ export interface DialogProps extends React.ComponentPropsWithoutRef<typeof Dialo
  * DialogContent Props interface
  * @extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> - All standard dialog content attributes
  */
-export interface DialogContentProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {
+export type DialogContentProps = React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Content
+> & {
   /**
    * Force-mount the content even when closed
    */
@@ -71,7 +75,9 @@ export interface DialogContentProps extends React.ComponentPropsWithoutRef<typeo
  * DialogTrigger Props interface
  * @extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger> - All standard dialog trigger attributes
  */
-export interface DialogTriggerProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger> {
+export type DialogTriggerProps = React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Trigger
+> & {
   /**
    * Render the trigger as a child element
    * @default false
@@ -83,7 +89,9 @@ export interface DialogTriggerProps extends React.ComponentPropsWithoutRef<typeo
  * DialogOverlay Props interface
  * @extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> - All standard dialog overlay attributes
  */
-export interface DialogOverlayProps extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> {
+export type DialogOverlayProps = React.ComponentPropsWithoutRef<
+  typeof DialogPrimitive.Overlay
+> & {
   /**
    * Force-mount the overlay
    */

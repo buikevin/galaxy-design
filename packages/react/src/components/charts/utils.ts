@@ -4,6 +4,8 @@
  * Helper functions to transform unified API to ECharts options format
  */
 
+import type { EChartsOption } from 'echarts'
+
 import type {
   ChartData,
   BaseChartProps,
@@ -219,7 +221,7 @@ export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
 /**
  * Build complete ECharts option from unified props
  */
-export function buildEChartsOption(props: BaseChartProps & { chartType: string }) {
+export function buildEChartsOption(props: BaseChartProps & { chartType: string }): EChartsOption {
   const {
     data,
     chartType,
@@ -243,7 +245,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
     animation: animation,
     animationDuration: animation ? 1000 : 0,
     animationEasing: 'cubicOut',
-  }
+  } as EChartsOption
 
   // Add zoom/dataZoom if enabled
   if (zoom) {
@@ -266,7 +268,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
   return {
     ...baseOption,
     ...options,
-  }
+  } as EChartsOption
 }
 
 /**

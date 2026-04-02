@@ -12,7 +12,9 @@ import { cn } from '@/lib/utils'
  * NavigationMenu Props interface
  * @extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> - All standard navigation menu root attributes
  */
-export interface NavigationMenuProps extends React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root> {
+export type NavigationMenuProps = React.ComponentPropsWithoutRef<
+  typeof NavigationMenuPrimitive.Root
+> & {
   /**
    * Current active menu item value
    */

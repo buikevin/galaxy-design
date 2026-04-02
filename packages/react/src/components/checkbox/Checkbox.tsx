@@ -13,7 +13,9 @@ import { cn } from '@/lib/utils'
  * Checkbox Props interface
  * @extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> - All standard checkbox root attributes
  */
-export interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
+export type CheckboxProps = React.ComponentPropsWithoutRef<
+  typeof CheckboxPrimitive.Root
+> & {
   /**
    * Checked state (controlled)
    */

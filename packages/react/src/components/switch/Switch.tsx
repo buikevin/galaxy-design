@@ -12,7 +12,9 @@ import { cn } from '@/lib/utils'
  * Switch Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> - All standard switch root attributes
  */
-export interface SwitchProps extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root> {
+export type SwitchProps = React.ComponentPropsWithoutRef<
+  typeof SwitchPrimitives.Root
+> & {
   /**
    * Checked state (controlled)
    */

@@ -13,7 +13,9 @@ import { cn } from '@/lib/utils'
  * Select Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> - All standard select root attributes
  */
-export interface SelectProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Root> {
+export type SelectProps = React.ComponentPropsWithoutRef<
+  typeof SelectPrimitive.Root
+> & {
   /**
    * Controlled selected value
    */
@@ -49,7 +51,9 @@ export interface SelectProps extends React.ComponentPropsWithoutRef<typeof Selec
  * SelectTrigger Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> - All standard select trigger attributes
  */
-export interface SelectTriggerProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {
+export type SelectTriggerProps = React.ComponentPropsWithoutRef<
+  typeof SelectPrimitive.Trigger
+> & {
   /**
    * CSS class names for the trigger
    */
@@ -65,7 +69,9 @@ export interface SelectTriggerProps extends React.ComponentPropsWithoutRef<typeo
  * SelectContent Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> - All standard select content attributes
  */
-export interface SelectContentProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content> {
+export type SelectContentProps = React.ComponentPropsWithoutRef<
+  typeof SelectPrimitive.Content
+> & {
   /**
    * Positioning strategy
    * @default 'popper'
@@ -85,7 +91,9 @@ export interface SelectContentProps extends React.ComponentPropsWithoutRef<typeo
  * SelectItem Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> - All standard select item attributes
  */
-export interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> {
+export type SelectItemProps = React.ComponentPropsWithoutRef<
+  typeof SelectPrimitive.Item
+> & {
   /**
    * Item value
    */
@@ -105,7 +113,9 @@ export interface SelectItemProps extends React.ComponentPropsWithoutRef<typeof S
  * SelectLabel Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label> - All standard select label attributes
  */
-export interface SelectLabelProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label> {
+export type SelectLabelProps = React.ComponentPropsWithoutRef<
+  typeof SelectPrimitive.Label
+> & {
   /**
    * CSS class names for the label
    */
@@ -116,7 +126,9 @@ export interface SelectLabelProps extends React.ComponentPropsWithoutRef<typeof 
  * SelectSeparator Props interface
  * @extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> - All standard select separator attributes
  */
-export interface SelectSeparatorProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator> {
+export type SelectSeparatorProps = React.ComponentPropsWithoutRef<
+  typeof SelectPrimitive.Separator
+> & {
   /**
    * CSS class names for the separator
    */

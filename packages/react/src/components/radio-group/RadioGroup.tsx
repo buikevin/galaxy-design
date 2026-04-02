@@ -13,7 +13,9 @@ import { cn } from '@/lib/utils'
  * RadioGroup Props interface
  * @extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> - All standard radio group root attributes
  */
-export interface RadioGroupProps extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root> {
+export type RadioGroupProps = React.ComponentPropsWithoutRef<
+  typeof RadioGroupPrimitive.Root
+> & {
   /**
    * Current selected value (controlled)
    */
@@ -49,7 +51,9 @@ export interface RadioGroupProps extends React.ComponentPropsWithoutRef<typeof R
  * RadioGroupItem Props interface
  * @extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> - All standard radio item attributes
  */
-export interface RadioGroupItemProps extends React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> {
+export type RadioGroupItemProps = React.ComponentPropsWithoutRef<
+  typeof RadioGroupPrimitive.Item
+> & {
   /**
    * Value of this radio item
    */
