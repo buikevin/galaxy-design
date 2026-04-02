@@ -3,15 +3,15 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '@/components/ui/popover';
-import { Button } from '@/components/ui/button';
+} from '../popover';
+import { Button } from '../button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
+} from '../select';
 import { cn } from '@/lib/utils';
 
 export interface TimePickerProps {

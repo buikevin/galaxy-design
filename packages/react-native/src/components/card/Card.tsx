@@ -15,6 +15,12 @@ export interface CardProps extends ViewProps {
   children: React.ReactNode;
 }
 
+export type CardHeaderProps = ViewProps;
+export type CardTitleProps = TextProps;
+export type CardDescriptionProps = TextProps;
+export type CardContentProps = ViewProps;
+export type CardFooterProps = ViewProps;
+
 const Card = React.forwardRef<View, CardProps>(
   ({ className, children, ...props }, ref) => {
     return (

@@ -4,19 +4,19 @@
  * Helper functions optimized for mobile (React Native)
  */
 
-import type {
+import {
   ChartData,
   BaseChartProps,
   GridConfig,
   TooltipConfig,
   ChartColorSchemes,
   ColorScheme,
-} from './types'
+} from './types';
 
 /**
  * Chart color schemes (same as web)
  */
-export { ChartColorSchemes } from './types'
+export { ChartColorSchemes } from './types';
 
 /**
  * Transform unified ChartData to ECharts series format
@@ -46,14 +46,30 @@ export function transformDataToSeries(
         }
       : undefined,
     ...additionalConfig,
-  }))
+  }));
 }
 
 /**
  * Get default colors for charts
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
-  return ChartColorSchemes[scheme]
+  return [...ChartColorSchemes[scheme]];
+}
+
+export function getThemeColors(theme: 'light' | 'dark' = 'light') {
+  return theme === 'dark'
+    ? {
+        text: '#e5e7eb',
+        axis: '#4b5563',
+        axisLabel: '#9ca3af',
+        gridLine: '#374151',
+      }
+    : {
+        text: '#374151',
+        axis: '#d1d5db',
+        axisLabel: '#6b7280',
+        gridLine: '#e5e7eb',
+      };
 }
 
 /**
@@ -63,7 +79,7 @@ export function buildTooltipConfig(
   tooltip?: boolean | TooltipConfig
 ): Record<string, unknown> | undefined {
   if (tooltip === false) {
-    return undefined
+    return undefined;
   }
 
   if (tooltip === true || tooltip === undefined) {
@@ -77,7 +93,7 @@ export function buildTooltipConfig(
           width: 1,
         },
       },
-    }
+    };
   }
 
   return {
@@ -88,17 +104,19 @@ export function buildTooltipConfig(
     axisPointer: {
       type: 'line',
     },
-  }
+  };
 }
 
 /**
  * Build ECharts grid configuration (mobile-optimized with more padding)
  */
-export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unknown> {
+export function buildGridConfig(
+  grid?: boolean | GridConfig
+): Record<string, unknown> {
   if (grid === false) {
     return {
       show: false,
-    }
+    };
   }
 
   if (grid === true || grid === undefined) {
@@ -108,7 +126,7 @@ export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unk
       bottom: '8%',
       top: '20%',
       containLabel: true,
-    }
+    };
   }
 
   return {
@@ -118,7 +136,7 @@ export function buildGridConfig(grid?: boolean | GridConfig): Record<string, unk
     bottom: grid.bottom || '8%',
     top: grid.top || '20%',
     containLabel: grid.containLabel !== false,
-  }
+  };
 }
 
 /**
@@ -130,7 +148,7 @@ export function buildLegendConfig(
   data?: string[]
 ): Record<string, unknown> | undefined {
   if (legend === false) {
-    return undefined
+    return undefined;
   }
 
   const positionMap = {
@@ -138,7 +156,7 @@ export function buildLegendConfig(
     bottom: { bottom: '5%', left: 'center' },
     left: { left: '5%', top: 'middle', orient: 'vertical' },
     right: { right: '5%', top: 'middle', orient: 'vertical' },
-  }
+  };
 
   return {
     data: data || [],
@@ -146,13 +164,16 @@ export function buildLegendConfig(
     textStyle: {
       fontSize: 12, // Slightly smaller on mobile
     },
-  }
+  };
 }
 
 /**
  * Build ECharts X-axis configuration (mobile-optimized)
  */
-export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 'category') {
+export function buildXAxisConfig(
+  labels: string[],
+  type: 'category' | 'value' = 'category'
+) {
   return {
     type,
     data: type === 'category' ? labels : undefined,
@@ -167,7 +188,7 @@ export function buildXAxisConfig(labels: string[], type: 'category' | 'value' = 
       fontSize: 11, // Smaller font for mobile
       rotate: labels.length > 6 ? 45 : 0, // Rotate if many labels
     },
-  }
+  };
 }
 
 /**
@@ -191,17 +212,18 @@ export function buildYAxisConfig(type: 'value' | 'category' = 'value') {
         type: 'dashed',
       },
     },
-  }
+  };
 }
 
 /**
  * Build complete ECharts option from unified props (mobile-optimized)
  */
-export function buildEChartsOption(props: BaseChartProps & { chartType: string }) {
+export function buildEChartsOption(
+  props: BaseChartProps & { chartType: string }
+) {
   const {
     data,
     chartType,
-    _theme = 'light',
     legend = true,
     legendPosition = 'top',
     grid = true,
@@ -209,12 +231,16 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
     animation = true,
     zoom = false,
     options = {},
-  } = props
+  } = props;
 
   const baseOption = {
     color: getDefaultColors('default'),
     tooltip: buildTooltipConfig(tooltip),
-    legend: buildLegendConfig(legend, legendPosition, data.datasets.map((d) => d.label)),
+    legend: buildLegendConfig(
+      legend,
+      legendPosition,
+      data.datasets.map((d) => d.label)
+    ),
     grid: buildGridConfig(grid),
     xAxis: buildXAxisConfig(data.labels),
     yAxis: buildYAxisConfig(),
@@ -222,7 +248,7 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
     animation: animation,
     animationDuration: animation ? 800 : 0, // Slightly faster on mobile
     animationEasing: 'cubicOut',
-  }
+  };
 
   // Add zoom/dataZoom if enabled (less common on mobile)
   if (zoom) {
@@ -234,14 +260,14 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
           end: 100,
         },
       ],
-    })
+    });
   }
 
   // Merge with custom options
   return {
     ...baseOption,
     ...options,
-  }
+  };
 }
 
 /**
@@ -251,20 +277,23 @@ export function formatNumber(num: number, decimals = 0): string {
   return num.toLocaleString('en-US', {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
-  })
+  });
 }
 
 /**
  * Calculate percentage
  */
 export function calculatePercentage(value: number, total: number): string {
-  return ((value / total) * 100).toFixed(1) + '%'
+  return ((value / total) * 100).toFixed(1) + '%';
 }
 
 /**
  * Generate gradient colors
  */
-export function generateGradient(color: string, direction: 'vertical' | 'horizontal' = 'vertical') {
+export function generateGradient(
+  color: string,
+  direction: 'vertical' | 'horizontal' = 'vertical'
+) {
   return {
     type: 'linear',
     x: 0,
@@ -281,5 +310,5 @@ export function generateGradient(color: string, direction: 'vertical' | 'horizon
         color: color + '20', // Add transparency
       },
     ],
-  }
+  };
 }

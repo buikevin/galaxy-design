@@ -2,32 +2,32 @@
 
 Beautiful, accessible Angular components built with Radix NG and Tailwind CSS.
 
-## Installation
+## Status
+
+This package now has a library build pipeline wired through Angular library tooling.
+
+Current artifact targets:
+
+- `dist/index.d.ts`
+- `dist/fesm2022/galaxy-ui-angular.mjs`
+
+## Source Usage
+
+Use the source files in this workspace, or scaffold components into an application via the Galaxy CLI.
+
+The root source entry is:
 
 ```bash
-npm install @galaxy-ui/angular
+packages/angular/src/index.ts
 ```
 
-Or use the Galaxy UI CLI:
+## Publish Readiness
+
+Before publishing this package independently, keep validating it with:
 
 ```bash
-npx @galaxy-ui/cli init
-npx @galaxy-ui/cli add button
-```
-
-## Usage
-
-```typescript
-import { Component } from '@angular/core';
-import { ButtonComponent } from '@galaxy-ui/angular';
-
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [ButtonComponent],
-  template: `<ui-button variant="default">Click me</ui-button>`
-})
-export class AppComponent {}
+npm run build
+npm pack --dry-run
 ```
 
 ## Components
@@ -42,7 +42,7 @@ This package includes 23+ accessible components:
 
 ## Documentation
 
-Visit [Galaxy UI Documentation](https://github.com/buikevin/galaxy-design) for detailed guides and examples.
+Visit [Galaxy UI Documentation](https://github.com/buikevin/galaxy-design) for workspace context and implementation details.
 
 ## Author
 

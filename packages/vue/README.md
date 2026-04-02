@@ -2,29 +2,32 @@
 
 Beautiful, accessible Vue 3 components built with Radix Vue and Tailwind CSS.
 
-## Installation
+## Status
+
+This package now has a root library build pipeline for workspace verification and packaging.
+
+Current verified artifact targets:
+
+- `dist/index.js`
+- `dist/index.d.ts`
+
+Component source still lives in `src/`, and the package also exposes `@galaxy-ui/source` for source-workspace usage.
+
+## Source Usage
+
+The root source entry is:
 
 ```bash
-npm install @galaxy-ui/vue
+packages/vue/src/index.ts
 ```
 
-Or use the Galaxy UI CLI:
+## Publish Readiness
+
+Before publishing this package independently, keep validating it with:
 
 ```bash
-npx @galaxy-ui/cli init
-npx @galaxy-ui/cli add button
-```
-
-## Usage
-
-```vue
-<script setup lang="ts">
-import { Button } from '@galaxy-ui/vue'
-</script>
-
-<template>
-  <Button variant="default">Click me</Button>
-</template>
+npm run build
+npm pack --dry-run
 ```
 
 ## Components
@@ -39,7 +42,7 @@ This package includes 23+ accessible components:
 
 ## Documentation
 
-Visit [Galaxy UI Documentation](https://github.com/buikevin/galaxy-design) for detailed guides and examples.
+Visit [Galaxy UI Documentation](https://github.com/buikevin/galaxy-design) for workspace context and implementation details.
 
 ## Author
 

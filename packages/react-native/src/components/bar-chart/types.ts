@@ -339,7 +339,7 @@ export type ColorScheme = keyof typeof ChartColorSchemes
  * Helper function to get colors from scheme
  */
 export function getColorScheme(scheme: ColorScheme = 'default'): string[] {
-  return ChartColorSchemes[scheme]
+  return [...ChartColorSchemes[scheme]]
 }
 /**
  * Gauge chart specific props

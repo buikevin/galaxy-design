@@ -6,7 +6,7 @@
 
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef, ElementRef, ViewChild, OnChanges, SimpleChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type CheckedState = boolean | 'indeterminate';
 

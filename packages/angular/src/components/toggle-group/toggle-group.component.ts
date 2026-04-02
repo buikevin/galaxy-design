@@ -10,7 +10,7 @@ import {
   RdxToggleGroupDirective,
   RdxToggleGroupItemDirective,
 } from '@radix-ng/primitives/toggle-group';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type ToggleGroupType = 'single' | 'multiple';
 type ToggleGroupVariant = 'default' | 'outline';

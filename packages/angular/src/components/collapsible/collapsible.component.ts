@@ -11,7 +11,7 @@ import {
   RdxCollapsibleTriggerDirective,
   RdxCollapsibleContentDirective,
 } from '@radix-ng/primitives/collapsible';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-collapsible',

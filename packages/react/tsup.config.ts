@@ -1,15 +1,31 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: ['src/components/*/index.ts'],
+  entry: ['src/index.ts', 'src/components/*/index.ts'],
   format: ['esm'],
-  dts: true,
+  dts: false,
   clean: true,
-  external: ['react', 'react-dom'],
   treeshake: true,
   splitting: false,
-  outDir: 'dist/components',
+  outDir: 'dist',
   esbuildOptions(options) {
-    options.jsx = 'automatic'
-  }
-})
+    options.jsx = 'automatic';
+    options.external = [
+      'react',
+      'react-dom',
+      '@radix-ui/react-*',
+      'class-variance-authority',
+      'clsx',
+      'tailwind-merge',
+      'lucide-react',
+      'echarts',
+      'echarts-for-react',
+      'react-day-picker',
+      'date-fns',
+      'react-hook-form',
+      'react-resizable-panels',
+      'cmdk',
+      'sonner',
+    ];
+  },
+});

@@ -6,7 +6,7 @@
 
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-menubar',

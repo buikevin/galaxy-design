@@ -1,12 +1,17 @@
-import React, { useMemo } from 'react'
-import { View, Text, ActivityIndicator, useWindowDimensions } from 'react-native'
-import { SkiaChart } from '@wuba/react-native-echarts'
-import type { EChartsOption } from 'echarts'
-import type { MixedChartProps } from './types'
-import { getThemeColors } from './utils'
+import React, { useMemo } from 'react';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  useWindowDimensions,
+} from 'react-native';
+import { SkiaChart } from '@wuba/react-native-echarts';
+import type { EChartsOption } from 'echarts';
+import type { MixedChartProps } from './types';
+import { getDefaultColors } from './utils';
 
 export interface MixedChartComponentProps extends MixedChartProps {
-  style?: Record<string, unknown>
+  style?: Record<string, unknown>;
 }
 
 export const MixedChart: React.FC<MixedChartComponentProps> = ({
@@ -20,20 +25,20 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
   emptyText = 'No data available',
   style,
 }) => {
-  const { width: windowWidth } = useWindowDimensions()
-  const chartWidth = width || windowWidth - 32
+  const { width: windowWidth } = useWindowDimensions();
+  const chartWidth = typeof width === 'number' ? width : windowWidth - 32;
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets.length) {
-      return null
+      return null;
     }
 
-    const colors = getThemeColors(theme)
+    const colors = getDefaultColors();
 
     // Build series with mixed types
     const series = data.datasets.map((dataset, index) => {
-      const chartType = dataset.type || 'line'
-      const color = dataset.color || colors[index % colors.length]
+      const chartType = dataset.type || 'line';
+      const color = dataset.color || colors[index % colors.length];
 
       const baseSeries: Record<string, unknown> = {
         name: dataset.label,
@@ -42,7 +47,7 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
         itemStyle: {
           color: color,
         },
-      }
+      };
 
       // Add type-specific configurations
       if (chartType === 'line') {
@@ -54,12 +59,12 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
           lineStyle: {
             width: 2,
           },
-        }
+        };
       } else if (chartType === 'bar') {
         return {
           ...baseSeries,
           barMaxWidth: 40,
-        }
+        };
       } else if (chartType === 'area') {
         return {
           ...baseSeries,
@@ -69,11 +74,11 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
           areaStyle: {
             opacity: 0.3,
           },
-        }
+        };
       }
 
-      return baseSeries
-    })
+      return baseSeries;
+    });
 
     return {
       tooltip: {
@@ -86,20 +91,35 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
           fontSize: 10,
         },
       },
-      legend: legend ? {
-        show: true,
-        orient: legendPosition === 'left' || legendPosition === 'right' ? 'vertical' : 'horizontal',
-        left: legendPosition === 'left' ? '5%' : legendPosition === 'right' ? 'auto' : 'center',
-        right: legendPosition === 'right' ? '5%' : 'auto',
-        top: legendPosition === 'top' ? '5%' : legendPosition === 'bottom' ? 'auto' : 'auto',
-        bottom: legendPosition === 'bottom' ? '5%' : 'auto',
-        textStyle: {
-          fontSize: 10,
-          color: theme === 'dark' ? '#e5e7eb' : '#374151',
-        },
-      } : {
-        show: false,
-      },
+      legend: legend
+        ? {
+            show: true,
+            orient:
+              legendPosition === 'left' || legendPosition === 'right'
+                ? 'vertical'
+                : 'horizontal',
+            left:
+              legendPosition === 'left'
+                ? '5%'
+                : legendPosition === 'right'
+                ? 'auto'
+                : 'center',
+            right: legendPosition === 'right' ? '5%' : 'auto',
+            top:
+              legendPosition === 'top'
+                ? '5%'
+                : legendPosition === 'bottom'
+                ? 'auto'
+                : 'auto',
+            bottom: legendPosition === 'bottom' ? '5%' : 'auto',
+            textStyle: {
+              fontSize: 10,
+              color: theme === 'dark' ? '#e5e7eb' : '#374151',
+            },
+          }
+        : {
+            show: false,
+          },
       grid: {
         left: '12%',
         right: '8%',
@@ -140,38 +160,48 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
         },
       },
       series,
-    }
-  }, [data, theme, legend, legendPosition])
+    } as EChartsOption;
+  }, [data, theme, legend, legendPosition]);
 
   if (loading) {
     return (
       <View
         style={[
-          { height, width: chartWidth, justifyContent: 'center', alignItems: 'center' },
+          {
+            height,
+            width: chartWidth,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           style,
         ]}
       >
         <ActivityIndicator size="large" color="#3b82f6" />
       </View>
-    )
+    );
   }
 
   if (!data || !data.datasets.length || !chartOption) {
     return (
       <View
         style={[
-          { height, width: chartWidth, justifyContent: 'center', alignItems: 'center' },
+          {
+            height,
+            width: chartWidth,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           style,
         ]}
       >
         <Text style={{ color: '#6b7280', fontSize: 14 }}>{emptyText}</Text>
       </View>
-    )
+    );
   }
 
   return (
     <View style={[{ height, width: chartWidth }, style]}>
       <SkiaChart option={chartOption} width={chartWidth} height={height} />
     </View>
-  )
-}
+  );
+};

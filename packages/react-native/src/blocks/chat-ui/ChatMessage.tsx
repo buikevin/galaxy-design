@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar/avatar'
+import { Avatar } from '@/components/avatar'
 import type { Message } from './types'
 
 interface ChatMessageProps {
@@ -31,12 +31,12 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
         message.isCurrentUser && styles.containerReverse,
       ]}
     >
-      <Avatar style={styles.avatar}>
-        {message.senderAvatar && (
-          <AvatarImage source={{ uri: message.senderAvatar }} />
-        )}
-        <AvatarFallback>{initials}</AvatarFallback>
-      </Avatar>
+      <Avatar
+        src={message.senderAvatar}
+        alt={message.senderName}
+        fallback={initials}
+        size="sm"
+      />
 
       <View
         style={[

@@ -8,7 +8,7 @@ import { computed } from 'vue'
 import VChart from 'vue-echarts'
 import type { EChartsOption } from 'echarts'
 import type { RadarChartProps } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors, getThemeColors } from './utils'
 
 const props = defineProps<RadarChartProps>()
 
@@ -17,7 +17,8 @@ const chartOption = computed<EChartsOption>(() => {
     return {}
   }
 
-  const colors = getThemeColors(props.theme || 'light')
+  const colors = getDefaultColors()
+  const themeColors = getThemeColors(props.theme || 'light')
 
   // Build radar indicators from labels
   const indicator = props.data.labels.map((label) => ({
@@ -54,7 +55,7 @@ const chartOption = computed<EChartsOption>(() => {
       bottom: props.legendPosition === 'bottom' ? '5%' : 'auto',
       textStyle: {
         fontSize: 12,
-        color: props.theme === 'dark' ? '#e5e7eb' : '#374151',
+        color: themeColors.text,
       },
     } : {
       show: false,
@@ -64,12 +65,12 @@ const chartOption = computed<EChartsOption>(() => {
       shape: props.shape || 'polygon',
       splitNumber: props.splitNumber || 4,
       axisName: {
-        color: props.theme === 'dark' ? '#9ca3af' : '#6b7280',
+        color: themeColors.axisLabel,
         fontSize: 11,
       },
       splitLine: {
         lineStyle: {
-          color: props.theme === 'dark' ? '#374151' : '#e5e7eb',
+          color: themeColors.gridLine,
         },
       },
       splitArea: {
@@ -82,7 +83,7 @@ const chartOption = computed<EChartsOption>(() => {
       },
       axisLine: {
         lineStyle: {
-          color: props.theme === 'dark' ? '#4b5563' : '#d1d5db',
+          color: themeColors.axis,
         },
       },
     },

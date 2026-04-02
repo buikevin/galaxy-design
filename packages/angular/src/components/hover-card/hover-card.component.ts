@@ -11,7 +11,7 @@ import {
   RdxHoverCardTriggerDirective,
   RdxHoverCardContentDirective,
 } from '@radix-ng/primitives/hover-card';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-hover-card',

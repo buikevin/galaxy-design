@@ -1,14 +1,15 @@
 import React, { useMemo } from 'react'
 import { View, Text, Dimensions, ActivityIndicator } from 'react-native'
-import { SkiaChart, SVGRenderer } from '@wuba/react-native-echarts'
+import { SkiaChart } from '@wuba/react-native-echarts'
 import * as echarts from 'echarts/core'
-import { BarChart } from 'echarts/charts'
+import { BarChart as EChartsBarChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   LegendComponent,
   DataZoomComponent,
 } from 'echarts/components'
+import { SVGRenderer } from 'echarts/renderers'
 import type { EChartsOption } from 'echarts'
 import type { BarChartProps } from './types'
 import {
@@ -18,7 +19,7 @@ import {
 
 // Register ECharts components
 echarts.use([
-  BarChart,
+  EChartsBarChart,
   GridComponent,
   TooltipComponent,
   LegendComponent,
@@ -28,6 +29,8 @@ echarts.use([
 
 export interface BarChartComponentProps extends BarChartProps {
   className?: string
+  stacked?: boolean
+  showDataLabels?: boolean
 }
 
 export const BarChart: React.FC<BarChartComponentProps> = ({
@@ -48,7 +51,7 @@ export const BarChart: React.FC<BarChartComponentProps> = ({
   className,
   options = {},
 }) => {
-  const chartWidth = width || Dimensions.get('window').width - 32
+  const chartWidth = typeof width === 'number' ? width : Dimensions.get('window').width - 32
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets || data.datasets.length === 0) {
@@ -101,13 +104,13 @@ export const BarChart: React.FC<BarChartComponentProps> = ({
           },
         },
         series,
-      }
+      } as EChartsOption
     }
 
     return {
       ...baseOption,
       series,
-    }
+    } as EChartsOption
   }, [
     data,
     height,

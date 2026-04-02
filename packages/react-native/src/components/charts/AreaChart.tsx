@@ -1,13 +1,25 @@
-import React, { useMemo } from 'react'
-import { View, Text, ActivityIndicator, useWindowDimensions } from 'react-native'
-import { SkiaChart } from '@wuba/react-native-echarts'
-import type { EChartsOption } from 'echarts'
-import type { AreaChartProps } from './types'
-import { getDefaultColors, transformDataToSeries, getThemeColors } from './utils'
+import React, { useMemo } from 'react';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  useWindowDimensions,
+} from 'react-native';
+import { SkiaChart } from '@wuba/react-native-echarts';
+import type { EChartsOption } from 'echarts';
+import type { AreaChartProps } from './types';
+import {
+  getDefaultColors,
+  transformDataToSeries,
+  getThemeColors,
+} from './utils';
 
 export interface AreaChartComponentProps extends AreaChartProps {
-  className?: string
-  style?: Record<string, unknown>
+  className?: string;
+  style?: Record<string, unknown>;
+  _animation?: boolean;
+  opacity?: number;
+  gradient?: boolean;
 }
 
 export const AreaChart: React.FC<AreaChartComponentProps> = ({
@@ -30,16 +42,16 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
   emptyText = 'No data available',
   options = {},
 }) => {
-  const { width: screenWidth } = useWindowDimensions()
-  const chartWidth = width || screenWidth - 32
+  const { width: screenWidth } = useWindowDimensions();
+  const chartWidth = typeof width === 'number' ? width : screenWidth - 32;
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets || data.datasets.length === 0) {
-      return null
+      return null;
     }
 
-    const colors = getDefaultColors()
-    const themeColors = getThemeColors(theme)
+    const colors = getDefaultColors();
+    const themeColors = getThemeColors(theme);
 
     // Transform datasets with area fill enabled
     const series = transformDataToSeries(data, 'line', {
@@ -50,14 +62,21 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
       areaStyle: {
         opacity,
       },
-    })
+    });
 
     // Add gradient if enabled
     if (gradient) {
       series.forEach((s: Record<string, unknown>, index: number) => {
-        const color = (s.itemStyle as Record<string, unknown>)?.color || colors[index % colors.length]
+        const color =
+          (s.itemStyle as Record<string, unknown>)?.color ||
+          colors[index % colors.length];
+        const areaStyle =
+          typeof s.areaStyle === 'object' && s.areaStyle !== null
+            ? (s.areaStyle as Record<string, unknown>)
+            : {};
+
         s.areaStyle = {
-          ...s.areaStyle,
+          ...areaStyle,
           color: {
             type: 'linear',
             x: 0,
@@ -69,8 +88,8 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
               { offset: 1, color: 'rgba(255, 255, 255, 0.1)' },
             ],
           },
-        }
-      })
+        };
+      });
     }
 
     return {
@@ -90,9 +109,10 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
         : undefined,
       legend: legend
         ? {
-            orient: legendPosition === 'left' || legendPosition === 'right'
-              ? 'vertical'
-              : 'horizontal',
+            orient:
+              legendPosition === 'left' || legendPosition === 'right'
+                ? 'vertical'
+                : 'horizontal',
             [legendPosition]: '0',
             textStyle: {
               fontSize: 11,
@@ -100,9 +120,10 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
             },
           }
         : undefined,
-      grid: typeof grid === 'object'
-        ? { ...grid, containLabel: true }
-        : grid
+      grid:
+        typeof grid === 'object'
+          ? { ...grid, containLabel: true }
+          : grid
           ? {
               left: '5%',
               right: '5%',
@@ -135,7 +156,7 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
       },
       series,
       ...options,
-    }
+    } as EChartsOption;
   }, [
     data,
     theme,
@@ -150,7 +171,7 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
     opacity,
     gradient,
     options,
-  ])
+  ]);
 
   // Loading state
   if (loading) {
@@ -158,7 +179,7 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
       <View style={{ height, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator size="large" />
       </View>
-    )
+    );
   }
 
   // Empty state
@@ -176,8 +197,8 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
       >
         <Text style={{ color: '#6b7280', fontSize: 14 }}>{emptyText}</Text>
       </View>
-    )
+    );
   }
 
-  return <SkiaChart option={chartOption} width={chartWidth} height={height} />
-}
+  return <SkiaChart option={chartOption} width={chartWidth} height={height} />;
+};

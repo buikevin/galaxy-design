@@ -1,5 +1,4 @@
 export {
-  useFormField,
   Form,
   FormItem,
   FormLabel,
@@ -8,3 +7,4 @@ export {
   FormMessage,
   FormField,
 } from './Form';
+export { useFormField } from './utils';

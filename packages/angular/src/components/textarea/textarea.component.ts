@@ -6,7 +6,7 @@
 
 import { Component, Input, forwardRef, ChangeDetectionStrategy } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-textarea',

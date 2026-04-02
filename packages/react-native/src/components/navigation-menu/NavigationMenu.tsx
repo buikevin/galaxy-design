@@ -33,6 +33,12 @@ export interface NavigationMenuProps {
   className?: string;
 }
 
+type NavigationMenuComponent = React.ForwardRefExoticComponent<
+  NavigationMenuProps & React.RefAttributes<View>
+> & {
+  drawer: typeof DrawerMenu;
+};
+
 export const NavigationMenu = React.forwardRef<View, NavigationMenuProps>(
   (
     {
@@ -303,6 +309,6 @@ export const DrawerMenu: React.FC<DrawerMenuProps> = ({
 };
 
 // Static method for creating drawer
-NavigationMenu.drawer = DrawerMenu;
+(NavigationMenu as NavigationMenuComponent).drawer = DrawerMenu;
 
-export { BottomNavigation, DrawerNavigation, DrawerMenu };
+export { BottomNavigation, DrawerNavigation };

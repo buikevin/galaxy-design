@@ -7,7 +7,7 @@
 import { Component, Input, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdxSeparatorRootDirective } from '@radix-ng/primitives/separator';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-separator, [ui-separator]',

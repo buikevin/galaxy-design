@@ -76,10 +76,12 @@ const chartOption = computed(() => {
 
   // Add gradient if enabled
   if (props.gradient) {
-    series.forEach((s: Record<string, unknown>, _index: number) => {
-      const color = s.itemStyle?.color || colors[index % colors.length]
-      s.areaStyle = {
-        ...s.areaStyle,
+    series.forEach((seriesItem: Record<string, unknown>, index: number) => {
+      const itemStyle = (seriesItem.itemStyle as { color?: string } | undefined) || undefined
+      const areaStyle = (seriesItem.areaStyle as Record<string, unknown> | undefined) || {}
+      const color = itemStyle?.color || colors[index % colors.length]
+      seriesItem.areaStyle = {
+        ...areaStyle,
         color: {
           type: 'linear',
           x: 0,

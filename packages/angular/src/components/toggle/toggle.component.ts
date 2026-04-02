@@ -7,7 +7,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RdxToggleDirective } from '@radix-ng/primitives/toggle';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type ToggleVariant = 'default' | 'outline';
 type ToggleSize = 'default' | 'sm' | 'lg';

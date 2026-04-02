@@ -15,10 +15,10 @@
       "default": "./dist/index.js"
     },
     "./components/*": {
-      "@galaxy-ui/source": "./src/components/*.tsx",
-      "types": "./dist/components/*.d.ts",
-      "import": "./dist/components/*.js",
-      "default": "./dist/components/*.js"
+      "@galaxy-ui/source": "./src/components/*/index.ts",
+      "types": "./dist/components/*/index.d.ts",
+      "import": "./dist/components/*/index.js",
+      "default": "./dist/components/*/index.js"
     }
   },
   "files": [
@@ -56,16 +56,44 @@
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.0",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-alert-dialog": "^1.1.2",
+    "@radix-ui/react-aspect-ratio": "^1.1.0",
+    "@radix-ui/react-avatar": "^1.1.1",
+    "@radix-ui/react-collapsible": "^1.1.1",
+    "@radix-ui/react-context-menu": "^2.2.2",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-hover-card": "^1.1.2",
     "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-menubar": "^1.1.2",
+    "@radix-ui/react-navigation-menu": "^1.2.1",
+    "@radix-ui/react-popover": "^1.1.2",
+    "@radix-ui/react-progress": "^1.1.0",
+    "@radix-ui/react-radio-group": "^1.2.1",
+    "@radix-ui/react-scroll-area": "^1.2.0",
+    "@radix-ui/react-select": "^2.1.2",
+    "@radix-ui/react-separator": "^1.1.0",
+    "@radix-ui/react-slider": "^1.2.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-switch": "^1.1.1",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "@radix-ui/react-toggle": "^1.1.0",
+    "@radix-ui/react-toggle-group": "^1.1.0",
+    "@radix-ui/react-toolbar": "^1.1.0",
+    "@radix-ui/react-tooltip": "^1.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.0",
-    "lucide-react": "^0.460.0",
-    "echarts-for-react": "^3.0.2",
+    "cmdk": "^1.0.4",
+    "date-fns": "^4.1.0",
     "echarts": "^5.5.1",
+    "echarts-for-react": "^3.0.2",
+    "lucide-react": "^0.460.0",
     "react-day-picker": "^9.11.1",
-    "date-fns": "^4.1.0"
+    "react-hook-form": "^7.53.1",
+    "react-resizable-panels": "^2.1.4",
+    "sonner": "^1.7.1",
+    "tailwind-merge": "^2.5.0"
   },
   "devDependencies": {
     "@jest/globals": "^29.0.0",
@@ -84,10 +112,11 @@
     "ts-jest": "^29.0.0",
     "tsup": "^8.5.1",
     "typescript": "^5.3.0"
-
   },
   "scripts": {
-    "build": "tsup",
+    "build": "tsup && tsc -p tsconfig.build.json",
+    "smoke:import": "node scripts/smoke-import.mjs",
+    "verify": "npm run build && npm run smoke:import && npm pack --dry-run",
     "test": "jest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test:watch": "jest --watch",

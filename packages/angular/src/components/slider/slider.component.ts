@@ -12,7 +12,7 @@ import {
   RdxSliderRangeComponent,
   RdxSliderThumbComponent,
 } from '@radix-ng/primitives/slider';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-slider',

@@ -11,7 +11,7 @@ import {
   RdxPopoverTriggerDirective,
   RdxPopoverContentDirective,
 } from '@radix-ng/primitives/popover';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-popover',

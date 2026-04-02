@@ -10,7 +10,7 @@ import {
   RdxDropdownMenuItemDirective,
   RdxDropdownMenuSeparatorDirective,
 } from '@radix-ng/primitives/dropdown-menu';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 /**
  * Dropdown Menu Wrapper Component

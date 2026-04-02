@@ -14,7 +14,7 @@ import type { ChatUIProps } from './types'
 
 export const ChatUI: React.FC<ChatUIProps> = ({
   messages,
-  _currentUserId,
+  currentUserId: _currentUserId,
   onSendMessage,
   placeholder = 'Type your message...',
   showTimestamp = true,

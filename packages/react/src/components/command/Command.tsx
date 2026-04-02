@@ -4,19 +4,19 @@
  * @desc Command components - Composable command palette for fast keyboard-first interactions
  */
 
-import * as React from 'react'
-import { Command as CommandPrimitive } from 'cmdk'
-import { Search } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Dialog, DialogContent } from '@/components/ui/dialog/Dialog'
+import * as React from 'react';
+import { Command as CommandPrimitive } from 'cmdk';
+import { Search } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { Dialog, DialogContent } from '../dialog/Dialog';
 
 /**
  * Command Component
- * 
+ *
  * Root component for the command palette.
  * Provides a container for command items with search functionality.
  * Built on top of cmdk primitive.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive>} props - Command props
  * @param {string} [props.className] - CSS class names for the command container
  * @param {React.RefObject<React.ElementRef<typeof CommandPrimitive>>} ref - Reference to the command element
@@ -35,20 +35,23 @@ const Command = React.forwardRef<
     )}
     {...props}
   />
-))
-Command.displayName = CommandPrimitive.displayName
+));
+Command.displayName = CommandPrimitive.displayName;
 
 /**
  * CommandDialog Component
- * 
+ *
  * A dialog that contains a command palette.
  * Renders the command palette inside a modal dialog.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof Dialog>} props - Dialog props
  * @param {React.ReactNode} [props.children] - Command palette content
  * @returns {JSX.Element} Dialog with command palette
  */
-const CommandDialog = ({ children, ...props }: React.ComponentPropsWithoutRef<typeof Dialog>) => {
+const CommandDialog = ({
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Dialog>) => {
   return (
     <Dialog {...props}>
       <DialogContent className="overflow-hidden p-0 shadow-lg">
@@ -57,15 +60,15 @@ const CommandDialog = ({ children, ...props }: React.ComponentPropsWithoutRef<ty
         </Command>
       </DialogContent>
     </Dialog>
-  )
-}
+  );
+};
 
 /**
  * CommandInput Component
- * 
+ *
  * The search input field for the command palette.
  * Displays a search icon and accepts user input for filtering commands.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>} props - CommandInput props
  * @param {string} [props.className] - CSS class names for the input
  * @param {string} [props.placeholder] - Placeholder text for the input
@@ -89,16 +92,16 @@ const CommandInput = React.forwardRef<
       {...props}
     />
   </div>
-))
+));
 
-CommandInput.displayName = CommandPrimitive.Input.displayName
+CommandInput.displayName = CommandPrimitive.Input.displayName;
 
 /**
  * CommandList Component
- * 
+ *
  * The scrollable list container for command items.
  * Renders all command items, groups, and empty states.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive.List>} props - CommandList props
  * @param {string} [props.className] - CSS class names for the list container
  * @param {React.RefObject<React.ElementRef<typeof CommandPrimitive.List>>} ref - Reference to the list element
@@ -113,16 +116,16 @@ const CommandList = React.forwardRef<
     className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
     {...props}
   />
-))
+));
 
-CommandList.displayName = CommandPrimitive.List.displayName
+CommandList.displayName = CommandPrimitive.List.displayName;
 
 /**
  * CommandEmpty Component
- * 
+ *
  * Displays when no commands match the search query.
  * Shows a "no results" message to the user.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>} props - CommandEmpty props
  * @param {string} [props.className] - CSS class names for the empty state
  * @param {React.ReactNode} [props.children] - Empty state content
@@ -138,16 +141,16 @@ const CommandEmpty = React.forwardRef<
     className="py-6 text-center text-sm"
     {...props}
   />
-))
+));
 
-CommandEmpty.displayName = CommandPrimitive.Empty.displayName
+CommandEmpty.displayName = CommandPrimitive.Empty.displayName;
 
 /**
  * CommandGroup Component
- * 
+ *
  * A container for grouping related command items.
  * Can include an optional heading for the group.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive.Group>} props - CommandGroup props
  * @param {string} [props.className] - CSS class names for the group container
  * @param {string} [props.heading] - Optional heading text for the group
@@ -166,16 +169,16 @@ const CommandGroup = React.forwardRef<
     )}
     {...props}
   />
-))
+));
 
-CommandGroup.displayName = CommandPrimitive.Group.displayName
+CommandGroup.displayName = CommandPrimitive.Group.displayName;
 
 /**
  * CommandSeparator Component
- * 
+ *
  * A visual separator between command groups or items.
  * Renders as a horizontal line.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>} props - CommandSeparator props
  * @param {string} [props.className] - CSS class names for the separator
  * @param {React.RefObject<React.ElementRef<typeof CommandPrimitive.Separator>>} ref - Reference to the separator element
@@ -190,15 +193,15 @@ const CommandSeparator = React.forwardRef<
     className={cn('-mx-1 h-px bg-border', className)}
     {...props}
   />
-))
-CommandSeparator.displayName = CommandPrimitive.Separator.displayName
+));
+CommandSeparator.displayName = CommandPrimitive.Separator.displayName;
 
 /**
  * CommandItem Component
- * 
+ *
  * An individual command item in the list.
  * Supports keyboard navigation and selection.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof CommandPrimitive.Item>} props - CommandItem props
  * @param {string} [props.className] - CSS class names for the item
  * @param {string} [props.value] - The value of the command item (used for matching)
@@ -219,16 +222,16 @@ const CommandItem = React.forwardRef<
     )}
     {...props}
   />
-))
+));
 
-CommandItem.displayName = CommandPrimitive.Item.displayName
+CommandItem.displayName = CommandPrimitive.Item.displayName;
 
 /**
  * CommandShortcut Component
- * 
+ *
  * Displays a keyboard shortcut hint for a command item.
  * Typically shown on the right side of the command item.
- * 
+ *
  * @param {React.HTMLAttributes<HTMLSpanElement>} props - CommandShortcut props
  * @param {string} [props.className] - CSS class names for the shortcut
  * @param {React.ReactNode} [props.children] - Shortcut text (e.g., "⌘K")
@@ -246,9 +249,9 @@ const CommandShortcut = ({
       )}
       {...props}
     />
-  )
-}
-CommandShortcut.displayName = 'CommandShortcut'
+  );
+};
+CommandShortcut.displayName = 'CommandShortcut';
 
 export {
   Command,
@@ -260,4 +263,4 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-}
+};

@@ -33,7 +33,7 @@ const sizeStyles: Record<SpinnerSize, ViewStyle> = {
   lg: { width: 32, height: 32, borderWidth: 3 },
 };
 
-const Spinner = React.forwardRef<Animated.View, SpinnerProps>(
+const Spinner = React.forwardRef<React.ElementRef<typeof Animated.View>, SpinnerProps>(
   ({ size = 'default', label = 'Loading...', className, style, ...props }, ref) => {
     const rotation = React.useRef(new Animated.Value(0)).current;
 

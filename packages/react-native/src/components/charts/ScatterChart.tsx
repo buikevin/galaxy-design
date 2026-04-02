@@ -1,12 +1,42 @@
-import React, { useMemo } from 'react'
-import { View, Text, ActivityIndicator, useWindowDimensions } from 'react-native'
-import { SkiaChart } from '@wuba/react-native-echarts'
-import type { EChartsOption } from 'echarts'
-import type { ScatterChartProps } from './types'
-import { getThemeColors } from './utils'
+import React, { useMemo } from 'react';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  useWindowDimensions,
+} from 'react-native';
+import { SkiaChart } from '@wuba/react-native-echarts';
+import type { EChartsOption } from 'echarts';
+import type { ScatterChartProps } from './types';
+import { getDefaultColors } from './utils';
+
+type ScatterPoint = [number, number] | [number, number, number];
+
+function toScatterPoint(value: unknown, index: number): ScatterPoint {
+  if (
+    Array.isArray(value) &&
+    typeof value[0] === 'number' &&
+    typeof value[1] === 'number'
+  ) {
+    return typeof value[2] === 'number'
+      ? [value[0], value[1], value[2]]
+      : [value[0], value[1]];
+  }
+
+  if (value && typeof value === 'object') {
+    const point = value as { x?: unknown; y?: unknown; value?: unknown };
+    if (typeof point.x === 'number' && typeof point.y === 'number') {
+      return typeof point.value === 'number'
+        ? [point.x, point.y, point.value]
+        : [point.x, point.y];
+    }
+  }
+
+  return [index, typeof value === 'number' ? value : 0];
+}
 
 export interface ScatterChartComponentProps extends ScatterChartProps {
-  style?: Record<string, unknown>
+  style?: Record<string, unknown>;
 }
 
 export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
@@ -24,39 +54,32 @@ export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
   yAxisLabel,
   style,
 }) => {
-  const { width: windowWidth } = useWindowDimensions()
-  const chartWidth = width || windowWidth - 32
+  const { width: windowWidth } = useWindowDimensions();
+  const chartWidth = typeof width === 'number' ? width : windowWidth - 32;
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets.length) {
-      return null
+      return null;
     }
 
-    const colors = getThemeColors(theme)
+    const colors = getDefaultColors();
 
     // Transform datasets to scatter series
     const series = data.datasets.map((dataset, index) => {
-      const seriesData = dataset.data.map((value: unknown, i) => {
-        // Support both simple array [x, y] or object {x, y, value}
-        if (Array.isArray(value)) {
-          return value
-        } else if (typeof value === 'object' && 'x' in value && 'y' in value) {
-          return [value.x, value.y, value.value || 1]
-        }
-        // Fallback: use index as x, value as y
-        return [i, value]
-      })
+      const seriesData = dataset.data.map((value, i) =>
+        toScatterPoint(value, i)
+      );
 
       return {
         name: dataset.label,
         type: 'scatter',
         data: seriesData,
-        symbolSize: (dataItem: number[]) => {
+        symbolSize: (dataItem: ScatterPoint) => {
           // If third value exists, use it for size scaling
-          if (dataItem[2]) {
-            return Math.sqrt(dataItem[2]) * symbolSize / 5
+          if (typeof dataItem[2] === 'number') {
+            return (Math.sqrt(dataItem[2]) * symbolSize) / 5;
           }
-          return symbolSize
+          return symbolSize;
         },
         itemStyle: {
           color: dataset.color || colors[index % colors.length],
@@ -69,8 +92,8 @@ export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
             borderWidth: 1,
           },
         },
-      }
-    })
+      };
+    });
 
     return {
       tooltip: {
@@ -79,25 +102,50 @@ export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
         textStyle: {
           fontSize: 11,
         },
-        formatter: (params: Record<string, unknown>) => {
-          const dataPoint = params.data as number[]
-          return `${params.seriesName}<br/>X: ${dataPoint[0]}<br/>Y: ${dataPoint[1]}${dataPoint[2] ? `<br/>Value: ${dataPoint[2]}` : ''}`
-        },
+        formatter: ((params: { data?: ScatterPoint; seriesName?: string }) => {
+          const dataPoint = params.data;
+          if (!dataPoint) {
+            return '';
+          }
+
+          return `${params.seriesName ?? ''}<br/>X: ${dataPoint[0]}<br/>Y: ${
+            dataPoint[1]
+          }${
+            typeof dataPoint[2] === 'number'
+              ? `<br/>Value: ${dataPoint[2]}`
+              : ''
+          }`;
+        }) as never,
       },
-      legend: legend ? {
-        show: true,
-        orient: legendPosition === 'left' || legendPosition === 'right' ? 'vertical' : 'horizontal',
-        left: legendPosition === 'left' ? '5%' : legendPosition === 'right' ? 'auto' : 'center',
-        right: legendPosition === 'right' ? '5%' : 'auto',
-        top: legendPosition === 'top' ? '5%' : legendPosition === 'bottom' ? 'auto' : 'auto',
-        bottom: legendPosition === 'bottom' ? '5%' : 'auto',
-        textStyle: {
-          fontSize: 10,
-          color: theme === 'dark' ? '#e5e7eb' : '#374151',
-        },
-      } : {
-        show: false,
-      },
+      legend: legend
+        ? {
+            show: true,
+            orient:
+              legendPosition === 'left' || legendPosition === 'right'
+                ? 'vertical'
+                : 'horizontal',
+            left:
+              legendPosition === 'left'
+                ? '5%'
+                : legendPosition === 'right'
+                ? 'auto'
+                : 'center',
+            right: legendPosition === 'right' ? '5%' : 'auto',
+            top:
+              legendPosition === 'top'
+                ? '5%'
+                : legendPosition === 'bottom'
+                ? 'auto'
+                : 'auto',
+            bottom: legendPosition === 'bottom' ? '5%' : 'auto',
+            textStyle: {
+              fontSize: 10,
+              color: theme === 'dark' ? '#e5e7eb' : '#374151',
+            },
+          }
+        : {
+            show: false,
+          },
       grid: {
         left: '12%',
         right: '8%',
@@ -154,38 +202,57 @@ export const ScatterChart: React.FC<ScatterChartComponentProps> = ({
         },
       },
       series,
-    }
-  }, [data, theme, legend, legendPosition, symbolSize, opacity, xAxisLabel, yAxisLabel])
+    } as EChartsOption;
+  }, [
+    data,
+    theme,
+    legend,
+    legendPosition,
+    symbolSize,
+    opacity,
+    xAxisLabel,
+    yAxisLabel,
+  ]);
 
   if (loading) {
     return (
       <View
         style={[
-          { height, width: chartWidth, justifyContent: 'center', alignItems: 'center' },
+          {
+            height,
+            width: chartWidth,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           style,
         ]}
       >
         <ActivityIndicator size="large" color="#3b82f6" />
       </View>
-    )
+    );
   }
 
   if (!data || !data.datasets.length || !chartOption) {
     return (
       <View
         style={[
-          { height, width: chartWidth, justifyContent: 'center', alignItems: 'center' },
+          {
+            height,
+            width: chartWidth,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           style,
         ]}
       >
         <Text style={{ color: '#6b7280', fontSize: 14 }}>{emptyText}</Text>
       </View>
-    )
+    );
   }
 
   return (
     <View style={[{ height, width: chartWidth }, style]}>
       <SkiaChart option={chartOption} width={chartWidth} height={height} />
     </View>
-  )
-}
+  );
+};

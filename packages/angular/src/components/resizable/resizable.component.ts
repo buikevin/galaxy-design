@@ -18,9 +18,57 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularSplitModule } from 'angular-split';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type Direction = 'horizontal' | 'vertical';
+
+@Component({
+  selector: 'ui-resizable-panel',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <ng-template>
+      <div [class]="panelClasses">
+        <ng-content></ng-content>
+      </div>
+    </ng-template>
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ResizablePanelComponent {
+  @ViewChild(TemplateRef, { static: true })
+  templateRef!: TemplateRef<unknown>;
+
+  @Input() defaultSize?: number;
+  @Input() size?: number;
+  @Input() minSize?: number;
+  @Input() maxSize?: number;
+  @Input() collapsedSize?: number;
+  @Input() collapsible: boolean = false;
+  @Input() order?: number;
+  @Input() class?: string;
+
+  get panelClasses(): string {
+    return cn('relative h-full w-full overflow-auto', this.class);
+  }
+
+  get initialSize(): number | undefined {
+    return this.defaultSize ?? this.size;
+  }
+}
+
+@Component({
+  selector: 'ui-resizable-handle',
+  standalone: true,
+  imports: [CommonModule],
+  template: ``,
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class ResizableHandleComponent {
+  @Input() disabled: boolean = false;
+  @Input() withHandle: boolean = false;
+  @Input() class?: string;
+}
 
 @Component({
   selector: 'ui-resizable-panel-group',
@@ -96,52 +144,4 @@ export class ResizablePanelGroupComponent implements AfterContentInit {
       return a.order - b.order;
     });
   }
-}
-
-@Component({
-  selector: 'ui-resizable-panel',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
-    <ng-template>
-      <div [class]="panelClasses">
-        <ng-content></ng-content>
-      </div>
-    </ng-template>
-  `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class ResizablePanelComponent {
-  @ViewChild(TemplateRef, { static: true })
-  templateRef!: TemplateRef<unknown>;
-
-  @Input() defaultSize?: number;
-  @Input() size?: number;
-  @Input() minSize?: number;
-  @Input() maxSize?: number;
-  @Input() collapsedSize?: number;
-  @Input() collapsible: boolean = false;
-  @Input() order?: number;
-  @Input() class?: string;
-
-  get panelClasses(): string {
-    return cn('relative h-full w-full overflow-auto', this.class);
-  }
-
-  get initialSize(): number | undefined {
-    return this.defaultSize ?? this.size;
-  }
-}
-
-@Component({
-  selector: 'ui-resizable-handle',
-  standalone: true,
-  imports: [CommonModule],
-  template: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-})
-export class ResizableHandleComponent {
-  @Input() disabled: boolean = false;
-  @Input() withHandle: boolean = false;
-  @Input() class?: string;
 }

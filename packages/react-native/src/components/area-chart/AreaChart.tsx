@@ -7,6 +7,9 @@ import { getDefaultColors, transformDataToSeries, getThemeColors } from './utils
 
 export interface AreaChartComponentProps extends AreaChartProps {
   className?: string
+  _animation?: boolean
+  opacity?: number
+  gradient?: boolean
 }
 
 export const AreaChart: React.FC<AreaChartComponentProps> = ({
@@ -30,7 +33,7 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
   options = {},
 }) => {
   const { width: screenWidth } = useWindowDimensions()
-  const chartWidth = width || screenWidth - 32
+  const chartWidth = typeof width === 'number' ? width : screenWidth - 32
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets || data.datasets.length === 0) {
@@ -55,8 +58,12 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
     if (gradient) {
       series.forEach((s: Record<string, unknown>, index: number) => {
         const color = (s.itemStyle as Record<string, unknown>)?.color || colors[index % colors.length]
+        const areaStyle = typeof s.areaStyle === 'object' && s.areaStyle !== null
+          ? s.areaStyle as Record<string, unknown>
+          : {}
+
         s.areaStyle = {
-          ...s.areaStyle,
+          ...areaStyle,
           color: {
             type: 'linear',
             x: 0,
@@ -134,7 +141,7 @@ export const AreaChart: React.FC<AreaChartComponentProps> = ({
       },
       series,
       ...options,
-    }
+    } as EChartsOption
   }, [
     data,
     theme,

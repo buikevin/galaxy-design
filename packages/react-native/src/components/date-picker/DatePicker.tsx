@@ -30,7 +30,15 @@ export interface DatePickerProps {
   className?: string;
   /** Selection mode */
   mode?: 'single' | 'range';
+  /** Backward-compatible selection mode alias */
+  _mode?: 'single' | 'range';
 }
+
+type DatePickerComponent = React.ForwardRefExoticComponent<
+  DatePickerProps & React.RefAttributes<View>
+> & {
+  range: typeof DateRangePicker;
+};
 
 export const DatePicker = React.forwardRef<View, DatePickerProps>(
   (
@@ -324,6 +332,6 @@ export const DateRangePicker = React.forwardRef<View, DateRangePickerProps>(
 DateRangePicker.displayName = 'DateRangePicker';
 
 // Static method for creating range picker
-DatePicker.range = DateRangePicker;
+(DatePicker as DatePickerComponent).range = DateRangePicker;
 
 export { DateRangePicker as DatePickerRange };

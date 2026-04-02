@@ -15,7 +15,7 @@ import {
   RdxNavigationMenuIndicatorDirective,
   RdxNavigationMenuViewportDirective,
 } from '@radix-ng/primitives/navigation-menu';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-navigation-menu',

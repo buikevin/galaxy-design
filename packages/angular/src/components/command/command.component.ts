@@ -7,7 +7,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 
 @Component({
   selector: 'ui-command',

@@ -5,7 +5,7 @@
  */
 
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 export type SpinnerSize = 'sm' | 'default' | 'lg';
 

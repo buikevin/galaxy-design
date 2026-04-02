@@ -1,1 +1,2 @@
-export { Toggle, toggleVariants } from './Toggle'
+export { Toggle } from './Toggle'
+export { toggleVariants } from './variants'

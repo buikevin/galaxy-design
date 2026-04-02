@@ -29,6 +29,23 @@ export interface PaginationProps {
   className?: string;
 }
 
+type PaginationVariantFactory = (props: Omit<PaginationProps, 'variant'>) => React.JSX.Element;
+
+type PaginationLoadMoreFactory = (
+  props: Omit<PaginationProps, 'variant'> & {
+    loadMoreText?: string;
+    isLoading?: boolean;
+  }
+) => React.JSX.Element;
+
+type PaginationComponent = React.ForwardRefExoticComponent<
+  PaginationProps & React.RefAttributes<View>
+> & {
+  compact: PaginationVariantFactory;
+  full: PaginationVariantFactory;
+  loadMore: PaginationLoadMoreFactory;
+};
+
 export const Pagination = React.forwardRef<View, PaginationProps>(
   (
     {
@@ -353,15 +370,15 @@ function getVisiblePages(
 }
 
 // Static methods for creating variants
-Pagination.compact = (props: Omit<PaginationProps, 'variant'>) => (
+(Pagination as PaginationComponent).compact = (props: Omit<PaginationProps, 'variant'>) => (
   <Pagination {...props} variant="compact" />
 );
 
-Pagination.full = (props: Omit<PaginationProps, 'variant'>) => (
+(Pagination as PaginationComponent).full = (props: Omit<PaginationProps, 'variant'>) => (
   <Pagination {...props} variant="full" />
 );
 
-Pagination.loadMore = (
+(Pagination as PaginationComponent).loadMore = (
   props: Omit<PaginationProps, 'variant'> & {
     loadMoreText?: string;
     isLoading?: boolean;

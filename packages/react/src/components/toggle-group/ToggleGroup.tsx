@@ -4,11 +4,11 @@
  * @desc ToggleGroup components - A set of buttons that can be toggled on or off as a group
  */
 
-import * as React from 'react'
-import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group'
-import { type VariantProps } from 'class-variance-authority'
-import { cn } from '@/lib/utils'
-import { toggleVariants } from '@/components/ui/toggle/Toggle'
+import * as React from 'react';
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
+import { type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+import { toggleVariants } from '../toggle';
 
 /**
  * Context for sharing variant and size props between ToggleGroup and ToggleGroupItem
@@ -18,14 +18,14 @@ const ToggleGroupContext = React.createContext<
 >({
   size: 'default',
   variant: 'default',
-})
+});
 
 /**
  * ToggleGroup Component
- * 
+ *
  * A container for a group of toggle buttons. Manages the state of the toggles as a group.
  * Built on top of Radix UI ToggleGroup primitive.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Root> & VariantProps<typeof toggleVariants>} props - ToggleGroup props
  * @param {string} [props.className] - CSS class names for the group container
  * @param {'default' | 'outline'} [props.variant] - Visual style variant shared with items
@@ -53,16 +53,16 @@ const ToggleGroup = React.forwardRef<
       {children}
     </ToggleGroupContext.Provider>
   </ToggleGroupPrimitive.Root>
-))
+));
 
-ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName
+ToggleGroup.displayName = ToggleGroupPrimitive.Root.displayName;
 
 /**
  * ToggleGroupItem Component
- * 
+ *
  * An individual toggle button within a ToggleGroup.
  * Inherits variant and size from the parent ToggleGroup context.
- * 
+ *
  * @param {React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> & VariantProps<typeof toggleVariants>} props - ToggleGroupItem props
  * @param {string} [props.className] - CSS class names for the item
  * @param {string} props.value - The value associated with the item
@@ -78,7 +78,7 @@ const ToggleGroupItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> &
     VariantProps<typeof toggleVariants>
 >(({ className, children, variant, size, ...props }, ref) => {
-  const context = React.useContext(ToggleGroupContext)
+  const context = React.useContext(ToggleGroupContext);
 
   return (
     <ToggleGroupPrimitive.Item
@@ -94,9 +94,9 @@ const ToggleGroupItem = React.forwardRef<
     >
       {children}
     </ToggleGroupPrimitive.Item>
-  )
-})
+  );
+});
 
-ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName
+ToggleGroupItem.displayName = ToggleGroupPrimitive.Item.displayName;
 
-export { ToggleGroup, ToggleGroupItem }
+export { ToggleGroup, ToggleGroupItem };

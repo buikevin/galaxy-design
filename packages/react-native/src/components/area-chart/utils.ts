@@ -4,7 +4,7 @@
  * Helper functions optimized for mobile (React Native)
  */
 
-import type {
+import {
   ChartData,
   BaseChartProps,
   GridConfig,
@@ -53,7 +53,23 @@ export function transformDataToSeries(
  * Get default colors for charts
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
-  return ChartColorSchemes[scheme]
+  return [...ChartColorSchemes[scheme]]
+}
+
+export function getThemeColors(theme: 'light' | 'dark' = 'light') {
+  return theme === 'dark'
+    ? {
+        text: '#e5e7eb',
+        axis: '#4b5563',
+        axisLabel: '#9ca3af',
+        gridLine: '#374151',
+      }
+    : {
+        text: '#374151',
+        axis: '#d1d5db',
+        axisLabel: '#6b7280',
+        gridLine: '#e5e7eb',
+      }
 }
 
 /**
@@ -201,7 +217,6 @@ export function buildEChartsOption(props: BaseChartProps & { chartType: string }
   const {
     data,
     chartType,
-    _theme = 'light',
     legend = true,
     legendPosition = 'top',
     grid = true,

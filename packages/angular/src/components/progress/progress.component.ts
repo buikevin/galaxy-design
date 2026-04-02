@@ -10,7 +10,7 @@ import {
   RdxProgressRootDirective,
   RdxProgressIndicatorDirective,
 } from '@radix-ng/primitives/progress';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-progress',

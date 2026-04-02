@@ -1,421 +1,124 @@
-# 🌌 Galaxy UI CLI
+# Galaxy UI Source Workspace
 
-> Beautiful, accessible components for Vue, React, Angular, **Next.js**, **Nuxt.js**, **React Native**, and **Flutter** with unified design system
+This repository is the source workspace for Galaxy UI component packages and shared implementations.
 
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![Vue](https://img.shields.io/badge/Vue-3.5-42b883.svg)](https://vuejs.org/)
-[![React](https://img.shields.io/badge/React-18+-61dafb.svg)](https://reactjs.org/)
-[![Angular](https://img.shields.io/badge/Angular-20-red.svg)](https://angular.io/)
-[![React Native](https://img.shields.io/badge/React_Native-0.73+-61dafb.svg)](https://reactnative.dev/)
-[![Flutter](https://img.shields.io/badge/Flutter-3.0+-02569B.svg)](https://flutter.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8.svg)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+It is not the same thing as the published CLI package. The copy-paste product surface lives in `galaxy-design-cli`, where users run `init` and `add` to fetch component source from GitHub and scaffold editable files into their apps.
 
-## ✨ Features
+## Scope
 
-- 🎨 **197 Production-Ready Components** - Complete component library across **7 platforms** (41 web per framework + 37 mobile per platform)
-- 🎯 **Universal Multi-Platform** - Vue 3, React 18+, Angular 20, **Next.js**, **Nuxt.js**, **React Native**, and **Flutter**
-- 📋 **Copy-Paste Philosophy** - Own your code, no npm dependencies for components
-- ♿ **Accessible** - Built on Radix primitives (WAI-ARIA compliant, keyboard navigation)
-- 🌙 **Dark Mode** - First-class dark theme support with CSS variables
-- ⚡ **Modern Stack** - Latest versions with TypeScript strict mode
-- 🎨 **Tailwind CSS** - Utility-first styling with customization (NativeWind for React Native)
-- 📱 **Mobile-First** - Native iOS/Android support via React Native & Flutter
-- 🚀 **CLI Tool** - Simple init and add commands with auto-detection
-- 🔄 **Unified API** - Consistent component API across all mobile platforms
+This workspace currently contains:
 
-## 🚀 Quick Start
+- source code for React, Vue, and Angular component packages
+- shared workspace dependencies and package metadata
+- framework-specific build, lint, and test configuration
+- source entries used by the custom `@galaxy-ui/source` export condition
 
-### Prerequisites
+It does not currently contain standalone published packages for Next.js or Nuxt.js.
 
-Before you begin, make sure you have:
+- `nextjs` is a CLI/runtime target that maps to the React source package
+- `nuxtjs` is a CLI/runtime target that maps to the Vue source package
 
-- **Node.js 18+** installed
-- A **Vue 3**, **React 18+**, **Angular 20**, **Next.js**, or **Nuxt.js** project
-- **Tailwind CSS** configured in your project
+## Workspace Structure
 
-### Installation
+Key packages under `packages/`:
 
-You don't need to install Galaxy UI CLI globally. You can use it directly with your preferred package manager:
+- `@galaxy-ui/react`
+- `@galaxy-ui/vue`
+- `@galaxy-ui/angular`
+- additional workspace packages such as React Native and Flutter as they evolve
+
+When the CLI reports support for Next.js or Nuxt.js, that support comes from framework-specific transforms on top of the React or Vue package sources in this workspace.
+
+The root workspace uses Bun workspaces:
 
 ```bash
-# npm
-npx galaxy-design@latest init
-
-# pnpm
-pnpm dlx galaxy-design@latest init
-
-# yarn
-yarn dlx galaxy-design@latest init
-
-# bun
-bunx galaxy-design@latest init
+bun install
 ```
 
-### Add Components
-
-After initialization, add components to your project:
-
-```bash
-# npm
-npx galaxy-design@latest add button
-
-# pnpm
-pnpm dlx galaxy-design@latest add button
-
-# yarn
-yarn dlx galaxy-design@latest add button
-
-# bun
-bunx galaxy-design@latest add button
-```
-
-### Add Multiple Components
-
-```bash
-# Add multiple components at once
-npx galaxy-design@latest add button input dialog
-
-# Or use the shorthand with global installation
-npm install -g galaxy-design
-galaxy-design add button input select
-```
-
-### Tailwind CSS Setup
-
-Galaxy UI requires Tailwind CSS. If you haven't set it up yet:
-
-```bash
-# npm
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-
-# pnpm
-pnpm add -D tailwindcss postcss autoprefixer
-pnpm dlx tailwindcss init -p
-
-# yarn
-yarn add -D tailwindcss postcss autoprefixer
-yarn dlx tailwindcss init -p
-
-# bun
-bun add -D tailwindcss postcss autoprefixer
-bunx tailwindcss init -p
-```
-
-### What the Init Command Does
-
-The `galaxy-design init` command will:
-
-1. ✅ Detect your framework (Vue, React, Angular, Next.js, Nuxt.js, React Native, or Flutter)
-2. ✅ Create `components.json` configuration file
-3. ✅ Set up the `components/ui` directory (or platform-specific paths)
-4. ✅ Configure path aliases (`@/components`, `@/lib/utils`)
-5. ✅ Install required dependencies (Radix primitives, NativeWind for RN, etc.)
-6. ✅ Set up Tailwind CSS integration with design tokens
-
-## 📦 Components (41)
-
-All components work identically across **Vue 3**, **React 18+**, **Angular 20**, **Next.js**, and **Nuxt.js** with full Radix primitives integration:
-
-### 📝 Form Components (12)
-- **Button** - Clickable button with multiple variants and sizes
-- **Input** - Text input field
-- **Checkbox** - Checkbox for binary choices
-- **Radio Group** - Radio button group for exclusive choices
-- **Select** - Dropdown selection menu with full accessibility
-- **Slider** - Range slider input with min/max/step
-- **Switch** - Toggle switch with smooth animation
-- **Textarea** - Multi-line text input
-- **Label** - Accessible form labels with proper associations
-- **Calendar** - Date picker calendar
-- **Calendar Range** - Date range picker
-- **Tags Input** - Multi-value tag input
-
-### 📐 Layout Components (8)
-- **Separator** - Horizontal/vertical visual divider
-- **Accordion** - Expandable content sections with animations
-- **Collapsible** - Single collapsible section
-- **Tabs** - Tabbed interface with data-[state] styling
-- **Aspect Ratio** - Maintain aspect ratio for media content
-- **Resizable** - Resizable panel groups with keyboard support
-- **Sheet** - Slide-over panel from screen edge
-- **Toolbar** - Container for grouping controls
-
-### 🧭 Navigation Components (6)
-- **Navigation Menu** - Complex site navigation with indicators
-- **Menubar** - Application menu bar (File, Edit, etc.)
-- **Context Menu** - Right-click contextual menu
-- **Dropdown Menu** - Click-triggered dropdown menu
-- **Pagination** - Page navigation with numbers
-- **Command** - Command palette for keyboard navigation
-
-### 🎮 Interactive Components (2)
-- **Toggle** - Two-state toggle button
-- **Toggle Group** - Set of toggle buttons for single or multiple selection
-
-### 🔲 Overlay Components (5)
-- **Dialog** - Modal dialog with overlay and portal
-- **Alert Dialog** - Confirmation dialog with focus trap
-- **Popover** - Floating content with smart positioning
-- **Tooltip** - Hover tooltip with portal support
-- **Hover Card** - Rich hover card with preview content
-
-### 📊 Data Display Components (7)
-- **Avatar** - User avatar with automatic fallback
-- **Progress** - Progress bar indicator
-- **Table** - Responsive data table
-- **Kbd** - Keyboard key display
-- **Typography** - Text formatting components
-- **Empty** - Empty state placeholder
-- **Skeleton** - Loading placeholder
-
-### 🔧 Utility Components (1)
-- **Scroll Area** - Custom styled scrollable area
-
-> **Note**: All components built with Radix primitives have full WAI-ARIA support, keyboard navigation, and screen reader compatibility. Components are production-ready and fully typed with TypeScript.
-
-## 💡 Philosophy
-
-Galaxy UI CLI follows the **copy-paste component** approach:
-
-- ✅ Components are **copied directly** into your project
-- ✅ You have **full ownership** of the code
-- ✅ **Complete control** to customize as needed
-- ✅ **No version conflicts** or dependency issues
-- ✅ Built with **Tailwind CSS** + **Radix primitives**
-
-## 🎨 Design System
-
-Built on industry-standard accessible design systems:
-
-- **Radix UI** (React) - Unstyled, accessible components for React
-- **Radix Vue** (Vue 3) - Vue port of Radix UI primitives
-- **Radix NG** (Angular) - Angular primitives with full WAI-ARIA support
-- **shadcn/ui** inspired - Copy-paste philosophy and beautiful design
-- **Tailwind CSS 3.4** - Utility-first styling with CSS variables
-
-### Radix Primitives Integration
-
-Components built with Radix primitives include:
-
-- ✅ **Full WAI-ARIA compliance** - Automatic ARIA attributes
-- ✅ **Keyboard navigation** - Tab, Arrow keys, Enter, Escape support
-- ✅ **Screen reader support** - Live regions and announcements
-- ✅ **Focus management** - Automatic focus trap for modals
-- ✅ **Portal support** - Floating elements render in document body
-- ✅ **Collision detection** - Smart positioning for overlays
-- ✅ **OnPush strategy** - Optimized change detection
-
-## 📚 Documentation
-
-Full documentation available at: **https://galaxy-design.vercel.app**
-
-- [Getting Started](https://galaxy-design.vercel.app/guide/introduction)
-- [Installation](https://galaxy-design.vercel.app/guide/installation)
-- [Components](https://galaxy-design.vercel.app/components/overview)
-- [CLI Usage](https://galaxy-design.vercel.app/guide/cli-usage)
-
-## 📖 Usage Examples
-
-### Vue 3
-
-```vue
-<script setup lang="ts">
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { ref } from 'vue'
-
-const email = ref('')
-</script>
-
-<template>
-  <div>
-    <Input v-model="email" placeholder="Email" />
-    <Button variant="default">Submit</Button>
-  </div>
-</template>
-```
+## Current Package Status
 
 ### React
 
-```tsx
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { useState } from 'react'
+`@galaxy-ui/react` is currently the most publish-ready package in this workspace.
 
-export default function Example() {
-  const [email, setEmail] = useState('')
+- root source entry exists at `packages/react/src/index.ts`
+- builds JavaScript and declarations
+- verifies with `npm run build` and `npm pack --dry-run`
+- still has internal typing debt, but current publish artifacts are generated successfully
 
-  return (
-    <div>
-      <Input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <Button variant="default">Submit</Button>
-    </div>
-  )
-}
-```
+### Vue
+
+`@galaxy-ui/vue` now has a real library build pipeline.
+
+- root source entry exists at `packages/vue/src/index.ts`
+- builds with `vite build && vue-tsc -p tsconfig.build.json`
+- package manifest points at real `dist/*` artifacts
+- should be treated as a package with an actual build, not as source-only placeholder metadata
 
 ### Angular
 
-```typescript
-import { Component } from '@angular/core';
-import { ButtonComponent } from '@/components/ui/button';
-import { InputComponent } from '@/components/ui/input';
+`@galaxy-ui/angular` now has a real Angular library build pipeline.
 
-@Component({
-  selector: 'app-example',
-  standalone: true,
-  imports: [ButtonComponent, InputComponent],
-  template: `
-    <div>
-      <ui-input [(ngModel)]="email" placeholder="Email" />
-      <ui-button variant="default">Submit</ui-button>
-    </div>
-  `
-})
-export class ExampleComponent {
-  email = '';
-}
-```
+- root source entry exists at `packages/angular/src/index.ts`
+- builds with `ng build galaxy-ui-angular`
+- package manifest points at real Angular package artifacts in `dist/`
+- metadata is aligned to the `buikevin/galaxy-design` repository
+- some export-surface cleanup may still be needed, but this is no longer a fake or intentionally failing build story
 
-## 🛠️ Development
+## Tailwind Support
 
-This is an Nx monorepo managed with Bun.
+Do not treat this repository as locked to Tailwind CSS v3.
 
-### Development Prerequisites
+- the workspace lockfile already includes Tailwind v4-era dependencies
+- component source should be evaluated against both v3 and v4 compatibility expectations
+- the CLI strategy is v4-first for new installs while preserving existing v3 projects
 
-- Node.js 18+
-- Bun (recommended) or npm/pnpm/yarn
+## Development Commands
 
-### Development Setup
+From the repository root:
 
 ```bash
-# Clone repository
-git clone https://github.com/buikevin/galaxy-design
-cd galaxy-design
-
-# Install dependencies
 bun install
-
-# Build all packages
-bun nx run-many -t build
-
-# Build specific package
-bun nx build cli
-bun nx build vue
-bun nx build react
-bun nx build angular
-
-# Run documentation site
-cd docs
-bun run dev
+npm run lint
+npm run test
 ```
 
-## 📦 Packages
+Package-specific examples:
 
-| Package | Description | Status |
-|---------|-------------|--------|
-| `galaxy-design` | CLI tool (init, add commands) | ✅ Complete |
-| Component Templates | 41 component templates (Vue, React, Angular) | ✅ Complete |
+```bash
+cd packages/react && npm run build
+cd packages/react && npm pack --dry-run
+cd packages/vue && npm run build
+cd packages/angular && npm run build
+```
 
-## 🗺️ Roadmap
+## Publish Readiness Policy
 
-### ✅ Phase 1: Foundation (Complete)
-- ✅ Nx monorepo setup
-- ✅ Package structure
-- ✅ Multi-framework architecture
+Use this rule of thumb when working in this repo:
 
-### ✅ Phase 2: CLI Tool (Complete)
-- ✅ `galaxy-design init` command
-- ✅ `galaxy-design add` command
-- ✅ Framework auto-detection
-- ✅ Package manager detection
+- if a package manifest claims `dist/index.js`, `dist/index.d.ts`, or equivalent Angular output, the workspace must be able to build and pack those files
+- package metadata, README status, and actual artifacts must move together
+- if a package is not meant to be publishable yet, do not advertise missing artifacts in its manifest
 
-### ✅ Phase 3: Components (Complete)
-- ✅ 41 web components + 35 mobile components (22 RN, 13 Flutter)
-- ✅ Vue 3 implementations
-- ✅ React 18+ implementations
-- ✅ Angular 20 implementations
-- ✅ Full TypeScript support
-- ✅ Radix primitives integration
+## Relationship To The CLI
 
-### ✅ Phase 4: Documentation (Complete)
-- ✅ VitePress documentation site
-- ✅ Bilingual support (English/Vietnamese)
-- ✅ Component documentation
-- ✅ Usage examples
+The copy-paste user experience lives in `galaxy-design-cli`, not in this repository root.
 
-### 🚧 Phase 5: Testing (In Progress)
-- ⏸️ Unit tests for all components
-- ⏸️ Integration tests
-- ⏸️ E2E tests
+That means:
 
-### ✅ Phase 6: Publishing (Complete)
-- ✅ npm package publishing preparation
-- ✅ Documentation site deployed (Vercel)
-- ✅ Build automation with prepublishOnly
+- CLI docs should stay in the CLI repo/package
+- this README should describe the source workspace and package status
+- user-facing `init` and `add` behavior should be documented where the CLI is published
 
-## 📊 Project Stats
+## Near-Term Priorities
 
-- **Components**: 197 total (41 per web framework + 37 per mobile platform)
-- **Platforms**: 7 (Vue 3, React 18+, Angular 20, Next.js, Nuxt.js, React Native, Flutter)
-- **Total Implementations**: 197 unique component implementations (Next.js uses React templates, Nuxt.js uses Vue templates)
-- **Radix Integration**: Full coverage with Radix primitives for web
-  - Vue: Radix Vue primitives
-  - React: Radix UI primitives
-  - Angular: Radix NG primitives (@radix-ng/primitives)
-- **Mobile Frameworks**:
-  - React Native: 37 components with NativeWind v4
-  - Flutter: 37 components with Material Design 3
-- **Lines of Code**: ~20,000+ across all packages
-- **Documentation**: 82+ pages (41 EN + 41 VI) in VitePress + mobile guides
-- **CLI**: ✅ Fully functional (init & add commands) with mobile support
-- **Build Status**: ✅ All components compile successfully
-- **Deployment**: ✅ Docs deployed at https://galaxy-design.vercel.app
-- **Status**: Production-ready & ready for npm publish
+- keep `@galaxy-ui/react` build and pack verification green
+- keep Vue and Angular build metadata aligned with actual emitted artifacts
+- add stronger publish verification and smoke import checks per package
+- continue normalizing docs and manifests around the real copy-paste product model
 
-## 🤝 Contributing
+## Repository
 
-Contributions are welcome!
-
-### How to Contribute
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 💡 Inspiration
-
-- **[shadcn/ui](https://ui.shadcn.com/)** - Copy-paste philosophy and design
-- **[shadcn-vue](https://www.shadcn-vue.com/)** - Vue implementation
-- **[Radix UI](https://www.radix-ui.com/)** - Accessible primitives
-- **[Radix Vue](https://www.radix-vue.com/)** - Vue primitives
-- **[Radix NG](https://github.com/radix-ng/primitives)** - Angular primitives
-
-## 📄 License
-
-MIT © 2025 Bùi Trọng Hiếu (kevinbui)
-
-## 👤 Author
-
-**Bùi Trọng Hiếu (kevinbui)**
-- GitHub: [@buikevin](https://github.com/buikevin)
-- Email: kevinbui210191@gmail.com
-
-## 🔗 Links
-
-- **Repository**: https://github.com/buikevin/galaxy-design
-- **Documentation**: https://galaxy-design.vercel.app
-- **npm Package**: https://www.npmjs.com/package/galaxy-design (Coming Soon)
-- **Changelog**: See [CHANGELOG.md](CHANGELOG.md)
-
----
-
-**Built with ❤️ using Vue, React, Angular, TypeScript, and Tailwind CSS**
-
+- Homepage: `https://galaxy-design.vercel.app`
+- Repository: `https://github.com/buikevin/galaxy-design`
+- Issues: `https://github.com/buikevin/galaxy-design/issues`

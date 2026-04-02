@@ -12,7 +12,7 @@ import {
   RdxTabsTriggerDirective,
   RdxTabsContentDirective,
 } from '@radix-ng/primitives/tabs';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-tabs',

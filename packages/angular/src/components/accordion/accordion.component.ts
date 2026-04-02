@@ -12,7 +12,7 @@ import {
   RdxAccordionTriggerDirective,
   RdxAccordionContentDirective,
 } from '@radix-ng/primitives/accordion';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-accordion',

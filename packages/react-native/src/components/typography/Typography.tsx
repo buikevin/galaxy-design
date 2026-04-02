@@ -36,6 +36,26 @@ export interface TypographyProps extends Omit<TextProps, 'children'> {
   className?: string;
 }
 
+type TypographyVariantFactory = (
+  props: Omit<TypographyProps, 'variant'>
+) => React.JSX.Element;
+
+type TypographyComponent = React.ForwardRefExoticComponent<
+  TypographyProps & React.RefAttributes<Text>
+> & {
+  h1: TypographyVariantFactory;
+  h2: TypographyVariantFactory;
+  h3: TypographyVariantFactory;
+  h4: TypographyVariantFactory;
+  p: TypographyVariantFactory;
+  lead: TypographyVariantFactory;
+  large: TypographyVariantFactory;
+  small: TypographyVariantFactory;
+  muted: TypographyVariantFactory;
+  blockquote: TypographyVariantFactory;
+  code: TypographyVariantFactory;
+};
+
 export const Typography = React.forwardRef<Text, TypographyProps>(
   (
     {
@@ -160,47 +180,47 @@ function getWeightClasses(weight: TypographyWeight): string {
 }
 
 // Static methods for each variant
-Typography.h1 = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).h1 = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="h1" />
 );
 
-Typography.h2 = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).h2 = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="h2" />
 );
 
-Typography.h3 = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).h3 = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="h3" />
 );
 
-Typography.h4 = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).h4 = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="h4" />
 );
 
-Typography.p = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).p = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="p" />
 );
 
-Typography.lead = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).lead = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="lead" />
 );
 
-Typography.large = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).large = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="large" />
 );
 
-Typography.small = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).small = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="small" />
 );
 
-Typography.muted = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).muted = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="muted" />
 );
 
-Typography.blockquote = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).blockquote = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="blockquote" />
 );
 
-Typography.code = (props: Omit<TypographyProps, 'variant'>) => (
+(Typography as TypographyComponent).code = (props: Omit<TypographyProps, 'variant'>) => (
   <Typography {...props} variant="code" />
 );
 

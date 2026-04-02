@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { format, isValid } from 'date-fns';
-import { DatePicker } from '@/components/ui/date-picker';
-import { TimePicker } from '@/components/ui/time-picker';
+import { DatePicker } from '../date-picker';
+import { TimePicker } from '../time-picker';
 import { cn } from '@/lib/utils';
 
 export interface DateTimePickerProps {

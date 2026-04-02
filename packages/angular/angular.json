@@ -9,6 +9,19 @@
       "sourceRoot": "src",
       "prefix": "ui",
       "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "ng-package.json",
+            "tsConfig": "tsconfig.lib.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {

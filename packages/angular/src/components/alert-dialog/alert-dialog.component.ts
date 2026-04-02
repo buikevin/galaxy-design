@@ -13,7 +13,7 @@ import {
   RdxAlertDialogTitleDirective,
   RdxAlertDialogCancelDirective,
 } from '@radix-ng/primitives/alert-dialog';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-alert-dialog',

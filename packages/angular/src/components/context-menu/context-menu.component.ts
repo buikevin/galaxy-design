@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 import {
   RdxContextMenuItemDirective,
 } from '@radix-ng/primitives/context-menu';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-context-menu',

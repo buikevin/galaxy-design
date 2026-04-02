@@ -1,1 +1,2 @@
-export { Toaster, toast } from './Toast';
+export { Toaster } from './Toast';
+export { toast } from './toast-helper';

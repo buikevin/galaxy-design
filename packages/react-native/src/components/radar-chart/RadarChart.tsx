@@ -1,12 +1,17 @@
-import React, { useMemo } from 'react'
-import { View, Text, ActivityIndicator, useWindowDimensions } from 'react-native'
-import { SkiaChart } from '@wuba/react-native-echarts'
-import type { EChartsOption } from 'echarts'
-import type { RadarChartProps } from './types'
-import { getThemeColors } from './utils'
+import React, { useMemo } from 'react';
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  useWindowDimensions,
+} from 'react-native';
+import { SkiaChart } from '@wuba/react-native-echarts';
+import type { EChartsOption } from 'echarts';
+import type { RadarChartProps } from './types';
+import { getDefaultColors } from './utils';
 
 export interface RadarChartComponentProps extends RadarChartProps {
-  style?: Record<string, unknown>
+  style?: Record<string, unknown>;
 }
 
 export const RadarChart: React.FC<RadarChartComponentProps> = ({
@@ -25,21 +30,23 @@ export const RadarChart: React.FC<RadarChartComponentProps> = ({
   opacity = 0.3,
   style,
 }) => {
-  const { width: windowWidth } = useWindowDimensions()
-  const chartWidth = width || windowWidth - 32
+  const { width: windowWidth } = useWindowDimensions();
+  const chartWidth = typeof width === 'number' ? width : windowWidth - 32;
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets.length) {
-      return null
+      return null;
     }
 
-    const colors = getThemeColors(theme)
+    const colors = getDefaultColors();
 
     // Build radar indicators from labels
     const indicator = data.labels.map((label) => ({
       name: label,
-      max: maxValue || Math.max(...data.datasets.flatMap(d => d.data)),
-    }))
+      max:
+        maxValue ||
+        Math.max(...data.datasets.flatMap((dataset) => dataset.data)),
+    }));
 
     // Transform datasets to radar series
     const seriesData = data.datasets.map((dataset, index) => ({
@@ -48,10 +55,12 @@ export const RadarChart: React.FC<RadarChartComponentProps> = ({
       itemStyle: {
         color: dataset.color || colors[index % colors.length],
       },
-      areaStyle: fill ? {
-        opacity: opacity,
-      } : undefined,
-    }))
+      areaStyle: fill
+        ? {
+            opacity: opacity,
+          }
+        : undefined,
+    }));
 
     return {
       tooltip: {
@@ -61,20 +70,35 @@ export const RadarChart: React.FC<RadarChartComponentProps> = ({
           fontSize: 11,
         },
       },
-      legend: legend ? {
-        show: true,
-        orient: legendPosition === 'left' || legendPosition === 'right' ? 'vertical' : 'horizontal',
-        left: legendPosition === 'left' ? '5%' : legendPosition === 'right' ? 'auto' : 'center',
-        right: legendPosition === 'right' ? '5%' : 'auto',
-        top: legendPosition === 'top' ? '5%' : legendPosition === 'bottom' ? 'auto' : 'auto',
-        bottom: legendPosition === 'bottom' ? '5%' : 'auto',
-        textStyle: {
-          fontSize: 10,
-          color: theme === 'dark' ? '#e5e7eb' : '#374151',
-        },
-      } : {
-        show: false,
-      },
+      legend: legend
+        ? {
+            show: true,
+            orient:
+              legendPosition === 'left' || legendPosition === 'right'
+                ? 'vertical'
+                : 'horizontal',
+            left:
+              legendPosition === 'left'
+                ? '5%'
+                : legendPosition === 'right'
+                ? 'auto'
+                : 'center',
+            right: legendPosition === 'right' ? '5%' : 'auto',
+            top:
+              legendPosition === 'top'
+                ? '5%'
+                : legendPosition === 'bottom'
+                ? 'auto'
+                : 'auto',
+            bottom: legendPosition === 'bottom' ? '5%' : 'auto',
+            textStyle: {
+              fontSize: 10,
+              color: theme === 'dark' ? '#e5e7eb' : '#374151',
+            },
+          }
+        : {
+            show: false,
+          },
       radar: {
         indicator,
         shape,
@@ -91,9 +115,10 @@ export const RadarChart: React.FC<RadarChartComponentProps> = ({
         splitArea: {
           show: true,
           areaStyle: {
-            color: theme === 'dark'
-              ? ['rgba(31, 41, 55, 0.3)', 'rgba(17, 24, 39, 0.3)']
-              : ['rgba(249, 250, 251, 0.5)', 'rgba(243, 244, 246, 0.5)'],
+            color:
+              theme === 'dark'
+                ? ['rgba(31, 41, 55, 0.3)', 'rgba(17, 24, 39, 0.3)']
+                : ['rgba(249, 250, 251, 0.5)', 'rgba(243, 244, 246, 0.5)'],
           },
         },
         axisLine: {
@@ -113,38 +138,58 @@ export const RadarChart: React.FC<RadarChartComponentProps> = ({
           },
         },
       ],
-    }
-  }, [data, theme, legend, legendPosition, shape, splitNumber, maxValue, fill, opacity])
+    } as EChartsOption;
+  }, [
+    data,
+    theme,
+    legend,
+    legendPosition,
+    shape,
+    splitNumber,
+    maxValue,
+    fill,
+    opacity,
+  ]);
 
   if (loading) {
     return (
       <View
         style={[
-          { height, width: chartWidth, justifyContent: 'center', alignItems: 'center' },
+          {
+            height,
+            width: chartWidth,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           style,
         ]}
       >
         <ActivityIndicator size="large" color="#3b82f6" />
       </View>
-    )
+    );
   }
 
   if (!data || !data.datasets.length || !chartOption) {
     return (
       <View
         style={[
-          { height, width: chartWidth, justifyContent: 'center', alignItems: 'center' },
+          {
+            height,
+            width: chartWidth,
+            justifyContent: 'center',
+            alignItems: 'center',
+          },
           style,
         ]}
       >
         <Text style={{ color: '#6b7280', fontSize: 14 }}>{emptyText}</Text>
       </View>
-    )
+    );
   }
 
   return (
     <View style={[{ height, width: chartWidth }, style]}>
       <SkiaChart option={chartOption} width={chartWidth} height={height} />
     </View>
-  )
-}
+  );
+};

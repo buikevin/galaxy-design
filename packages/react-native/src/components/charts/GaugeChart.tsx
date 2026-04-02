@@ -31,7 +31,7 @@ export const GaugeChart: React.FC<GaugeChartComponentProps> = ({
   style,
 }) => {
   const { width: windowWidth } = useWindowDimensions()
-  const chartWidth = width || windowWidth - 32
+  const chartWidth = typeof width === 'number' ? width : windowWidth - 32
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (value === null || value === undefined) {

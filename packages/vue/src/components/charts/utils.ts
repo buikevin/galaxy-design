@@ -9,9 +9,11 @@ import type {
   BaseChartProps,
   GridConfig,
   TooltipConfig,
-  ChartColorSchemes,
   ColorScheme,
 } from './types'
+import { ChartColorSchemes } from './types'
+
+export { ChartColorSchemes }
 
 /**
  * Transform unified ChartData to ECharts series format
@@ -49,6 +51,37 @@ export function transformDataToSeries(
  */
 export function getDefaultColors(scheme: ColorScheme = 'default'): string[] {
   return ChartColorSchemes[scheme]
+}
+
+/**
+ * Get theme colors based on light/dark theme
+ */
+export function getThemeColors(theme: 'light' | 'dark' = 'light') {
+  if (theme === 'dark') {
+    return {
+      primary: '#3b82f6',
+      text: '#e5e7eb',
+      tooltipBg: '#1f2937',
+      tooltipBorder: '#374151',
+      tooltipText: '#f3f4f6',
+      grid: '#374151',
+      gridLine: '#374151',
+      axisLabel: '#9ca3af',
+      axis: '#9ca3af',
+    }
+  }
+
+  return {
+    primary: '#3b82f6',
+    text: '#374151',
+    tooltipBg: '#ffffff',
+    tooltipBorder: '#e5e7eb',
+    tooltipText: '#111827',
+    grid: '#e5e7eb',
+    gridLine: '#e5e7eb',
+    axisLabel: '#6b7280',
+    axis: '#6b7280',
+  }
 }
 
 /**

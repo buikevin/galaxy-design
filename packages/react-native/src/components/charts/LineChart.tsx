@@ -6,15 +6,16 @@
 
 import React, { useMemo } from 'react'
 import { View, Text, Dimensions, StyleSheet } from 'react-native'
-import { SkiaChart, SVGRenderer } from '@wuba/react-native-echarts'
+import { SkiaChart } from '@wuba/react-native-echarts'
 import * as echarts from 'echarts/core'
-import { LineChart } from 'echarts/charts'
+import { LineChart as EChartsLineChart } from 'echarts/charts'
 import {
   GridComponent,
   TooltipComponent,
   LegendComponent,
   DataZoomComponent,
 } from 'echarts/components'
+import { SVGRenderer } from 'echarts/renderers'
 import type { EChartsOption } from 'echarts'
 import type { LineChartProps as BaseLineChartProps } from './types'
 import {
@@ -24,7 +25,7 @@ import {
 
 // Register ECharts components
 echarts.use([
-  LineChart,
+  EChartsLineChart,
   GridComponent,
   TooltipComponent,
   LegendComponent,
@@ -112,7 +113,7 @@ export const LineChart: React.FC<LineChartProps> = ({
     return {
       ...baseOption,
       series,
-    }
+    } as EChartsOption
   }, [
     data,
     height,

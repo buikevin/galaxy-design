@@ -5,7 +5,7 @@
  */
 
 import { Component, Input } from '@angular/core'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 
 @Component({
   selector: 'ui-skeleton',

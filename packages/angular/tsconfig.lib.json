@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "declaration": true,
+    "declarationMap": false,
+    "inlineSources": false,
+    "skipLibCheck": true,
+    "strict": false,
+    "noCheck": true,
+    "types": []
+  },
+  "angularCompilerOptions": {
+    "compilationMode": "partial"
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "src/test.ts"
+  ]
+}

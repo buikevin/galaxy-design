@@ -18,9 +18,9 @@ export interface InputProps extends TextInputProps {
   /** Change handler */
   onChangeText?: (text: string) => void;
   /** Blur handler */
-  onBlur?: (event: Record<string, unknown>) => void;
+  onBlur?: TextInputProps['onBlur'];
   /** Focus handler */
-  onFocus?: (event: Record<string, unknown>) => void;
+  onFocus?: TextInputProps['onFocus'];
   /** CSS class names for the input */
   className?: string;
   /** Label text */

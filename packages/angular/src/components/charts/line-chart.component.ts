@@ -15,7 +15,7 @@ import {
 import { CommonModule } from '@angular/common'
 import { NgxEchartsModule } from 'ngx-echarts'
 import type { EChartsOption } from 'echarts'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 import type { ChartData } from './types'
 import {
   buildEChartsOption,

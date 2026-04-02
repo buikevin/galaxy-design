@@ -3,7 +3,7 @@ import { View, Text, ActivityIndicator, useWindowDimensions } from 'react-native
 import { SkiaChart } from '@wuba/react-native-echarts'
 import type { EChartsOption } from 'echarts'
 import type { MixedChartProps } from './types'
-import { getThemeColors } from './utils'
+import { getDefaultColors } from './utils'
 
 export interface MixedChartComponentProps extends MixedChartProps {
   style?: Record<string, unknown>
@@ -21,14 +21,14 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
   style,
 }) => {
   const { width: windowWidth } = useWindowDimensions()
-  const chartWidth = width || windowWidth - 32
+  const chartWidth = typeof width === 'number' ? width : windowWidth - 32
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets.length) {
       return null
     }
 
-    const colors = getThemeColors(theme)
+    const colors = getDefaultColors()
 
     // Build series with mixed types
     const series = data.datasets.map((dataset, index) => {
@@ -140,7 +140,7 @@ export const MixedChart: React.FC<MixedChartComponentProps> = ({
         },
       },
       series,
-    }
+    } as EChartsOption
   }, [data, theme, legend, legendPosition])
 
   if (loading) {

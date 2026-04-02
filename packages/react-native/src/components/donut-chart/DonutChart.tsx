@@ -1,20 +1,21 @@
 import React, { useMemo } from 'react'
 import { View, Text, Dimensions, ActivityIndicator } from 'react-native'
-import { SkiaChart, SVGRenderer } from '@wuba/react-native-echarts'
+import { SkiaChart } from '@wuba/react-native-echarts'
 import * as echarts from 'echarts/core'
-import { DonutChart } from 'echarts/charts'
+import { PieChart as EChartsPieChart } from 'echarts/charts'
 import {
   TitleComponent,
   TooltipComponent,
   LegendComponent,
 } from 'echarts/components'
+import { SVGRenderer } from 'echarts/renderers'
 import type { EChartsOption } from 'echarts'
 import type { DonutChartProps } from './types'
 import { getDefaultColors, formatNumber } from './utils'
 
 // Register ECharts components
 echarts.use([
-  DonutChart,
+  EChartsPieChart,
   TitleComponent,
   TooltipComponent,
   LegendComponent,
@@ -32,7 +33,6 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
   theme = 'light',
   legend = true,
   legendPosition = 'bottom', // Mobile default to bottom
-  _animation = true,
   innerRadius = 50,
   outerRadius = 60, // Smaller for mobile
   showPercentage = true,
@@ -42,7 +42,7 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
   className,
   options = {},
 }) => {
-  const chartWidth = width || Dimensions.get('window').width - 32
+  const chartWidth = typeof width === 'number' ? width : Dimensions.get('window').width - 32
 
   const chartOption = useMemo<EChartsOption | null>(() => {
     if (!data || !data.datasets || data.datasets.length === 0) {
@@ -66,10 +66,10 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
       color: colors,
       tooltip: {
         trigger: 'item',
-        formatter: (params: Record<string, unknown>) => {
+        formatter: ((params: { value?: number; name?: string }) => {
           const percent = (((params.value as number) / total) * 100).toFixed(1)
           return `${params.name}: ${formatNumber(params.value as number)} (${percent}%)`
-        },
+        }) as never,
         backgroundColor: theme === 'dark' ? '#18181b' : '#ffffff',
         borderColor: theme === 'dark' ? '#27272a' : '#e4e4e7',
         textStyle: {
@@ -112,10 +112,10 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
             show: labelPosition !== 'center',
             position: labelPosition === 'inside' ? 'inside' : 'outside',
             formatter: showPercentage
-              ? (params: Record<string, unknown>) => {
+              ? ((params: { value?: number; name?: string }) => {
                   const percent = (((params.value as number) / total) * 100).toFixed(1)
                   return `${params.name}\n${percent}%`
-                }
+                }) as never
               : '{b}',
             color: theme === 'dark' ? '#fafafa' : '#0a0a0a',
             fontSize: 10, // Smaller for mobile
@@ -128,7 +128,7 @@ export const DonutChart: React.FC<DonutChartComponentProps> = ({
         },
       ],
       ...options,
-    }
+    } as EChartsOption
   }, [
     data,
     theme,

@@ -23,7 +23,24 @@ export interface EmptyProps {
   iconSize?: number;
   /** Spacing between elements in pixels */
   spacing?: number;
+  /** Backward-compatible spacing alias */
+  _spacing?: number;
 }
+
+type EmptyFactoryProps = Omit<EmptyProps, 'icon' | 'title' | 'description'> & {
+  title?: string;
+  description?: string;
+};
+
+type EmptyComponent = React.ForwardRefExoticComponent<
+  EmptyProps & React.RefAttributes<View>
+> & {
+  noData: (props: EmptyFactoryProps) => React.JSX.Element;
+  noResults: (props: EmptyFactoryProps) => React.JSX.Element;
+  error: (props: EmptyFactoryProps) => React.JSX.Element;
+  offline: (props: EmptyFactoryProps) => React.JSX.Element;
+  emptyList: (props: EmptyFactoryProps) => React.JSX.Element;
+};
 
 export const Empty = React.forwardRef<View, EmptyProps>(
   (
@@ -34,14 +51,18 @@ export const Empty = React.forwardRef<View, EmptyProps>(
       action,
       className,
       iconSize = 64,
+      spacing,
       _spacing = 16,
     },
     ref
   ) => {
+    const stackSpacing = spacing ?? _spacing;
+
     return (
       <View
         ref={ref}
         className={cn('flex-1 items-center justify-center p-8', className)}
+        style={{ gap: stackSpacing }}
       >
         {/* Icon */}
         {icon && (
@@ -81,12 +102,7 @@ export const Empty = React.forwardRef<View, EmptyProps>(
 Empty.displayName = 'Empty';
 
 // Factory methods for common empty states
-Empty.noData = (
-  props: Omit<EmptyProps, 'icon' | 'title' | 'description'> & {
-    title?: string;
-    description?: string;
-  }
-) => (
+(Empty as EmptyComponent).noData = (props: EmptyFactoryProps) => (
   <Empty
     {...props}
     icon="📥"
@@ -95,12 +111,7 @@ Empty.noData = (
   />
 );
 
-Empty.noResults = (
-  props: Omit<EmptyProps, 'icon' | 'title' | 'description'> & {
-    title?: string;
-    description?: string;
-  }
-) => (
+(Empty as EmptyComponent).noResults = (props: EmptyFactoryProps) => (
   <Empty
     {...props}
     icon="🔍"
@@ -111,12 +122,7 @@ Empty.noResults = (
   />
 );
 
-Empty.error = (
-  props: Omit<EmptyProps, 'icon' | 'title' | 'description'> & {
-    title?: string;
-    description?: string;
-  }
-) => (
+(Empty as EmptyComponent).error = (props: EmptyFactoryProps) => (
   <Empty
     {...props}
     icon="⚠️"
@@ -127,12 +133,7 @@ Empty.error = (
   />
 );
 
-Empty.offline = (
-  props: Omit<EmptyProps, 'icon' | 'title' | 'description'> & {
-    title?: string;
-    description?: string;
-  }
-) => (
+(Empty as EmptyComponent).offline = (props: EmptyFactoryProps) => (
   <Empty
     {...props}
     icon="📡"
@@ -143,12 +144,7 @@ Empty.offline = (
   />
 );
 
-Empty.emptyList = (
-  props: Omit<EmptyProps, 'icon' | 'title' | 'description'> & {
-    title?: string;
-    description?: string;
-  }
-) => (
+(Empty as EmptyComponent).emptyList = (props: EmptyFactoryProps) => (
   <Empty
     {...props}
     icon="📋"

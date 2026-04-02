@@ -33,6 +33,9 @@ export interface AlertProps extends ViewProps, VariantProps<typeof alertVariants
   children?: React.ReactNode;
 }
 
+export type AlertTitleProps = TextProps;
+export type AlertDescriptionProps = TextProps;
+
 const Alert = React.forwardRef<View, AlertProps>(
   ({ className, variant, ...props }, ref) => {
     return (

@@ -11,7 +11,7 @@ import {
   RdxDialogTitleDirective,
   RdxDialogDescriptionDirective,
 } from '@radix-ng/primitives/dialog';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-dialog',
