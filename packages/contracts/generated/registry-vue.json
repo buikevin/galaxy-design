@@ -1462,6 +1462,29 @@
       ],
       "manifestStatus": "complete"
     },
+    "combobox": {
+      "id": "combobox",
+      "name": "Combobox",
+      "type": "form",
+      "status": "complete",
+      "description": "Searchable select with filtering, combining a text input with a dropdown list.",
+      "files": [
+        "Combobox.vue",
+        "types.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Combobox"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "command": {
       "id": "command",
       "name": "command",

@@ -3114,6 +3114,94 @@
       ],
       "children": []
     },
+    "combobox": {
+      "name": "Combobox",
+      "type": "form",
+      "description": "Searchable select with filtering, combining a text input with a dropdown list.",
+      "category": "form",
+      "status": "complete",
+      "frameworks": [
+        "react",
+        "vue"
+      ],
+      "props": [
+        {
+          "name": "options",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "{ value: string; label: string }"
+            }
+          },
+          "description": "Available options to select from.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Selected value.",
+          "frameworks": [
+            "react",
+            "vue"
+          ],
+          "overrides": {
+            "vue": {
+              "name": "modelValue"
+            }
+          }
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Select...",
+          "description": "Placeholder text.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the combobox.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "frameworks": [
+            "react",
+            "vue"
+          ],
+          "overrides": {
+            "react": {
+              "name": "className"
+            }
+          }
+        }
+      ],
+      "children": []
+    },
     "command": {
       "name": "command",
       "type": "other",

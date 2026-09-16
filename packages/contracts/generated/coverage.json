@@ -146,6 +146,13 @@
         "flutter"
       ]
     },
+    "combobox": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue"
+      ]
+    },
     "command": {
       "status": "complete",
       "available": [
@@ -605,6 +612,7 @@
         "card",
         "checkbox",
         "collapsible",
+        "combobox",
         "command",
         "context-menu",
         "date-picker",
@@ -671,6 +679,7 @@
         "card",
         "checkbox",
         "collapsible",
+        "combobox",
         "command",
         "context-menu",
         "date-picker",
@@ -784,7 +793,9 @@
         "tooltip",
         "typography"
       ],
-      "missing": []
+      "missing": [
+        "combobox"
+      ]
     },
     "react-native": {
       "available": [
@@ -841,6 +852,7 @@
         "breadcrumb",
         "calendar-range",
         "calendar",
+        "combobox",
         "command",
         "date-range-picker",
         "date-time-picker",
@@ -908,6 +920,7 @@
         "breadcrumb",
         "calendar-range",
         "calendar",
+        "combobox",
         "command",
         "date-range-picker",
         "date-time-picker",

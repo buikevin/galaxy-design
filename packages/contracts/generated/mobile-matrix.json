@@ -9,7 +9,7 @@
   },
   "frameworks": {
     "react": {
-      "available": 61,
+      "available": 62,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -26,6 +26,7 @@
         "card": "available",
         "checkbox": "available",
         "collapsible": "available",
+        "combobox": "available",
         "command": "available",
         "context-menu": "available",
         "date-picker": "available",
@@ -74,11 +75,11 @@
         "typography": "available"
       },
       "summary": {
-        "available": 61
+        "available": 62
       }
     },
     "vue": {
-      "available": 61,
+      "available": 62,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -95,6 +96,7 @@
         "card": "available",
         "checkbox": "available",
         "collapsible": "available",
+        "combobox": "available",
         "command": "available",
         "context-menu": "available",
         "date-picker": "available",
@@ -143,7 +145,7 @@
         "typography": "available"
       },
       "summary": {
-        "available": 61
+        "available": 62
       }
     },
     "angular": {
@@ -164,6 +166,7 @@
         "card": "available",
         "checkbox": "available",
         "collapsible": "available",
+        "combobox": "available",
         "command": "available",
         "context-menu": "available",
         "date-picker": "available",
@@ -212,7 +215,7 @@
         "typography": "available"
       },
       "summary": {
-        "available": 61
+        "available": 62
       }
     },
     "react-native": {
@@ -233,6 +236,7 @@
         "card": "available",
         "checkbox": "available",
         "collapsible": "available",
+        "combobox": "needs-port",
         "command": "web-only",
         "context-menu": "available",
         "date-picker": "available",
@@ -283,7 +287,7 @@
       "summary": {
         "available": 48,
         "web-only": 6,
-        "needs-port": 7
+        "needs-port": 8
       }
     },
     "flutter": {
@@ -304,6 +308,7 @@
         "card": "available",
         "checkbox": "available",
         "collapsible": "available",
+        "combobox": "needs-port",
         "command": "web-only",
         "context-menu": "available",
         "date-picker": "available",
@@ -354,7 +359,7 @@
       "summary": {
         "available": 48,
         "web-only": 6,
-        "needs-port": 7
+        "needs-port": 8
       }
     }
   }

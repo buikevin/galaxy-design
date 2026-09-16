@@ -1558,6 +1558,36 @@
       ],
       "manifestStatus": "complete"
     },
+    "combobox": {
+      "id": "combobox",
+      "name": "Combobox",
+      "type": "form",
+      "status": "complete",
+      "description": "Searchable select with filtering, combining a text input with a dropdown list.",
+      "files": [
+        "Combobox.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Combobox",
+        "ComboboxProps",
+        "ComboboxOption"
+      ],
+      "dependencies": [
+        "cmdk"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "command",
+        "popover",
+        "button"
+      ],
+      "category": "form",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "command": {
       "id": "command",
       "name": "command",

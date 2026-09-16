@@ -2318,6 +2318,78 @@
         }
       ]
     },
+    "combobox": {
+      "id": "combobox",
+      "name": "Combobox",
+      "category": "form",
+      "status": "complete",
+      "description": "Searchable select with filtering, combining a text input with a dropdown list.",
+      "codeExamples": {
+        "react": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add combobox",
+          "import": "import { Combobox } from '@/components/ui/combobox'",
+          "usage": "<Combobox placeholder=\"Select...\">Content</Combobox>"
+        },
+        "vue": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add combobox",
+          "import": "import { Combobox } from '@/components/ui/combobox/index'",
+          "usage": "<Combobox placeholder=\"Select...\">Content</Combobox>"
+        },
+        "angular": null,
+        "react-native": null,
+        "flutter": null
+      },
+      "props": [
+        {
+          "name": "options",
+          "type": "array",
+          "description": "Available options to select from.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "description": "Selected value.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "default": "Select...",
+          "description": "Placeholder text.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "default": false,
+          "description": "Disables the combobox.",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        },
+        {
+          "name": "class",
+          "type": "string",
+          "frameworks": [
+            "react",
+            "vue"
+          ]
+        }
+      ]
+    },
     "command": {
       "id": "command",
       "name": "command",
