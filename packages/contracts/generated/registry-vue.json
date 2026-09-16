@@ -1584,6 +1584,29 @@
       ],
       "manifestStatus": "complete"
     },
+    "data-table": {
+      "id": "data-table",
+      "name": "Data Table",
+      "type": "data-display",
+      "status": "complete",
+      "description": "Sortable, filterable, paginated data table.",
+      "files": [
+        "DataTable.vue",
+        "types.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DataTable"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "data-display",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "date-picker": {
       "id": "date-picker",
       "name": "Date Picker",

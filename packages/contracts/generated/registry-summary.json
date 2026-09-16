@@ -3449,6 +3449,19 @@
       ],
       "children": []
     },
+    "data-table": {
+      "name": "Data Table",
+      "type": "data-display",
+      "description": "Sortable, filterable, paginated data table.",
+      "category": "data-display",
+      "status": "complete",
+      "frameworks": [
+        "react",
+        "vue"
+      ],
+      "props": [],
+      "children": []
+    },
     "date-picker": {
       "name": "Date Picker",
       "type": "form",

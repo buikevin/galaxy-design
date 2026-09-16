@@ -171,6 +171,13 @@
         "flutter"
       ]
     },
+    "data-table": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue"
+      ]
+    },
     "date-picker": {
       "status": "partial",
       "available": [
@@ -615,6 +622,7 @@
         "combobox",
         "command",
         "context-menu",
+        "data-table",
         "date-picker",
         "date-range-picker",
         "date-time-picker",
@@ -682,6 +690,7 @@
         "combobox",
         "command",
         "context-menu",
+        "data-table",
         "date-picker",
         "date-range-picker",
         "date-time-picker",
@@ -794,7 +803,8 @@
         "typography"
       ],
       "missing": [
-        "combobox"
+        "combobox",
+        "data-table"
       ]
     },
     "react-native": {
@@ -854,6 +864,7 @@
         "calendar",
         "combobox",
         "command",
+        "data-table",
         "date-range-picker",
         "date-time-picker",
         "form",
@@ -922,6 +933,7 @@
         "calendar",
         "combobox",
         "command",
+        "data-table",
         "date-range-picker",
         "date-time-picker",
         "form",

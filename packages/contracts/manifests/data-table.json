@@ -1,0 +1,49 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "data-table",
+  "name": "Data Table",
+  "category": "data-display",
+  "status": "complete",
+  "description": "Sortable, filterable, paginated data table.",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["DataTable.tsx", "types.ts", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["DataTable"],
+      "dependencies": [],
+      "props": []
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["DataTable.vue", "types.ts", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["DataTable"],
+      "dependencies": [],
+      "props": []
+    },
+    "angular": {
+      "status": "missing",
+      "files": [],
+      "notes": "Angular data table not implemented yet."
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Mobile uses FlatList instead of table."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Flutter has DataTable built-in."
+    }
+  },
+  "a11y": {
+    "keyboard": [],
+    "aria": [
+      "Table header uses cursor-pointer for sortable columns with sort indicator."
+    ]
+  }
+}
