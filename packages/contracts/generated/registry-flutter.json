@@ -11,9 +11,7 @@
       "type": "other",
       "status": "complete",
       "description": "accordion",
-      "files": [
-        "accordion.dart"
-      ],
+      "files": ["accordion.dart"],
       "exports": [
         "GalaxyAccordion",
         "_GalaxyAccordionState",
@@ -21,9 +19,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -56,18 +52,11 @@
       "type": "other",
       "status": "complete",
       "description": "alert-dialog",
-      "files": [
-        "alert_dialog.dart"
-      ],
-      "exports": [
-        "GalaxyAlertDialog",
-        "AlertDialogVariant"
-      ],
+      "files": ["alert_dialog.dart"],
+      "exports": ["GalaxyAlertDialog", "AlertDialogVariant"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -146,9 +135,7 @@
       "type": "other",
       "status": "complete",
       "description": "alert",
-      "files": [
-        "alert.dart"
-      ],
+      "files": ["alert.dart"],
       "exports": [
         "GalaxyAlert",
         "GalaxyAlertTitle",
@@ -157,9 +144,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -206,12 +191,7 @@
       "type": "other",
       "status": "complete",
       "description": "area-chart",
-      "files": [
-        "area_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["area_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyAreaChart",
@@ -226,13 +206,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -386,17 +362,11 @@
       "type": "other",
       "status": "complete",
       "description": "aspect-ratio",
-      "files": [
-        "aspect_ratio.dart"
-      ],
-      "exports": [
-        "GalaxyAspectRatio"
-      ],
+      "files": ["aspect_ratio.dart"],
+      "exports": ["GalaxyAspectRatio"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -425,18 +395,11 @@
       "type": "other",
       "status": "complete",
       "description": "avatar",
-      "files": [
-        "avatar.dart"
-      ],
-      "exports": [
-        "GalaxyAvatar",
-        "AvatarSize"
-      ],
+      "files": ["avatar.dart"],
+      "exports": ["GalaxyAvatar", "AvatarSize"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -507,9 +470,7 @@
       "type": "other",
       "status": "complete",
       "description": "badge",
-      "files": [
-        "badge.dart"
-      ],
+      "files": ["badge.dart"],
       "exports": [
         "GalaxyBadge",
         "GalaxyBadgeCount",
@@ -518,9 +479,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -583,12 +542,7 @@
       "type": "other",
       "status": "complete",
       "description": "bar-chart",
-      "files": [
-        "bar_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["bar_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyBarChart",
@@ -603,13 +557,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -752,10 +702,7 @@
       "type": "form",
       "status": "complete",
       "description": "Displays a button or a component that looks like a button with variants and sizes.",
-      "files": [
-        "button.dart",
-        "button_theme.dart"
-      ],
+      "files": ["button.dart", "button_theme.dart"],
       "exports": [
         "GalaxyButton",
         "ButtonVariant",
@@ -789,12 +736,7 @@
           "name": "size",
           "type": {
             "kind": "union",
-            "values": [
-              "defaultSize",
-              "sm",
-              "lg",
-              "icon"
-            ]
+            "values": ["defaultSize", "sm", "lg", "icon"]
           },
           "default": "defaultSize",
           "description": "Size variant."
@@ -833,9 +775,7 @@
       "type": "other",
       "status": "complete",
       "description": "card",
-      "files": [
-        "card.dart"
-      ],
+      "files": ["card.dart"],
       "exports": [
         "GalaxyCard",
         "GalaxyCardHeader",
@@ -846,9 +786,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -886,17 +824,11 @@
       "type": "other",
       "status": "complete",
       "description": "checkbox",
-      "files": [
-        "checkbox.dart"
-      ],
-      "exports": [
-        "GalaxyCheckbox"
-      ],
+      "files": ["checkbox.dart"],
+      "exports": ["GalaxyCheckbox"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -942,18 +874,11 @@
       "type": "other",
       "status": "complete",
       "description": "collapsible",
-      "files": [
-        "collapsible.dart"
-      ],
-      "exports": [
-        "GalaxyCollapsible",
-        "_GalaxyCollapsibleState"
-      ],
+      "files": ["collapsible.dart"],
+      "exports": ["GalaxyCollapsible", "_GalaxyCollapsibleState"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -999,18 +924,11 @@
       "type": "other",
       "status": "complete",
       "description": "context-menu",
-      "files": [
-        "context_menu.dart"
-      ],
-      "exports": [
-        "GalaxyContextMenu",
-        "GalaxyContextMenuItem"
-      ],
+      "files": ["context_menu.dart"],
+      "exports": ["GalaxyContextMenu", "GalaxyContextMenuItem"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1047,16 +965,9 @@
       "type": "form",
       "status": "partial",
       "description": "A date picker component with popover and calendar.",
-      "files": [
-        "date_picker.dart"
-      ],
-      "exports": [
-        "GalaxyDatePicker",
-        "DatePickerMode"
-      ],
-      "dependencies": [
-        "intl"
-      ],
+      "files": ["date_picker.dart"],
+      "exports": ["GalaxyDatePicker", "DatePickerMode"],
+      "dependencies": ["intl"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1127,12 +1038,8 @@
       "type": "modal-overlay",
       "status": "partial",
       "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
-      "files": [
-        "dialog.dart"
-      ],
-      "exports": [
-        "GalaxyDialog"
-      ],
+      "files": ["dialog.dart"],
+      "exports": ["GalaxyDialog"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1183,12 +1090,7 @@
       "type": "other",
       "status": "complete",
       "description": "donut-chart",
-      "files": [
-        "donut_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["donut_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyDonutChart",
@@ -1203,13 +1105,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1336,18 +1234,11 @@
       "type": "other",
       "status": "complete",
       "description": "dropdown-menu",
-      "files": [
-        "dropdown_menu.dart"
-      ],
-      "exports": [
-        "GalaxyDropdownMenu",
-        "GalaxyDropdownMenuItem"
-      ],
+      "files": ["dropdown_menu.dart"],
+      "exports": ["GalaxyDropdownMenu", "GalaxyDropdownMenuItem"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1387,17 +1278,11 @@
       "type": "other",
       "status": "complete",
       "description": "empty",
-      "files": [
-        "empty.dart"
-      ],
-      "exports": [
-        "GalaxyEmpty"
-      ],
+      "files": ["empty.dart"],
+      "exports": ["GalaxyEmpty"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1469,18 +1354,9 @@
       "type": "charts",
       "status": "complete",
       "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
-      "files": [
-        "gauge_chart.dart",
-        "index.dart",
-        "types.dart",
-        "utils.dart"
-      ],
+      "files": ["gauge_chart.dart", "index.dart", "types.dart", "utils.dart"],
       "entry": "index.dart",
-      "exports": [
-        "GalaxyGaugeChart",
-        "GaugeZone",
-        "ChartTheme"
-      ],
+      "exports": ["GalaxyGaugeChart", "GaugeZone", "ChartTheme"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1640,18 +1516,11 @@
       "type": "other",
       "status": "complete",
       "description": "hover-card",
-      "files": [
-        "hover_card.dart"
-      ],
-      "exports": [
-        "GalaxyHoverCard",
-        "_GalaxyHoverCardState"
-      ],
+      "files": ["hover_card.dart"],
+      "exports": ["GalaxyHoverCard", "_GalaxyHoverCardState"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1704,18 +1573,11 @@
       "type": "other",
       "status": "complete",
       "description": "input",
-      "files": [
-        "input.dart"
-      ],
-      "exports": [
-        "GalaxyInput",
-        "_GalaxyInputState"
-      ],
+      "files": ["input.dart"],
+      "exports": ["GalaxyInput", "_GalaxyInputState"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1811,17 +1673,11 @@
       "type": "other",
       "status": "complete",
       "description": "label",
-      "files": [
-        "label.dart"
-      ],
-      "exports": [
-        "GalaxyLabel"
-      ],
+      "files": ["label.dart"],
+      "exports": ["GalaxyLabel"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1867,12 +1723,7 @@
       "type": "other",
       "status": "complete",
       "description": "line-chart",
-      "files": [
-        "line_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["line_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyLineChart",
@@ -1887,13 +1738,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2045,18 +1892,11 @@
       "type": "other",
       "status": "complete",
       "description": "menubar",
-      "files": [
-        "menubar.dart"
-      ],
-      "exports": [
-        "GalaxyMenubar",
-        "GalaxyMenubarMenu"
-      ],
+      "files": ["menubar.dart"],
+      "exports": ["GalaxyMenubar", "GalaxyMenubarMenu"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2080,12 +1920,7 @@
       "type": "other",
       "status": "complete",
       "description": "mixed-chart",
-      "files": [
-        "mixed_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["mixed_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyMixedChart",
@@ -2100,13 +1935,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2222,9 +2053,7 @@
       "type": "other",
       "status": "complete",
       "description": "navigation-menu",
-      "files": [
-        "navigation_menu.dart"
-      ],
+      "files": ["navigation_menu.dart"],
       "exports": [
         "NavigationMenuItem",
         "GalaxyNavigationMenu",
@@ -2232,9 +2061,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2296,18 +2123,11 @@
       "type": "other",
       "status": "complete",
       "description": "pagination",
-      "files": [
-        "pagination.dart"
-      ],
-      "exports": [
-        "GalaxyPagination",
-        "PaginationVariant"
-      ],
+      "files": ["pagination.dart"],
+      "exports": ["GalaxyPagination", "PaginationVariant"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2392,12 +2212,7 @@
       "type": "other",
       "status": "complete",
       "description": "pie-chart",
-      "files": [
-        "pie_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["pie_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyPieChart",
@@ -2412,13 +2227,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2545,17 +2356,11 @@
       "type": "other",
       "status": "complete",
       "description": "popover",
-      "files": [
-        "popover.dart"
-      ],
-      "exports": [
-        "GalaxyPopover"
-      ],
+      "files": ["popover.dart"],
+      "exports": ["GalaxyPopover"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2600,17 +2405,11 @@
       "type": "other",
       "status": "complete",
       "description": "progress",
-      "files": [
-        "progress.dart"
-      ],
-      "exports": [
-        "GalaxyProgress"
-      ],
+      "files": ["progress.dart"],
+      "exports": ["GalaxyProgress"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2656,12 +2455,7 @@
       "type": "other",
       "status": "complete",
       "description": "radar-chart",
-      "files": [
-        "radar_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["radar_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyRadarChart",
@@ -2676,13 +2470,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2792,19 +2582,11 @@
       "type": "other",
       "status": "complete",
       "description": "radio-group",
-      "files": [
-        "radio_group.dart"
-      ],
-      "exports": [
-        "GalaxyRadioGroup",
-        "GalaxyRadioOption",
-        "GalaxyRadioItem"
-      ],
+      "files": ["radio_group.dart"],
+      "exports": ["GalaxyRadioGroup", "GalaxyRadioOption", "GalaxyRadioItem"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2853,12 +2635,7 @@
       "type": "other",
       "status": "complete",
       "description": "scatter-chart",
-      "files": [
-        "scatter_chart.dart",
-        "types.dart",
-        "utils.dart",
-        "index.dart"
-      ],
+      "files": ["scatter_chart.dart", "types.dart", "utils.dart", "index.dart"],
       "entry": "index.dart",
       "exports": [
         "GalaxyScatterChart",
@@ -2873,13 +2650,9 @@
         "ChartTheme",
         "LegendPosition"
       ],
-      "dependencies": [
-        "fl_chart: ^0.68.0"
-      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2996,13 +2769,8 @@
       "type": "form",
       "status": "partial",
       "description": "A select box component for choosing an option from a list.",
-      "files": [
-        "select.dart"
-      ],
-      "exports": [
-        "GalaxySelect",
-        "GalaxySelectItem"
-      ],
+      "files": ["select.dart"],
+      "exports": ["GalaxySelect", "GalaxySelectItem"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -3071,18 +2839,11 @@
       "type": "other",
       "status": "complete",
       "description": "separator",
-      "files": [
-        "separator.dart"
-      ],
-      "exports": [
-        "GalaxySeparator",
-        "SeparatorOrientation"
-      ],
+      "files": ["separator.dart"],
+      "exports": ["GalaxySeparator", "SeparatorOrientation"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3145,9 +2906,7 @@
       "type": "other",
       "status": "complete",
       "description": "sheet",
-      "files": [
-        "sheet.dart"
-      ],
+      "files": ["sheet.dart"],
       "exports": [
         "GalaxySheet",
         "GalaxySheetContent",
@@ -3157,9 +2916,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3180,18 +2937,11 @@
       "type": "other",
       "status": "complete",
       "description": "skeleton",
-      "files": [
-        "skeleton.dart"
-      ],
-      "exports": [
-        "GalaxySkeleton",
-        "_GalaxySkeletonState"
-      ],
+      "files": ["skeleton.dart"],
+      "exports": ["GalaxySkeleton", "_GalaxySkeletonState"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3246,17 +2996,11 @@
       "type": "other",
       "status": "complete",
       "description": "slider",
-      "files": [
-        "slider.dart"
-      ],
-      "exports": [
-        "GalaxySlider"
-      ],
+      "files": ["slider.dart"],
+      "exports": ["GalaxySlider"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3328,9 +3072,7 @@
       "type": "other",
       "status": "complete",
       "description": "spinner",
-      "files": [
-        "spinner.dart"
-      ],
+      "files": ["spinner.dart"],
       "exports": [
         "GalaxySpinner",
         "_GalaxySpinnerState",
@@ -3339,9 +3081,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3393,17 +3133,11 @@
       "type": "other",
       "status": "complete",
       "description": "switch",
-      "files": [
-        "switch.dart"
-      ],
-      "exports": [
-        "GalaxySwitch"
-      ],
+      "files": ["switch.dart"],
+      "exports": ["GalaxySwitch"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3465,19 +3199,11 @@
       "type": "other",
       "status": "complete",
       "description": "table",
-      "files": [
-        "table.dart"
-      ],
-      "exports": [
-        "GalaxyTable",
-        "GalaxyTableColumn",
-        "GalaxyTableRow"
-      ],
+      "files": ["table.dart"],
+      "exports": ["GalaxyTable", "GalaxyTableColumn", "GalaxyTableRow"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3529,19 +3255,11 @@
       "type": "other",
       "status": "complete",
       "description": "tabs",
-      "files": [
-        "tabs.dart"
-      ],
-      "exports": [
-        "GalaxyTabs",
-        "_GalaxyTabsState",
-        "GalaxyTab"
-      ],
+      "files": ["tabs.dart"],
+      "exports": ["GalaxyTabs", "_GalaxyTabsState", "GalaxyTab"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3582,18 +3300,11 @@
       "type": "other",
       "status": "complete",
       "description": "textarea",
-      "files": [
-        "textarea.dart"
-      ],
-      "exports": [
-        "GalaxyTextarea",
-        "_GalaxyTextareaState"
-      ],
+      "files": ["textarea.dart"],
+      "exports": ["GalaxyTextarea", "_GalaxyTextareaState"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3696,18 +3407,11 @@
       "type": "other",
       "status": "complete",
       "description": "toggle-group",
-      "files": [
-        "toggle_group.dart"
-      ],
-      "exports": [
-        "GalaxyToggleGroup",
-        "GalaxyToggleGroupItem"
-      ],
+      "files": ["toggle_group.dart"],
+      "exports": ["GalaxyToggleGroup", "GalaxyToggleGroupItem"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3796,19 +3500,11 @@
       "type": "other",
       "status": "complete",
       "description": "toggle",
-      "files": [
-        "toggle.dart"
-      ],
-      "exports": [
-        "GalaxyToggle",
-        "ToggleVariant",
-        "ToggleSize"
-      ],
+      "files": ["toggle.dart"],
+      "exports": ["GalaxyToggle", "ToggleVariant", "ToggleSize"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3894,17 +3590,11 @@
       "type": "other",
       "status": "complete",
       "description": "tooltip",
-      "files": [
-        "tooltip.dart"
-      ],
-      "exports": [
-        "GalaxyTooltip"
-      ],
+      "files": ["tooltip.dart"],
+      "exports": ["GalaxyTooltip"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3981,19 +3671,11 @@
       "type": "other",
       "status": "complete",
       "description": "typography",
-      "files": [
-        "typography.dart"
-      ],
-      "exports": [
-        "GalaxyTypography",
-        "TypographyVariant",
-        "TypographyWeight"
-      ],
+      "files": ["typography.dart"],
+      "exports": ["GalaxyTypography", "TypographyVariant", "TypographyWeight"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "flutter"
-      ],
+      "peerDependencies": ["flutter"],
       "registryDependencies": [],
       "category": "other",
       "props": [

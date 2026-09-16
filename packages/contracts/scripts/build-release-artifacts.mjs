@@ -72,6 +72,54 @@ for (const fileName of artifactFiles) {
   writeFileSync(join(versionDir, fileName), content);
 }
 
+// Include every installable component source file so `add` can be served
+// entirely from the registry CDN with per-file integrity verification.
+const sourceRoots = {
+  react: 'packages/react/src/components',
+  vue: 'packages/vue/src/components',
+  angular: 'packages/angular/src/components',
+  'react-native': 'packages/react-native/src/components',
+  flutter: 'packages/flutter/lib/components',
+};
+
+const sources = {};
+const sourceDirs = new Map();
+
+for (const framework of [
+  'react',
+  'vue',
+  'angular',
+  'react-native',
+  'flutter',
+]) {
+  const registry = JSON.parse(
+    readFileSync(join(generatedRoot, `registry-${framework}.json`), 'utf-8')
+  );
+  const rootAbs = join(repoRoot, sourceRoots[framework]);
+  sourceDirs.set(framework, rootAbs);
+
+  for (const [componentId, component] of Object.entries(registry.components)) {
+    for (const file of component.files) {
+      const abs = join(rootAbs, componentId, file);
+      if (!existsSync(abs)) {
+        throw new Error(
+          `Source file missing: ${framework}/${componentId}/${file}`
+        );
+      }
+      const content = readFileSync(abs, 'utf-8');
+      const key = `${framework}/${componentId}/${file}`;
+      sources[key] = {
+        checksum: sha256(content),
+        size: Buffer.byteLength(content, 'utf-8'),
+      };
+
+      const outPath = join(versionDir, 'sources', framework, componentId, file);
+      mkdirSync(dirname(outPath), { recursive: true });
+      writeFileSync(outPath, content);
+    }
+  }
+}
+
 const checksumList = Object.entries(files)
   .map(([fileName, meta]) => `${fileName} ${meta.checksum}`)
   .sort()
@@ -85,6 +133,8 @@ const manifest = {
   source: 'packages/contracts/manifests',
   gitCommit: gitCommit(),
   files,
+  sources,
+  sourcesCount: Object.keys(sources).length,
   digest,
 };
 

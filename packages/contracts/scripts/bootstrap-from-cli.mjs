@@ -47,12 +47,16 @@ function readText(path) {
 
 function extractNamedExports(entryContent) {
   const names = new Set();
-  for (const match of entryContent.matchAll(/export\s+(?:type\s+)?\{([^}]*)\}/g)) {
+  for (const match of entryContent.matchAll(
+    /export\s+(?:type\s+)?\{([^}]*)\}/g
+  )) {
     for (const raw of match[1].split(',')) {
       const trimmed = raw.trim();
       if (!trimmed) continue;
       if (/^type\s/.test(trimmed)) continue;
-      const alias = trimmed.match(/^(?:type\s+)?(.+?)\s+as\s+([A-Za-z_$][\w$]*)$/);
+      const alias = trimmed.match(
+        /^(?:type\s+)?(.+?)\s+as\s+([A-Za-z_$][\w$]*)$/
+      );
       const name = alias ? alias[2] : trimmed.replace(/^type\s+/, '');
       if (/^[A-Za-z_$][\w$]*$/.test(name)) names.add(name);
     }
@@ -63,7 +67,7 @@ function extractNamedExports(entryContent) {
 function extractDeclaredExports(content) {
   const names = new Set();
   for (const match of content.matchAll(
-    /export\s+(?:default\s+)?(?:abstract\s+)?(?:const|let|var|async\s+function|function|class|interface|enum)\s+([A-Za-z_$][\w$]*)/g,
+    /export\s+(?:default\s+)?(?:abstract\s+)?(?:const|let|var|async\s+function|function|class|interface|enum)\s+([A-Za-z_$][\w$]*)/g
   )) {
     names.add(match[1]);
   }
@@ -74,13 +78,15 @@ function filterExportsForAudit(framework, exports) {
   if (framework !== 'angular' && framework !== 'react-native') {
     return exports;
   }
-  return exports.filter((name) => /^[A-Z]/.test(name) || /^use[A-Z]/.test(name));
+  return exports.filter(
+    (name) => /^[A-Z]/.test(name) || /^use[A-Z]/.test(name)
+  );
 }
 
 function extractDartExports(content) {
   const names = new Set();
   for (const match of content.matchAll(
-    /\b(?:abstract\s+)?(?:final\s+)?class\s+([A-Za-z_$][\w$]*)/g,
+    /\b(?:abstract\s+)?(?:final\s+)?class\s+([A-Za-z_$][\w$]*)/g
   )) {
     names.add(match[1]);
   }
@@ -127,7 +133,7 @@ function main() {
   const registries = {};
   for (const framework of Object.keys(CLI_REGISTRY_FILES)) {
     registries[framework] = readJson(
-      join(cliRoot, 'src', 'registries', CLI_REGISTRY_FILES[framework]),
+      join(cliRoot, 'src', 'registries', CLI_REGISTRY_FILES[framework])
     ).components;
   }
 
@@ -158,8 +164,7 @@ function main() {
       }
 
       const dir = componentDir(framework, id);
-      const entryName =
-        framework === 'flutter' ? 'index.dart' : 'index.ts';
+      const entryName = framework === 'flutter' ? 'index.dart' : 'index.ts';
       const entryPath = join(dir, entryName);
       const hasEntry = existsSync(entryPath);
       const entryContent = readFileSyncSafe(entryPath);
@@ -178,7 +183,7 @@ function main() {
           exports = [...extractAuditExports(entryContent)];
         } else {
           exports = [...extractDeclaredExports(source)].filter((name) =>
-            /^[A-Z]/.test(name),
+            /^[A-Z]/.test(name)
           );
         }
       } else {
@@ -209,9 +214,10 @@ function main() {
       frameworks[framework] = impl;
     }
 
-    const reference = frameworks.react.status !== 'missing'
-      ? frameworks.react
-      : Object.values(frameworks).find((impl) => impl.status !== 'missing');
+    const reference =
+      frameworks.react.status !== 'missing'
+        ? frameworks.react
+        : Object.values(frameworks).find((impl) => impl.status !== 'missing');
 
     const frameworkProps = {};
     for (const framework of Object.keys(CLI_REGISTRY_FILES)) {

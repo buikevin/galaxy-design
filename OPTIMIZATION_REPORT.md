@@ -111,8 +111,33 @@ autocomplete` wiring, re-subscribe khi items thay đổi; đồng thời sửa b
 [components...]` — ghi đè file local từ registry, backup tự động vào
   `.galaxy/backups/update/`, cần `.galaxy/installed-components.json` (add
   command giờ ghi file manifest này). P1.4: `packages/contracts
-build:artifact` sinh versioned release artifact `dist/registry/<version>/`
+  build:artifact` sinh versioned release artifact `dist/registry/<version>/`
   (7 files, sha256 per file + digest) — ready cho CDN distribution.
+- **Release prep (mới):** galaxy-design committed + pushed (`b532037`, 166
+  files); CLI source pin cập nhật sang `b532037` (fetch smoke OK cho gauge
+  react/vue, date-picker vue/angular, RN accordion); verify CLI pass với pin
+  mới; version bump **0.3.0**; CLI committed (`637eb4b`, kèm `.galaxy/`
+  untrack + gitignore). CLI sẵn sàng `npm publish` — người dùng thực hiện
+  (cần npm credentials); docs deploy Vercel + smoke cũng thuộc người dùng.
+- **P1.4 CDN live (mới):** registry artifacts (7 JSON + **673 source files**)
+  đã serve tại `galaxy-design.vercel.app/registry/` qua docs repo; CLI có
+  `--registry-url` / `GALAXY_REGISTRY_URL` — fetch manifest, verify digest
+  (trust anchor `b351c8a1...` bundled trong CLI release), verify sha256 per
+  source file, rồi mới install. E2E test pass: `add accordion
+--registry-url https://galaxy-design.vercel.app/registry` fetch + verify +
+  install, content khớp artifact 100%. GitHub pin vẫn là default; CDN là
+  opt-in cho đến khi digest rotation flow hoàn thiện.
+- **P2.2 iconLibrary + aliases.ui (mới):** `icon-transformer.ts` transform
+  lucide imports sang heroicons/radix-icons cho ~9 icon phổ biến; framework
+  không map được giữ nguyên lucide (fallback). `add` giờ dùng
+  `config.aliases.ui` thay vì hardcode `/ui` suffix. `--overwrite` flag với
+  backup đã wire. Còn mở: JS mode (strip types), prefix, cssVariables false.
+- **P2.2 JS mode + cssVariables + prefix (mới):** (1) `js-transformer.ts`
+  dùng SWC strip TypeScript types khi `typescript: false` — `.ts`→`.js`,
+  `.tsx`→`.jsx`; (2) scaffold `cssVariables: false` sinh CSS không dùng
+  `hsl(var(--x))` (direct colors); (3) `prefix` param trong Tailwind v3 config
+  (`prefix: "xxx-"`). Tất cả wired qua `TailwindScaffoldOptions` +
+  `CopyComponentFilesOptions.typescript`.
 - **Còn mở:** behavioral/accessibility parity, hợp nhất chart tree, transaction rollback khi dependency install thất bại, visual/computed-style assertions, versioned CDN/checksum và docs generation tự động; đồng bộ CLI/docs để consume `packages/contracts/generated`.
 
 Các mục “hiện trạng” bên dưới giữ lại bằng chứng audit ban đầu. Khi có khác biệt, phần cập nhật triển khai này là trạng thái mới nhất.

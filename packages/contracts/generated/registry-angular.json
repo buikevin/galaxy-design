@@ -11,11 +11,7 @@
       "type": "other",
       "status": "complete",
       "description": "accordion",
-      "files": [
-        "accordion.component.ts",
-        "accordion.directive.ts",
-        "index.ts"
-      ],
+      "files": ["accordion.component.ts", "accordion.directive.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "AccordionComponent",
@@ -27,13 +23,9 @@
         "UiAccordionTriggerDirective",
         "UiAccordionContentDirective"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
-      "peerDependencies": [
-        "lucide-angular"
-      ],
+      "peerDependencies": ["lucide-angular"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -107,10 +99,7 @@
       "type": "other",
       "status": "complete",
       "description": "alert-dialog",
-      "files": [
-        "alert-dialog.component.ts",
-        "index.ts"
-      ],
+      "files": ["alert-dialog.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "AlertDialogComponent",
@@ -123,9 +112,7 @@
         "AlertDialogHeaderComponent",
         "AlertDialogFooterComponent"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -158,20 +145,14 @@
       "type": "other",
       "status": "complete",
       "description": "alert",
-      "files": [
-        "alert.component.ts",
-        "variants.ts",
-        "index.ts"
-      ],
+      "files": ["alert.component.ts", "variants.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "AlertComponent",
         "AlertTitleComponent",
         "AlertDescriptionComponent"
       ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -214,20 +195,10 @@
       "type": "other",
       "status": "complete",
       "description": "area-chart",
-      "files": [
-        "area-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["area-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AreaChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["AreaChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -448,17 +419,10 @@
       "type": "other",
       "status": "complete",
       "description": "aspect-ratio",
-      "files": [
-        "aspect-ratio.component.ts",
-        "index.ts"
-      ],
+      "files": ["aspect-ratio.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AspectRatioComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["AspectRatioComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -529,18 +493,10 @@
       "type": "other",
       "status": "complete",
       "description": "badge",
-      "files": [
-        "badge.component.ts",
-        "variants.ts",
-        "index.ts"
-      ],
+      "files": ["badge.component.ts", "variants.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "BadgeComponent"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["BadgeComponent"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -591,20 +547,10 @@
       "type": "other",
       "status": "complete",
       "description": "bar-chart",
-      "files": [
-        "bar-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["bar-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "BarChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["BarChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -787,10 +733,7 @@
       "type": "other",
       "status": "complete",
       "description": "breadcrumb",
-      "files": [
-        "breadcrumb.component.ts",
-        "index.ts"
-      ],
+      "files": ["breadcrumb.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "BreadcrumbComponent",
@@ -816,18 +759,10 @@
       "type": "form",
       "status": "complete",
       "description": "Displays a button or a component that looks like a button with variants and sizes.",
-      "files": [
-        "button.component.ts",
-        "index.ts",
-        "variants.ts"
-      ],
+      "files": ["button.component.ts", "index.ts", "variants.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ButtonComponent"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["ButtonComponent"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -853,12 +788,7 @@
           "name": "size",
           "type": {
             "kind": "union",
-            "values": [
-              "default",
-              "sm",
-              "lg",
-              "icon"
-            ]
+            "values": ["default", "sm", "lg", "icon"]
           },
           "default": "default",
           "description": "Size variant."
@@ -876,11 +806,7 @@
           "name": "type",
           "type": {
             "kind": "union",
-            "values": [
-              "button",
-              "submit",
-              "reset"
-            ]
+            "values": ["button", "submit", "reset"]
           },
           "default": "button",
           "description": "Native button type."
@@ -912,15 +838,9 @@
       "type": "other",
       "status": "complete",
       "description": "calendar-range",
-      "files": [
-        "calendar-range.component.ts",
-        "index.ts"
-      ],
+      "files": ["calendar-range.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateRange",
-        "CalendarRangeComponent"
-      ],
+      "exports": ["DateRange", "CalendarRangeComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -963,14 +883,9 @@
       "type": "other",
       "status": "complete",
       "description": "calendar",
-      "files": [
-        "calendar.component.ts",
-        "index.ts"
-      ],
+      "files": ["calendar.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "CalendarComponent"
-      ],
+      "exports": ["CalendarComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1012,10 +927,7 @@
       "type": "other",
       "status": "complete",
       "description": "card",
-      "files": [
-        "card.component.ts",
-        "index.ts"
-      ],
+      "files": ["card.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "CardComponent",
@@ -1050,21 +962,12 @@
       "type": "other",
       "status": "complete",
       "description": "checkbox",
-      "files": [
-        "checkbox.component.ts",
-        "index.ts"
-      ],
+      "files": ["checkbox.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "CheckboxComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["CheckboxComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
-      "peerDependencies": [
-        "lucide-angular"
-      ],
+      "peerDependencies": ["lucide-angular"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1072,10 +975,7 @@
           "name": "checked",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "indeterminate"
-            ]
+            "values": ["boolean", "indeterminate"]
           },
           "description": "Controlled checked state."
         },
@@ -1187,9 +1087,7 @@
         "UiCollapsibleTriggerDirective",
         "UiCollapsibleContentDirective"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1231,14 +1129,9 @@
       "type": "other",
       "status": "complete",
       "description": "command",
-      "files": [
-        "command.component.ts",
-        "index.ts"
-      ],
+      "files": ["command.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "CommandComponent"
-      ],
+      "exports": ["CommandComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1281,10 +1174,7 @@
       "type": "other",
       "status": "complete",
       "description": "context-menu",
-      "files": [
-        "context-menu.component.ts",
-        "index.ts"
-      ],
+      "files": ["context-menu.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "ContextMenuComponent",
@@ -1292,9 +1182,7 @@
         "ContextMenuContentComponent",
         "ContextMenuItemComponent"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1309,24 +1197,13 @@
       "type": "form",
       "status": "complete",
       "description": "A date picker component with popover and calendar.",
-      "files": [
-        "date-picker.component.ts",
-        "index.ts"
-      ],
+      "files": ["date-picker.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DatePickerComponent"
-      ],
-      "dependencies": [
-        "date-fns"
-      ],
+      "exports": ["DatePickerComponent"],
+      "dependencies": ["date-fns"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "calendar",
-        "popover"
-      ],
+      "registryDependencies": ["button", "calendar", "popover"],
       "category": "form",
       "props": [],
       "selector": "ui-date-picker",
@@ -1338,24 +1215,13 @@
       "type": "other",
       "status": "complete",
       "description": "date-range-picker",
-      "files": [
-        "date-range-picker.component.ts",
-        "index.ts"
-      ],
+      "files": ["date-range-picker.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateRangePickerComponent"
-      ],
-      "dependencies": [
-        "date-fns"
-      ],
+      "exports": ["DateRangePickerComponent"],
+      "dependencies": ["date-fns"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "calendar-range",
-        "popover"
-      ],
+      "registryDependencies": ["button", "calendar-range", "popover"],
       "category": "other",
       "props": [],
       "selector": "ui-date-range-picker",
@@ -1367,23 +1233,13 @@
       "type": "other",
       "status": "complete",
       "description": "date-time-picker",
-      "files": [
-        "date-time-picker.component.ts",
-        "index.ts"
-      ],
+      "files": ["date-time-picker.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateTimePickerComponent"
-      ],
-      "dependencies": [
-        "date-fns"
-      ],
+      "exports": ["DateTimePickerComponent"],
+      "dependencies": ["date-fns"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "date-picker",
-        "time-picker"
-      ],
+      "registryDependencies": ["date-picker", "time-picker"],
       "category": "other",
       "props": [],
       "selector": "ui-date-time-picker",
@@ -1395,11 +1251,7 @@
       "type": "modal-overlay",
       "status": "complete",
       "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
-      "files": [
-        "dialog.component.ts",
-        "dialog.directive.ts",
-        "index.ts"
-      ],
+      "files": ["dialog.component.ts", "dialog.directive.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "DialogComponent",
@@ -1418,9 +1270,7 @@
         "UiDialogFooterDirective",
         "DialogTriggerDirective"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1457,20 +1307,10 @@
       "type": "other",
       "status": "complete",
       "description": "donut-chart",
-      "files": [
-        "donut-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["donut-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DonutChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["DonutChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1659,10 +1499,7 @@
       "type": "other",
       "status": "complete",
       "description": "dropdown-menu",
-      "files": [
-        "dropdown-menu.component.ts",
-        "index.ts"
-      ],
+      "files": ["dropdown-menu.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "DropdownMenuComponent",
@@ -1671,9 +1508,7 @@
         "DropdownMenuItemComponent",
         "DropdownMenuSeparatorComponent"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1688,14 +1523,9 @@
       "type": "other",
       "status": "complete",
       "description": "empty",
-      "files": [
-        "empty.component.ts",
-        "index.ts"
-      ],
+      "files": ["empty.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "EmptyComponent"
-      ],
+      "exports": ["EmptyComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1738,10 +1568,7 @@
       "type": "other",
       "status": "complete",
       "description": "form",
-      "files": [
-        "form.component.ts",
-        "index.ts"
-      ],
+      "files": ["form.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "FormDirective",
@@ -1775,20 +1602,10 @@
       "type": "charts",
       "status": "complete",
       "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
-      "files": [
-        "gauge-chart.component.ts",
-        "index.ts",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["gauge-chart.component.ts", "index.ts", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "GaugeChartComponent"
-      ],
-      "dependencies": [
-        "echarts",
-        "ngx-echarts"
-      ],
+      "exports": ["GaugeChartComponent"],
+      "dependencies": ["echarts", "ngx-echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1987,19 +1804,14 @@
       "type": "other",
       "status": "complete",
       "description": "hover-card",
-      "files": [
-        "hover-card.component.ts",
-        "index.ts"
-      ],
+      "files": ["hover-card.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "HoverCardComponent",
         "HoverCardTriggerComponent",
         "HoverCardContentComponent"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2050,19 +1862,12 @@
       "type": "other",
       "status": "complete",
       "description": "input",
-      "files": [
-        "index.ts",
-        "input.component.ts"
-      ],
+      "files": ["index.ts", "input.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "InputComponent"
-      ],
+      "exports": ["InputComponent"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "lucide-angular"
-      ],
+      "peerDependencies": ["lucide-angular"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2079,10 +1884,7 @@
           "name": "value",
           "type": {
             "kind": "union",
-            "values": [
-              "string",
-              "number"
-            ]
+            "values": ["string", "number"]
           },
           "description": "Controlled value."
         },
@@ -2141,10 +1943,7 @@
           "name": "ariaInvalid",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "string"
-            ]
+            "values": ["boolean", "string"]
           },
           "description": "ARIA invalid state."
         },
@@ -2207,14 +2006,9 @@
       "type": "other",
       "status": "complete",
       "description": "kbd",
-      "files": [
-        "kbd.component.ts",
-        "index.ts"
-      ],
+      "files": ["kbd.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "KbdComponent"
-      ],
+      "exports": ["KbdComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2262,17 +2056,10 @@
       "type": "other",
       "status": "complete",
       "description": "label",
-      "files": [
-        "index.ts",
-        "label.component.ts"
-      ],
+      "files": ["index.ts", "label.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LabelComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["LabelComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2313,20 +2100,10 @@
       "type": "other",
       "status": "complete",
       "description": "line-chart",
-      "files": [
-        "line-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["line-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LineChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["LineChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2547,10 +2324,7 @@
       "type": "other",
       "status": "complete",
       "description": "menubar",
-      "files": [
-        "index.ts",
-        "menubar.component.ts"
-      ],
+      "files": ["index.ts", "menubar.component.ts"],
       "entry": "index.ts",
       "exports": [
         "MenubarComponent",
@@ -2574,20 +2348,10 @@
       "type": "other",
       "status": "complete",
       "description": "mixed-chart",
-      "files": [
-        "mixed-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["mixed-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "MixedChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["MixedChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2745,10 +2509,7 @@
       "type": "other",
       "status": "complete",
       "description": "navigation-menu",
-      "files": [
-        "index.ts",
-        "navigation-menu.component.ts"
-      ],
+      "files": ["index.ts", "navigation-menu.component.ts"],
       "entry": "index.ts",
       "exports": [
         "NavigationMenuComponent",
@@ -2760,9 +2521,7 @@
         "NavigationMenuViewportComponent",
         "NavigationMenuIndicatorComponent"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2787,14 +2546,9 @@
       "type": "other",
       "status": "complete",
       "description": "pagination",
-      "files": [
-        "pagination.component.ts",
-        "index.ts"
-      ],
+      "files": ["pagination.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PaginationComponent"
-      ],
+      "exports": ["PaginationComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2855,20 +2609,10 @@
       "type": "other",
       "status": "complete",
       "description": "pie-chart",
-      "files": [
-        "pie-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["pie-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PieChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["PieChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3057,19 +2801,14 @@
       "type": "other",
       "status": "complete",
       "description": "popover",
-      "files": [
-        "index.ts",
-        "popover.component.ts"
-      ],
+      "files": ["index.ts", "popover.component.ts"],
       "entry": "index.ts",
       "exports": [
         "PopoverComponent",
         "PopoverTriggerComponent",
         "PopoverContentComponent"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3102,17 +2841,10 @@
       "type": "other",
       "status": "complete",
       "description": "progress",
-      "files": [
-        "progress.component.ts",
-        "index.ts"
-      ],
+      "files": ["progress.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ProgressComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["ProgressComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3155,20 +2887,10 @@
       "type": "other",
       "status": "complete",
       "description": "radar-chart",
-      "files": [
-        "radar-chart.component.ts",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["radar-chart.component.ts", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadarChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["RadarChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3352,18 +3074,10 @@
       "type": "other",
       "status": "complete",
       "description": "radio-group",
-      "files": [
-        "index.ts",
-        "radio-group.component.ts"
-      ],
+      "files": ["index.ts", "radio-group.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadioGroupComponent",
-        "RadioGroupItemComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["RadioGroupComponent", "RadioGroupItemComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3373,10 +3087,7 @@
           "name": "value",
           "type": {
             "kind": "union",
-            "values": [
-              "string",
-              "null"
-            ]
+            "values": ["string", "null"]
           },
           "description": "Controlled selected value."
         },
@@ -3410,10 +3121,7 @@
           "name": "orientation",
           "type": {
             "kind": "union",
-            "values": [
-              "horizontal",
-              "vertical"
-            ]
+            "values": ["horizontal", "vertical"]
           },
           "default": "vertical",
           "description": "Layout orientation."
@@ -3445,19 +3153,14 @@
       "type": "other",
       "status": "complete",
       "description": "resizable",
-      "files": [
-        "resizable.component.ts",
-        "index.ts"
-      ],
+      "files": ["resizable.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "ResizablePanelGroupComponent",
         "ResizablePanelComponent",
         "ResizableHandleComponent"
       ],
-      "dependencies": [
-        "angular-split"
-      ],
+      "dependencies": ["angular-split"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3479,13 +3182,8 @@
         "index.ts"
       ],
       "entry": "index.ts",
-      "exports": [
-        "ScatterChartComponent"
-      ],
-      "dependencies": [
-        "ngx-echarts",
-        "echarts"
-      ],
+      "exports": ["ScatterChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3650,14 +3348,9 @@
       "type": "other",
       "status": "complete",
       "description": "scroll-area",
-      "files": [
-        "scroll-area.component.ts",
-        "index.ts"
-      ],
+      "files": ["scroll-area.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ScrollAreaComponent"
-      ],
+      "exports": ["ScrollAreaComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -3701,15 +3394,9 @@
       "type": "form",
       "status": "partial",
       "description": "A select box component for choosing an option from a list.",
-      "files": [
-        "select.component.ts",
-        "index.ts"
-      ],
+      "files": ["select.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SelectComponent",
-        "SelectItemComponent"
-      ],
+      "exports": ["SelectComponent", "SelectItemComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -3819,17 +3506,10 @@
       "type": "other",
       "status": "complete",
       "description": "separator",
-      "files": [
-        "index.ts",
-        "separator.component.ts"
-      ],
+      "files": ["index.ts", "separator.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SeparatorComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["SeparatorComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3881,10 +3561,7 @@
       "type": "other",
       "status": "complete",
       "description": "sheet",
-      "files": [
-        "sheet.component.ts",
-        "index.ts"
-      ],
+      "files": ["sheet.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "SheetComponent",
@@ -3895,9 +3572,7 @@
         "SheetTitleComponent",
         "SheetDescriptionComponent"
       ],
-      "dependencies": [
-        "@angular/cdk"
-      ],
+      "dependencies": ["@angular/cdk"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3965,14 +3640,9 @@
       "type": "other",
       "status": "complete",
       "description": "skeleton",
-      "files": [
-        "skeleton.component.ts",
-        "index.ts"
-      ],
+      "files": ["skeleton.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SkeletonComponent"
-      ],
+      "exports": ["SkeletonComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4020,17 +3690,10 @@
       "type": "other",
       "status": "complete",
       "description": "slider",
-      "files": [
-        "index.ts",
-        "slider.component.ts"
-      ],
+      "files": ["index.ts", "slider.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SliderComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["SliderComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4108,14 +3771,9 @@
       "type": "other",
       "status": "complete",
       "description": "spinner",
-      "files": [
-        "spinner.component.ts",
-        "index.ts"
-      ],
+      "files": ["spinner.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SpinnerComponent"
-      ],
+      "exports": ["SpinnerComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4172,17 +3830,10 @@
       "type": "other",
       "status": "complete",
       "description": "switch",
-      "files": [
-        "index.ts",
-        "switch.component.ts"
-      ],
+      "files": ["index.ts", "switch.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SwitchComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["SwitchComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4282,10 +3933,7 @@
       "type": "other",
       "status": "complete",
       "description": "table",
-      "files": [
-        "table.component.ts",
-        "index.ts"
-      ],
+      "files": ["table.component.ts", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "TableComponent",
@@ -4322,11 +3970,7 @@
       "type": "other",
       "status": "complete",
       "description": "tabs",
-      "files": [
-        "index.ts",
-        "tabs.component.ts",
-        "tabs.directive.ts"
-      ],
+      "files": ["index.ts", "tabs.component.ts", "tabs.directive.ts"],
       "entry": "index.ts",
       "exports": [
         "TabsComponent",
@@ -4338,9 +3982,7 @@
         "UiTabsTriggerDirective",
         "UiTabsContentDirective"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4389,14 +4031,9 @@
       "type": "other",
       "status": "complete",
       "description": "tags-input",
-      "files": [
-        "tags-input.component.ts",
-        "index.ts"
-      ],
+      "files": ["tags-input.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TagsInputComponent"
-      ],
+      "exports": ["TagsInputComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4464,14 +4101,9 @@
       "type": "other",
       "status": "complete",
       "description": "textarea",
-      "files": [
-        "index.ts",
-        "textarea.component.ts"
-      ],
+      "files": ["index.ts", "textarea.component.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TextareaComponent"
-      ],
+      "exports": ["TextareaComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4540,22 +4172,13 @@
       "type": "other",
       "status": "complete",
       "description": "time-picker",
-      "files": [
-        "time-picker.component.ts",
-        "index.ts"
-      ],
+      "files": ["time-picker.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TimePickerComponent"
-      ],
+      "exports": ["TimePickerComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "popover",
-        "select"
-      ],
+      "registryDependencies": ["button", "popover", "select"],
       "category": "other",
       "props": [],
       "selector": "ui-time-picker",
@@ -4567,18 +4190,10 @@
       "type": "feedback",
       "status": "partial",
       "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
-      "files": [
-        "toast.component.ts",
-        "index.ts"
-      ],
+      "files": ["toast.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToastComponent",
-        "toast"
-      ],
-      "dependencies": [
-        "ngx-sonner"
-      ],
+      "exports": ["ToastComponent", "toast"],
+      "dependencies": ["ngx-sonner"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4616,18 +4231,10 @@
       "type": "other",
       "status": "complete",
       "description": "toggle-group",
-      "files": [
-        "toggle-group.component.ts",
-        "index.ts"
-      ],
+      "files": ["toggle-group.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToggleGroupComponent",
-        "ToggleGroupItemComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["ToggleGroupComponent", "ToggleGroupItemComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4738,17 +4345,10 @@
       "type": "other",
       "status": "complete",
       "description": "toggle",
-      "files": [
-        "toggle.component.ts",
-        "index.ts"
-      ],
+      "files": ["toggle.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToggleComponent"
-      ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "exports": ["ToggleComponent"],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4839,14 +4439,9 @@
       "type": "data-display",
       "status": "complete",
       "description": "Toolbar component with section grouping and separators for grouped actions.",
-      "files": [
-        "toolbar.component.ts",
-        "index.ts"
-      ],
+      "files": ["toolbar.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToolbarComponent"
-      ],
+      "exports": ["ToolbarComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4872,11 +4467,7 @@
       "type": "other",
       "status": "complete",
       "description": "tooltip",
-      "files": [
-        "index.ts",
-        "tooltip.component.ts",
-        "tooltip.directive.ts"
-      ],
+      "files": ["index.ts", "tooltip.component.ts", "tooltip.directive.ts"],
       "entry": "index.ts",
       "exports": [
         "TooltipComponent",
@@ -4886,9 +4477,7 @@
         "UiTooltipTriggerDirective",
         "UiTooltipContentDirective"
       ],
-      "dependencies": [
-        "@radix-ng/primitives"
-      ],
+      "dependencies": ["@radix-ng/primitives"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4903,14 +4492,9 @@
       "type": "other",
       "status": "complete",
       "description": "typography",
-      "files": [
-        "typography.component.ts",
-        "index.ts"
-      ],
+      "files": ["typography.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TypographyComponent"
-      ],
+      "exports": ["TypographyComponent"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],

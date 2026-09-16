@@ -65,8 +65,8 @@ function getPackageName(specifier) {
   }
   return normalizePackageName(
     specifier.startsWith('@')
-    ? specifier.split('/').slice(0, 2).join('/')
-      : specifier.split('/')[0],
+      ? specifier.split('/').slice(0, 2).join('/')
+      : specifier.split('/')[0]
   );
 }
 

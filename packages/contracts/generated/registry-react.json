@@ -11,10 +11,7 @@
       "type": "other",
       "status": "complete",
       "description": "accordion",
-      "files": [
-        "Accordion.tsx",
-        "index.ts"
-      ],
+      "files": ["Accordion.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Accordion",
@@ -22,10 +19,7 @@
         "AccordionTrigger",
         "AccordionContent"
       ],
-      "dependencies": [
-        "@radix-ui/react-accordion",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -178,10 +172,7 @@
       "type": "other",
       "status": "complete",
       "description": "alert-dialog",
-      "files": [
-        "AlertDialog.tsx",
-        "index.ts"
-      ],
+      "files": ["AlertDialog.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "AlertDialog",
@@ -194,9 +185,7 @@
         "AlertDialogAction",
         "AlertDialogCancel"
       ],
-      "dependencies": [
-        "@radix-ui/react-alert-dialog"
-      ],
+      "dependencies": ["@radix-ui/react-alert-dialog"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -244,19 +233,10 @@
       "type": "other",
       "status": "complete",
       "description": "alert",
-      "files": [
-        "Alert.tsx",
-        "index.ts"
-      ],
+      "files": ["Alert.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Alert",
-        "AlertTitle",
-        "AlertDescription"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Alert", "AlertTitle", "AlertDescription"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -306,20 +286,10 @@
       "type": "other",
       "status": "complete",
       "description": "area-chart",
-      "files": [
-        "AreaChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["AreaChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AreaChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["AreaChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -539,17 +509,10 @@
       "type": "other",
       "status": "complete",
       "description": "aspect-ratio",
-      "files": [
-        "AspectRatio.tsx",
-        "index.ts"
-      ],
+      "files": ["AspectRatio.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AspectRatio"
-      ],
-      "dependencies": [
-        "@radix-ui/react-aspect-ratio"
-      ],
+      "exports": ["AspectRatio"],
+      "dependencies": ["@radix-ui/react-aspect-ratio"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -590,19 +553,10 @@
       "type": "other",
       "status": "complete",
       "description": "avatar",
-      "files": [
-        "Avatar.tsx",
-        "index.ts"
-      ],
+      "files": ["Avatar.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Avatar",
-        "AvatarImage",
-        "AvatarFallback"
-      ],
-      "dependencies": [
-        "@radix-ui/react-avatar"
-      ],
+      "exports": ["Avatar", "AvatarImage", "AvatarFallback"],
+      "dependencies": ["@radix-ui/react-avatar"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -643,20 +597,10 @@
       "type": "other",
       "status": "complete",
       "description": "badge",
-      "files": [
-        "Badge.tsx",
-        "variants.ts",
-        "index.ts"
-      ],
+      "files": ["Badge.tsx", "variants.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Badge",
-        "BadgeProps",
-        "badgeVariants"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Badge", "BadgeProps", "badgeVariants"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -714,20 +658,10 @@
       "type": "other",
       "status": "complete",
       "description": "bar-chart",
-      "files": [
-        "BarChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["BarChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "BarChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["BarChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -911,10 +845,7 @@
       "type": "other",
       "status": "complete",
       "description": "breadcrumb",
-      "files": [
-        "Breadcrumb.tsx",
-        "index.ts"
-      ],
+      "files": ["Breadcrumb.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Breadcrumb",
@@ -925,10 +856,7 @@
         "BreadcrumbSeparator",
         "BreadcrumbEllipsis"
       ],
-      "dependencies": [
-        "lucide-react",
-        "@radix-ui/react-slot"
-      ],
+      "dependencies": ["lucide-react", "@radix-ui/react-slot"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -959,22 +887,10 @@
       "type": "form",
       "status": "complete",
       "description": "Displays a button or a component that looks like a button with variants and sizes.",
-      "files": [
-        "Button.tsx",
-        "index.ts",
-        "variants.ts"
-      ],
+      "files": ["Button.tsx", "index.ts", "variants.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Button",
-        "ButtonProps",
-        "buttonVariants",
-        "ButtonVariants"
-      ],
-      "dependencies": [
-        "@radix-ui/react-slot",
-        "class-variance-authority"
-      ],
+      "exports": ["Button", "ButtonProps", "buttonVariants", "ButtonVariants"],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1000,12 +916,7 @@
           "name": "size",
           "type": {
             "kind": "union",
-            "values": [
-              "default",
-              "sm",
-              "lg",
-              "icon"
-            ]
+            "values": ["default", "sm", "lg", "icon"]
           },
           "default": "default",
           "description": "Size variant."
@@ -1032,11 +943,7 @@
           "name": "type",
           "type": {
             "kind": "union",
-            "values": [
-              "button",
-              "submit",
-              "reset"
-            ]
+            "values": ["button", "submit", "reset"]
           },
           "default": "button",
           "description": "Native button type."
@@ -1075,18 +982,10 @@
       "type": "other",
       "status": "complete",
       "description": "calendar-range",
-      "files": [
-        "CalendarRange.tsx",
-        "index.ts"
-      ],
+      "files": ["CalendarRange.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "CalendarRangeProps"
-      ],
-      "dependencies": [
-        "react-day-picker",
-        "lucide-react"
-      ],
+      "exports": ["CalendarRangeProps"],
+      "dependencies": ["react-day-picker", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1208,16 +1107,10 @@
       "type": "other",
       "status": "complete",
       "description": "calendar",
-      "files": [
-        "Calendar.tsx",
-        "index.ts"
-      ],
+      "files": ["Calendar.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [],
-      "dependencies": [
-        "react-day-picker",
-        "lucide-react"
-      ],
+      "dependencies": ["react-day-picker", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1351,10 +1244,7 @@
       "type": "other",
       "status": "complete",
       "description": "card",
-      "files": [
-        "Card.tsx",
-        "index.ts"
-      ],
+      "files": ["Card.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Card",
@@ -1396,18 +1286,10 @@
       "type": "other",
       "status": "complete",
       "description": "checkbox",
-      "files": [
-        "Checkbox.tsx",
-        "index.ts"
-      ],
+      "files": ["Checkbox.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Checkbox"
-      ],
-      "dependencies": [
-        "@radix-ui/react-checkbox",
-        "lucide-react"
-      ],
+      "exports": ["Checkbox"],
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1417,10 +1299,7 @@
           "name": "checked",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "indeterminate"
-            ]
+            "values": ["boolean", "indeterminate"]
           },
           "description": "Controlled checked state."
         },
@@ -1428,10 +1307,7 @@
           "name": "defaultChecked",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "indeterminate"
-            ]
+            "values": ["boolean", "indeterminate"]
           },
           "description": "Uncontrolled initial checked state."
         },
@@ -1495,19 +1371,10 @@
       "type": "other",
       "status": "complete",
       "description": "collapsible",
-      "files": [
-        "Collapsible.tsx",
-        "index.ts"
-      ],
+      "files": ["Collapsible.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Collapsible",
-        "CollapsibleTrigger",
-        "CollapsibleContent"
-      ],
-      "dependencies": [
-        "@radix-ui/react-collapsible"
-      ],
+      "exports": ["Collapsible", "CollapsibleTrigger", "CollapsibleContent"],
+      "dependencies": ["@radix-ui/react-collapsible"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1564,21 +1431,13 @@
       "type": "other",
       "status": "complete",
       "description": "command",
-      "files": [
-        "Command.tsx",
-        "index.ts"
-      ],
+      "files": ["Command.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [],
-      "dependencies": [
-        "cmdk",
-        "lucide-react"
-      ],
+      "dependencies": ["cmdk", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "dialog"
-      ],
+      "registryDependencies": ["dialog"],
       "category": "other",
       "props": [
         {
@@ -1649,10 +1508,7 @@
       "type": "other",
       "status": "complete",
       "description": "context-menu",
-      "files": [
-        "ContextMenu.tsx",
-        "index.ts"
-      ],
+      "files": ["ContextMenu.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "ContextMenu",
@@ -1665,9 +1521,7 @@
         "ContextMenuSub",
         "ContextMenuRadioGroup"
       ],
-      "dependencies": [
-        "@radix-ui/react-context-menu"
-      ],
+      "dependencies": ["@radix-ui/react-context-menu"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1699,26 +1553,13 @@
       "type": "form",
       "status": "complete",
       "description": "A date picker component with popover and calendar.",
-      "files": [
-        "DatePicker.tsx",
-        "index.ts"
-      ],
+      "files": ["DatePicker.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DatePicker",
-        "DatePickerProps"
-      ],
-      "dependencies": [
-        "date-fns",
-        "lucide-react"
-      ],
+      "exports": ["DatePicker", "DatePickerProps"],
+      "dependencies": ["date-fns", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "calendar",
-        "popover",
-        "button"
-      ],
+      "registryDependencies": ["calendar", "popover", "button"],
       "category": "form",
       "props": [
         {
@@ -1804,26 +1645,13 @@
       "type": "other",
       "status": "complete",
       "description": "date-range-picker",
-      "files": [
-        "DateRangePicker.tsx",
-        "index.ts"
-      ],
+      "files": ["DateRangePicker.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateRangePickerProps"
-      ],
-      "dependencies": [
-        "date-fns",
-        "lucide-react",
-        "react-day-picker"
-      ],
+      "exports": ["DateRangePickerProps"],
+      "dependencies": ["date-fns", "lucide-react", "react-day-picker"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "calendar-range",
-        "popover",
-        "button"
-      ],
+      "registryDependencies": ["calendar-range", "popover", "button"],
       "category": "other",
       "props": [
         {
@@ -1918,24 +1746,13 @@
       "type": "other",
       "status": "complete",
       "description": "date-time-picker",
-      "files": [
-        "DateTimePicker.tsx",
-        "index.ts"
-      ],
+      "files": ["DateTimePicker.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateTimePicker",
-        "DateTimePickerProps"
-      ],
-      "dependencies": [
-        "date-fns"
-      ],
+      "exports": ["DateTimePicker", "DateTimePickerProps"],
+      "dependencies": ["date-fns"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "date-picker",
-        "time-picker"
-      ],
+      "registryDependencies": ["date-picker", "time-picker"],
       "category": "other",
       "props": [
         {
@@ -2026,10 +1843,7 @@
       "type": "modal-overlay",
       "status": "complete",
       "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
-      "files": [
-        "Dialog.tsx",
-        "index.ts"
-      ],
+      "files": ["Dialog.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Dialog",
@@ -2041,9 +1855,7 @@
         "DialogDescription",
         "DialogClose"
       ],
-      "dependencies": [
-        "@radix-ui/react-dialog"
-      ],
+      "dependencies": ["@radix-ui/react-dialog"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2100,20 +1912,10 @@
       "type": "other",
       "status": "complete",
       "description": "donut-chart",
-      "files": [
-        "DonutChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["DonutChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DonutChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["DonutChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2301,10 +2103,7 @@
       "type": "other",
       "status": "complete",
       "description": "dropdown-menu",
-      "files": [
-        "DropdownMenu.tsx",
-        "index.ts"
-      ],
+      "files": ["DropdownMenu.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "DropdownMenu",
@@ -2318,9 +2117,7 @@
         "DropdownMenuSub",
         "DropdownMenuRadioGroup"
       ],
-      "dependencies": [
-        "@radix-ui/react-dropdown-menu"
-      ],
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2395,14 +2192,9 @@
       "type": "other",
       "status": "complete",
       "description": "empty",
-      "files": [
-        "Empty.tsx",
-        "index.ts"
-      ],
+      "files": ["Empty.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "EmptyProps"
-      ],
+      "exports": ["EmptyProps"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2460,10 +2252,7 @@
       "type": "other",
       "status": "complete",
       "description": "form",
-      "files": [
-        "Form.tsx",
-        "index.ts"
-      ],
+      "files": ["Form.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Form",
@@ -2482,9 +2271,7 @@
       ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "label"
-      ],
+      "registryDependencies": ["label"],
       "category": "other",
       "props": [
         {
@@ -2504,19 +2291,10 @@
       "type": "charts",
       "status": "complete",
       "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
-      "files": [
-        "GaugeChart.tsx",
-        "types.ts",
-        "index.ts"
-      ],
+      "files": ["GaugeChart.tsx", "types.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "GaugeChart"
-      ],
-      "dependencies": [
-        "echarts",
-        "echarts-for-react"
-      ],
+      "exports": ["GaugeChart"],
+      "dependencies": ["echarts", "echarts-for-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2530,19 +2308,10 @@
       "type": "other",
       "status": "complete",
       "description": "hover-card",
-      "files": [
-        "HoverCard.tsx",
-        "index.ts"
-      ],
+      "files": ["HoverCard.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "HoverCard",
-        "HoverCardTrigger",
-        "HoverCardContent"
-      ],
-      "dependencies": [
-        "@radix-ui/react-hover-card"
-      ],
+      "exports": ["HoverCard", "HoverCardTrigger", "HoverCardContent"],
+      "dependencies": ["@radix-ui/react-hover-card"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2608,14 +2377,9 @@
       "type": "other",
       "status": "complete",
       "description": "input",
-      "files": [
-        "Input.tsx",
-        "index.ts"
-      ],
+      "files": ["Input.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Input"
-      ],
+      "exports": ["Input"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2635,10 +2399,7 @@
           "name": "value",
           "type": {
             "kind": "union",
-            "values": [
-              "string",
-              "number"
-            ]
+            "values": ["string", "number"]
           },
           "description": "Controlled value."
         },
@@ -2646,10 +2407,7 @@
           "name": "defaultValue",
           "type": {
             "kind": "union",
-            "values": [
-              "string",
-              "number"
-            ]
+            "values": ["string", "number"]
           },
           "description": "Uncontrolled initial value."
         },
@@ -2698,10 +2456,7 @@
           "name": "ariaInvalid",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "string"
-            ]
+            "values": ["boolean", "string"]
           },
           "description": "ARIA invalid state."
         },
@@ -2747,14 +2502,9 @@
       "type": "other",
       "status": "complete",
       "description": "kbd",
-      "files": [
-        "Kbd.tsx",
-        "index.ts"
-      ],
+      "files": ["Kbd.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "KbdProps"
-      ],
+      "exports": ["KbdProps"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2809,17 +2559,10 @@
       "type": "other",
       "status": "complete",
       "description": "label",
-      "files": [
-        "Label.tsx",
-        "index.ts"
-      ],
+      "files": ["Label.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Label"
-      ],
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
+      "exports": ["Label"],
+      "dependencies": ["@radix-ui/react-label"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2859,20 +2602,10 @@
       "type": "other",
       "status": "complete",
       "description": "line-chart",
-      "files": [
-        "LineChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["LineChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LineChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["LineChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3092,10 +2825,7 @@
       "type": "other",
       "status": "complete",
       "description": "menubar",
-      "files": [
-        "Menubar.tsx",
-        "index.ts"
-      ],
+      "files": ["Menubar.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Menubar",
@@ -3105,9 +2835,7 @@
         "MenubarItem",
         "MenubarSeparator"
       ],
-      "dependencies": [
-        "@radix-ui/react-menubar"
-      ],
+      "dependencies": ["@radix-ui/react-menubar"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3190,20 +2918,10 @@
       "type": "other",
       "status": "complete",
       "description": "mixed-chart",
-      "files": [
-        "MixedChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["MixedChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "MixedChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["MixedChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3360,10 +3078,7 @@
       "type": "other",
       "status": "complete",
       "description": "navigation-menu",
-      "files": [
-        "NavigationMenu.tsx",
-        "index.ts"
-      ],
+      "files": ["NavigationMenu.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "NavigationMenu",
@@ -3373,9 +3088,7 @@
         "NavigationMenuContent",
         "NavigationMenuLink"
       ],
-      "dependencies": [
-        "@radix-ui/react-navigation-menu"
-      ],
+      "dependencies": ["@radix-ui/react-navigation-menu"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3483,17 +3196,10 @@
       "type": "other",
       "status": "complete",
       "description": "pagination",
-      "files": [
-        "Pagination.tsx",
-        "index.ts"
-      ],
+      "files": ["Pagination.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PaginationProps"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
+      "exports": ["PaginationProps"],
+      "dependencies": ["lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3552,20 +3258,10 @@
       "type": "other",
       "status": "complete",
       "description": "pie-chart",
-      "files": [
-        "PieChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["PieChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PieChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["PieChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3753,19 +3449,10 @@
       "type": "other",
       "status": "complete",
       "description": "popover",
-      "files": [
-        "Popover.tsx",
-        "index.ts"
-      ],
+      "files": ["Popover.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Popover",
-        "PopoverTrigger",
-        "PopoverContent"
-      ],
-      "dependencies": [
-        "@radix-ui/react-popover"
-      ],
+      "exports": ["Popover", "PopoverTrigger", "PopoverContent"],
+      "dependencies": ["@radix-ui/react-popover"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3821,18 +3508,10 @@
       "type": "other",
       "status": "complete",
       "description": "progress",
-      "files": [
-        "Progress.tsx",
-        "index.ts"
-      ],
+      "files": ["Progress.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Progress"
-      ],
-      "dependencies": [
-        "@radix-ui/react-progress",
-        "class-variance-authority"
-      ],
+      "exports": ["Progress"],
+      "dependencies": ["@radix-ui/react-progress", "class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3891,20 +3570,10 @@
       "type": "other",
       "status": "complete",
       "description": "radar-chart",
-      "files": [
-        "RadarChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["RadarChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadarChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["RadarChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4087,19 +3756,10 @@
       "type": "other",
       "status": "complete",
       "description": "radio-group",
-      "files": [
-        "RadioGroup.tsx",
-        "index.ts"
-      ],
+      "files": ["RadioGroup.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadioGroup",
-        "RadioGroupItem"
-      ],
-      "dependencies": [
-        "@radix-ui/react-radio-group",
-        "lucide-react"
-      ],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "dependencies": ["@radix-ui/react-radio-group", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4158,10 +3818,7 @@
           "name": "orientation",
           "type": {
             "kind": "union",
-            "values": [
-              "horizontal",
-              "vertical"
-            ]
+            "values": ["horizontal", "vertical"]
           },
           "description": "Layout orientation."
         },
@@ -4183,20 +3840,10 @@
       "type": "other",
       "status": "complete",
       "description": "resizable",
-      "files": [
-        "Resizable.tsx",
-        "index.ts"
-      ],
+      "files": ["Resizable.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ResizablePanelGroup",
-        "ResizablePanel",
-        "ResizableHandle"
-      ],
-      "dependencies": [
-        "react-resizable-panels",
-        "lucide-react"
-      ],
+      "exports": ["ResizablePanelGroup", "ResizablePanel", "ResizableHandle"],
+      "dependencies": ["react-resizable-panels", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4210,20 +3857,10 @@
       "type": "other",
       "status": "complete",
       "description": "scatter-chart",
-      "files": [
-        "ScatterChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["ScatterChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ScatterChart"
-      ],
-      "dependencies": [
-        "echarts-for-react",
-        "echarts"
-      ],
+      "exports": ["ScatterChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4387,18 +4024,10 @@
       "type": "other",
       "status": "complete",
       "description": "scroll-area",
-      "files": [
-        "ScrollArea.tsx",
-        "index.ts"
-      ],
+      "files": ["ScrollArea.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ScrollArea",
-        "ScrollBar"
-      ],
-      "dependencies": [
-        "@radix-ui/react-scroll-area"
-      ],
+      "exports": ["ScrollArea", "ScrollBar"],
+      "dependencies": ["@radix-ui/react-scroll-area"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4491,10 +4120,7 @@
       "type": "form",
       "status": "complete",
       "description": "A select box component for choosing an option from a list.",
-      "files": [
-        "Select.tsx",
-        "index.ts"
-      ],
+      "files": ["Select.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Select",
@@ -4506,10 +4132,7 @@
         "SelectItem",
         "SelectSeparator"
       ],
-      "dependencies": [
-        "@radix-ui/react-select",
-        "lucide-react"
-      ],
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4567,10 +4190,7 @@
           "name": "dir",
           "type": {
             "kind": "union",
-            "values": [
-              "ltr",
-              "rtl"
-            ]
+            "values": ["ltr", "rtl"]
           },
           "description": "Reading direction."
         },
@@ -4608,17 +4228,10 @@
       "type": "other",
       "status": "complete",
       "description": "separator",
-      "files": [
-        "Separator.tsx",
-        "index.ts"
-      ],
+      "files": ["Separator.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Separator"
-      ],
-      "dependencies": [
-        "@radix-ui/react-separator"
-      ],
+      "exports": ["Separator"],
+      "dependencies": ["@radix-ui/react-separator"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4678,10 +4291,7 @@
       "type": "other",
       "status": "complete",
       "description": "sheet",
-      "files": [
-        "Sheet.tsx",
-        "index.ts"
-      ],
+      "files": ["Sheet.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [],
       "dependencies": [
@@ -4745,14 +4355,9 @@
       "type": "other",
       "status": "complete",
       "description": "skeleton",
-      "files": [
-        "Skeleton.tsx",
-        "index.ts"
-      ],
+      "files": ["Skeleton.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "SkeletonProps"
-      ],
+      "exports": ["SkeletonProps"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4799,17 +4404,10 @@
       "type": "other",
       "status": "complete",
       "description": "slider",
-      "files": [
-        "Slider.tsx",
-        "index.ts"
-      ],
+      "files": ["Slider.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Slider"
-      ],
-      "dependencies": [
-        "@radix-ui/react-slider"
-      ],
+      "exports": ["Slider"],
+      "dependencies": ["@radix-ui/react-slider"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4985,14 +4583,9 @@
       "type": "other",
       "status": "complete",
       "description": "spinner",
-      "files": [
-        "Spinner.tsx",
-        "index.ts"
-      ],
+      "files": ["Spinner.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Spinner"
-      ],
+      "exports": ["Spinner"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -5048,17 +4641,10 @@
       "type": "other",
       "status": "complete",
       "description": "switch",
-      "files": [
-        "Switch.tsx",
-        "index.ts"
-      ],
+      "files": ["Switch.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Switch"
-      ],
-      "dependencies": [
-        "@radix-ui/react-switch"
-      ],
+      "exports": ["Switch"],
+      "dependencies": ["@radix-ui/react-switch"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5140,10 +4726,7 @@
       "type": "other",
       "status": "complete",
       "description": "table",
-      "files": [
-        "Table.tsx",
-        "index.ts"
-      ],
+      "files": ["Table.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [],
       "dependencies": [],
@@ -5178,20 +4761,10 @@
       "type": "other",
       "status": "complete",
       "description": "tabs",
-      "files": [
-        "Tabs.tsx",
-        "index.ts"
-      ],
+      "files": ["Tabs.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Tabs",
-        "TabsList",
-        "TabsTrigger",
-        "TabsContent"
-      ],
-      "dependencies": [
-        "@radix-ui/react-tabs"
-      ],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "dependencies": ["@radix-ui/react-tabs"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5292,17 +4865,10 @@
       "type": "other",
       "status": "complete",
       "description": "tags-input",
-      "files": [
-        "TagsInput.tsx",
-        "index.ts"
-      ],
+      "files": ["TagsInput.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TagsInputProps"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
+      "exports": ["TagsInputProps"],
+      "dependencies": ["lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5377,14 +4943,9 @@
       "type": "other",
       "status": "complete",
       "description": "textarea",
-      "files": [
-        "Textarea.tsx",
-        "index.ts"
-      ],
+      "files": ["Textarea.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Textarea"
-      ],
+      "exports": ["Textarea"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -5518,25 +5079,13 @@
       "type": "other",
       "status": "complete",
       "description": "time-picker",
-      "files": [
-        "TimePicker.tsx",
-        "index.ts"
-      ],
+      "files": ["TimePicker.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TimePicker",
-        "TimePickerProps"
-      ],
-      "dependencies": [
-        "lucide-react"
-      ],
+      "exports": ["TimePicker", "TimePickerProps"],
+      "dependencies": ["lucide-react"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "popover",
-        "button",
-        "select"
-      ],
+      "registryDependencies": ["popover", "button", "select"],
       "category": "other",
       "props": [
         {
@@ -5631,19 +5180,10 @@
       "type": "feedback",
       "status": "partial",
       "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
-      "files": [
-        "Toast.tsx",
-        "toast-helper.ts",
-        "index.ts"
-      ],
+      "files": ["Toast.tsx", "toast-helper.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toaster",
-        "toast"
-      ],
-      "dependencies": [
-        "sonner"
-      ],
+      "exports": ["Toaster", "toast"],
+      "dependencies": ["sonner"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5779,24 +5319,16 @@
       "type": "other",
       "status": "complete",
       "description": "toggle-group",
-      "files": [
-        "ToggleGroup.tsx",
-        "index.ts"
-      ],
+      "files": ["ToggleGroup.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToggleGroup",
-        "ToggleGroupItem"
-      ],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
       "dependencies": [
         "@radix-ui/react-toggle-group",
         "class-variance-authority"
       ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "toggle"
-      ],
+      "registryDependencies": ["toggle"],
       "category": "other",
       "props": [
         {
@@ -5994,20 +5526,10 @@
       "type": "other",
       "status": "complete",
       "description": "toggle",
-      "files": [
-        "Toggle.tsx",
-        "variants.ts",
-        "index.ts"
-      ],
+      "files": ["Toggle.tsx", "variants.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toggle",
-        "toggleVariants"
-      ],
-      "dependencies": [
-        "@radix-ui/react-toggle",
-        "class-variance-authority"
-      ],
+      "exports": ["Toggle", "toggleVariants"],
+      "dependencies": ["@radix-ui/react-toggle", "class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -6122,10 +5644,7 @@
       "type": "data-display",
       "status": "complete",
       "description": "Toolbar component with section grouping and separators for grouped actions.",
-      "files": [
-        "Toolbar.tsx",
-        "index.ts"
-      ],
+      "files": ["Toolbar.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Toolbar",
@@ -6135,9 +5654,7 @@
         "ToolbarToggleGroup",
         "ToolbarToggleItem"
       ],
-      "dependencies": [
-        "@radix-ui/react-toolbar"
-      ],
+      "dependencies": ["@radix-ui/react-toolbar"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -6214,10 +5731,7 @@
       "type": "other",
       "status": "complete",
       "description": "tooltip",
-      "files": [
-        "Tooltip.tsx",
-        "index.ts"
-      ],
+      "files": ["Tooltip.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Tooltip",
@@ -6225,9 +5739,7 @@
         "TooltipContent",
         "TooltipProvider"
       ],
-      "dependencies": [
-        "@radix-ui/react-tooltip"
-      ],
+      "dependencies": ["@radix-ui/react-tooltip"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -6293,14 +5805,9 @@
       "type": "other",
       "status": "complete",
       "description": "typography",
-      "files": [
-        "Typography.tsx",
-        "index.ts"
-      ],
+      "files": ["Typography.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TypographyProps"
-      ],
+      "exports": ["TypographyProps"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],

@@ -85,11 +85,10 @@ export function mergeNormalizedProps(frameworkProps) {
 
     const normalizedProp = {
       name: representative.prop.name,
-      type:
-        representative.prop.type || {
-          kind: 'custom',
-          name: 'unknown',
-        },
+      type: representative.prop.type || {
+        kind: 'custom',
+        name: 'unknown',
+      },
       frameworks,
     };
     if (representative.prop.default !== undefined) {
