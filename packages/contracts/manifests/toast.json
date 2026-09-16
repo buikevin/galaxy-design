@@ -3,7 +3,7 @@
   "id": "toast",
   "name": "Toast",
   "category": "feedback",
-  "status": "partial",
+  "status": "complete",
   "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
   "props": [],
   "children": [],
@@ -304,14 +304,23 @@
       ]
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "No React Native toast implementation yet."
+      "status": "complete",
+      "files": ["Toast.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["Toast"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "notes": "Custom Animated implementation — fade in/out with variant colors and auto-dismiss."
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "No Flutter toast implementation yet."
+      "status": "complete",
+      "files": ["toast.dart"],
+      "exports": ["GalaxyToast", "GalaxyToastVariant"],
+      "dependencies": [],
+      "notes": "SnackBar wrapper with Galaxy UI styling and variant colors."
     }
   },
   "a11y": {
@@ -321,6 +330,7 @@
     ]
   },
   "notes": [
-    "React/Vue/Angular toasts are Sonner wrappers rather than Radix-anatomy components; parity work in P1.2 will decide between keeping Sonner or restoring a Radix-style anatomy."
+    "React/Vue/Angular toasts are Sonner wrappers rather than Radix-anatomy components; parity work in P1.2 will decide between keeping Sonner or restoring a Radix-style anatomy.",
+    "P2.2: React Native and Flutter toast implementations added (custom animated + SnackBar)."
   ]
 }

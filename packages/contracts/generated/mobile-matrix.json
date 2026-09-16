@@ -216,7 +216,7 @@
       }
     },
     "react-native": {
-      "available": 47,
+      "available": 48,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -273,7 +273,7 @@
         "tags-input": "needs-port",
         "textarea": "available",
         "time-picker": "needs-port",
-        "toast": "needs-port",
+        "toast": "available",
         "toggle": "available",
         "toggle-group": "available",
         "toolbar": "web-only",
@@ -281,13 +281,13 @@
         "typography": "available"
       },
       "summary": {
-        "available": 47,
+        "available": 48,
         "web-only": 6,
-        "needs-port": 8
+        "needs-port": 7
       }
     },
     "flutter": {
-      "available": 47,
+      "available": 48,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -344,7 +344,7 @@
         "tags-input": "needs-port",
         "textarea": "available",
         "time-picker": "needs-port",
-        "toast": "needs-port",
+        "toast": "available",
         "toggle": "available",
         "toggle-group": "available",
         "toolbar": "web-only",
@@ -352,9 +352,9 @@
         "typography": "available"
       },
       "summary": {
-        "available": 47,
+        "available": 48,
         "web-only": 6,
-        "needs-port": 8
+        "needs-port": 7
       }
     }
   }
