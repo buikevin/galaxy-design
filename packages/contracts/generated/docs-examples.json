@@ -4856,6 +4856,31 @@
         }
       ]
     },
+    "login-block": {
+      "id": "login-block",
+      "name": "Login Block",
+      "category": "blocks",
+      "status": "complete",
+      "description": "Full login page with email/password form, remember me, and social auth.",
+      "codeExamples": {
+        "react": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add login-block",
+          "import": "import { LoginBlock } from '@/components/ui/login-block'",
+          "usage": "<LoginBlock>Content</LoginBlock>"
+        },
+        "vue": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add login-block",
+          "import": "import { LoginBlock } from '@/components/ui/login-block/index'",
+          "usage": "<LoginBlock>Content</LoginBlock>"
+        },
+        "angular": null,
+        "react-native": null,
+        "flutter": null
+      },
+      "props": []
+    },
     "menubar": {
       "id": "menubar",
       "name": "menubar",
@@ -5387,6 +5412,36 @@
         }
       ]
     },
+    "otp-input": {
+      "id": "otp-input",
+      "name": "OTP Input",
+      "category": "form",
+      "status": "complete",
+      "description": "One-time password input with auto-focus, paste support, and completion callback.",
+      "codeExamples": {
+        "react": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add otp-input",
+          "import": "import { OTPInput } from '@/components/ui/otp-input'",
+          "usage": "<OTPInput>Content</OTPInput>"
+        },
+        "vue": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add otp-input",
+          "import": "import { OTPInput } from '@/components/ui/otp-input/index'",
+          "usage": "<OTPInput>Content</OTPInput>"
+        },
+        "angular": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add otp-input",
+          "import": "import { OTPInputComponent } from '@/components/ui/otp-input/index'",
+          "usage": "<ui-otp-input>Content</ui-otp-input>"
+        },
+        "react-native": null,
+        "flutter": null
+      },
+      "props": []
+    },
     "pagination": {
       "id": "pagination",
       "name": "pagination",
@@ -5900,6 +5955,31 @@
           ]
         }
       ]
+    },
+    "pricing-block": {
+      "id": "pricing-block",
+      "name": "Pricing Block",
+      "category": "blocks",
+      "status": "complete",
+      "description": "Pricing cards with tiers, feature lists, and highlighted plan.",
+      "codeExamples": {
+        "react": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add pricing-block",
+          "import": "import { PricingBlock } from '@/components/ui/pricing-block'",
+          "usage": "<PricingBlock>Content</PricingBlock>"
+        },
+        "vue": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add pricing-block",
+          "import": "import { PricingBlock } from '@/components/ui/pricing-block/index'",
+          "usage": "<PricingBlock>Content</PricingBlock>"
+        },
+        "angular": null,
+        "react-native": null,
+        "flutter": null
+      },
+      "props": []
     },
     "progress": {
       "id": "progress",

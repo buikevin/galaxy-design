@@ -9,7 +9,7 @@
   },
   "frameworks": {
     "react": {
-      "available": 64,
+      "available": 67,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -45,12 +45,15 @@
         "kbd": "available",
         "label": "available",
         "line-chart": "available",
+        "login-block": "available",
         "menubar": "available",
         "mixed-chart": "available",
         "navigation-menu": "available",
+        "otp-input": "available",
         "pagination": "available",
         "pie-chart": "available",
         "popover": "available",
+        "pricing-block": "available",
         "progress": "available",
         "radar-chart": "available",
         "radio-group": "available",
@@ -77,11 +80,11 @@
         "typography": "available"
       },
       "summary": {
-        "available": 64
+        "available": 67
       }
     },
     "vue": {
-      "available": 64,
+      "available": 67,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -117,12 +120,15 @@
         "kbd": "available",
         "label": "available",
         "line-chart": "available",
+        "login-block": "available",
         "menubar": "available",
         "mixed-chart": "available",
         "navigation-menu": "available",
+        "otp-input": "available",
         "pagination": "available",
         "pie-chart": "available",
         "popover": "available",
+        "pricing-block": "available",
         "progress": "available",
         "radar-chart": "available",
         "radio-group": "available",
@@ -149,11 +155,11 @@
         "typography": "available"
       },
       "summary": {
-        "available": 64
+        "available": 67
       }
     },
     "angular": {
-      "available": 62,
+      "available": 63,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -189,12 +195,15 @@
         "kbd": "available",
         "label": "available",
         "line-chart": "available",
+        "login-block": "available",
         "menubar": "available",
         "mixed-chart": "available",
         "navigation-menu": "available",
+        "otp-input": "available",
         "pagination": "available",
         "pie-chart": "available",
         "popover": "available",
+        "pricing-block": "available",
         "progress": "available",
         "radar-chart": "available",
         "radio-group": "available",
@@ -221,7 +230,7 @@
         "typography": "available"
       },
       "summary": {
-        "available": 64
+        "available": 67
       }
     },
     "react-native": {
@@ -261,12 +270,15 @@
         "kbd": "web-only",
         "label": "available",
         "line-chart": "available",
+        "login-block": "needs-port",
         "menubar": "available",
         "mixed-chart": "available",
         "navigation-menu": "available",
+        "otp-input": "needs-port",
         "pagination": "available",
         "pie-chart": "available",
         "popover": "available",
+        "pricing-block": "needs-port",
         "progress": "available",
         "radar-chart": "available",
         "radio-group": "available",
@@ -295,7 +307,7 @@
       "summary": {
         "available": 48,
         "web-only": 6,
-        "needs-port": 10
+        "needs-port": 13
       }
     },
     "flutter": {
@@ -335,12 +347,15 @@
         "kbd": "web-only",
         "label": "available",
         "line-chart": "available",
+        "login-block": "needs-port",
         "menubar": "available",
         "mixed-chart": "available",
         "navigation-menu": "available",
+        "otp-input": "needs-port",
         "pagination": "available",
         "pie-chart": "available",
         "popover": "available",
+        "pricing-block": "needs-port",
         "progress": "available",
         "radar-chart": "available",
         "radio-group": "available",
@@ -369,7 +384,7 @@
       "summary": {
         "available": 48,
         "web-only": 6,
-        "needs-port": 10
+        "needs-port": 13
       }
     }
   }
