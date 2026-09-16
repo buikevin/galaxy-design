@@ -1,0 +1,15 @@
+{
+  "name": "@galaxy-ui/visual-tests",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Visual regression testing for Galaxy UI components using Playwright.",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "update": "playwright test --update-snapshots",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
