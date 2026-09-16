@@ -9,7 +9,7 @@
   },
   "frameworks": {
     "react": {
-      "available": 62,
+      "available": 64,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -29,6 +29,8 @@
         "combobox": "available",
         "command": "available",
         "context-menu": "available",
+        "dashboard-block": "available",
+        "data-table": "available",
         "date-picker": "available",
         "date-range-picker": "available",
         "date-time-picker": "available",
@@ -75,10 +77,82 @@
         "typography": "available"
       },
       "summary": {
-        "available": 62
+        "available": 64
       }
     },
     "vue": {
+      "available": 64,
+      "components": {
+        "accordion": "available",
+        "alert": "available",
+        "alert-dialog": "available",
+        "area-chart": "available",
+        "aspect-ratio": "available",
+        "avatar": "available",
+        "badge": "available",
+        "bar-chart": "available",
+        "breadcrumb": "available",
+        "button": "available",
+        "calendar": "available",
+        "calendar-range": "available",
+        "card": "available",
+        "checkbox": "available",
+        "collapsible": "available",
+        "combobox": "available",
+        "command": "available",
+        "context-menu": "available",
+        "dashboard-block": "available",
+        "data-table": "available",
+        "date-picker": "available",
+        "date-range-picker": "available",
+        "date-time-picker": "available",
+        "dialog": "available",
+        "donut-chart": "available",
+        "dropdown-menu": "available",
+        "empty": "available",
+        "form": "available",
+        "gauge-chart": "available",
+        "hover-card": "available",
+        "input": "available",
+        "kbd": "available",
+        "label": "available",
+        "line-chart": "available",
+        "menubar": "available",
+        "mixed-chart": "available",
+        "navigation-menu": "available",
+        "pagination": "available",
+        "pie-chart": "available",
+        "popover": "available",
+        "progress": "available",
+        "radar-chart": "available",
+        "radio-group": "available",
+        "resizable": "available",
+        "scatter-chart": "available",
+        "scroll-area": "available",
+        "select": "available",
+        "separator": "available",
+        "sheet": "available",
+        "skeleton": "available",
+        "slider": "available",
+        "spinner": "available",
+        "switch": "available",
+        "table": "available",
+        "tabs": "available",
+        "tags-input": "available",
+        "textarea": "available",
+        "time-picker": "available",
+        "toast": "available",
+        "toggle": "available",
+        "toggle-group": "available",
+        "toolbar": "available",
+        "tooltip": "available",
+        "typography": "available"
+      },
+      "summary": {
+        "available": 64
+      }
+    },
+    "angular": {
       "available": 62,
       "components": {
         "accordion": "available",
@@ -99,6 +173,8 @@
         "combobox": "available",
         "command": "available",
         "context-menu": "available",
+        "dashboard-block": "available",
+        "data-table": "available",
         "date-picker": "available",
         "date-range-picker": "available",
         "date-time-picker": "available",
@@ -145,77 +221,7 @@
         "typography": "available"
       },
       "summary": {
-        "available": 62
-      }
-    },
-    "angular": {
-      "available": 61,
-      "components": {
-        "accordion": "available",
-        "alert": "available",
-        "alert-dialog": "available",
-        "area-chart": "available",
-        "aspect-ratio": "available",
-        "avatar": "available",
-        "badge": "available",
-        "bar-chart": "available",
-        "breadcrumb": "available",
-        "button": "available",
-        "calendar": "available",
-        "calendar-range": "available",
-        "card": "available",
-        "checkbox": "available",
-        "collapsible": "available",
-        "combobox": "available",
-        "command": "available",
-        "context-menu": "available",
-        "date-picker": "available",
-        "date-range-picker": "available",
-        "date-time-picker": "available",
-        "dialog": "available",
-        "donut-chart": "available",
-        "dropdown-menu": "available",
-        "empty": "available",
-        "form": "available",
-        "gauge-chart": "available",
-        "hover-card": "available",
-        "input": "available",
-        "kbd": "available",
-        "label": "available",
-        "line-chart": "available",
-        "menubar": "available",
-        "mixed-chart": "available",
-        "navigation-menu": "available",
-        "pagination": "available",
-        "pie-chart": "available",
-        "popover": "available",
-        "progress": "available",
-        "radar-chart": "available",
-        "radio-group": "available",
-        "resizable": "available",
-        "scatter-chart": "available",
-        "scroll-area": "available",
-        "select": "available",
-        "separator": "available",
-        "sheet": "available",
-        "skeleton": "available",
-        "slider": "available",
-        "spinner": "available",
-        "switch": "available",
-        "table": "available",
-        "tabs": "available",
-        "tags-input": "available",
-        "textarea": "available",
-        "time-picker": "available",
-        "toast": "available",
-        "toggle": "available",
-        "toggle-group": "available",
-        "toolbar": "available",
-        "tooltip": "available",
-        "typography": "available"
-      },
-      "summary": {
-        "available": 62
+        "available": 64
       }
     },
     "react-native": {
@@ -239,6 +245,8 @@
         "combobox": "needs-port",
         "command": "web-only",
         "context-menu": "available",
+        "dashboard-block": "needs-port",
+        "data-table": "needs-port",
         "date-picker": "available",
         "date-range-picker": "needs-port",
         "date-time-picker": "needs-port",
@@ -287,7 +295,7 @@
       "summary": {
         "available": 48,
         "web-only": 6,
-        "needs-port": 8
+        "needs-port": 10
       }
     },
     "flutter": {
@@ -311,6 +319,8 @@
         "combobox": "needs-port",
         "command": "web-only",
         "context-menu": "available",
+        "dashboard-block": "needs-port",
+        "data-table": "needs-port",
         "date-picker": "available",
         "date-range-picker": "needs-port",
         "date-time-picker": "needs-port",
@@ -359,7 +369,7 @@
       "summary": {
         "available": 48,
         "web-only": 6,
-        "needs-port": 8
+        "needs-port": 10
       }
     }
   }

@@ -1723,6 +1723,30 @@
       ],
       "manifestStatus": "complete"
     },
+    "dashboard-block": {
+      "id": "dashboard-block",
+      "name": "Dashboard Block",
+      "type": "blocks",
+      "status": "complete",
+      "description": "Full dashboard page with collapsible sidebar, stat cards, recent activity table, and navigation.",
+      "files": [
+        "DashboardBlock.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DashboardBlock"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "category": "blocks",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "data-table": {
       "id": "data-table",
       "name": "Data Table",

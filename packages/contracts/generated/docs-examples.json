@@ -2612,6 +2612,61 @@
         }
       ]
     },
+    "dashboard-block": {
+      "id": "dashboard-block",
+      "name": "Dashboard Block",
+      "category": "blocks",
+      "status": "complete",
+      "description": "Full dashboard page with collapsible sidebar, stat cards, recent activity table, and navigation.",
+      "codeExamples": {
+        "react": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add dashboard-block",
+          "import": "import { DashboardBlock } from '@/components/ui/dashboard-block'",
+          "usage": "<DashboardBlock>Content</DashboardBlock>"
+        },
+        "vue": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add dashboard-block",
+          "import": "import { DashboardBlock } from '@/components/ui/dashboard-block/index'",
+          "usage": "<DashboardBlock>Content</DashboardBlock>"
+        },
+        "angular": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add dashboard-block",
+          "import": "import { DashboardComponent } from '@/components/ui/dashboard-block/index'",
+          "usage": "<ui-dashboard>Content</ui-dashboard>"
+        },
+        "react-native": null,
+        "flutter": null
+      },
+      "props": []
+    },
+    "data-table": {
+      "id": "data-table",
+      "name": "Data Table",
+      "category": "data-display",
+      "status": "complete",
+      "description": "Sortable, filterable, paginated data table.",
+      "codeExamples": {
+        "react": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add data-table",
+          "import": "import { DataTable } from '@/components/ui/data-table'",
+          "usage": "<DataTable>Content</DataTable>"
+        },
+        "vue": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add data-table",
+          "import": "import { DataTable } from '@/components/ui/data-table/index'",
+          "usage": "<DataTable>Content</DataTable>"
+        },
+        "angular": null,
+        "react-native": null,
+        "flutter": null
+      },
+      "props": []
+    },
     "date-picker": {
       "id": "date-picker",
       "name": "Date Picker",

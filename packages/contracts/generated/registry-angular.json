@@ -1303,6 +1303,32 @@
       "selector": "ui-context-menu",
       "manifestStatus": "complete"
     },
+    "dashboard-block": {
+      "id": "dashboard-block",
+      "name": "Dashboard Block",
+      "type": "blocks",
+      "status": "complete",
+      "description": "Full dashboard page with collapsible sidebar, stat cards, recent activity table, and navigation.",
+      "files": [
+        "dashboard.component.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DashboardComponent",
+        "DashboardNavItem",
+        "DashboardStatCard",
+        "DashboardTableColumn"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "blocks",
+      "props": [],
+      "selector": "ui-dashboard",
+      "manifestStatus": "complete"
+    },
     "date-picker": {
       "id": "date-picker",
       "name": "Date Picker",

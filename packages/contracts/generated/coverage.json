@@ -171,6 +171,14 @@
         "flutter"
       ]
     },
+    "dashboard-block": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
     "data-table": {
       "status": "complete",
       "available": [
@@ -622,6 +630,7 @@
         "combobox",
         "command",
         "context-menu",
+        "dashboard-block",
         "data-table",
         "date-picker",
         "date-range-picker",
@@ -690,6 +699,7 @@
         "combobox",
         "command",
         "context-menu",
+        "dashboard-block",
         "data-table",
         "date-picker",
         "date-range-picker",
@@ -757,6 +767,7 @@
         "collapsible",
         "command",
         "context-menu",
+        "dashboard-block",
         "date-picker",
         "date-range-picker",
         "date-time-picker",
@@ -864,6 +875,7 @@
         "calendar",
         "combobox",
         "command",
+        "dashboard-block",
         "data-table",
         "date-range-picker",
         "date-time-picker",
@@ -933,6 +945,7 @@
         "calendar",
         "combobox",
         "command",
+        "dashboard-block",
         "data-table",
         "date-range-picker",
         "date-time-picker",

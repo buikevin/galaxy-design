@@ -3449,6 +3449,20 @@
       ],
       "children": []
     },
+    "dashboard-block": {
+      "name": "Dashboard Block",
+      "type": "blocks",
+      "description": "Full dashboard page with collapsible sidebar, stat cards, recent activity table, and navigation.",
+      "category": "blocks",
+      "status": "complete",
+      "frameworks": [
+        "react",
+        "vue",
+        "angular"
+      ],
+      "props": [],
+      "children": []
+    },
     "data-table": {
       "name": "Data Table",
       "type": "data-display",

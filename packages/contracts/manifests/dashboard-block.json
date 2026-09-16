@@ -1,0 +1,57 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "dashboard-block",
+  "name": "Dashboard Block",
+  "category": "blocks",
+  "type": "block",
+  "status": "complete",
+  "description": "Full dashboard page with collapsible sidebar, stat cards, recent activity table, and navigation.",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["DashboardBlock.tsx", "index.ts"],
+      "entry": "index.ts",
+      "selector": "",
+      "exports": ["DashboardBlock"],
+      "dependencies": [],
+      "registryDependencies": ["button"]
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["DashboardBlock.vue", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["DashboardBlock"],
+      "dependencies": [],
+      "registryDependencies": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["dashboard.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-dashboard",
+      "exports": ["DashboardComponent", "DashboardNavItem", "DashboardStatCard", "DashboardTableColumn"],
+      "dependencies": [],
+      "props": []
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Mobile uses native tab navigation instead of dashboard block."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Flutter uses BottomNavigationBar + Scaffold instead."
+    }
+  },
+  "a11y": {
+    "keyboard": [
+      "Sidebar toggle accessible via keyboard."
+    ],
+    "aria": [
+      "Content panel uses role=main, sidebar uses semantic <nav> element."
+    ]
+  }
+}
