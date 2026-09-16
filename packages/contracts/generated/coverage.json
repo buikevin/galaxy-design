@@ -318,6 +318,13 @@
         "flutter"
       ]
     },
+    "login-block": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue"
+      ]
+    },
     "menubar": {
       "status": "complete",
       "available": [
@@ -348,6 +355,14 @@
         "flutter"
       ]
     },
+    "otp-input": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
     "pagination": {
       "status": "complete",
       "available": [
@@ -376,6 +391,13 @@
         "angular",
         "react-native",
         "flutter"
+      ]
+    },
+    "pricing-block": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue"
       ]
     },
     "progress": {
@@ -646,12 +668,15 @@
         "kbd",
         "label",
         "line-chart",
+        "login-block",
         "menubar",
         "mixed-chart",
         "navigation-menu",
+        "otp-input",
         "pagination",
         "pie-chart",
         "popover",
+        "pricing-block",
         "progress",
         "radar-chart",
         "radio-group",
@@ -715,12 +740,15 @@
         "kbd",
         "label",
         "line-chart",
+        "login-block",
         "menubar",
         "mixed-chart",
         "navigation-menu",
+        "otp-input",
         "pagination",
         "pie-chart",
         "popover",
+        "pricing-block",
         "progress",
         "radar-chart",
         "radio-group",
@@ -785,6 +813,7 @@
         "menubar",
         "mixed-chart",
         "navigation-menu",
+        "otp-input",
         "pagination",
         "pie-chart",
         "popover",
@@ -815,7 +844,9 @@
       ],
       "missing": [
         "combobox",
-        "data-table"
+        "data-table",
+        "login-block",
+        "pricing-block"
       ]
     },
     "react-native": {
@@ -881,6 +912,9 @@
         "date-time-picker",
         "form",
         "kbd",
+        "login-block",
+        "otp-input",
+        "pricing-block",
         "resizable",
         "scroll-area",
         "tags-input",
@@ -951,6 +985,9 @@
         "date-time-picker",
         "form",
         "kbd",
+        "login-block",
+        "otp-input",
+        "pricing-block",
         "resizable",
         "scroll-area",
         "tags-input",

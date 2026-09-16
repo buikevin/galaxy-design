@@ -2692,6 +2692,28 @@
       ],
       "manifestStatus": "complete"
     },
+    "login-block": {
+      "id": "login-block",
+      "name": "Login Block",
+      "type": "blocks",
+      "status": "complete",
+      "description": "Full login page with email/password form, remember me, and social auth.",
+      "files": [
+        "LoginBlock.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "LoginBlock"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "blocks",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "menubar": {
       "id": "menubar",
       "name": "menubar",
@@ -3068,6 +3090,28 @@
       ],
       "manifestStatus": "complete"
     },
+    "otp-input": {
+      "id": "otp-input",
+      "name": "OTP Input",
+      "type": "form",
+      "status": "complete",
+      "description": "One-time password input with auto-focus, paste support, and completion callback.",
+      "files": [
+        "OTPInput.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "OTPInput"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "pagination": {
       "id": "pagination",
       "name": "pagination",
@@ -3398,6 +3442,28 @@
           "description": "Emitted when the open state changes."
         }
       ],
+      "manifestStatus": "complete"
+    },
+    "pricing-block": {
+      "id": "pricing-block",
+      "name": "Pricing Block",
+      "type": "blocks",
+      "status": "complete",
+      "description": "Pricing cards with tiers, feature lists, and highlighted plan.",
+      "files": [
+        "PricingBlock.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "PricingBlock"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "blocks",
+      "props": [],
       "manifestStatus": "complete"
     },
     "progress": {

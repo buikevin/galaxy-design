@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "login-block",
+  "name": "Login Block",
+  "category": "blocks",
+  "type": "block",
+  "status": "complete",
+  "description": "Full login page with email/password form, remember me, and social auth.",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": { "status": "complete", "files": ["LoginBlock.tsx", "index.ts"], "entry": "index.ts", "exports": ["LoginBlock"], "dependencies": [], "props": [] },
+    "vue": { "status": "complete", "files": ["LoginBlock.vue", "index.ts"], "entry": "index.ts", "exports": ["LoginBlock"], "dependencies": [], "props": [] },
+    "angular": { "status": "missing", "files": [], "notes": "Not implemented yet." },
+    "react-native": { "status": "missing", "files": [], "notes": "Mobile auth uses native flows." },
+    "flutter": { "status": "missing", "files": [], "notes": "Mobile auth uses native flows." }
+  },
+  "a11y": { "keyboard": ["Tab navigation through form fields."], "aria": ["Labels associated with inputs."] }
+}

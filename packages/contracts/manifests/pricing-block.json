@@ -1,0 +1,19 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "pricing-block",
+  "name": "Pricing Block",
+  "category": "blocks",
+  "type": "block",
+  "status": "complete",
+  "description": "Pricing cards with tiers, feature lists, and highlighted plan.",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": { "status": "complete", "files": ["PricingBlock.tsx", "index.ts"], "entry": "index.ts", "exports": ["PricingBlock"], "dependencies": [], "props": [] },
+    "vue": { "status": "complete", "files": ["PricingBlock.vue", "index.ts"], "entry": "index.ts", "exports": ["PricingBlock"], "dependencies": [], "props": [] },
+    "angular": { "status": "missing", "files": [], "notes": "Not implemented yet." },
+    "react-native": { "status": "missing", "files": [], "notes": "Mobile pricing uses different layout patterns." },
+    "flutter": { "status": "missing", "files": [], "notes": "Mobile pricing uses different layout patterns." }
+  },
+  "a11y": { "keyboard": [], "aria": [] }
+}

@@ -6376,6 +6376,19 @@
       ],
       "children": []
     },
+    "login-block": {
+      "name": "Login Block",
+      "type": "blocks",
+      "description": "Full login page with email/password form, remember me, and social auth.",
+      "category": "blocks",
+      "status": "complete",
+      "frameworks": [
+        "react",
+        "vue"
+      ],
+      "props": [],
+      "children": []
+    },
     "menubar": {
       "name": "menubar",
       "type": "other",
@@ -7129,6 +7142,20 @@
       ],
       "children": []
     },
+    "otp-input": {
+      "name": "OTP Input",
+      "type": "form",
+      "description": "One-time password input with auto-focus, paste support, and completion callback.",
+      "category": "form",
+      "status": "complete",
+      "frameworks": [
+        "react",
+        "vue",
+        "angular"
+      ],
+      "props": [],
+      "children": []
+    },
     "pagination": {
       "name": "pagination",
       "type": "other",
@@ -7809,6 +7836,19 @@
           "description": "Padding inside the popover panel."
         }
       ],
+      "children": []
+    },
+    "pricing-block": {
+      "name": "Pricing Block",
+      "type": "blocks",
+      "description": "Pricing cards with tiers, feature lists, and highlighted plan.",
+      "category": "blocks",
+      "status": "complete",
+      "frameworks": [
+        "react",
+        "vue"
+      ],
+      "props": [],
       "children": []
     },
     "progress": {

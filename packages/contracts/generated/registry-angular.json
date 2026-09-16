@@ -2807,6 +2807,29 @@
       "selector": "ui-navigation-menu",
       "manifestStatus": "complete"
     },
+    "otp-input": {
+      "id": "otp-input",
+      "name": "OTP Input",
+      "type": "form",
+      "status": "complete",
+      "description": "One-time password input with auto-focus, paste support, and completion callback.",
+      "files": [
+        "otp-input.component.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "OTPInputComponent"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [],
+      "selector": "ui-otp-input",
+      "manifestStatus": "complete"
+    },
     "pagination": {
       "id": "pagination",
       "name": "pagination",
