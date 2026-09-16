@@ -97,6 +97,17 @@
         "@swc/helpers": "~0.5.11",
       },
     },
+    "packages/mcp-server": {
+      "name": "@galaxy-ui/mcp-server",
+      "version": "0.1.0",
+      "bin": {
+        "galaxy-ui-mcp": "./dist/index.js",
+      },
+      "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.0.0",
+        "zod": "^3.23.0",
+      },
+    },
     "packages/react": {
       "name": "@galaxy-ui/react",
       "version": "0.0.1",
@@ -661,6 +672,8 @@
     "@galaxy-ui/angular": ["@galaxy-ui/angular@workspace:packages/angular"],
 
     "@galaxy-ui/contracts": ["@galaxy-ui/contracts@workspace:packages/contracts"],
+
+    "@galaxy-ui/mcp-server": ["@galaxy-ui/mcp-server@workspace:packages/mcp-server"],
 
     "@galaxy-ui/react": ["@galaxy-ui/react@workspace:packages/react"],
 
