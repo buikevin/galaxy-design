@@ -142,6 +142,12 @@ autocomplete` wiring, re-subscribe khi items thay đổi; đồng thời sửa b
 - **Combobox (mới):** component mới cho React (cmdk-based) + Vue (custom filter)
   — searchable select với filtered dropdown. Registry: React 62, Vue 62
   components. Manifest + CLI + docs coverage đã cập nhật.
+- **Dashboard Block (mới):** block đầu tiên — full page với collapsible
+  sidebar, 4 stat cards, recent activity table, responsive grid. React
+  (`echarts-for-react` + `button` deps) + Vue + Angular. Registry: React 64,
+  Vue 64, Angular 62 components. Docs coverage: React 69, Vue 69, Angular 65
+  tổng. Pipeline end-to-end verified: manifest → artifact → CLI sync → CDN
+  → CLI add.
 - **P2.2 JS mode + cssVariables + prefix (mới):** (1) `js-transformer.ts`
   dùng SWC strip TypeScript types khi `typescript: false` — `.ts`→`.js`,
   `.tsx`→`.jsx`; (2) scaffold `cssVariables: false` sinh CSS không dùng
