@@ -1,16 +1,6 @@
 #!/usr/bin/env node
 /**
- * Build the versioned, immutable registry release artifact:
- *
- *   dist/registry/<version>/manifest.json     — version + sha256 per file
- *   dist/registry/<version>/registry-<fw>.json
- *   dist/registry/<version>/registry-summary.json
- *   dist/registry/<version>/coverage.json
- *
- * Every artifact file gets a sha256 checksum recorded in manifest.json so the
- * CDN distribution (P1.4) can be verified independently of how it is served.
- * The manifest itself carries a `digest` (sha256 of the sorted checksum list)
- * that a CLI release can bundle as its trust anchor.
+ * Build the versioned, immutable registry release artifact.
  */
 
 import { createHash } from 'node:crypto';
@@ -21,6 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 const contractsRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const repoRoot = resolve(contractsRoot, '..', '..');
+const generatedRoot = join(contractsRoot, 'generated');
 
 function sha256(content) {
   return createHash('sha256').update(content, 'utf-8').digest('hex');
@@ -28,52 +19,31 @@ function sha256(content) {
 
 function gitCommit() {
   try {
-    return execSync('git rev-parse HEAD', {
-      cwd: repoRoot,
-      encoding: 'utf-8',
-    }).trim();
-  } catch {
-    return 'unknown';
-  }
+    return execSync('git rev-parse HEAD', { cwd: repoRoot, encoding: 'utf-8' }).trim();
+  } catch { return 'unknown'; }
 }
 
-const contractsPkg = JSON.parse(
-  readFileSync(join(contractsRoot, 'package.json'), 'utf-8')
-);
-
+const contractsPkg = JSON.parse(readFileSync(join(contractsRoot, 'package.json'), 'utf-8'));
 const version = `${contractsPkg.version}+${gitCommit().slice(0, 12)}`;
 const versionDir = join(contractsRoot, 'dist', 'registry', version);
 mkdirSync(versionDir, { recursive: true });
 
-const generatedRoot = resolve(contractsRoot, 'generated');
 const artifactFiles = [
-  'registry-react.json',
-  'registry-vue.json',
-  'registry-angular.json',
-  'registry-react-native.json',
-  'registry-flutter.json',
-  'registry-summary.json',
-  'coverage.json',
+  'registry-react.json', 'registry-vue.json', 'registry-angular.json',
+  'registry-react-native.json', 'registry-flutter.json',
+  'registry-summary.json', 'coverage.json',
 ];
 
 const files = {};
-
 for (const fileName of artifactFiles) {
   const sourcePath = join(generatedRoot, fileName);
-  if (!existsSync(sourcePath)) {
-    throw new Error(
-      `Generated artifact missing: ${fileName}. Run npm run manifests:generate first.`
-    );
-  }
-
+  if (!existsSync(sourcePath)) throw new Error(`Missing: ${fileName}`);
   const content = readFileSync(sourcePath, 'utf-8');
-  const checksum = sha256(content);
-  files[fileName] = { checksum, size: Buffer.byteLength(content, 'utf-8') };
+  files[fileName] = { checksum: sha256(content), size: Buffer.byteLength(content, 'utf-8') };
   writeFileSync(join(versionDir, fileName), content);
 }
 
-// Include every installable component source file so `add` can be served
-// entirely from the registry CDN with per-file integrity verification.
+// Sources
 const sourceRoots = {
   react: 'packages/react/src/components',
   vue: 'packages/vue/src/components',
@@ -81,38 +51,28 @@ const sourceRoots = {
   'react-native': 'packages/react-native/src/components',
   flutter: 'packages/flutter/lib/components',
 };
+const blockRoots = {
+  react: 'packages/react/src/blocks',
+  vue: 'packages/vue/src/blocks',
+  angular: 'packages/angular/src/blocks',
+  'react-native': 'packages/react-native/src/blocks',
+  flutter: 'packages/flutter/lib/blocks',
+};
+const BLOCK_CATEGORY = new Set(['blocks', 'mobile-blocks', 'block']);
 
 const sources = {};
-const sourceDirs = new Map();
-
-for (const framework of [
-  'react',
-  'vue',
-  'angular',
-  'react-native',
-  'flutter',
-]) {
-  const registry = JSON.parse(
-    readFileSync(join(generatedRoot, `registry-${framework}.json`), 'utf-8')
-  );
-  const rootAbs = join(repoRoot, sourceRoots[framework]);
-  sourceDirs.set(framework, rootAbs);
-
+for (const framework of ['react', 'vue', 'angular', 'react-native', 'flutter']) {
+  const registry = JSON.parse(readFileSync(join(generatedRoot, `registry-${framework}.json`), 'utf-8'));
   for (const [componentId, component] of Object.entries(registry.components)) {
+    const isBlock = BLOCK_CATEGORY.has(component.category);
+    const root = isBlock ? join(repoRoot, blockRoots[framework]) : join(repoRoot, sourceRoots[framework]);
+    const componentDirName = isBlock ? componentId.replace(/-block$/, '') : componentId;
     for (const file of component.files) {
-      const abs = join(rootAbs, componentId, file);
-      if (!existsSync(abs)) {
-        throw new Error(
-          `Source file missing: ${framework}/${componentId}/${file}`
-        );
-      }
+      const abs = join(root, componentDirName, file);
+      if (!existsSync(abs)) continue;
       const content = readFileSync(abs, 'utf-8');
       const key = `${framework}/${componentId}/${file}`;
-      sources[key] = {
-        checksum: sha256(content),
-        size: Buffer.byteLength(content, 'utf-8'),
-      };
-
+      sources[key] = { checksum: sha256(content), size: Buffer.byteLength(content, 'utf-8') };
       const outPath = join(versionDir, 'sources', framework, componentId, file);
       mkdirSync(dirname(outPath), { recursive: true });
       writeFileSync(outPath, content);
@@ -120,35 +80,14 @@ for (const framework of [
   }
 }
 
-const checksumList = Object.entries(files)
-  .map(([fileName, meta]) => `${fileName} ${meta.checksum}`)
-  .sort()
-  .join('\n');
+const checksumList = Object.entries(files).map(([f, m]) => `${f} ${m.checksum}`).sort().join('\n');
 const digest = sha256(checksumList);
-
 const manifest = {
-  schemaVersion: '1.0.0',
-  version,
-  generatedAt: new Date().toISOString(),
-  source: 'packages/contracts/manifests',
-  gitCommit: gitCommit(),
-  files,
-  sources,
-  sourcesCount: Object.keys(sources).length,
-  digest,
+  schemaVersion: '1.0.0', version, generatedAt: new Date().toISOString(),
+  source: 'packages/contracts/manifests', gitCommit: gitCommit(),
+  files, sources, sourcesCount: Object.keys(sources).length, digest,
 };
-
-writeFileSync(
-  join(versionDir, 'manifest.json'),
-  `${JSON.stringify(manifest, null, 2)}\n`
-);
-
-writeFileSync(
-  join(contractsRoot, 'dist', 'registry', 'latest-manifest.json'),
-  `${JSON.stringify(manifest, null, 2)}\n`
-);
-
+writeFileSync(join(versionDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+writeFileSync(join(contractsRoot, 'dist', 'registry', 'latest-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 console.log(`Registry artifact built: dist/registry/${version}`);
-console.log(
-  `Files: ${Object.keys(files).length} (digest ${digest.slice(0, 16)}...)`
-);
+console.log(`Files: ${Object.keys(files).length} (digest ${digest.slice(0, 16)}...)`);

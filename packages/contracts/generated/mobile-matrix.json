@@ -234,7 +234,7 @@
       }
     },
     "react-native": {
-      "available": 48,
+      "available": 50,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -246,7 +246,7 @@
         "bar-chart": "available",
         "breadcrumb": "web-only",
         "button": "available",
-        "calendar": "needs-port",
+        "calendar": "available",
         "calendar-range": "needs-port",
         "card": "available",
         "checkbox": "available",
@@ -296,7 +296,7 @@
         "tabs": "available",
         "tags-input": "needs-port",
         "textarea": "available",
-        "time-picker": "needs-port",
+        "time-picker": "available",
         "toast": "available",
         "toggle": "available",
         "toggle-group": "available",
@@ -305,13 +305,13 @@
         "typography": "available"
       },
       "summary": {
-        "available": 48,
+        "available": 50,
         "web-only": 6,
-        "needs-port": 13
+        "needs-port": 11
       }
     },
     "flutter": {
-      "available": 48,
+      "available": 50,
       "components": {
         "accordion": "available",
         "alert": "available",
@@ -323,7 +323,7 @@
         "bar-chart": "available",
         "breadcrumb": "web-only",
         "button": "available",
-        "calendar": "needs-port",
+        "calendar": "available",
         "calendar-range": "needs-port",
         "card": "available",
         "checkbox": "available",
@@ -373,7 +373,7 @@
         "tabs": "available",
         "tags-input": "needs-port",
         "textarea": "available",
-        "time-picker": "needs-port",
+        "time-picker": "available",
         "toast": "available",
         "toggle": "available",
         "toggle-group": "available",
@@ -382,9 +382,9 @@
         "typography": "available"
       },
       "summary": {
-        "available": 48,
+        "available": 50,
         "web-only": 6,
-        "needs-port": 13
+        "needs-port": 11
       }
     }
   }

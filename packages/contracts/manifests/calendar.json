@@ -10,71 +10,42 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": [
-        "Calendar.tsx",
-        "index.ts"
-      ],
+      "files": ["Calendar.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Calendar"
-      ],
-      "dependencies": [
-        "react-day-picker"
-      ],
+      "exports": ["Calendar"],
+      "dependencies": ["react-day-picker", "lucide-react"],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": [
-        "Calendar.vue",
-        "index.ts"
-      ],
+      "files": ["Calendar.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Calendar"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Calendar"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "props": []
     },
     "angular": {
       "status": "complete",
-      "files": [
-        "calendar.component.ts",
-        "index.ts"
-      ],
+      "files": ["calendar.component.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "CalendarComponent"
-      ],
+      "exports": ["CalendarComponent"],
       "dependencies": [],
       "props": [],
       "selector": "ui-calendar"
     },
     "react-native": {
       "status": "complete",
-      "files": [
-        "Calendar.tsx",
-        "index.ts"
-      ],
+      "files": ["Calendar.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Calendar"
-      ],
+      "exports": ["Calendar"],
       "dependencies": [],
       "props": []
     },
     "flutter": {
       "status": "complete",
-      "files": [
-        "calendar.dart",
-        "index.dart"
-      ],
+      "files": ["calendar.dart", "index.dart"],
       "entry": "index.dart",
-      "exports": [
-        "GalaxyCalendar"
-      ],
+      "exports": ["GalaxyCalendar"],
       "dependencies": [],
       "props": []
     }

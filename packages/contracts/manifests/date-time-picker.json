@@ -12,9 +12,7 @@
         "kind": "custom",
         "name": "Date"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "description": "Controlled combined date and time value."
     },
     {
@@ -23,9 +21,7 @@
         "kind": "function",
         "signature": "(dateTime: Date | undefined) => void"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "description": "Called when the combined date and time changes."
     },
     {
@@ -34,9 +30,7 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "default": "Pick a date",
       "description": "Placeholder text for the date picker."
     },
@@ -46,9 +40,7 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "default": "Pick a time",
       "description": "Placeholder text for the time picker."
     },
@@ -67,9 +59,7 @@
           }
         ]
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "default": "24h",
       "description": "Time input format."
     },
@@ -79,9 +69,7 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "default": "PPP",
       "description": "Date format string used by the date picker."
     },
@@ -91,9 +79,7 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "default": "",
       "description": "CSS class names for the wrapper."
     },
@@ -103,9 +89,7 @@
         "kind": "primitive",
         "name": "boolean"
       },
-      "frameworks": [
-        "react"
-      ],
+      "frameworks": ["react"],
       "default": false,
       "description": "Disables both the date and time pickers."
     }
@@ -114,23 +98,12 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": [
-        "DateTimePicker.tsx",
-        "index.ts"
-      ],
-      "exports": [
-        "DateTimePicker",
-        "DateTimePickerProps"
-      ],
-      "dependencies": [
-        "date-fns"
-      ],
+      "files": ["DateTimePicker.tsx", "index.ts"],
+      "exports": ["DateTimePicker", "DateTimePickerProps"],
+      "dependencies": ["date-fns"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "date-picker",
-        "time-picker"
-      ],
+      "registryDependencies": ["date-picker", "time-picker"],
       "props": [
         {
           "name": "dateTime",
@@ -216,48 +189,25 @@
     },
     "vue": {
       "status": "complete",
-      "files": [
-        "index.ts",
-        "DateTimePicker.vue",
-        "types.ts"
-      ],
+      "files": ["index.ts", "DateTimePicker.vue", "types.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateTimePicker"
-      ],
-      "dependencies": [
-        "date-fns",
-        "lucide-vue-next",
-        "radix-vue"
-      ],
+      "exports": ["DateTimePicker"],
+      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "date-picker",
-        "time-picker"
-      ],
+      "registryDependencies": ["date-picker", "time-picker"],
       "props": []
     },
     "angular": {
       "status": "complete",
-      "files": [
-        "date-time-picker.component.ts",
-        "index.ts"
-      ],
+      "files": ["date-time-picker.component.ts", "index.ts"],
       "entry": "index.ts",
       "selector": "ui-date-time-picker",
-      "exports": [
-        "DateTimePickerComponent"
-      ],
-      "dependencies": [
-        "date-fns"
-      ],
+      "exports": ["DateTimePickerComponent"],
+      "dependencies": ["date-fns"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "date-picker",
-        "time-picker"
-      ],
+      "registryDependencies": ["date-picker", "time-picker"],
       "props": []
     },
     "react-native": {

@@ -11,27 +11,17 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": [
-        "LoginBlock.tsx",
-        "index.ts"
-      ],
+      "files": ["LoginBlock.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LoginBlock"
-      ],
+      "exports": ["LoginBlock"],
       "dependencies": [],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": [
-        "LoginBlock.vue",
-        "index.ts"
-      ],
+      "files": ["LoginBlock.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LoginBlock"
-      ],
+      "exports": ["LoginBlock"],
       "dependencies": [],
       "props": []
     },
@@ -39,9 +29,7 @@
       "status": "missing",
       "files": [],
       "notes": "Not implemented yet.",
-      "exports": [
-        "LoginBlockComponent"
-      ]
+      "exports": ["LoginBlockComponent"]
     },
     "react-native": {
       "status": "missing",
@@ -55,11 +43,7 @@
     }
   },
   "a11y": {
-    "keyboard": [
-      "Tab navigation through form fields."
-    ],
-    "aria": [
-      "Labels associated with inputs."
-    ]
+    "keyboard": ["Tab navigation through form fields."],
+    "aria": ["Labels associated with inputs."]
   }
 }

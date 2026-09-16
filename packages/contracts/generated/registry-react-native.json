@@ -11,10 +11,7 @@
       "type": "other",
       "status": "complete",
       "description": "accordion",
-      "files": [
-        "Accordion.tsx",
-        "index.ts"
-      ],
+      "files": ["Accordion.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Accordion",
@@ -22,14 +19,9 @@
         "AccordionTrigger",
         "AccordionContent"
       ],
-      "dependencies": [
-        "@rn-primitives/accordion"
-      ],
+      "dependencies": ["@rn-primitives/accordion"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -171,10 +163,7 @@
       "type": "other",
       "status": "complete",
       "description": "alert-dialog",
-      "files": [
-        "AlertDialog.tsx",
-        "index.ts"
-      ],
+      "files": ["AlertDialog.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "AlertDialog",
@@ -189,14 +178,9 @@
         "AlertDialogAction",
         "AlertDialogCancel"
       ],
-      "dependencies": [
-        "@rn-primitives/alert-dialog"
-      ],
+      "dependencies": ["@rn-primitives/alert-dialog"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -242,24 +226,12 @@
       "type": "other",
       "status": "complete",
       "description": "alert",
-      "files": [
-        "Alert.tsx",
-        "index.ts"
-      ],
+      "files": ["Alert.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Alert",
-        "AlertTitle",
-        "AlertDescription"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Alert", "AlertTitle", "AlertDescription"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -307,26 +279,16 @@
       "type": "other",
       "status": "complete",
       "description": "area-chart",
-      "files": [
-        "AreaChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["AreaChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AreaChart"
-      ],
+      "exports": ["AreaChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -543,22 +505,12 @@
       "type": "other",
       "status": "complete",
       "description": "aspect-ratio",
-      "files": [
-        "AspectRatio.tsx",
-        "index.ts"
-      ],
+      "files": ["AspectRatio.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AspectRatio"
-      ],
-      "dependencies": [
-        "@rn-primitives/aspect-ratio"
-      ],
+      "exports": ["AspectRatio"],
+      "dependencies": ["@rn-primitives/aspect-ratio"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -597,20 +549,12 @@
       "type": "other",
       "status": "complete",
       "description": "avatar",
-      "files": [
-        "Avatar.tsx",
-        "index.ts"
-      ],
+      "files": ["Avatar.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Avatar"
-      ],
+      "exports": ["Avatar"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -700,22 +644,12 @@
       "type": "other",
       "status": "complete",
       "description": "badge",
-      "files": [
-        "Badge.tsx",
-        "index.ts"
-      ],
+      "files": ["Badge.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Badge"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Badge"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -771,26 +705,16 @@
       "type": "other",
       "status": "complete",
       "description": "bar-chart",
-      "files": [
-        "BarChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["BarChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "BarChart"
-      ],
+      "exports": ["BarChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -971,20 +895,10 @@
       "type": "form",
       "status": "complete",
       "description": "Displays a button or a component that looks like a button with variants and sizes.",
-      "files": [
-        "Button.tsx",
-        "index.ts",
-        "variants.ts"
-      ],
+      "files": ["Button.tsx", "index.ts", "variants.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Button",
-        "buttonVariants",
-        "buttonTextVariants"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Button", "buttonVariants", "buttonTextVariants"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1010,12 +924,7 @@
           "name": "size",
           "type": {
             "kind": "union",
-            "values": [
-              "default",
-              "sm",
-              "lg",
-              "icon"
-            ]
+            "values": ["default", "sm", "lg", "icon"]
           },
           "default": "default",
           "description": "Size variant."
@@ -1072,14 +981,9 @@
       "type": "form",
       "status": "complete",
       "description": "Full-featured date picker with month navigation and selection.",
-      "files": [
-        "Calendar.tsx",
-        "index.ts"
-      ],
+      "files": ["Calendar.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Calendar"
-      ],
+      "exports": ["Calendar"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1094,10 +998,7 @@
       "type": "other",
       "status": "complete",
       "description": "card",
-      "files": [
-        "Card.tsx",
-        "index.ts"
-      ],
+      "files": ["Card.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Card",
@@ -1109,10 +1010,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1142,20 +1040,12 @@
       "type": "other",
       "status": "complete",
       "description": "checkbox",
-      "files": [
-        "Checkbox.tsx",
-        "index.ts"
-      ],
+      "files": ["Checkbox.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Checkbox"
-      ],
+      "exports": ["Checkbox"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1220,24 +1110,12 @@
       "type": "other",
       "status": "complete",
       "description": "collapsible",
-      "files": [
-        "Collapsible.tsx",
-        "index.ts"
-      ],
+      "files": ["Collapsible.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Collapsible",
-        "CollapsibleTrigger",
-        "CollapsibleContent"
-      ],
-      "dependencies": [
-        "@rn-primitives/collapsible"
-      ],
+      "exports": ["Collapsible", "CollapsibleTrigger", "CollapsibleContent"],
+      "dependencies": ["@rn-primitives/collapsible"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1292,10 +1170,7 @@
       "type": "other",
       "status": "complete",
       "description": "context-menu",
-      "files": [
-        "ContextMenu.tsx",
-        "index.ts"
-      ],
+      "files": ["ContextMenu.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "ContextMenu",
@@ -1314,14 +1189,9 @@
         "ContextMenuSubTrigger",
         "ContextMenuRadioGroup"
       ],
-      "dependencies": [
-        "@rn-primitives/context-menu"
-      ],
+      "dependencies": ["@rn-primitives/context-menu"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1376,19 +1246,10 @@
       "type": "form",
       "status": "complete",
       "description": "A date picker component with popover and calendar.",
-      "files": [
-        "DatePicker.tsx",
-        "index.ts"
-      ],
+      "files": ["DatePicker.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DatePicker",
-        "DateRangePicker",
-        "DatePickerRange"
-      ],
-      "dependencies": [
-        "@react-native-community/datetimepicker"
-      ],
+      "exports": ["DatePicker", "DateRangePicker", "DatePickerRange"],
+      "dependencies": ["@react-native-community/datetimepicker"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1487,10 +1348,7 @@
       "type": "modal-overlay",
       "status": "complete",
       "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
-      "files": [
-        "Dialog.tsx",
-        "index.ts"
-      ],
+      "files": ["Dialog.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Dialog",
@@ -1504,9 +1362,7 @@
         "DialogTitle",
         "DialogDescription"
       ],
-      "dependencies": [
-        "@rn-primitives/dialog"
-      ],
+      "dependencies": ["@rn-primitives/dialog"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1554,26 +1410,16 @@
       "type": "other",
       "status": "complete",
       "description": "donut-chart",
-      "files": [
-        "DonutChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["DonutChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DonutChart"
-      ],
+      "exports": ["DonutChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1758,10 +1604,7 @@
       "type": "other",
       "status": "complete",
       "description": "dropdown-menu",
-      "files": [
-        "DropdownMenu.tsx",
-        "index.ts"
-      ],
+      "files": ["DropdownMenu.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "DropdownMenu",
@@ -1780,14 +1623,9 @@
         "DropdownMenuSubTrigger",
         "DropdownMenuRadioGroup"
       ],
-      "dependencies": [
-        "@rn-primitives/dropdown-menu"
-      ],
+      "dependencies": ["@rn-primitives/dropdown-menu"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1860,20 +1698,12 @@
       "type": "other",
       "status": "complete",
       "description": "empty",
-      "files": [
-        "Empty.tsx",
-        "index.ts"
-      ],
+      "files": ["Empty.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Empty"
-      ],
+      "exports": ["Empty"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -1945,20 +1775,10 @@
       "type": "charts",
       "status": "complete",
       "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
-      "files": [
-        "GaugeChart.tsx",
-        "index.ts",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["GaugeChart.tsx", "index.ts", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "GaugeChart"
-      ],
-      "dependencies": [
-        "@wuba/react-native-echarts",
-        "echarts"
-      ],
+      "exports": ["GaugeChart"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2154,24 +1974,12 @@
       "type": "other",
       "status": "complete",
       "description": "hover-card",
-      "files": [
-        "HoverCard.tsx",
-        "index.ts"
-      ],
+      "files": ["HoverCard.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "HoverCard",
-        "HoverCardTrigger",
-        "HoverCardContent"
-      ],
-      "dependencies": [
-        "@rn-primitives/hover-card"
-      ],
+      "exports": ["HoverCard", "HoverCardTrigger", "HoverCardContent"],
+      "dependencies": ["@rn-primitives/hover-card"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2235,20 +2043,12 @@
       "type": "other",
       "status": "complete",
       "description": "input",
-      "files": [
-        "Input.tsx",
-        "index.ts"
-      ],
+      "files": ["Input.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Input"
-      ],
+      "exports": ["Input"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2358,20 +2158,12 @@
       "type": "other",
       "status": "complete",
       "description": "label",
-      "files": [
-        "Label.tsx",
-        "index.ts"
-      ],
+      "files": ["Label.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Label"
-      ],
+      "exports": ["Label"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2410,26 +2202,16 @@
       "type": "other",
       "status": "complete",
       "description": "line-chart",
-      "files": [
-        "LineChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["LineChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LineChart"
-      ],
+      "exports": ["LineChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2646,10 +2428,7 @@
       "type": "other",
       "status": "complete",
       "description": "menubar",
-      "files": [
-        "Menubar.tsx",
-        "index.ts"
-      ],
+      "files": ["Menubar.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Menubar",
@@ -2669,14 +2448,9 @@
         "MenubarSub",
         "MenubarShortcut"
       ],
-      "dependencies": [
-        "@rn-primitives/menubar"
-      ],
+      "dependencies": ["@rn-primitives/menubar"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2757,26 +2531,16 @@
       "type": "other",
       "status": "complete",
       "description": "mixed-chart",
-      "files": [
-        "MixedChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["MixedChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "MixedChart"
-      ],
+      "exports": ["MixedChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -2930,10 +2694,7 @@
       "type": "other",
       "status": "complete",
       "description": "navigation-menu",
-      "files": [
-        "NavigationMenu.tsx",
-        "index.ts"
-      ],
+      "files": ["NavigationMenu.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "NavigationMenu",
@@ -2943,10 +2704,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3026,10 +2784,7 @@
       "type": "other",
       "status": "complete",
       "description": "pagination",
-      "files": [
-        "Pagination.tsx",
-        "index.ts"
-      ],
+      "files": ["Pagination.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Pagination",
@@ -3039,10 +2794,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3137,26 +2889,16 @@
       "type": "other",
       "status": "complete",
       "description": "pie-chart",
-      "files": [
-        "PieChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["PieChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PieChart"
-      ],
+      "exports": ["PieChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3341,24 +3083,12 @@
       "type": "other",
       "status": "complete",
       "description": "popover",
-      "files": [
-        "Popover.tsx",
-        "index.ts"
-      ],
+      "files": ["Popover.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Popover",
-        "PopoverTrigger",
-        "PopoverContent"
-      ],
-      "dependencies": [
-        "@rn-primitives/popover"
-      ],
+      "exports": ["Popover", "PopoverTrigger", "PopoverContent"],
+      "dependencies": ["@rn-primitives/popover"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3412,20 +3142,12 @@
       "type": "other",
       "status": "complete",
       "description": "progress",
-      "files": [
-        "Progress.tsx",
-        "index.ts"
-      ],
+      "files": ["Progress.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Progress"
-      ],
+      "exports": ["Progress"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3474,26 +3196,16 @@
       "type": "other",
       "status": "complete",
       "description": "radar-chart",
-      "files": [
-        "RadarChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["RadarChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadarChart"
-      ],
+      "exports": ["RadarChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3673,23 +3385,12 @@
       "type": "other",
       "status": "complete",
       "description": "radio-group",
-      "files": [
-        "RadioGroup.tsx",
-        "index.ts"
-      ],
+      "files": ["RadioGroup.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadioGroup",
-        "RadioGroupItem"
-      ],
-      "dependencies": [
-        "@rn-primitives/radio-group"
-      ],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "dependencies": ["@rn-primitives/radio-group"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3744,26 +3445,16 @@
       "type": "other",
       "status": "complete",
       "description": "scatter-chart",
-      "files": [
-        "ScatterChart.tsx",
-        "types.ts",
-        "utils.ts",
-        "index.ts"
-      ],
+      "files": ["ScatterChart.tsx", "types.ts", "utils.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ScatterChart"
-      ],
+      "exports": ["ScatterChart"],
       "dependencies": [
         "@wuba/react-native-echarts",
         "echarts",
         "@shopify/react-native-skia"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -3924,10 +3615,7 @@
       "type": "form",
       "status": "complete",
       "description": "A select box component for choosing an option from a list.",
-      "files": [
-        "Select.tsx",
-        "index.ts"
-      ],
+      "files": ["Select.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Select",
@@ -3939,9 +3627,7 @@
         "SelectItem",
         "SelectSeparator"
       ],
-      "dependencies": [
-        "@rn-primitives/select"
-      ],
+      "dependencies": ["@rn-primitives/select"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3989,20 +3675,12 @@
       "type": "other",
       "status": "complete",
       "description": "separator",
-      "files": [
-        "Separator.tsx",
-        "index.ts"
-      ],
+      "files": ["Separator.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Separator"
-      ],
+      "exports": ["Separator"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4051,10 +3729,7 @@
       "type": "other",
       "status": "complete",
       "description": "sheet",
-      "files": [
-        "Sheet.tsx",
-        "index.ts"
-      ],
+      "files": ["Sheet.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Sheet",
@@ -4068,15 +3743,9 @@
         "SheetTitle",
         "SheetDescription"
       ],
-      "dependencies": [
-        "@rn-primitives/dialog",
-        "class-variance-authority"
-      ],
+      "dependencies": ["@rn-primitives/dialog", "class-variance-authority"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4122,20 +3791,12 @@
       "type": "other",
       "status": "complete",
       "description": "skeleton",
-      "files": [
-        "Skeleton.tsx",
-        "index.ts"
-      ],
+      "files": ["Skeleton.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Skeleton"
-      ],
+      "exports": ["Skeleton"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4182,22 +3843,12 @@
       "type": "other",
       "status": "complete",
       "description": "slider",
-      "files": [
-        "Slider.tsx",
-        "index.ts"
-      ],
+      "files": ["Slider.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Slider"
-      ],
-      "dependencies": [
-        "@rn-primitives/slider"
-      ],
+      "exports": ["Slider"],
+      "dependencies": ["@rn-primitives/slider"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4354,20 +4005,12 @@
       "type": "other",
       "status": "complete",
       "description": "spinner",
-      "files": [
-        "Spinner.tsx",
-        "index.ts"
-      ],
+      "files": ["Spinner.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Spinner"
-      ],
+      "exports": ["Spinner"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4428,22 +4071,12 @@
       "type": "other",
       "status": "complete",
       "description": "switch",
-      "files": [
-        "Switch.tsx",
-        "index.ts"
-      ],
+      "files": ["Switch.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Switch"
-      ],
-      "dependencies": [
-        "@rn-primitives/switch"
-      ],
+      "exports": ["Switch"],
+      "dependencies": ["@rn-primitives/switch"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4498,10 +4131,7 @@
       "type": "other",
       "status": "complete",
       "description": "table",
-      "files": [
-        "Table.tsx",
-        "index.ts"
-      ],
+      "files": ["Table.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Table",
@@ -4515,10 +4145,7 @@
       ],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4548,25 +4175,12 @@
       "type": "other",
       "status": "complete",
       "description": "tabs",
-      "files": [
-        "Tabs.tsx",
-        "index.ts"
-      ],
+      "files": ["Tabs.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Tabs",
-        "TabsList",
-        "TabsTrigger",
-        "TabsContent"
-      ],
-      "dependencies": [
-        "@rn-primitives/tabs"
-      ],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "dependencies": ["@rn-primitives/tabs"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4665,20 +4279,12 @@
       "type": "other",
       "status": "complete",
       "description": "textarea",
-      "files": [
-        "Textarea.tsx",
-        "index.ts"
-      ],
+      "files": ["Textarea.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Textarea"
-      ],
+      "exports": ["Textarea"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -4793,14 +4399,9 @@
       "type": "form",
       "status": "complete",
       "description": "Hour/minute selection with 12h/24h format.",
-      "files": [
-        "TimePicker.tsx",
-        "index.ts"
-      ],
+      "files": ["TimePicker.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TimePicker"
-      ],
+      "exports": ["TimePicker"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4815,14 +4416,9 @@
       "type": "feedback",
       "status": "complete",
       "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
-      "files": [
-        "Toast.tsx",
-        "index.ts"
-      ],
+      "files": ["Toast.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toast"
-      ],
+      "exports": ["Toast"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4837,24 +4433,15 @@
       "type": "other",
       "status": "complete",
       "description": "toggle-group",
-      "files": [
-        "ToggleGroup.tsx",
-        "index.ts"
-      ],
+      "files": ["ToggleGroup.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToggleGroup",
-        "ToggleGroupItem"
-      ],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
       "dependencies": [
         "@rn-primitives/toggle-group",
         "class-variance-authority"
       ],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -5053,23 +4640,12 @@
       "type": "other",
       "status": "complete",
       "description": "toggle",
-      "files": [
-        "Toggle.tsx",
-        "index.ts"
-      ],
+      "files": ["Toggle.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toggle"
-      ],
-      "dependencies": [
-        "@rn-primitives/toggle",
-        "class-variance-authority"
-      ],
+      "exports": ["Toggle"],
+      "dependencies": ["@rn-primitives/toggle", "class-variance-authority"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -5173,10 +4749,7 @@
       "type": "other",
       "status": "complete",
       "description": "tooltip",
-      "files": [
-        "Tooltip.tsx",
-        "index.ts"
-      ],
+      "files": ["Tooltip.tsx", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Tooltip",
@@ -5184,14 +4757,9 @@
         "TooltipContent",
         "TooltipProvider"
       ],
-      "dependencies": [
-        "@rn-primitives/tooltip"
-      ],
+      "dependencies": ["@rn-primitives/tooltip"],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [
@@ -5255,20 +4823,12 @@
       "type": "other",
       "status": "complete",
       "description": "typography",
-      "files": [
-        "Typography.tsx",
-        "index.ts"
-      ],
+      "files": ["Typography.tsx", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Typography"
-      ],
+      "exports": ["Typography"],
       "dependencies": [],
       "devDependencies": [],
-      "peerDependencies": [
-        "react",
-        "react-native"
-      ],
+      "peerDependencies": ["react", "react-native"],
       "registryDependencies": [],
       "category": "other",
       "props": [

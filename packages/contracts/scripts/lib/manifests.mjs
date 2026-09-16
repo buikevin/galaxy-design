@@ -17,6 +17,20 @@ const FRAMEWORK_DIRS = {
   flutter: 'packages/flutter/lib/components',
 };
 
+const BLOCK_FRAMEWORK_DIRS = {
+  react: 'packages/react/src/blocks',
+  vue: 'packages/vue/src/blocks',
+  angular: 'packages/angular/src/blocks',
+  'react-native': 'packages/react-native/src/blocks',
+  flutter: 'packages/flutter/lib/blocks',
+};
+
+function getComponentDir(framework, componentId) {
+  const dirs =
+    manifest.category === 'blocks' ? BLOCK_FRAMEWORK_DIRS : FRAMEWORK_DIRS;
+  return join(repoRoot, dirs[framework], componentId);
+}
+
 const FRAMEWORK_RUNTIME_PACKAGES = new Set([
   '@angular/common',
   '@angular/core',
@@ -49,7 +63,9 @@ function manifestDir(manifestDir) {
 }
 
 function componentPath(framework, componentId, file) {
-  return resolve(repoRoot, FRAMEWORK_DIRS[framework], componentId, file);
+  const isBlock = manifest.category === 'blocks';
+  const rootDir = isBlock ? BLOCK_FRAMEWORK_DIRS[framework] : FRAMEWORK_DIRS[framework];
+  return resolve(repoRoot, rootDir, componentId, file);
 }
 
 function getPackageName(specifier) {
@@ -111,9 +127,11 @@ export function collectIssues(manifest) {
   );
 
   for (const [framework, impl] of implementedFrameworks) {
+    const isBlock = manifest.category === 'blocks';
+    const rootDir = isBlock ? BLOCK_FRAMEWORK_DIRS[framework] : FRAMEWORK_DIRS[framework];
     const componentRoot = resolve(
       repoRoot,
-      FRAMEWORK_DIRS[framework],
+      rootDir,
       manifest.id
     );
 
@@ -250,11 +268,12 @@ export function collectIssues(manifest) {
         );
         continue;
       }
-      const componentRoot = resolve(
-        repoRoot,
-        FRAMEWORK_DIRS[framework],
-        manifest.id
-      );
+    const rootDir = manifest.category === 'blocks' ? BLOCK_FRAMEWORK_DIRS[framework] : FRAMEWORK_DIRS[framework];
+    const componentRoot = resolve(
+      repoRoot,
+      rootDir,
+      manifest.id
+    );
       const sources = impl.files
         .map((file) => join(componentRoot, file))
         .filter((path) => existsSyncQuiet(path))

@@ -8,11 +8,43 @@
   "props": [],
   "children": [],
   "frameworks": {
-    "react": { "status": "complete", "files": ["OTPInput.tsx", "index.ts"], "entry": "index.ts", "exports": ["OTPInput", "OTPInputProps"], "dependencies": [] },
-    "vue": { "status": "complete", "files": ["OTPInput.vue", "index.ts"], "entry": "index.ts", "exports": ["OTPInput"], "dependencies": [], "props": [] },
-    "angular": { "status": "complete", "files": ["otp-input.component.ts", "index.ts"], "entry": "index.ts", "selector": "ui-otp-input", "exports": ["OTPInputComponent"], "dependencies": [], "props": [] },
-    "react-native": { "status": "missing", "files": [], "notes": "Mobile uses native OTP verification flows." },
-    "flutter": { "status": "missing", "files": [], "notes": "Mobile uses native OTP verification flows." }
+    "react": {
+      "status": "complete",
+      "files": ["OTPInput.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["OTPInput", "OTPInputProps"],
+      "dependencies": []
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["OTPInput.vue", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["OTPInput"],
+      "dependencies": [],
+      "props": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["otp-input.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-otp-input",
+      "exports": ["OTPInputComponent"],
+      "dependencies": [],
+      "props": []
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Mobile uses native OTP verification flows."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Mobile uses native OTP verification flows."
+    }
   },
-  "a11y": { "keyboard": ["Arrow left/right navigate between inputs."], "aria": ["Each input has aria-label='Digit N'."] }
+  "a11y": {
+    "keyboard": ["Arrow left/right navigate between inputs."],
+    "aria": ["Each input has aria-label='Digit N'."]
+  }
 }

@@ -11,44 +11,29 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": [
-        "DashboardBlock.tsx",
-        "index.ts"
-      ],
+      "files": ["DashboardBlock.tsx", "index.ts"],
       "entry": "index.ts",
       "selector": "",
-      "exports": [
-        "DashboardBlock"
-      ],
+      "exports": ["DashboardBlock"],
       "dependencies": [],
-      "registryDependencies": [
-        "button"
-      ]
+      "registryDependencies": ["button"],
+      "props": []
     },
     "vue": {
       "status": "complete",
-      "files": [
-        "DashboardBlock.vue",
-        "index.ts"
-      ],
+      "files": ["DashboardBlock.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DashboardBlock"
-      ],
+      "exports": ["DashboardBlock"],
       "dependencies": [],
-      "registryDependencies": []
+      "registryDependencies": [],
+      "props": []
     },
     "angular": {
       "status": "complete",
-      "files": [
-        "dashboard.component.ts",
-        "index.ts"
-      ],
+      "files": ["dashboard.component.ts", "index.ts"],
       "entry": "index.ts",
       "selector": "ui-dashboard",
-      "exports": [
-        "DashboardComponent"
-      ],
+      "exports": ["DashboardComponent"],
       "dependencies": [],
       "props": []
     },
@@ -64,9 +49,7 @@
     }
   },
   "a11y": {
-    "keyboard": [
-      "Sidebar toggle accessible via keyboard."
-    ],
+    "keyboard": ["Sidebar toggle accessible via keyboard."],
     "aria": [
       "Content panel uses role=main, sidebar uses semantic <nav> element."
     ]

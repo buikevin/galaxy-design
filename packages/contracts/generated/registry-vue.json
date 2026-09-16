@@ -25,10 +25,7 @@
         "AccordionTrigger",
         "AccordionContent"
       ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -214,9 +211,7 @@
         "AlertDialogAction",
         "AlertDialogCancel"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -263,14 +258,8 @@
         "index.ts"
       ],
       "entry": "index.ts",
-      "exports": [
-        "Alert",
-        "AlertTitle",
-        "AlertDescription"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Alert", "AlertTitle", "AlertDescription"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -312,20 +301,10 @@
       "type": "other",
       "status": "complete",
       "description": "area-chart",
-      "files": [
-        "areachart.vue",
-        "index.ts",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["areachart.vue", "index.ts", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AreaChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["AreaChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -545,17 +524,10 @@
       "type": "other",
       "status": "complete",
       "description": "aspect-ratio",
-      "files": [
-        "AspectRatio.vue",
-        "index.ts"
-      ],
+      "files": ["AspectRatio.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "AspectRatio"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["AspectRatio"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -604,14 +576,8 @@
         "index.ts"
       ],
       "entry": "index.ts",
-      "exports": [
-        "Avatar",
-        "AvatarImage",
-        "AvatarFallback"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Avatar", "AvatarImage", "AvatarFallback"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -653,17 +619,10 @@
       "type": "other",
       "status": "complete",
       "description": "badge",
-      "files": [
-        "badge.vue",
-        "index.ts"
-      ],
+      "files": ["badge.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Badge"
-      ],
-      "dependencies": [
-        "class-variance-authority"
-      ],
+      "exports": ["Badge"],
+      "dependencies": ["class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -713,20 +672,10 @@
       "type": "other",
       "status": "complete",
       "description": "bar-chart",
-      "files": [
-        "barchart.vue",
-        "index.ts",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["barchart.vue", "index.ts", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "BarChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["BarChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -930,9 +879,7 @@
         "BreadcrumbSeparator",
         "BreadcrumbEllipsis"
       ],
-      "dependencies": [
-        "lucide-vue-next"
-      ],
+      "dependencies": ["lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -964,21 +911,10 @@
       "type": "form",
       "status": "complete",
       "description": "Displays a button or a component that looks like a button with variants and sizes.",
-      "files": [
-        "Button.vue",
-        "index.ts",
-        "variants.ts"
-      ],
+      "files": ["Button.vue", "index.ts", "variants.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Button",
-        "buttonVariants",
-        "ButtonVariants"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "class-variance-authority"
-      ],
+      "exports": ["Button", "buttonVariants", "ButtonVariants"],
+      "dependencies": ["radix-vue", "class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1004,12 +940,7 @@
           "name": "size",
           "type": {
             "kind": "union",
-            "values": [
-              "default",
-              "sm",
-              "lg",
-              "icon"
-            ]
+            "values": ["default", "sm", "lg", "icon"]
           },
           "default": "default",
           "description": "Size variant."
@@ -1045,11 +976,7 @@
           "name": "type",
           "type": {
             "kind": "union",
-            "values": [
-              "button",
-              "submit",
-              "reset"
-            ]
+            "values": ["button", "submit", "reset"]
           },
           "default": "button",
           "description": "Native button type."
@@ -1072,18 +999,10 @@
       "type": "other",
       "status": "complete",
       "description": "calendar-range",
-      "files": [
-        "CalendarRange.vue",
-        "index.ts"
-      ],
+      "files": ["CalendarRange.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "CalendarRange"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "exports": ["CalendarRange"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1172,17 +1091,10 @@
       "type": "form",
       "status": "complete",
       "description": "Full-featured date picker with month navigation and selection.",
-      "files": [
-        "Calendar.vue",
-        "index.ts"
-      ],
+      "files": ["Calendar.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Calendar"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Calendar"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1238,18 +1150,10 @@
       "type": "other",
       "status": "complete",
       "description": "checkbox",
-      "files": [
-        "Checkbox.vue",
-        "index.ts"
-      ],
+      "files": ["Checkbox.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Checkbox"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "exports": ["Checkbox"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1259,10 +1163,7 @@
           "name": "checked",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "indeterminate"
-            ]
+            "values": ["boolean", "indeterminate"]
           },
           "description": "Controlled checked state."
         },
@@ -1270,10 +1171,7 @@
           "name": "defaultChecked",
           "type": {
             "kind": "union",
-            "values": [
-              "boolean",
-              "indeterminate"
-            ]
+            "values": ["boolean", "indeterminate"]
           },
           "description": "Uncontrolled initial checked state."
         },
@@ -1345,19 +1243,10 @@
       "type": "other",
       "status": "complete",
       "description": "collapsible",
-      "files": [
-        "Collapsible.vue",
-        "index.ts"
-      ],
+      "files": ["Collapsible.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Collapsible",
-        "CollapsibleTrigger",
-        "CollapsibleContent"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Collapsible", "CollapsibleTrigger", "CollapsibleContent"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1433,15 +1322,9 @@
       "type": "form",
       "status": "complete",
       "description": "Searchable select with filtering, combining a text input with a dropdown list.",
-      "files": [
-        "Combobox.vue",
-        "types.ts",
-        "index.ts"
-      ],
+      "files": ["Combobox.vue", "types.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Combobox"
-      ],
+      "exports": ["Combobox"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1456,17 +1339,10 @@
       "type": "other",
       "status": "complete",
       "description": "command",
-      "files": [
-        "Command.vue",
-        "index.ts"
-      ],
+      "files": ["Command.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Command"
-      ],
-      "dependencies": [
-        "lucide-vue-next"
-      ],
+      "exports": ["Command"],
+      "dependencies": ["lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1520,9 +1396,7 @@
         "ContextMenuSubTrigger",
         "ContextMenuSubContent"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1555,14 +1429,9 @@
       "type": "blocks",
       "status": "complete",
       "description": "Full dashboard page with collapsible sidebar, stat cards, recent activity table, and navigation.",
-      "files": [
-        "DashboardBlock.vue",
-        "index.ts"
-      ],
+      "files": ["DashboardBlock.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DashboardBlock"
-      ],
+      "exports": ["DashboardBlock"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1577,15 +1446,9 @@
       "type": "data-display",
       "status": "complete",
       "description": "Sortable, filterable, paginated data table.",
-      "files": [
-        "DataTable.vue",
-        "types.ts",
-        "index.ts"
-      ],
+      "files": ["DataTable.vue", "types.ts", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DataTable"
-      ],
+      "exports": ["DataTable"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -1600,27 +1463,13 @@
       "type": "form",
       "status": "complete",
       "description": "A date picker component with popover and calendar.",
-      "files": [
-        "index.ts",
-        "DatePicker.vue",
-        "types.ts"
-      ],
+      "files": ["index.ts", "DatePicker.vue", "types.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DatePicker"
-      ],
-      "dependencies": [
-        "date-fns",
-        "lucide-vue-next",
-        "radix-vue"
-      ],
+      "exports": ["DatePicker"],
+      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "calendar",
-        "popover"
-      ],
+      "registryDependencies": ["button", "calendar", "popover"],
       "category": "form",
       "props": [],
       "manifestStatus": "partial"
@@ -1631,27 +1480,13 @@
       "type": "other",
       "status": "complete",
       "description": "date-range-picker",
-      "files": [
-        "index.ts",
-        "DateRangePicker.vue",
-        "types.ts"
-      ],
+      "files": ["index.ts", "DateRangePicker.vue", "types.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateRangePicker"
-      ],
-      "dependencies": [
-        "date-fns",
-        "lucide-vue-next",
-        "radix-vue"
-      ],
+      "exports": ["DateRangePicker"],
+      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "calendar-range",
-        "popover"
-      ],
+      "registryDependencies": ["button", "calendar-range", "popover"],
       "category": "other",
       "props": [],
       "manifestStatus": "complete"
@@ -1662,26 +1497,13 @@
       "type": "other",
       "status": "complete",
       "description": "date-time-picker",
-      "files": [
-        "index.ts",
-        "DateTimePicker.vue",
-        "types.ts"
-      ],
+      "files": ["index.ts", "DateTimePicker.vue", "types.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DateTimePicker"
-      ],
-      "dependencies": [
-        "date-fns",
-        "lucide-vue-next",
-        "radix-vue"
-      ],
+      "exports": ["DateTimePicker"],
+      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "date-picker",
-        "time-picker"
-      ],
+      "registryDependencies": ["date-picker", "time-picker"],
       "category": "other",
       "props": [],
       "manifestStatus": "complete"
@@ -1710,9 +1532,7 @@
         "DialogDescription",
         "DialogClose"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1761,20 +1581,10 @@
       "type": "other",
       "status": "complete",
       "description": "donut-chart",
-      "files": [
-        "donutchart.vue",
-        "index.ts",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["donutchart.vue", "index.ts", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "DonutChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["DonutChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -1984,9 +1794,7 @@
         "DropdownMenuSubContent",
         "DropdownMenuGroup"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2053,14 +1861,9 @@
       "type": "other",
       "status": "complete",
       "description": "empty",
-      "files": [
-        "Empty.vue",
-        "index.ts"
-      ],
+      "files": ["Empty.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Empty"
-      ],
+      "exports": ["Empty"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2118,18 +1921,10 @@
         "FormDescription",
         "FormMessage"
       ],
-      "dependencies": [
-        "radix-vue",
-        "@vee-validate/zod",
-        "vee-validate"
-      ],
+      "dependencies": ["radix-vue", "@vee-validate/zod", "vee-validate"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "input",
-        "label"
-      ],
+      "registryDependencies": ["button", "input", "label"],
       "category": "other",
       "props": [
         {
@@ -2150,20 +1945,10 @@
       "type": "charts",
       "status": "complete",
       "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
-      "files": [
-        "index.ts",
-        "gaugechart.vue",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["index.ts", "gaugechart.vue", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "GaugeChart"
-      ],
-      "dependencies": [
-        "echarts",
-        "vue-echarts"
-      ],
+      "exports": ["GaugeChart"],
+      "dependencies": ["echarts", "vue-echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2177,20 +1962,10 @@
       "type": "other",
       "status": "complete",
       "description": "hover-card",
-      "files": [
-        "HoverCard.vue",
-        "HoverCardContent.vue",
-        "index.ts"
-      ],
+      "files": ["HoverCard.vue", "HoverCardContent.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "HoverCard",
-        "HoverCardContent",
-        "HoverCardTrigger"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["HoverCard", "HoverCardContent", "HoverCardTrigger"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2248,17 +2023,10 @@
       "type": "other",
       "status": "complete",
       "description": "input",
-      "files": [
-        "Input.vue",
-        "index.ts"
-      ],
+      "files": ["Input.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Input"
-      ],
-      "dependencies": [
-        "@vueuse/core"
-      ],
+      "exports": ["Input"],
+      "dependencies": ["@vueuse/core"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2277,10 +2045,7 @@
           "name": "modelValue",
           "type": {
             "kind": "union",
-            "values": [
-              "string",
-              "number"
-            ]
+            "values": ["string", "number"]
           },
           "description": "Controlled value."
         },
@@ -2327,14 +2092,9 @@
       "type": "other",
       "status": "complete",
       "description": "kbd",
-      "files": [
-        "Kbd.vue",
-        "index.ts"
-      ],
+      "files": ["Kbd.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Kbd"
-      ],
+      "exports": ["Kbd"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2381,17 +2141,10 @@
       "type": "other",
       "status": "complete",
       "description": "label",
-      "files": [
-        "Label.vue",
-        "index.ts"
-      ],
+      "files": ["Label.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Label"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Label"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2432,20 +2185,10 @@
       "type": "other",
       "status": "complete",
       "description": "line-chart",
-      "files": [
-        "index.ts",
-        "linechart.vue",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["index.ts", "linechart.vue", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LineChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["LineChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2665,14 +2408,9 @@
       "type": "blocks",
       "status": "complete",
       "description": "Full login page with email/password form, remember me, and social auth.",
-      "files": [
-        "LoginBlock.vue",
-        "index.ts"
-      ],
+      "files": ["LoginBlock.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "LoginBlock"
-      ],
+      "exports": ["LoginBlock"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -2687,10 +2425,7 @@
       "type": "other",
       "status": "complete",
       "description": "menubar",
-      "files": [
-        "Menubar.vue",
-        "index.ts"
-      ],
+      "files": ["Menubar.vue", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Menubar",
@@ -2709,9 +2444,7 @@
         "MenubarSubTrigger",
         "MenubarGroup"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2786,20 +2519,10 @@
       "type": "other",
       "status": "complete",
       "description": "mixed-chart",
-      "files": [
-        "index.ts",
-        "mixedchart.vue",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["index.ts", "mixedchart.vue", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "MixedChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["MixedChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -2956,10 +2679,7 @@
       "type": "other",
       "status": "complete",
       "description": "navigation-menu",
-      "files": [
-        "NavigationMenu.vue",
-        "index.ts"
-      ],
+      "files": ["NavigationMenu.vue", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "NavigationMenu",
@@ -2969,9 +2689,7 @@
         "NavigationMenuContent",
         "NavigationMenuLink"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3063,14 +2781,9 @@
       "type": "form",
       "status": "complete",
       "description": "One-time password input with auto-focus, paste support, and completion callback.",
-      "files": [
-        "OTPInput.vue",
-        "index.ts"
-      ],
+      "files": ["OTPInput.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "OTPInput"
-      ],
+      "exports": ["OTPInput"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -3085,17 +2798,10 @@
       "type": "other",
       "status": "complete",
       "description": "pagination",
-      "files": [
-        "Pagination.vue",
-        "index.ts"
-      ],
+      "files": ["Pagination.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Pagination"
-      ],
-      "dependencies": [
-        "lucide-vue-next"
-      ],
+      "exports": ["Pagination"],
+      "dependencies": ["lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3154,20 +2860,10 @@
       "type": "other",
       "status": "complete",
       "description": "pie-chart",
-      "files": [
-        "index.ts",
-        "piechart.vue",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["index.ts", "piechart.vue", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PieChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["PieChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3355,20 +3051,10 @@
       "type": "other",
       "status": "complete",
       "description": "popover",
-      "files": [
-        "Popover.vue",
-        "PopoverContent.vue",
-        "index.ts"
-      ],
+      "files": ["Popover.vue", "PopoverContent.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Popover",
-        "PopoverContent",
-        "PopoverTrigger"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Popover", "PopoverContent", "PopoverTrigger"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3417,14 +3103,9 @@
       "type": "blocks",
       "status": "complete",
       "description": "Pricing cards with tiers, feature lists, and highlighted plan.",
-      "files": [
-        "PricingBlock.vue",
-        "index.ts"
-      ],
+      "files": ["PricingBlock.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "PricingBlock"
-      ],
+      "exports": ["PricingBlock"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -3439,17 +3120,10 @@
       "type": "other",
       "status": "complete",
       "description": "progress",
-      "files": [
-        "Progress.vue",
-        "index.ts"
-      ],
+      "files": ["Progress.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Progress"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Progress"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3517,20 +3191,10 @@
       "type": "other",
       "status": "complete",
       "description": "radar-chart",
-      "files": [
-        "index.ts",
-        "radarchart.vue",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["index.ts", "radarchart.vue", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadarChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["RadarChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3713,20 +3377,10 @@
       "type": "other",
       "status": "complete",
       "description": "radio-group",
-      "files": [
-        "RadioGroup.vue",
-        "RadioGroupItem.vue",
-        "index.ts"
-      ],
+      "files": ["RadioGroup.vue", "RadioGroupItem.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "RadioGroup",
-        "RadioGroupItem"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3777,10 +3431,7 @@
           "name": "orientation",
           "type": {
             "kind": "union",
-            "values": [
-              "horizontal",
-              "vertical"
-            ]
+            "values": ["horizontal", "vertical"]
           },
           "description": "Layout orientation."
         },
@@ -3817,15 +3468,8 @@
         "index.ts"
       ],
       "entry": "index.ts",
-      "exports": [
-        "ResizablePanelGroup",
-        "ResizablePanel",
-        "ResizableHandle"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "exports": ["ResizablePanelGroup", "ResizablePanel", "ResizableHandle"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -3839,20 +3483,10 @@
       "type": "other",
       "status": "complete",
       "description": "scatter-chart",
-      "files": [
-        "index.ts",
-        "scatterchart.vue",
-        "types.ts",
-        "utils.ts"
-      ],
+      "files": ["index.ts", "scatterchart.vue", "types.ts", "utils.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ScatterChart"
-      ],
-      "dependencies": [
-        "vue-echarts",
-        "echarts"
-      ],
+      "exports": ["ScatterChart"],
+      "dependencies": ["vue-echarts", "echarts"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4016,19 +3650,10 @@
       "type": "other",
       "status": "complete",
       "description": "scroll-area",
-      "files": [
-        "ScrollArea.vue",
-        "ScrollBar.vue",
-        "index.ts"
-      ],
+      "files": ["ScrollArea.vue", "ScrollBar.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ScrollArea",
-        "ScrollBar"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["ScrollArea", "ScrollBar"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4140,10 +3765,7 @@
         "SelectLabel",
         "SelectSeparator"
       ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4185,10 +3807,7 @@
           "name": "dir",
           "type": {
             "kind": "union",
-            "values": [
-              "ltr",
-              "rtl"
-            ]
+            "values": ["ltr", "rtl"]
           },
           "description": "Reading direction."
         },
@@ -4250,17 +3869,10 @@
       "type": "other",
       "status": "complete",
       "description": "separator",
-      "files": [
-        "Separator.vue",
-        "index.ts"
-      ],
+      "files": ["Separator.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Separator"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Separator"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4329,10 +3941,7 @@
       "type": "other",
       "status": "complete",
       "description": "sheet",
-      "files": [
-        "Sheet.vue",
-        "index.ts"
-      ],
+      "files": ["Sheet.vue", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "SheetContent",
@@ -4343,10 +3952,7 @@
         "SheetTitle",
         "SheetDescription"
       ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4431,14 +4037,9 @@
       "type": "other",
       "status": "complete",
       "description": "skeleton",
-      "files": [
-        "Skeleton.vue",
-        "index.ts"
-      ],
+      "files": ["Skeleton.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Skeleton"
-      ],
+      "exports": ["Skeleton"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4485,17 +4086,10 @@
       "type": "other",
       "status": "complete",
       "description": "slider",
-      "files": [
-        "Slider.vue",
-        "index.ts"
-      ],
+      "files": ["Slider.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Slider"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Slider"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4528,9 +4122,7 @@
               "name": "number"
             }
           },
-          "default": [
-            0
-          ],
+          "default": [0],
           "description": "Uncontrolled initial slider values."
         },
         {
@@ -4675,14 +4267,9 @@
       "type": "other",
       "status": "complete",
       "description": "spinner",
-      "files": [
-        "Spinner.vue",
-        "index.ts"
-      ],
+      "files": ["Spinner.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Spinner"
-      ],
+      "exports": ["Spinner"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -4738,17 +4325,10 @@
       "type": "other",
       "status": "complete",
       "description": "switch",
-      "files": [
-        "Switch.vue",
-        "index.ts"
-      ],
+      "files": ["Switch.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Switch"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Switch"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -4830,10 +4410,7 @@
       "type": "other",
       "status": "complete",
       "description": "table",
-      "files": [
-        "Table.vue",
-        "index.ts"
-      ],
+      "files": ["Table.vue", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Table",
@@ -4877,15 +4454,8 @@
         "index.ts"
       ],
       "entry": "index.ts",
-      "exports": [
-        "Tabs",
-        "TabsList",
-        "TabsTrigger",
-        "TabsContent"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5005,17 +4575,10 @@
       "type": "other",
       "status": "complete",
       "description": "tags-input",
-      "files": [
-        "TagsInput.vue",
-        "index.ts"
-      ],
+      "files": ["TagsInput.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TagsInput"
-      ],
-      "dependencies": [
-        "lucide-vue-next"
-      ],
+      "exports": ["TagsInput"],
+      "dependencies": ["lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5081,17 +4644,10 @@
       "type": "other",
       "status": "complete",
       "description": "textarea",
-      "files": [
-        "Textarea.vue",
-        "index.ts"
-      ],
+      "files": ["Textarea.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Textarea"
-      ],
-      "dependencies": [
-        "@vueuse/core"
-      ],
+      "exports": ["Textarea"],
+      "dependencies": ["@vueuse/core"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5165,18 +4721,10 @@
       "type": "form",
       "status": "complete",
       "description": "Hour/minute selection with 12h/24h format.",
-      "files": [
-        "TimePicker.vue",
-        "index.ts"
-      ],
+      "files": ["TimePicker.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "TimePicker"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
-      ],
+      "exports": ["TimePicker"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5190,18 +4738,10 @@
       "type": "feedback",
       "status": "partial",
       "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
-      "files": [
-        "toast.vue",
-        "index.ts"
-      ],
+      "files": ["toast.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toaster",
-        "toast"
-      ],
-      "dependencies": [
-        "vue-sonner"
-      ],
+      "exports": ["Toaster", "toast"],
+      "dependencies": ["vue-sonner"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5337,24 +4877,13 @@
       "type": "other",
       "status": "complete",
       "description": "toggle-group",
-      "files": [
-        "ToggleGroup.vue",
-        "ToggleGroupItem.vue",
-        "index.ts"
-      ],
+      "files": ["ToggleGroup.vue", "ToggleGroupItem.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "ToggleGroup",
-        "ToggleGroupItem"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "toggle"
-      ],
+      "registryDependencies": ["toggle"],
       "category": "other",
       "props": [
         {
@@ -5544,20 +5073,10 @@
       "type": "other",
       "status": "complete",
       "description": "toggle",
-      "files": [
-        "Toggle.vue",
-        "index.ts",
-        "variants.ts"
-      ],
+      "files": ["Toggle.vue", "index.ts", "variants.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toggle",
-        "toggleVariants"
-      ],
-      "dependencies": [
-        "radix-vue",
-        "class-variance-authority"
-      ],
+      "exports": ["Toggle", "toggleVariants"],
+      "dependencies": ["radix-vue", "class-variance-authority"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5673,17 +5192,10 @@
       "type": "data-display",
       "status": "complete",
       "description": "Toolbar component with section grouping and separators for grouped actions.",
-      "files": [
-        "Toolbar.vue",
-        "index.ts"
-      ],
+      "files": ["Toolbar.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Toolbar"
-      ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "exports": ["Toolbar"],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5761,11 +5273,7 @@
       "type": "other",
       "status": "complete",
       "description": "tooltip",
-      "files": [
-        "Tooltip.vue",
-        "TooltipContent.vue",
-        "index.ts"
-      ],
+      "files": ["Tooltip.vue", "TooltipContent.vue", "index.ts"],
       "entry": "index.ts",
       "exports": [
         "Tooltip",
@@ -5773,9 +5281,7 @@
         "TooltipTrigger",
         "TooltipProvider"
       ],
-      "dependencies": [
-        "radix-vue"
-      ],
+      "dependencies": ["radix-vue"],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -5851,14 +5357,9 @@
       "type": "other",
       "status": "complete",
       "description": "typography",
-      "files": [
-        "Typography.vue",
-        "index.ts"
-      ],
+      "files": ["Typography.vue", "index.ts"],
       "entry": "index.ts",
-      "exports": [
-        "Typography"
-      ],
+      "exports": ["Typography"],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],

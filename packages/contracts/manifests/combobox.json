@@ -82,11 +82,7 @@
     }
   },
   "a11y": {
-    "keyboard": [
-      "ArrowDown/ArrowUp navigate items in the dropdown."
-    ],
-    "aria": [
-      "Trigger exposes role=combobox with aria-expanded."
-    ]
+    "keyboard": ["ArrowDown/ArrowUp navigate items in the dropdown."],
+    "aria": ["Trigger exposes role=combobox with aria-expanded."]
   }
 }
