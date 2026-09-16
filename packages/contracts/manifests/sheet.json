@@ -1,0 +1,434 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "sheet",
+  "name": "sheet",
+  "category": "other",
+  "status": "complete",
+  "description": "sheet",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Controlled open state.",
+      "overrides": {
+        "vue": {
+          "default": false
+        },
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Initial open state for uncontrolled usage."
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the open state changes.",
+      "overrides": {
+        "angular": {
+          "name": "openChange"
+        }
+      }
+    },
+    {
+      "name": "modal",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": true,
+      "description": "Whether interaction outside the sheet is disabled while open."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Sheet composition content."
+    },
+    {
+      "name": "side",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "top"
+          },
+          {
+            "kind": "literal",
+            "value": "right"
+          },
+          {
+            "kind": "literal",
+            "value": "bottom"
+          },
+          {
+            "kind": "literal",
+            "value": "left"
+          }
+        ]
+      },
+      "frameworks": ["vue", "angular"],
+      "default": "right",
+      "description": "Side from which the sheet enters."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular"],
+      "default": "",
+      "description": "CSS class names for the sheet root wrapper."
+    },
+    {
+      "name": "update:open",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open state changes."
+    },
+    {
+      "name": "show",
+      "type": {
+        "kind": "function",
+        "signature": "({ context, builder, side, isDismissible, enableDrag, backgroundColor, elevation, shape, constraints }) => Future<T?>"
+      },
+      "frameworks": ["flutter"],
+      "description": "Static API to present a modal or side sheet."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Sheet.tsx", "index.ts"],
+      "exports": [],
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the sheet is disabled while open."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Sheet composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Sheet.vue", "index.ts"],
+      "exports": [
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "Sheet",
+        "SheetTrigger",
+        "SheetTitle",
+        "SheetDescription"
+      ],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage via the underlying dialog root when using `Sheet` from `radix-vue`."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the sheet is disabled while open."
+        },
+        {
+          "name": "side",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              }
+            ]
+          },
+          "default": "right",
+          "description": "Side from which the sheet enters."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the sheet root wrapper."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["sheet.component.ts", "index.ts"],
+      "exports": [
+        "SheetComponent",
+        "SheetTriggerComponent",
+        "SheetCloseComponent",
+        "SheetHeaderComponent",
+        "SheetFooterComponent",
+        "SheetTitleComponent",
+        "SheetDescriptionComponent"
+      ],
+      "dependencies": ["@angular/cdk"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled open state."
+        },
+        {
+          "name": "side",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              }
+            ]
+          },
+          "default": "right",
+          "description": "Side from which the sheet enters."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the sheet panel."
+        },
+        {
+          "name": "openChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the sheet requests to close."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-sheet"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Sheet.tsx", "index.ts"],
+      "exports": [
+        "Sheet",
+        "SheetPortal",
+        "SheetOverlay",
+        "SheetTrigger",
+        "SheetClose",
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "SheetTitle",
+        "SheetDescription"
+      ],
+      "dependencies": ["@rn-primitives/dialog", "class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Sheet composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["sheet.dart"],
+      "exports": [
+        "GalaxySheet",
+        "GalaxySheetContent",
+        "GalaxySheetHeader",
+        "GalaxySheetFooter",
+        "SheetSide"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "show",
+          "type": {
+            "kind": "function",
+            "signature": "({ context, builder, side, isDismissible, enableDrag, backgroundColor, elevation, shape, constraints }) => Future<T?>"
+          },
+          "description": "Static API to present a modal or side sheet."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2 fix: the Angular sheet now has dialog semantics (Escape close, body scroll lock, CDK focus trap, aria-modal) and exposes SheetTrigger/SheetClose/Header/Footer/Title/Description subparts matching the React API."
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "breadcrumb",
+  "name": "breadcrumb",
+  "category": "other",
+  "status": "complete",
+  "description": "breadcrumb",
+  "props": [
+    {
+      "name": "separator",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Declared prop on the component type, but the current implementation does not read or render it.",
+      "overrides": {
+        "vue": {
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Breadcrumb composition content."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue"],
+      "default": "",
+      "description": "CSS class names for the breadcrumb nav."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Breadcrumb.tsx", "index.ts"],
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "dependencies": ["lucide-react", "@radix-ui/react-slot"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "separator",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Declared prop on the component type, but the current implementation does not read or render it."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Breadcrumb composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "breadcrumb-ellipsis.vue",
+        "breadcrumb-item.vue",
+        "breadcrumb-link.vue",
+        "breadcrumb-list.vue",
+        "breadcrumb-page.vue",
+        "breadcrumb-separator.vue",
+        "breadcrumb.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "dependencies": ["lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the breadcrumb nav."
+        },
+        {
+          "name": "separator",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Declared prop on the component, but the current implementation does not render it."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["breadcrumb.component.ts", "index.ts"],
+      "exports": [
+        "BreadcrumbComponent",
+        "BreadcrumbListComponent",
+        "BreadcrumbItemComponent",
+        "BreadcrumbLinkComponent",
+        "BreadcrumbPageComponent",
+        "BreadcrumbSeparatorComponent",
+        "BreadcrumbEllipsisComponent"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts",
+      "selector": "ui-breadcrumb"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

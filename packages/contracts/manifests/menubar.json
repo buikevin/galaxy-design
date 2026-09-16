@@ -1,0 +1,434 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "menubar",
+  "name": "menubar",
+  "category": "other",
+  "status": "complete",
+  "description": "menubar",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "react-native", "vue"],
+      "description": "Controlled open menu value.",
+      "overrides": {
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Initial open menu value for uncontrolled usage."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Called when the open menu value changes."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "ltr",
+      "description": "Reading direction for keyboard navigation."
+    },
+    {
+      "name": "loop",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Loop keyboard focus from last item to first."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "react-native", "vue"],
+      "default": "",
+      "description": "CSS class names for the menubar root.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Menubar menus."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open menu value changes."
+    },
+    {
+      "name": "menus",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "GalaxyMenubarMenu"
+        }
+      },
+      "frameworks": ["flutter"],
+      "description": "Menus rendered in the menubar."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Menubar.tsx", "index.ts"],
+      "exports": [
+        "Menubar",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarItem",
+        "MenubarSeparator"
+      ],
+      "dependencies": ["@radix-ui/react-menubar"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled open menu value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial open menu value for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the open menu value changes."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the menubar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Menubar menus."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Menubar.vue", "index.ts"],
+      "exports": [
+        "Menubar",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarItem",
+        "MenubarSeparator",
+        "MenubarLabel",
+        "MenubarCheckboxItem",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarPortal",
+        "MenubarSub",
+        "MenubarSubContent",
+        "MenubarSubTrigger",
+        "MenubarGroup"
+      ],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled open menu value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial open menu value for uncontrolled usage."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the menubar root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the open menu value changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "menubar.component.ts"],
+      "exports": [
+        "MenubarComponent",
+        "MenubarTriggerComponent",
+        "MenubarContentComponent",
+        "MenubarItemComponent",
+        "MenubarSeparatorComponent"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts",
+      "selector": "ui-menubar"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Menubar.tsx", "index.ts"],
+      "exports": [
+        "Menubar",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarItem",
+        "MenubarSeparator",
+        "MenubarLabel",
+        "MenubarCheckboxItem",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarPortal",
+        "MenubarSubContent",
+        "MenubarSubTrigger",
+        "MenubarGroup",
+        "MenubarSub",
+        "MenubarShortcut"
+      ],
+      "dependencies": ["@rn-primitives/menubar"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled open menu value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial open menu value for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the open menu value changes."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the menubar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Menubar menus."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["menubar.dart"],
+      "exports": ["GalaxyMenubar", "GalaxyMenubarMenu"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "menus",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxyMenubarMenu"
+            }
+          },
+          "description": "Menus rendered in the menubar."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

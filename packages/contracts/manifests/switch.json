@@ -1,0 +1,563 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "switch",
+  "name": "switch",
+  "category": "other",
+  "status": "complete",
+  "description": "switch",
+  "props": [
+    {
+      "name": "checked",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Controlled checked state."
+    },
+    {
+      "name": "defaultChecked",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Uncontrolled initial checked state.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "onCheckedChange",
+      "type": {
+        "kind": "function",
+        "signature": "(checked: boolean) => void"
+      },
+      "frameworks": ["react", "angular", "react-native", "angular"],
+      "description": "Called when the checked state changes.",
+      "overrides": {
+        "angular": {
+          "name": "checkedChange"
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": false,
+      "description": "Disables the switch."
+    },
+    {
+      "name": "required",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "description": "Requires a value before form submission.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Name for form submission."
+    },
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "flutter"],
+      "default": "on",
+      "description": "Value for form submission.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          }
+        }
+      }
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the switch root.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "update:checked",
+      "type": {
+        "kind": "function",
+        "signature": "(checked: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the checked state changes."
+    },
+    {
+      "name": "id",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "Switch id."
+    },
+    {
+      "name": "ariaLabel",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "ARIA label for accessibility."
+    },
+    {
+      "name": "ariaLabelledBy",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "ARIA labelled-by for accessibility."
+    },
+    {
+      "name": "onChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(value: boolean) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when the checked state changes."
+    },
+    {
+      "name": "activeColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Active thumb color."
+    },
+    {
+      "name": "inactiveColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Inactive thumb color."
+    },
+    {
+      "name": "trackColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Active track color."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Switch.tsx", "index.ts"],
+      "exports": ["Switch"],
+      "dependencies": ["@radix-ui/react-switch"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the switch root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Switch.vue", "index.ts"],
+      "exports": ["Switch"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the switch root."
+        },
+        {
+          "name": "update:checked",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Emitted when the checked state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "switch.component.ts"],
+      "exports": ["SwitchComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "id",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Switch id."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "ariaLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "ARIA label for accessibility."
+        },
+        {
+          "name": "ariaLabelledBy",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "ARIA labelled-by for accessibility."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the switch root."
+        },
+        {
+          "name": "checkedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Emitted when the checked state changes."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Alias event emitted when the checked state changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-switch"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Switch.tsx", "index.ts"],
+      "exports": ["Switch"],
+      "dependencies": ["@rn-primitives/switch"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the switch root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["switch.dart"],
+      "exports": ["GalaxySwitch"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: boolean) => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "activeColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Active thumb color."
+        },
+        {
+          "name": "inactiveColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Inactive thumb color."
+        },
+        {
+          "name": "trackColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Active track color."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

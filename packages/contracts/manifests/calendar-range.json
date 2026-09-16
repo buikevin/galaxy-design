@@ -1,0 +1,469 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "calendar-range",
+  "name": "calendar-range",
+  "category": "other",
+  "status": "complete",
+  "description": "calendar-range",
+  "props": [
+    {
+      "name": "selected",
+      "type": {
+        "kind": "custom",
+        "name": "DateRange"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled selected date range."
+    },
+    {
+      "name": "onSelect",
+      "type": {
+        "kind": "function",
+        "signature": "(range: DateRange | undefined) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the selected range changes."
+    },
+    {
+      "name": "showOutsideDays",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": true,
+      "description": "Whether to render days outside the current month."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS class names for the calendar root.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "classNames",
+      "type": {
+        "kind": "custom",
+        "name": "Partial<ClassNames>"
+      },
+      "frameworks": ["react"],
+      "description": "Custom class names passed to react-day-picker."
+    },
+    {
+      "name": "numberOfMonths",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Number of months to display at once."
+    },
+    {
+      "name": "defaultMonth",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Initial month to display."
+    },
+    {
+      "name": "month",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled visible month."
+    },
+    {
+      "name": "onMonthChange",
+      "type": {
+        "kind": "function",
+        "signature": "(month: Date) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the visible month changes."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "custom",
+        "name": "Matcher | Matcher[]"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Dates that cannot be selected."
+    },
+    {
+      "name": "fromDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Earliest selectable date."
+    },
+    {
+      "name": "toDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Latest selectable date."
+    },
+    {
+      "name": "initialFocus",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": false,
+      "description": "Whether focus should move into the calendar when opened."
+    },
+    {
+      "name": "modelValue",
+      "type": {
+        "kind": "custom",
+        "name": "{ start: Date; end: Date }"
+      },
+      "frameworks": ["vue"],
+      "description": "Controlled selected date range."
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "custom",
+        "name": "any"
+      },
+      "frameworks": ["vue"],
+      "description": "Placeholder value forwarded to RangeCalendarRoot."
+    },
+    {
+      "name": "pagedNavigation",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "description": "Whether next and previous controls advance by full pages."
+    },
+    {
+      "name": "weekStartsOn",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["vue"],
+      "description": "Index of the first day of the week."
+    },
+    {
+      "name": "fixedWeeks",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "description": "Whether to always render six weeks."
+    },
+    {
+      "name": "readonly",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "default": false,
+      "description": "Prevents changing the selected range."
+    },
+    {
+      "name": "range",
+      "type": {
+        "kind": "custom",
+        "name": "DateRange"
+      },
+      "frameworks": ["angular"],
+      "default": "{ start: null, end: null }",
+      "description": "Selected date range with start and end values."
+    },
+    {
+      "name": "rangeChange",
+      "type": {
+        "kind": "function",
+        "signature": "(range: DateRange) => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Event emitted when the selected range changes."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["CalendarRange.tsx", "index.ts"],
+      "exports": ["CalendarRangeProps"],
+      "dependencies": ["react-day-picker", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "selected",
+          "type": {
+            "kind": "custom",
+            "name": "DateRange"
+          },
+          "description": "Controlled selected date range."
+        },
+        {
+          "name": "onSelect",
+          "type": {
+            "kind": "function",
+            "signature": "(range: DateRange | undefined) => void"
+          },
+          "description": "Called when the selected range changes."
+        },
+        {
+          "name": "showOutsideDays",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to render days outside the current month.",
+          "default": true
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the calendar root.",
+          "default": ""
+        },
+        {
+          "name": "classNames",
+          "type": {
+            "kind": "custom",
+            "name": "Partial<ClassNames>"
+          },
+          "description": "Custom class names passed to react-day-picker."
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months to display at once."
+        },
+        {
+          "name": "defaultMonth",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Initial month to display."
+        },
+        {
+          "name": "month",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled visible month."
+        },
+        {
+          "name": "onMonthChange",
+          "type": {
+            "kind": "function",
+            "signature": "(month: Date) => void"
+          },
+          "description": "Called when the visible month changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "custom",
+            "name": "Matcher | Matcher[]"
+          },
+          "description": "Dates that cannot be selected."
+        },
+        {
+          "name": "fromDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Earliest selectable date."
+        },
+        {
+          "name": "toDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Latest selectable date."
+        },
+        {
+          "name": "initialFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether focus should move into the calendar when opened.",
+          "default": false
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["CalendarRange.vue", "index.ts"],
+      "exports": ["CalendarRange"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "custom",
+            "name": "{ start: Date; end: Date }"
+          },
+          "description": "Controlled selected date range."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the calendar root.",
+          "default": ""
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "custom",
+            "name": "any"
+          },
+          "description": "Placeholder value forwarded to RangeCalendarRoot."
+        },
+        {
+          "name": "pagedNavigation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether next and previous controls advance by full pages."
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months to display at once."
+        },
+        {
+          "name": "weekStartsOn",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Index of the first day of the week."
+        },
+        {
+          "name": "fixedWeeks",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to always render six weeks."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "custom",
+            "name": "Matcher | Matcher[]"
+          },
+          "description": "Dates that cannot be selected."
+        },
+        {
+          "name": "readonly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Prevents changing the selected range.",
+          "default": false
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["calendar-range.component.ts", "index.ts"],
+      "exports": ["DateRange", "CalendarRangeComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the calendar root.",
+          "default": ""
+        },
+        {
+          "name": "range",
+          "type": {
+            "kind": "custom",
+            "name": "DateRange"
+          },
+          "description": "Selected date range with start and end values.",
+          "default": "{ start: null, end: null }"
+        },
+        {
+          "name": "rangeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(range: DateRange) => void"
+          },
+          "description": "Event emitted when the selected range changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-calendar-range"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

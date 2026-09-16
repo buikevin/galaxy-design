@@ -1,0 +1,444 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "avatar",
+  "name": "avatar",
+  "category": "other",
+  "status": "complete",
+  "description": "avatar",
+  "props": [
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the avatar root as a child element."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the avatar root.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Avatar content."
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "span",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "src",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "description": "Image source URL."
+    },
+    {
+      "name": "alt",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "description": "Alternative text used for accessibility and fallback initials."
+    },
+    {
+      "name": "fallback",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "description": "Explicit fallback text."
+    },
+    {
+      "name": "size",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "sm"
+          },
+          {
+            "kind": "literal",
+            "value": "md"
+          },
+          {
+            "kind": "literal",
+            "value": "lg"
+          },
+          {
+            "kind": "literal",
+            "value": "xl"
+          }
+        ]
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": "md",
+      "description": "Avatar size variant."
+    },
+    {
+      "name": "imageClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "default": "",
+      "description": "CSS class names for the image element."
+    },
+    {
+      "name": "fallbackClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "default": "",
+      "description": "CSS class names for the fallback text."
+    },
+    {
+      "name": "imageUrl",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Image source URL."
+    },
+    {
+      "name": "fallbackText",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Fallback text used when no image is available."
+    },
+    {
+      "name": "backgroundColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Background color of the avatar."
+    },
+    {
+      "name": "foregroundColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Foreground color of the fallback text."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Avatar.tsx", "index.ts"],
+      "exports": ["Avatar", "AvatarImage", "AvatarFallback"],
+      "dependencies": ["@radix-ui/react-avatar"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the avatar root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the avatar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Avatar content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "Avatar.vue",
+        "AvatarFallback.vue",
+        "AvatarImage.vue",
+        "index.ts"
+      ],
+      "exports": ["Avatar", "AvatarImage", "AvatarFallback"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "span",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the avatar root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the avatar root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": [
+        "avatar.component.ts",
+        "avatar-image.component.ts",
+        "avatar-fallback.component.ts",
+        "index.ts"
+      ],
+      "exports": [
+        "AvatarComponent",
+        "AvatarImageComponent",
+        "AvatarFallbackComponent"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the avatar root."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-avatar"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Avatar.tsx", "index.ts"],
+      "exports": ["Avatar"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "src",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Image source URL."
+        },
+        {
+          "name": "alt",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Alternative text used for accessibility and fallback initials."
+        },
+        {
+          "name": "fallback",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Explicit fallback text."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "md"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              },
+              {
+                "kind": "literal",
+                "value": "xl"
+              }
+            ]
+          },
+          "default": "md",
+          "description": "Avatar size variant."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the avatar container."
+        },
+        {
+          "name": "imageClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the image element."
+        },
+        {
+          "name": "fallbackClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the fallback text."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["avatar.dart"],
+      "exports": ["GalaxyAvatar", "AvatarSize"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "imageUrl",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Image source URL."
+        },
+        {
+          "name": "fallbackText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Fallback text used when no image is available."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "md"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              },
+              {
+                "kind": "literal",
+                "value": "xl"
+              }
+            ]
+          },
+          "default": "md",
+          "description": "Avatar size variant."
+        },
+        {
+          "name": "backgroundColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Background color of the avatar."
+        },
+        {
+          "name": "foregroundColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Foreground color of the fallback text."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

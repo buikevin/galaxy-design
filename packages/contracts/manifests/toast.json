@@ -1,0 +1,326 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "toast",
+  "name": "Toast",
+  "category": "feedback",
+  "status": "partial",
+  "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "partial",
+      "files": ["Toast.tsx", "toast-helper.ts", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["Toaster", "toast"],
+      "dependencies": ["sonner"],
+      "notes": "Sonner-backed wrapper; `Toaster` renders and `toast()` triggers. Subpart anatomy (Title/Description/Viewport) is delegated to Sonner.",
+      "props": [
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              },
+              {
+                "kind": "literal",
+                "value": "system"
+              }
+            ]
+          },
+          "default": "light",
+          "description": "Visual theme for the toaster."
+        },
+        {
+          "name": "position",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top-left"
+              },
+              {
+                "kind": "literal",
+                "value": "top-center"
+              },
+              {
+                "kind": "literal",
+                "value": "top-right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-left"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-center"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-right"
+              }
+            ]
+          },
+          "description": "Screen position for toast notifications."
+        },
+        {
+          "name": "expand",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether stacked toasts can expand to show full content."
+        },
+        {
+          "name": "richColors",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Enable richer semantic color styling."
+        },
+        {
+          "name": "closeButton",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Show a close button on each toast."
+        },
+        {
+          "name": "duration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Default duration in milliseconds."
+        },
+        {
+          "name": "visibleToasts",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum number of visible toasts."
+        },
+        {
+          "name": "offset",
+          "type": {
+            "kind": "custom",
+            "name": "string | number"
+          },
+          "description": "Offset from the viewport edge."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        }
+      ]
+    },
+    "vue": {
+      "status": "partial",
+      "files": ["toast.vue", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["Toaster", "toast"],
+      "dependencies": ["vue-sonner"],
+      "notes": "Sonner-backed wrapper re-exported from vue-sonner.",
+      "props": [
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              },
+              {
+                "kind": "literal",
+                "value": "system"
+              }
+            ]
+          },
+          "default": "light",
+          "description": "Visual theme for the toaster."
+        },
+        {
+          "name": "position",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top-left"
+              },
+              {
+                "kind": "literal",
+                "value": "top-center"
+              },
+              {
+                "kind": "literal",
+                "value": "top-right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-left"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-center"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-right"
+              }
+            ]
+          },
+          "description": "Screen position for toast notifications."
+        },
+        {
+          "name": "expand",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether stacked toasts can expand to show full content."
+        },
+        {
+          "name": "richColors",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Enable richer semantic color styling."
+        },
+        {
+          "name": "closeButton",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Show a close button on each toast."
+        },
+        {
+          "name": "duration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Default duration in milliseconds."
+        },
+        {
+          "name": "visibleToasts",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum number of visible toasts."
+        },
+        {
+          "name": "offset",
+          "type": {
+            "kind": "custom",
+            "name": "string | number"
+          },
+          "description": "Offset from the viewport edge."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        }
+      ]
+    },
+    "angular": {
+      "status": "partial",
+      "files": ["toast.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-toast",
+      "exports": ["ToastComponent", "toast"],
+      "dependencies": ["ngx-sonner"],
+      "notes": "Sonner-backed wrapper; `toast` is re-exported from ngx-sonner.",
+      "props": [
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              },
+              {
+                "kind": "literal",
+                "value": "system"
+              }
+            ]
+          },
+          "default": "light",
+          "description": "Visual theme for the toaster."
+        }
+      ]
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "No React Native toast implementation yet."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "No Flutter toast implementation yet."
+    }
+  },
+  "a11y": {
+    "keyboard": [],
+    "aria": [
+      "Live-region announcement is delegated to Sonner on web implementations."
+    ]
+  },
+  "notes": [
+    "React/Vue/Angular toasts are Sonner wrappers rather than Radix-anatomy components; parity work in P1.2 will decide between keeping Sonner or restoring a Radix-style anatomy."
+  ]
+}

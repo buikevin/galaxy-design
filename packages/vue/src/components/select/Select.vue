@@ -40,6 +40,11 @@ interface Props extends SelectRootProps {
 
 const props = defineProps<Props>()
 
+const emit = defineEmits<{
+  'update:modelValue': [value: string | number | boolean]
+  'update:open': [value: boolean]
+}>()
+
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
   return delegated
@@ -47,7 +52,11 @@ const delegatedProps = computed(() => {
 </script>
 
 <template>
-  <SelectRoot v-bind="delegatedProps">
+  <SelectRoot
+    v-bind="delegatedProps"
+    @update:model-value="emit('update:modelValue', $event as any)"
+    @update:open="emit('update:open', $event)"
+  >
     <slot />
   </SelectRoot>
 </template>

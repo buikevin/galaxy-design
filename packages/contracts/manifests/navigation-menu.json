@@ -1,0 +1,623 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "navigation-menu",
+  "name": "navigation-menu",
+  "category": "other",
+  "status": "complete",
+  "description": "navigation-menu",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Controlled value of the active menu item.",
+      "overrides": {
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Initial active item for uncontrolled usage."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the active item changes."
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          },
+          {
+            "kind": "literal",
+            "value": "vertical"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue"],
+      "default": "horizontal",
+      "description": "Orientation of the navigation menu."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue"],
+      "default": "ltr",
+      "description": "Reading direction for keyboard navigation."
+    },
+    {
+      "name": "delayDuration",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Delay in milliseconds before opening content on hover."
+    },
+    {
+      "name": "skipDelayDuration",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Time window to skip the opening delay when moving between triggers."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the navigation menu root.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Navigation menu composition content."
+    },
+    {
+      "name": "items",
+      "type": {
+        "kind": "custom",
+        "name": "NavigationMenuItem[]"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Items rendered in the navigation menu.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "List<NavigationMenuItem>"
+          }
+        }
+      }
+    },
+    {
+      "name": "selectedId",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Currently selected item id."
+    },
+    {
+      "name": "onSelect",
+      "type": {
+        "kind": "function",
+        "signature": "(id: string) => void"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Called when a navigation item is selected.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "function",
+            "signature": "(String id) => void"
+          }
+        }
+      }
+    },
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "bottom"
+          },
+          {
+            "kind": "literal",
+            "value": "drawer"
+          }
+        ]
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": "bottom",
+      "description": "Visual variant of the navigation menu.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "NavigationMenuVariant"
+          },
+          "default": "NavigationMenuVariant.bottom"
+        }
+      }
+    },
+    {
+      "name": "header",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Optional header content for the drawer variant.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "footer",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Optional footer content for the drawer variant.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["NavigationMenu.tsx", "index.ts"],
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuList",
+        "NavigationMenuItem",
+        "NavigationMenuTrigger",
+        "NavigationMenuContent",
+        "NavigationMenuLink"
+      ],
+      "dependencies": ["@radix-ui/react-navigation-menu"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled value of the active menu item."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active item for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the active item changes."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "description": "Orientation of the navigation menu.",
+          "default": "horizontal"
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction for keyboard navigation.",
+          "default": "ltr"
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Delay in milliseconds before opening content on hover."
+        },
+        {
+          "name": "skipDelayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Time window to skip the opening delay when moving between triggers."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the navigation menu root.",
+          "default": ""
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Navigation menu composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["NavigationMenu.vue", "index.ts"],
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuList",
+        "NavigationMenuItem",
+        "NavigationMenuTrigger",
+        "NavigationMenuContent",
+        "NavigationMenuLink"
+      ],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled value of the active menu item."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active item for uncontrolled usage."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction for keyboard navigation.",
+          "default": "ltr"
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "description": "Orientation of the navigation menu.",
+          "default": "horizontal"
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Delay in milliseconds before opening content on hover."
+        },
+        {
+          "name": "skipDelayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Time window to skip the opening delay when moving between triggers."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the navigation menu root.",
+          "default": ""
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "navigation-menu.component.ts"],
+      "exports": [
+        "NavigationMenuComponent",
+        "NavigationMenuListComponent",
+        "NavigationMenuItemComponent",
+        "NavigationMenuTriggerComponent",
+        "NavigationMenuContentComponent",
+        "NavigationMenuLinkComponent",
+        "NavigationMenuViewportComponent",
+        "NavigationMenuIndicatorComponent"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the navigation menu root.",
+          "default": ""
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-navigation-menu"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["NavigationMenu.tsx", "index.ts"],
+      "exports": [
+        "NavigationMenu",
+        "BottomNavigation",
+        "DrawerNavigation",
+        "DrawerMenu"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "items",
+          "type": {
+            "kind": "custom",
+            "name": "NavigationMenuItem[]"
+          },
+          "description": "Items rendered in the navigation menu."
+        },
+        {
+          "name": "selectedId",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Currently selected item id."
+        },
+        {
+          "name": "onSelect",
+          "type": {
+            "kind": "function",
+            "signature": "(id: string) => void"
+          },
+          "description": "Called when a navigation item is selected."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "drawer"
+              }
+            ]
+          },
+          "description": "Visual variant of the navigation menu.",
+          "default": "bottom"
+        },
+        {
+          "name": "header",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional header content for the drawer variant."
+        },
+        {
+          "name": "footer",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional footer content for the drawer variant."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "NativeWind class names for the navigation container.",
+          "default": ""
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["navigation_menu.dart"],
+      "exports": [
+        "NavigationMenuItem",
+        "GalaxyNavigationMenu",
+        "NavigationMenuVariant"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "items",
+          "type": {
+            "kind": "custom",
+            "name": "List<NavigationMenuItem>"
+          },
+          "description": "Items rendered in the navigation menu."
+        },
+        {
+          "name": "selectedId",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Currently selected item id."
+        },
+        {
+          "name": "onSelect",
+          "type": {
+            "kind": "function",
+            "signature": "(String id) => void"
+          },
+          "description": "Called when a navigation item is selected."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "custom",
+            "name": "NavigationMenuVariant"
+          },
+          "description": "Visual variant of the navigation menu.",
+          "default": "NavigationMenuVariant.bottom"
+        },
+        {
+          "name": "header",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional header widget for the drawer variant."
+        },
+        {
+          "name": "footer",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional footer widget for the drawer variant."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

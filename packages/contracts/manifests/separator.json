@@ -1,0 +1,405 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "separator",
+  "name": "separator",
+  "category": "other",
+  "status": "complete",
+  "description": "separator",
+  "props": [
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          },
+          {
+            "kind": "literal",
+            "value": "vertical"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "horizontal",
+      "description": "Separator orientation."
+    },
+    {
+      "name": "decorative",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": true,
+      "description": "Whether the separator is decorative only.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the separator as a child element."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the separator.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "thickness",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Line thickness."
+    },
+    {
+      "name": "color",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Separator color."
+    },
+    {
+      "name": "indent",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Leading inset for the divider."
+    },
+    {
+      "name": "endIndent",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Trailing inset for the divider."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Separator.tsx", "index.ts"],
+      "exports": ["Separator"],
+      "dependencies": ["@radix-ui/react-separator"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "decorative",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the separator is decorative only."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the separator as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the separator."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Separator.vue", "index.ts"],
+      "exports": ["Separator"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "decorative",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the separator is decorative only."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the separator as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the separator."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "separator.component.ts"],
+      "exports": ["SeparatorComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "decorative",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the separator is decorative only."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the separator host."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-separator, [ui-separator]"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Separator.tsx", "index.ts"],
+      "exports": ["Separator"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "decorative",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the separator is decorative only."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the separator."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["separator.dart"],
+      "exports": ["GalaxySeparator", "SeparatorOrientation"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "thickness",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Line thickness."
+        },
+        {
+          "name": "color",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Separator color."
+        },
+        {
+          "name": "indent",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Leading inset for the divider."
+        },
+        {
+          "name": "endIndent",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Trailing inset for the divider."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

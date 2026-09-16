@@ -1,0 +1,922 @@
+{
+  "schemaVersion": "1.0.0",
+  "pilot": true,
+  "components": {
+    "accordion": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "alert-dialog": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "alert": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "area-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "aspect-ratio": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "avatar": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "badge": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "bar-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "breadcrumb": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "button": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "calendar-range": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "calendar": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "card": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "checkbox": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "collapsible": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "command": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "context-menu": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "date-picker": {
+      "status": "partial",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "date-range-picker": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "date-time-picker": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "dialog": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "donut-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "dropdown-menu": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "empty": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "form": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "gauge-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "hover-card": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "input": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "kbd": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "label": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "line-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "menubar": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "mixed-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "navigation-menu": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "pagination": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "pie-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "popover": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "progress": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "radar-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "radio-group": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "resizable": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "scatter-chart": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "scroll-area": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "select": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "separator": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "sheet": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "skeleton": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "slider": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "spinner": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "switch": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "table": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "tabs": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "tags-input": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "textarea": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "time-picker": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "toast": {
+      "status": "partial",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "toggle-group": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "toggle": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "toolbar": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    "tooltip": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    },
+    "typography": {
+      "status": "complete",
+      "available": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter"
+      ]
+    }
+  },
+  "frameworks": {
+    "react": {
+      "available": [
+        "accordion",
+        "alert-dialog",
+        "alert",
+        "area-chart",
+        "aspect-ratio",
+        "avatar",
+        "badge",
+        "bar-chart",
+        "breadcrumb",
+        "button",
+        "calendar-range",
+        "calendar",
+        "card",
+        "checkbox",
+        "collapsible",
+        "command",
+        "context-menu",
+        "date-picker",
+        "date-range-picker",
+        "date-time-picker",
+        "dialog",
+        "donut-chart",
+        "dropdown-menu",
+        "empty",
+        "form",
+        "gauge-chart",
+        "hover-card",
+        "input",
+        "kbd",
+        "label",
+        "line-chart",
+        "menubar",
+        "mixed-chart",
+        "navigation-menu",
+        "pagination",
+        "pie-chart",
+        "popover",
+        "progress",
+        "radar-chart",
+        "radio-group",
+        "resizable",
+        "scatter-chart",
+        "scroll-area",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "slider",
+        "spinner",
+        "switch",
+        "table",
+        "tabs",
+        "tags-input",
+        "textarea",
+        "time-picker",
+        "toast",
+        "toggle-group",
+        "toggle",
+        "toolbar",
+        "tooltip",
+        "typography"
+      ],
+      "missing": []
+    },
+    "vue": {
+      "available": [
+        "accordion",
+        "alert-dialog",
+        "alert",
+        "area-chart",
+        "aspect-ratio",
+        "avatar",
+        "badge",
+        "bar-chart",
+        "breadcrumb",
+        "button",
+        "calendar-range",
+        "calendar",
+        "card",
+        "checkbox",
+        "collapsible",
+        "command",
+        "context-menu",
+        "date-picker",
+        "date-range-picker",
+        "date-time-picker",
+        "dialog",
+        "donut-chart",
+        "dropdown-menu",
+        "empty",
+        "form",
+        "gauge-chart",
+        "hover-card",
+        "input",
+        "kbd",
+        "label",
+        "line-chart",
+        "menubar",
+        "mixed-chart",
+        "navigation-menu",
+        "pagination",
+        "pie-chart",
+        "popover",
+        "progress",
+        "radar-chart",
+        "radio-group",
+        "resizable",
+        "scatter-chart",
+        "scroll-area",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "slider",
+        "spinner",
+        "switch",
+        "table",
+        "tabs",
+        "tags-input",
+        "textarea",
+        "time-picker",
+        "toast",
+        "toggle-group",
+        "toggle",
+        "toolbar",
+        "tooltip",
+        "typography"
+      ],
+      "missing": []
+    },
+    "angular": {
+      "available": [
+        "accordion",
+        "alert-dialog",
+        "alert",
+        "area-chart",
+        "aspect-ratio",
+        "avatar",
+        "badge",
+        "bar-chart",
+        "breadcrumb",
+        "button",
+        "calendar-range",
+        "calendar",
+        "card",
+        "checkbox",
+        "collapsible",
+        "command",
+        "context-menu",
+        "date-picker",
+        "date-range-picker",
+        "date-time-picker",
+        "dialog",
+        "donut-chart",
+        "dropdown-menu",
+        "empty",
+        "form",
+        "gauge-chart",
+        "hover-card",
+        "input",
+        "kbd",
+        "label",
+        "line-chart",
+        "menubar",
+        "mixed-chart",
+        "navigation-menu",
+        "pagination",
+        "pie-chart",
+        "popover",
+        "progress",
+        "radar-chart",
+        "radio-group",
+        "resizable",
+        "scatter-chart",
+        "scroll-area",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "slider",
+        "spinner",
+        "switch",
+        "table",
+        "tabs",
+        "tags-input",
+        "textarea",
+        "time-picker",
+        "toast",
+        "toggle-group",
+        "toggle",
+        "toolbar",
+        "tooltip",
+        "typography"
+      ],
+      "missing": []
+    },
+    "react-native": {
+      "available": [
+        "accordion",
+        "alert-dialog",
+        "alert",
+        "area-chart",
+        "aspect-ratio",
+        "avatar",
+        "badge",
+        "bar-chart",
+        "button",
+        "card",
+        "checkbox",
+        "collapsible",
+        "context-menu",
+        "date-picker",
+        "dialog",
+        "donut-chart",
+        "dropdown-menu",
+        "empty",
+        "gauge-chart",
+        "hover-card",
+        "input",
+        "label",
+        "line-chart",
+        "menubar",
+        "mixed-chart",
+        "navigation-menu",
+        "pagination",
+        "pie-chart",
+        "popover",
+        "progress",
+        "radar-chart",
+        "radio-group",
+        "scatter-chart",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "slider",
+        "spinner",
+        "switch",
+        "table",
+        "tabs",
+        "textarea",
+        "toggle-group",
+        "toggle",
+        "tooltip",
+        "typography"
+      ],
+      "missing": [
+        "breadcrumb",
+        "calendar-range",
+        "calendar",
+        "command",
+        "date-range-picker",
+        "date-time-picker",
+        "form",
+        "kbd",
+        "resizable",
+        "scroll-area",
+        "tags-input",
+        "time-picker",
+        "toast",
+        "toolbar"
+      ]
+    },
+    "flutter": {
+      "available": [
+        "accordion",
+        "alert-dialog",
+        "alert",
+        "area-chart",
+        "aspect-ratio",
+        "avatar",
+        "badge",
+        "bar-chart",
+        "button",
+        "card",
+        "checkbox",
+        "collapsible",
+        "context-menu",
+        "date-picker",
+        "dialog",
+        "donut-chart",
+        "dropdown-menu",
+        "empty",
+        "gauge-chart",
+        "hover-card",
+        "input",
+        "label",
+        "line-chart",
+        "menubar",
+        "mixed-chart",
+        "navigation-menu",
+        "pagination",
+        "pie-chart",
+        "popover",
+        "progress",
+        "radar-chart",
+        "radio-group",
+        "scatter-chart",
+        "select",
+        "separator",
+        "sheet",
+        "skeleton",
+        "slider",
+        "spinner",
+        "switch",
+        "table",
+        "tabs",
+        "textarea",
+        "toggle-group",
+        "toggle",
+        "tooltip",
+        "typography"
+      ],
+      "missing": [
+        "breadcrumb",
+        "calendar-range",
+        "calendar",
+        "command",
+        "date-range-picker",
+        "date-time-picker",
+        "form",
+        "kbd",
+        "resizable",
+        "scroll-area",
+        "tags-input",
+        "time-picker",
+        "toast",
+        "toolbar"
+      ]
+    }
+  }
+}

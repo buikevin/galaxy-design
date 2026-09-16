@@ -5,6 +5,28 @@ import { cn } from '@/lib/utils'
 import type { DonutChartProps } from './types'
 import { getDefaultColors, formatNumber } from './utils'
 
+function getNumericValue(value: unknown): number {
+  if (typeof value === 'number') {
+    return value
+  }
+
+  if (typeof value === 'string') {
+    const parsedValue = Number(value)
+    return Number.isFinite(parsedValue) ? parsedValue : 0
+  }
+
+  if (Array.isArray(value) && typeof value[0] === 'number') {
+    return value[0]
+  }
+
+  return 0
+}
+
+type ChartFormatterParams = {
+  name?: string
+  value?: unknown
+}
+
 export interface DonutChartComponentProps extends DonutChartProps {
   className?: string
 }
@@ -51,9 +73,10 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
         color: colors,
         tooltip: {
           trigger: 'item',
-          formatter: (params: { name: string; value: number }) => {
-            const percent = ((params.value / total) * 100).toFixed(1)
-            return `${params.name}: ${formatNumber(params.value)} (${percent}%)`
+          formatter: (params: ChartFormatterParams) => {
+            const value = getNumericValue(params?.value)
+            const percent = total > 0 ? ((value / total) * 100).toFixed(1) : '0.0'
+            return `${params?.name ?? ''}: ${formatNumber(value)} (${percent}%)`
           },
           backgroundColor: theme === 'dark' ? '#18181b' : '#ffffff',
           borderColor: theme === 'dark' ? '#27272a' : '#e4e4e7',
@@ -94,9 +117,10 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
               show: labelPosition !== 'center',
               position: labelPosition === 'inside' ? 'inside' : 'outside',
               formatter: showPercentage
-                ? (params: { name: string; value: number }) => {
-                    const percent = ((params.value / total) * 100).toFixed(1)
-                    return `${params.name}\n${percent}%`
+                ? (params: ChartFormatterParams) => {
+                    const value = getNumericValue(params?.value)
+                    const percent = total > 0 ? ((value / total) * 100).toFixed(1) : '0.0'
+                    return `${params?.name ?? ''}\n${percent}%`
                   }
                 : '{b}',
               color: theme === 'dark' ? '#fafafa' : '#0a0a0a',
@@ -109,7 +133,7 @@ export const DonutChart = React.forwardRef<ReactECharts, DonutChartComponentProp
         animation: animation,
         animationDuration: animation ? 1000 : 0,
         ...options,
-      }
+      } as EChartsOption
     }, [
       data,
       theme,

@@ -1,0 +1,428 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "alert-dialog",
+  "name": "alert-dialog",
+  "category": "other",
+  "status": "complete",
+  "description": "alert-dialog",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Controlled open state.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Initial open state for uncontrolled usage."
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the open state changes.",
+      "overrides": {
+        "angular": {
+          "name": "openChange"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Alert dialog composition content."
+    },
+    {
+      "name": "update:open",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open state changes."
+    },
+    {
+      "name": "title",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Optional title text."
+    },
+    {
+      "name": "description",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Optional description text."
+    },
+    {
+      "name": "cancelText",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Label for the cancel button."
+    },
+    {
+      "name": "confirmText",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Label for the confirm button."
+    },
+    {
+      "name": "onCancel",
+      "type": {
+        "kind": "function",
+        "signature": "() => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called after the dialog is dismissed via the cancel action."
+    },
+    {
+      "name": "onConfirm",
+      "type": {
+        "kind": "function",
+        "signature": "() => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called after the dialog is dismissed via the confirm action."
+    },
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "default_"
+          },
+          {
+            "kind": "literal",
+            "value": "destructive"
+          }
+        ]
+      },
+      "frameworks": ["flutter"],
+      "default": "default_",
+      "description": "Visual style for the confirm action."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["AlertDialog.tsx", "index.ts"],
+      "exports": [
+        "AlertDialog",
+        "AlertDialogTrigger",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ],
+      "dependencies": ["@radix-ui/react-alert-dialog"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Alert dialog composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "AlertDialog.vue",
+        "AlertDialogContent.vue",
+        "AlertDialogFooter.vue",
+        "AlertDialogHeader.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "AlertDialog",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTrigger",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["alert-dialog.component.ts", "index.ts"],
+      "exports": [
+        "AlertDialogComponent",
+        "AlertDialogTriggerComponent",
+        "AlertDialogContentComponent",
+        "AlertDialogTitleComponent",
+        "AlertDialogDescriptionComponent",
+        "AlertDialogActionComponent",
+        "AlertDialogCancelComponent",
+        "AlertDialogHeaderComponent",
+        "AlertDialogFooterComponent"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Declared open state input on the root component. Note: the current wrapper template does not bind it to the Radix NG directive."
+        },
+        {
+          "name": "openChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Declared open state output on the root component. Note: the current wrapper template does not emit from the Radix NG directive."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-alert-dialog"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["AlertDialog.tsx", "index.ts"],
+      "exports": [
+        "AlertDialog",
+        "AlertDialogPortal",
+        "AlertDialogOverlay",
+        "AlertDialogTrigger",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ],
+      "dependencies": ["@rn-primitives/alert-dialog"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Alert dialog composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["alert_dialog.dart"],
+      "exports": ["GalaxyAlertDialog", "AlertDialogVariant"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "title",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional title text."
+        },
+        {
+          "name": "description",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional description text."
+        },
+        {
+          "name": "cancelText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the cancel button."
+        },
+        {
+          "name": "confirmText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the confirm button."
+        },
+        {
+          "name": "onCancel",
+          "type": {
+            "kind": "function",
+            "signature": "() => void"
+          },
+          "description": "Called after the dialog is dismissed via the cancel action."
+        },
+        {
+          "name": "onConfirm",
+          "type": {
+            "kind": "function",
+            "signature": "() => void"
+          },
+          "description": "Called after the dialog is dismissed via the confirm action."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              }
+            ]
+          },
+          "default": "default_",
+          "description": "Visual style for the confirm action."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2 fix: the Angular action button closes via RdxAlertDialogService directly; it no longer reuses the Radix cancel directive."
+  ]
+}

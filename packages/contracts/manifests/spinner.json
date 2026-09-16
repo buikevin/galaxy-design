@@ -1,0 +1,357 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "spinner",
+  "name": "spinner",
+  "category": "other",
+  "status": "complete",
+  "description": "spinner",
+  "props": [
+    {
+      "name": "size",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "sm"
+          },
+          {
+            "kind": "literal",
+            "value": "default"
+          },
+          {
+            "kind": "literal",
+            "value": "lg"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "default",
+      "description": "Visual size of the spinner."
+    },
+    {
+      "name": "label",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "Loading...",
+      "description": "Accessible label announced to assistive technology."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the spinner.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "style",
+      "type": {
+        "kind": "custom",
+        "name": "StyleProp<ViewStyle>"
+      },
+      "frameworks": ["react-native"],
+      "description": "Additional React Native styles for the spinner."
+    },
+    {
+      "name": "color",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Override color for the spinner stroke."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Spinner.tsx", "index.ts"],
+      "exports": ["Spinner"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessible label announced to assistive technology."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the spinner."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Spinner.vue", "index.ts"],
+      "exports": ["Spinner"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessible label announced to assistive technology."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the spinner."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["spinner.component.ts", "index.ts"],
+      "exports": ["SpinnerComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessible label announced to assistive technology."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the spinner."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-spinner"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Spinner.tsx", "index.ts"],
+      "exports": ["Spinner"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessible label announced to assistive technology."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "NativeWind class names for the spinner."
+        },
+        {
+          "name": "style",
+          "type": {
+            "kind": "custom",
+            "name": "StyleProp<ViewStyle>"
+          },
+          "description": "Additional React Native styles for the spinner."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["spinner.dart"],
+      "exports": [
+        "GalaxySpinner",
+        "_GalaxySpinnerState",
+        "_SpinnerPainter",
+        "SpinnerSize"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessibility label announced to assistive technology."
+        },
+        {
+          "name": "color",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Override color for the spinner stroke."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

@@ -1,0 +1,862 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "accordion",
+  "name": "accordion",
+  "category": "other",
+  "status": "complete",
+  "description": "accordion",
+  "props": [
+    {
+      "name": "type",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "single"
+          },
+          {
+            "kind": "literal",
+            "value": "multiple"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "single",
+      "description": "Accordion selection behavior."
+    },
+    {
+      "name": "value",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "primitive",
+            "name": "string"
+          },
+          {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "string"
+            }
+          }
+        ]
+      },
+      "frameworks": ["react", "angular", "react-native", "vue"],
+      "description": "Controlled value for the open item or items.",
+      "overrides": {
+        "angular": {
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              },
+              {
+                "kind": "primitive",
+                "name": "null"
+              }
+            ]
+          }
+        },
+        "vue": {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              },
+              {
+                "kind": "primitive",
+                "name": "null"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "primitive",
+            "name": "string"
+          },
+          {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "string"
+            }
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Uncontrolled initial value for the open item or items."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string | string[]) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the open item or items change.",
+      "overrides": {
+        "angular": {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[] | null | undefined) => void"
+          }
+        }
+      }
+    },
+    {
+      "name": "collapsible",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "When type is single, allows closing the open item."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Disables the accordion and all items."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "ltr",
+      "description": "Reading direction for RTL or LTR layouts."
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "vertical"
+          },
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "vertical",
+      "description": "Accordion orientation."
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the root as a child element."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the root element.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string | string[] | null) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open item or items change."
+    },
+    {
+      "name": "items",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "GalaxyAccordionItem"
+        }
+      },
+      "frameworks": ["flutter"],
+      "description": "Accordion items to render."
+    },
+    {
+      "name": "allowMultipleExpanded",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["flutter"],
+      "default": false,
+      "description": "Allow multiple items expanded at once."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Accordion.tsx", "index.ts"],
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ],
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Accordion selection behavior."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled value for the open item or items."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Uncontrolled initial value for the open item or items."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Called when the open item or items change."
+        },
+        {
+          "name": "collapsible",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "When type is single, allows closing the open item."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the accordion and all items."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for RTL or LTR layouts."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "vertical"
+              },
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              }
+            ]
+          },
+          "default": "vertical",
+          "description": "Accordion orientation."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "Accordion.vue",
+        "AccordionContent.vue",
+        "AccordionItem.vue",
+        "AccordionTrigger.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Accordion selection behavior."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              },
+              {
+                "kind": "primitive",
+                "name": "null"
+              }
+            ]
+          },
+          "default": null,
+          "description": "Controlled value for the open item or items."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Uncontrolled initial value for the open item or items."
+        },
+        {
+          "name": "collapsible",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "When type is single, allows closing the open item."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the accordion and all items."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for RTL or LTR layouts."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "vertical"
+              },
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              }
+            ]
+          },
+          "default": "vertical",
+          "description": "Accordion orientation."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[] | null) => void"
+          },
+          "description": "Emitted when the open item or items change."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["accordion.component.ts", "accordion.directive.ts", "index.ts"],
+      "exports": [
+        "AccordionComponent",
+        "AccordionItemComponent",
+        "AccordionTriggerComponent",
+        "AccordionContentComponent",
+        "UiAccordionRootDirective",
+        "UiAccordionItemDirective",
+        "UiAccordionTriggerDirective",
+        "UiAccordionContentDirective"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Accordion selection behavior."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              },
+              {
+                "kind": "primitive",
+                "name": "null"
+              }
+            ]
+          },
+          "default": null,
+          "description": "Controlled value for the open item or items."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[] | null | undefined) => void"
+          },
+          "description": "Emitted when the open item or items change."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-accordion"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Accordion.tsx", "index.ts"],
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ],
+      "dependencies": ["@rn-primitives/accordion"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Accordion selection behavior."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled value for the open item or items."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Uncontrolled initial value for the open item or items."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Called when the open item or items change."
+        },
+        {
+          "name": "collapsible",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "When type is single, allows closing the open item."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the accordion and all items."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for RTL or LTR layouts."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "vertical"
+              },
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              }
+            ]
+          },
+          "default": "vertical",
+          "description": "Accordion orientation."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["accordion.dart"],
+      "exports": [
+        "GalaxyAccordion",
+        "_GalaxyAccordionState",
+        "GalaxyAccordionItem"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "items",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxyAccordionItem"
+            }
+          },
+          "description": "Accordion items to render."
+        },
+        {
+          "name": "allowMultipleExpanded",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Allow multiple items expanded at once."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

@@ -1,0 +1,933 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "slider",
+  "name": "slider",
+  "category": "other",
+  "status": "complete",
+  "description": "slider",
+  "props": [
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the root as a child element."
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "primitive",
+          "name": "number"
+        }
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Uncontrolled initial slider values.",
+      "overrides": {
+        "vue": {
+          "default": [0]
+        }
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "primitive",
+          "name": "number"
+        }
+      },
+      "frameworks": ["react", "angular", "react-native", "flutter", "vue"],
+      "description": "Controlled slider values.",
+      "overrides": {
+        "angular": {
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 50
+        },
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          }
+        },
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number[]) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the slider values change.",
+      "overrides": {
+        "angular": {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => void"
+          }
+        }
+      }
+    },
+    {
+      "name": "onValueCommit",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number[]) => void"
+      },
+      "frameworks": ["react", "react-native", "vue"],
+      "description": "Called when the interaction ends and the slider values are committed.",
+      "overrides": {
+        "vue": {
+          "name": "valueCommit"
+        }
+      }
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Name used for the hidden inputs in form submission."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": false,
+      "description": "Disables the slider."
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          },
+          {
+            "kind": "literal",
+            "value": "vertical"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "horizontal",
+      "description": "Slider orientation."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Reading direction."
+    },
+    {
+      "name": "inverted",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Whether the slider is visually inverted."
+    },
+    {
+      "name": "min",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 0,
+      "description": "Minimum value."
+    },
+    {
+      "name": "max",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 100,
+      "description": "Maximum value."
+    },
+    {
+      "name": "step",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": 1,
+      "description": "Stepping interval."
+    },
+    {
+      "name": "minStepsBetweenThumbs",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": 0,
+      "description": "Minimum permitted steps between thumbs."
+    },
+    {
+      "name": "form",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "description": "Associates the slider inputs with a form."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the slider root.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number[]) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the slider values change."
+    },
+    {
+      "name": "onChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when the slider value changes."
+    },
+    {
+      "name": "divisions",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Number of discrete divisions."
+    },
+    {
+      "name": "label",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Optional label rendered above the slider."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Slider.tsx", "index.ts"],
+      "exports": ["Slider"],
+      "dependencies": ["@radix-ui/react-slider"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Uncontrolled initial slider values."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Controlled slider values."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Called when the slider values change."
+        },
+        {
+          "name": "onValueCommit",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Called when the interaction ends and the slider values are committed."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name used for the hidden inputs in form submission."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Slider orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "inverted",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the slider is visually inverted."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "step",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Stepping interval."
+        },
+        {
+          "name": "minStepsBetweenThumbs",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum permitted steps between thumbs."
+        },
+        {
+          "name": "form",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Associates the slider inputs with a form."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the slider root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Slider.vue", "index.ts"],
+      "exports": ["Slider"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "default": [0],
+          "description": "Uncontrolled initial slider values."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Controlled slider values. Supports v-model."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        },
+        {
+          "name": "inverted",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the slider is visually inverted."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "minStepsBetweenThumbs",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum permitted steps between thumbs."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name used for the hidden inputs in form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Slider orientation."
+        },
+        {
+          "name": "step",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Stepping interval."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the slider root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Emitted when the slider values change."
+        },
+        {
+          "name": "valueCommit",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Emitted when the interaction ends and the slider values are committed."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "slider.component.ts"],
+      "exports": ["SliderComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 50,
+          "description": "Controlled slider value exposed by the wrapper."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "step",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Stepping interval."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the slider root."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => void"
+          },
+          "description": "Emitted when the slider value changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-slider"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Slider.tsx", "index.ts"],
+      "exports": ["Slider"],
+      "dependencies": ["@rn-primitives/slider"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Controlled slider values."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Uncontrolled initial slider values."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Called when the slider values change."
+        },
+        {
+          "name": "onValueCommit",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Called when the interaction ends and the slider values are committed."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name used for internal inputs where supported."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Slider orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "inverted",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the slider is visually inverted."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "step",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Stepping interval."
+        },
+        {
+          "name": "minStepsBetweenThumbs",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum permitted steps between thumbs."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the slider root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["slider.dart"],
+      "exports": ["GalaxySlider"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Current slider value."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => void"
+          },
+          "description": "Called when the slider value changes."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "divisions",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of discrete divisions."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional label rendered above the slider."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

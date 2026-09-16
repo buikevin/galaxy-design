@@ -1,0 +1,359 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "skeleton",
+  "name": "skeleton",
+  "category": "other",
+  "status": "complete",
+  "description": "skeleton",
+  "props": [
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "default"
+          },
+          {
+            "kind": "literal",
+            "value": "circle"
+          },
+          {
+            "kind": "literal",
+            "value": "text"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": "default",
+      "description": "Skeleton shape variant."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the skeleton.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "width",
+      "type": {
+        "kind": "custom",
+        "name": "number | string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Explicit width for the skeleton.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "height",
+      "type": {
+        "kind": "custom",
+        "name": "number | string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Explicit height for the skeleton.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 16
+        }
+      }
+    },
+    {
+      "name": "circle",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react-native"],
+      "default": false,
+      "description": "Render the skeleton with a circular shape."
+    },
+    {
+      "name": "borderRadius",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "default": 4,
+      "description": "Border radius of the skeleton shape."
+    },
+    {
+      "name": "baseColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Base shimmer color."
+    },
+    {
+      "name": "highlightColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Highlight shimmer color."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Skeleton.tsx", "index.ts"],
+      "exports": ["SkeletonProps"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              },
+              {
+                "kind": "literal",
+                "value": "text"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Skeleton shape variant."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the skeleton."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Skeleton.vue", "index.ts"],
+      "exports": ["Skeleton"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              },
+              {
+                "kind": "literal",
+                "value": "text"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Skeleton shape variant."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the skeleton."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["skeleton.component.ts", "index.ts"],
+      "exports": ["SkeletonComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              },
+              {
+                "kind": "literal",
+                "value": "text"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Skeleton shape variant."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the skeleton."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-skeleton"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Skeleton.tsx", "index.ts"],
+      "exports": ["Skeleton"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the skeleton."
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Explicit width for the skeleton."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Explicit height for the skeleton."
+        },
+        {
+          "name": "circle",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the skeleton with a circular shape."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["skeleton.dart"],
+      "exports": ["GalaxySkeleton", "_GalaxySkeletonState"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "width",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Explicit width for the skeleton."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 16,
+          "description": "Explicit height for the skeleton."
+        },
+        {
+          "name": "borderRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 4,
+          "description": "Border radius of the skeleton shape."
+        },
+        {
+          "name": "baseColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Base shimmer color."
+        },
+        {
+          "name": "highlightColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Highlight shimmer color."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

@@ -163,7 +163,7 @@ export const MixedChart = React.forwardRef<ReactECharts, MixedChartComponentProp
         animation: animation,
         animationDuration: animation ? 1000 : 0,
         ...options,
-      }
+      } as EChartsOption
     }, [data, theme, legend, legendPosition, grid, tooltip, animation, options])
 
     const dimensions = useMemo(() => {

@@ -1,0 +1,422 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "calendar",
+  "name": "calendar",
+  "category": "other",
+  "status": "complete",
+  "description": "calendar",
+  "props": [
+    {
+      "name": "mode",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "single"
+          },
+          {
+            "kind": "literal",
+            "value": "multiple"
+          },
+          {
+            "kind": "literal",
+            "value": "range"
+          }
+        ]
+      },
+      "frameworks": ["react"],
+      "description": "Selection mode for the calendar."
+    },
+    {
+      "name": "selected",
+      "type": {
+        "kind": "custom",
+        "name": "Date | Date[] | DateRange"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled selected date value."
+    },
+    {
+      "name": "onSelect",
+      "type": {
+        "kind": "function",
+        "signature": "(value: Date | Date[] | DateRange | undefined) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the selected date changes."
+    },
+    {
+      "name": "month",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled visible month."
+    },
+    {
+      "name": "defaultMonth",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Initial month to display."
+    },
+    {
+      "name": "onMonthChange",
+      "type": {
+        "kind": "function",
+        "signature": "(month: Date) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the visible month changes."
+    },
+    {
+      "name": "numberOfMonths",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react"],
+      "description": "Number of months to display."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "custom",
+        "name": "Matcher | Matcher[]"
+      },
+      "frameworks": ["react"],
+      "description": "Dates that cannot be selected."
+    },
+    {
+      "name": "fromDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Earliest month or date available for navigation/selection."
+    },
+    {
+      "name": "toDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Latest month or date available for navigation/selection."
+    },
+    {
+      "name": "showOutsideDays",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": true,
+      "description": "Show days outside the current month."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS class names for the calendar root.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "classNames",
+      "type": {
+        "kind": "custom",
+        "name": "Partial<ClassNames>"
+      },
+      "frameworks": ["react"],
+      "description": "Overrides for DayPicker internal class names."
+    },
+    {
+      "name": "modelValue",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["vue"],
+      "description": "Controlled selected date. Supports v-model."
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["vue"],
+      "description": "Placeholder date used by the calendar root."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: Date) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the selected date changes."
+    },
+    {
+      "name": "selectedDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["angular"],
+      "description": "Currently selected date."
+    },
+    {
+      "name": "dateChange",
+      "type": {
+        "kind": "function",
+        "signature": "(date: Date) => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Emitted when the selected date changes."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Calendar.tsx", "index.ts"],
+      "exports": [],
+      "dependencies": ["react-day-picker", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "mode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              },
+              {
+                "kind": "literal",
+                "value": "range"
+              }
+            ]
+          },
+          "description": "Selection mode for the calendar."
+        },
+        {
+          "name": "selected",
+          "type": {
+            "kind": "custom",
+            "name": "Date | Date[] | DateRange"
+          },
+          "description": "Controlled selected date value."
+        },
+        {
+          "name": "onSelect",
+          "type": {
+            "kind": "function",
+            "signature": "(value: Date | Date[] | DateRange | undefined) => void"
+          },
+          "description": "Called when the selected date changes."
+        },
+        {
+          "name": "month",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled visible month."
+        },
+        {
+          "name": "defaultMonth",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Initial month to display."
+        },
+        {
+          "name": "onMonthChange",
+          "type": {
+            "kind": "function",
+            "signature": "(month: Date) => void"
+          },
+          "description": "Called when the visible month changes."
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months to display."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "custom",
+            "name": "Matcher | Matcher[]"
+          },
+          "description": "Dates that cannot be selected."
+        },
+        {
+          "name": "fromDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Earliest month or date available for navigation/selection."
+        },
+        {
+          "name": "toDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Latest month or date available for navigation/selection."
+        },
+        {
+          "name": "showOutsideDays",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Show days outside the current month."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the calendar root."
+        },
+        {
+          "name": "classNames",
+          "type": {
+            "kind": "custom",
+            "name": "Partial<ClassNames>"
+          },
+          "description": "Overrides for DayPicker internal class names."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Calendar.vue", "index.ts"],
+      "exports": ["Calendar"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled selected date. Supports v-model."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Placeholder date used by the calendar root."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the calendar root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: Date) => void"
+          },
+          "description": "Emitted when the selected date changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["calendar.component.ts", "index.ts"],
+      "exports": ["CalendarComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "selectedDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Currently selected date."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the calendar root."
+        },
+        {
+          "name": "dateChange",
+          "type": {
+            "kind": "function",
+            "signature": "(date: Date) => void"
+          },
+          "description": "Emitted when the selected date changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-calendar"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

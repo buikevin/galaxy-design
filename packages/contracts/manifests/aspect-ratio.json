@@ -1,0 +1,258 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "aspect-ratio",
+  "name": "aspect-ratio",
+  "category": "other",
+  "status": "complete",
+  "description": "aspect-ratio",
+  "props": [
+    {
+      "name": "ratio",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 1,
+      "description": "Desired aspect ratio, for example 16 / 9.",
+      "overrides": {
+        "angular": {
+          "default": 1.7777777777777777
+        },
+        "flutter": {}
+      }
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the component as a child element."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native", "flutter"],
+      "description": "Content constrained by the ratio.",
+      "overrides": {
+        "flutter": {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the host element.",
+      "overrides": {
+        "react-native": {
+          "name": "className"
+        }
+      }
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["AspectRatio.tsx", "index.ts"],
+      "exports": ["AspectRatio"],
+      "dependencies": ["@radix-ui/react-aspect-ratio"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Desired aspect ratio, for example 16 / 9."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the component as a child element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Content constrained by the ratio."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["AspectRatio.vue", "index.ts"],
+      "exports": ["AspectRatio"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Desired aspect ratio, for example 16 / 9."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the component as a child element."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["aspect-ratio.component.ts", "index.ts"],
+      "exports": ["AspectRatioComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1.7777777777777777,
+          "description": "Desired aspect ratio exposed by the wrapper."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the host element."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-aspect-ratio"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["AspectRatio.tsx", "index.ts"],
+      "exports": ["AspectRatio"],
+      "dependencies": ["@rn-primitives/aspect-ratio"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Desired aspect ratio."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the host element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Content constrained by the ratio."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["aspect_ratio.dart"],
+      "exports": ["GalaxyAspectRatio"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Desired aspect ratio."
+        },
+        {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Content constrained by the ratio."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

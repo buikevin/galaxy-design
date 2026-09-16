@@ -1,0 +1,498 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "button",
+  "name": "Button",
+  "category": "form",
+  "status": "complete",
+  "description": "Displays a button or a component that looks like a button with variants and sizes.",
+  "props": [
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          "default",
+          "destructive",
+          "outline",
+          "secondary",
+          "ghost",
+          "link"
+        ]
+      },
+      "default": "default",
+      "description": "Visual style variant.",
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "union",
+            "values": [
+              "primary",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "size",
+      "type": {
+        "kind": "union",
+        "values": ["default", "sm", "lg", "icon"]
+      },
+      "default": "default",
+      "description": "Size variant.",
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "union",
+            "values": ["defaultSize", "sm", "lg", "icon"]
+          }
+        }
+      }
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": false,
+      "description": "Render as child via Radix Slot / Primitive.",
+      "frameworks": ["react", "vue"]
+    },
+    {
+      "name": "type",
+      "type": {
+        "kind": "union",
+        "values": ["button", "submit", "reset"]
+      },
+      "default": "button",
+      "description": "Native button type.",
+      "frameworks": ["react", "vue", "angular"]
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "CSS class names for the button.",
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "overrides": {
+        "react": {
+          "name": "className"
+        },
+        "react-native": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": false,
+      "description": "Disables the button.",
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"]
+    }
+  ],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Button.tsx", "index.ts", "variants.ts"],
+      "entry": "index.ts",
+      "exports": ["Button", "ButtonProps", "buttonVariants", "ButtonVariants"],
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": ["default", "sm", "lg", "icon"]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child using Radix Slot."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button."
+        },
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": ["button", "submit", "reset"]
+          },
+          "default": "button",
+          "description": "Native button type."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        },
+        {
+          "name": "onClick",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Click handler."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Button content."
+        }
+      ]
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Button.vue", "index.ts", "variants.ts"],
+      "entry": "index.ts",
+      "exports": ["Button", "buttonVariants", "ButtonVariants"],
+      "dependencies": ["radix-vue", "class-variance-authority"],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": ["default", "sm", "lg", "icon"]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child via Radix Primitive."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "button",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button."
+        },
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": ["button", "submit", "reset"]
+          },
+          "default": "button",
+          "description": "Native button type."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        }
+      ]
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["button.component.ts", "index.ts", "variants.ts"],
+      "entry": "index.ts",
+      "selector": "ui-button, button[ui-button]",
+      "exports": ["ButtonComponent"],
+      "dependencies": ["class-variance-authority"],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": ["default", "sm", "lg", "icon"]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button."
+        },
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": ["button", "submit", "reset"]
+          },
+          "default": "button",
+          "description": "Native button type."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        },
+        {
+          "name": "ariaLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "ARIA label for accessibility."
+        }
+      ]
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Button.tsx", "index.ts", "variants.ts"],
+      "entry": "index.ts",
+      "exports": ["Button", "buttonVariants", "buttonTextVariants"],
+      "dependencies": ["class-variance-authority"],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": ["default", "sm", "lg", "icon"]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "onPress",
+          "type": {
+            "kind": "function",
+            "signature": "() => void"
+          },
+          "description": "Press handler."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Button content."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button."
+        },
+        {
+          "name": "textClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button text."
+        }
+      ]
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["button.dart", "button_theme.dart"],
+      "exports": [
+        "GalaxyButton",
+        "ButtonVariant",
+        "ButtonSize",
+        "GalaxyButtonTheme",
+        "ButtonColors"
+      ],
+      "dependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "primary",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "primary",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": ["defaultSize", "sm", "lg", "icon"]
+          },
+          "default": "defaultSize",
+          "description": "Size variant."
+        },
+        {
+          "name": "onPressed",
+          "type": {
+            "kind": "function",
+            "signature": "() => void"
+          },
+          "description": "Press handler."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        },
+        {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Button content."
+        }
+      ]
+    }
+  },
+  "a11y": {
+    "keyboard": [
+      "Renders a native button element or equivalent pressable on each platform."
+    ],
+    "aria": [
+      "Angular binds aria-label and disabled attributes on the host.",
+      "React/Vue inherit native button semantics from the underlying element."
+    ]
+  },
+  "notes": [
+    "Press events are normalized conceptually as click: onClick (React), template events (Vue), host button events (Angular), onPress (React Native), onPressed (Flutter).",
+    "Flutter exposes variants under `ButtonVariant`/`ButtonSize` enums with `primary` naming instead of `default`."
+  ]
+}

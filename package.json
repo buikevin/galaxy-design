@@ -28,6 +28,9 @@
     "cross-platform"
   ],
   "scripts": {
+    "manifests:validate": "node packages/contracts/scripts/validate-manifests.mjs",
+    "manifests:generate": "node packages/contracts/scripts/generate-registries.mjs",
+    "manifests:check": "node packages/contracts/scripts/check-generated.mjs",
     "build": "nx run-many --target=build --all",
     "test": "nx run-many --target=test --all",
     "lint": "nx run-many --target=lint --all",

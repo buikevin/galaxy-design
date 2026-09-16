@@ -1,0 +1,192 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "toolbar",
+  "name": "Toolbar",
+  "category": "data-display",
+  "status": "complete",
+  "description": "Toolbar component with section grouping and separators for grouped actions.",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Toolbar.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": [
+        "Toolbar",
+        "ToolbarButton",
+        "ToolbarSeparator",
+        "ToolbarLink",
+        "ToolbarToggleGroup",
+        "ToolbarToggleItem"
+      ],
+      "dependencies": ["@radix-ui/react-toolbar"],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Toolbar orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for roving focus."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toolbar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Toolbar content."
+        }
+      ]
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Toolbar.vue", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["Toolbar"],
+      "dependencies": ["radix-vue"],
+      "notes": "Vue toolbar currently exposes only the root; Group/Separator subparts are absent.",
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Toolbar orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for roving focus."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toolbar root."
+        }
+      ]
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["toolbar.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-toolbar",
+      "exports": ["ToolbarComponent"],
+      "dependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toolbar root."
+        }
+      ]
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "No mobile toolbar implementation yet."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "No Flutter toolbar implementation yet."
+    }
+  }
+}

@@ -39,7 +39,7 @@ export class PopoverComponent {
   standalone: true,
   imports: [CommonModule, RdxPopoverTriggerDirective],
   template: `
-    <button rdxPopoverTrigger [class]="triggerClasses">
+    <button rdxPopoverTrigger [class]="triggerClasses" [disabled]="disabled">
       <ng-content></ng-content>
     </button>
   `,
@@ -47,7 +47,10 @@ export class PopoverComponent {
 })
 export class PopoverTriggerComponent {
   @Input() class?: string;
-  get triggerClasses(): string { return cn('', this.class); }
+  @Input() disabled = false;
+  get triggerClasses(): string {
+    return cn('disabled:pointer-events-none disabled:opacity-50', this.class);
+  }
 }
 
 @Component({

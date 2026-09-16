@@ -1,0 +1,140 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "form",
+  "name": "form",
+  "category": "other",
+  "status": "complete",
+  "description": "form",
+  "props": [
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Form content wrapped by FormProvider."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular"],
+      "default": "",
+      "description": "CSS class names for the form element."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Form.tsx", "index.ts"],
+      "exports": [
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormControl",
+        "FormDescription",
+        "FormMessage",
+        "FormField",
+        "useFormField"
+      ],
+      "dependencies": [
+        "react-hook-form",
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["label"],
+      "props": [
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Form content wrapped by FormProvider."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "form-description.vue",
+        "form-item.vue",
+        "form-label.vue",
+        "form-message.vue",
+        "form.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormDescription",
+        "FormMessage"
+      ],
+      "dependencies": ["radix-vue", "@vee-validate/zod", "vee-validate"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "input", "label"],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the form element."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["form.component.ts", "index.ts"],
+      "exports": [
+        "FormDirective",
+        "FormItemComponent",
+        "FormLabelComponent",
+        "FormDescriptionComponent",
+        "FormMessageComponent"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names applied to the host form element."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "[uiForm]"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

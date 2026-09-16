@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import ReactECharts from 'echarts-for-react'
 import type { EChartsOption } from 'echarts'
 import type { RadarChartProps } from './types'
-import { getDefaultColors } from './utils'
+import { getThemeColors } from './utils'
 
 export interface RadarChartComponentProps extends RadarChartProps {
   className?: string
@@ -32,7 +32,7 @@ export const RadarChart = React.forwardRef<ReactECharts, RadarChartComponentProp
         return null
       }
 
-      const colors = getDefaultColors()
+      const colors = getThemeColors(theme)
 
       // Build radar indicators from labels
       const indicator = data.labels.map((label) => ({
@@ -112,7 +112,7 @@ export const RadarChart = React.forwardRef<ReactECharts, RadarChartComponentProp
             },
           },
         ],
-      }
+      } as EChartsOption
     }, [data, theme, legend, legendPosition, shape, splitNumber, maxValue, fill, opacity])
 
     if (loading) {

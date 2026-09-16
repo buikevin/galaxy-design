@@ -1,0 +1,442 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "empty",
+  "name": "empty",
+  "category": "other",
+  "status": "complete",
+  "description": "empty",
+  "props": [
+    {
+      "name": "description",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "description": "Empty state description content.",
+      "overrides": {
+        "vue": {
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          }
+        },
+        "angular": {
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          }
+        },
+        "react-native": {
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          }
+        },
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "image",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Custom icon or image content."
+    },
+    {
+      "name": "imageAlt",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": "Empty",
+      "description": "Accessible label for the default illustration."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the container.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Optional action content rendered below the description."
+    },
+    {
+      "name": "icon",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Optional icon or image content.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "title",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Optional title text."
+    },
+    {
+      "name": "action",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Optional action content.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "iconSize",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": 64,
+      "description": "Size of the icon container."
+    },
+    {
+      "name": "spacing",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": 16,
+      "description": "Base spacing used between sections."
+    },
+    {
+      "name": "padding",
+      "type": {
+        "kind": "custom",
+        "name": "EdgeInsets"
+      },
+      "frameworks": ["flutter"],
+      "default": "EdgeInsets.all(32)",
+      "description": "Padding around the empty state content."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Empty.tsx", "index.ts"],
+      "exports": ["EmptyProps"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "description",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Empty state description content."
+        },
+        {
+          "name": "image",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Custom icon or image content."
+        },
+        {
+          "name": "imageAlt",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Empty",
+          "description": "Accessible label for the default illustration."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional action content rendered below the description."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Empty.vue", "index.ts"],
+      "exports": ["Empty"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        },
+        {
+          "name": "description",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Empty state description text."
+        },
+        {
+          "name": "imageAlt",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Empty",
+          "description": "Accessible label for the default illustration."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["empty.component.ts", "index.ts"],
+      "exports": ["EmptyComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        },
+        {
+          "name": "description",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Empty state description text."
+        },
+        {
+          "name": "imageAlt",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Empty",
+          "description": "Accessible label for the default illustration."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-empty"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Empty.tsx", "index.ts"],
+      "exports": ["Empty"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "icon",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional icon or image content."
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional title text."
+        },
+        {
+          "name": "description",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional description text."
+        },
+        {
+          "name": "action",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional action content."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        },
+        {
+          "name": "iconSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 64,
+          "description": "Size of the icon container."
+        },
+        {
+          "name": "spacing",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 16,
+          "description": "Base spacing used between sections."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["empty.dart"],
+      "exports": ["GalaxyEmpty"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "icon",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional icon widget."
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional title text."
+        },
+        {
+          "name": "description",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional description text."
+        },
+        {
+          "name": "action",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional action widget."
+        },
+        {
+          "name": "padding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsets"
+          },
+          "default": "EdgeInsets.all(32)",
+          "description": "Padding around the empty state content."
+        },
+        {
+          "name": "iconSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 64,
+          "description": "Size applied to the icon theme."
+        },
+        {
+          "name": "spacing",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 16,
+          "description": "Base spacing used between sections."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

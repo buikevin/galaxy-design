@@ -1,0 +1,14 @@
+{
+  "name": "@galaxy-ui/contracts",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Canonical component manifests and generated registry artifacts for Galaxy UI.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-manifests.mjs",
+    "generate": "node scripts/generate-registries.mjs",
+    "build:artifact": "node scripts/generate-registries.mjs && node scripts/build-release-artifacts.mjs",
+    "check": "node scripts/check-generated.mjs"
+  }
+}

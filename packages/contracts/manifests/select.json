@@ -1,0 +1,652 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "select",
+  "name": "Select",
+  "category": "form",
+  "status": "complete",
+  "description": "A select box component for choosing an option from a list.",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Controlled selected value.",
+      "frameworks": ["react", "angular", "react-native", "flutter"],
+      "overrides": {
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "valueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "description": "Called when the selected value changes.",
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "overrides": {
+        "react": {
+          "name": "onValueChange"
+        },
+        "vue": {
+          "name": "onUpdate:modelValue"
+        },
+        "react-native": {
+          "name": "onValueChange"
+        },
+        "flutter": {
+          "name": "onChanged"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Uncontrolled initial selected value.",
+      "frameworks": ["react", "vue"]
+    },
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "description": "Controlled open state.",
+      "frameworks": ["react", "vue", "angular"]
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": false,
+      "description": "Uncontrolled initial open state.",
+      "frameworks": ["react", "vue", "angular"]
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": false,
+      "description": "Disables the select.",
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "overrides": {
+        "flutter": {
+          "name": "enabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true
+        }
+      }
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Placeholder text shown when no value is selected.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "required",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "description": "Requires a value before form submission.",
+      "frameworks": ["react", "angular"]
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Name for form submission.",
+      "frameworks": ["react", "angular"]
+    },
+    {
+      "name": "multiple",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": false,
+      "description": "Allows multiple selection.",
+      "frameworks": ["vue"]
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "CSS class names for the select.",
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "overrides": {
+        "react": {
+          "name": "className"
+        },
+        "react-native": {
+          "name": "className"
+        }
+      }
+    }
+  ],
+  "children": [
+    {
+      "name": "SelectTrigger",
+      "props": [],
+      "frameworks": ["react", "vue", "react-native"]
+    },
+    {
+      "name": "SelectContent",
+      "props": [],
+      "frameworks": ["react", "vue", "react-native"]
+    },
+    {
+      "name": "SelectItem",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Item value.",
+          "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+          "overrides": {
+            "flutter": {
+              "name": "value",
+              "description": "Generic item value."
+            }
+          }
+        }
+      ],
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "export": {
+        "angular": "SelectItemComponent",
+        "flutter": "GalaxySelectItem"
+      }
+    },
+    {
+      "name": "SelectGroup",
+      "props": [],
+      "frameworks": ["react", "vue", "react-native"]
+    },
+    {
+      "name": "SelectLabel",
+      "props": [],
+      "frameworks": ["react", "vue", "react-native"]
+    },
+    {
+      "name": "SelectSeparator",
+      "props": [],
+      "frameworks": ["react", "vue", "react-native"]
+    },
+    {
+      "name": "SelectValue",
+      "props": [],
+      "frameworks": ["react", "vue", "react-native"]
+    }
+  ],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Select.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": [
+        "Select",
+        "SelectGroup",
+        "SelectValue",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectLabel",
+        "SelectItem",
+        "SelectSeparator"
+      ],
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial open state."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": ["ltr", "rtl"]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the select."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        }
+      ]
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "Select.vue",
+        "SelectTrigger.vue",
+        "SelectContent.vue",
+        "SelectItem.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Select",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectItem",
+        "SelectValue",
+        "SelectGroup",
+        "SelectLabel",
+        "SelectSeparator"
+      ],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "notes": "SelectValue/SelectGroup/SelectLabel/SelectSeparator are re-exported from radix-vue.",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial open state."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": ["ltr", "rtl"]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the select."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "autocomplete",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Native input autocomplete."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the value changes."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ]
+    },
+    "angular": {
+      "status": "partial",
+      "files": ["select.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-select",
+      "exports": ["SelectComponent", "SelectItemComponent"],
+      "dependencies": [],
+      "notes": "Custom combobox implementation using ContentChildren projection; no Radix NG primitive backing.",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Select...",
+          "description": "Placeholder when no value is selected."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the select."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "form",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Associates the select with a form."
+        },
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Uncontrolled initial open state."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the value changes."
+        },
+        {
+          "name": "openChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ]
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Select.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": [
+        "Select",
+        "SelectGroup",
+        "SelectValue",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectLabel",
+        "SelectItem",
+        "SelectSeparator"
+      ],
+      "dependencies": ["@rn-primitives/select"],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the select."
+        }
+      ]
+    },
+    "flutter": {
+      "status": "partial",
+      "files": ["select.dart"],
+      "exports": ["GalaxySelect", "GalaxySelectItem"],
+      "dependencies": [],
+      "notes": "Single dropdown API with label/placeholder; no anatomy subparts, no multiple selection.",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "custom",
+            "name": "T?"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "items",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxySelectItem<T>"
+            }
+          },
+          "description": "Selectable items."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: T?) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label text shown above the select."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Select an option",
+          "description": "Placeholder when no value is selected."
+        },
+        {
+          "name": "enabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the select is enabled."
+        }
+      ]
+    }
+  },
+  "a11y": {
+    "keyboard": [
+      "React/Vue use Radix listbox keyboard behavior.",
+      "Angular implements combobox roles with basic keyboard handling."
+    ],
+    "aria": [
+      "Trigger exposes combobox role with aria-expanded/aria-disabled on Angular.",
+      "Content uses listbox role on Angular."
+    ]
+  },
+  "notes": [
+    "Flutter select renders a Material DropdownButton wrapper rather than a Radix-style listbox.",
+    "P1.2 fix: Angular select now has full listbox keyboard behavior — roving active item with Arrow/Home/End, typeahead, Enter/Space selection, disabled-item skipping, aria-activedescendant/aria-controls wiring, and the selected checkmark bug (isSelected was never set) is fixed."
+  ]
+}

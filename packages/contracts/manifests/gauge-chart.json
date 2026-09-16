@@ -1,0 +1,777 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "gauge-chart",
+  "name": "Gauge Chart",
+  "category": "charts",
+  "status": "complete",
+  "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "description": "Current value to display.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "min",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "default": 0,
+      "description": "Minimum value.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "max",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "default": 100,
+      "description": "Maximum value.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "height",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "default": 300,
+      "description": "Chart height in pixels.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "width",
+      "type": {
+        "kind": "union",
+        "values": ["number", "string"]
+      },
+      "default": "100%",
+      "description": "Chart width.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "theme",
+      "type": {
+        "kind": "union",
+        "values": ["light", "dark"]
+      },
+      "default": "light",
+      "description": "Chart theme.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "startAngle",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "default": 225,
+      "description": "Start angle in degrees.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "endAngle",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "default": -45,
+      "description": "End angle in degrees.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "splitNumber",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "default": 5,
+      "description": "Number of split lines.",
+      "frameworks": ["angular", "react-native"]
+    },
+    {
+      "name": "showProgress",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": true,
+      "description": "Show progress arc.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "showPointer",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": true,
+      "description": "Show pointer/needle.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "title",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Gauge title.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "unit",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Unit text.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "zones",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "{ from: number; to: number; color: string }"
+        }
+      },
+      "description": "Color zones.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "color",
+      "type": {
+        "kind": "union",
+        "values": ["string", "string[]"]
+      },
+      "description": "Single color or gradient colors.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "formatter",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number) => string"
+      },
+      "description": "Value formatter.",
+      "frameworks": ["angular", "react-native"]
+    },
+    {
+      "name": "loading",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": false,
+      "description": "Loading state.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "emptyText",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "default": "No data available",
+      "description": "Empty state message.",
+      "frameworks": ["angular", "react-native", "flutter"]
+    },
+    {
+      "name": "animation",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": true,
+      "description": "Enable chart animation.",
+      "frameworks": ["angular", "react-native"]
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Container class names.",
+      "frameworks": ["angular"]
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["GaugeChart.tsx", "types.ts", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["GaugeChart"],
+      "dependencies": ["echarts", "echarts-for-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": []
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["index.ts", "gaugechart.vue", "types.ts", "utils.ts"],
+      "entry": "index.ts",
+      "exports": ["GaugeChart"],
+      "dependencies": ["echarts", "vue-echarts"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["gauge-chart.component.ts", "index.ts", "types.ts", "utils.ts"],
+      "entry": "index.ts",
+      "selector": "ui-gauge-chart",
+      "exports": ["GaugeChartComponent"],
+      "dependencies": ["echarts", "ngx-echarts"],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Current gauge value."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Minimum gauge value.",
+          "default": 0
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum gauge value.",
+          "default": 100
+        },
+        {
+          "name": "startAngle",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Start angle for the gauge arc.",
+          "default": 225
+        },
+        {
+          "name": "endAngle",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "End angle for the gauge arc.",
+          "default": -45
+        },
+        {
+          "name": "splitNumber",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of gauge split lines.",
+          "default": 5
+        },
+        {
+          "name": "showProgress",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the progress arc.",
+          "default": true
+        },
+        {
+          "name": "showPointer",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the gauge pointer.",
+          "default": true
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional gauge title."
+        },
+        {
+          "name": "unit",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional value unit."
+        },
+        {
+          "name": "zones",
+          "type": {
+            "kind": "custom",
+            "name": "Array<{ from: number; to: number; color: string }>"
+          },
+          "description": "Color ranges for the gauge."
+        },
+        {
+          "name": "color",
+          "type": {
+            "kind": "custom",
+            "name": "string | string[]"
+          },
+          "description": "Single color or gradient colors for the gauge."
+        },
+        {
+          "name": "formatter",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => string"
+          },
+          "description": "Custom formatter for the displayed value."
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        }
+      ]
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["GaugeChart.tsx", "index.ts", "types.ts", "utils.ts"],
+      "entry": "index.ts",
+      "exports": ["GaugeChart"],
+      "dependencies": ["@wuba/react-native-echarts", "echarts"],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Current gauge value."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart width in pixels. Defaults to available screen width."
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Minimum gauge value.",
+          "default": 0
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum gauge value.",
+          "default": 100
+        },
+        {
+          "name": "startAngle",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Start angle for the gauge arc.",
+          "default": 225
+        },
+        {
+          "name": "endAngle",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "End angle for the gauge arc.",
+          "default": -45
+        },
+        {
+          "name": "splitNumber",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of gauge split lines.",
+          "default": 5
+        },
+        {
+          "name": "showProgress",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the progress arc.",
+          "default": true
+        },
+        {
+          "name": "showPointer",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the gauge pointer.",
+          "default": true
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional gauge title."
+        },
+        {
+          "name": "unit",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional value unit."
+        },
+        {
+          "name": "zones",
+          "type": {
+            "kind": "custom",
+            "name": "Array<{ from: number; to: number; color: string }>"
+          },
+          "description": "Color ranges for the gauge."
+        },
+        {
+          "name": "color",
+          "type": {
+            "kind": "custom",
+            "name": "string | string[]"
+          },
+          "description": "Single color or gradient colors for the gauge."
+        },
+        {
+          "name": "formatter",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => string"
+          },
+          "description": "Custom formatter for the displayed value."
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "style",
+          "type": {
+            "kind": "custom",
+            "name": "StyleProp<ViewStyle>"
+          },
+          "description": "React Native style applied to the chart container."
+        }
+      ]
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["gauge_chart.dart", "index.dart", "types.dart", "utils.dart"],
+      "entry": "index.dart",
+      "exports": ["GalaxyGaugeChart", "GaugeZone", "ChartTheme"],
+      "dependencies": [],
+      "notes": "Custom Canvas implementation; `color` accepts a single Color rather than a gradient array.",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Current gauge value."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Minimum gauge value.",
+          "default": 0
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum gauge value.",
+          "default": 100
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart width in pixels."
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "custom",
+            "name": "ChartTheme"
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "ChartTheme.light"
+        },
+        {
+          "name": "startAngle",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Start angle for the gauge arc."
+        },
+        {
+          "name": "endAngle",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "End angle for the gauge arc."
+        },
+        {
+          "name": "showProgress",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the progress arc.",
+          "default": true
+        },
+        {
+          "name": "showPointer",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the gauge pointer.",
+          "default": true
+        },
+        {
+          "name": "title",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional gauge title."
+        },
+        {
+          "name": "unit",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Optional value unit."
+        },
+        {
+          "name": "zones",
+          "type": {
+            "kind": "custom",
+            "name": "List<GaugeZone>"
+          },
+          "description": "Color ranges for the gauge."
+        },
+        {
+          "name": "color",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Single color for the gauge."
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "padding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsets"
+          },
+          "description": "Padding inside the chart container."
+        }
+      ]
+    }
+  },
+  "a11y": {
+    "keyboard": [],
+    "aria": [
+      "Value/label semantics depend on the host chart library; screen-reader text is not asserted yet."
+    ]
+  },
+  "notes": [
+    "P1.3: the duplicate charts/ implementation tree has been removed; charts/index.ts is now a compatibility barrel re-exporting from the canonical <chart-name>/ directories. Gauge is now exposed for React and Vue."
+  ]
+}

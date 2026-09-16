@@ -1,0 +1,484 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "tooltip",
+  "name": "tooltip",
+  "category": "other",
+  "status": "complete",
+  "description": "tooltip",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Controlled open state."
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Initial open state for uncontrolled usage."
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Called when the open state changes."
+    },
+    {
+      "name": "delayDuration",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": 700,
+      "description": "Delay in milliseconds before opening."
+    },
+    {
+      "name": "disableHoverableContent",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Whether moving into the content closes the tooltip."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native", "flutter"],
+      "description": "Tooltip composition content.",
+      "overrides": {
+        "flutter": {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "disableClosingTrigger",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "default": false,
+      "description": "Prevent closing when clicking the trigger."
+    },
+    {
+      "name": "ignoreNonKeyboardFocus",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "default": false,
+      "description": "Only open on keyboard focus."
+    },
+    {
+      "name": "update:open",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open state changes."
+    },
+    {
+      "name": "message",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Tooltip text."
+    },
+    {
+      "name": "padding",
+      "type": {
+        "kind": "custom",
+        "name": "EdgeInsetsGeometry"
+      },
+      "frameworks": ["flutter"],
+      "description": "Padding inside the tooltip bubble."
+    },
+    {
+      "name": "margin",
+      "type": {
+        "kind": "custom",
+        "name": "EdgeInsetsGeometry"
+      },
+      "frameworks": ["flutter"],
+      "description": "Margin around the tooltip bubble."
+    },
+    {
+      "name": "height",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Tooltip height override."
+    },
+    {
+      "name": "preferBelow",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["flutter"],
+      "description": "Prefer showing the tooltip below the trigger."
+    },
+    {
+      "name": "waitDuration",
+      "type": {
+        "kind": "custom",
+        "name": "Duration"
+      },
+      "frameworks": ["flutter"],
+      "description": "Delay before showing the tooltip."
+    },
+    {
+      "name": "showDuration",
+      "type": {
+        "kind": "custom",
+        "name": "Duration"
+      },
+      "frameworks": ["flutter"],
+      "description": "How long the tooltip remains visible."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Tooltip.tsx", "index.ts"],
+      "exports": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ],
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "disableHoverableContent",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether moving into the content closes the tooltip."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Tooltip composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Tooltip.vue", "TooltipContent.vue", "index.ts"],
+      "exports": [
+        "Tooltip",
+        "TooltipContent",
+        "TooltipTrigger",
+        "TooltipProvider"
+      ],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "disableHoverableContent",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether moving into the content closes the tooltip."
+        },
+        {
+          "name": "disableClosingTrigger",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Prevent closing when clicking the trigger."
+        },
+        {
+          "name": "ignoreNonKeyboardFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Only open on keyboard focus."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "tooltip.component.ts", "tooltip.directive.ts"],
+      "exports": [
+        "TooltipComponent",
+        "TooltipTriggerComponent",
+        "TooltipContentComponent",
+        "UiTooltipRootDirective",
+        "UiTooltipTriggerDirective",
+        "UiTooltipContentDirective"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts",
+      "selector": "ui-tooltip",
+      "props": []
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Tooltip.tsx", "index.ts"],
+      "exports": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ],
+      "dependencies": ["@rn-primitives/tooltip"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "disableHoverableContent",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether moving into the content closes the tooltip."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Tooltip composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["tooltip.dart"],
+      "exports": ["GalaxyTooltip"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Widget that triggers the tooltip."
+        },
+        {
+          "name": "message",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Tooltip text."
+        },
+        {
+          "name": "padding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsetsGeometry"
+          },
+          "description": "Padding inside the tooltip bubble."
+        },
+        {
+          "name": "margin",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsetsGeometry"
+          },
+          "description": "Margin around the tooltip bubble."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Tooltip height override."
+        },
+        {
+          "name": "preferBelow",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Prefer showing the tooltip below the trigger."
+        },
+        {
+          "name": "waitDuration",
+          "type": {
+            "kind": "custom",
+            "name": "Duration"
+          },
+          "description": "Delay before showing the tooltip."
+        },
+        {
+          "name": "showDuration",
+          "type": {
+            "kind": "custom",
+            "name": "Duration"
+          },
+          "description": "How long the tooltip remains visible."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2 fix: Angular imports use the real Radix NG tooltip API (RdxTooltipRoot/Trigger/ContentDirective from '@radix-ng/primitives/tooltip'); the nonexistent `tooltip2` subpath and fake `provideRdxTooltipConfig` providers were removed."
+  ]
+}

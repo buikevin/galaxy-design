@@ -1,28 +1,35 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import VChart from 'vue-echarts'
-import type { EChartsOption } from 'echarts'
-import type { RadarChartProps } from './types'
-import { getDefaultColors } from './utils'
+import { computed } from 'vue';
+import VChart from 'vue-echarts';
+import type { EChartsOption } from 'echarts';
+import { use } from 'echarts/core';
+import { RadarChart } from 'echarts/charts';
+import { TooltipComponent, LegendComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+import type { RadarChartProps } from './types';
+import { getThemeColors } from './utils';
+
+use([RadarChart, TooltipComponent, LegendComponent, CanvasRenderer]);
 
 defineOptions({
   name: 'UiRadarChart',
-})
+});
 
-const props = defineProps<RadarChartProps>()
+const props = defineProps<RadarChartProps>();
 
 const chartOption = computed<EChartsOption>(() => {
   if (!props.data || !props.data.datasets.length) {
-    return {}
+    return {};
   }
 
-  const colors = getDefaultColors()
+  const colors = getThemeColors(props.theme || 'light');
 
   // Build radar indicators from labels
   const indicator = props.data.labels.map((label) => ({
     name: label,
-    max: props.maxValue || Math.max(...props.data.datasets.flatMap(d => d.data)),
-  }))
+    max:
+      props.maxValue || Math.max(...props.data.datasets.flatMap((d) => d.data)),
+  }));
 
   // Transform datasets to radar series
   const seriesData = props.data.datasets.map((dataset, index) => ({
@@ -31,10 +38,12 @@ const chartOption = computed<EChartsOption>(() => {
     itemStyle: {
       color: dataset.color || colors[index % colors.length],
     },
-    areaStyle: props.fill ? {
-      opacity: props.opacity || 0.3,
-    } : undefined,
-  }))
+    areaStyle: props.fill
+      ? {
+          opacity: props.opacity || 0.3,
+        }
+      : undefined,
+  }));
 
   return {
     tooltip: {
@@ -44,20 +53,37 @@ const chartOption = computed<EChartsOption>(() => {
         fontSize: 12,
       },
     },
-    legend: props.legend !== false ? {
-      show: true,
-      orient: props.legendPosition === 'left' || props.legendPosition === 'right' ? 'vertical' : 'horizontal',
-      left: props.legendPosition === 'left' ? '5%' : props.legendPosition === 'right' ? 'auto' : 'center',
-      right: props.legendPosition === 'right' ? '5%' : 'auto',
-      top: props.legendPosition === 'top' ? '5%' : props.legendPosition === 'bottom' ? 'auto' : 'auto',
-      bottom: props.legendPosition === 'bottom' ? '5%' : 'auto',
-      textStyle: {
-        fontSize: 12,
-        color: props.theme === 'dark' ? '#e5e7eb' : '#374151',
-      },
-    } : {
-      show: false,
-    },
+    legend:
+      props.legend !== false
+        ? {
+            show: true,
+            orient:
+              props.legendPosition === 'left' ||
+              props.legendPosition === 'right'
+                ? 'vertical'
+                : 'horizontal',
+            left:
+              props.legendPosition === 'left'
+                ? '5%'
+                : props.legendPosition === 'right'
+                ? 'auto'
+                : 'center',
+            right: props.legendPosition === 'right' ? '5%' : 'auto',
+            top:
+              props.legendPosition === 'top'
+                ? '5%'
+                : props.legendPosition === 'bottom'
+                ? 'auto'
+                : 'auto',
+            bottom: props.legendPosition === 'bottom' ? '5%' : 'auto',
+            textStyle: {
+              fontSize: 12,
+              color: props.theme === 'dark' ? '#e5e7eb' : '#374151',
+            },
+          }
+        : {
+            show: false,
+          },
     radar: {
       indicator,
       shape: props.shape || 'polygon',
@@ -74,9 +100,10 @@ const chartOption = computed<EChartsOption>(() => {
       splitArea: {
         show: true,
         areaStyle: {
-          color: props.theme === 'dark'
-            ? ['rgba(31, 41, 55, 0.3)', 'rgba(17, 24, 39, 0.3)']
-            : ['rgba(249, 250, 251, 0.5)', 'rgba(243, 244, 246, 0.5)'],
+          color:
+            props.theme === 'dark'
+              ? ['rgba(31, 41, 55, 0.3)', 'rgba(17, 24, 39, 0.3)']
+              : ['rgba(249, 250, 251, 0.5)', 'rgba(243, 244, 246, 0.5)'],
         },
       },
       axisLine: {
@@ -96,18 +123,28 @@ const chartOption = computed<EChartsOption>(() => {
         },
       },
     ],
-  }
-})
+  };
+});
 </script>
 
 <template>
   <div :style="{ height: `${height || 300}px`, width: width || '100%' }">
     <div v-if="loading" class="flex items-center justify-center h-full">
-      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      <div
+        class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"
+      ></div>
     </div>
-    <div v-else-if="!data || !data.datasets.length" class="flex items-center justify-center h-full text-gray-500">
+    <div
+      v-else-if="!data || !data.datasets.length"
+      class="flex items-center justify-center h-full text-gray-500"
+    >
       {{ emptyText || 'No data available' }}
     </div>
-    <VChart v-else :option="chartOption" :autoresize="true" class="w-full h-full" />
+    <VChart
+      v-else
+      :option="chartOption"
+      :autoresize="true"
+      class="w-full h-full"
+    />
   </div>
 </template>

@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Galaxy Component Manifest",
+  "description": "Canonical source-of-truth metadata for one Galaxy UI component across frameworks.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "id",
+    "name",
+    "category",
+    "status",
+    "description",
+    "props",
+    "frameworks"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "status": { "$ref": "#/definitions/maturity" },
+    "description": { "type": "string", "minLength": 1 },
+    "tailwind": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tokens": { "type": "array", "items": { "type": "string" } },
+        "minVersion": { "type": "integer", "enum": [3, 4] },
+        "notes": { "type": "string" }
+      }
+    },
+    "props": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/propDefinition" }
+    },
+    "children": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/childComponent" }
+    },
+    "frameworks": { "$ref": "#/definitions/frameworkMap" },
+    "a11y": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "keyboard": { "type": "array", "items": { "type": "string" } },
+        "aria": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  },
+  "definitions": {
+    "maturity": {
+      "enum": ["experimental", "partial", "complete"]
+    },
+    "implementationMaturity": {
+      "enum": ["missing", "experimental", "partial", "complete"]
+    },
+    "framework": {
+      "enum": ["react", "vue", "angular", "react-native", "flutter"]
+    },
+    "frameworkOrTarget": {
+      "enum": [
+        "react",
+        "vue",
+        "angular",
+        "react-native",
+        "flutter",
+        "nextjs",
+        "nuxtjs"
+      ]
+    },
+    "typeReference": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": true,
+      "properties": {
+        "kind": {
+          "enum": [
+            "primitive",
+            "union",
+            "array",
+            "function",
+            "custom",
+            "literal"
+          ]
+        },
+        "name": { "type": "string" },
+        "values": { "type": "array" },
+        "of": {},
+        "signature": { "type": "string" },
+        "value": {}
+      }
+    },
+    "propOverride": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "$ref": "#/definitions/typeReference" },
+        "default": {},
+        "description": { "type": "string" }
+      }
+    },
+    "propDefinition": {
+      "type": "object",
+      "required": ["name", "type", "frameworks"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "type": { "$ref": "#/definitions/typeReference" },
+        "default": {},
+        "description": { "type": "string" },
+        "frameworks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/frameworkOrTarget" }
+        },
+        "overrides": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(react|vue|angular|react-native|flutter)$": {
+              "$ref": "#/definitions/propOverride"
+            }
+          }
+        }
+      }
+    },
+    "childComponent": {
+      "type": "object",
+      "required": ["name", "props"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "export": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(react|vue|angular|react-native|flutter)$": { "type": "string" }
+          }
+        },
+        "props": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/propDefinition" }
+        },
+        "frameworks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/framework" }
+        },
+        "description": { "type": "string" }
+      }
+    },
+    "frameworkImplementation": {
+      "type": "object",
+      "required": ["status", "files"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "$ref": "#/definitions/implementationMaturity" },
+        "files": { "type": "array", "items": { "type": "string" } },
+        "entry": { "type": "string" },
+        "exports": { "type": "array", "items": { "type": "string" } },
+        "dependencies": { "type": "array", "items": { "type": "string" } },
+        "devDependencies": { "type": "array", "items": { "type": "string" } },
+        "peerDependencies": { "type": "array", "items": { "type": "string" } },
+        "registryDependencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "props": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/propDefinition" }
+        },
+        "selector": { "type": "string" },
+        "providers": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "import": { "type": "string" },
+            "function": { "type": "string" }
+          }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "frameworkMap": {
+      "type": "object",
+      "required": ["react", "vue", "angular", "react-native", "flutter"],
+      "additionalProperties": false,
+      "properties": {
+        "react": { "$ref": "#/definitions/frameworkImplementation" },
+        "vue": { "$ref": "#/definitions/frameworkImplementation" },
+        "angular": { "$ref": "#/definitions/frameworkImplementation" },
+        "react-native": { "$ref": "#/definitions/frameworkImplementation" },
+        "flutter": { "$ref": "#/definitions/frameworkImplementation" }
+      }
+    }
+  }
+}

@@ -1,46 +1,21 @@
 /**
- * Galaxy UI Charts - Angular
+ * Galaxy UI Charts - Angular (compatibility barrel)
  *
- * Unified chart components powered by ECharts
+ * The chart implementations now live in their own component directories
+ * (`<chart-name>/`), matching every other component. This barrel keeps
+ * `@/components/charts` imports working. Do not add new chart code here.
  */
 
-export { LineChartComponent } from './line-chart.component'
-export { BarChartComponent } from './bar-chart.component'
-export { PieChartComponent } from './pie-chart.component'
-export { DonutChartComponent } from './donut-chart.component'
-export { AreaChartComponent } from './area-chart.component'
-export { RadarChartComponent } from './radar-chart.component'
-export { ScatterChartComponent } from './scatter-chart.component'
-export { MixedChartComponent } from './mixed-chart.component'
-export { GaugeChartComponent } from './gauge-chart.component'
+export { LineChartComponent } from '../line-chart'
+export { BarChartComponent } from '../bar-chart'
+export { PieChartComponent } from '../pie-chart'
+export { DonutChartComponent } from '../donut-chart'
+export { AreaChartComponent } from '../area-chart'
+export { RadarChartComponent } from '../radar-chart'
+export { ScatterChartComponent } from '../scatter-chart'
+export { MixedChartComponent } from '../mixed-chart'
+export { GaugeChartComponent } from '../gauge-chart'
 
-// Export types
-export type {
-  ChartData,
-  ChartDataset,
-  ChartType,
-  ChartTheme,
-  BaseChartProps,
-  LineChartProps,
-  BarChartProps,
-  PieChartProps,
-  DonutChartProps,
-  AreaChartProps,
-  RadarChartProps,
-  ScatterChartProps,
-  MixedChartProps,
-  ColorScheme,
-  LegendPosition,
-  TooltipConfig,
-  GridConfig,
-  AxisConfig,
-} from './types'
-
-// Export utilities
-export {
-  getDefaultColors,
-  formatNumber,
-  calculatePercentage,
-  generateGradient,
-  ChartColorSchemes,
-} from './utils'
+// Shared chart types + utilities live with the canonical line-chart tree.
+export * from '../line-chart/types'
+export * from '../line-chart/utils'

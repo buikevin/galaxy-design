@@ -1,0 +1,431 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "dropdown-menu",
+  "name": "dropdown-menu",
+  "category": "other",
+  "status": "complete",
+  "description": "dropdown-menu",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Controlled open state."
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Initial open state for uncontrolled usage."
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Called when the open state changes."
+    },
+    {
+      "name": "modal",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": true,
+      "description": "Whether outside interaction is disabled while the menu is open."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "ltr",
+      "description": "Reading direction for keyboard navigation."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Dropdown menu composition content."
+    },
+    {
+      "name": "update:open",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open state changes."
+    },
+    {
+      "name": "trigger",
+      "type": {
+        "kind": "custom",
+        "name": "Widget"
+      },
+      "frameworks": ["flutter"],
+      "description": "Widget used to open the menu."
+    },
+    {
+      "name": "items",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "GalaxyDropdownMenuItem<T>"
+        }
+      },
+      "frameworks": ["flutter"],
+      "description": "Menu items rendered in the popup."
+    },
+    {
+      "name": "onSelected",
+      "type": {
+        "kind": "function",
+        "signature": "(value: T) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when an item is selected."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["DropdownMenu.tsx", "index.ts"],
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuSeparator",
+        "DropdownMenuLabel",
+        "DropdownMenuGroup",
+        "DropdownMenuPortal",
+        "DropdownMenuSub",
+        "DropdownMenuRadioGroup"
+      ],
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether outside interaction is disabled while the menu is open."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Dropdown menu composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "DropdownMenu.vue",
+        "DropdownMenuContent.vue",
+        "DropdownMenuItem.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuTrigger",
+        "DropdownMenuSeparator",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioGroup",
+        "DropdownMenuRadioItem",
+        "DropdownMenuLabel",
+        "DropdownMenuSub",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuSubContent",
+        "DropdownMenuGroup"
+      ],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether outside interaction is disabled while the menu is open."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["dropdown-menu.component.ts", "index.ts"],
+      "exports": [
+        "DropdownMenuComponent",
+        "DropdownMenuTriggerComponent",
+        "DropdownMenuContentComponent",
+        "DropdownMenuItemComponent",
+        "DropdownMenuSeparatorComponent"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts",
+      "selector": "ui-dropdown-menu"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["DropdownMenu.tsx", "index.ts"],
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioItem",
+        "DropdownMenuLabel",
+        "DropdownMenuSeparator",
+        "DropdownMenuShortcut",
+        "DropdownMenuGroup",
+        "DropdownMenuPortal",
+        "DropdownMenuSub",
+        "DropdownMenuSubContent",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuRadioGroup"
+      ],
+      "dependencies": ["@rn-primitives/dropdown-menu"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether outside interaction is disabled while the menu is open."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Dropdown menu composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["dropdown_menu.dart"],
+      "exports": ["GalaxyDropdownMenu", "GalaxyDropdownMenuItem"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "trigger",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Widget used to open the menu."
+        },
+        {
+          "name": "items",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxyDropdownMenuItem<T>"
+            }
+          },
+          "description": "Menu items rendered in the popup."
+        },
+        {
+          "name": "onSelected",
+          "type": {
+            "kind": "function",
+            "signature": "(value: T) => void"
+          },
+          "description": "Called when an item is selected."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

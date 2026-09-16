@@ -1,35 +1,60 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import VChart from 'vue-echarts'
-import type { EChartsOption } from 'echarts'
-import type { ScatterChartProps } from './types'
-import { getDefaultColors } from './utils'
+import { computed } from 'vue';
+import VChart from 'vue-echarts';
+import type { EChartsOption } from 'echarts';
+import { use } from 'echarts/core';
+import { ScatterChart } from 'echarts/charts';
+import {
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+} from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+import type { ScatterChartProps } from './types';
+import { getThemeColors } from './utils';
+
+use([
+  ScatterChart,
+  GridComponent,
+  TooltipComponent,
+  LegendComponent,
+  CanvasRenderer,
+]);
 
 defineOptions({
   name: 'UiScatterChart',
-})
+});
 
-const props = defineProps<ScatterChartProps>()
+const props = defineProps<ScatterChartProps>();
 
 const chartOption = computed<EChartsOption>(() => {
   if (!props.data || !props.data.datasets.length) {
-    return {}
+    return {};
   }
 
-  const colors = getDefaultColors()
+  const colors = getThemeColors(props.theme || 'light');
 
   // Transform datasets to scatter series
   const series = props.data.datasets.map((dataset, index) => {
     const seriesData = dataset.data.map((value: unknown, i: number) => {
       // Support both simple array [x, y] or object {x, y, value}
       if (Array.isArray(value)) {
-        return value
-      } else if (typeof value === 'object' && value && 'x' in value && 'y' in value) {
-        return [(value as Record<string, unknown>).x, (value as Record<string, unknown>).y, (value as Record<string, unknown>).value || 1]
+        return value;
+      } else if (
+        typeof value === 'object' &&
+        value &&
+        'x' in value &&
+        'y' in value
+      ) {
+        return [
+          (value as Record<string, unknown>).x,
+          (value as Record<string, unknown>).y,
+          (value as Record<string, unknown>).value || 1,
+        ];
       }
       // Fallback: use index as x, value as y
-      return [i, value as number]
-    })
+      return [i, value as number];
+    });
 
     return {
       name: dataset.label,
@@ -38,9 +63,9 @@ const chartOption = computed<EChartsOption>(() => {
       symbolSize: (data: number[]) => {
         // If third value exists, use it for size scaling
         if (data[2]) {
-          return Math.sqrt(data[2]) * (props.symbolSize || 10) / 5
+          return (Math.sqrt(data[2]) * (props.symbolSize || 10)) / 5;
         }
-        return props.symbolSize || 10
+        return props.symbolSize || 10;
       },
       itemStyle: {
         color: dataset.color || colors[index % colors.length],
@@ -53,8 +78,8 @@ const chartOption = computed<EChartsOption>(() => {
           borderWidth: 1,
         },
       },
-    }
-  })
+    };
+  });
 
   return {
     tooltip: {
@@ -64,24 +89,43 @@ const chartOption = computed<EChartsOption>(() => {
         fontSize: 12,
       },
       formatter: (params: Record<string, unknown>) => {
-        const data = params.data as unknown[]
-        return `${params.seriesName}<br/>X: ${data[0]}<br/>Y: ${data[1]}${data[2] ? `<br/>Value: ${data[2]}` : ''}`
+        const data = params.data as unknown[];
+        return `${params.seriesName}<br/>X: ${data[0]}<br/>Y: ${data[1]}${
+          data[2] ? `<br/>Value: ${data[2]}` : ''
+        }`;
       },
     },
-    legend: props.legend !== false ? {
-      show: true,
-      orient: props.legendPosition === 'left' || props.legendPosition === 'right' ? 'vertical' : 'horizontal',
-      left: props.legendPosition === 'left' ? '5%' : props.legendPosition === 'right' ? 'auto' : 'center',
-      right: props.legendPosition === 'right' ? '5%' : 'auto',
-      top: props.legendPosition === 'top' ? '5%' : props.legendPosition === 'bottom' ? 'auto' : 'auto',
-      bottom: props.legendPosition === 'bottom' ? '5%' : 'auto',
-      textStyle: {
-        fontSize: 12,
-        color: props.theme === 'dark' ? '#e5e7eb' : '#374151',
-      },
-    } : {
-      show: false,
-    },
+    legend:
+      props.legend !== false
+        ? {
+            show: true,
+            orient:
+              props.legendPosition === 'left' ||
+              props.legendPosition === 'right'
+                ? 'vertical'
+                : 'horizontal',
+            left:
+              props.legendPosition === 'left'
+                ? '5%'
+                : props.legendPosition === 'right'
+                ? 'auto'
+                : 'center',
+            right: props.legendPosition === 'right' ? '5%' : 'auto',
+            top:
+              props.legendPosition === 'top'
+                ? '5%'
+                : props.legendPosition === 'bottom'
+                ? 'auto'
+                : 'auto',
+            bottom: props.legendPosition === 'bottom' ? '5%' : 'auto',
+            textStyle: {
+              fontSize: 12,
+              color: props.theme === 'dark' ? '#e5e7eb' : '#374151',
+            },
+          }
+        : {
+            show: false,
+          },
     grid: {
       left: '10%',
       right: '10%',
@@ -138,18 +182,28 @@ const chartOption = computed<EChartsOption>(() => {
       },
     },
     series,
-  }
-})
+  };
+});
 </script>
 
 <template>
   <div :style="{ height: `${height || 300}px`, width: width || '100%' }">
     <div v-if="loading" class="flex items-center justify-center h-full">
-      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+      <div
+        class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"
+      ></div>
     </div>
-    <div v-else-if="!data || !data.datasets.length" class="flex items-center justify-center h-full text-gray-500">
+    <div
+      v-else-if="!data || !data.datasets.length"
+      class="flex items-center justify-center h-full text-gray-500"
+    >
       {{ emptyText || 'No data available' }}
     </div>
-    <VChart v-else :option="chartOption" :autoresize="true" class="w-full h-full" />
+    <VChart
+      v-else
+      :option="chartOption"
+      :autoresize="true"
+      class="w-full h-full"
+    />
   </div>
 </template>

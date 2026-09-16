@@ -1,0 +1,351 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "popover",
+  "name": "popover",
+  "category": "other",
+  "status": "complete",
+  "description": "popover",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Controlled open state.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Initial open state for uncontrolled usage.",
+      "overrides": {
+        "vue": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the open state changes.",
+      "overrides": {
+        "angular": {
+          "name": "openChange"
+        }
+      }
+    },
+    {
+      "name": "modal",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Whether the popover should behave as modal."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Popover composition content."
+    },
+    {
+      "name": "update:open",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open state changes."
+    },
+    {
+      "name": "trigger",
+      "type": {
+        "kind": "custom",
+        "name": "Widget"
+      },
+      "frameworks": ["flutter"],
+      "description": "Widget that opens the popover."
+    },
+    {
+      "name": "content",
+      "type": {
+        "kind": "custom",
+        "name": "Widget"
+      },
+      "frameworks": ["flutter"],
+      "description": "Popover content widget."
+    },
+    {
+      "name": "width",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Optional width of the popover panel."
+    },
+    {
+      "name": "padding",
+      "type": {
+        "kind": "custom",
+        "name": "EdgeInsets"
+      },
+      "frameworks": ["flutter"],
+      "description": "Padding inside the popover panel."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Popover.tsx", "index.ts"],
+      "exports": ["Popover", "PopoverTrigger", "PopoverContent"],
+      "dependencies": ["@radix-ui/react-popover"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the popover should behave as modal."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Popover composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Popover.vue", "PopoverContent.vue", "index.ts"],
+      "exports": ["Popover", "PopoverContent", "PopoverTrigger"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the popover should behave as modal."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "popover.component.ts"],
+      "exports": [
+        "PopoverComponent",
+        "PopoverTriggerComponent",
+        "PopoverContentComponent"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled open state."
+        },
+        {
+          "name": "openChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-popover"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Popover.tsx", "index.ts"],
+      "exports": ["Popover", "PopoverTrigger", "PopoverContent"],
+      "dependencies": ["@rn-primitives/popover"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the popover should behave as modal."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Popover composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["popover.dart"],
+      "exports": ["GalaxyPopover"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "trigger",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Widget that opens the popover."
+        },
+        {
+          "name": "content",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Popover content widget."
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Optional width of the popover panel."
+        },
+        {
+          "name": "padding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsets"
+          },
+          "description": "Padding inside the popover panel."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

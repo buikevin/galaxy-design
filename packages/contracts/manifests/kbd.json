@@ -1,0 +1,211 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "kbd",
+  "name": "kbd",
+  "category": "other",
+  "status": "complete",
+  "description": "kbd",
+  "props": [
+    {
+      "name": "size",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "sm"
+          },
+          {
+            "kind": "literal",
+            "value": "default"
+          },
+          {
+            "kind": "literal",
+            "value": "lg"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": "default",
+      "description": "Size variant."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS class names for the kbd element.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Keyboard key label or shortcut content."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Kbd.tsx", "index.ts"],
+      "exports": ["KbdProps"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the kbd element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Keyboard key label or shortcut content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Kbd.vue", "index.ts"],
+      "exports": ["Kbd"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the kbd element."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["kbd.component.ts", "index.ts"],
+      "exports": ["KbdComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the kbd element."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-kbd"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

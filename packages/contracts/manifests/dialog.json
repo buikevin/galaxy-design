@@ -1,0 +1,426 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "dialog",
+  "name": "Dialog",
+  "category": "modal-overlay",
+  "status": "complete",
+  "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "description": "Controlled open state.",
+      "frameworks": ["react", "vue", "angular", "react-native"]
+    },
+    {
+      "name": "openChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "description": "Called when the open state changes.",
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "overrides": {
+        "react": {
+          "name": "onOpenChange"
+        },
+        "vue": {
+          "name": "onUpdate:open"
+        },
+        "react-native": {
+          "name": "onOpenChange"
+        }
+      }
+    },
+    {
+      "name": "modal",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "default": true,
+      "description": "Whether interaction outside the dialog is disabled while open.",
+      "frameworks": ["react", "vue"]
+    }
+  ],
+  "children": [
+    {
+      "name": "DialogTrigger",
+      "props": [
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child via Radix Slot.",
+          "frameworks": ["react", "vue"]
+        }
+      ],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "DialogTriggerComponent"
+      },
+      "description": "Opens the dialog when activated."
+    },
+    {
+      "name": "DialogContent",
+      "props": [
+        {
+          "name": "forceMount",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Force-mount the content even when closed.",
+          "frameworks": ["react", "vue"]
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "frameworks": ["react", "vue", "angular", "react-native"],
+          "overrides": {
+            "react": {
+              "name": "className"
+            },
+            "react-native": {
+              "name": "className"
+            }
+          }
+        }
+      ],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "DialogContentComponent"
+      }
+    },
+    {
+      "name": "DialogHeader",
+      "props": [],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "DialogHeaderComponent"
+      }
+    },
+    {
+      "name": "DialogFooter",
+      "props": [],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "DialogFooterComponent"
+      }
+    },
+    {
+      "name": "DialogTitle",
+      "props": [],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "DialogTitleComponent"
+      }
+    },
+    {
+      "name": "DialogDescription",
+      "props": [],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "DialogDescriptionComponent"
+      }
+    },
+    {
+      "name": "DialogClose",
+      "props": [],
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "export": {
+        "angular": "UiDialogCloseDirective"
+      }
+    }
+  ],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Dialog.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": [
+        "Dialog",
+        "DialogTrigger",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTitle",
+        "DialogDescription",
+        "DialogClose"
+      ],
+      "dependencies": ["@radix-ui/react-dialog"],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the dialog is disabled while open."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Dialog composition content."
+        }
+      ]
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "Dialog.vue",
+        "DialogContent.vue",
+        "DialogHeader.vue",
+        "DialogFooter.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Dialog",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTrigger",
+        "DialogTitle",
+        "DialogDescription",
+        "DialogClose"
+      ],
+      "dependencies": ["radix-vue"],
+      "notes": "DialogTrigger/DialogTitle/DialogDescription/DialogClose are re-exported from radix-vue.",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the dialog is disabled while open."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ]
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["dialog.component.ts", "dialog.directive.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-dialog",
+      "providers": {
+        "import": "import { provideRdxDialogConfig } from '@radix-ng/primitives/dialog';",
+        "function": "provideRdxDialogConfig()"
+      },
+      "exports": [
+        "DialogComponent",
+        "DialogTriggerComponent",
+        "DialogContentComponent",
+        "DialogTitleComponent",
+        "DialogDescriptionComponent",
+        "DialogHeaderComponent",
+        "DialogFooterComponent",
+        "UiDialogTriggerDirective",
+        "UiDialogContentDirective",
+        "UiDialogTitleDirective",
+        "UiDialogDescriptionDirective",
+        "UiDialogCloseDirective",
+        "UiDialogHeaderDirective",
+        "UiDialogFooterDirective",
+        "DialogTriggerDirective"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "notes": "Title/Description/Content/Close use Radix NG dialog directives; Trigger/Header/Footer are local wrappers.",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled open state for the dialog root component."
+        },
+        {
+          "name": "openChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ]
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Dialog.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": [
+        "Dialog",
+        "DialogPortal",
+        "DialogOverlay",
+        "DialogClose",
+        "DialogTrigger",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTitle",
+        "DialogDescription"
+      ],
+      "dependencies": ["@rn-primitives/dialog"],
+      "notes": "Web-only classes are prefixed with `web:`; Close button is built into DialogContent.",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Dialog composition content."
+        }
+      ]
+    },
+    "flutter": {
+      "status": "partial",
+      "files": ["dialog.dart"],
+      "exports": ["GalaxyDialog"],
+      "dependencies": [],
+      "notes": "Imperative API: title/content/actions props plus static `GalaxyDialog.show`; no anatomy subparts and no open-state binding.",
+      "props": [
+        {
+          "name": "title",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional widget rendered as the dialog title."
+        },
+        {
+          "name": "content",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional widget rendered as the main dialog content."
+        },
+        {
+          "name": "actions",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "Widget"
+            }
+          },
+          "description": "Optional action widgets rendered in the footer row."
+        },
+        {
+          "name": "contentPadding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsetsGeometry"
+          },
+          "description": "Padding applied around the content widget."
+        }
+      ]
+    }
+  },
+  "a11y": {
+    "keyboard": [
+      "Escape closes the dialog on web implementations.",
+      "Focus is trapped while the dialog is open on React/Vue/Radix-backed implementations."
+    ],
+    "aria": [
+      "DialogTitle is associated with the dialog via Radix primitives on web frameworks.",
+      "Flutter implementation relies on Material Dialog semantics."
+    ]
+  },
+  "notes": [
+    "Flutter implementation is imperative (`GalaxyDialog.show`) and intentionally marked partial in the manifest.",
+    "Known behavior gaps tracked for P1.2: Angular Header/Footer are wrapper-only parts without Radix linkage."
+  ]
+}

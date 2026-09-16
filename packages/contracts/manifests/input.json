@@ -1,0 +1,887 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "input",
+  "name": "input",
+  "category": "other",
+  "status": "complete",
+  "description": "input",
+  "props": [
+    {
+      "name": "type",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": "text",
+      "description": "Input type."
+    },
+    {
+      "name": "value",
+      "type": {
+        "kind": "union",
+        "values": ["string", "number"]
+      },
+      "frameworks": ["react", "angular", "react-native", "vue"],
+      "description": "Controlled value.",
+      "overrides": {
+        "react-native": {
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          }
+        },
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "union",
+        "values": ["string", "number"]
+      },
+      "frameworks": ["react"],
+      "description": "Uncontrolled initial value."
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "description": "Placeholder text."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": false,
+      "description": "Disables the input."
+    },
+    {
+      "name": "readOnly",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "angular"],
+      "description": "Makes the input read-only.",
+      "overrides": {
+        "angular": {
+          "name": "readonly",
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "maxLength",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "angular"],
+      "description": "Maximum input length.",
+      "overrides": {
+        "angular": {
+          "name": "maxlength"
+        }
+      }
+    },
+    {
+      "name": "autoComplete",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "angular"],
+      "description": "Autocomplete hint.",
+      "overrides": {
+        "angular": {
+          "name": "autocomplete"
+        }
+      }
+    },
+    {
+      "name": "ariaInvalid",
+      "type": {
+        "kind": "union",
+        "values": ["boolean", "string"]
+      },
+      "frameworks": ["react", "angular"],
+      "description": "ARIA invalid state."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the input.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "onChange",
+      "type": {
+        "kind": "function",
+        "signature": "(event) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Change handler."
+    },
+    {
+      "name": "onBlur",
+      "type": {
+        "kind": "function",
+        "signature": "(event) => void"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Blur handler."
+    },
+    {
+      "name": "onFocus",
+      "type": {
+        "kind": "function",
+        "signature": "(event) => void"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Focus handler."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string | number) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the value changes."
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "Input name."
+    },
+    {
+      "name": "id",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "Input id."
+    },
+    {
+      "name": "required",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["angular"],
+      "default": false,
+      "description": "Required input."
+    },
+    {
+      "name": "valueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string | number) => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Emitted when the value changes."
+    },
+    {
+      "name": "inputFocus",
+      "type": {
+        "kind": "function",
+        "signature": "() => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Emitted on focus."
+    },
+    {
+      "name": "inputBlur",
+      "type": {
+        "kind": "function",
+        "signature": "() => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Emitted on blur."
+    },
+    {
+      "name": "editable",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react-native"],
+      "description": "Whether the input is editable."
+    },
+    {
+      "name": "onChangeText",
+      "type": {
+        "kind": "function",
+        "signature": "(text: string) => void"
+      },
+      "frameworks": ["react-native"],
+      "description": "Change handler."
+    },
+    {
+      "name": "label",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Label text."
+    },
+    {
+      "name": "error",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Error text."
+    },
+    {
+      "name": "containerClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "description": "Wrapper class name."
+    },
+    {
+      "name": "labelClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "description": "Label class name."
+    },
+    {
+      "name": "errorClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "description": "Error text class name."
+    },
+    {
+      "name": "controller",
+      "type": {
+        "kind": "custom",
+        "name": "TextEditingController"
+      },
+      "frameworks": ["flutter"],
+      "description": "Controller for the text field."
+    },
+    {
+      "name": "enabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["flutter"],
+      "default": true,
+      "description": "Whether the input is enabled."
+    },
+    {
+      "name": "obscureText",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["flutter"],
+      "default": false,
+      "description": "Obscures the input text."
+    },
+    {
+      "name": "keyboardType",
+      "type": {
+        "kind": "custom",
+        "name": "TextInputType"
+      },
+      "frameworks": ["flutter"],
+      "description": "Keyboard type."
+    },
+    {
+      "name": "maxLines",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "default": 1,
+      "description": "Max lines."
+    },
+    {
+      "name": "onChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Change handler."
+    },
+    {
+      "name": "onSubmitted",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Submit handler."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Input.tsx", "index.ts"],
+      "exports": ["Input"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "text",
+          "description": "Input type."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": ["string", "number"]
+          },
+          "description": "Controlled value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": ["string", "number"]
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the input."
+        },
+        {
+          "name": "readOnly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Makes the input read-only."
+        },
+        {
+          "name": "maxLength",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum input length."
+        },
+        {
+          "name": "autoComplete",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Autocomplete hint."
+        },
+        {
+          "name": "ariaInvalid",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "string"]
+          },
+          "description": "ARIA invalid state."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the input."
+        },
+        {
+          "name": "onChange",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Change handler."
+        },
+        {
+          "name": "onBlur",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Blur handler."
+        },
+        {
+          "name": "onFocus",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Focus handler."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Input.vue", "index.ts"],
+      "exports": ["Input"],
+      "dependencies": ["@vueuse/core"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "text",
+          "description": "Input type."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": ["string", "number"]
+          },
+          "description": "Controlled value."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the input."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the input."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | number) => void"
+          },
+          "description": "Emitted when the value changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "input.component.ts"],
+      "exports": ["InputComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "text",
+          "description": "Input type."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": ["string", "number"]
+          },
+          "description": "Controlled value."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the input."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the input."
+        },
+        {
+          "name": "readonly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Makes the input read-only."
+        },
+        {
+          "name": "maxlength",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum input length."
+        },
+        {
+          "name": "autocomplete",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Autocomplete hint."
+        },
+        {
+          "name": "ariaInvalid",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "string"]
+          },
+          "description": "ARIA invalid state."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Input name."
+        },
+        {
+          "name": "id",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Input id."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Required input."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | number) => void"
+          },
+          "description": "Emitted when the value changes."
+        },
+        {
+          "name": "inputFocus",
+          "type": {
+            "kind": "function",
+            "signature": "() => void"
+          },
+          "description": "Emitted on focus."
+        },
+        {
+          "name": "inputBlur",
+          "type": {
+            "kind": "function",
+            "signature": "() => void"
+          },
+          "description": "Emitted on blur."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-input"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Input.tsx", "index.ts"],
+      "exports": ["Input"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled value."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "editable",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the input is editable."
+        },
+        {
+          "name": "onChangeText",
+          "type": {
+            "kind": "function",
+            "signature": "(text: string) => void"
+          },
+          "description": "Change handler."
+        },
+        {
+          "name": "onBlur",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Blur handler."
+        },
+        {
+          "name": "onFocus",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Focus handler."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the input."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label text."
+        },
+        {
+          "name": "error",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Error text."
+        },
+        {
+          "name": "containerClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Wrapper class name."
+        },
+        {
+          "name": "labelClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label class name."
+        },
+        {
+          "name": "errorClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Error text class name."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["input.dart"],
+      "exports": ["GalaxyInput", "_GalaxyInputState"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "controller",
+          "type": {
+            "kind": "custom",
+            "name": "TextEditingController"
+          },
+          "description": "Controller for the text field."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label text."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "error",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Error text."
+        },
+        {
+          "name": "enabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the input is enabled."
+        },
+        {
+          "name": "obscureText",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Obscures the input text."
+        },
+        {
+          "name": "keyboardType",
+          "type": {
+            "kind": "custom",
+            "name": "TextInputType"
+          },
+          "description": "Keyboard type."
+        },
+        {
+          "name": "maxLines",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Max lines."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Change handler."
+        },
+        {
+          "name": "onSubmitted",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Submit handler."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

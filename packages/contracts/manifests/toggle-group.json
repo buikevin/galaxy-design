@@ -1,0 +1,1106 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "toggle-group",
+  "name": "toggle-group",
+  "category": "other",
+  "status": "complete",
+  "description": "toggle-group",
+  "props": [
+    {
+      "name": "type",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "single"
+          },
+          {
+            "kind": "literal",
+            "value": "multiple"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "single",
+      "description": "Selection behavior for the group."
+    },
+    {
+      "name": "value",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "primitive",
+            "name": "string"
+          },
+          {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "string"
+            }
+          }
+        ]
+      },
+      "frameworks": ["react", "angular", "react-native", "flutter", "vue"],
+      "description": "Controlled selected value or values.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "T?"
+          }
+        },
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "primitive",
+            "name": "string"
+          },
+          {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "string"
+            }
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Initial selected value or values for uncontrolled usage."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string | string[]) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the selected value changes.",
+      "overrides": {
+        "angular": {
+          "name": "valueChange"
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Disables the entire group."
+    },
+    {
+      "name": "rovingFocus",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": true,
+      "description": "Enable roving focus between items."
+    },
+    {
+      "name": "loop",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": true,
+      "description": "Loop keyboard focus from last item to first."
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          },
+          {
+            "kind": "literal",
+            "value": "vertical"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "horizontal",
+      "description": "Orientation used for keyboard navigation."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "ltr",
+      "description": "Reading direction."
+    },
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "default"
+          },
+          {
+            "kind": "literal",
+            "value": "outline"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "default",
+      "description": "Shared visual style variant for items.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default_"
+        }
+      }
+    },
+    {
+      "name": "size",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "default"
+          },
+          {
+            "kind": "literal",
+            "value": "sm"
+          },
+          {
+            "kind": "literal",
+            "value": "lg"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "default",
+      "description": "Shared size variant for items.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default_"
+        }
+      }
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the group.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Toggle group items."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string | string[]) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the selected value changes."
+    },
+    {
+      "name": "onValueChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(value: T?) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when the selected value changes."
+    },
+    {
+      "name": "items",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "GalaxyToggleGroupItem<T>"
+        }
+      },
+      "frameworks": ["flutter"],
+      "description": "Toggle items."
+    },
+    {
+      "name": "allowDeselect",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["flutter"],
+      "default": false,
+      "description": "Allow clearing the current selection."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["ToggleGroup.tsx", "index.ts"],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
+      "dependencies": [
+        "@radix-ui/react-toggle-group",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["toggle"],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection behavior for the group."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled selected value or values."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Initial selected value or values for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Called when the selected value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "rovingFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Enable roving focus between items."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Orientation used for keyboard navigation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Toggle group items."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["ToggleGroup.vue", "ToggleGroupItem.vue", "index.ts"],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["toggle"],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection behavior for the group."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled selected value or values."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Initial selected value or values for uncontrolled usage."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the group."
+        },
+        {
+          "name": "rovingFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Enable roving focus between items."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Orientation used for keyboard navigation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Emitted when the selected value changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["toggle-group.component.ts", "index.ts"],
+      "exports": ["ToggleGroupComponent", "ToggleGroupItemComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection behavior for the group."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled selected value or values."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Emitted when the selected value changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-toggle-group"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["ToggleGroup.tsx", "index.ts"],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
+      "dependencies": [
+        "@rn-primitives/toggle-group",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection behavior for the group."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled selected value or values."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Initial selected value or values for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Called when the selected value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "rovingFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Enable roving focus between items."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Orientation used for keyboard navigation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Toggle group items."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["toggle_group.dart"],
+      "exports": ["GalaxyToggleGroup", "GalaxyToggleGroupItem"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "custom",
+            "name": "T?"
+          },
+          "description": "Currently selected value."
+        },
+        {
+          "name": "onValueChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: T?) => void"
+          },
+          "description": "Called when the selected value changes."
+        },
+        {
+          "name": "items",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxyToggleGroupItem<T>"
+            }
+          },
+          "description": "Toggle items."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default_",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default_",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "allowDeselect",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Allow clearing the current selection."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

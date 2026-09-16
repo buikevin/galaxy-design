@@ -6,10 +6,10 @@
 
 import { Directive } from '@angular/core';
 import {
-  RdxTooltip,
-  RdxTooltipTrigger,
-  RdxTooltipContent,
-} from '@radix-ng/primitives/tooltip2';
+  RdxTooltipRootDirective,
+  RdxTooltipTriggerDirective,
+  RdxTooltipContentDirective,
+} from '@radix-ng/primitives/tooltip';
 
 /**
  * Tooltip Root Directive
@@ -20,7 +20,7 @@ import {
 @Directive({
   selector: '[uiTooltipRoot]',
   standalone: true,
-  hostDirectives: [RdxTooltip],
+  hostDirectives: [RdxTooltipRootDirective],
 })
 export class UiTooltipRootDirective {}
 
@@ -33,7 +33,7 @@ export class UiTooltipRootDirective {}
 @Directive({
   selector: '[uiTooltipTrigger]',
   standalone: true,
-  hostDirectives: [RdxTooltipTrigger],
+  hostDirectives: [RdxTooltipTriggerDirective],
 })
 export class UiTooltipTriggerDirective {}
 
@@ -46,6 +46,6 @@ export class UiTooltipTriggerDirective {}
 @Directive({
   selector: '[uiTooltipContent]',
   standalone: true,
-  hostDirectives: [RdxTooltipContent],
+  hostDirectives: [RdxTooltipContentDirective],
 })
 export class UiTooltipContentDirective {}

@@ -1,0 +1,309 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "context-menu",
+  "name": "context-menu",
+  "category": "other",
+  "status": "complete",
+  "description": "context-menu",
+  "props": [
+    {
+      "name": "modal",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": true,
+      "description": "Whether outside interaction is disabled while the context menu is open."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native", "flutter"],
+      "description": "Context menu composition content.",
+      "overrides": {
+        "flutter": {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue"],
+      "default": "",
+      "description": "CSS class names for the context menu root."
+    },
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react-native"],
+      "description": "Controlled open state."
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react-native"],
+      "default": false,
+      "description": "Initial open state for uncontrolled usage."
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react-native"],
+      "description": "Called when the open state changes."
+    },
+    {
+      "name": "items",
+      "type": {
+        "kind": "custom",
+        "name": "List<GalaxyContextMenuItem<T>>"
+      },
+      "frameworks": ["flutter"],
+      "description": "Items shown in the context menu."
+    },
+    {
+      "name": "onSelected",
+      "type": {
+        "kind": "function",
+        "signature": "(T value) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when a menu item is selected."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["ContextMenu.tsx", "index.ts"],
+      "exports": [
+        "ContextMenu",
+        "ContextMenuTrigger",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuSeparator",
+        "ContextMenuGroup",
+        "ContextMenuPortal",
+        "ContextMenuSub",
+        "ContextMenuRadioGroup"
+      ],
+      "dependencies": ["@radix-ui/react-context-menu"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether outside interaction is disabled while the context menu is open.",
+          "default": true
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Context menu composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "ContextMenu.vue",
+        "ContextMenuContent.vue",
+        "ContextMenuItem.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "ContextMenu",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuTrigger",
+        "ContextMenuSeparator",
+        "ContextMenuCheckboxItem",
+        "ContextMenuRadioGroup",
+        "ContextMenuRadioItem",
+        "ContextMenuLabel",
+        "ContextMenuSub",
+        "ContextMenuSubTrigger",
+        "ContextMenuSubContent"
+      ],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether outside interaction is disabled while the context menu is open.",
+          "default": true
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the context menu root.",
+          "default": ""
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["context-menu.component.ts", "index.ts"],
+      "exports": [
+        "ContextMenuComponent",
+        "ContextMenuTriggerComponent",
+        "ContextMenuContentComponent",
+        "ContextMenuItemComponent"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts",
+      "selector": "ui-context-menu"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["ContextMenu.tsx", "index.ts"],
+      "exports": [
+        "ContextMenu",
+        "ContextMenuTrigger",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuCheckboxItem",
+        "ContextMenuRadioItem",
+        "ContextMenuLabel",
+        "ContextMenuSeparator",
+        "ContextMenuShortcut",
+        "ContextMenuGroup",
+        "ContextMenuPortal",
+        "ContextMenuSub",
+        "ContextMenuSubContent",
+        "ContextMenuSubTrigger",
+        "ContextMenuRadioGroup"
+      ],
+      "dependencies": ["@rn-primitives/context-menu"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Initial open state for uncontrolled usage.",
+          "default": false
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether outside interaction is disabled while the menu is open.",
+          "default": true
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Context menu composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["context_menu.dart"],
+      "exports": ["GalaxyContextMenu", "GalaxyContextMenuItem"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Widget that receives the long-press or secondary-tap gesture."
+        },
+        {
+          "name": "items",
+          "type": {
+            "kind": "custom",
+            "name": "List<GalaxyContextMenuItem<T>>"
+          },
+          "description": "Items shown in the context menu."
+        },
+        {
+          "name": "onSelected",
+          "type": {
+            "kind": "function",
+            "signature": "(T value) => void"
+          },
+          "description": "Called when a menu item is selected."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

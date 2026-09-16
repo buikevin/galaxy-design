@@ -4,7 +4,16 @@
  * @desc Alert Dialog component - Modal dialog for alerts and confirmations
  */
 
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  TemplateRef,
+  ViewChild,
+  inject,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   RdxAlertDialogRootDirective,
@@ -30,19 +39,24 @@ import { cn } from '../../lib/utils';
 export class AlertDialogComponent {
   @Input() open = false;
   @Output() openChange = new EventEmitter<boolean>();
-  @ViewChild('dialogContent', { static: true }) dialogContent!: TemplateRef<unknown>;
+  @ViewChild('dialogContent', { static: true })
+  dialogContent!: TemplateRef<unknown>;
 }
 
 @Component({
   selector: 'ui-alert-dialog-trigger',
   standalone: true,
   imports: [CommonModule, RdxAlertDialogTriggerDirective],
-  template: `<button rdxAlertDialogTrigger [class]="triggerClasses"><ng-content></ng-content></button>`,
+  template: `<button rdxAlertDialogTrigger [class]="triggerClasses">
+    <ng-content></ng-content>
+  </button>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertDialogTriggerComponent {
   @Input() class?: string;
-  get triggerClasses(): string { return cn('', this.class); }
+  get triggerClasses(): string {
+    return cn('', this.class);
+  }
 }
 
 @Component({
@@ -59,7 +73,10 @@ export class AlertDialogTriggerComponent {
 export class AlertDialogContentComponent {
   @Input() class?: string;
   get contentClasses(): string {
-    return cn('fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg', this.class);
+    return cn(
+      'fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg',
+      this.class
+    );
   }
 }
 
@@ -67,12 +84,16 @@ export class AlertDialogContentComponent {
   selector: 'ui-alert-dialog-title',
   standalone: true,
   imports: [CommonModule, RdxAlertDialogTitleDirective],
-  template: `<h2 rdxAlertDialogTitle [class]="titleClasses"><ng-content></ng-content></h2>`,
+  template: `<h2 rdxAlertDialogTitle [class]="titleClasses">
+    <ng-content></ng-content>
+  </h2>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertDialogTitleComponent {
   @Input() class?: string;
-  get titleClasses(): string { return cn('text-lg font-semibold', this.class); }
+  get titleClasses(): string {
+    return cn('text-lg font-semibold', this.class);
+  }
 }
 
 @Component({
@@ -84,31 +105,45 @@ export class AlertDialogTitleComponent {
 })
 export class AlertDialogDescriptionComponent {
   @Input() class?: string;
-  get descClasses(): string { return cn('text-sm text-muted-foreground', this.class); }
+  get descClasses(): string {
+    return cn('text-sm text-muted-foreground', this.class);
+  }
 }
 
 @Component({
   selector: 'ui-alert-dialog-action',
   standalone: true,
-  imports: [CommonModule, RdxAlertDialogCancelDirective],
-  template: `<button rdxAlertDialogCancel [class]="actionClasses"><ng-content></ng-content></button>`,
+  imports: [CommonModule],
+  template: `<button type="button" [class]="actionClasses" (click)="close()">
+    <ng-content></ng-content>
+  </button>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertDialogActionComponent {
   @Input() class?: string;
-  get actionClasses(): string { return cn('', this.class); }
+  private readonly alertDialogService = inject(RdxAlertDialogService);
+  get actionClasses(): string {
+    return cn('', this.class);
+  }
+  close(): void {
+    this.alertDialogService.close();
+  }
 }
 
 @Component({
   selector: 'ui-alert-dialog-cancel',
   standalone: true,
   imports: [CommonModule, RdxAlertDialogCancelDirective],
-  template: `<button rdxAlertDialogCancel [class]="cancelClasses"><ng-content></ng-content></button>`,
+  template: `<button rdxAlertDialogCancel [class]="cancelClasses">
+    <ng-content></ng-content>
+  </button>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertDialogCancelComponent {
   @Input() class?: string;
-  get cancelClasses(): string { return cn('', this.class); }
+  get cancelClasses(): string {
+    return cn('', this.class);
+  }
 }
 
 @Component({
@@ -120,7 +155,9 @@ export class AlertDialogCancelComponent {
 })
 export class AlertDialogHeaderComponent {
   @Input() class?: string;
-  get headerClasses(): string { return cn('flex flex-col space-y-2 text-center sm:text-left', this.class); }
+  get headerClasses(): string {
+    return cn('flex flex-col space-y-2 text-center sm:text-left', this.class);
+  }
 }
 
 @Component({
@@ -132,5 +169,10 @@ export class AlertDialogHeaderComponent {
 })
 export class AlertDialogFooterComponent {
   @Input() class?: string;
-  get footerClasses(): string { return cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', this.class); }
+  get footerClasses(): string {
+    return cn(
+      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+      this.class
+    );
+  }
 }

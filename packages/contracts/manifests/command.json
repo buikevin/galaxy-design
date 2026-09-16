@@ -1,0 +1,257 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "command",
+  "name": "command",
+  "category": "other",
+  "status": "complete",
+  "description": "command",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled search value."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the search value changes."
+    },
+    {
+      "name": "label",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "description": "Accessible label for the command menu."
+    },
+    {
+      "name": "loop",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": false,
+      "description": "Whether keyboard navigation loops through items."
+    },
+    {
+      "name": "shouldFilter",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": true,
+      "description": "Whether automatic filtering is enabled."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS class names for the command root.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Command composition content."
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular"],
+      "default": "Type a command or search...",
+      "description": "Placeholder text for the search input."
+    },
+    {
+      "name": "search",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Event emitted when the search value changes."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Command.tsx", "index.ts"],
+      "exports": [],
+      "dependencies": ["cmdk", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["dialog"],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled search value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the search value changes."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Accessible label for the command menu."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether keyboard navigation loops through items.",
+          "default": false
+        },
+        {
+          "name": "shouldFilter",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether automatic filtering is enabled.",
+          "default": true
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the command root.",
+          "default": ""
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Command composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Command.vue", "index.ts"],
+      "exports": ["Command"],
+      "dependencies": ["lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the command root.",
+          "default": ""
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the search input.",
+          "default": "Type a command or search..."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["command.component.ts", "index.ts"],
+      "exports": ["CommandComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the command root.",
+          "default": ""
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the search input.",
+          "default": "Type a command or search..."
+        },
+        {
+          "name": "search",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Event emitted when the search value changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-command"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2 fix: the Angular component now emits `searchChange` (the declared output name) instead of the previously broken `search.emit` call."
+  ]
+}

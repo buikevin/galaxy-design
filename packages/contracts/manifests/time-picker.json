@@ -1,0 +1,236 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "time-picker",
+  "name": "time-picker",
+  "category": "other",
+  "status": "complete",
+  "description": "time-picker",
+  "props": [
+    {
+      "name": "time",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled time value in `HH:mm` or `hh:mm AM/PM` format."
+    },
+    {
+      "name": "onTimeChange",
+      "type": {
+        "kind": "function",
+        "signature": "(time: string | undefined) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the time value changes."
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "Pick a time",
+      "description": "Placeholder text shown when no time is selected."
+    },
+    {
+      "name": "format",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "12h"
+          },
+          {
+            "kind": "literal",
+            "value": "24h"
+          }
+        ]
+      },
+      "frameworks": ["react"],
+      "default": "24h",
+      "description": "Time display and parsing format."
+    },
+    {
+      "name": "align",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "start"
+          },
+          {
+            "kind": "literal",
+            "value": "center"
+          },
+          {
+            "kind": "literal",
+            "value": "end"
+          }
+        ]
+      },
+      "frameworks": ["react"],
+      "default": "start",
+      "description": "Alignment of the popover content relative to the trigger."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "",
+      "description": "className applied to the trigger button."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": false,
+      "description": "Disables the trigger button and time selection."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["TimePicker.tsx", "index.ts"],
+      "exports": ["TimePicker", "TimePickerProps"],
+      "dependencies": ["lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["popover", "button", "select"],
+      "props": [
+        {
+          "name": "time",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled time value in `HH:mm` or `hh:mm AM/PM` format."
+        },
+        {
+          "name": "onTimeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(time: string | undefined) => void"
+          },
+          "description": "Called when the time value changes."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text shown when no time is selected.",
+          "default": "Pick a time"
+        },
+        {
+          "name": "format",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "12h"
+              },
+              {
+                "kind": "literal",
+                "value": "24h"
+              }
+            ]
+          },
+          "description": "Time display and parsing format.",
+          "default": "24h"
+        },
+        {
+          "name": "align",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "start"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              },
+              {
+                "kind": "literal",
+                "value": "end"
+              }
+            ]
+          },
+          "description": "Alignment of the popover content relative to the trigger.",
+          "default": "start"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the trigger button.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables the trigger button and time selection.",
+          "default": false
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["index.ts", "TimePicker.vue", "types.ts"],
+      "entry": "index.ts",
+      "exports": ["TimePicker"],
+      "dependencies": ["lucide-vue-next", "radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "popover", "select"],
+      "props": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["time-picker.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-time-picker",
+      "exports": ["TimePickerComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "popover", "select"],
+      "props": []
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2: Vue port added with date-fns formatting and radix-vue Popover/Calendar primitives.",
+    "P1.2: Angular port added (popover + calendar/select composition, date-fns formatting)."
+  ]
+}

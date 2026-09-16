@@ -1,0 +1,394 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "badge",
+  "name": "badge",
+  "category": "other",
+  "status": "complete",
+  "description": "badge",
+  "props": [
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "default"
+          },
+          {
+            "kind": "literal",
+            "value": "secondary"
+          },
+          {
+            "kind": "literal",
+            "value": "destructive"
+          },
+          {
+            "kind": "literal",
+            "value": "outline"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "default",
+      "description": "Visual style variant for the badge.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default_"
+        }
+      }
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the badge.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native", "flutter"],
+      "description": "Badge content.",
+      "overrides": {
+        "flutter": {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          }
+        }
+      }
+    },
+    {
+      "name": "text",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Badge text content."
+    },
+    {
+      "name": "padding",
+      "type": {
+        "kind": "custom",
+        "name": "EdgeInsets"
+      },
+      "frameworks": ["flutter"],
+      "description": "Padding inside the badge."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Badge.tsx", "variants.ts", "index.ts"],
+      "exports": ["Badge", "BadgeProps", "badgeVariants"],
+      "dependencies": ["class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the badge."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Badge content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["badge.vue", "index.ts"],
+      "exports": ["Badge"],
+      "dependencies": ["class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the badge."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["badge.component.ts", "variants.ts", "index.ts"],
+      "exports": ["BadgeComponent"],
+      "dependencies": ["class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the badge host."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-badge"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Badge.tsx", "index.ts"],
+      "exports": ["Badge"],
+      "dependencies": ["class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the badge."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Badge content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["badge.dart"],
+      "exports": [
+        "GalaxyBadge",
+        "GalaxyBadgeCount",
+        "GalaxyBadgePositioned",
+        "BadgeVariant"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "text",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Badge text content."
+        },
+        {
+          "name": "child",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Custom badge content widget."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default_"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default_",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "padding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsets"
+          },
+          "description": "Padding inside the badge."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "scroll-area",
+  "name": "scroll-area",
+  "category": "other",
+  "status": "complete",
+  "description": "scroll-area",
+  "props": [
+    {
+      "name": "type",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "hover"
+          },
+          {
+            "kind": "literal",
+            "value": "scroll"
+          },
+          {
+            "kind": "literal",
+            "value": "auto"
+          },
+          {
+            "kind": "literal",
+            "value": "always"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue"],
+      "default": "hover",
+      "description": "Scrollbar visibility behavior."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Reading direction."
+    },
+    {
+      "name": "scrollHideDelay",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue"],
+      "default": 600,
+      "description": "Delay before hiding scrollbars when applicable."
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the root as a child element."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS class names for the scroll area root.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react"],
+      "description": "Scrollable content."
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          },
+          {
+            "kind": "literal",
+            "value": "vertical"
+          }
+        ]
+      },
+      "frameworks": ["angular"],
+      "default": "vertical",
+      "description": "Primary scroll direction hint."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["ScrollArea.tsx", "index.ts"],
+      "exports": ["ScrollArea", "ScrollBar"],
+      "dependencies": ["@radix-ui/react-scroll-area"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "hover"
+              },
+              {
+                "kind": "literal",
+                "value": "scroll"
+              },
+              {
+                "kind": "literal",
+                "value": "auto"
+              },
+              {
+                "kind": "literal",
+                "value": "always"
+              }
+            ]
+          },
+          "default": "hover",
+          "description": "Scrollbar visibility behavior."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "scrollHideDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 600,
+          "description": "Delay before hiding scrollbars when applicable."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the scroll area root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Scrollable content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["ScrollArea.vue", "ScrollBar.vue", "index.ts"],
+      "exports": ["ScrollArea", "ScrollBar"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "hover"
+              },
+              {
+                "kind": "literal",
+                "value": "scroll"
+              },
+              {
+                "kind": "literal",
+                "value": "auto"
+              },
+              {
+                "kind": "literal",
+                "value": "always"
+              }
+            ]
+          },
+          "default": "hover",
+          "description": "Scrollbar visibility behavior."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "scrollHideDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 600,
+          "description": "Delay before hiding scrollbars when applicable."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the scroll area root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["scroll-area.component.ts", "index.ts"],
+      "exports": ["ScrollAreaComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "vertical",
+          "description": "Primary scroll direction hint."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the scroll area container."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-scroll-area"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2 fix: the Angular scroll area now renders custom scrollbars (vertical/horizontal thumbs with pointer drag, ResizeObserver-driven metrics, hidden native scrollbars) instead of relying on native overflow styling."
+  ]
+}

@@ -4,10 +4,10 @@
  * @desc Command palette with search and keyboard shortcuts
  */
 
-import { Component, Input, Output, EventEmitter } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
-import { cn } from '../../lib/utils'
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { cn } from '../../lib/utils';
 
 @Component({
   selector: 'ui-command',
@@ -39,7 +39,7 @@ import { cn } from '../../lib/utils'
         <input
           [(ngModel)]="searchTerm"
           [placeholder]="placeholder"
-          (ngModelChange)="search.emit(searchTerm)"
+          (ngModelChange)="searchChange.emit(searchTerm)"
           class="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
         />
       </div>
@@ -50,10 +50,10 @@ import { cn } from '../../lib/utils'
   `,
 })
 export class CommandComponent {
-  @Input() class?: string
-  @Input() placeholder: string = 'Type a command or search...'
-  @Output() searchChange = new EventEmitter<string>()
+  @Input() class?: string;
+  @Input() placeholder: string = 'Type a command or search...';
+  @Output() searchChange = new EventEmitter<string>();
 
-  searchTerm: string = ''
-  cn = cn
+  searchTerm: string = '';
+  cn = cn;
 }

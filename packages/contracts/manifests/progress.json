@@ -1,0 +1,389 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "progress",
+  "name": "progress",
+  "category": "other",
+  "status": "complete",
+  "description": "progress",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "angular", "react-native", "flutter", "vue"],
+      "default": 0,
+      "description": "Current progress value.",
+      "overrides": {
+        "flutter": {},
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "max",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": 100,
+      "description": "Maximum progress value."
+    },
+    {
+      "name": "getValueLabel",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number, max: number) => string"
+      },
+      "frameworks": ["react"],
+      "description": "Accessible label generator for the current value."
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue"],
+      "default": false,
+      "description": "Render the progress root as a child element."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the progress root.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: number) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the progress value changes."
+    },
+    {
+      "name": "indicatorClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "default": "",
+      "description": "CSS class names for the progress indicator."
+    },
+    {
+      "name": "backgroundColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Background color of the progress track."
+    },
+    {
+      "name": "valueColor",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Color of the progress indicator."
+    },
+    {
+      "name": "height",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "default": 4,
+      "description": "Height of the progress bar."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Progress.tsx", "index.ts"],
+      "exports": ["Progress"],
+      "dependencies": ["@radix-ui/react-progress", "class-variance-authority"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Current progress value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum progress value."
+        },
+        {
+          "name": "getValueLabel",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number, max: number) => string"
+          },
+          "description": "Accessible label generator for the current value."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the progress root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress root."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Progress.vue", "index.ts"],
+      "exports": ["Progress"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Current progress value. Supports v-model."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum progress value."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the progress root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => void"
+          },
+          "description": "Emitted when the progress value changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["progress.component.ts", "index.ts"],
+      "exports": ["ProgressComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Current progress value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum progress value."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress root."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-progress"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Progress.tsx", "index.ts"],
+      "exports": ["Progress"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Current progress value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum progress value."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress root."
+        },
+        {
+          "name": "indicatorClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress indicator."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["progress.dart"],
+      "exports": ["GalaxyProgress"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Progress value between 0 and 1, or null for indeterminate."
+        },
+        {
+          "name": "backgroundColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Background color of the progress track."
+        },
+        {
+          "name": "valueColor",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Color of the progress indicator."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 4,
+          "description": "Height of the progress bar."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

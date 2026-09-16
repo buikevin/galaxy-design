@@ -146,8 +146,10 @@ For these, include a `children` array on the parent component:
 
 ## Status Checklist
 
-- [ ] Schema draft reviewed
-- [ ] Generation/maintenance strategy decided (manual vs generated from source)
+- [x] Schema draft reviewed → `packages/contracts/schemas/component-manifest.schema.json`
+- [x] Generation/maintenance strategy decided → declarative manifests validated
+      against source truth, artifacts generated from manifests
+      (`packages/contracts/README.md`)
 
 ## Components Mapping Checklist
 

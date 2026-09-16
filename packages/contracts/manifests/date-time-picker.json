@@ -1,0 +1,229 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "date-time-picker",
+  "name": "date-time-picker",
+  "category": "other",
+  "status": "complete",
+  "description": "date-time-picker",
+  "props": [
+    {
+      "name": "dateTime",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled combined date and time value."
+    },
+    {
+      "name": "onDateTimeChange",
+      "type": {
+        "kind": "function",
+        "signature": "(dateTime: Date | undefined) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the combined date and time changes."
+    },
+    {
+      "name": "datePlaceholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "Pick a date",
+      "description": "Placeholder text for the date picker."
+    },
+    {
+      "name": "timePlaceholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "Pick a time",
+      "description": "Placeholder text for the time picker."
+    },
+    {
+      "name": "timeFormat",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "12h"
+          },
+          {
+            "kind": "literal",
+            "value": "24h"
+          }
+        ]
+      },
+      "frameworks": ["react"],
+      "default": "24h",
+      "description": "Time input format."
+    },
+    {
+      "name": "dateFormat",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "PPP",
+      "description": "Date format string used by the date picker."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "",
+      "description": "CSS class names for the wrapper."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": false,
+      "description": "Disables both the date and time pickers."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["DateTimePicker.tsx", "index.ts"],
+      "exports": ["DateTimePicker", "DateTimePickerProps"],
+      "dependencies": ["date-fns"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["date-picker", "time-picker"],
+      "props": [
+        {
+          "name": "dateTime",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled combined date and time value."
+        },
+        {
+          "name": "onDateTimeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(dateTime: Date | undefined) => void"
+          },
+          "description": "Called when the combined date and time changes."
+        },
+        {
+          "name": "datePlaceholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the date picker.",
+          "default": "Pick a date"
+        },
+        {
+          "name": "timePlaceholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the time picker.",
+          "default": "Pick a time"
+        },
+        {
+          "name": "timeFormat",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "12h"
+              },
+              {
+                "kind": "literal",
+                "value": "24h"
+              }
+            ]
+          },
+          "description": "Time input format.",
+          "default": "24h"
+        },
+        {
+          "name": "dateFormat",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Date format string used by the date picker.",
+          "default": "PPP"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the wrapper.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables both the date and time pickers.",
+          "default": false
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["index.ts", "DateTimePicker.vue", "types.ts"],
+      "entry": "index.ts",
+      "exports": ["DateTimePicker"],
+      "dependencies": ["date-fns"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["date-picker", "time-picker"],
+      "props": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["date-time-picker.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-date-time-picker",
+      "exports": ["DateTimePickerComponent"],
+      "dependencies": ["date-fns"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["date-picker", "time-picker"],
+      "props": []
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2: Vue port added with date-fns formatting and radix-vue Popover/Calendar primitives.",
+    "P1.2: Angular port added (popover + calendar/select composition, date-fns formatting)."
+  ]
+}

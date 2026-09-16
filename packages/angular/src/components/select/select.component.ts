@@ -14,11 +14,13 @@ import {
   QueryList,
   AfterContentInit,
   ChangeDetectorRef,
+  HostBinding,
   HostListener,
   ElementRef,
   forwardRef,
   OnInit,
-  inject
+  DestroyRef,
+  inject,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -43,6 +45,9 @@ import { cn } from '../../lib/utils';
         [disabled]="disabled"
         role="combobox"
         aria-haspopup="listbox"
+        [attr.aria-controls]="listboxId"
+        [attr.aria-activedescendant]="activeDescendantId"
+        aria-autocomplete="list"
         [attr.aria-expanded]="isOpenState ? 'true' : 'false'"
         [attr.aria-disabled]="disabled ? 'true' : null"
         [attr.data-disabled]="disabled ? '' : null"
@@ -65,9 +70,9 @@ import { cn } from '../../lib/utils';
       </button>
 
       @if (isOpenState) {
-        <div [class]="contentClasses" role="listbox">
-          <ng-content></ng-content>
-        </div>
+      <div [class]="contentClasses" role="listbox" [attr.id]="listboxId">
+        <ng-content></ng-content>
+      </div>
       }
     </div>
   `,
@@ -80,7 +85,9 @@ import { cn } from '../../lib/utils';
     },
   ],
 })
-export class SelectComponent implements AfterContentInit, OnInit, ControlValueAccessor {
+export class SelectComponent
+  implements AfterContentInit, OnInit, ControlValueAccessor
+{
   @Input() value?: string;
   @Input() placeholder: string = 'Select...';
   @Input() disabled: boolean = false;
@@ -93,12 +100,18 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
   @Output() valueChange = new EventEmitter<string>();
   @Output() openChange = new EventEmitter<boolean>();
 
-  @ContentChildren(forwardRef(() => SelectItemComponent)) items!: QueryList<SelectItemComponent>;
+  @ContentChildren(forwardRef(() => SelectItemComponent))
+  items!: QueryList<SelectItemComponent>;
 
   isOpen = false;
   displayValue = '';
+  activeIndex = -1;
+  readonly listboxId = `ui-select-listbox-${SelectComponent.nextId++}`;
   private onChange: (value: string | null) => void = () => {};
   private onTouched: () => void = () => {};
+  private typeaheadBuffer = '';
+  private typeaheadTimer: ReturnType<typeof setTimeout> | null = null;
+  private static nextId = 1;
 
   private cdr = inject(ChangeDetectorRef);
   private elementRef = inject(ElementRef);
@@ -110,15 +123,41 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
   }
 
   ngAfterContentInit(): void {
-    this.updateDisplayValue();
+    this.updateItems();
 
     // Subscribe to item clicks
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       item.itemClick.subscribe((value: string) => {
         this.selectItem(value);
       });
     });
+
+    this.items.changes
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.updateItems();
+      });
   }
+
+  private updateItems(): void {
+    this.updateDisplayValue();
+    this.syncItemStates();
+  }
+
+  private syncItemStates(): void {
+    this.items.forEach((item, index) => {
+      item.setSelected(item.value === this.value);
+      item.setActive(index === this.activeIndex);
+    });
+    this.cdr.markForCheck();
+  }
+
+  get activeDescendantId(): string | null {
+    if (!this.isOpenState || this.activeIndex < 0) return null;
+    return this.items.toArray()[this.activeIndex]?.itemId ?? null;
+  }
+
+  private readonly destroyRef = inject(DestroyRef);
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
@@ -138,7 +177,9 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
   selectItem(value: string): void {
     this.value = value;
     this.setOpen(false);
+    this.activeIndex = -1;
     this.updateDisplayValue();
+    this.syncItemStates();
     this.valueChange.emit(value);
     this.onChange(value);
     this.cdr.markForCheck();
@@ -146,7 +187,7 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
 
   updateDisplayValue(): void {
     if (this.items) {
-      const selectedItem = this.items.find(item => item.value === this.value);
+      const selectedItem = this.items.find((item) => item.value === this.value);
       this.displayValue = selectedItem ? selectedItem.getLabel() : '';
       this.cdr.markForCheck();
     }
@@ -182,25 +223,134 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
 
   onTriggerKeydown(event: KeyboardEvent): void {
     if (this.disabled) return;
-    if (event.key === 'ArrowDown' || event.key === 'ArrowUp' || event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      if (!this.isOpenState) {
+    if (!this.isOpenState) {
+      if (
+        event.key === 'ArrowDown' ||
+        event.key === 'ArrowUp' ||
+        event.key === 'Enter' ||
+        event.key === ' '
+      ) {
+        event.preventDefault();
         this.setOpen(true);
-        this.cdr.markForCheck();
+        this.activeIndex = this.initialActiveIndex();
+        this.syncItemStates();
+      }
+      return;
+    }
+
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      this.moveActive(event.key === 'ArrowDown' ? 1 : -1);
+      return;
+    }
+
+    if (event.key === 'Home') {
+      event.preventDefault();
+      this.activeIndex = this.firstEnabledIndex(0, 1);
+      this.syncItemStates();
+      return;
+    }
+
+    if (event.key === 'End') {
+      event.preventDefault();
+      this.activeIndex = this.firstEnabledIndex(this.items.length - 1, -1);
+      this.syncItemStates();
+      return;
+    }
+
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      const active = this.items.toArray()[this.activeIndex];
+      if (active && !active.disabled) {
+        this.selectItem(active.value);
+      }
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      this.activeIndex = -1;
+      this.syncItemStates();
+      this.setOpen(false);
+      this.onTouched();
+      this.cdr.markForCheck();
+      return;
+    }
+
+    if (
+      event.key.length === 1 &&
+      !event.ctrlKey &&
+      !event.metaKey &&
+      !event.altKey
+    ) {
+      this.handleTypeahead(event.key);
+    }
+  }
+
+  private moveActive(direction: 1 | -1): void {
+    const count = this.items.length;
+    if (count === 0) return;
+    let index = this.activeIndex;
+    for (let step = 0; step < count; step += 1) {
+      index = (index + direction + count) % count;
+      if (!this.items.toArray()[index]?.disabled) {
+        this.activeIndex = index;
+        this.syncItemStates();
+        return;
       }
     }
-    if (event.key === 'Escape') {
-      if (this.isOpenState) {
-        this.setOpen(false);
-        this.onTouched();
-        this.cdr.markForCheck();
+  }
+
+  private firstEnabledIndex(start: number, direction: 1 | -1): number {
+    const count = this.items.length;
+    let index = start;
+    for (let step = 0; step < count; step += 1) {
+      const candidate = this.items.toArray()[index];
+      if (candidate && !candidate.disabled) {
+        return index;
       }
+      index = (index + direction + count) % count;
+    }
+    return -1;
+  }
+
+  private initialActiveIndex(): number {
+    const items = this.items.toArray();
+    const selectedIndex = items.findIndex((item) => item.value === this.value);
+    if (selectedIndex >= 0 && !items[selectedIndex].disabled) {
+      return selectedIndex;
+    }
+    return this.firstEnabledIndex(0, 1);
+  }
+
+  private handleTypeahead(key: string): void {
+    if (this.typeaheadTimer) {
+      clearTimeout(this.typeaheadTimer);
+    }
+    this.typeaheadBuffer += key.toLowerCase();
+    this.typeaheadTimer = setTimeout(() => {
+      this.typeaheadBuffer = '';
+    }, 500);
+
+    const items = this.items.toArray();
+    const normalized = this.typeaheadBuffer;
+    const matchIndex = items.findIndex(
+      (item, index) =>
+        !item.disabled &&
+        item.getLabel().toLowerCase().startsWith(normalized) &&
+        (normalized.length > 1 || index > this.activeIndex)
+    );
+
+    if (matchIndex >= 0) {
+      this.activeIndex = matchIndex;
+      this.syncItemStates();
     }
   }
 
   writeValue(value: string | null): void {
     this.value = value ?? undefined;
     this.updateDisplayValue();
+    this.syncItemStates();
     this.cdr.markForCheck();
   }
 
@@ -236,7 +386,13 @@ export class SelectComponent implements AfterContentInit, OnInit, ControlValueAc
         *ngIf="isSelected"
         class="absolute left-2 flex h-3.5 w-3.5 items-center justify-center"
       >
-        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg
+          class="h-4 w-4"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
       </span>
@@ -254,6 +410,13 @@ export class SelectItemComponent {
   @Output() itemClick = new EventEmitter<string>();
 
   isSelected = false;
+  readonly itemId = `ui-select-item-${SelectItemComponent.nextId++}`;
+
+  private static nextId = 1;
+
+  private active = false;
+
+  private cdr = inject(ChangeDetectorRef);
 
   onClick(): void {
     if (!this.disabled) {
@@ -265,9 +428,30 @@ export class SelectItemComponent {
     return this.elementRef.nativeElement.textContent?.trim() || '';
   }
 
+  setSelected(selected: boolean): void {
+    this.isSelected = selected;
+    this.cdr.markForCheck();
+  }
+
+  setActive(active: boolean): void {
+    this.active = active;
+    this.cdr.markForCheck();
+  }
+
+  @HostBinding('attr.id')
+  get hostItemId(): string {
+    return this.itemId;
+  }
+
+  @HostBinding('attr.data-active')
+  get dataActive(): string | null {
+    return this.active ? 'true' : null;
+  }
+
   get itemClasses(): string {
     return cn(
       'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground',
+      'data-[active=true]:bg-accent data-[active=true]:text-accent-foreground',
       this.class
     );
   }

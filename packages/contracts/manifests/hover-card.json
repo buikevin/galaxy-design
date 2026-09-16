@@ -1,0 +1,420 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "hover-card",
+  "name": "hover-card",
+  "category": "other",
+  "status": "complete",
+  "description": "hover-card",
+  "props": [
+    {
+      "name": "open",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Controlled open state.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "defaultOpen",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": false,
+      "description": "Initial open state for uncontrolled usage."
+    },
+    {
+      "name": "onOpenChange",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the open state changes.",
+      "overrides": {
+        "angular": {
+          "name": "openChange"
+        }
+      }
+    },
+    {
+      "name": "openDelay",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 700,
+      "description": "Delay in milliseconds before opening.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "Duration"
+          }
+        }
+      }
+    },
+    {
+      "name": "closeDelay",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": 300,
+      "description": "Delay in milliseconds before closing."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Hover card composition content."
+    },
+    {
+      "name": "update:open",
+      "type": {
+        "kind": "function",
+        "signature": "(open: boolean) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the open state changes."
+    },
+    {
+      "name": "trigger",
+      "type": {
+        "kind": "custom",
+        "name": "Widget"
+      },
+      "frameworks": ["flutter"],
+      "description": "Widget used as the hover or tap trigger."
+    },
+    {
+      "name": "content",
+      "type": {
+        "kind": "custom",
+        "name": "Widget"
+      },
+      "frameworks": ["flutter"],
+      "description": "Widget displayed inside the hover card."
+    },
+    {
+      "name": "width",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "description": "Optional width of the hover card."
+    },
+    {
+      "name": "padding",
+      "type": {
+        "kind": "custom",
+        "name": "EdgeInsets"
+      },
+      "frameworks": ["flutter"],
+      "description": "Padding inside the hover card."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["HoverCard.tsx", "index.ts"],
+      "exports": ["HoverCard", "HoverCardTrigger", "HoverCardContent"],
+      "dependencies": ["@radix-ui/react-hover-card"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "closeDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 300,
+          "description": "Delay in milliseconds before closing."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Hover card composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["HoverCard.vue", "HoverCardContent.vue", "index.ts"],
+      "exports": ["HoverCard", "HoverCardContent", "HoverCardTrigger"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "closeDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 300,
+          "description": "Delay in milliseconds before closing."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["hover-card.component.ts", "index.ts"],
+      "exports": [
+        "HoverCardComponent",
+        "HoverCardTriggerComponent",
+        "HoverCardContentComponent"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled open state."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "closeDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 300,
+          "description": "Delay in milliseconds before closing."
+        },
+        {
+          "name": "openChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-hover-card"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["HoverCard.tsx", "index.ts"],
+      "exports": ["HoverCard", "HoverCardTrigger", "HoverCardContent"],
+      "dependencies": ["@rn-primitives/hover-card"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "closeDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 300,
+          "description": "Delay in milliseconds before closing."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Hover card composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["hover_card.dart"],
+      "exports": ["GalaxyHoverCard", "_GalaxyHoverCardState"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "trigger",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Widget used as the hover or tap trigger."
+        },
+        {
+          "name": "content",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Widget displayed inside the hover card."
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Optional width of the hover card."
+        },
+        {
+          "name": "padding",
+          "type": {
+            "kind": "custom",
+            "name": "EdgeInsets"
+          },
+          "description": "Padding inside the hover card."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "custom",
+            "name": "Duration"
+          },
+          "description": "Configured open delay; currently declared but not applied by the implementation."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

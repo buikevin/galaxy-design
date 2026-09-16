@@ -1,0 +1,606 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "tabs",
+  "name": "tabs",
+  "category": "other",
+  "status": "complete",
+  "description": "tabs",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "angular", "react-native", "vue"],
+      "description": "Controlled active tab value.",
+      "overrides": {
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Initial active tab value for uncontrolled usage."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the active tab changes.",
+      "overrides": {
+        "angular": {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | undefined) => void"
+          }
+        }
+      }
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "horizontal"
+          },
+          {
+            "kind": "literal",
+            "value": "vertical"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "horizontal",
+      "description": "Layout orientation for the tab list."
+    },
+    {
+      "name": "dir",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "ltr"
+          },
+          {
+            "kind": "literal",
+            "value": "rtl"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "ltr",
+      "description": "Reading direction for keyboard navigation."
+    },
+    {
+      "name": "activationMode",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "automatic"
+          },
+          {
+            "kind": "literal",
+            "value": "manual"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "default": "automatic",
+      "description": "Whether focus automatically activates a tab."
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Tabs composition content."
+    },
+    {
+      "name": "as",
+      "type": {
+        "kind": "custom",
+        "name": "AsTag | Component"
+      },
+      "frameworks": ["vue"],
+      "default": "div",
+      "description": "Element or component to render."
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "default": false,
+      "description": "Render the root as a child element."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular"],
+      "default": "",
+      "description": "CSS class names for the tabs root."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the active tab changes."
+    },
+    {
+      "name": "tabs",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "GalaxyTab"
+        }
+      },
+      "frameworks": ["flutter"],
+      "description": "Tab definitions rendered by the widget."
+    },
+    {
+      "name": "initialIndex",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["flutter"],
+      "default": 0,
+      "description": "Initial selected tab index."
+    },
+    {
+      "name": "onTabChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(index: int) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when the selected tab changes."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Tabs.tsx", "index.ts"],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "dependencies": ["@radix-ui/react-tabs"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled active tab value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active tab value for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the active tab changes."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Layout orientation for the tab list."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "activationMode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "automatic"
+              },
+              {
+                "kind": "literal",
+                "value": "manual"
+              }
+            ]
+          },
+          "default": "automatic",
+          "description": "Whether focus automatically activates a tab."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Tabs composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "Tabs.vue",
+        "TabsContent.vue",
+        "TabsList.vue",
+        "TabsTrigger.vue",
+        "index.ts"
+      ],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled active tab value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active tab value for uncontrolled usage."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Layout orientation for the tab list."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "activationMode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "automatic"
+              },
+              {
+                "kind": "literal",
+                "value": "manual"
+              }
+            ]
+          },
+          "default": "automatic",
+          "description": "Whether focus automatically activates a tab."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the tabs root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the active tab changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "tabs.component.ts", "tabs.directive.ts"],
+      "exports": [
+        "TabsComponent",
+        "TabsListComponent",
+        "TabsTriggerComponent",
+        "TabsContentComponent",
+        "UiTabsRootDirective",
+        "UiTabsListDirective",
+        "UiTabsTriggerDirective",
+        "UiTabsContentDirective"
+      ],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled active tab value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active tab value for uncontrolled usage."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the tabs root."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | undefined) => void"
+          },
+          "description": "Emitted when the active tab changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-tabs"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Tabs.tsx", "index.ts"],
+      "exports": ["Tabs", "TabsList", "TabsTrigger", "TabsContent"],
+      "dependencies": ["@rn-primitives/tabs"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled active tab value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active tab value for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the active tab changes."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Layout orientation for the tab list."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "activationMode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "automatic"
+              },
+              {
+                "kind": "literal",
+                "value": "manual"
+              }
+            ]
+          },
+          "default": "automatic",
+          "description": "Whether focus automatically activates a tab."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Tabs composition content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["tabs.dart"],
+      "exports": ["GalaxyTabs", "_GalaxyTabsState", "GalaxyTab"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "tabs",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxyTab"
+            }
+          },
+          "description": "Tab definitions rendered by the widget."
+        },
+        {
+          "name": "initialIndex",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Initial selected tab index."
+        },
+        {
+          "name": "onTabChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(index: int) => void"
+          },
+          "description": "Called when the selected tab changes."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

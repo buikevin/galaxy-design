@@ -1,45 +1,21 @@
 /**
- * Galaxy UI Charts - Vue 3
+ * Galaxy UI Charts - Vue 3 (compatibility barrel)
  *
- * Unified chart components powered by ECharts
+ * The chart implementations now live in their own component directories
+ * (`<chart-name>/`), matching every other component. This barrel keeps
+ * `@/components/charts` imports working. Do not add new chart code here.
  */
 
-export { default as LineChart } from './LineChart.vue'
-export { default as BarChart } from './BarChart.vue'
-export { default as PieChart } from './PieChart.vue'
-export { default as DonutChart } from './DonutChart.vue'
-export { default as AreaChart } from './AreaChart.vue'
-export { default as RadarChart } from './RadarChart.vue'
-export { default as ScatterChart } from './ScatterChart.vue'
-export { default as MixedChart } from './MixedChart.vue'
+export { LineChart } from '../line-chart'
+export { BarChart } from '../bar-chart'
+export { PieChart } from '../pie-chart'
+export { DonutChart } from '../donut-chart'
+export { AreaChart } from '../area-chart'
+export { RadarChart } from '../radar-chart'
+export { ScatterChart } from '../scatter-chart'
+export { MixedChart } from '../mixed-chart'
+export { GaugeChart } from '../gauge-chart'
 
-// Export types
-export type {
-  ChartData,
-  ChartDataset,
-  ChartType,
-  ChartTheme,
-  BaseChartProps,
-  LineChartProps,
-  BarChartProps,
-  PieChartProps,
-  DonutChartProps,
-  AreaChartProps,
-  RadarChartProps,
-  ScatterChartProps,
-  MixedChartProps,
-  ColorScheme,
-  LegendPosition,
-  TooltipConfig,
-  GridConfig,
-  AxisConfig,
-} from './types'
-
-// Export utilities
-export {
-  getDefaultColors,
-  formatNumber,
-  calculatePercentage,
-  generateGradient,
-  ChartColorSchemes,
-} from './utils'
+// Shared chart types + utilities live with the canonical line-chart tree.
+export * from '../line-chart/types'
+export * from '../line-chart/utils'

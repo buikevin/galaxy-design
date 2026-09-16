@@ -1,0 +1,330 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "tags-input",
+  "name": "tags-input",
+  "category": "other",
+  "status": "complete",
+  "description": "tags-input",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "custom",
+        "name": "string[]"
+      },
+      "frameworks": ["react", "angular", "vue"],
+      "default": "[]",
+      "description": "Current tag values.",
+      "overrides": {
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "onChange",
+      "type": {
+        "kind": "function",
+        "signature": "(tags: string[]) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the tag list changes."
+    },
+    {
+      "name": "tagAdd",
+      "type": {
+        "kind": "function",
+        "signature": "(tag: string) => void"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "description": "Event emitted when a tag is added.",
+      "overrides": {
+        "react": {
+          "name": "onTagAdd"
+        }
+      }
+    },
+    {
+      "name": "tagRemove",
+      "type": {
+        "kind": "function",
+        "signature": "(tag: string) => void"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "description": "Event emitted when a tag is removed.",
+      "overrides": {
+        "react": {
+          "name": "onTagRemove"
+        }
+      }
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": "Add tag...",
+      "description": "Placeholder text for the input."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS classes applied to the tags container.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": false,
+      "description": "Disables tag entry and removal."
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string[]) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Event emitted when the tag list changes."
+    },
+    {
+      "name": "valueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string[]) => void"
+      },
+      "frameworks": ["angular"],
+      "description": "Event emitted when the tag list changes."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["TagsInput.tsx", "index.ts"],
+      "exports": ["TagsInputProps"],
+      "dependencies": ["lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "custom",
+            "name": "string[]"
+          },
+          "description": "Current tag values.",
+          "default": "[]"
+        },
+        {
+          "name": "onChange",
+          "type": {
+            "kind": "function",
+            "signature": "(tags: string[]) => void"
+          },
+          "description": "Called when the tag list changes."
+        },
+        {
+          "name": "onTagAdd",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Called when a tag is added."
+        },
+        {
+          "name": "onTagRemove",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Called when a tag is removed."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the input.",
+          "default": "Add tag..."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the tags container.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables tag entry and removal.",
+          "default": false
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["TagsInput.vue", "index.ts"],
+      "exports": ["TagsInput"],
+      "dependencies": ["lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "custom",
+            "name": "string[]"
+          },
+          "description": "Current tag values.",
+          "default": "[]"
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the input.",
+          "default": "Add tag..."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the tags container.",
+          "default": ""
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string[]) => void"
+          },
+          "description": "Event emitted when the tag list changes."
+        },
+        {
+          "name": "tagAdd",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Event emitted when a tag is added."
+        },
+        {
+          "name": "tagRemove",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Event emitted when a tag is removed."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["tags-input.component.ts", "index.ts"],
+      "exports": ["TagsInputComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the tags container.",
+          "default": ""
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "custom",
+            "name": "string[]"
+          },
+          "description": "Current tag values.",
+          "default": "[]"
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the input.",
+          "default": "Add tag..."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string[]) => void"
+          },
+          "description": "Event emitted when the tag list changes."
+        },
+        {
+          "name": "tagAdd",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Event emitted when a tag is added."
+        },
+        {
+          "name": "tagRemove",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Event emitted when a tag is removed."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-tags-input"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

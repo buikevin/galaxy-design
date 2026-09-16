@@ -1,0 +1,6393 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "react",
+  "generated": true,
+  "pilot": true,
+  "source": "packages/contracts/manifests",
+  "components": {
+    "accordion": {
+      "id": "accordion",
+      "name": "accordion",
+      "type": "other",
+      "status": "complete",
+      "description": "accordion",
+      "files": [
+        "Accordion.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ],
+      "dependencies": [
+        "@radix-ui/react-accordion",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Accordion selection behavior."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled value for the open item or items."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Uncontrolled initial value for the open item or items."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Called when the open item or items change."
+        },
+        {
+          "name": "collapsible",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "When type is single, allows closing the open item."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the accordion and all items."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for RTL or LTR layouts."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "vertical"
+              },
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              }
+            ]
+          },
+          "default": "vertical",
+          "description": "Accordion orientation."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "alert-dialog": {
+      "id": "alert-dialog",
+      "name": "alert-dialog",
+      "type": "other",
+      "status": "complete",
+      "description": "alert-dialog",
+      "files": [
+        "AlertDialog.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "AlertDialog",
+        "AlertDialogTrigger",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ],
+      "dependencies": [
+        "@radix-ui/react-alert-dialog"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Alert dialog composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "alert": {
+      "id": "alert",
+      "name": "alert",
+      "type": "other",
+      "status": "complete",
+      "description": "alert",
+      "files": [
+        "Alert.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Alert",
+        "AlertTitle",
+        "AlertDescription"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the alert."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the alert container."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Alert content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "area-chart": {
+      "id": "area-chart",
+      "name": "area-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "area-chart",
+      "files": [
+        "AreaChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "AreaChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "zoom",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether zoom interactions are enabled.",
+          "default": false
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        },
+        {
+          "name": "smooth",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether lines are rendered as smooth curves.",
+          "default": true
+        },
+        {
+          "name": "showPoints",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether data points are shown.",
+          "default": true
+        },
+        {
+          "name": "pointSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of data point markers.",
+          "default": 6
+        },
+        {
+          "name": "stack",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether datasets are stacked.",
+          "default": false
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Fill opacity for the area.",
+          "default": 0.6
+        },
+        {
+          "name": "gradient",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to use gradient area fills.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "aspect-ratio": {
+      "id": "aspect-ratio",
+      "name": "aspect-ratio",
+      "type": "other",
+      "status": "complete",
+      "description": "aspect-ratio",
+      "files": [
+        "AspectRatio.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "AspectRatio"
+      ],
+      "dependencies": [
+        "@radix-ui/react-aspect-ratio"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Desired aspect ratio, for example 16 / 9."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the component as a child element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Content constrained by the ratio."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "avatar": {
+      "id": "avatar",
+      "name": "avatar",
+      "type": "other",
+      "status": "complete",
+      "description": "avatar",
+      "files": [
+        "Avatar.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Avatar",
+        "AvatarImage",
+        "AvatarFallback"
+      ],
+      "dependencies": [
+        "@radix-ui/react-avatar"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the avatar root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the avatar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Avatar content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "badge": {
+      "id": "badge",
+      "name": "badge",
+      "type": "other",
+      "status": "complete",
+      "description": "badge",
+      "files": [
+        "Badge.tsx",
+        "variants.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Badge",
+        "BadgeProps",
+        "badgeVariants"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the badge."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Badge content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "bar-chart": {
+      "id": "bar-chart",
+      "name": "bar-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "bar-chart",
+      "files": [
+        "BarChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "BarChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        },
+        {
+          "name": "horizontal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to render horizontal bars.",
+          "default": false
+        },
+        {
+          "name": "stacked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether datasets are stacked.",
+          "default": false
+        },
+        {
+          "name": "showDataLabels",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show data labels on bars.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "breadcrumb": {
+      "id": "breadcrumb",
+      "name": "breadcrumb",
+      "type": "other",
+      "status": "complete",
+      "description": "breadcrumb",
+      "files": [
+        "Breadcrumb.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "dependencies": [
+        "lucide-react",
+        "@radix-ui/react-slot"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "separator",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Declared prop on the component type, but the current implementation does not read or render it."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Breadcrumb composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "button": {
+      "id": "button",
+      "name": "Button",
+      "type": "form",
+      "status": "complete",
+      "description": "Displays a button or a component that looks like a button with variants and sizes.",
+      "files": [
+        "Button.tsx",
+        "index.ts",
+        "variants.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Button",
+        "ButtonProps",
+        "buttonVariants",
+        "ButtonVariants"
+      ],
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "sm",
+              "lg",
+              "icon"
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child using Radix Slot."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button."
+        },
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              "button",
+              "submit",
+              "reset"
+            ]
+          },
+          "default": "button",
+          "description": "Native button type."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        },
+        {
+          "name": "onClick",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Click handler."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Button content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "calendar-range": {
+      "id": "calendar-range",
+      "name": "calendar-range",
+      "type": "other",
+      "status": "complete",
+      "description": "calendar-range",
+      "files": [
+        "CalendarRange.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "CalendarRangeProps"
+      ],
+      "dependencies": [
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "selected",
+          "type": {
+            "kind": "custom",
+            "name": "DateRange"
+          },
+          "description": "Controlled selected date range."
+        },
+        {
+          "name": "onSelect",
+          "type": {
+            "kind": "function",
+            "signature": "(range: DateRange | undefined) => void"
+          },
+          "description": "Called when the selected range changes."
+        },
+        {
+          "name": "showOutsideDays",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to render days outside the current month.",
+          "default": true
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the calendar root.",
+          "default": ""
+        },
+        {
+          "name": "classNames",
+          "type": {
+            "kind": "custom",
+            "name": "Partial<ClassNames>"
+          },
+          "description": "Custom class names passed to react-day-picker."
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months to display at once."
+        },
+        {
+          "name": "defaultMonth",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Initial month to display."
+        },
+        {
+          "name": "month",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled visible month."
+        },
+        {
+          "name": "onMonthChange",
+          "type": {
+            "kind": "function",
+            "signature": "(month: Date) => void"
+          },
+          "description": "Called when the visible month changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "custom",
+            "name": "Matcher | Matcher[]"
+          },
+          "description": "Dates that cannot be selected."
+        },
+        {
+          "name": "fromDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Earliest selectable date."
+        },
+        {
+          "name": "toDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Latest selectable date."
+        },
+        {
+          "name": "initialFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether focus should move into the calendar when opened.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "calendar": {
+      "id": "calendar",
+      "name": "calendar",
+      "type": "other",
+      "status": "complete",
+      "description": "calendar",
+      "files": [
+        "Calendar.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [],
+      "dependencies": [
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "mode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              },
+              {
+                "kind": "literal",
+                "value": "range"
+              }
+            ]
+          },
+          "description": "Selection mode for the calendar."
+        },
+        {
+          "name": "selected",
+          "type": {
+            "kind": "custom",
+            "name": "Date | Date[] | DateRange"
+          },
+          "description": "Controlled selected date value."
+        },
+        {
+          "name": "onSelect",
+          "type": {
+            "kind": "function",
+            "signature": "(value: Date | Date[] | DateRange | undefined) => void"
+          },
+          "description": "Called when the selected date changes."
+        },
+        {
+          "name": "month",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled visible month."
+        },
+        {
+          "name": "defaultMonth",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Initial month to display."
+        },
+        {
+          "name": "onMonthChange",
+          "type": {
+            "kind": "function",
+            "signature": "(month: Date) => void"
+          },
+          "description": "Called when the visible month changes."
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months to display."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "custom",
+            "name": "Matcher | Matcher[]"
+          },
+          "description": "Dates that cannot be selected."
+        },
+        {
+          "name": "fromDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Earliest month or date available for navigation/selection."
+        },
+        {
+          "name": "toDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Latest month or date available for navigation/selection."
+        },
+        {
+          "name": "showOutsideDays",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Show days outside the current month."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the calendar root."
+        },
+        {
+          "name": "classNames",
+          "type": {
+            "kind": "custom",
+            "name": "Partial<ClassNames>"
+          },
+          "description": "Overrides for DayPicker internal class names."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "card": {
+      "id": "card",
+      "name": "card",
+      "type": "other",
+      "status": "complete",
+      "description": "card",
+      "files": [
+        "Card.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardFooter",
+        "CardTitle",
+        "CardDescription",
+        "CardContent"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the card container."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Card content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "checkbox": {
+      "id": "checkbox",
+      "name": "checkbox",
+      "type": "other",
+      "status": "complete",
+      "description": "checkbox",
+      "files": [
+        "Checkbox.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Checkbox"
+      ],
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "union",
+            "values": [
+              "boolean",
+              "indeterminate"
+            ]
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "union",
+            "values": [
+              "boolean",
+              "indeterminate"
+            ]
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean | 'indeterminate') => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the checkbox."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "collapsible": {
+      "id": "collapsible",
+      "name": "collapsible",
+      "type": "other",
+      "status": "complete",
+      "description": "collapsible",
+      "files": [
+        "Collapsible.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Collapsible",
+        "CollapsibleTrigger",
+        "CollapsibleContent"
+      ],
+      "dependencies": [
+        "@radix-ui/react-collapsible"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the collapsible."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Collapsible composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "command": {
+      "id": "command",
+      "name": "command",
+      "type": "other",
+      "status": "complete",
+      "description": "command",
+      "files": [
+        "Command.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [],
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "dialog"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled search value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the search value changes."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Accessible label for the command menu."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether keyboard navigation loops through items.",
+          "default": false
+        },
+        {
+          "name": "shouldFilter",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether automatic filtering is enabled.",
+          "default": true
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the command root.",
+          "default": ""
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Command composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "context-menu": {
+      "id": "context-menu",
+      "name": "context-menu",
+      "type": "other",
+      "status": "complete",
+      "description": "context-menu",
+      "files": [
+        "ContextMenu.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ContextMenu",
+        "ContextMenuTrigger",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuSeparator",
+        "ContextMenuGroup",
+        "ContextMenuPortal",
+        "ContextMenuSub",
+        "ContextMenuRadioGroup"
+      ],
+      "dependencies": [
+        "@radix-ui/react-context-menu"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether outside interaction is disabled while the context menu is open.",
+          "default": true
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Context menu composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "date-picker": {
+      "id": "date-picker",
+      "name": "Date Picker",
+      "type": "form",
+      "status": "complete",
+      "description": "A date picker component with popover and calendar.",
+      "files": [
+        "DatePicker.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DatePicker",
+        "DatePickerProps"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "calendar",
+        "popover",
+        "button"
+      ],
+      "category": "form",
+      "props": [
+        {
+          "name": "date",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Selected date."
+        },
+        {
+          "name": "onDateChange",
+          "type": {
+            "kind": "function",
+            "signature": "(date: Date | undefined) => void"
+          },
+          "description": "Called when the selected date changes."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Pick a date",
+          "description": "Placeholder text shown when no date is selected."
+        },
+        {
+          "name": "dateFormat",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "PPP",
+          "description": "Date formatting pattern passed to date-fns format()."
+        },
+        {
+          "name": "align",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "start"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              },
+              {
+                "kind": "literal",
+                "value": "end"
+              }
+            ]
+          },
+          "default": "start",
+          "description": "Popover alignment relative to the trigger."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the trigger button."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the trigger button."
+        }
+      ],
+      "manifestStatus": "partial"
+    },
+    "date-range-picker": {
+      "id": "date-range-picker",
+      "name": "date-range-picker",
+      "type": "other",
+      "status": "complete",
+      "description": "date-range-picker",
+      "files": [
+        "DateRangePicker.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DateRangePickerProps"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react",
+        "react-day-picker"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "calendar-range",
+        "popover",
+        "button"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "dateRange",
+          "type": {
+            "kind": "custom",
+            "name": "DateRange"
+          },
+          "description": "Controlled selected date range."
+        },
+        {
+          "name": "onDateRangeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(range: DateRange | undefined) => void"
+          },
+          "description": "Called when the selected range changes."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text shown when no range is selected.",
+          "default": "Pick a date range"
+        },
+        {
+          "name": "dateFormat",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Date format string used to render the selected range.",
+          "default": "LLL dd, y"
+        },
+        {
+          "name": "align",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "start"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              },
+              {
+                "kind": "literal",
+                "value": "end"
+              }
+            ]
+          },
+          "description": "Alignment of the popover content relative to the trigger.",
+          "default": "start"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the trigger button.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables the trigger button.",
+          "default": false
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months displayed in the range calendar.",
+          "default": 2
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "date-time-picker": {
+      "id": "date-time-picker",
+      "name": "date-time-picker",
+      "type": "other",
+      "status": "complete",
+      "description": "date-time-picker",
+      "files": [
+        "DateTimePicker.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DateTimePicker",
+        "DateTimePickerProps"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "date-picker",
+        "time-picker"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "dateTime",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled combined date and time value."
+        },
+        {
+          "name": "onDateTimeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(dateTime: Date | undefined) => void"
+          },
+          "description": "Called when the combined date and time changes."
+        },
+        {
+          "name": "datePlaceholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the date picker.",
+          "default": "Pick a date"
+        },
+        {
+          "name": "timePlaceholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the time picker.",
+          "default": "Pick a time"
+        },
+        {
+          "name": "timeFormat",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "12h"
+              },
+              {
+                "kind": "literal",
+                "value": "24h"
+              }
+            ]
+          },
+          "description": "Time input format.",
+          "default": "24h"
+        },
+        {
+          "name": "dateFormat",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Date format string used by the date picker.",
+          "default": "PPP"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the wrapper.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables both the date and time pickers.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "dialog": {
+      "id": "dialog",
+      "name": "Dialog",
+      "type": "modal-overlay",
+      "status": "complete",
+      "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
+      "files": [
+        "Dialog.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Dialog",
+        "DialogTrigger",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTitle",
+        "DialogDescription",
+        "DialogClose"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "modal-overlay",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the dialog is disabled while open."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Dialog composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "donut-chart": {
+      "id": "donut-chart",
+      "name": "donut-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "donut-chart",
+      "files": [
+        "DonutChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DonutChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "right"
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "innerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Inner radius percentage.",
+          "default": 50
+        },
+        {
+          "name": "outerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Outer radius percentage.",
+          "default": 70
+        },
+        {
+          "name": "showPercentage",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show percentage labels.",
+          "default": true
+        },
+        {
+          "name": "labelPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "inside"
+              },
+              {
+                "kind": "literal",
+                "value": "outside"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              }
+            ]
+          },
+          "description": "Label position.",
+          "default": "outside"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "dropdown-menu": {
+      "id": "dropdown-menu",
+      "name": "dropdown-menu",
+      "type": "other",
+      "status": "complete",
+      "description": "dropdown-menu",
+      "files": [
+        "DropdownMenu.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuTrigger",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuSeparator",
+        "DropdownMenuLabel",
+        "DropdownMenuGroup",
+        "DropdownMenuPortal",
+        "DropdownMenuSub",
+        "DropdownMenuRadioGroup"
+      ],
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether outside interaction is disabled while the menu is open."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Dropdown menu composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "empty": {
+      "id": "empty",
+      "name": "empty",
+      "type": "other",
+      "status": "complete",
+      "description": "empty",
+      "files": [
+        "Empty.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "EmptyProps"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "description",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Empty state description content."
+        },
+        {
+          "name": "image",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Custom icon or image content."
+        },
+        {
+          "name": "imageAlt",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Empty",
+          "description": "Accessible label for the default illustration."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional action content rendered below the description."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "form": {
+      "id": "form",
+      "name": "form",
+      "type": "other",
+      "status": "complete",
+      "description": "form",
+      "files": [
+        "Form.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormControl",
+        "FormDescription",
+        "FormMessage",
+        "FormField",
+        "useFormField"
+      ],
+      "dependencies": [
+        "react-hook-form",
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "label"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Form content wrapped by FormProvider."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "gauge-chart": {
+      "id": "gauge-chart",
+      "name": "Gauge Chart",
+      "type": "charts",
+      "status": "complete",
+      "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
+      "files": [
+        "GaugeChart.tsx",
+        "types.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "GaugeChart"
+      ],
+      "dependencies": [
+        "echarts",
+        "echarts-for-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "charts",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "hover-card": {
+      "id": "hover-card",
+      "name": "hover-card",
+      "type": "other",
+      "status": "complete",
+      "description": "hover-card",
+      "files": [
+        "HoverCard.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "HoverCard",
+        "HoverCardTrigger",
+        "HoverCardContent"
+      ],
+      "dependencies": [
+        "@radix-ui/react-hover-card"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "closeDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 300,
+          "description": "Delay in milliseconds before closing."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Hover card composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "input": {
+      "id": "input",
+      "name": "input",
+      "type": "other",
+      "status": "complete",
+      "description": "input",
+      "files": [
+        "Input.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Input"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "text",
+          "description": "Input type."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              "string",
+              "number"
+            ]
+          },
+          "description": "Controlled value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              "string",
+              "number"
+            ]
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the input."
+        },
+        {
+          "name": "readOnly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Makes the input read-only."
+        },
+        {
+          "name": "maxLength",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum input length."
+        },
+        {
+          "name": "autoComplete",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Autocomplete hint."
+        },
+        {
+          "name": "ariaInvalid",
+          "type": {
+            "kind": "union",
+            "values": [
+              "boolean",
+              "string"
+            ]
+          },
+          "description": "ARIA invalid state."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the input."
+        },
+        {
+          "name": "onChange",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Change handler."
+        },
+        {
+          "name": "onBlur",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Blur handler."
+        },
+        {
+          "name": "onFocus",
+          "type": {
+            "kind": "function",
+            "signature": "(event) => void"
+          },
+          "description": "Focus handler."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "kbd": {
+      "id": "kbd",
+      "name": "kbd",
+      "type": "other",
+      "status": "complete",
+      "description": "kbd",
+      "files": [
+        "Kbd.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "KbdProps"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the kbd element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Keyboard key label or shortcut content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "label": {
+      "id": "label",
+      "name": "label",
+      "type": "other",
+      "status": "complete",
+      "description": "label",
+      "files": [
+        "Label.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Label"
+      ],
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "htmlFor",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the element the label is associated with."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Label content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "line-chart": {
+      "id": "line-chart",
+      "name": "line-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "line-chart",
+      "files": [
+        "LineChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "LineChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "zoom",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether zoom interactions are enabled.",
+          "default": false
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        },
+        {
+          "name": "smooth",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether lines are rendered as smooth curves.",
+          "default": true
+        },
+        {
+          "name": "showPoints",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether data points are shown.",
+          "default": true
+        },
+        {
+          "name": "pointSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of data point markers.",
+          "default": 6
+        },
+        {
+          "name": "area",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to fill the area under the line.",
+          "default": false
+        },
+        {
+          "name": "stack",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether datasets are stacked.",
+          "default": false
+        },
+        {
+          "name": "dataLabels",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show labels on points.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "menubar": {
+      "id": "menubar",
+      "name": "menubar",
+      "type": "other",
+      "status": "complete",
+      "description": "menubar",
+      "files": [
+        "Menubar.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Menubar",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarItem",
+        "MenubarSeparator"
+      ],
+      "dependencies": [
+        "@radix-ui/react-menubar"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled open menu value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial open menu value for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the open menu value changes."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the menubar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Menubar menus."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "mixed-chart": {
+      "id": "mixed-chart",
+      "name": "mixed-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "mixed-chart",
+      "files": [
+        "MixedChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "MixedChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "navigation-menu": {
+      "id": "navigation-menu",
+      "name": "navigation-menu",
+      "type": "other",
+      "status": "complete",
+      "description": "navigation-menu",
+      "files": [
+        "NavigationMenu.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuList",
+        "NavigationMenuItem",
+        "NavigationMenuTrigger",
+        "NavigationMenuContent",
+        "NavigationMenuLink"
+      ],
+      "dependencies": [
+        "@radix-ui/react-navigation-menu"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled value of the active menu item."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active item for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the active item changes."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "description": "Orientation of the navigation menu.",
+          "default": "horizontal"
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction for keyboard navigation.",
+          "default": "ltr"
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Delay in milliseconds before opening content on hover."
+        },
+        {
+          "name": "skipDelayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Time window to skip the opening delay when moving between triggers."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the navigation menu root.",
+          "default": ""
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Navigation menu composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "pagination": {
+      "id": "pagination",
+      "name": "pagination",
+      "type": "other",
+      "status": "complete",
+      "description": "pagination",
+      "files": [
+        "Pagination.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "PaginationProps"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Current page number, 1-indexed."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Total number of pages."
+        },
+        {
+          "name": "onPageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: number) => void"
+          },
+          "description": "Called when the page changes."
+        },
+        {
+          "name": "siblingCount",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Number of sibling pages shown around the current page."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the pagination nav."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "pie-chart": {
+      "id": "pie-chart",
+      "name": "pie-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "pie-chart",
+      "files": [
+        "PieChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "PieChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "right"
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "innerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Inner radius percentage.",
+          "default": 0
+        },
+        {
+          "name": "outerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Outer radius percentage.",
+          "default": 70
+        },
+        {
+          "name": "showPercentage",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show percentage labels.",
+          "default": true
+        },
+        {
+          "name": "labelPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "inside"
+              },
+              {
+                "kind": "literal",
+                "value": "outside"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              }
+            ]
+          },
+          "description": "Label position.",
+          "default": "outside"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "popover": {
+      "id": "popover",
+      "name": "popover",
+      "type": "other",
+      "status": "complete",
+      "description": "popover",
+      "files": [
+        "Popover.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Popover",
+        "PopoverTrigger",
+        "PopoverContent"
+      ],
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the popover should behave as modal."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Popover composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "progress": {
+      "id": "progress",
+      "name": "progress",
+      "type": "other",
+      "status": "complete",
+      "description": "progress",
+      "files": [
+        "Progress.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Progress"
+      ],
+      "dependencies": [
+        "@radix-ui/react-progress",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Current progress value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum progress value."
+        },
+        {
+          "name": "getValueLabel",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number, max: number) => string"
+          },
+          "description": "Accessible label generator for the current value."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the progress root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress root."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "radar-chart": {
+      "id": "radar-chart",
+      "name": "radar-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "radar-chart",
+      "files": [
+        "RadarChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "RadarChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "shape",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "polygon"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              }
+            ]
+          },
+          "description": "Radar grid shape.",
+          "default": "polygon"
+        },
+        {
+          "name": "splitNumber",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of split lines.",
+          "default": 4
+        },
+        {
+          "name": "maxValue",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum indicator value."
+        },
+        {
+          "name": "fill",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to fill the radar area.",
+          "default": true
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Fill opacity.",
+          "default": 0.3
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "radio-group": {
+      "id": "radio-group",
+      "name": "radio-group",
+      "type": "other",
+      "status": "complete",
+      "description": "radio-group",
+      "files": [
+        "RadioGroup.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "RadioGroup",
+        "RadioGroupItem"
+      ],
+      "dependencies": [
+        "@radix-ui/react-radio-group",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              "horizontal",
+              "vertical"
+            ]
+          },
+          "description": "Layout orientation."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "resizable": {
+      "id": "resizable",
+      "name": "resizable",
+      "type": "other",
+      "status": "complete",
+      "description": "resizable",
+      "files": [
+        "Resizable.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ResizablePanelGroup",
+        "ResizablePanel",
+        "ResizableHandle"
+      ],
+      "dependencies": [
+        "react-resizable-panels",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "scatter-chart": {
+      "id": "scatter-chart",
+      "name": "scatter-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "scatter-chart",
+      "files": [
+        "ScatterChart.tsx",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ScatterChart"
+      ],
+      "dependencies": [
+        "echarts-for-react",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 10
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "scroll-area": {
+      "id": "scroll-area",
+      "name": "scroll-area",
+      "type": "other",
+      "status": "complete",
+      "description": "scroll-area",
+      "files": [
+        "ScrollArea.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
+      ],
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "hover"
+              },
+              {
+                "kind": "literal",
+                "value": "scroll"
+              },
+              {
+                "kind": "literal",
+                "value": "auto"
+              },
+              {
+                "kind": "literal",
+                "value": "always"
+              }
+            ]
+          },
+          "default": "hover",
+          "description": "Scrollbar visibility behavior."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "scrollHideDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 600,
+          "description": "Delay before hiding scrollbars when applicable."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the scroll area root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Scrollable content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "select": {
+      "id": "select",
+      "name": "Select",
+      "type": "form",
+      "status": "complete",
+      "description": "A select box component for choosing an option from a list.",
+      "files": [
+        "Select.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Select",
+        "SelectGroup",
+        "SelectValue",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectLabel",
+        "SelectItem",
+        "SelectSeparator"
+      ],
+      "dependencies": [
+        "@radix-ui/react-select",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial open state."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              "ltr",
+              "rtl"
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the select."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "separator": {
+      "id": "separator",
+      "name": "separator",
+      "type": "other",
+      "status": "complete",
+      "description": "separator",
+      "files": [
+        "Separator.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Separator"
+      ],
+      "dependencies": [
+        "@radix-ui/react-separator"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "decorative",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the separator is decorative only."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the separator as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the separator."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "sheet": {
+      "id": "sheet",
+      "name": "sheet",
+      "type": "other",
+      "status": "complete",
+      "description": "sheet",
+      "files": [
+        "Sheet.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [],
+      "dependencies": [
+        "@radix-ui/react-dialog",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the sheet is disabled while open."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Sheet composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "skeleton": {
+      "id": "skeleton",
+      "name": "skeleton",
+      "type": "other",
+      "status": "complete",
+      "description": "skeleton",
+      "files": [
+        "Skeleton.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "SkeletonProps"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              },
+              {
+                "kind": "literal",
+                "value": "text"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Skeleton shape variant."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the skeleton."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "slider": {
+      "id": "slider",
+      "name": "slider",
+      "type": "other",
+      "status": "complete",
+      "description": "slider",
+      "files": [
+        "Slider.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Slider"
+      ],
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Uncontrolled initial slider values."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Controlled slider values."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Called when the slider values change."
+        },
+        {
+          "name": "onValueCommit",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Called when the interaction ends and the slider values are committed."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name used for the hidden inputs in form submission."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Slider orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "inverted",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the slider is visually inverted."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "step",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Stepping interval."
+        },
+        {
+          "name": "minStepsBetweenThumbs",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum permitted steps between thumbs."
+        },
+        {
+          "name": "form",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Associates the slider inputs with a form."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the slider root."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "spinner": {
+      "id": "spinner",
+      "name": "spinner",
+      "type": "other",
+      "status": "complete",
+      "description": "spinner",
+      "files": [
+        "Spinner.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Spinner"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessible label announced to assistive technology."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the spinner."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "switch": {
+      "id": "switch",
+      "name": "switch",
+      "type": "other",
+      "status": "complete",
+      "description": "switch",
+      "files": [
+        "Switch.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Switch"
+      ],
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the switch root."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "table": {
+      "id": "table",
+      "name": "table",
+      "type": "other",
+      "status": "complete",
+      "description": "table",
+      "files": [
+        "Table.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the table element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Table composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "tabs": {
+      "id": "tabs",
+      "name": "tabs",
+      "type": "other",
+      "status": "complete",
+      "description": "tabs",
+      "files": [
+        "Tabs.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent"
+      ],
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled active tab value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active tab value for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the active tab changes."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Layout orientation for the tab list."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "activationMode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "automatic"
+              },
+              {
+                "kind": "literal",
+                "value": "manual"
+              }
+            ]
+          },
+          "default": "automatic",
+          "description": "Whether focus automatically activates a tab."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Tabs composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "tags-input": {
+      "id": "tags-input",
+      "name": "tags-input",
+      "type": "other",
+      "status": "complete",
+      "description": "tags-input",
+      "files": [
+        "TagsInput.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TagsInputProps"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "custom",
+            "name": "string[]"
+          },
+          "description": "Current tag values.",
+          "default": "[]"
+        },
+        {
+          "name": "onChange",
+          "type": {
+            "kind": "function",
+            "signature": "(tags: string[]) => void"
+          },
+          "description": "Called when the tag list changes."
+        },
+        {
+          "name": "onTagAdd",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Called when a tag is added."
+        },
+        {
+          "name": "onTagRemove",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Called when a tag is removed."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the input.",
+          "default": "Add tag..."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the tags container.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables tag entry and removal.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "textarea": {
+      "id": "textarea",
+      "name": "textarea",
+      "type": "other",
+      "status": "complete",
+      "description": "textarea",
+      "files": [
+        "Textarea.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Textarea"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "primitive",
+                "name": "number"
+              }
+            ]
+          },
+          "description": "Controlled textarea value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "primitive",
+                "name": "number"
+              }
+            ]
+          },
+          "description": "Uncontrolled initial textarea value."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the textarea."
+        },
+        {
+          "name": "rows",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Visible number of text rows."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Field name for form submission."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Marks the textarea as required."
+        },
+        {
+          "name": "readOnly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Makes the textarea read-only."
+        },
+        {
+          "name": "maxLength",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum number of characters allowed."
+        },
+        {
+          "name": "minLength",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Minimum number of characters allowed."
+        },
+        {
+          "name": "onChange",
+          "type": {
+            "kind": "function",
+            "signature": "(event: ChangeEvent<HTMLTextAreaElement>) => void"
+          },
+          "description": "Called when the textarea value changes."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the textarea."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "time-picker": {
+      "id": "time-picker",
+      "name": "time-picker",
+      "type": "other",
+      "status": "complete",
+      "description": "time-picker",
+      "files": [
+        "TimePicker.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TimePicker",
+        "TimePickerProps"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "popover",
+        "button",
+        "select"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "time",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled time value in `HH:mm` or `hh:mm AM/PM` format."
+        },
+        {
+          "name": "onTimeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(time: string | undefined) => void"
+          },
+          "description": "Called when the time value changes."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text shown when no time is selected.",
+          "default": "Pick a time"
+        },
+        {
+          "name": "format",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "12h"
+              },
+              {
+                "kind": "literal",
+                "value": "24h"
+              }
+            ]
+          },
+          "description": "Time display and parsing format.",
+          "default": "24h"
+        },
+        {
+          "name": "align",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "start"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              },
+              {
+                "kind": "literal",
+                "value": "end"
+              }
+            ]
+          },
+          "description": "Alignment of the popover content relative to the trigger.",
+          "default": "start"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the trigger button.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables the trigger button and time selection.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "toast": {
+      "id": "toast",
+      "name": "Toast",
+      "type": "feedback",
+      "status": "partial",
+      "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
+      "files": [
+        "Toast.tsx",
+        "toast-helper.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Toaster",
+        "toast"
+      ],
+      "dependencies": [
+        "sonner"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "feedback",
+      "props": [
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              },
+              {
+                "kind": "literal",
+                "value": "system"
+              }
+            ]
+          },
+          "default": "light",
+          "description": "Visual theme for the toaster."
+        },
+        {
+          "name": "position",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top-left"
+              },
+              {
+                "kind": "literal",
+                "value": "top-center"
+              },
+              {
+                "kind": "literal",
+                "value": "top-right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-left"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-center"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-right"
+              }
+            ]
+          },
+          "description": "Screen position for toast notifications."
+        },
+        {
+          "name": "expand",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether stacked toasts can expand to show full content."
+        },
+        {
+          "name": "richColors",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Enable richer semantic color styling."
+        },
+        {
+          "name": "closeButton",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Show a close button on each toast."
+        },
+        {
+          "name": "duration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Default duration in milliseconds."
+        },
+        {
+          "name": "visibleToasts",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum number of visible toasts."
+        },
+        {
+          "name": "offset",
+          "type": {
+            "kind": "custom",
+            "name": "string | number"
+          },
+          "description": "Offset from the viewport edge."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        }
+      ],
+      "manifestStatus": "partial"
+    },
+    "toggle-group": {
+      "id": "toggle-group",
+      "name": "toggle-group",
+      "type": "other",
+      "status": "complete",
+      "description": "toggle-group",
+      "files": [
+        "ToggleGroup.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ToggleGroup",
+        "ToggleGroupItem"
+      ],
+      "dependencies": [
+        "@radix-ui/react-toggle-group",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection behavior for the group."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled selected value or values."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Initial selected value or values for uncontrolled usage."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Called when the selected value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "rovingFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Enable roving focus between items."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Orientation used for keyboard navigation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Toggle group items."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "toggle": {
+      "id": "toggle",
+      "name": "toggle",
+      "type": "other",
+      "status": "complete",
+      "description": "toggle",
+      "files": [
+        "Toggle.tsx",
+        "variants.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Toggle",
+        "toggleVariants"
+      ],
+      "dependencies": [
+        "@radix-ui/react-toggle",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "pressed",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled pressed state."
+        },
+        {
+          "name": "defaultPressed",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial pressed state for uncontrolled usage."
+        },
+        {
+          "name": "onPressedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(pressed: boolean) => void"
+          },
+          "description": "Called when the pressed state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the toggle."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the toggle as a child element."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toggle."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Toggle content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "toolbar": {
+      "id": "toolbar",
+      "name": "Toolbar",
+      "type": "data-display",
+      "status": "complete",
+      "description": "Toolbar component with section grouping and separators for grouped actions.",
+      "files": [
+        "Toolbar.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Toolbar",
+        "ToolbarButton",
+        "ToolbarSeparator",
+        "ToolbarLink",
+        "ToolbarToggleGroup",
+        "ToolbarToggleItem"
+      ],
+      "dependencies": [
+        "@radix-ui/react-toolbar"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "data-display",
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Toolbar orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for roving focus."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toolbar root."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Toolbar content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "tooltip": {
+      "id": "tooltip",
+      "name": "tooltip",
+      "type": "other",
+      "status": "complete",
+      "description": "tooltip",
+      "files": [
+        "Tooltip.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Tooltip",
+        "TooltipTrigger",
+        "TooltipContent",
+        "TooltipProvider"
+      ],
+      "dependencies": [
+        "@radix-ui/react-tooltip"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "onOpenChange",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Called when the open state changes."
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "disableHoverableContent",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether moving into the content closes the tooltip."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Tooltip composition content."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "typography": {
+      "id": "typography",
+      "name": "typography",
+      "type": "other",
+      "status": "complete",
+      "description": "typography",
+      "files": [
+        "Typography.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TypographyProps"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "h1"
+              },
+              {
+                "kind": "literal",
+                "value": "h2"
+              },
+              {
+                "kind": "literal",
+                "value": "h3"
+              },
+              {
+                "kind": "literal",
+                "value": "h4"
+              },
+              {
+                "kind": "literal",
+                "value": "p"
+              },
+              {
+                "kind": "literal",
+                "value": "blockquote"
+              },
+              {
+                "kind": "literal",
+                "value": "code"
+              },
+              {
+                "kind": "literal",
+                "value": "lead"
+              },
+              {
+                "kind": "literal",
+                "value": "large"
+              },
+              {
+                "kind": "literal",
+                "value": "small"
+              },
+              {
+                "kind": "literal",
+                "value": "muted"
+              }
+            ]
+          },
+          "default": "p",
+          "description": "Typography style variant."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "ElementType"
+          },
+          "description": "Override element type."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the rendered element."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Text or inline content."
+        }
+      ],
+      "manifestStatus": "complete"
+    }
+  }
+}

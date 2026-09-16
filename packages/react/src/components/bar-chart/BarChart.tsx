@@ -68,7 +68,24 @@ export const BarChart = React.forwardRef<ReactECharts, BarChartComponentProps>(
       if (horizontal) {
         return {
           ...baseOption,
-          xAxis: baseOption.yAxis,
+          xAxis: {
+            type: 'value',
+            axisLine: {
+              lineStyle: {
+                color: theme === 'dark' ? '#52525b' : '#e4e4e7',
+              },
+            },
+            axisLabel: {
+              color: theme === 'dark' ? '#a1a1aa' : '#71717a',
+              fontSize: 12,
+            },
+            splitLine: {
+              lineStyle: {
+                color: theme === 'dark' ? '#27272a' : '#f4f4f5',
+                type: 'dashed',
+              },
+            },
+          },
           yAxis: {
             type: 'category',
             data: data.labels,
@@ -83,13 +100,13 @@ export const BarChart = React.forwardRef<ReactECharts, BarChartComponentProps>(
             },
           },
           series,
-        }
+        } as EChartsOption
       }
 
       return {
         ...baseOption,
         series,
-      }
+      } as EChartsOption
     }, [
       data,
       height,

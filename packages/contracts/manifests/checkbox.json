@@ -1,0 +1,586 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "checkbox",
+  "name": "checkbox",
+  "category": "other",
+  "status": "complete",
+  "description": "checkbox",
+  "props": [
+    {
+      "name": "checked",
+      "type": {
+        "kind": "union",
+        "values": ["boolean", "indeterminate"]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "description": "Controlled checked state.",
+      "overrides": {
+        "react-native": {
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "defaultChecked",
+      "type": {
+        "kind": "union",
+        "values": ["boolean", "indeterminate"]
+      },
+      "frameworks": ["react", "vue"],
+      "description": "Uncontrolled initial checked state."
+    },
+    {
+      "name": "onCheckedChange",
+      "type": {
+        "kind": "function",
+        "signature": "(checked: boolean | 'indeterminate') => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the checked state changes.",
+      "overrides": {
+        "react-native": {
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          }
+        },
+        "angular": {
+          "name": "checkedChange"
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": false,
+      "description": "Disables the checkbox."
+    },
+    {
+      "name": "required",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "description": "Requires a value before form submission.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "description": "Name for form submission."
+    },
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "flutter"],
+      "default": "on",
+      "description": "Value for form submission.",
+      "overrides": {
+        "angular": {},
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          }
+        }
+      }
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the checkbox.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "id",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular"],
+      "description": "Id of the checkbox."
+    },
+    {
+      "name": "update:checked",
+      "type": {
+        "kind": "function",
+        "signature": "(checked: boolean | 'indeterminate') => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the checked state changes."
+    },
+    {
+      "name": "readonly",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["angular"],
+      "default": false,
+      "description": "Read-only state."
+    },
+    {
+      "name": "form",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "Associates the checkbox with a form."
+    },
+    {
+      "name": "ariaLabel",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["angular"],
+      "description": "ARIA label for accessibility."
+    },
+    {
+      "name": "label",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "description": "Label text."
+    },
+    {
+      "name": "labelClassName",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native"],
+      "default": "",
+      "description": "CSS class names for the label."
+    },
+    {
+      "name": "onChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(value: boolean | null) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when the checked state changes."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Checkbox.tsx", "index.ts"],
+      "exports": ["Checkbox"],
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "indeterminate"]
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "indeterminate"]
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean | 'indeterminate') => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the checkbox."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Checkbox.vue", "index.ts"],
+      "exports": ["Checkbox"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "indeterminate"]
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "indeterminate"]
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "id",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the checkbox."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the checkbox."
+        },
+        {
+          "name": "update:checked",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean | 'indeterminate') => void"
+          },
+          "description": "Emitted when the checked state changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["checkbox.component.ts", "index.ts"],
+      "exports": ["CheckboxComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": ["lucide-angular"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "union",
+            "values": ["boolean", "indeterminate"]
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        },
+        {
+          "name": "readonly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Read-only state."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "form",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Associates the checkbox with a form."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Value for form submission."
+        },
+        {
+          "name": "id",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Checkbox id."
+        },
+        {
+          "name": "ariaLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "ARIA label for accessibility."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the checkbox."
+        },
+        {
+          "name": "checkedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean | 'indeterminate') => void"
+          },
+          "description": "Emitted when the checked state changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-checkbox"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Checkbox.tsx", "index.ts"],
+      "exports": ["Checkbox"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "onCheckedChange",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label text."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the checkbox."
+        },
+        {
+          "name": "labelClassName",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["checkbox.dart"],
+      "exports": ["GalaxyCheckbox"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: boolean | null) => void"
+          },
+          "description": "Called when the checked state changes."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label text."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

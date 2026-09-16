@@ -1,0 +1,68 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "resizable",
+  "name": "resizable",
+  "category": "other",
+  "status": "complete",
+  "description": "resizable",
+  "props": [],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Resizable.tsx", "index.ts"],
+      "exports": ["ResizablePanelGroup", "ResizablePanel", "ResizableHandle"],
+      "dependencies": ["react-resizable-panels", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": [
+        "ResizableHandle.vue",
+        "ResizablePanel.vue",
+        "ResizablePanelGroup.vue",
+        "index.ts"
+      ],
+      "exports": ["ResizablePanelGroup", "ResizablePanel", "ResizableHandle"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["resizable.component.ts", "index.ts"],
+      "exports": [
+        "ResizablePanelGroupComponent",
+        "ResizablePanelComponent",
+        "ResizableHandleComponent"
+      ],
+      "dependencies": ["angular-split"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [],
+      "entry": "index.ts",
+      "selector": "ui-resizable-panel-group"
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

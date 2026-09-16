@@ -1,0 +1,237 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "date-range-picker",
+  "name": "date-range-picker",
+  "category": "other",
+  "status": "complete",
+  "description": "date-range-picker",
+  "props": [
+    {
+      "name": "dateRange",
+      "type": {
+        "kind": "custom",
+        "name": "DateRange"
+      },
+      "frameworks": ["react"],
+      "description": "Controlled selected date range."
+    },
+    {
+      "name": "onDateRangeChange",
+      "type": {
+        "kind": "function",
+        "signature": "(range: DateRange | undefined) => void"
+      },
+      "frameworks": ["react"],
+      "description": "Called when the selected range changes."
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "Pick a date range",
+      "description": "Placeholder text shown when no range is selected."
+    },
+    {
+      "name": "dateFormat",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "LLL dd, y",
+      "description": "Date format string used to render the selected range."
+    },
+    {
+      "name": "align",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "start"
+          },
+          {
+            "kind": "literal",
+            "value": "center"
+          },
+          {
+            "kind": "literal",
+            "value": "end"
+          }
+        ]
+      },
+      "frameworks": ["react"],
+      "default": "start",
+      "description": "Alignment of the popover content relative to the trigger."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react"],
+      "default": "",
+      "description": "CSS class names for the trigger button."
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react"],
+      "default": false,
+      "description": "Disables the trigger button."
+    },
+    {
+      "name": "numberOfMonths",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react"],
+      "default": 2,
+      "description": "Number of months displayed in the range calendar."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["DateRangePicker.tsx", "index.ts"],
+      "exports": ["DateRangePickerProps"],
+      "dependencies": ["date-fns", "lucide-react", "react-day-picker"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["calendar-range", "popover", "button"],
+      "props": [
+        {
+          "name": "dateRange",
+          "type": {
+            "kind": "custom",
+            "name": "DateRange"
+          },
+          "description": "Controlled selected date range."
+        },
+        {
+          "name": "onDateRangeChange",
+          "type": {
+            "kind": "function",
+            "signature": "(range: DateRange | undefined) => void"
+          },
+          "description": "Called when the selected range changes."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text shown when no range is selected.",
+          "default": "Pick a date range"
+        },
+        {
+          "name": "dateFormat",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Date format string used to render the selected range.",
+          "default": "LLL dd, y"
+        },
+        {
+          "name": "align",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "start"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              },
+              {
+                "kind": "literal",
+                "value": "end"
+              }
+            ]
+          },
+          "description": "Alignment of the popover content relative to the trigger.",
+          "default": "start"
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the trigger button.",
+          "default": ""
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Disables the trigger button.",
+          "default": false
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months displayed in the range calendar.",
+          "default": 2
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["index.ts", "DateRangePicker.vue", "types.ts"],
+      "entry": "index.ts",
+      "exports": ["DateRangePicker"],
+      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "calendar-range", "popover"],
+      "props": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["date-range-picker.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-date-range-picker",
+      "exports": ["DateRangePickerComponent"],
+      "dependencies": ["date-fns"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "calendar-range", "popover"],
+      "props": []
+    },
+    "react-native": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    },
+    "flutter": {
+      "status": "missing",
+      "files": [],
+      "notes": "Not present in the CLI registry for this framework."
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.2: Vue port added with date-fns formatting and radix-vue Popover/Calendar primitives.",
+    "P1.2: Angular port added (popover + calendar/select composition, date-fns formatting)."
+  ]
+}

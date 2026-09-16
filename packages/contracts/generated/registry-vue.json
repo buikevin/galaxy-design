@@ -1,0 +1,5847 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "vue",
+  "generated": true,
+  "pilot": true,
+  "source": "packages/contracts/manifests",
+  "components": {
+    "accordion": {
+      "id": "accordion",
+      "name": "accordion",
+      "type": "other",
+      "status": "complete",
+      "description": "accordion",
+      "files": [
+        "Accordion.vue",
+        "AccordionContent.vue",
+        "AccordionItem.vue",
+        "AccordionTrigger.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Accordion",
+        "AccordionItem",
+        "AccordionTrigger",
+        "AccordionContent"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Accordion selection behavior."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              },
+              {
+                "kind": "primitive",
+                "name": "null"
+              }
+            ]
+          },
+          "default": null,
+          "description": "Controlled value for the open item or items."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Uncontrolled initial value for the open item or items."
+        },
+        {
+          "name": "collapsible",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "When type is single, allows closing the open item."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the accordion and all items."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for RTL or LTR layouts."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "vertical"
+              },
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              }
+            ]
+          },
+          "default": "vertical",
+          "description": "Accordion orientation."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[] | null) => void"
+          },
+          "description": "Emitted when the open item or items change."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "alert-dialog": {
+      "id": "alert-dialog",
+      "name": "alert-dialog",
+      "type": "other",
+      "status": "complete",
+      "description": "alert-dialog",
+      "files": [
+        "AlertDialog.vue",
+        "AlertDialogContent.vue",
+        "AlertDialogFooter.vue",
+        "AlertDialogHeader.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "AlertDialog",
+        "AlertDialogContent",
+        "AlertDialogHeader",
+        "AlertDialogFooter",
+        "AlertDialogTrigger",
+        "AlertDialogTitle",
+        "AlertDialogDescription",
+        "AlertDialogAction",
+        "AlertDialogCancel"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "alert": {
+      "id": "alert",
+      "name": "alert",
+      "type": "other",
+      "status": "complete",
+      "description": "alert",
+      "files": [
+        "alert-description.vue",
+        "alert-title.vue",
+        "alert.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Alert",
+        "AlertTitle",
+        "AlertDescription"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the alert."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the alert container."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "area-chart": {
+      "id": "area-chart",
+      "name": "area-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "area-chart",
+      "files": [
+        "areachart.vue",
+        "index.ts",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "AreaChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "zoom",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether zoom interactions are enabled.",
+          "default": false
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        },
+        {
+          "name": "smooth",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether lines are rendered as smooth curves.",
+          "default": true
+        },
+        {
+          "name": "showPoints",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether data points are shown.",
+          "default": true
+        },
+        {
+          "name": "pointSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of data point markers.",
+          "default": 6
+        },
+        {
+          "name": "stack",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether datasets are stacked.",
+          "default": false
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Fill opacity for the area.",
+          "default": 0.6
+        },
+        {
+          "name": "gradient",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to use gradient area fills.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "aspect-ratio": {
+      "id": "aspect-ratio",
+      "name": "aspect-ratio",
+      "type": "other",
+      "status": "complete",
+      "description": "aspect-ratio",
+      "files": [
+        "AspectRatio.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "AspectRatio"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "ratio",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Desired aspect ratio, for example 16 / 9."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the component as a child element."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "avatar": {
+      "id": "avatar",
+      "name": "avatar",
+      "type": "other",
+      "status": "complete",
+      "description": "avatar",
+      "files": [
+        "Avatar.vue",
+        "AvatarFallback.vue",
+        "AvatarImage.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Avatar",
+        "AvatarImage",
+        "AvatarFallback"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "span",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the avatar root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the avatar root."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "badge": {
+      "id": "badge",
+      "name": "badge",
+      "type": "other",
+      "status": "complete",
+      "description": "badge",
+      "files": [
+        "badge.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Badge"
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "secondary"
+              },
+              {
+                "kind": "literal",
+                "value": "destructive"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant for the badge."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the badge."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "bar-chart": {
+      "id": "bar-chart",
+      "name": "bar-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "bar-chart",
+      "files": [
+        "barchart.vue",
+        "index.ts",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "BarChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        },
+        {
+          "name": "horizontal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to render horizontal bars.",
+          "default": false
+        },
+        {
+          "name": "stacked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether datasets are stacked.",
+          "default": false
+        },
+        {
+          "name": "showDataLabels",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show data labels on bars.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "breadcrumb": {
+      "id": "breadcrumb",
+      "name": "breadcrumb",
+      "type": "other",
+      "status": "complete",
+      "description": "breadcrumb",
+      "files": [
+        "breadcrumb-ellipsis.vue",
+        "breadcrumb-item.vue",
+        "breadcrumb-link.vue",
+        "breadcrumb-list.vue",
+        "breadcrumb-page.vue",
+        "breadcrumb-separator.vue",
+        "breadcrumb.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbList",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator",
+        "BreadcrumbEllipsis"
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the breadcrumb nav."
+        },
+        {
+          "name": "separator",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Declared prop on the component, but the current implementation does not render it."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "button": {
+      "id": "button",
+      "name": "Button",
+      "type": "form",
+      "status": "complete",
+      "description": "Displays a button or a component that looks like a button with variants and sizes.",
+      "files": [
+        "Button.vue",
+        "index.ts",
+        "variants.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Button",
+        "buttonVariants",
+        "ButtonVariants"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "destructive",
+              "outline",
+              "secondary",
+              "ghost",
+              "link"
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              "default",
+              "sm",
+              "lg",
+              "icon"
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child via Radix Primitive."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "button",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the button."
+        },
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              "button",
+              "submit",
+              "reset"
+            ]
+          },
+          "default": "button",
+          "description": "Native button type."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the button."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "calendar-range": {
+      "id": "calendar-range",
+      "name": "calendar-range",
+      "type": "other",
+      "status": "complete",
+      "description": "calendar-range",
+      "files": [
+        "CalendarRange.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "CalendarRange"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "custom",
+            "name": "{ start: Date; end: Date }"
+          },
+          "description": "Controlled selected date range."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the calendar root.",
+          "default": ""
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "custom",
+            "name": "any"
+          },
+          "description": "Placeholder value forwarded to RangeCalendarRoot."
+        },
+        {
+          "name": "pagedNavigation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether next and previous controls advance by full pages."
+        },
+        {
+          "name": "numberOfMonths",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of months to display at once."
+        },
+        {
+          "name": "weekStartsOn",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Index of the first day of the week."
+        },
+        {
+          "name": "fixedWeeks",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to always render six weeks."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "custom",
+            "name": "Matcher | Matcher[]"
+          },
+          "description": "Dates that cannot be selected."
+        },
+        {
+          "name": "readonly",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Prevents changing the selected range.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "calendar": {
+      "id": "calendar",
+      "name": "calendar",
+      "type": "other",
+      "status": "complete",
+      "description": "calendar",
+      "files": [
+        "Calendar.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Calendar"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Controlled selected date. Supports v-model."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Placeholder date used by the calendar root."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the calendar root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: Date) => void"
+          },
+          "description": "Emitted when the selected date changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "card": {
+      "id": "card",
+      "name": "card",
+      "type": "other",
+      "status": "complete",
+      "description": "card",
+      "files": [
+        "card-content.vue",
+        "card-description.vue",
+        "card-footer.vue",
+        "card-header.vue",
+        "card-title.vue",
+        "card.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Card",
+        "CardHeader",
+        "CardTitle",
+        "CardDescription",
+        "CardContent",
+        "CardFooter"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the card container."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "checkbox": {
+      "id": "checkbox",
+      "name": "checkbox",
+      "type": "other",
+      "status": "complete",
+      "description": "checkbox",
+      "files": [
+        "Checkbox.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Checkbox"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "union",
+            "values": [
+              "boolean",
+              "indeterminate"
+            ]
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "union",
+            "values": [
+              "boolean",
+              "indeterminate"
+            ]
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the checkbox."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "id",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the checkbox."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the checkbox."
+        },
+        {
+          "name": "update:checked",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean | 'indeterminate') => void"
+          },
+          "description": "Emitted when the checked state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "collapsible": {
+      "id": "collapsible",
+      "name": "collapsible",
+      "type": "other",
+      "status": "complete",
+      "description": "collapsible",
+      "files": [
+        "Collapsible.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Collapsible",
+        "CollapsibleTrigger",
+        "CollapsibleContent"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the collapsible."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the root element."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "command": {
+      "id": "command",
+      "name": "command",
+      "type": "other",
+      "status": "complete",
+      "description": "command",
+      "files": [
+        "Command.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Command"
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the command root.",
+          "default": ""
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the search input.",
+          "default": "Type a command or search..."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "context-menu": {
+      "id": "context-menu",
+      "name": "context-menu",
+      "type": "other",
+      "status": "complete",
+      "description": "context-menu",
+      "files": [
+        "ContextMenu.vue",
+        "ContextMenuContent.vue",
+        "ContextMenuItem.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ContextMenu",
+        "ContextMenuContent",
+        "ContextMenuItem",
+        "ContextMenuTrigger",
+        "ContextMenuSeparator",
+        "ContextMenuCheckboxItem",
+        "ContextMenuRadioGroup",
+        "ContextMenuRadioItem",
+        "ContextMenuLabel",
+        "ContextMenuSub",
+        "ContextMenuSubTrigger",
+        "ContextMenuSubContent"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether outside interaction is disabled while the context menu is open.",
+          "default": true
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the context menu root.",
+          "default": ""
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "date-picker": {
+      "id": "date-picker",
+      "name": "Date Picker",
+      "type": "form",
+      "status": "complete",
+      "description": "A date picker component with popover and calendar.",
+      "files": [
+        "index.ts",
+        "DatePicker.vue",
+        "types.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DatePicker"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-vue-next",
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "popover"
+      ],
+      "category": "form",
+      "props": [],
+      "manifestStatus": "partial"
+    },
+    "date-range-picker": {
+      "id": "date-range-picker",
+      "name": "date-range-picker",
+      "type": "other",
+      "status": "complete",
+      "description": "date-range-picker",
+      "files": [
+        "index.ts",
+        "DateRangePicker.vue",
+        "types.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DateRangePicker"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-vue-next",
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "button",
+        "calendar-range",
+        "popover"
+      ],
+      "category": "other",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "date-time-picker": {
+      "id": "date-time-picker",
+      "name": "date-time-picker",
+      "type": "other",
+      "status": "complete",
+      "description": "date-time-picker",
+      "files": [
+        "index.ts",
+        "DateTimePicker.vue",
+        "types.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DateTimePicker"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "date-picker",
+        "time-picker"
+      ],
+      "category": "other",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "dialog": {
+      "id": "dialog",
+      "name": "Dialog",
+      "type": "modal-overlay",
+      "status": "complete",
+      "description": "A window overlaid on either the primary window or another dialog window with accessible focus management.",
+      "files": [
+        "Dialog.vue",
+        "DialogContent.vue",
+        "DialogHeader.vue",
+        "DialogFooter.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Dialog",
+        "DialogContent",
+        "DialogHeader",
+        "DialogFooter",
+        "DialogTrigger",
+        "DialogTitle",
+        "DialogDescription",
+        "DialogClose"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "modal-overlay",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the dialog is disabled while open."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "donut-chart": {
+      "id": "donut-chart",
+      "name": "donut-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "donut-chart",
+      "files": [
+        "donutchart.vue",
+        "index.ts",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DonutChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "right"
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "innerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Inner radius percentage.",
+          "default": 50
+        },
+        {
+          "name": "outerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Outer radius percentage.",
+          "default": 70
+        },
+        {
+          "name": "showPercentage",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show percentage labels.",
+          "default": true
+        },
+        {
+          "name": "labelPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "inside"
+              },
+              {
+                "kind": "literal",
+                "value": "outside"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              }
+            ]
+          },
+          "description": "Label position.",
+          "default": "outside"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "dropdown-menu": {
+      "id": "dropdown-menu",
+      "name": "dropdown-menu",
+      "type": "other",
+      "status": "complete",
+      "description": "dropdown-menu",
+      "files": [
+        "DropdownMenu.vue",
+        "DropdownMenuContent.vue",
+        "DropdownMenuItem.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuContent",
+        "DropdownMenuItem",
+        "DropdownMenuTrigger",
+        "DropdownMenuSeparator",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuRadioGroup",
+        "DropdownMenuRadioItem",
+        "DropdownMenuLabel",
+        "DropdownMenuSub",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuSubContent",
+        "DropdownMenuGroup"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether outside interaction is disabled while the menu is open."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "empty": {
+      "id": "empty",
+      "name": "empty",
+      "type": "other",
+      "status": "complete",
+      "description": "empty",
+      "files": [
+        "Empty.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Empty"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        },
+        {
+          "name": "description",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Empty state description text."
+        },
+        {
+          "name": "imageAlt",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Empty",
+          "description": "Accessible label for the default illustration."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "form": {
+      "id": "form",
+      "name": "form",
+      "type": "other",
+      "status": "complete",
+      "description": "form",
+      "files": [
+        "form-description.vue",
+        "form-item.vue",
+        "form-label.vue",
+        "form-message.vue",
+        "form.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormDescription",
+        "FormMessage"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "@vee-validate/zod",
+        "vee-validate"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the form element."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "gauge-chart": {
+      "id": "gauge-chart",
+      "name": "Gauge Chart",
+      "type": "charts",
+      "status": "complete",
+      "description": "Gauge chart for displaying KPIs and metrics with a gauge visualization.",
+      "files": [
+        "index.ts",
+        "gaugechart.vue",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "GaugeChart"
+      ],
+      "dependencies": [
+        "echarts",
+        "vue-echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "charts",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "hover-card": {
+      "id": "hover-card",
+      "name": "hover-card",
+      "type": "other",
+      "status": "complete",
+      "description": "hover-card",
+      "files": [
+        "HoverCard.vue",
+        "HoverCardContent.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "HoverCard",
+        "HoverCardContent",
+        "HoverCardTrigger"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "openDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "closeDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 300,
+          "description": "Delay in milliseconds before closing."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "input": {
+      "id": "input",
+      "name": "input",
+      "type": "other",
+      "status": "complete",
+      "description": "input",
+      "files": [
+        "Input.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Input"
+      ],
+      "dependencies": [
+        "@vueuse/core"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "text",
+          "description": "Input type."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              "string",
+              "number"
+            ]
+          },
+          "description": "Controlled value."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the input."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the input."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | number) => void"
+          },
+          "description": "Emitted when the value changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "kbd": {
+      "id": "kbd",
+      "name": "kbd",
+      "type": "other",
+      "status": "complete",
+      "description": "kbd",
+      "files": [
+        "Kbd.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Kbd"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the kbd element."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "label": {
+      "id": "label",
+      "name": "label",
+      "type": "other",
+      "status": "complete",
+      "description": "label",
+      "files": [
+        "Label.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Label"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "for",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the element the label is associated with."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child via Radix label primitive."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "line-chart": {
+      "id": "line-chart",
+      "name": "line-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "line-chart",
+      "files": [
+        "index.ts",
+        "linechart.vue",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "LineChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "zoom",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether zoom interactions are enabled.",
+          "default": false
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        },
+        {
+          "name": "smooth",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether lines are rendered as smooth curves.",
+          "default": true
+        },
+        {
+          "name": "showPoints",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether data points are shown.",
+          "default": true
+        },
+        {
+          "name": "pointSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of data point markers.",
+          "default": 6
+        },
+        {
+          "name": "area",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to fill the area under the line.",
+          "default": false
+        },
+        {
+          "name": "stack",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether datasets are stacked.",
+          "default": false
+        },
+        {
+          "name": "dataLabels",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show labels on points.",
+          "default": false
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "menubar": {
+      "id": "menubar",
+      "name": "menubar",
+      "type": "other",
+      "status": "complete",
+      "description": "menubar",
+      "files": [
+        "Menubar.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Menubar",
+        "MenubarMenu",
+        "MenubarTrigger",
+        "MenubarContent",
+        "MenubarItem",
+        "MenubarSeparator",
+        "MenubarLabel",
+        "MenubarCheckboxItem",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarPortal",
+        "MenubarSub",
+        "MenubarSubContent",
+        "MenubarSubTrigger",
+        "MenubarGroup"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled open menu value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial open menu value for uncontrolled usage."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the menubar root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the open menu value changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "mixed-chart": {
+      "id": "mixed-chart",
+      "name": "mixed-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "mixed-chart",
+      "files": [
+        "index.ts",
+        "mixedchart.vue",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "MixedChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "grid",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | GridConfig"
+          },
+          "description": "Grid configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "tooltip",
+          "type": {
+            "kind": "custom",
+            "name": "boolean | TooltipConfig"
+          },
+          "description": "Tooltip configuration or toggle.",
+          "default": true
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "navigation-menu": {
+      "id": "navigation-menu",
+      "name": "navigation-menu",
+      "type": "other",
+      "status": "complete",
+      "description": "navigation-menu",
+      "files": [
+        "NavigationMenu.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuList",
+        "NavigationMenuItem",
+        "NavigationMenuTrigger",
+        "NavigationMenuContent",
+        "NavigationMenuLink"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled value of the active menu item."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active item for uncontrolled usage."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction for keyboard navigation.",
+          "default": "ltr"
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "description": "Orientation of the navigation menu.",
+          "default": "horizontal"
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Delay in milliseconds before opening content on hover."
+        },
+        {
+          "name": "skipDelayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Time window to skip the opening delay when moving between triggers."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS class names for the navigation menu root.",
+          "default": ""
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "pagination": {
+      "id": "pagination",
+      "name": "pagination",
+      "type": "other",
+      "status": "complete",
+      "description": "pagination",
+      "files": [
+        "Pagination.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Pagination"
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Current page number, 1-indexed."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Total number of pages."
+        },
+        {
+          "name": "siblingCount",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Number of sibling pages shown around the current page."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the pagination nav."
+        },
+        {
+          "name": "pageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: number) => void"
+          },
+          "description": "Emitted when the page changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "pie-chart": {
+      "id": "pie-chart",
+      "name": "pie-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "pie-chart",
+      "files": [
+        "index.ts",
+        "piechart.vue",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "PieChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "right"
+        },
+        {
+          "name": "animation",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether chart animations are enabled.",
+          "default": true
+        },
+        {
+          "name": "innerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Inner radius percentage.",
+          "default": 0
+        },
+        {
+          "name": "outerRadius",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Outer radius percentage.",
+          "default": 70
+        },
+        {
+          "name": "showPercentage",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show percentage labels.",
+          "default": true
+        },
+        {
+          "name": "labelPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "inside"
+              },
+              {
+                "kind": "literal",
+                "value": "outside"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              }
+            ]
+          },
+          "description": "Label position.",
+          "default": "outside"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "popover": {
+      "id": "popover",
+      "name": "popover",
+      "type": "other",
+      "status": "complete",
+      "description": "popover",
+      "files": [
+        "Popover.vue",
+        "PopoverContent.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Popover",
+        "PopoverContent",
+        "PopoverTrigger"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the popover should behave as modal."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "progress": {
+      "id": "progress",
+      "name": "progress",
+      "type": "other",
+      "status": "complete",
+      "description": "progress",
+      "files": [
+        "Progress.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Progress"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Current progress value. Supports v-model."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum progress value."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the progress root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the progress root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number) => void"
+          },
+          "description": "Emitted when the progress value changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "radar-chart": {
+      "id": "radar-chart",
+      "name": "radar-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "radar-chart",
+      "files": [
+        "index.ts",
+        "radarchart.vue",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "RadarChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "shape",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "polygon"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              }
+            ]
+          },
+          "description": "Radar grid shape.",
+          "default": "polygon"
+        },
+        {
+          "name": "splitNumber",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Number of split lines.",
+          "default": 4
+        },
+        {
+          "name": "maxValue",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum indicator value."
+        },
+        {
+          "name": "fill",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to fill the radar area.",
+          "default": true
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Fill opacity.",
+          "default": 0.3
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "radio-group": {
+      "id": "radio-group",
+      "name": "radio-group",
+      "type": "other",
+      "status": "complete",
+      "description": "radio-group",
+      "files": [
+        "RadioGroup.vue",
+        "RadioGroupItem.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "RadioGroup",
+        "RadioGroupItem"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              "horizontal",
+              "vertical"
+            ]
+          },
+          "description": "Layout orientation."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the value changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "resizable": {
+      "id": "resizable",
+      "name": "resizable",
+      "type": "other",
+      "status": "complete",
+      "description": "resizable",
+      "files": [
+        "ResizableHandle.vue",
+        "ResizablePanel.vue",
+        "ResizablePanelGroup.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ResizablePanelGroup",
+        "ResizablePanel",
+        "ResizableHandle"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "scatter-chart": {
+      "id": "scatter-chart",
+      "name": "scatter-chart",
+      "type": "other",
+      "status": "complete",
+      "description": "scatter-chart",
+      "files": [
+        "index.ts",
+        "scatterchart.vue",
+        "types.ts",
+        "utils.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ScatterChart"
+      ],
+      "dependencies": [
+        "vue-echarts",
+        "echarts"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 10
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "scroll-area": {
+      "id": "scroll-area",
+      "name": "scroll-area",
+      "type": "other",
+      "status": "complete",
+      "description": "scroll-area",
+      "files": [
+        "ScrollArea.vue",
+        "ScrollBar.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "hover"
+              },
+              {
+                "kind": "literal",
+                "value": "scroll"
+              },
+              {
+                "kind": "literal",
+                "value": "auto"
+              },
+              {
+                "kind": "literal",
+                "value": "always"
+              }
+            ]
+          },
+          "default": "hover",
+          "description": "Scrollbar visibility behavior."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "scrollHideDelay",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 600,
+          "description": "Delay before hiding scrollbars when applicable."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the scroll area root."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "select": {
+      "id": "select",
+      "name": "Select",
+      "type": "form",
+      "status": "complete",
+      "description": "A select box component for choosing an option from a list.",
+      "files": [
+        "Select.vue",
+        "SelectTrigger.vue",
+        "SelectContent.vue",
+        "SelectItem.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Select",
+        "SelectTrigger",
+        "SelectContent",
+        "SelectItem",
+        "SelectValue",
+        "SelectGroup",
+        "SelectLabel",
+        "SelectSeparator"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial open state."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              "ltr",
+              "rtl"
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the select."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "autocomplete",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Native input autocomplete."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the value changes."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "separator": {
+      "id": "separator",
+      "name": "separator",
+      "type": "other",
+      "status": "complete",
+      "description": "separator",
+      "files": [
+        "Separator.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Separator"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Separator orientation."
+        },
+        {
+          "name": "decorative",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether the separator is decorative only."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the separator as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the separator."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "sheet": {
+      "id": "sheet",
+      "name": "sheet",
+      "type": "other",
+      "status": "complete",
+      "description": "sheet",
+      "files": [
+        "Sheet.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "SheetContent",
+        "SheetHeader",
+        "SheetFooter",
+        "Sheet",
+        "SheetTrigger",
+        "SheetTitle",
+        "SheetDescription"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage via the underlying dialog root when using `Sheet` from `radix-vue`."
+        },
+        {
+          "name": "modal",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Whether interaction outside the sheet is disabled while open."
+        },
+        {
+          "name": "side",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              }
+            ]
+          },
+          "default": "right",
+          "description": "Side from which the sheet enters."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the sheet root wrapper."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "skeleton": {
+      "id": "skeleton",
+      "name": "skeleton",
+      "type": "other",
+      "status": "complete",
+      "description": "skeleton",
+      "files": [
+        "Skeleton.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Skeleton"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "circle"
+              },
+              {
+                "kind": "literal",
+                "value": "text"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Skeleton shape variant."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the skeleton."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "slider": {
+      "id": "slider",
+      "name": "slider",
+      "type": "other",
+      "status": "complete",
+      "description": "slider",
+      "files": [
+        "Slider.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Slider"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "default": [
+            0
+          ],
+          "description": "Uncontrolled initial slider values."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "primitive",
+              "name": "number"
+            }
+          },
+          "description": "Controlled slider values. Supports v-model."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "description": "Reading direction."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the slider."
+        },
+        {
+          "name": "inverted",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether the slider is visually inverted."
+        },
+        {
+          "name": "max",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 100,
+          "description": "Maximum value."
+        },
+        {
+          "name": "min",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum value."
+        },
+        {
+          "name": "minStepsBetweenThumbs",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 0,
+          "description": "Minimum permitted steps between thumbs."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name used for the hidden inputs in form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Slider orientation."
+        },
+        {
+          "name": "step",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Stepping interval."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the slider root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Emitted when the slider values change."
+        },
+        {
+          "name": "valueCommit",
+          "type": {
+            "kind": "function",
+            "signature": "(value: number[]) => void"
+          },
+          "description": "Emitted when the interaction ends and the slider values are committed."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "spinner": {
+      "id": "spinner",
+      "name": "spinner",
+      "type": "other",
+      "status": "complete",
+      "description": "spinner",
+      "files": [
+        "Spinner.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Spinner"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual size of the spinner."
+        },
+        {
+          "name": "label",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Loading...",
+          "description": "Accessible label announced to assistive technology."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the spinner."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "switch": {
+      "id": "switch",
+      "name": "switch",
+      "type": "other",
+      "status": "complete",
+      "description": "switch",
+      "files": [
+        "Switch.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Switch"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "checked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled checked state."
+        },
+        {
+          "name": "defaultChecked",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Uncontrolled initial checked state."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the switch."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "on",
+          "description": "Value for form submission."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the switch root."
+        },
+        {
+          "name": "update:checked",
+          "type": {
+            "kind": "function",
+            "signature": "(checked: boolean) => void"
+          },
+          "description": "Emitted when the checked state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "table": {
+      "id": "table",
+      "name": "table",
+      "type": "other",
+      "status": "complete",
+      "description": "table",
+      "files": [
+        "Table.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Table",
+        "TableHeader",
+        "TableBody",
+        "TableFooter",
+        "TableRow",
+        "TableHead",
+        "TableCell",
+        "TableCaption"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the table element."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "tabs": {
+      "id": "tabs",
+      "name": "tabs",
+      "type": "other",
+      "status": "complete",
+      "description": "tabs",
+      "files": [
+        "Tabs.vue",
+        "TabsContent.vue",
+        "TabsList.vue",
+        "TabsTrigger.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Tabs",
+        "TabsList",
+        "TabsTrigger",
+        "TabsContent"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled active tab value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Initial active tab value for uncontrolled usage."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Layout orientation for the tab list."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for keyboard navigation."
+        },
+        {
+          "name": "activationMode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "automatic"
+              },
+              {
+                "kind": "literal",
+                "value": "manual"
+              }
+            ]
+          },
+          "default": "automatic",
+          "description": "Whether focus automatically activates a tab."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the root as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the tabs root."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the active tab changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "tags-input": {
+      "id": "tags-input",
+      "name": "tags-input",
+      "type": "other",
+      "status": "complete",
+      "description": "tags-input",
+      "files": [
+        "TagsInput.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TagsInput"
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "custom",
+            "name": "string[]"
+          },
+          "description": "Current tag values.",
+          "default": "[]"
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text for the input.",
+          "default": "Add tag..."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the tags container.",
+          "default": ""
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string[]) => void"
+          },
+          "description": "Event emitted when the tag list changes."
+        },
+        {
+          "name": "tagAdd",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Event emitted when a tag is added."
+        },
+        {
+          "name": "tagRemove",
+          "type": {
+            "kind": "function",
+            "signature": "(tag: string) => void"
+          },
+          "description": "Event emitted when a tag is removed."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "textarea": {
+      "id": "textarea",
+      "name": "textarea",
+      "type": "other",
+      "status": "complete",
+      "description": "textarea",
+      "files": [
+        "Textarea.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Textarea"
+      ],
+      "dependencies": [
+        "@vueuse/core"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "primitive",
+                "name": "number"
+              }
+            ]
+          },
+          "description": "Controlled textarea value. Supports v-model."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the textarea."
+        },
+        {
+          "name": "rows",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Visible number of text rows."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the textarea."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | number) => void"
+          },
+          "description": "Emitted when the textarea value changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "time-picker": {
+      "id": "time-picker",
+      "name": "time-picker",
+      "type": "other",
+      "status": "complete",
+      "description": "time-picker",
+      "files": [
+        "index.ts",
+        "TimePicker.vue",
+        "types.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TimePicker"
+      ],
+      "dependencies": [
+        "lucide-vue-next",
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "button",
+        "popover",
+        "select"
+      ],
+      "category": "other",
+      "props": [],
+      "manifestStatus": "complete"
+    },
+    "toast": {
+      "id": "toast",
+      "name": "Toast",
+      "type": "feedback",
+      "status": "partial",
+      "description": "Brief, auto-dismissing notification surfaced at the edge of the screen.",
+      "files": [
+        "toast.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Toaster",
+        "toast"
+      ],
+      "dependencies": [
+        "vue-sonner"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "feedback",
+      "props": [
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              },
+              {
+                "kind": "literal",
+                "value": "system"
+              }
+            ]
+          },
+          "default": "light",
+          "description": "Visual theme for the toaster."
+        },
+        {
+          "name": "position",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top-left"
+              },
+              {
+                "kind": "literal",
+                "value": "top-center"
+              },
+              {
+                "kind": "literal",
+                "value": "top-right"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-left"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-center"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom-right"
+              }
+            ]
+          },
+          "description": "Screen position for toast notifications."
+        },
+        {
+          "name": "expand",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether stacked toasts can expand to show full content."
+        },
+        {
+          "name": "richColors",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Enable richer semantic color styling."
+        },
+        {
+          "name": "closeButton",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Show a close button on each toast."
+        },
+        {
+          "name": "duration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Default duration in milliseconds."
+        },
+        {
+          "name": "visibleToasts",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Maximum number of visible toasts."
+        },
+        {
+          "name": "offset",
+          "type": {
+            "kind": "custom",
+            "name": "string | number"
+          },
+          "description": "Offset from the viewport edge."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        }
+      ],
+      "manifestStatus": "partial"
+    },
+    "toggle-group": {
+      "id": "toggle-group",
+      "name": "toggle-group",
+      "type": "other",
+      "status": "complete",
+      "description": "toggle-group",
+      "files": [
+        "ToggleGroup.vue",
+        "ToggleGroupItem.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "ToggleGroup",
+        "ToggleGroupItem"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "category": "other",
+      "props": [
+        {
+          "name": "type",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "multiple"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection behavior for the group."
+        },
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Controlled selected value or values."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "primitive",
+                "name": "string"
+              },
+              {
+                "kind": "array",
+                "of": {
+                  "kind": "primitive",
+                  "name": "string"
+                }
+              }
+            ]
+          },
+          "description": "Initial selected value or values for uncontrolled usage."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the group."
+        },
+        {
+          "name": "rovingFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Enable roving focus between items."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Orientation used for keyboard navigation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared visual style variant for items."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Shared size variant for items."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | string[]) => void"
+          },
+          "description": "Emitted when the selected value changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "toggle": {
+      "id": "toggle",
+      "name": "toggle",
+      "type": "other",
+      "status": "complete",
+      "description": "toggle",
+      "files": [
+        "Toggle.vue",
+        "index.ts",
+        "variants.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Toggle",
+        "toggleVariants"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "class-variance-authority"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "pressed",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled pressed state."
+        },
+        {
+          "name": "defaultPressed",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial pressed state for uncontrolled usage."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the toggle."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "outline"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Visual style variant."
+        },
+        {
+          "name": "size",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "default"
+              },
+              {
+                "kind": "literal",
+                "value": "sm"
+              },
+              {
+                "kind": "literal",
+                "value": "lg"
+              }
+            ]
+          },
+          "default": "default",
+          "description": "Size variant."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "button",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render the toggle as a child element."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toggle."
+        },
+        {
+          "name": "update:pressed",
+          "type": {
+            "kind": "function",
+            "signature": "(pressed: boolean) => void"
+          },
+          "description": "Emitted when the pressed state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "toolbar": {
+      "id": "toolbar",
+      "name": "Toolbar",
+      "type": "data-display",
+      "status": "complete",
+      "description": "Toolbar component with section grouping and separators for grouped actions.",
+      "files": [
+        "Toolbar.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Toolbar"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "data-display",
+      "props": [
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "horizontal"
+              },
+              {
+                "kind": "literal",
+                "value": "vertical"
+              }
+            ]
+          },
+          "default": "horizontal",
+          "description": "Toolbar orientation."
+        },
+        {
+          "name": "dir",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "ltr"
+              },
+              {
+                "kind": "literal",
+                "value": "rtl"
+              }
+            ]
+          },
+          "default": "ltr",
+          "description": "Reading direction for roving focus."
+        },
+        {
+          "name": "loop",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": true,
+          "description": "Loop keyboard focus from last item to first."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "custom",
+            "name": "AsTag | Component"
+          },
+          "default": "div",
+          "description": "Element or component to render."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the toolbar root."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "tooltip": {
+      "id": "tooltip",
+      "name": "tooltip",
+      "type": "other",
+      "status": "complete",
+      "description": "tooltip",
+      "files": [
+        "Tooltip.vue",
+        "TooltipContent.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Tooltip",
+        "TooltipContent",
+        "TooltipTrigger",
+        "TooltipProvider"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "open",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Controlled open state."
+        },
+        {
+          "name": "defaultOpen",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Initial open state for uncontrolled usage."
+        },
+        {
+          "name": "delayDuration",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 700,
+          "description": "Delay in milliseconds before opening."
+        },
+        {
+          "name": "disableHoverableContent",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Whether moving into the content closes the tooltip."
+        },
+        {
+          "name": "disableClosingTrigger",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Prevent closing when clicking the trigger."
+        },
+        {
+          "name": "ignoreNonKeyboardFocus",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Only open on keyboard focus."
+        },
+        {
+          "name": "update:open",
+          "type": {
+            "kind": "function",
+            "signature": "(open: boolean) => void"
+          },
+          "description": "Emitted when the open state changes."
+        }
+      ],
+      "manifestStatus": "complete"
+    },
+    "typography": {
+      "id": "typography",
+      "name": "typography",
+      "type": "other",
+      "status": "complete",
+      "description": "typography",
+      "files": [
+        "Typography.vue",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Typography"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "other",
+      "props": [
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "h1"
+              },
+              {
+                "kind": "literal",
+                "value": "h2"
+              },
+              {
+                "kind": "literal",
+                "value": "h3"
+              },
+              {
+                "kind": "literal",
+                "value": "h4"
+              },
+              {
+                "kind": "literal",
+                "value": "p"
+              },
+              {
+                "kind": "literal",
+                "value": "blockquote"
+              },
+              {
+                "kind": "literal",
+                "value": "code"
+              },
+              {
+                "kind": "literal",
+                "value": "lead"
+              },
+              {
+                "kind": "literal",
+                "value": "large"
+              },
+              {
+                "kind": "literal",
+                "value": "small"
+              },
+              {
+                "kind": "literal",
+                "value": "muted"
+              }
+            ]
+          },
+          "default": "p",
+          "description": "Typography style variant."
+        },
+        {
+          "name": "as",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Override element type."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the rendered element."
+        }
+      ],
+      "manifestStatus": "complete"
+    }
+  }
+}

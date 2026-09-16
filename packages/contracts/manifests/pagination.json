@@ -1,0 +1,502 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "pagination",
+  "name": "pagination",
+  "category": "other",
+  "status": "complete",
+  "description": "pagination",
+  "props": [
+    {
+      "name": "currentPage",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 1,
+      "description": "Current page number, 1-indexed.",
+      "overrides": {
+        "react-native": {},
+        "flutter": {}
+      }
+    },
+    {
+      "name": "totalPages",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 1,
+      "description": "Total number of pages.",
+      "overrides": {
+        "react-native": {},
+        "flutter": {}
+      }
+    },
+    {
+      "name": "onPageChange",
+      "type": {
+        "kind": "function",
+        "signature": "(page: number) => void"
+      },
+      "frameworks": ["react", "react-native", "flutter", "vue", "angular"],
+      "description": "Called when the page changes.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "function",
+            "signature": "(page: int) => void"
+          }
+        },
+        "vue": {
+          "name": "pageChange"
+        },
+        "angular": {
+          "name": "pageChange"
+        }
+      }
+    },
+    {
+      "name": "siblingCount",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "default": 1,
+      "description": "Number of sibling pages shown around the current page."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the pagination nav.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "variant",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "compact"
+          },
+          {
+            "kind": "literal",
+            "value": "full"
+          },
+          {
+            "kind": "literal",
+            "value": "loadMore"
+          }
+        ]
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": "compact",
+      "description": "Pagination presentation variant."
+    },
+    {
+      "name": "visiblePages",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": 5,
+      "description": "Number of visible pages in compact mode."
+    },
+    {
+      "name": "loadMoreText",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": "Load More",
+      "description": "Label for load-more mode.",
+      "overrides": {
+        "flutter": {}
+      }
+    },
+    {
+      "name": "isLoading",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": false,
+      "description": "Loading state for load-more mode."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Pagination.tsx", "index.ts"],
+      "exports": ["PaginationProps"],
+      "dependencies": ["lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Current page number, 1-indexed."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Total number of pages."
+        },
+        {
+          "name": "onPageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: number) => void"
+          },
+          "description": "Called when the page changes."
+        },
+        {
+          "name": "siblingCount",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Number of sibling pages shown around the current page."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the pagination nav."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Pagination.vue", "index.ts"],
+      "exports": ["Pagination"],
+      "dependencies": ["lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Current page number, 1-indexed."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Total number of pages."
+        },
+        {
+          "name": "siblingCount",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Number of sibling pages shown around the current page."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the pagination nav."
+        },
+        {
+          "name": "pageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: number) => void"
+          },
+          "description": "Emitted when the page changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["pagination.component.ts", "index.ts"],
+      "exports": ["PaginationComponent"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the pagination nav."
+        },
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Current page number, 1-indexed."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Total number of pages."
+        },
+        {
+          "name": "siblingCount",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 1,
+          "description": "Number of sibling pages shown around the current page."
+        },
+        {
+          "name": "pageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: number) => void"
+          },
+          "description": "Emitted when the page changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-pagination"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Pagination.tsx", "index.ts"],
+      "exports": [
+        "Pagination",
+        "CompactPagination",
+        "FullPagination",
+        "LoadMorePagination"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Current page number."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Total number of pages."
+        },
+        {
+          "name": "onPageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: number) => void"
+          },
+          "description": "Called when the page changes."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "compact"
+              },
+              {
+                "kind": "literal",
+                "value": "full"
+              },
+              {
+                "kind": "literal",
+                "value": "loadMore"
+              }
+            ]
+          },
+          "default": "compact",
+          "description": "Pagination presentation variant."
+        },
+        {
+          "name": "visiblePages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 5,
+          "description": "Number of visible pages in compact mode."
+        },
+        {
+          "name": "loadMoreText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Load More",
+          "description": "Label for load-more mode."
+        },
+        {
+          "name": "isLoading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loading state for load-more mode."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the container."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["pagination.dart"],
+      "exports": ["GalaxyPagination", "PaginationVariant"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "currentPage",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Current page number."
+        },
+        {
+          "name": "totalPages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Total number of pages."
+        },
+        {
+          "name": "onPageChange",
+          "type": {
+            "kind": "function",
+            "signature": "(page: int) => void"
+          },
+          "description": "Called when the page changes."
+        },
+        {
+          "name": "variant",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "compact"
+              },
+              {
+                "kind": "literal",
+                "value": "full"
+              },
+              {
+                "kind": "literal",
+                "value": "loadMore"
+              }
+            ]
+          },
+          "default": "compact",
+          "description": "Pagination presentation variant."
+        },
+        {
+          "name": "visiblePages",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "default": 5,
+          "description": "Number of visible pages in compact mode."
+        },
+        {
+          "name": "loadMoreText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for load-more mode."
+        },
+        {
+          "name": "isLoading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Loading state for load-more mode."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

@@ -1,0 +1,504 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "radio-group",
+  "name": "radio-group",
+  "category": "other",
+  "status": "complete",
+  "description": "radio-group",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "angular", "react-native", "flutter", "vue"],
+      "description": "Controlled selected value.",
+      "overrides": {
+        "angular": {
+          "type": {
+            "kind": "union",
+            "values": ["string", "null"]
+          }
+        },
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "T?"
+          }
+        },
+        "vue": {
+          "name": "modelValue"
+        }
+      }
+    },
+    {
+      "name": "defaultValue",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "react-native"],
+      "description": "Uncontrolled initial value."
+    },
+    {
+      "name": "onValueChange",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["react", "react-native", "angular"],
+      "description": "Called when the value changes.",
+      "overrides": {
+        "angular": {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | null) => void"
+          }
+        }
+      }
+    },
+    {
+      "name": "disabled",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": false,
+      "description": "Disables the entire group."
+    },
+    {
+      "name": "name",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "description": "Name for form submission."
+    },
+    {
+      "name": "required",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "description": "Requires a value before form submission.",
+      "overrides": {
+        "angular": {
+          "default": false
+        }
+      }
+    },
+    {
+      "name": "orientation",
+      "type": {
+        "kind": "union",
+        "values": ["horizontal", "vertical"]
+      },
+      "frameworks": ["react", "vue", "angular"],
+      "description": "Layout orientation.",
+      "overrides": {
+        "angular": {
+          "default": "vertical"
+        }
+      }
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the group.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "update:modelValue",
+      "type": {
+        "kind": "function",
+        "signature": "(value: string) => void"
+      },
+      "frameworks": ["vue"],
+      "description": "Emitted when the value changes."
+    },
+    {
+      "name": "onChanged",
+      "type": {
+        "kind": "function",
+        "signature": "(value: T?) => void"
+      },
+      "frameworks": ["flutter"],
+      "description": "Called when the value changes."
+    },
+    {
+      "name": "options",
+      "type": {
+        "kind": "array",
+        "of": {
+          "kind": "custom",
+          "name": "GalaxyRadioOption<T>"
+        }
+      },
+      "frameworks": ["flutter"],
+      "description": "Radio options."
+    },
+    {
+      "name": "direction",
+      "type": {
+        "kind": "custom",
+        "name": "Axis"
+      },
+      "frameworks": ["flutter"],
+      "default": "Axis.vertical",
+      "description": "Layout direction."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["RadioGroup.tsx", "index.ts"],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "dependencies": ["@radix-ui/react-radio-group", "lucide-react"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": ["horizontal", "vertical"]
+          },
+          "description": "Layout orientation."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["RadioGroup.vue", "RadioGroupItem.vue", "index.ts"],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "modelValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": ["horizontal", "vertical"]
+          },
+          "description": "Layout orientation."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "update:modelValue",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Emitted when the value changes."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "radio-group.component.ts"],
+      "exports": ["RadioGroupComponent", "RadioGroupItemComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "union",
+            "values": ["string", "null"]
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Requires a value before form submission."
+        },
+        {
+          "name": "name",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Name for form submission."
+        },
+        {
+          "name": "orientation",
+          "type": {
+            "kind": "union",
+            "values": ["horizontal", "vertical"]
+          },
+          "default": "vertical",
+          "description": "Layout orientation."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        },
+        {
+          "name": "valueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string | null) => void"
+          },
+          "description": "Emitted when the value changes."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-radio-group"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["RadioGroup.tsx", "index.ts"],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "dependencies": ["@rn-primitives/radio-group"],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "defaultValue",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Uncontrolled initial value."
+        },
+        {
+          "name": "onValueChange",
+          "type": {
+            "kind": "function",
+            "signature": "(value: string) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the entire group."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the group."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["radio_group.dart"],
+      "exports": ["GalaxyRadioGroup", "GalaxyRadioOption", "GalaxyRadioItem"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "value",
+          "type": {
+            "kind": "custom",
+            "name": "T?"
+          },
+          "description": "Controlled selected value."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(value: T?) => void"
+          },
+          "description": "Called when the value changes."
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "array",
+            "of": {
+              "kind": "custom",
+              "name": "GalaxyRadioOption<T>"
+            }
+          },
+          "description": "Radio options."
+        },
+        {
+          "name": "direction",
+          "type": {
+            "kind": "custom",
+            "name": "Axis"
+          },
+          "default": "Axis.vertical",
+          "description": "Layout direction."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

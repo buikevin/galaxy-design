@@ -1,0 +1,303 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "label",
+  "name": "label",
+  "category": "other",
+  "status": "complete",
+  "description": "label",
+  "props": [
+    {
+      "name": "htmlFor",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "angular"],
+      "description": "Id of the element the label is associated with."
+    },
+    {
+      "name": "className",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "",
+      "description": "CSS class names for the label.",
+      "overrides": {
+        "vue": {
+          "name": "class"
+        },
+        "angular": {
+          "name": "class"
+        }
+      }
+    },
+    {
+      "name": "children",
+      "type": {
+        "kind": "custom",
+        "name": "ReactNode"
+      },
+      "frameworks": ["react", "react-native"],
+      "description": "Label content."
+    },
+    {
+      "name": "for",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular"],
+      "description": "Id of the element the label is associated with."
+    },
+    {
+      "name": "asChild",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["vue"],
+      "default": false,
+      "description": "Render as child via Radix label primitive."
+    },
+    {
+      "name": "required",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react-native", "flutter"],
+      "default": false,
+      "description": "Marks label as required and appends an asterisk."
+    },
+    {
+      "name": "text",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["flutter"],
+      "description": "Label text."
+    },
+    {
+      "name": "style",
+      "type": {
+        "kind": "custom",
+        "name": "TextStyle"
+      },
+      "frameworks": ["flutter"],
+      "description": "Text style."
+    },
+    {
+      "name": "color",
+      "type": {
+        "kind": "custom",
+        "name": "Color"
+      },
+      "frameworks": ["flutter"],
+      "description": "Text color."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["Label.tsx", "index.ts"],
+      "exports": ["Label"],
+      "dependencies": ["@radix-ui/react-label"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "htmlFor",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the element the label is associated with."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        },
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Label content."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["Label.vue", "index.ts"],
+      "exports": ["Label"],
+      "dependencies": ["radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "for",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the element the label is associated with."
+        },
+        {
+          "name": "asChild",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Render as child via Radix label primitive."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["index.ts", "label.component.ts"],
+      "exports": ["LabelComponent"],
+      "dependencies": ["@radix-ng/primitives"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "for",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Id of the element the label is associated with."
+        },
+        {
+          "name": "htmlFor",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Alias for the associated element id."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-label, label[ui-label]"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["Label.tsx", "index.ts"],
+      "exports": ["Label"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "children",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Label content."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Marks label as required and appends an asterisk."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the label."
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["label.dart"],
+      "exports": ["GalaxyLabel"],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "text",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label text."
+        },
+        {
+          "name": "required",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Marks label as required and appends an asterisk."
+        },
+        {
+          "name": "style",
+          "type": {
+            "kind": "custom",
+            "name": "TextStyle"
+          },
+          "description": "Text style."
+        },
+        {
+          "name": "color",
+          "type": {
+            "kind": "custom",
+            "name": "Color"
+          },
+          "description": "Text color."
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props."
+  ]
+}

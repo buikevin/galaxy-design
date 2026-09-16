@@ -1,0 +1,1008 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "scatter-chart",
+  "name": "scatter-chart",
+  "category": "other",
+  "status": "complete",
+  "description": "scatter-chart",
+  "props": [
+    {
+      "name": "data",
+      "type": {
+        "kind": "custom",
+        "name": "ChartData"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "description": "Chart data including labels and datasets."
+    },
+    {
+      "name": "height",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 300,
+      "description": "Chart height in pixels."
+    },
+    {
+      "name": "width",
+      "type": {
+        "kind": "custom",
+        "name": "number | string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "100%",
+      "description": "Chart width for fixed or responsive layouts.",
+      "overrides": {
+        "react-native": {},
+        "flutter": {
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "theme",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "light"
+          },
+          {
+            "kind": "literal",
+            "value": "dark"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "light",
+      "description": "Theme mode used by the chart.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "ChartTheme"
+          },
+          "default": "ChartTheme.light"
+        }
+      }
+    },
+    {
+      "name": "legend",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": true,
+      "description": "Whether to show the legend."
+    },
+    {
+      "name": "legendPosition",
+      "type": {
+        "kind": "union",
+        "values": [
+          {
+            "kind": "literal",
+            "value": "top"
+          },
+          {
+            "kind": "literal",
+            "value": "bottom"
+          },
+          {
+            "kind": "literal",
+            "value": "left"
+          },
+          {
+            "kind": "literal",
+            "value": "right"
+          }
+        ]
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "top",
+      "description": "Legend position.",
+      "overrides": {
+        "flutter": {
+          "type": {
+            "kind": "custom",
+            "name": "LegendPosition"
+          },
+          "default": "LegendPosition.top"
+        }
+      }
+    },
+    {
+      "name": "loading",
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": false,
+      "description": "Whether the loading state is shown."
+    },
+    {
+      "name": "emptyText",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": "No data available",
+      "description": "Text shown when there is no data."
+    },
+    {
+      "name": "symbolSize",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 10,
+      "description": "Size of scatter points.",
+      "overrides": {
+        "flutter": {
+          "default": 8
+        }
+      }
+    },
+    {
+      "name": "opacity",
+      "type": {
+        "kind": "primitive",
+        "name": "number"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "default": 0.8,
+      "description": "Opacity of scatter points."
+    },
+    {
+      "name": "xAxisLabel",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "description": "Label for the X axis."
+    },
+    {
+      "name": "yAxisLabel",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native", "flutter"],
+      "description": "Label for the Y axis."
+    },
+    {
+      "name": "class",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": ["vue", "angular", "react"],
+      "default": "",
+      "description": "CSS classes applied to the chart container.",
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
+    },
+    {
+      "name": "options",
+      "type": {
+        "kind": "custom",
+        "name": "Record<string, any>"
+      },
+      "frameworks": ["react", "vue", "angular", "react-native"],
+      "default": "{}",
+      "description": "Framework-specific advanced chart options."
+    },
+    {
+      "name": "style",
+      "type": {
+        "kind": "custom",
+        "name": "StyleProp<ViewStyle>"
+      },
+      "frameworks": ["react-native"],
+      "default": "",
+      "description": "React Native style applied to the chart container."
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["ScatterChart.tsx", "types.ts", "utils.ts", "index.ts"],
+      "exports": ["ScatterChart"],
+      "dependencies": ["echarts-for-react", "echarts"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 10
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "className applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["index.ts", "scatterchart.vue", "types.ts", "utils.ts"],
+      "exports": ["ScatterChart"],
+      "dependencies": ["vue-echarts", "echarts"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 10
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "angular": {
+      "status": "complete",
+      "files": [
+        "scatter-chart.component.ts",
+        "types.ts",
+        "utils.ts",
+        "index.ts"
+      ],
+      "exports": ["ScatterChartComponent"],
+      "dependencies": ["ngx-echarts", "echarts"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width for fixed or responsive layouts.",
+          "default": "100%"
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 10
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        },
+        {
+          "name": "class",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "CSS classes applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "entry": "index.ts",
+      "selector": "ui-scatter-chart"
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["ScatterChart.tsx", "types.ts", "utils.ts", "index.ts"],
+      "exports": ["ScatterChart"],
+      "dependencies": [
+        "@wuba/react-native-echarts",
+        "echarts",
+        "@shopify/react-native-skia"
+      ],
+      "devDependencies": [],
+      "peerDependencies": ["react", "react-native"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "custom",
+            "name": "number | string"
+          },
+          "description": "Chart width in pixels. Defaults to available screen width."
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "light"
+              },
+              {
+                "kind": "literal",
+                "value": "dark"
+              }
+            ]
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "top"
+              },
+              {
+                "kind": "literal",
+                "value": "bottom"
+              },
+              {
+                "kind": "literal",
+                "value": "left"
+              },
+              {
+                "kind": "literal",
+                "value": "right"
+              }
+            ]
+          },
+          "description": "Legend position.",
+          "default": "top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 10
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        },
+        {
+          "name": "style",
+          "type": {
+            "kind": "custom",
+            "name": "StyleProp<ViewStyle>"
+          },
+          "description": "React Native style applied to the chart container.",
+          "default": ""
+        },
+        {
+          "name": "options",
+          "type": {
+            "kind": "custom",
+            "name": "Record<string, any>"
+          },
+          "description": "Framework-specific advanced chart options.",
+          "default": "{}"
+        }
+      ],
+      "entry": "index.ts"
+    },
+    "flutter": {
+      "status": "complete",
+      "files": ["scatter_chart.dart", "types.dart", "utils.dart", "index.dart"],
+      "exports": [
+        "GalaxyScatterChart",
+        "ChartDataset",
+        "ChartData",
+        "GridConfig",
+        "TooltipConfig",
+        "AxisConfig",
+        "BaseChartProps",
+        "ChartColorSchemes",
+        "ThemeColors",
+        "ChartTheme",
+        "LegendPosition"
+      ],
+      "dependencies": ["fl_chart: ^0.68.0"],
+      "devDependencies": [],
+      "peerDependencies": ["flutter"],
+      "registryDependencies": [],
+      "props": [
+        {
+          "name": "data",
+          "type": {
+            "kind": "custom",
+            "name": "ChartData"
+          },
+          "description": "Chart data including labels and datasets."
+        },
+        {
+          "name": "height",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart height in pixels.",
+          "default": 300
+        },
+        {
+          "name": "width",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Chart width in pixels."
+        },
+        {
+          "name": "theme",
+          "type": {
+            "kind": "custom",
+            "name": "ChartTheme"
+          },
+          "description": "Theme mode used by the chart.",
+          "default": "ChartTheme.light"
+        },
+        {
+          "name": "legend",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether to show the legend.",
+          "default": true
+        },
+        {
+          "name": "legendPosition",
+          "type": {
+            "kind": "custom",
+            "name": "LegendPosition"
+          },
+          "description": "Legend position.",
+          "default": "LegendPosition.top"
+        },
+        {
+          "name": "loading",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "description": "Whether the loading state is shown.",
+          "default": false
+        },
+        {
+          "name": "emptyText",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Text shown when there is no data.",
+          "default": "No data available"
+        },
+        {
+          "name": "symbolSize",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Size of scatter points.",
+          "default": 8
+        },
+        {
+          "name": "opacity",
+          "type": {
+            "kind": "primitive",
+            "name": "number"
+          },
+          "description": "Opacity of scatter points.",
+          "default": 0.8
+        },
+        {
+          "name": "xAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the X axis."
+        },
+        {
+          "name": "yAxisLabel",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Label for the Y axis."
+        }
+      ],
+      "entry": "index.dart"
+    }
+  },
+  "notes": [
+    "Bootstrapped from the CLI framework registries; normalized props are merged from framework-local registry props.",
+    "P1.3: the duplicate charts/ implementation tree has been removed; charts/index.ts is now a compatibility barrel re-exporting from the canonical <chart-name>/ directories. Gauge is now exposed for React and Vue."
+  ]
+}

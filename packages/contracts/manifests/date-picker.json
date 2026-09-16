@@ -1,0 +1,393 @@
+{
+  "$schema": "../schemas/component-manifest.schema.json",
+  "id": "date-picker",
+  "name": "Date Picker",
+  "category": "form",
+  "status": "partial",
+  "description": "A date picker component with popover and calendar.",
+  "props": [
+    {
+      "name": "value",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "description": "Selected date.",
+      "frameworks": ["react", "react-native", "flutter"],
+      "overrides": {
+        "react": {
+          "name": "date"
+        },
+        "react-native": {
+          "name": "selected"
+        },
+        "flutter": {
+          "name": "selected"
+        }
+      }
+    },
+    {
+      "name": "dateChange",
+      "type": {
+        "kind": "function",
+        "signature": "(date: Date | undefined) => void"
+      },
+      "description": "Called when the selected date changes.",
+      "frameworks": ["react", "react-native", "flutter"],
+      "overrides": {
+        "react": {
+          "name": "onDateChange"
+        },
+        "react-native": {
+          "name": "onChanged"
+        },
+        "flutter": {
+          "name": "onChanged"
+        }
+      }
+    },
+    {
+      "name": "placeholder",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "default": "Pick a date",
+      "description": "Placeholder text.",
+      "frameworks": ["react", "react-native", "flutter"]
+    },
+    {
+      "name": "format",
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "description": "Date format string.",
+      "frameworks": ["react", "react-native", "flutter"],
+      "overrides": {
+        "react": {
+          "name": "dateFormat"
+        }
+      }
+    },
+    {
+      "name": "minDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "description": "Minimum selectable date.",
+      "frameworks": ["react-native", "flutter"]
+    },
+    {
+      "name": "maxDate",
+      "type": {
+        "kind": "custom",
+        "name": "Date"
+      },
+      "description": "Maximum selectable date.",
+      "frameworks": ["react-native", "flutter"]
+    },
+    {
+      "name": "align",
+      "type": {
+        "kind": "union",
+        "values": ["start", "center", "end"]
+      },
+      "default": "start",
+      "description": "Popover alignment.",
+      "frameworks": ["react"]
+    },
+    {
+      "name": "mode",
+      "type": {
+        "kind": "union",
+        "values": ["single", "range"]
+      },
+      "default": "single",
+      "description": "Selection mode.",
+      "frameworks": ["react-native"]
+    }
+  ],
+  "children": [],
+  "frameworks": {
+    "react": {
+      "status": "complete",
+      "files": ["DatePicker.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["DatePicker", "DatePickerProps"],
+      "dependencies": ["date-fns", "lucide-react"],
+      "registryDependencies": ["calendar", "popover", "button"],
+      "props": [
+        {
+          "name": "date",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Selected date."
+        },
+        {
+          "name": "onDateChange",
+          "type": {
+            "kind": "function",
+            "signature": "(date: Date | undefined) => void"
+          },
+          "description": "Called when the selected date changes."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Pick a date",
+          "description": "Placeholder text shown when no date is selected."
+        },
+        {
+          "name": "dateFormat",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "PPP",
+          "description": "Date formatting pattern passed to date-fns format()."
+        },
+        {
+          "name": "align",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "start"
+              },
+              {
+                "kind": "literal",
+                "value": "center"
+              },
+              {
+                "kind": "literal",
+                "value": "end"
+              }
+            ]
+          },
+          "default": "start",
+          "description": "Popover alignment relative to the trigger."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the trigger button."
+        },
+        {
+          "name": "disabled",
+          "type": {
+            "kind": "primitive",
+            "name": "boolean"
+          },
+          "default": false,
+          "description": "Disables the trigger button."
+        }
+      ]
+    },
+    "vue": {
+      "status": "complete",
+      "files": ["index.ts", "DatePicker.vue", "types.ts"],
+      "entry": "index.ts",
+      "exports": ["DatePicker"],
+      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "calendar", "popover"],
+      "props": []
+    },
+    "angular": {
+      "status": "complete",
+      "files": ["date-picker.component.ts", "index.ts"],
+      "entry": "index.ts",
+      "selector": "ui-date-picker",
+      "exports": ["DatePickerComponent"],
+      "dependencies": ["date-fns"],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": ["button", "calendar", "popover"],
+      "props": []
+    },
+    "react-native": {
+      "status": "complete",
+      "files": ["DatePicker.tsx", "index.ts"],
+      "entry": "index.ts",
+      "exports": ["DatePicker", "DateRangePicker", "DatePickerRange"],
+      "dependencies": ["@react-native-community/datetimepicker"],
+      "notes": "Mobile-specific range mode; `DateRangePicker`/`DatePickerRange` are exports on this entry.",
+      "props": [
+        {
+          "name": "selected",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Selected date for single mode."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(date: Date | undefined) => void"
+          },
+          "description": "Called when the selected date changes."
+        },
+        {
+          "name": "minDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Earliest date available for selection."
+        },
+        {
+          "name": "maxDate",
+          "type": {
+            "kind": "custom",
+            "name": "Date"
+          },
+          "description": "Latest date available for selection."
+        },
+        {
+          "name": "format",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Display format hint used by the local formatter."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "Pick a date",
+          "description": "Placeholder text shown when no date is selected."
+        },
+        {
+          "name": "header",
+          "type": {
+            "kind": "custom",
+            "name": "ReactNode"
+          },
+          "description": "Optional header content rendered above the picker trigger."
+        },
+        {
+          "name": "className",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "default": "",
+          "description": "CSS class names for the outer container."
+        },
+        {
+          "name": "mode",
+          "type": {
+            "kind": "union",
+            "values": [
+              {
+                "kind": "literal",
+                "value": "single"
+              },
+              {
+                "kind": "literal",
+                "value": "range"
+              }
+            ]
+          },
+          "default": "single",
+          "description": "Selection mode for the picker."
+        }
+      ]
+    },
+    "flutter": {
+      "status": "partial",
+      "files": ["date_picker.dart"],
+      "exports": ["GalaxyDatePicker", "DatePickerMode"],
+      "dependencies": ["intl"],
+      "notes": "Range constructor exists but is marked not yet implemented in the source.",
+      "props": [
+        {
+          "name": "selected",
+          "type": {
+            "kind": "custom",
+            "name": "DateTime"
+          },
+          "description": "Selected date for the single-date picker."
+        },
+        {
+          "name": "minDate",
+          "type": {
+            "kind": "custom",
+            "name": "DateTime"
+          },
+          "description": "Earliest date available for selection."
+        },
+        {
+          "name": "maxDate",
+          "type": {
+            "kind": "custom",
+            "name": "DateTime"
+          },
+          "description": "Latest date available for selection."
+        },
+        {
+          "name": "onChanged",
+          "type": {
+            "kind": "function",
+            "signature": "(date: DateTime?) => void"
+          },
+          "description": "Called when the selected date changes."
+        },
+        {
+          "name": "format",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Date format pattern used for display."
+        },
+        {
+          "name": "placeholder",
+          "type": {
+            "kind": "primitive",
+            "name": "string"
+          },
+          "description": "Placeholder text shown when no date is selected."
+        },
+        {
+          "name": "header",
+          "type": {
+            "kind": "custom",
+            "name": "Widget"
+          },
+          "description": "Optional header widget rendered above the picker."
+        }
+      ]
+    }
+  },
+  "a11y": {
+    "keyboard": [
+      "Calendar keyboard behavior follows the shared Calendar component on web."
+    ],
+    "aria": [
+      "Trigger exposes a button semantics with visible placeholder state."
+    ]
+  },
+  "notes": [
+    "P1.2: Vue port added with date-fns formatting and radix-vue Popover/Calendar primitives.",
+    "P1.2: Angular port added (popover + calendar/select composition, date-fns formatting)."
+  ]
+}
