@@ -127,6 +127,13 @@ autocomplete` wiring, re-subscribe khi items thay đổi; đồng thời sửa b
 --registry-url https://galaxy-design.vercel.app/registry` fetch + verify +
   install, content khớp artifact 100%. GitHub pin vẫn là default; CDN là
   opt-in cho đến khi digest rotation flow hoàn thiện.
+- **P1.4 rotation flow CI (mới):** GitHub Actions workflow `registry-release.yml`
+  — validate manifests → generate artifacts → build versioned artifact →
+  deploy docs → update CLI digest → commit + push, chạy tự động khi manifests
+  thay đổi trên main.
+- **Mobile toast (mới):** React Native (custom Animated fade, variants, a11y)
+  - Flutter (SnackBar wrapper với `GalaxyToastVariant`) — mobile matrix giờ
+    **48/61** (7 needs port, 6 web-only).
 - **P2.2 iconLibrary + aliases.ui (mới):** `icon-transformer.ts` transform
   lucide imports sang heroicons/radix-icons cho ~9 icon phổ biến; framework
   không map được giữ nguyên lucide (fallback). `add` giờ dùng
