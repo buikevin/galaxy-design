@@ -139,6 +139,9 @@ autocomplete` wiring, re-subscribe khi items thay đổi; đồng thời sửa b
   không map được giữ nguyên lucide (fallback). `add` giờ dùng
   `config.aliases.ui` thay vì hardcode `/ui` suffix. `--overwrite` flag với
   backup đã wire. Còn mở: JS mode (strip types), prefix, cssVariables false.
+- **Combobox (mới):** component mới cho React (cmdk-based) + Vue (custom filter)
+  — searchable select với filtered dropdown. Registry: React 62, Vue 62
+  components. Manifest + CLI + docs coverage đã cập nhật.
 - **P2.2 JS mode + cssVariables + prefix (mới):** (1) `js-transformer.ts`
   dùng SWC strip TypeScript types khi `typescript: false` — `.ts`→`.js`,
   `.tsx`→`.jsx`; (2) scaffold `cssVariables: false` sinh CSS không dùng
