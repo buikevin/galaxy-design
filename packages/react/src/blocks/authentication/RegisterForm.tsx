@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button/Button'
-import { Input } from '@/components/ui/input/Input'
-import { Label } from '@/components/ui/label/Label'
-import { Checkbox } from '@/components/ui/checkbox/Checkbox'
-import { cn } from '@/lib/utils'
-import type { RegisterFormData } from './types'
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button/Button';
+import { Input } from '@/components/ui/input/Input';
+import { Label } from '@/components/ui/label/Label';
+import { Checkbox } from '@/components/ui/checkbox/Checkbox';
+import { cn } from '@/lib/utils';
+import type { RegisterFormData } from './types';
 
 interface RegisterFormProps {
-  onSubmit: (data: RegisterFormData) => void
-  loading?: boolean
-  error?: string
-  className?: string
+  onSubmit: (data: RegisterFormData) => void;
+  loading?: boolean;
+  error?: string;
+  className?: string;
 }
 
 export const RegisterForm: React.FC<RegisterFormProps> = ({
@@ -25,47 +25,49 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
     password: '',
     confirmPassword: '',
     acceptTerms: false,
-  })
+  });
 
-  const [errors, setErrors] = useState<Partial<Record<keyof RegisterFormData, string>>>({})
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof RegisterFormData, string>>
+  >({});
 
   const validate = (): boolean => {
-    const newErrors: Partial<Record<keyof RegisterFormData, string>> = {}
+    const newErrors: Partial<Record<keyof RegisterFormData, string>> = {};
 
-    if (!formData.name) newErrors.name = 'Name is required'
+    if (!formData.name) newErrors.name = 'Name is required';
 
     if (!formData.email) {
-      newErrors.email = 'Email is required'
+      newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email format'
+      newErrors.email = 'Invalid email format';
     }
 
     if (!formData.password) {
-      newErrors.password = 'Password is required'
+      newErrors.password = 'Password is required';
     } else if (formData.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters'
+      newErrors.password = 'Password must be at least 8 characters';
     }
 
     if (!formData.confirmPassword) {
-      newErrors.confirmPassword = 'Please confirm your password'
+      newErrors.confirmPassword = 'Please confirm your password';
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match'
+      newErrors.confirmPassword = 'Passwords do not match';
     }
 
     if (!formData.acceptTerms) {
-      newErrors.acceptTerms = 'You must accept the terms and conditions'
+      newErrors.acceptTerms = 'You must accept the terms and conditions';
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validate()) {
-      onSubmit(formData)
+      onSubmit(formData);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-4', className)}>
@@ -81,7 +83,9 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
           disabled={loading}
           className={errors.name ? 'border-destructive' : ''}
         />
-        {errors.name && <p className="text-sm text-destructive">{errors.name}</p>}
+        {errors.name && (
+          <p className="text-sm text-destructive">{errors.name}</p>
+        )}
       </div>
 
       {/* Email */}
@@ -96,7 +100,9 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
           disabled={loading}
           className={errors.email ? 'border-destructive' : ''}
         />
-        {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
+        {errors.email && (
+          <p className="text-sm text-destructive">{errors.email}</p>
+        )}
       </div>
 
       {/* Password */}
@@ -106,11 +112,15 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
           id="password"
           type="password"
           value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
           disabled={loading}
           className={errors.password ? 'border-destructive' : ''}
         />
-        {errors.password && <p className="text-sm text-destructive">{errors.password}</p>}
+        {errors.password && (
+          <p className="text-sm text-destructive">{errors.password}</p>
+        )}
       </div>
 
       {/* Confirm Password */}
@@ -120,7 +130,9 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
           id="confirmPassword"
           type="password"
           value={formData.confirmPassword}
-          onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, confirmPassword: e.target.value })
+          }
           disabled={loading}
           className={errors.confirmPassword ? 'border-destructive' : ''}
         />
@@ -141,7 +153,10 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
             disabled={loading}
             className={errors.acceptTerms ? 'border-destructive' : ''}
           />
-          <Label htmlFor="terms" className="text-sm font-normal cursor-pointer leading-tight">
+          <Label
+            htmlFor="terms"
+            className="text-sm font-normal cursor-pointer leading-tight"
+          >
             I accept the{' '}
             <a href="#" className="text-primary hover:underline">
               terms and conditions
@@ -163,13 +178,29 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({
       {/* Submit Button */}
       <Button type="submit" className="w-full" disabled={loading}>
         {loading && (
-          <svg className="mr-2 h-4 w-4 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+          <svg
+            className="mr-2 h-4 w-4 animate-spin"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            />
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            />
           </svg>
         )}
         {loading ? 'Creating account...' : 'Create account'}
       </Button>
     </form>
-  )
-}
+  );
+};

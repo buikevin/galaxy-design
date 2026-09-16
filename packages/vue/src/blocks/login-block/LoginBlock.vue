@@ -9,19 +9,22 @@ import { cn } from '@/lib/utils';
 
 defineOptions({ name: 'UiLoginBlock' });
 
-const props = withDefaults(defineProps<{
-  title?: string;
-  subtitle?: string;
-  showSocial?: boolean;
-  class?: string;
-}>(), {
-  title: 'Welcome back',
-  subtitle: 'Enter your email to sign in to your account',
-  showSocial: true,
-});
+const props = withDefaults(
+  defineProps<{
+    title?: string;
+    subtitle?: string;
+    showSocial?: boolean;
+    class?: string;
+  }>(),
+  {
+    title: 'Welcome back',
+    subtitle: 'Enter your email to sign in to your account',
+    showSocial: true,
+  }
+);
 
 const emit = defineEmits<{
-  submit: [data: { email: string; password: string; remember: boolean }]
+  submit: [data: { email: string; password: string; remember: boolean }];
 }>();
 
 const email = ref('');
@@ -30,16 +33,28 @@ const remember = ref(false);
 </script>
 
 <template>
-  <div :class="cn('flex min-h-screen items-center justify-center bg-background', props.class)">
+  <div
+    :class="
+      cn(
+        'flex min-h-screen items-center justify-center bg-background',
+        props.class
+      )
+    "
+  >
     <div class="w-full max-w-sm space-y-6 px-4">
       <div class="space-y-2 text-center">
         <h1 class="text-2xl font-semibold tracking-tight">{{ title }}</h1>
         <p class="text-sm text-muted-foreground">{{ subtitle }}</p>
       </div>
 
-      <form class="space-y-4" @submit.prevent="emit('submit', { email, password, remember })">
+      <form
+        class="space-y-4"
+        @submit.prevent="emit('submit', { email, password, remember })"
+      >
         <div class="space-y-2">
-          <label for="email" class="text-sm font-medium leading-none">Email</label>
+          <label for="email" class="text-sm font-medium leading-none"
+            >Email</label
+          >
           <input
             id="email"
             v-model="email"
@@ -50,7 +65,9 @@ const remember = ref(false);
           />
         </div>
         <div class="space-y-2">
-          <label for="password" class="text-sm font-medium leading-none">Password</label>
+          <label for="password" class="text-sm font-medium leading-none"
+            >Password</label
+          >
           <input
             id="password"
             v-model="password"
@@ -60,7 +77,12 @@ const remember = ref(false);
           />
         </div>
         <div class="flex items-center space-x-2">
-          <input type="checkbox" id="remember" v-model="remember" class="h-4 w-4 rounded" />
+          <input
+            type="checkbox"
+            id="remember"
+            v-model="remember"
+            class="h-4 w-4 rounded"
+          />
           <label for="remember" class="text-sm">Remember me</label>
         </div>
         <button
@@ -77,7 +99,9 @@ const remember = ref(false);
             <span class="w-full border-t" />
           </div>
           <div class="relative flex justify-center text-xs uppercase">
-            <span class="bg-background px-2 text-muted-foreground">Or continue with</span>
+            <span class="bg-background px-2 text-muted-foreground"
+              >Or continue with</span
+            >
           </div>
         </div>
         <button
@@ -90,7 +114,11 @@ const remember = ref(false);
 
       <p class="px-8 text-center text-sm text-muted-foreground">
         Don&apos;t have an account?
-        <a href="/register" class="underline underline-offset-4 hover:text-primary">Sign up</a>
+        <a
+          href="/register"
+          class="underline underline-offset-4 hover:text-primary"
+          >Sign up</a
+        >
       </p>
     </div>
   </div>

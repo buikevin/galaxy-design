@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button/Button'
-import { Input } from '@/components/ui/input/Input'
-import { Label } from '@/components/ui/label/Label'
-import { Checkbox } from '@/components/ui/checkbox/Checkbox'
-import { cn } from '@/lib/utils'
-import type { LoginFormData } from './types'
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button/Button';
+import { Input } from '@/components/ui/input/Input';
+import { Label } from '@/components/ui/label/Label';
+import { Checkbox } from '@/components/ui/checkbox/Checkbox';
+import { cn } from '@/lib/utils';
+import type { LoginFormData } from './types';
 
 interface LoginFormProps {
-  onSubmit: (data: LoginFormData) => void
-  onForgotPassword?: () => void
-  loading?: boolean
-  error?: string
-  className?: string
+  onSubmit: (data: LoginFormData) => void;
+  onForgotPassword?: () => void;
+  loading?: boolean;
+  error?: string;
+  className?: string;
 }
 
 export const LoginForm: React.FC<LoginFormProps> = ({
@@ -25,35 +25,37 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     email: '',
     password: '',
     rememberMe: false,
-  })
+  });
 
-  const [errors, setErrors] = useState<Partial<Record<keyof LoginFormData, string>>>({})
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof LoginFormData, string>>
+  >({});
 
   const validate = (): boolean => {
-    const newErrors: Partial<Record<keyof LoginFormData, string>> = {}
+    const newErrors: Partial<Record<keyof LoginFormData, string>> = {};
 
     if (!formData.email) {
-      newErrors.email = 'Email is required'
+      newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email format'
+      newErrors.email = 'Invalid email format';
     }
 
     if (!formData.password) {
-      newErrors.password = 'Password is required'
+      newErrors.password = 'Password is required';
     } else if (formData.password.length < 6) {
-      newErrors.password = 'Password must be at least 6 characters'
+      newErrors.password = 'Password must be at least 6 characters';
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validate()) {
-      onSubmit(formData)
+      onSubmit(formData);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className={cn('space-y-4', className)}>
@@ -92,7 +94,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           id="password"
           type="password"
           value={formData.password}
-          onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+          onChange={(e) =>
+            setFormData({ ...formData, password: e.target.value })
+          }
           disabled={loading}
           className={errors.password ? 'border-destructive' : ''}
         />
@@ -111,7 +115,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           }
           disabled={loading}
         />
-        <Label htmlFor="remember" className="text-sm font-normal cursor-pointer">
+        <Label
+          htmlFor="remember"
+          className="text-sm font-normal cursor-pointer"
+        >
           Remember me
         </Label>
       </div>
@@ -150,5 +157,5 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         {loading ? 'Signing in...' : 'Sign in'}
       </Button>
     </form>
-  )
-}
+  );
+};

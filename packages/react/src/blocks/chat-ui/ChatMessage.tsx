@@ -1,12 +1,16 @@
-import React from 'react'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar/Avatar'
-import { cn } from '@/lib/utils'
-import type { Message } from './types'
+import React from 'react';
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from '@/components/ui/avatar/Avatar';
+import { cn } from '@/lib/utils';
+import type { Message } from './types';
 
 interface ChatMessageProps {
-  message: Message
-  showTimestamp?: boolean
-  className?: string
+  message: Message;
+  showTimestamp?: boolean;
+  className?: string;
 }
 
 export const ChatMessage: React.FC<ChatMessageProps> = ({
@@ -17,14 +21,14 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   const formattedTime = message.timestamp.toLocaleTimeString('en-US', {
     hour: '2-digit',
     minute: '2-digit',
-  })
+  });
 
   const initials = message.senderName
     .split(' ')
     .map((n) => n[0])
     .join('')
     .toUpperCase()
-    .slice(0, 2)
+    .slice(0, 2);
 
   return (
     <div
@@ -80,5 +84,5 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

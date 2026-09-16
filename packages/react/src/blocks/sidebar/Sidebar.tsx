@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button/Button'
-import { Separator } from '@/components/ui/separator/Separator'
-import { SidebarItem } from './SidebarItem'
-import { cn } from '@/lib/utils'
-import type { SidebarProps, MenuItem } from './types'
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button/Button';
+import { Separator } from '@/components/ui/separator/Separator';
+import { SidebarItem } from './SidebarItem';
+import { cn } from '@/lib/utils';
+import type { SidebarProps, MenuItem } from './types';
 
 export const Sidebar: React.FC<SidebarProps> = ({
   items,
@@ -15,19 +15,19 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onCollapseChange,
   className,
 }) => {
-  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed)
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed);
 
   const toggleCollapse = () => {
-    const newCollapsed = !isCollapsed
-    setIsCollapsed(newCollapsed)
-    onCollapseChange?.(newCollapsed)
-  }
+    const newCollapsed = !isCollapsed;
+    setIsCollapsed(newCollapsed);
+    onCollapseChange?.(newCollapsed);
+  };
 
   const handleItemClick = (item: MenuItem) => {
-    onItemClick?.(item)
-  }
+    onItemClick?.(item);
+  };
 
-  const currentWidth = isCollapsed ? collapsedWidth : width
+  const currentWidth = isCollapsed ? collapsedWidth : width;
 
   return (
     <aside
@@ -86,7 +86,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={cn('transition-transform', isCollapsed && 'rotate-180')}
+              className={cn(
+                'transition-transform',
+                isCollapsed && 'rotate-180'
+              )}
             >
               <path d="m15 18-6-6 6-6" />
             </svg>
@@ -95,5 +98,5 @@ export const Sidebar: React.FC<SidebarProps> = ({
         )}
       </div>
     </aside>
-  )
-}
+  );
+};

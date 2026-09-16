@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { ref, computed, type HTMLAttributes } from 'vue'
-import Button from '@/components/ui/button/Button.vue'
-import Separator from '@/components/ui/separator/Separator.vue'
-import SidebarItem from './SidebarItem.vue'
-import { cn } from '@/lib/utils'
-import type { SidebarProps, MenuItem } from './types'
+import { ref, computed, type HTMLAttributes } from 'vue';
+import Button from '@/components/ui/button/Button.vue';
+import Separator from '@/components/ui/separator/Separator.vue';
+import SidebarItem from './SidebarItem.vue';
+import { cn } from '@/lib/utils';
+import type { SidebarProps, MenuItem } from './types';
 
 defineOptions({
   name: 'UiSidebar',
-})
+});
 
 interface Props extends SidebarProps {
-  class?: HTMLAttributes['class']
+  class?: HTMLAttributes['class'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,35 +19,37 @@ const props = withDefaults(defineProps<Props>(), {
   defaultCollapsed: false,
   width: '280px',
   collapsedWidth: '60px',
-})
+});
 
 const emit = defineEmits<{
-  itemClick: [item: MenuItem]
-  collapseChange: [collapsed: boolean]
-}>()
+  itemClick: [item: MenuItem];
+  collapseChange: [collapsed: boolean];
+}>();
 
-const isCollapsed = ref(props.defaultCollapsed)
+const isCollapsed = ref(props.defaultCollapsed);
 
 const toggleCollapse = () => {
-  isCollapsed.value = !isCollapsed.value
-  emit('collapseChange', isCollapsed.value)
-}
+  isCollapsed.value = !isCollapsed.value;
+  emit('collapseChange', isCollapsed.value);
+};
 
 const currentWidth = computed(() => {
-  return isCollapsed.value ? props.collapsedWidth : props.width
-})
+  return isCollapsed.value ? props.collapsedWidth : props.width;
+});
 
 const handleItemClick = (item: MenuItem) => {
-  emit('itemClick', item)
-}
+  emit('itemClick', item);
+};
 </script>
 
 <template>
   <aside
-    :class="cn(
-      'flex flex-col h-full border-r bg-card transition-all duration-300',
-      props.class
-    )"
+    :class="
+      cn(
+        'flex flex-col h-full border-r bg-card transition-all duration-300',
+        props.class
+      )
+    "
     :style="{ width: currentWidth }"
   >
     <!-- Header -->
@@ -88,10 +90,7 @@ const handleItemClick = (item: MenuItem) => {
         <Button
           v-if="collapsible"
           variant="ghost"
-          :class="cn(
-            'w-full',
-            isCollapsed && 'justify-center px-2'
-          )"
+          :class="cn('w-full', isCollapsed && 'justify-center px-2')"
           @click="toggleCollapse"
         >
           <svg
@@ -104,10 +103,7 @@ const handleItemClick = (item: MenuItem) => {
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            :class="cn(
-              'transition-transform',
-              isCollapsed && 'rotate-180'
-            )"
+            :class="cn('transition-transform', isCollapsed && 'rotate-180')"
           >
             <path d="m15 18-6-6 6-6" />
           </svg>

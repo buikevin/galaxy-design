@@ -35,7 +35,14 @@ export interface DashboardStatCard {
   change: string;
 }
 
-export function DashboardBlock({ navItems, stats, columns, tableData, title = 'Dashboard', className }: DashboardBlockProps) {
+export function DashboardBlock({
+  navItems,
+  stats,
+  columns,
+  tableData,
+  title = 'Dashboard',
+  className,
+}: DashboardBlockProps) {
   const [sidebarOpen, setSidebarOpen] = React.useState(true);
 
   return (
@@ -44,7 +51,7 @@ export function DashboardBlock({ navItems, stats, columns, tableData, title = 'D
       <aside
         className={cn(
           'border-r bg-card transition-all duration-200',
-          sidebarOpen ? 'w-64' : 'w-0 overflow-hidden',
+          sidebarOpen ? 'w-64' : 'w-0 overflow-hidden'
         )}
       >
         <div className="flex h-16 items-center border-b px-4">
@@ -57,7 +64,7 @@ export function DashboardBlock({ navItems, stats, columns, tableData, title = 'D
               href={item.href}
               className={cn(
                 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent',
-                item.active && 'bg-accent font-medium text-accent-foreground',
+                item.active && 'bg-accent font-medium text-accent-foreground'
               )}
             >
               {item.label}
@@ -86,12 +93,16 @@ export function DashboardBlock({ navItems, stats, columns, tableData, title = 'D
               key={stat.label}
               className="rounded-lg border bg-card p-6 shadow-sm"
             >
-              <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
+              <p className="text-sm font-medium text-muted-foreground">
+                {stat.label}
+              </p>
               <p className="text-2xl font-semibold mt-2">{stat.value}</p>
-              <p className={cn(
-                'text-xs mt-1',
-                stat.trend === 'up' ? 'text-green-600' : 'text-red-600',
-              )}>
+              <p
+                className={cn(
+                  'text-xs mt-1',
+                  stat.trend === 'up' ? 'text-green-600' : 'text-red-600'
+                )}
+              >
                 {stat.trend === 'up' ? '↑' : '↓'} {stat.change}
               </p>
             </div>
@@ -107,7 +118,10 @@ export function DashboardBlock({ navItems, stats, columns, tableData, title = 'D
             <thead>
               <tr className="border-b bg-muted/50">
                 {columns.map((col) => (
-                  <th key={col.key} className="h-10 px-4 text-left font-medium text-muted-foreground">
+                  <th
+                    key={col.key}
+                    className="h-10 px-4 text-left font-medium text-muted-foreground"
+                  >
                     {col.header}
                   </th>
                 ))}
@@ -117,7 +131,9 @@ export function DashboardBlock({ navItems, stats, columns, tableData, title = 'D
               {tableData.slice(0, 5).map((row, i) => (
                 <tr key={i} className="border-b hover:bg-muted/50">
                   {columns.map((col) => (
-                    <td key={col.key} className="p-4">{String(row[col.key] ?? '')}</td>
+                    <td key={col.key} className="p-4">
+                      {String(row[col.key] ?? '')}
+                    </td>
                   ))}
                 </tr>
               ))}
@@ -127,5 +143,5 @@ export function DashboardBlock({ navItems, stats, columns, tableData, title = 'D
       </main>
     </div>
   );
-};
+}
 DashboardBlock.displayName = 'DashboardBlock';

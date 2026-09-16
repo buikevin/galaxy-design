@@ -8,7 +8,12 @@ import type { MenuItem } from './types';
 @Component({
   selector: 'ui-sidebar',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, SeparatorComponent, SidebarItemComponent],
+  imports: [
+    CommonModule,
+    ButtonComponent,
+    SeparatorComponent,
+    SidebarItemComponent,
+  ],
   template: `
     <aside
       class="flex flex-col h-full border-r bg-card transition-all duration-300"
@@ -55,7 +60,9 @@ import type { MenuItem } from './types';
             fill="none"
             stroke="currentColor"
             stroke-width="2"
-            [class]="'transition-transform' + (isCollapsed ? ' rotate-180' : '')"
+            [class]="
+              'transition-transform' + (isCollapsed ? ' rotate-180' : '')
+            "
           >
             <path d="m15 18-6-6 6-6" />
           </svg>

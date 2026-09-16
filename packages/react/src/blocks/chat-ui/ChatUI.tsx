@@ -1,8 +1,8 @@
-import React from 'react'
-import { MessageList } from './MessageList'
-import { MessageInput } from './MessageInput'
-import { cn } from '@/lib/utils'
-import type { ChatUIProps } from './types'
+import React from 'react';
+import { MessageList } from './MessageList';
+import { MessageInput } from './MessageInput';
+import { cn } from '@/lib/utils';
+import type { ChatUIProps } from './types';
 
 export const ChatUI: React.FC<ChatUIProps> = ({
   messages,
@@ -14,9 +14,9 @@ export const ChatUI: React.FC<ChatUIProps> = ({
 }) => {
   const handleSendMessage = (content: string) => {
     if (onSendMessage) {
-      onSendMessage(content)
+      onSendMessage(content);
     }
-  }
+  };
 
   return (
     <div
@@ -46,5 +46,5 @@ export const ChatUI: React.FC<ChatUIProps> = ({
       {/* Input */}
       <MessageInput placeholder={placeholder} onSend={handleSendMessage} />
     </div>
-  )
-}
+  );
+};

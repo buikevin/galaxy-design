@@ -1315,10 +1315,7 @@
       ],
       "entry": "index.ts",
       "exports": [
-        "DashboardComponent",
-        "DashboardNavItem",
-        "DashboardStatCard",
-        "DashboardTableColumn"
+        "DashboardComponent"
       ],
       "dependencies": [],
       "devDependencies": [],

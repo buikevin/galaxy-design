@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button/Button'
-import { cn } from '@/lib/utils'
-import type { MenuItem } from './types'
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button/Button';
+import { cn } from '@/lib/utils';
+import type { MenuItem } from './types';
 
 interface SidebarItemProps {
-  item: MenuItem
-  collapsed?: boolean
-  level?: number
-  onClick?: (item: MenuItem) => void
+  item: MenuItem;
+  collapsed?: boolean;
+  level?: number;
+  onClick?: (item: MenuItem) => void;
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = ({
@@ -16,16 +16,16 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
   level = 0,
   onClick,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleClick = () => {
-    onClick?.(item)
+    onClick?.(item);
     if (item.children && item.children.length > 0) {
-      setIsExpanded(!isExpanded)
+      setIsExpanded(!isExpanded);
     }
-  }
+  };
 
-  const hasChildren = item.children && item.children.length > 0
+  const hasChildren = item.children && item.children.length > 0;
 
   return (
     <div>
@@ -61,7 +61,9 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
         )}
 
         {/* Label */}
-        {!collapsed && <span className="flex-1 text-left truncate">{item.label}</span>}
+        {!collapsed && (
+          <span className="flex-1 text-left truncate">{item.label}</span>
+        )}
 
         {/* Badge */}
         {!collapsed && item.badge && (
@@ -82,7 +84,10 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className={cn('ml-auto transition-transform', isExpanded && 'rotate-90')}
+            className={cn(
+              'ml-auto transition-transform',
+              isExpanded && 'rotate-90'
+            )}
           >
             <path d="m9 18 6-6-6-6" />
           </svg>
@@ -104,5 +109,5 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};

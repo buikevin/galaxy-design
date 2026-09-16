@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
-import { Button } from '@/components/ui/button/Button'
-import { Input } from '@/components/ui/input/Input'
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar/Avatar'
-import { ScrollArea } from '@/components/ui/scroll-area/ScrollArea'
-import { cn } from '@/lib/utils'
-import type { EmailClientProps, Email } from './types'
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button/Button';
+import { Input } from '@/components/ui/input/Input';
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from '@/components/ui/avatar/Avatar';
+import { ScrollArea } from '@/components/ui/scroll-area/ScrollArea';
+import { cn } from '@/lib/utils';
+import type { EmailClientProps, Email } from './types';
 
 export const EmailClient: React.FC<EmailClientProps> = ({
   emails,
@@ -14,8 +18,8 @@ export const EmailClient: React.FC<EmailClientProps> = ({
   onEmailAction,
   className,
 }) => {
-  const [selectedEmail, setSelectedEmail] = useState<Email | null>(null)
-  const [searchQuery, setSearchQuery] = useState('')
+  const [selectedEmail, setSelectedEmail] = useState<Email | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredEmails = searchQuery
     ? emails.filter(
@@ -24,26 +28,35 @@ export const EmailClient: React.FC<EmailClientProps> = ({
           email.from.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
           email.preview.toLowerCase().includes(searchQuery.toLowerCase())
       )
-    : emails
+    : emails;
 
   const handleEmailClick = (email: Email) => {
-    setSelectedEmail(email)
-    onEmailClick?.(email)
-  }
+    setSelectedEmail(email);
+    onEmailClick?.(email);
+  };
 
   const formatDate = (date: Date) => {
-    const now = new Date()
-    const diff = now.getTime() - date.getTime()
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+    const now = new Date();
+    const diff = now.getTime() - date.getTime();
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-    if (days === 0) return date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-    if (days === 1) return 'Yesterday'
-    if (days < 7) return date.toLocaleDateString('en-US', { weekday: 'short' })
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-  }
+    if (days === 0)
+      return date.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+    if (days === 1) return 'Yesterday';
+    if (days < 7) return date.toLocaleDateString('en-US', { weekday: 'short' });
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  };
 
   return (
-    <div className={cn('flex h-screen border rounded-lg overflow-hidden bg-background', className)}>
+    <div
+      className={cn(
+        'flex h-screen border rounded-lg overflow-hidden bg-background',
+        className
+      )}
+    >
       {/* Sidebar */}
       <div className="w-64 border-r flex flex-col">
         <div className="p-4">
@@ -56,11 +69,17 @@ export const EmailClient: React.FC<EmailClientProps> = ({
         <ScrollArea className="flex-1">
           <nav className="px-2 space-y-1">
             {folders?.map((folder) => (
-              <Button key={folder.id} variant="ghost" className="w-full justify-start gap-2">
+              <Button
+                key={folder.id}
+                variant="ghost"
+                className="w-full justify-start gap-2"
+              >
                 {folder.icon && <span>{folder.icon}</span>}
                 <span className="flex-1 text-left">{folder.name}</span>
                 {folder.count && (
-                  <span className="text-xs text-muted-foreground">{folder.count}</span>
+                  <span className="text-xs text-muted-foreground">
+                    {folder.count}
+                  </span>
                 )}
               </Button>
             ))}
@@ -92,7 +111,9 @@ export const EmailClient: React.FC<EmailClientProps> = ({
               >
                 <div className="flex items-start gap-3">
                   <Avatar className="h-9 w-9">
-                    {email.from.avatar && <AvatarImage src={email.from.avatar} />}
+                    {email.from.avatar && (
+                      <AvatarImage src={email.from.avatar} />
+                    )}
                     <AvatarFallback>
                       {email.from.name.slice(0, 2).toUpperCase()}
                     </AvatarFallback>
@@ -137,7 +158,9 @@ export const EmailClient: React.FC<EmailClientProps> = ({
           <>
             <div className="p-4 border-b space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-semibold">{selectedEmail.subject}</h2>
+                <h2 className="text-2xl font-semibold">
+                  {selectedEmail.subject}
+                </h2>
                 <div className="flex gap-2">
                   <Button
                     variant="ghost"
@@ -205,5 +228,5 @@ export const EmailClient: React.FC<EmailClientProps> = ({
         )}
       </div>
     </div>
-  )
-}
+  );
+};

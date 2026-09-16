@@ -1,41 +1,41 @@
 <script setup lang="ts">
-import { ref, type HTMLAttributes } from 'vue'
-import Button from '@/components/ui/button/Button.vue'
-import { cn } from '@/lib/utils'
-import type { MenuItem } from './types'
+import { ref, type HTMLAttributes } from 'vue';
+import Button from '@/components/ui/button/Button.vue';
+import { cn } from '@/lib/utils';
+import type { MenuItem } from './types';
 
 interface Props {
-  item: MenuItem
-  collapsed?: boolean
-  level?: number
-  class?: HTMLAttributes['class']
+  item: MenuItem;
+  collapsed?: boolean;
+  level?: number;
+  class?: HTMLAttributes['class'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   collapsed: false,
   level: 0,
-})
+});
 
 const emit = defineEmits<{
-  click: [item: MenuItem]
-}>()
+  click: [item: MenuItem];
+}>();
 
-const isExpanded = ref(false)
+const isExpanded = ref(false);
 
 const toggleExpanded = () => {
   if (props.item.children && props.item.children.length > 0) {
-    isExpanded.value = !isExpanded.value
+    isExpanded.value = !isExpanded.value;
   }
-}
+};
 
 const handleClick = () => {
-  emit('click', props.item)
+  emit('click', props.item);
   if (props.item.children && props.item.children.length > 0) {
-    toggleExpanded()
+    toggleExpanded();
   }
-}
+};
 
-const hasChildren = props.item.children && props.item.children.length > 0
+const hasChildren = props.item.children && props.item.children.length > 0;
 </script>
 
 <template>
@@ -43,12 +43,14 @@ const hasChildren = props.item.children && props.item.children.length > 0
     <Button
       variant="ghost"
       :disabled="item.disabled"
-      :class="cn(
-        'w-full justify-start gap-2 mb-1',
-        item.active && 'bg-accent',
-        collapsed && 'justify-center px-2',
-        props.class
-      )"
+      :class="
+        cn(
+          'w-full justify-start gap-2 mb-1',
+          item.active && 'bg-accent',
+          collapsed && 'justify-center px-2',
+          props.class
+        )
+      "
       :style="{ paddingLeft: `${level * 1 + 0.75}rem` }"
       @click="handleClick"
     >
@@ -71,10 +73,7 @@ const hasChildren = props.item.children && props.item.children.length > 0
       </svg>
 
       <!-- Label -->
-      <span
-        v-if="!collapsed"
-        class="flex-1 text-left truncate"
-      >
+      <span v-if="!collapsed" class="flex-1 text-left truncate">
         {{ item.label }}
       </span>
 
@@ -98,20 +97,14 @@ const hasChildren = props.item.children && props.item.children.length > 0
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        :class="cn(
-          'ml-auto transition-transform',
-          isExpanded && 'rotate-90'
-        )"
+        :class="cn('ml-auto transition-transform', isExpanded && 'rotate-90')"
       >
         <path d="m9 18 6-6-6-6" />
       </svg>
     </Button>
 
     <!-- Children -->
-    <div
-      v-if="hasChildren && isExpanded && !collapsed"
-      class="ml-2"
-    >
+    <div v-if="hasChildren && isExpanded && !collapsed" class="ml-2">
       <SidebarItem
         v-for="child in item.children"
         :key="child.id"

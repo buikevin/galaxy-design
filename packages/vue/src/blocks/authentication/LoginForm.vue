@@ -1,65 +1,62 @@
 <script setup lang="ts">
-import { ref, type HTMLAttributes } from 'vue'
-import Button from '@/components/ui/button/Button.vue'
-import Input from '@/components/ui/input/Input.vue'
-import Label from '@/components/ui/label/label.vue'
-import Checkbox from '@/components/ui/checkbox/checkbox.vue'
-import { cn } from '@/lib/utils'
-import type { LoginFormData } from './types'
+import { ref, type HTMLAttributes } from 'vue';
+import Button from '@/components/ui/button/Button.vue';
+import Input from '@/components/ui/input/Input.vue';
+import Label from '@/components/ui/label/label.vue';
+import Checkbox from '@/components/ui/checkbox/checkbox.vue';
+import { cn } from '@/lib/utils';
+import type { LoginFormData } from './types';
 
 interface Props {
-  loading?: boolean
-  error?: string
-  class?: HTMLAttributes['class']
+  loading?: boolean;
+  error?: string;
+  class?: HTMLAttributes['class'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   loading: false,
-})
+});
 
 const emit = defineEmits<{
-  submit: [data: LoginFormData]
-  forgotPassword: []
-}>()
+  submit: [data: LoginFormData];
+  forgotPassword: [];
+}>();
 
 const formData = ref<LoginFormData>({
   email: '',
   password: '',
   rememberMe: false,
-})
+});
 
-const errors = ref<Partial<Record<keyof LoginFormData, string>>>({})
+const errors = ref<Partial<Record<keyof LoginFormData, string>>>({});
 
 const validate = (): boolean => {
-  errors.value = {}
+  errors.value = {};
 
   if (!formData.value.email) {
-    errors.value.email = 'Email is required'
+    errors.value.email = 'Email is required';
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)) {
-    errors.value.email = 'Invalid email format'
+    errors.value.email = 'Invalid email format';
   }
 
   if (!formData.value.password) {
-    errors.value.password = 'Password is required'
+    errors.value.password = 'Password is required';
   } else if (formData.value.password.length < 6) {
-    errors.value.password = 'Password must be at least 6 characters'
+    errors.value.password = 'Password must be at least 6 characters';
   }
 
-  return Object.keys(errors.value).length === 0
-}
+  return Object.keys(errors.value).length === 0;
+};
 
 const handleSubmit = () => {
   if (validate()) {
-    emit('submit', formData.value)
+    emit('submit', formData.value);
   }
-}
+};
 </script>
 
 <template>
-  <form
-    :class="cn('space-y-4', props.class)"
-    @submit.prevent="handleSubmit"
-  >
+  <form :class="cn('space-y-4', props.class)" @submit.prevent="handleSubmit">
     <!-- Email -->
     <div class="space-y-2">
       <Label for="email">Email</Label>
@@ -113,7 +110,10 @@ const handleSubmit = () => {
     </div>
 
     <!-- Error Message -->
-    <div v-if="error" class="p-3 text-sm text-destructive bg-destructive/10 rounded-md">
+    <div
+      v-if="error"
+      class="p-3 text-sm text-destructive bg-destructive/10 rounded-md"
+    >
       {{ error }}
     </div>
 
@@ -126,8 +126,19 @@ const handleSubmit = () => {
         fill="none"
         viewBox="0 0 24 24"
       >
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+        <circle
+          class="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        />
+        <path
+          class="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        />
       </svg>
       {{ loading ? 'Signing in...' : 'Sign in' }}
     </Button>

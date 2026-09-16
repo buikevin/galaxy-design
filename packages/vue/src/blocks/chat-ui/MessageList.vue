@@ -1,34 +1,34 @@
 <script setup lang="ts">
-import { ref, watch, nextTick, type HTMLAttributes } from 'vue'
-import ScrollArea from '@/components/ui/scroll-area/ScrollArea.vue'
-import ChatMessage from './ChatMessage.vue'
-import { cn } from '@/lib/utils'
-import type { Message } from './types'
+import { ref, watch, nextTick, type HTMLAttributes } from 'vue';
+import ScrollArea from '@/components/ui/scroll-area/ScrollArea.vue';
+import ChatMessage from './ChatMessage.vue';
+import { cn } from '@/lib/utils';
+import type { Message } from './types';
 
 interface Props {
-  messages: Message[]
-  showTimestamp?: boolean
-  height?: string
-  class?: HTMLAttributes['class']
+  messages: Message[];
+  showTimestamp?: boolean;
+  height?: string;
+  class?: HTMLAttributes['class'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   showTimestamp: true,
   height: '400px',
-})
+});
 
-const scrollAreaRef = ref<HTMLElement | null>(null)
+const scrollAreaRef = ref<HTMLElement | null>(null);
 
 // Auto-scroll to bottom when new messages arrive
 watch(
   () => props.messages.length,
   async () => {
-    await nextTick()
+    await nextTick();
     if (scrollAreaRef.value) {
-      scrollAreaRef.value.scrollTop = scrollAreaRef.value.scrollHeight
+      scrollAreaRef.value.scrollTop = scrollAreaRef.value.scrollHeight;
     }
   }
-)
+);
 </script>
 
 <template>
@@ -37,7 +37,10 @@ watch(
     :class="cn('w-full rounded-md border p-4', props.class)"
     :style="{ height: props.height }"
   >
-    <div v-if="messages.length === 0" class="flex items-center justify-center h-full text-muted-foreground">
+    <div
+      v-if="messages.length === 0"
+      class="flex items-center justify-center h-full text-muted-foreground"
+    >
       <p>No messages yet. Start the conversation!</p>
     </div>
 

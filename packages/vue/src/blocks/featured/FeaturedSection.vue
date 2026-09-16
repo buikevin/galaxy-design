@@ -1,25 +1,25 @@
 <script setup lang="ts">
-import { type HTMLAttributes, computed } from 'vue'
-import { cn } from '@/lib/utils'
-import type { FeaturedSectionProps } from './types'
+import { type HTMLAttributes, computed } from 'vue';
+import { cn } from '@/lib/utils';
+import type { FeaturedSectionProps } from './types';
 
 interface Props extends FeaturedSectionProps {
-  class?: HTMLAttributes['class']
+  class?: HTMLAttributes['class'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   columns: 3,
   variant: 'default',
-})
+});
 
 const gridCols = computed(() => {
   const cols = {
     2: 'md:grid-cols-2',
     3: 'md:grid-cols-2 lg:grid-cols-3',
     4: 'md:grid-cols-2 lg:grid-cols-4',
-  }
-  return cols[props.columns]
-})
+  };
+  return cols[props.columns];
+});
 </script>
 
 <template>
@@ -27,10 +27,9 @@ const gridCols = computed(() => {
     <div class="mx-auto max-w-7xl">
       <!-- Header -->
       <div
-        :class="cn(
-          'mb-16',
-          variant === 'centered' && 'text-center mx-auto max-w-3xl'
-        )"
+        :class="
+          cn('mb-16', variant === 'centered' && 'text-center mx-auto max-w-3xl')
+        "
       >
         <h2 v-if="title" class="text-3xl font-bold tracking-tight sm:text-4xl">
           {{ title }}
@@ -45,10 +44,13 @@ const gridCols = computed(() => {
         <div
           v-for="feature in features"
           :key="feature.id"
-          :class="cn(
-            'group relative',
-            variant === 'cards' && 'p-6 rounded-lg border bg-card hover:shadow-lg transition-shadow'
-          )"
+          :class="
+            cn(
+              'group relative',
+              variant === 'cards' &&
+                'p-6 rounded-lg border bg-card hover:shadow-lg transition-shadow'
+            )
+          "
         >
           <!-- Icon/Image -->
           <div v-if="feature.icon || feature.image" class="mb-4">

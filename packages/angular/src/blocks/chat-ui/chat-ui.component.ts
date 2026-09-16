@@ -23,13 +23,16 @@ import type { Message } from './types';
     TextareaComponent,
   ],
   template: `
-    <div class="flex flex-col w-full max-w-2xl mx-auto rounded-lg border bg-card text-card-foreground shadow-sm">
+    <div
+      class="flex flex-col w-full max-w-2xl mx-auto rounded-lg border bg-card text-card-foreground shadow-sm"
+    >
       <!-- Chat Header -->
       <div class="flex items-center justify-between p-4 border-b">
         <div>
           <h3 class="text-lg font-semibold">Chat</h3>
           <p class="text-sm text-muted-foreground">
-            {{ messages.length }} {{ messages.length === 1 ? 'message' : 'messages' }}
+            {{ messages.length }}
+            {{ messages.length === 1 ? 'message' : 'messages' }}
           </p>
         </div>
       </div>
@@ -39,14 +42,20 @@ import type { Message } from './types';
         [class]="'w-full rounded-md border p-4 flex-1'"
         [style.height]="height"
       >
-        <div *ngIf="messages.length === 0" class="flex items-center justify-center h-full text-muted-foreground">
+        <div
+          *ngIf="messages.length === 0"
+          class="flex items-center justify-center h-full text-muted-foreground"
+        >
           <p>No messages yet. Start the conversation!</p>
         </div>
 
         <div *ngIf="messages.length > 0" class="space-y-1">
           <div
             *ngFor="let message of messages"
-            [class]="'flex gap-3 mb-4' + (message.isCurrentUser ? ' flex-row-reverse' : '')"
+            [class]="
+              'flex gap-3 mb-4' +
+              (message.isCurrentUser ? ' flex-row-reverse' : '')
+            "
           >
             <ui-avatar class="h-8 w-8">
               <ui-avatar-image
@@ -59,21 +68,39 @@ import type { Message } from './types';
               </ui-avatar-fallback>
             </ui-avatar>
 
-            <div [class]="'flex flex-col gap-1 max-w-[70%]' + (message.isCurrentUser ? ' items-end' : '')">
+            <div
+              [class]="
+                'flex flex-col gap-1 max-w-[70%]' +
+                (message.isCurrentUser ? ' items-end' : '')
+              "
+            >
               <div class="flex items-center gap-2">
-                <span [class]="'text-sm font-medium' + (message.isCurrentUser ? ' order-2' : '')">
+                <span
+                  [class]="
+                    'text-sm font-medium' +
+                    (message.isCurrentUser ? ' order-2' : '')
+                  "
+                >
                   {{ message.senderName }}
                 </span>
                 <span
                   *ngIf="showTimestamp"
-                  [class]="'text-xs text-muted-foreground' + (message.isCurrentUser ? ' order-1' : '')"
+                  [class]="
+                    'text-xs text-muted-foreground' +
+                    (message.isCurrentUser ? ' order-1' : '')
+                  "
                 >
                   {{ formatTime(message.timestamp) }}
                 </span>
               </div>
 
               <div
-                [class]="'rounded-lg px-4 py-2 text-sm' + (message.isCurrentUser ? ' bg-primary text-primary-foreground' : ' bg-muted')"
+                [class]="
+                  'rounded-lg px-4 py-2 text-sm' +
+                  (message.isCurrentUser
+                    ? ' bg-primary text-primary-foreground'
+                    : ' bg-muted')
+                "
               >
                 {{ message.content }}
               </div>

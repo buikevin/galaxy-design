@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { Textarea } from '@/components/ui/textarea/Textarea'
-import { Button } from '@/components/ui/button/Button'
-import { cn } from '@/lib/utils'
+import React, { useState } from 'react';
+import { Textarea } from '@/components/ui/textarea/Textarea';
+import { Button } from '@/components/ui/button/Button';
+import { cn } from '@/lib/utils';
 
 interface MessageInputProps {
-  onSend: (content: string) => void
-  placeholder?: string
-  disabled?: boolean
-  maxLength?: number
-  className?: string
+  onSend: (content: string) => void;
+  placeholder?: string;
+  disabled?: boolean;
+  maxLength?: number;
+  className?: string;
 }
 
 export const MessageInput: React.FC<MessageInputProps> = ({
@@ -18,23 +18,23 @@ export const MessageInput: React.FC<MessageInputProps> = ({
   maxLength = 1000,
   className,
 }) => {
-  const [messageContent, setMessageContent] = useState('')
+  const [messageContent, setMessageContent] = useState('');
 
   const handleSend = () => {
-    const content = messageContent.trim()
+    const content = messageContent.trim();
     if (content && !disabled) {
-      onSend(content)
-      setMessageContent('')
+      onSend(content);
+      setMessageContent('');
     }
-  }
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     // Send on Enter, but allow Shift+Enter for new lines
     if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      handleSend()
+      e.preventDefault();
+      handleSend();
     }
-  }
+  };
 
   return (
     <div className={cn('flex gap-2 p-4 border-t bg-background', className)}>
@@ -69,5 +69,5 @@ export const MessageInput: React.FC<MessageInputProps> = ({
         <span className="ml-2">Send</span>
       </Button>
     </div>
-  )
-}
+  );
+};

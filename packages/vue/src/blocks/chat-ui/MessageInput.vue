@@ -1,43 +1,43 @@
 <script setup lang="ts">
-import { ref, type HTMLAttributes } from 'vue'
-import Textarea from '@/components/ui/textarea/Textarea.vue'
-import Button from '@/components/ui/button/Button.vue'
-import { cn } from '@/lib/utils'
+import { ref, type HTMLAttributes } from 'vue';
+import Textarea from '@/components/ui/textarea/Textarea.vue';
+import Button from '@/components/ui/button/Button.vue';
+import { cn } from '@/lib/utils';
 
 interface Props {
-  placeholder?: string
-  disabled?: boolean
-  maxLength?: number
-  class?: HTMLAttributes['class']
+  placeholder?: string;
+  disabled?: boolean;
+  maxLength?: number;
+  class?: HTMLAttributes['class'];
 }
 
 const props = withDefaults(defineProps<Props>(), {
   placeholder: 'Type your message...',
   disabled: false,
   maxLength: 1000,
-})
+});
 
 const emit = defineEmits<{
-  send: [content: string]
-}>()
+  send: [content: string];
+}>();
 
-const messageContent = ref('')
+const messageContent = ref('');
 
 const handleSend = () => {
-  const content = messageContent.value.trim()
+  const content = messageContent.value.trim();
   if (content && !props.disabled) {
-    emit('send', content)
-    messageContent.value = ''
+    emit('send', content);
+    messageContent.value = '';
   }
-}
+};
 
 const handleKeyDown = (event: KeyboardEvent) => {
   // Send on Enter, but allow Shift+Enter for new lines
   if (event.key === 'Enter' && !event.shiftKey) {
-    event.preventDefault()
-    handleSend()
+    event.preventDefault();
+    handleSend();
   }
-}
+};
 </script>
 
 <template>

@@ -10,7 +10,11 @@ import { cn } from '@/lib/utils';
 export interface LoginBlockProps {
   title?: string;
   subtitle?: string;
-  onSubmit?: (data: { email: string; password: string; remember: boolean }) => void;
+  onSubmit?: (data: {
+    email: string;
+    password: string;
+    remember: boolean;
+  }) => void;
   showSocial?: boolean;
   className?: string;
 }
@@ -32,16 +36,29 @@ export function LoginBlock({
   };
 
   return (
-    <div className={cn('flex min-h-screen items-center justify-center bg-background', className)}>
+    <div
+      className={cn(
+        'flex min-h-screen items-center justify-center bg-background',
+        className
+      )}
+    >
       <div className="w-full max-w-sm space-y-6 px-4">
         <div className="space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
           <p className="text-sm text-muted-foreground">{subtitle}</p>
         </div>
 
-        <form onSubmit={(e) => { e.preventDefault(); onSubmit?.({ email, password, remember }); }} className="space-y-4">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            onSubmit?.({ email, password, remember });
+          }}
+          className="space-y-4"
+        >
           <div className="space-y-2">
-            <label htmlFor="email" className="text-sm font-medium leading-none">Email</label>
+            <label htmlFor="email" className="text-sm font-medium leading-none">
+              Email
+            </label>
             <input
               id="email"
               type="email"
@@ -53,7 +70,12 @@ export function LoginBlock({
             />
           </div>
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium leading-none">Password</label>
+            <label
+              htmlFor="password"
+              className="text-sm font-medium leading-none"
+            >
+              Password
+            </label>
             <input
               id="password"
               type="password"
@@ -64,8 +86,16 @@ export function LoginBlock({
             />
           </div>
           <div className="flex items-center space-x-2">
-            <input type="checkbox" id="remember" checked={remember} onChange={(e) => setRemember(e.target.checked)} className="h-4 w-4 rounded" />
-            <label htmlFor="remember" className="text-sm">Remember me</label>
+            <input
+              type="checkbox"
+              id="remember"
+              checked={remember}
+              onChange={(e) => setRemember(e.target.checked)}
+              className="h-4 w-4 rounded"
+            />
+            <label htmlFor="remember" className="text-sm">
+              Remember me
+            </label>
           </div>
           <button
             type="submit"
@@ -82,7 +112,9 @@ export function LoginBlock({
                 <span className="w-full border-t" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+                <span className="bg-background px-2 text-muted-foreground">
+                  Or continue with
+                </span>
               </div>
             </div>
             <button
@@ -96,7 +128,12 @@ export function LoginBlock({
 
         <p className="px-8 text-center text-sm text-muted-foreground">
           Don&apos;t have an account?{' '}
-          <a href="/register" className="underline underline-offset-4 hover:text-primary">Sign up</a>
+          <a
+            href="/register"
+            className="underline underline-offset-4 hover:text-primary"
+          >
+            Sign up
+          </a>
         </p>
       </div>
     </div>

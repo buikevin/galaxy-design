@@ -29,16 +29,19 @@ interface DashboardTableColumn {
   header: string;
 }
 
-const props = withDefaults(defineProps<{
-  navItems: NavItem[];
-  stats: StatCard[];
-  columns: DashboardTableColumn[];
-  tableData: Record<string, unknown>[];
-  title?: string;
-  class?: string;
-}>(), {
-  title: 'Dashboard',
-});
+const props = withDefaults(
+  defineProps<{
+    navItems: NavItem[];
+    stats: StatCard[];
+    columns: DashboardTableColumn[];
+    tableData: Record<string, unknown>[];
+    title?: string;
+    class?: string;
+  }>(),
+  {
+    title: 'Dashboard',
+  }
+);
 
 const sidebarOpen = ref(true);
 
@@ -48,10 +51,12 @@ const visibleData = computed(() => props.tableData.slice(0, 5));
 <template>
   <div :class="cn('flex min-h-screen bg-background', props.class)">
     <aside
-      :class="cn(
-        'border-r bg-card transition-all duration-200',
-        sidebarOpen ? 'w-64' : 'w-0 overflow-hidden'
-      )"
+      :class="
+        cn(
+          'border-r bg-card transition-all duration-200',
+          sidebarOpen ? 'w-64' : 'w-0 overflow-hidden'
+        )
+      "
     >
       <div class="flex h-16 items-center border-b px-4">
         <span class="text-lg font-semibold">{{ title }}</span>
@@ -61,10 +66,12 @@ const visibleData = computed(() => props.tableData.slice(0, 5));
           v-for="item in navItems"
           :key="item.label"
           :href="item.href"
-          :class="cn(
-            'flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent',
-            item.active && 'bg-accent font-medium text-accent-foreground'
-          )"
+          :class="
+            cn(
+              'flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors hover:bg-accent',
+              item.active && 'bg-accent font-medium text-accent-foreground'
+            )
+          "
         >
           {{ item.label }}
         </a>
@@ -89,13 +96,17 @@ const visibleData = computed(() => props.tableData.slice(0, 5));
           :key="stat.label"
           class="rounded-lg border bg-card p-6 shadow-sm"
         >
-          <p class="text-sm font-medium text-muted-foreground">{{ stat.label }}</p>
+          <p class="text-sm font-medium text-muted-foreground">
+            {{ stat.label }}
+          </p>
           <p class="text-2xl font-semibold mt-2">{{ stat.value }}</p>
           <p
-            :class="cn(
-              'text-xs mt-1',
-              stat.trend === 'up' ? 'text-green-600' : 'text-red-600'
-            )"
+            :class="
+              cn(
+                'text-xs mt-1',
+                stat.trend === 'up' ? 'text-green-600' : 'text-red-600'
+              )
+            "
           >
             {{ stat.trend === 'up' ? '↑' : '↓' }} {{ stat.change }}
           </p>
