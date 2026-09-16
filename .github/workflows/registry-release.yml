@@ -1,0 +1,64 @@
+name: Registry Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/contracts/manifests/**'
+      - 'packages/contracts/scripts/**'
+
+jobs:
+  build-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate manifests
+        run: node packages/contracts/scripts/validate-manifests.mjs
+
+      - name: Generate artifacts
+        run: cd packages/contracts && node scripts/generate-registries.mjs
+
+      - name: Generate docs examples
+        run: cd packages/contracts && node scripts/generate-docs-examples.mjs
+
+      - name: Generate mobile matrix
+        run: cd packages/contracts && node scripts/generate-mobile-matrix.mjs
+
+      - name: Build versioned artifact
+        run: cd packages/contracts && node scripts/build-release-artifacts.mjs
+
+      - name: Copy artifacts to docs
+        run: |
+          VERSION=$(node -e "
+            const p=require('./packages/contracts/package.json');
+            const {execSync}=require('child_process');
+            const commit=execSync('git rev-parse HEAD',{encoding:'utf8'}).trim().slice(0,12);
+            console.log(p.version+'+'+commit);
+          ")
+          mkdir -p ../docs-galaxy-desgin/public/registry
+          cp -r packages/contracts/dist/registry/$VERSION ../docs-galaxy-desgin/public/registry/$VERSION
+          cp packages/contracts/dist/registry/latest-manifest.json ../docs-galaxy-desgin/public/registry/latest-manifest.json
+
+      - name: Update CLI digest
+        run: |
+          cd ../galaxy-design-cli
+          node scripts/update-registry-digest.mjs
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          cd ../docs-galaxy-desgin
+          git add public/registry/
+          git diff --cached --quiet || git commit -m "chore: update registry artifacts for $GITHUB_SHA"
+          git push origin main
+
+          cd ../galaxy-design-cli
+          git add src/utils/registry-fetcher.ts
+          git diff --cached --quiet || git commit -m "chore: update registry digest for $GITHUB_SHA"
+          git push origin main
