@@ -959,10 +959,10 @@
     },
     "calendar": {
       "id": "calendar",
-      "name": "calendar",
-      "type": "other",
+      "name": "Calendar",
+      "type": "form",
       "status": "complete",
-      "description": "calendar",
+      "description": "Full-featured date picker with month navigation and selection.",
       "files": [
         "calendar.component.ts",
         "index.ts"
@@ -975,34 +975,8 @@
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
-      "category": "other",
-      "props": [
-        {
-          "name": "selectedDate",
-          "type": {
-            "kind": "custom",
-            "name": "Date"
-          },
-          "description": "Currently selected date."
-        },
-        {
-          "name": "class",
-          "type": {
-            "kind": "primitive",
-            "name": "string"
-          },
-          "default": "",
-          "description": "CSS class names for the calendar root."
-        },
-        {
-          "name": "dateChange",
-          "type": {
-            "kind": "function",
-            "signature": "(date: Date) => void"
-          },
-          "description": "Emitted when the selected date changes."
-        }
-      ],
+      "category": "form",
+      "props": [],
       "selector": "ui-calendar",
       "manifestStatus": "complete"
     },
@@ -4582,10 +4556,10 @@
     },
     "time-picker": {
       "id": "time-picker",
-      "name": "time-picker",
-      "type": "other",
+      "name": "Time Picker",
+      "type": "form",
       "status": "complete",
-      "description": "time-picker",
+      "description": "Hour/minute selection with 12h/24h format.",
       "files": [
         "time-picker.component.ts",
         "index.ts"
@@ -4597,12 +4571,8 @@
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "popover",
-        "select"
-      ],
-      "category": "other",
+      "registryDependencies": [],
+      "category": "form",
       "props": [],
       "selector": "ui-time-picker",
       "manifestStatus": "complete"

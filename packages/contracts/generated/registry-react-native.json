@@ -1066,6 +1066,28 @@
       ],
       "manifestStatus": "complete"
     },
+    "calendar": {
+      "id": "calendar",
+      "name": "Calendar",
+      "type": "form",
+      "status": "complete",
+      "description": "Full-featured date picker with month navigation and selection.",
+      "files": [
+        "Calendar.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Calendar"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [],
+      "manifestStatus": "complete"
+    },
     "card": {
       "id": "card",
       "name": "card",
@@ -4763,6 +4785,28 @@
           "description": "CSS class names for the error message."
         }
       ],
+      "manifestStatus": "complete"
+    },
+    "time-picker": {
+      "id": "time-picker",
+      "name": "Time Picker",
+      "type": "form",
+      "status": "complete",
+      "description": "Hour/minute selection with 12h/24h format.",
+      "files": [
+        "TimePicker.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TimePicker"
+      ],
+      "dependencies": [],
+      "devDependencies": [],
+      "peerDependencies": [],
+      "registryDependencies": [],
+      "category": "form",
+      "props": [],
       "manifestStatus": "complete"
     },
     "toast": {

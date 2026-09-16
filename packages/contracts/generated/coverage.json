@@ -113,7 +113,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "card": {
@@ -569,7 +571,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "toast": {
@@ -860,6 +864,7 @@
         "badge",
         "bar-chart",
         "button",
+        "calendar",
         "card",
         "checkbox",
         "collapsible",
@@ -894,6 +899,7 @@
         "table",
         "tabs",
         "textarea",
+        "time-picker",
         "toast",
         "toggle-group",
         "toggle",
@@ -903,7 +909,6 @@
       "missing": [
         "breadcrumb",
         "calendar-range",
-        "calendar",
         "combobox",
         "command",
         "dashboard-block",
@@ -918,7 +923,6 @@
         "resizable",
         "scroll-area",
         "tags-input",
-        "time-picker",
         "toolbar"
       ]
     },
@@ -933,6 +937,7 @@
         "badge",
         "bar-chart",
         "button",
+        "calendar",
         "card",
         "checkbox",
         "collapsible",
@@ -967,6 +972,7 @@
         "table",
         "tabs",
         "textarea",
+        "time-picker",
         "toast",
         "toggle-group",
         "toggle",
@@ -976,7 +982,6 @@
       "missing": [
         "breadcrumb",
         "calendar-range",
-        "calendar",
         "combobox",
         "command",
         "dashboard-block",
@@ -991,7 +996,6 @@
         "resizable",
         "scroll-area",
         "tags-input",
-        "time-picker",
         "toolbar"
       ]
     }

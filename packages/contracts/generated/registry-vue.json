@@ -1168,10 +1168,10 @@
     },
     "calendar": {
       "id": "calendar",
-      "name": "calendar",
-      "type": "other",
+      "name": "Calendar",
+      "type": "form",
       "status": "complete",
-      "description": "calendar",
+      "description": "Full-featured date picker with month navigation and selection.",
       "files": [
         "Calendar.vue",
         "index.ts"
@@ -1181,48 +1181,13 @@
         "Calendar"
       ],
       "dependencies": [
-        "radix-vue",
-        "lucide-vue-next"
+        "radix-vue"
       ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
-      "category": "other",
-      "props": [
-        {
-          "name": "modelValue",
-          "type": {
-            "kind": "custom",
-            "name": "Date"
-          },
-          "description": "Controlled selected date. Supports v-model."
-        },
-        {
-          "name": "placeholder",
-          "type": {
-            "kind": "custom",
-            "name": "Date"
-          },
-          "description": "Placeholder date used by the calendar root."
-        },
-        {
-          "name": "class",
-          "type": {
-            "kind": "primitive",
-            "name": "string"
-          },
-          "default": "",
-          "description": "CSS class names for the calendar root."
-        },
-        {
-          "name": "update:modelValue",
-          "type": {
-            "kind": "function",
-            "signature": "(value: Date) => void"
-          },
-          "description": "Emitted when the selected date changes."
-        }
-      ],
+      "category": "form",
+      "props": [],
       "manifestStatus": "complete"
     },
     "card": {
@@ -1707,7 +1672,9 @@
         "DateTimePicker"
       ],
       "dependencies": [
-        "date-fns"
+        "date-fns",
+        "lucide-vue-next",
+        "radix-vue"
       ],
       "devDependencies": [],
       "peerDependencies": [],
@@ -5194,31 +5161,26 @@
     },
     "time-picker": {
       "id": "time-picker",
-      "name": "time-picker",
-      "type": "other",
+      "name": "Time Picker",
+      "type": "form",
       "status": "complete",
-      "description": "time-picker",
+      "description": "Hour/minute selection with 12h/24h format.",
       "files": [
-        "index.ts",
         "TimePicker.vue",
-        "types.ts"
+        "index.ts"
       ],
       "entry": "index.ts",
       "exports": [
         "TimePicker"
       ],
       "dependencies": [
-        "lucide-vue-next",
-        "radix-vue"
+        "radix-vue",
+        "lucide-vue-next"
       ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": [
-        "button",
-        "popover",
-        "select"
-      ],
-      "category": "other",
+      "registryDependencies": [],
+      "category": "form",
       "props": [],
       "manifestStatus": "complete"
     },
