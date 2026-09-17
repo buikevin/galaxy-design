@@ -1,6 +1,7 @@
 {
   "name": "@galaxy-stack/design-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "mcpName": "io.github.buikevin/galaxy-design-mcp",
   "license": "MIT",
   "description": "MCP server exposing Galaxy UI components for AI assistants.",
   "repository": {
