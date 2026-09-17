@@ -3,6 +3,9 @@
  * Galaxy UI MCP Server
  * Exposes component manifests, source files, and setup validation
  * as MCP tools for AI assistants.
+ *
+ * Reads bundled data from dist/data (published package) with fallback
+ * to monorepo paths (development mode).
  */
 
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
@@ -12,29 +15,33 @@ import {
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import path from 'node:path';
+import path, { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(__dirname, '..', '..', '..');
+const pkgRoot = path.resolve(__dirname, '..');
+const monorepoRoot = path.resolve(pkgRoot, '..', '..', '..');
 
-function readJson(filePath) {
-  return JSON.parse(readFileSync(filePath, 'utf-8'));
-}
-
-function loadManifest(id) {
-  return JSON.parse(
-    readFileSync(path.join(repoRoot, 'packages/contracts/manifests', `${id}.json`), 'utf-8'),
-  );
-}
-
-function loadCoverage() {
-  return JSON.parse(
-    readFileSync(path.join(repoRoot, 'packages/contracts/generated', 'coverage.json'), 'utf-8'),
-  );
-}
+// Bundled data (published package) with fallback to repo paths (dev mode)
+const bundledData = join(pkgRoot, 'dist', 'data');
+const manifestsDir = existsSync(join(bundledData, 'manifests'))
+  ? join(bundledData, 'manifests')
+  : join(monorepoRoot, 'packages/contracts/manifests');
+const generatedDir = existsSync(join(bundledData, 'generated'))
+  ? join(bundledData, 'generated')
+  : join(monorepoRoot, 'packages/contracts/generated');
+const sourcesDir = existsSync(join(bundledData, 'sources'))
+  ? join(bundledData, 'sources')
+  : null;
 
 function readSourceFile(framework, componentId, file) {
+  // Published package: sources bundled at dist/data/sources/<fw>/<id>/<file>
+  if (sourcesDir) {
+    const abs = path.join(sourcesDir, framework, componentId, file);
+    if (existsSync(abs)) return readFileSync(abs, 'utf-8');
+    return null;
+  }
+  // Dev mode: read from monorepo source trees
   const roots = {
     react: 'packages/react/src/components',
     vue: 'packages/vue/src/components',
@@ -42,9 +49,17 @@ function readSourceFile(framework, componentId, file) {
     'react-native': 'packages/react-native/src/components',
     flutter: 'packages/flutter/lib/components',
   };
-  const abs = path.join(repoRoot, roots[framework], componentId, file);
+  const abs = path.join(monorepoRoot, roots[framework], componentId, file);
   if (!existsSync(abs)) return null;
   return readFileSync(abs, 'utf-8');
+}
+
+function loadManifest(id) {
+  return JSON.parse(readFileSync(path.join(manifestsDir, `${id}.json`), 'utf-8'));
+}
+
+function loadCoverage() {
+  return JSON.parse(readFileSync(path.join(generatedDir, 'coverage.json'), 'utf-8'));
 }
 
 const TOOLS = [
@@ -153,11 +168,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
       case 'search_components': {
         const query = (args.query || '').toLowerCase();
-        const manifestDir = path.join(repoRoot, 'packages', 'contracts', 'manifests');
         const found = new Set();
-        for (const file of readdirSync(manifestDir)) {
+        for (const file of readdirSync(manifestsDir)) {
           if (!file.endsWith('.json')) continue;
-          const manifest = JSON.parse(readFileSync(path.join(manifestDir, file), 'utf-8'));
+          const manifest = JSON.parse(readFileSync(path.join(manifestsDir, file), 'utf-8'));
           if (
             manifest.name.toLowerCase().includes(query) ||
             manifest.description.toLowerCase().includes(query) ||
@@ -183,7 +197,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error('Galaxy UI MCP server running on stdio');
+  console.error(`Galaxy UI MCP server running on stdio (data: ${existsSync(join(bundledData, 'manifests')) ? 'bundled' : 'monorepo'})`);
 }
 
 main();
