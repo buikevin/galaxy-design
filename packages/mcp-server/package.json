@@ -1,26 +1,29 @@
 {
-  "name": "@galaxy-stack/design-mcp",
-  "version": "0.1.1",
-  "mcpName": "io.github.buikevin/galaxy-design-mcp",
+  "name": "@galaxy-stack/nebula-mcp",
+  "version": "0.2.0",
+  "mcpName": "io.github.buikevin/nebula-mcp",
   "license": "MIT",
-  "description": "MCP server exposing Galaxy UI components for AI assistants.",
+  "description": "MCP server exposing Galaxy Nebula components for AI assistants.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/buikevin/galaxy-design.git",
+    "url": "https://github.com/galaxy-nebula/galaxy-design.git",
     "directory": "packages/mcp-server"
   },
-  "homepage": "https://smithery.ai/servers/galaxy-stack/design-mcp",
+  "homepage": "https://smithery.ai/servers/galaxy-stack/nebula-mcp",
   "bugs": {
-    "url": "https://github.com/buikevin/galaxy-design/issues"
+    "url": "https://github.com/galaxy-nebula/galaxy-design/issues"
   },
   "type": "module",
   "publishConfig": {
     "access": "public"
   },
   "bin": {
-    "galaxy-ui-mcp": "./dist/index.js"
+    "nebula-mcp": "./dist/index.js"
   },
-  "files": ["dist", "README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "node scripts/build-data.mjs",
     "prepublishOnly": "node scripts/build-data.mjs"

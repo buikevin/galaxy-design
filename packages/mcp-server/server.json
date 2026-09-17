@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.buikevin/galaxy-design-mcp",
-  "title": "Galaxy UI MCP Server",
-  "description": "MCP server exposing Galaxy UI components — manifests, source code, and framework coverage",
-  "version": "0.1.1",
+  "name": "io.github.buikevin/nebula-mcp",
+  "title": "Galaxy Nebula MCP Server",
+  "description": "MCP server exposing Galaxy Nebula components — manifests, source code, and framework coverage",
+  "version": "0.2.0",
   "repository": {
-    "url": "https://github.com/buikevin/galaxy-design",
+    "url": "https://github.com/galaxy-nebula/galaxy-design",
     "source": "github"
   },
   "packages": [
     {
       "registryType": "npm",
-      "identifier": "@galaxy-stack/design-mcp",
-      "version": "0.1.1",
+      "identifier": "@galaxy-stack/nebula-mcp",
+      "version": "0.2.0",
       "transport": {
         "type": "stdio"
       }
