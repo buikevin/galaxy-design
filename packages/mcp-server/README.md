@@ -1,4 +1,4 @@
-# galaxy-design-mcp-server
+# @galaxy-stack/design-mcp
 
 MCP server exposing Galaxy UI components for AI assistants.
 
@@ -19,7 +19,7 @@ Add to Claude Desktop config:
   "mcpServers": {
     "galaxy-ui": {
       "command": "npx",
-      "args": ["-y", "galaxy-design-mcp-server"]
+      "args": ["-y", "@galaxy-stack/design-mcp"]
     }
   }
 }

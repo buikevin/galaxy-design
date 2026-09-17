@@ -1,9 +1,12 @@
 {
-  "name": "galaxy-design-mcp-server",
+  "name": "@galaxy-stack/design-mcp",
   "version": "0.1.0",
   "license": "MIT",
   "description": "MCP server exposing Galaxy UI components for AI assistants.",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "galaxy-ui-mcp": "./dist/index.js"
   },
