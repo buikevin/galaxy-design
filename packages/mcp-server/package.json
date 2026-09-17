@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "MCP server exposing Galaxy UI components for AI assistants.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buikevin/galaxy-design.git",
+    "directory": "packages/mcp-server"
+  },
+  "homepage": "https://smithery.ai/servers/galaxy-stack/design-mcp",
+  "bugs": {
+    "url": "https://github.com/buikevin/galaxy-design/issues"
+  },
   "type": "module",
   "publishConfig": {
     "access": "public"
