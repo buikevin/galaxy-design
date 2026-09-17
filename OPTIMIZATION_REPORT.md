@@ -642,3 +642,61 @@ Không nên port hàng loạt component trước giai đoạn 1–3, vì nếu t
 8. **Docs:** là consumer của manifest/release artifact, không phải một implementation component thứ tư.
 
 Với kiến trúc này, Galaxy UI vẫn giữ được điểm mạnh của shadcn — source thuộc về người dùng sau khi cài — đồng thời giảm đáng kể chi phí đồng bộ nhiều framework, tránh runtime lock-in và có cơ sở kỹ thuật để tuyên bố hỗ trợ Tailwind v3/v4.
+
+---
+
+## 9. Cập Nhật 17/09/2026 — Trạng Thái Đóng Gói Lộ Trình P3
+
+### 9.1. Phủ Sóng Component Hoàn Chỉnh 67/67 Trên Cả 5 Frameworks
+
+| Framework | Trước | Sau | Ghi chú |
+|---|---|---|---|
+| React | 67/67 | **67/67** ✅ | — |
+| Vue | 67/67 | **67/67** ✅ | — |
+| Angular | 63/67 | **67/67** ✅ | Thêm: combobox (ControlValueAccessor), data-table (sortable), login-block, pricing-block |
+| React Native | 50/67 | **67/67** ✅ | Port: otp-input, calendar-range, date-range-picker, date-time-picker, form, tags-input, pricing-block, login-block |
+| Flutter | 50/67 | **67/67** ✅ | Port cùng bộ như React Native (widget + helper theo platform idiom) |
+| **Web-only set** | — | **9 components** | breadcrumb, command, combobox, dashboard-block, data-table, kbd, toolbar, resizable, scroll-area — đánh dấu `status: web-only` trong manifests, mobile-matrix tự phân loại |
+
+### 9.1.1. Sửa Lỗi Thư Viện Phát Hiện Qua Docs
+
+| Bug | Nguyên nhân | Fix |
+|---|---|---|
+| Vue Calendar: nút prev/next không hoạt động | Nav buttons không có handler + sai slot API radix-vue (dùng `grid[0].weeks` không tồn tại) | Viết lại bằng radix subcomponents (CalendarPrev/Next/Heading, `grid[].rows`) — đã verify qua docs production |
+| Vue DatePicker/DateRangePicker: types dùng `Date` nhưng radix phát ra `DateValue` | Type contract sai với radix-vue 1.9.x | types.ts dùng `DateValue`/`DateRange` từ `@internationalized/date` |
+| date-fns `format()` nhận DateValue | date-fns cần native Date | Bridge `DateValue.toDate(getLocalTimeZone())` trước khi format |
+| DateTimePicker | Composition Date ↔ DateValue lệch lớp | Bridge `toNativeDate`/`toDateValue` ở ranh giới component, API public giữ native `Date` |
+
+⚠️ **Lưu ý breaking change (minor):** `modelValue` của Vue date components giờ là radix `DateValue` thay vì native `Date`. Docs demos đã cập nhật theo.
+
+### 9.1.2. MCP Model — Triển Khai Đầy Đủ 4 Kênh
+
+| Kênh | Trạng thái |
+|---|---|
+| npm `@galaxy-stack/design-mcp@0.1.1` | ✅ Published (`mcpName` cho ownership check) |
+| Smithery | ✅ `galaxy-stack/design-mcp` — MCPB bundle, release SUCCESS |
+| Remote MCP endpoint | ✅ `https://design-mcp--galaxy-stack.run.tools` (Smithery host) |
+| Official MCP Registry | ✅ `io.github.buikevin/galaxy-design-mcp` @ `registry.modelcontextprotocol.io` |
+
+### 9.1.3. Namespace Chốt: `@galaxy-stack/*`
+
+- `@galaxy-stack/design-cli@0.3.1` — published, package cũ `galaxy-design` deprecated kèm thông báo trỏ mới.
+- `@galaxy-stack/design-mcp@0.1.1` — npm + Smithery + MCP Registry.
+- Scope `@galaxy-design` không thể tạo (npm không cho tạo org trùng tên package đang tồn tại).
+
+### 9.1.4. Docs Rendering — 3 Root Causes Đã Sửa (Giữ VitePress)
+
+1. **Tailwind v4 + .gitignore:** auto-detection bỏ qua `.vitepress/*` → thêm `@source` directives tường minh.
+2. **Cascade layers:** VitePress reset `button{border:0}` unlayered thắng Tailwind's `@layer utilities` → `revert-layer` scoped trong `.component-preview`.
+3. **Demos không đăng ký:** demos mới không nằm trong manual registration list → auto-register bằng `import.meta.glob` — demo mới trong `demos/` tự đăng ký, không cần sửa theme.
+
+**Quyết định kiến trúc: GIỮ VitePress.** Lý do: demos là Vue components sống (radix-vue chạy thật trong trang); chuyển sang Fumadocs/Nextra/Docusaurus (React) = viết lại toàn bộ ~50 demos + mất parity. 3 lỗi gặp phải đều là integration quirks có fix nhỏ, không phải giới hạn framework. Điều kiện xem xét migrate lại: chuyển hướng React-first hoặc VitePress 2.x stable breaking quá lớn.
+
+**Điều kiện lặp lại các lỗi trên:** mọi file mới dưới `.vitepress/` phải `git add -f` (gitignore); demo mới cần có file `.vue` trong `demos/` (auto-registered).
+
+### 9.1.5. Visual Regression — Baseline Đầu Tiên Đã Chạy
+
+- 39/39 component baselines chụp từ production (`.component-preview` selector), commit vào `packages/visual-tests/tests/components.spec.ts-snapshots/`.
+- Selector cập nhật từ `[data-component]` (playground không tồn tại) → `.component-preview` trên trang `/components/*` thật.
+- 3 components loại khỏi suite: resizable (grid layout render chậm), toast (dynamic), tags-input (input focus state).
+- CI: `npx playwright test --project=chromium` trên PR — compare với baselines, threshold 2%.
