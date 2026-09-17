@@ -87,7 +87,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "button": {
@@ -105,7 +107,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "calendar": {
@@ -153,7 +157,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "command": {
@@ -161,7 +167,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "context-menu": {
@@ -179,7 +187,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "data-table": {
@@ -187,7 +197,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "date-picker": {
@@ -205,7 +217,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "date-time-picker": {
@@ -213,7 +227,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "dialog": {
@@ -261,7 +277,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "gauge-chart": {
@@ -299,7 +317,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "label": {
@@ -327,7 +347,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "menubar": {
@@ -365,7 +387,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "pagination": {
@@ -403,7 +427,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "progress": {
@@ -441,7 +467,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "scatter-chart": {
@@ -459,7 +487,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "select": {
@@ -557,7 +587,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "textarea": {
@@ -615,7 +647,9 @@
       "available": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ]
     },
     "tooltip": {
@@ -866,32 +900,47 @@
         "avatar",
         "badge",
         "bar-chart",
+        "breadcrumb",
         "button",
+        "calendar-range",
         "calendar",
         "card",
         "checkbox",
         "collapsible",
+        "combobox",
+        "command",
         "context-menu",
+        "dashboard-block",
+        "data-table",
         "date-picker",
+        "date-range-picker",
+        "date-time-picker",
         "dialog",
         "donut-chart",
         "dropdown-menu",
         "empty",
+        "form",
         "gauge-chart",
         "hover-card",
         "input",
+        "kbd",
         "label",
         "line-chart",
+        "login-block",
         "menubar",
         "mixed-chart",
         "navigation-menu",
+        "otp-input",
         "pagination",
         "pie-chart",
         "popover",
+        "pricing-block",
         "progress",
         "radar-chart",
         "radio-group",
+        "resizable",
         "scatter-chart",
+        "scroll-area",
         "select",
         "separator",
         "sheet",
@@ -901,33 +950,17 @@
         "switch",
         "table",
         "tabs",
+        "tags-input",
         "textarea",
         "time-picker",
         "toast",
         "toggle-group",
         "toggle",
+        "toolbar",
         "tooltip",
         "typography"
       ],
-      "missing": [
-        "breadcrumb",
-        "calendar-range",
-        "combobox",
-        "command",
-        "dashboard-block",
-        "data-table",
-        "date-range-picker",
-        "date-time-picker",
-        "form",
-        "kbd",
-        "login-block",
-        "otp-input",
-        "pricing-block",
-        "resizable",
-        "scroll-area",
-        "tags-input",
-        "toolbar"
-      ]
+      "missing": []
     },
     "flutter": {
       "available": [
@@ -939,32 +972,47 @@
         "avatar",
         "badge",
         "bar-chart",
+        "breadcrumb",
         "button",
+        "calendar-range",
         "calendar",
         "card",
         "checkbox",
         "collapsible",
+        "combobox",
+        "command",
         "context-menu",
+        "dashboard-block",
+        "data-table",
         "date-picker",
+        "date-range-picker",
+        "date-time-picker",
         "dialog",
         "donut-chart",
         "dropdown-menu",
         "empty",
+        "form",
         "gauge-chart",
         "hover-card",
         "input",
+        "kbd",
         "label",
         "line-chart",
+        "login-block",
         "menubar",
         "mixed-chart",
         "navigation-menu",
+        "otp-input",
         "pagination",
         "pie-chart",
         "popover",
+        "pricing-block",
         "progress",
         "radar-chart",
         "radio-group",
+        "resizable",
         "scatter-chart",
+        "scroll-area",
         "select",
         "separator",
         "sheet",
@@ -974,33 +1022,17 @@
         "switch",
         "table",
         "tabs",
+        "tags-input",
         "textarea",
         "time-picker",
         "toast",
         "toggle-group",
         "toggle",
+        "toolbar",
         "tooltip",
         "typography"
       ],
-      "missing": [
-        "breadcrumb",
-        "calendar-range",
-        "combobox",
-        "command",
-        "dashboard-block",
-        "data-table",
-        "date-range-picker",
-        "date-time-picker",
-        "form",
-        "kbd",
-        "login-block",
-        "otp-input",
-        "pricing-block",
-        "resizable",
-        "scroll-area",
-        "tags-input",
-        "toolbar"
-      ]
+      "missing": []
     }
   }
 }

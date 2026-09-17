@@ -22,6 +22,9 @@ const WEB_ONLY = new Set([
   // Genuinely not mobile-suitable (interaction model or platform)
   'breadcrumb',
   'command',
+  'combobox',
+  'dashboard-block',
+  'data-table',
   'kbd',
   'resizable',
   'scroll-area',
@@ -30,15 +33,7 @@ const WEB_ONLY = new Set([
 ]);
 
 const NEEDS_PORT = [
-  'calendar',
-  'calendar-range',
-  'date-picker',
-  'date-range-picker',
-  'date-time-picker',
-  'time-picker',
-  'form',
   'tags-input',
-  'toast',
 ];
 
 const FRAMEWORKS = ['react', 'vue', 'angular', 'react-native', 'flutter'];

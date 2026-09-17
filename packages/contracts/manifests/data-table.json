@@ -52,14 +52,16 @@
       "props": []
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile uses FlatList instead of table."
+      "status": "web-only",
+      "notes": "Mobile uses FlatList instead of table.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Flutter has DataTable built-in."
+      "status": "web-only",
+      "notes": "Flutter has DataTable built-in.",
+      "webOnly": true,
+      "props": []
     }
   },
   "a11y": {
@@ -67,5 +69,8 @@
     "aria": [
       "Table header uses cursor-pointer for sortable columns with sort indicator."
     ]
+  },
+  "notes": {
+    "mobile": "Web-only component — use platform-native equivalents on mobile."
   }
 }

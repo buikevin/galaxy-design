@@ -51,14 +51,62 @@
       "props": []
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile pricing uses different layout patterns."
+      "status": "complete",
+      "files": [
+        "PricingBlock.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "PricingBlock",
+        "PricingBlockProps",
+        "PricingTier"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile pricing uses different layout patterns."
+      "status": "complete",
+      "files": [
+        "pricing_block.dart",
+        "index.dart"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "GalaxyPricingBlock",
+        "GalaxyPricingTier"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    "RN": {
+      "status": "complete",
+      "files": [
+        "PricingBlock.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "PricingBlock",
+        "PricingBlockProps",
+        "PricingTier"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    "F": {
+      "status": "complete",
+      "files": [
+        "pricing_block.dart",
+        "index.dart"
+      ],
+      "entry": "index.dart",
+      "exports": [
+        "GalaxyPricingBlock",
+        "GalaxyPricingTier"
+      ],
+      "dependencies": [],
+      "props": []
     }
   },
   "a11y": {

@@ -11,47 +11,71 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["DashboardBlock.tsx", "index.ts"],
+      "files": [
+        "DashboardBlock.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "selector": "",
-      "exports": ["DashboardBlock"],
+      "exports": [
+        "DashboardBlock"
+      ],
       "dependencies": [],
-      "registryDependencies": ["button"],
+      "registryDependencies": [
+        "button"
+      ],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": ["DashboardBlock.vue", "index.ts"],
+      "files": [
+        "DashboardBlock.vue",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DashboardBlock"],
+      "exports": [
+        "DashboardBlock"
+      ],
       "dependencies": [],
       "registryDependencies": [],
       "props": []
     },
     "angular": {
       "status": "complete",
-      "files": ["dashboard.component.ts", "index.ts"],
+      "files": [
+        "dashboard.component.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "selector": "ui-dashboard",
-      "exports": ["DashboardComponent"],
+      "exports": [
+        "DashboardComponent"
+      ],
       "dependencies": [],
       "props": []
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile uses native tab navigation instead of dashboard block."
+      "status": "web-only",
+      "notes": "Mobile uses native tab navigation instead of dashboard block.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Flutter uses BottomNavigationBar + Scaffold instead."
+      "status": "web-only",
+      "notes": "Flutter uses BottomNavigationBar + Scaffold instead.",
+      "webOnly": true,
+      "props": []
     }
   },
   "a11y": {
-    "keyboard": ["Sidebar toggle accessible via keyboard."],
+    "keyboard": [
+      "Sidebar toggle accessible via keyboard."
+    ],
     "aria": [
       "Content panel uses role=main, sidebar uses semantic <nav> element."
     ]
+  },
+  "notes": {
+    "mobile": "Web-only component — use platform-native equivalents on mobile."
   }
 }

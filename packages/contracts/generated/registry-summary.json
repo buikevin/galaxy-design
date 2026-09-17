@@ -1872,7 +1872,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -2088,7 +2090,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -2904,7 +2908,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -2993,7 +2999,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -3240,7 +3248,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []
@@ -3254,7 +3264,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []
@@ -3420,7 +3432,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -3542,7 +3556,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -4567,7 +4583,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -5541,7 +5559,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -6168,7 +6188,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []
@@ -6935,7 +6957,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []
@@ -7631,7 +7655,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []
@@ -8380,7 +8406,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []
@@ -8704,7 +8732,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -10685,7 +10715,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [
         {
@@ -11934,7 +11966,9 @@
       "frameworks": [
         "react",
         "vue",
-        "angular"
+        "angular",
+        "react-native",
+        "flutter"
       ],
       "props": [],
       "children": []

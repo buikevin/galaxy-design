@@ -10,7 +10,10 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["Toolbar.tsx", "index.ts"],
+      "files": [
+        "Toolbar.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "exports": [
         "Toolbar",
@@ -20,7 +23,9 @@
         "ToolbarToggleGroup",
         "ToolbarToggleItem"
       ],
-      "dependencies": ["@radix-ui/react-toolbar"],
+      "dependencies": [
+        "@radix-ui/react-toolbar"
+      ],
       "props": [
         {
           "name": "orientation",
@@ -88,10 +93,17 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["Toolbar.vue", "index.ts"],
+      "files": [
+        "Toolbar.vue",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["Toolbar"],
-      "dependencies": ["radix-vue"],
+      "exports": [
+        "Toolbar"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
       "notes": "Vue toolbar currently exposes only the root; Group/Separator subparts are absent.",
       "props": [
         {
@@ -161,10 +173,15 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["toolbar.component.ts", "index.ts"],
+      "files": [
+        "toolbar.component.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "selector": "ui-toolbar",
-      "exports": ["ToolbarComponent"],
+      "exports": [
+        "ToolbarComponent"
+      ],
       "dependencies": [],
       "props": [
         {
@@ -179,14 +196,19 @@
       ]
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "No mobile toolbar implementation yet."
+      "status": "web-only",
+      "notes": "No mobile toolbar implementation yet.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "No Flutter toolbar implementation yet."
+      "status": "web-only",
+      "notes": "No Flutter toolbar implementation yet.",
+      "webOnly": true,
+      "props": []
     }
+  },
+  "notes": {
+    "mobile": "Web-only component — use platform-native equivalents on mobile."
   }
 }

@@ -12,7 +12,11 @@
         "kind": "custom",
         "name": "string[]"
       },
-      "frameworks": ["react", "angular", "vue"],
+      "frameworks": [
+        "react",
+        "angular",
+        "vue"
+      ],
       "default": "[]",
       "description": "Current tag values.",
       "overrides": {
@@ -27,7 +31,9 @@
         "kind": "function",
         "signature": "(tags: string[]) => void"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Called when the tag list changes."
     },
     {
@@ -36,7 +42,11 @@
         "kind": "function",
         "signature": "(tag: string) => void"
       },
-      "frameworks": ["vue", "angular", "react"],
+      "frameworks": [
+        "vue",
+        "angular",
+        "react"
+      ],
       "description": "Event emitted when a tag is added.",
       "overrides": {
         "react": {
@@ -50,7 +60,11 @@
         "kind": "function",
         "signature": "(tag: string) => void"
       },
-      "frameworks": ["vue", "angular", "react"],
+      "frameworks": [
+        "vue",
+        "angular",
+        "react"
+      ],
       "description": "Event emitted when a tag is removed.",
       "overrides": {
         "react": {
@@ -64,7 +78,11 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["react", "vue", "angular"],
+      "frameworks": [
+        "react",
+        "vue",
+        "angular"
+      ],
       "default": "Add tag...",
       "description": "Placeholder text for the input."
     },
@@ -74,7 +92,11 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["vue", "angular", "react"],
+      "frameworks": [
+        "vue",
+        "angular",
+        "react"
+      ],
       "default": "",
       "description": "CSS classes applied to the tags container.",
       "overrides": {
@@ -89,7 +111,9 @@
         "kind": "primitive",
         "name": "boolean"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": false,
       "description": "Disables tag entry and removal."
     },
@@ -99,7 +123,9 @@
         "kind": "function",
         "signature": "(value: string[]) => void"
       },
-      "frameworks": ["vue"],
+      "frameworks": [
+        "vue"
+      ],
       "description": "Event emitted when the tag list changes."
     },
     {
@@ -108,7 +134,9 @@
         "kind": "function",
         "signature": "(value: string[]) => void"
       },
-      "frameworks": ["angular"],
+      "frameworks": [
+        "angular"
+      ],
       "description": "Event emitted when the tag list changes."
     }
   ],
@@ -116,9 +144,16 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["TagsInput.tsx", "index.ts"],
-      "exports": ["TagsInputProps"],
-      "dependencies": ["lucide-react"],
+      "files": [
+        "TagsInput.tsx",
+        "index.ts"
+      ],
+      "exports": [
+        "TagsInputProps"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -188,9 +223,16 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["TagsInput.vue", "index.ts"],
-      "exports": ["TagsInput"],
-      "dependencies": ["lucide-vue-next"],
+      "files": [
+        "TagsInput.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "TagsInput"
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -251,8 +293,13 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["tags-input.component.ts", "index.ts"],
-      "exports": ["TagsInputComponent"],
+      "files": [
+        "tags-input.component.ts",
+        "index.ts"
+      ],
+      "exports": [
+        "TagsInputComponent"
+      ],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -314,14 +361,31 @@
       "selector": "ui-tags-input"
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "complete",
+      "files": [
+        "TagsInput.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "TagsInput",
+        "TagsInputProps"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "complete",
+      "files": [
+        "tags_input.dart",
+        "index.dart"
+      ],
+      "entry": "index.dart",
+      "exports": [
+        "GalaxyTagsInput"
+      ],
+      "dependencies": [],
+      "props": []
     }
   },
   "notes": [

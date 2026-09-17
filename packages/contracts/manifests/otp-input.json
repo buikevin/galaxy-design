@@ -50,14 +50,58 @@
       "props": []
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile uses native OTP verification flows."
+      "status": "complete",
+      "files": [
+        "OTPInput.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "OTPInput",
+        "OTPInputProps"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile uses native OTP verification flows."
+      "status": "complete",
+      "files": [
+        "otp_input.dart",
+        "index.dart"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "GalaxyOTPInput"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    "RN": {
+      "status": "complete",
+      "files": [
+        "OTPInput.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "OTPInput",
+        "OTPInputProps"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    "F": {
+      "status": "complete",
+      "files": [
+        "otp_input.dart",
+        "index.dart"
+      ],
+      "entry": "index.dart",
+      "exports": [
+        "GalaxyOTPInput"
+      ],
+      "dependencies": [],
+      "props": []
     }
   },
   "a11y": {

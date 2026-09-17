@@ -29,7 +29,10 @@
           }
         ]
       },
-      "frameworks": ["react", "vue"],
+      "frameworks": [
+        "react",
+        "vue"
+      ],
       "default": "hover",
       "description": "Scrollbar visibility behavior."
     },
@@ -48,7 +51,10 @@
           }
         ]
       },
-      "frameworks": ["react", "vue"],
+      "frameworks": [
+        "react",
+        "vue"
+      ],
       "description": "Reading direction."
     },
     {
@@ -57,7 +63,10 @@
         "kind": "primitive",
         "name": "number"
       },
-      "frameworks": ["react", "vue"],
+      "frameworks": [
+        "react",
+        "vue"
+      ],
       "default": 600,
       "description": "Delay before hiding scrollbars when applicable."
     },
@@ -67,7 +76,10 @@
         "kind": "primitive",
         "name": "boolean"
       },
-      "frameworks": ["react", "vue"],
+      "frameworks": [
+        "react",
+        "vue"
+      ],
       "default": false,
       "description": "Render the root as a child element."
     },
@@ -77,7 +89,11 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["vue", "angular", "react"],
+      "frameworks": [
+        "vue",
+        "angular",
+        "react"
+      ],
       "default": "",
       "description": "CSS class names for the scroll area root.",
       "overrides": {
@@ -92,7 +108,9 @@
         "kind": "custom",
         "name": "ReactNode"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Scrollable content."
     },
     {
@@ -101,7 +119,9 @@
         "kind": "custom",
         "name": "AsTag | Component"
       },
-      "frameworks": ["vue"],
+      "frameworks": [
+        "vue"
+      ],
       "default": "div",
       "description": "Element or component to render."
     },
@@ -120,7 +140,9 @@
           }
         ]
       },
-      "frameworks": ["angular"],
+      "frameworks": [
+        "angular"
+      ],
       "default": "vertical",
       "description": "Primary scroll direction hint."
     }
@@ -129,9 +151,17 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["ScrollArea.tsx", "index.ts"],
-      "exports": ["ScrollArea", "ScrollBar"],
-      "dependencies": ["@radix-ui/react-scroll-area"],
+      "files": [
+        "ScrollArea.tsx",
+        "index.ts"
+      ],
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
+      ],
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -219,9 +249,18 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["ScrollArea.vue", "ScrollBar.vue", "index.ts"],
-      "exports": ["ScrollArea", "ScrollBar"],
-      "dependencies": ["radix-vue"],
+      "files": [
+        "ScrollArea.vue",
+        "ScrollBar.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "ScrollArea",
+        "ScrollBar"
+      ],
+      "dependencies": [
+        "radix-vue"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -310,8 +349,13 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["scroll-area.component.ts", "index.ts"],
-      "exports": ["ScrollAreaComponent"],
+      "files": [
+        "scroll-area.component.ts",
+        "index.ts"
+      ],
+      "exports": [
+        "ScrollAreaComponent"
+      ],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -349,14 +393,16 @@
       "selector": "ui-scroll-area"
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     }
   },
   "notes": [

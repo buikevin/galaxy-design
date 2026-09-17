@@ -12,7 +12,9 @@
         "kind": "custom",
         "name": "ReactNode"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Form content wrapped by FormProvider."
     },
     {
@@ -21,7 +23,10 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["vue", "angular"],
+      "frameworks": [
+        "vue",
+        "angular"
+      ],
       "default": "",
       "description": "CSS class names for the form element."
     }
@@ -30,7 +35,10 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["Form.tsx", "index.ts"],
+      "files": [
+        "Form.tsx",
+        "index.ts"
+      ],
       "exports": [
         "Form",
         "FormItem",
@@ -48,7 +56,9 @@
       ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["label"],
+      "registryDependencies": [
+        "label"
+      ],
       "props": [
         {
           "name": "children",
@@ -78,10 +88,18 @@
         "FormDescription",
         "FormMessage"
       ],
-      "dependencies": ["radix-vue", "@vee-validate/zod", "vee-validate"],
+      "dependencies": [
+        "radix-vue",
+        "@vee-validate/zod",
+        "vee-validate"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["button", "input", "label"],
+      "registryDependencies": [
+        "button",
+        "input",
+        "label"
+      ],
       "props": [
         {
           "name": "class",
@@ -97,7 +115,10 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["form.component.ts", "index.ts"],
+      "files": [
+        "form.component.ts",
+        "index.ts"
+      ],
       "exports": [
         "FormDirective",
         "FormItemComponent",
@@ -124,14 +145,64 @@
       "selector": "[uiForm]"
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "complete",
+      "files": [
+        "Form.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormDescription"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "complete",
+      "files": [
+        "form.dart",
+        "index.dart"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "GalaxyForm",
+        "GalaxyFormItem"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    "RN": {
+      "status": "complete",
+      "files": [
+        "Form.tsx",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "exports": [
+        "Form",
+        "FormItem",
+        "FormLabel",
+        "FormDescription"
+      ],
+      "dependencies": [],
+      "props": []
+    },
+    "F": {
+      "status": "complete",
+      "files": [
+        "form.dart",
+        "index.dart"
+      ],
+      "entry": "index.dart",
+      "exports": [
+        "GalaxyForm",
+        "GalaxyFormItem"
+      ],
+      "dependencies": [],
+      "props": []
     }
   },
   "notes": [

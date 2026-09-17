@@ -136,14 +136,16 @@
       "props": []
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Mobile uses native picker instead of combobox."
+      "status": "web-only",
+      "notes": "Mobile uses native picker instead of combobox.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Flutter has DropdownButton built-in."
+      "status": "web-only",
+      "notes": "Flutter has DropdownButton built-in.",
+      "webOnly": true,
+      "props": []
     }
   },
   "a11y": {
@@ -153,5 +155,8 @@
     "aria": [
       "Trigger exposes role=combobox with aria-expanded."
     ]
+  },
+  "notes": {
+    "mobile": "Web-only component — use platform-native equivalents on mobile."
   }
 }

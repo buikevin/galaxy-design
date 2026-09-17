@@ -25,7 +25,11 @@
           }
         ]
       },
-      "frameworks": ["react", "vue", "angular"],
+      "frameworks": [
+        "react",
+        "vue",
+        "angular"
+      ],
       "default": "default",
       "description": "Size variant."
     },
@@ -35,7 +39,11 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["vue", "angular", "react"],
+      "frameworks": [
+        "vue",
+        "angular",
+        "react"
+      ],
       "default": "",
       "description": "CSS class names for the kbd element.",
       "overrides": {
@@ -50,7 +58,9 @@
         "kind": "custom",
         "name": "ReactNode"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Keyboard key label or shortcut content."
     }
   ],
@@ -58,8 +68,13 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["Kbd.tsx", "index.ts"],
-      "exports": ["KbdProps"],
+      "files": [
+        "Kbd.tsx",
+        "index.ts"
+      ],
+      "exports": [
+        "KbdProps"
+      ],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -109,8 +124,13 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["Kbd.vue", "index.ts"],
-      "exports": ["Kbd"],
+      "files": [
+        "Kbd.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "Kbd"
+      ],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -152,8 +172,13 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["kbd.component.ts", "index.ts"],
-      "exports": ["KbdComponent"],
+      "files": [
+        "kbd.component.ts",
+        "index.ts"
+      ],
+      "exports": [
+        "KbdComponent"
+      ],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -195,14 +220,16 @@
       "selector": "ui-kbd"
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     }
   },
   "notes": [

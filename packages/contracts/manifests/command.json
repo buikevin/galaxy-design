@@ -12,7 +12,9 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Controlled search value."
     },
     {
@@ -21,7 +23,9 @@
         "kind": "function",
         "signature": "(value: string) => void"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Called when the search value changes."
     },
     {
@@ -30,7 +34,9 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Accessible label for the command menu."
     },
     {
@@ -39,7 +45,9 @@
         "kind": "primitive",
         "name": "boolean"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": false,
       "description": "Whether keyboard navigation loops through items."
     },
@@ -49,7 +57,9 @@
         "kind": "primitive",
         "name": "boolean"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": true,
       "description": "Whether automatic filtering is enabled."
     },
@@ -59,7 +69,11 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["vue", "angular", "react"],
+      "frameworks": [
+        "vue",
+        "angular",
+        "react"
+      ],
       "default": "",
       "description": "CSS class names for the command root.",
       "overrides": {
@@ -74,7 +88,9 @@
         "kind": "custom",
         "name": "ReactNode"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Command composition content."
     },
     {
@@ -83,7 +99,10 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["vue", "angular"],
+      "frameworks": [
+        "vue",
+        "angular"
+      ],
       "default": "Type a command or search...",
       "description": "Placeholder text for the search input."
     },
@@ -93,7 +112,9 @@
         "kind": "function",
         "signature": "(value: string) => void"
       },
-      "frameworks": ["angular"],
+      "frameworks": [
+        "angular"
+      ],
       "description": "Event emitted when the search value changes."
     }
   ],
@@ -101,12 +122,20 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["Command.tsx", "index.ts"],
+      "files": [
+        "Command.tsx",
+        "index.ts"
+      ],
       "exports": [],
-      "dependencies": ["cmdk", "lucide-react"],
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["dialog"],
+      "registryDependencies": [
+        "dialog"
+      ],
       "props": [
         {
           "name": "value",
@@ -172,9 +201,16 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["Command.vue", "index.ts"],
-      "exports": ["Command"],
-      "dependencies": ["lucide-vue-next"],
+      "files": [
+        "Command.vue",
+        "index.ts"
+      ],
+      "exports": [
+        "Command"
+      ],
+      "dependencies": [
+        "lucide-vue-next"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -202,8 +238,13 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["command.component.ts", "index.ts"],
-      "exports": ["CommandComponent"],
+      "files": [
+        "command.component.ts",
+        "index.ts"
+      ],
+      "exports": [
+        "CommandComponent"
+      ],
       "dependencies": [],
       "devDependencies": [],
       "peerDependencies": [],
@@ -240,14 +281,16 @@
       "selector": "ui-command"
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     }
   },
   "notes": [

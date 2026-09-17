@@ -1349,8 +1349,18 @@
           "import": "import { BreadcrumbComponent } from '@/components/ui/breadcrumb/index'",
           "usage": "<ui-breadcrumb>Content</ui-breadcrumb>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add breadcrumb",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add breadcrumb",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -1518,8 +1528,18 @@
           "import": "import { CalendarRangeComponent } from '@/components/ui/calendar-range/index'",
           "usage": "<ui-calendar-range range=\"{ start: null, end: null }\">Content</ui-calendar-range>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add calendar-range",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add calendar-range",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -2204,8 +2224,18 @@
           "import": "import { ComboboxComponent } from '@/components/ui/combobox/index'",
           "usage": "<ui-combobox placeholder=\"Select...\">Content</ui-combobox>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add combobox",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add combobox",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -2281,8 +2311,18 @@
           "import": "import { CommandComponent } from '@/components/ui/command/index'",
           "usage": "<ui-command placeholder=\"Type a command or search...\">Content</ui-command>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add command",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add command",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -2503,8 +2543,18 @@
           "import": "import { DashboardComponent } from '@/components/ui/dashboard-block/index'",
           "usage": "<ui-dashboard>Content</ui-dashboard>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add dashboard-block",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add dashboard-block",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },
@@ -2533,8 +2583,18 @@
           "import": "import { DataTableComponent } from '@/components/ui/data-table/index'",
           "usage": "<ui-data-table>Content</ui-data-table>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add data-table",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add data-table",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },
@@ -2681,8 +2741,18 @@
           "import": "import { DateRangePickerComponent } from '@/components/ui/date-range-picker/index'",
           "usage": "<ui-date-range-picker placeholder=\"Pick a date range\">Content</ui-date-range-picker>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add date-range-picker",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add date-range-picker",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -2782,8 +2852,18 @@
           "import": "import { DateTimePickerComponent } from '@/components/ui/date-time-picker/index'",
           "usage": "<ui-date-time-picker datePlaceholder=\"Pick a date\">Content</ui-date-time-picker>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add date-time-picker",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add date-time-picker",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -3478,8 +3558,18 @@
           "import": "import { FormItemComponent } from '@/components/ui/form/index'",
           "usage": "<[uiForm]>Content</[uiForm]>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add form",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add form",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -4265,8 +4355,18 @@
           "import": "import { KbdComponent } from '@/components/ui/kbd/index'",
           "usage": "<ui-kbd size=\"default\">Content</ui-kbd>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add kbd",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add kbd",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -4752,8 +4852,18 @@
           "import": "import { LoginBlockComponent } from '@/components/ui/login-block/index'",
           "usage": "<ui-login>Content</ui-login>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add login-block",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add login-block",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },
@@ -5313,8 +5423,18 @@
           "import": "import { OTPInputComponent } from '@/components/ui/otp-input/index'",
           "usage": "<ui-otp-input>Content</ui-otp-input>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add otp-input",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add otp-input",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },
@@ -5857,8 +5977,18 @@
           "import": "import { PricingBlockComponent } from '@/components/ui/pricing-block/index'",
           "usage": "<ui-pricing>Content</ui-pricing>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add pricing-block",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add pricing-block",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },
@@ -6440,8 +6570,18 @@
           "import": "import { ResizablePanelGroupComponent } from '@/components/ui/resizable/index'",
           "usage": "<ui-resizable-panel-group>Content</ui-resizable-panel-group>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add resizable",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add resizable",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },
@@ -6696,8 +6836,18 @@
           "import": "import { ScrollAreaComponent } from '@/components/ui/scroll-area/index'",
           "usage": "<ui-scroll-area orientation=\"vertical\">Content</ui-scroll-area>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add scroll-area",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add scroll-area",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -8148,8 +8298,18 @@
           "import": "import { TagsInputComponent } from '@/components/ui/tags-input/index'",
           "usage": "<ui-tags-input value=\"[]\" placeholder=\"Add tag...\">Content</ui-tags-input>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add tags-input",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "complete",
+          "install": "npx galaxy-design@latest add tags-input",
+          "import": null,
+          "usage": null
+        }
       },
       "props": [
         {
@@ -9029,8 +9189,18 @@
           "import": "import { ToolbarComponent } from '@/components/ui/toolbar/index'",
           "usage": "<ui-toolbar>Content</ui-toolbar>"
         },
-        "react-native": null,
-        "flutter": null
+        "react-native": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add toolbar",
+          "import": null,
+          "usage": null
+        },
+        "flutter": {
+          "status": "web-only",
+          "install": "npx galaxy-design@latest add toolbar",
+          "import": null,
+          "usage": null
+        }
       },
       "props": []
     },

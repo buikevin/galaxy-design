@@ -135,6 +135,10 @@ export function collectIssues(manifest) {
       manifest.id
     );
 
+    if (impl.status === 'web-only') {
+      continue;
+    }
+
     if (!('props' in impl)) {
       issues.push(
         `[${manifest.id}/${framework}] missing framework-local props list (must exist, even if empty)`

@@ -10,9 +10,19 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["Resizable.tsx", "index.ts"],
-      "exports": ["ResizablePanelGroup", "ResizablePanel", "ResizableHandle"],
-      "dependencies": ["react-resizable-panels", "lucide-react"],
+      "files": [
+        "Resizable.tsx",
+        "index.ts"
+      ],
+      "exports": [
+        "ResizablePanelGroup",
+        "ResizablePanel",
+        "ResizableHandle"
+      ],
+      "dependencies": [
+        "react-resizable-panels",
+        "lucide-react"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -27,8 +37,15 @@
         "ResizablePanelGroup.vue",
         "index.ts"
       ],
-      "exports": ["ResizablePanelGroup", "ResizablePanel", "ResizableHandle"],
-      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "exports": [
+        "ResizablePanelGroup",
+        "ResizablePanel",
+        "ResizableHandle"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -37,13 +54,18 @@
     },
     "angular": {
       "status": "complete",
-      "files": ["resizable.component.ts", "index.ts"],
+      "files": [
+        "resizable.component.ts",
+        "index.ts"
+      ],
       "exports": [
         "ResizablePanelGroupComponent",
         "ResizablePanelComponent",
         "ResizableHandleComponent"
       ],
-      "dependencies": ["angular-split"],
+      "dependencies": [
+        "angular-split"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
       "registryDependencies": [],
@@ -52,14 +74,16 @@
       "selector": "ui-resizable-panel-group"
     },
     "react-native": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     },
     "flutter": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not present in the CLI registry for this framework."
+      "status": "web-only",
+      "notes": "Not present in the CLI registry for this framework.",
+      "webOnly": true,
+      "props": []
     }
   },
   "notes": [
