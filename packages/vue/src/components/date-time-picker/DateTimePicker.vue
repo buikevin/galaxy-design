@@ -6,10 +6,12 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { format, isValid } from 'date-fns'
+import { parseDate, getLocalTimeZone } from '@internationalized/date'
 import { cn } from '@/lib/utils'
 import { DatePicker } from '@/components/date-picker'
 import { TimePicker } from '@/components/time-picker'
 import type { DateTimePickerProps } from './types'
+import type { DateValue } from '@internationalized/date'
 
 defineOptions({
   name: 'UiDateTimePicker',
@@ -44,11 +46,13 @@ const currentTime = computed(() =>
   isControlled.value ? formatTimeFromDate(props.modelValue, props.timeFormat) : internalTime.value,
 )
 
-function handleDateChange(newDate: Date | undefined) {
+function handleDateChange(newDate: DateValue | undefined) {
+  // DatePicker phát ra DateValue (radix) — chuyển về native Date cho API public
+  const native = toNativeDate(newDate)
   if (!isControlled.value) {
-    internalDate.value = newDate
+    internalDate.value = native
   }
-  combineDateAndTime(newDate, currentTime.value)
+  combineDateAndTime(native, currentTime.value)
 }
 
 function handleTimeChange(newTime: string | undefined) {
@@ -110,13 +114,22 @@ function formatTimeFromDate(value: Date | undefined, timeFormat: '12h' | '24h') 
 
   return timeFormat === '24h' ? format(value, 'HH:mm') : format(value, 'hh:mm a')
 }
+
+/** Native `Date` ↔ radix `DateValue` bridge (DatePicker hiện dùng DateValue). */
+function toNativeDate(value: DateValue | undefined): Date | undefined {
+  return value ? value.toDate(getLocalTimeZone()) : undefined
+}
+
+function toDateValue(value: Date | undefined): DateValue | undefined {
+  return value ? parseDate(format(value, 'yyyy-MM-dd')) : undefined
+}
 </script>
 
 <template>
   <div :class="cn('flex gap-2', props.class)">
     <div class="flex-1">
       <DatePicker
-        :model-value="currentDate"
+        :model-value="toDateValue(currentDate)"
         :placeholder="datePlaceholder"
         :date-format="dateFormat"
         :disabled="disabled"

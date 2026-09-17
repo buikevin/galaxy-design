@@ -1,6 +1,8 @@
+import type { DateValue } from '@internationalized/date'
+
 export interface DatePickerProps {
-  /** Selected date (v-model). */
-  modelValue?: Date
+  /** Selected date (v-model). Radix `DateValue` (e.g. `CalendarDate`). */
+  modelValue?: DateValue
   /** Placeholder text. */
   placeholder?: string
   /** date-fns format string. */

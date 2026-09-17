@@ -6,6 +6,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { format } from 'date-fns'
+import { getLocalTimeZone } from '@internationalized/date'
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 import { PopoverRoot, PopoverTrigger } from 'radix-vue'
 import { cn } from '@/lib/utils'
@@ -31,9 +32,11 @@ const emit = defineEmits<{
 const displayText = computed(() => {
   if (!props.modelValue?.start) return props.placeholder
   if (!props.modelValue.end) {
-    return format(props.modelValue.start, props.dateFormat)
+    return format(props.modelValue.start.toDate(getLocalTimeZone()), props.dateFormat)
   }
-  return `${format(props.modelValue.start, props.dateFormat)} - ${format(props.modelValue.end, props.dateFormat)}`
+  const start = format(props.modelValue.start.toDate(getLocalTimeZone()), props.dateFormat)
+  const end = props.modelValue.end ? format(props.modelValue.end.toDate(getLocalTimeZone()), props.dateFormat) : ''
+  return end ? `${start} - ${end}` : start
 })
 
 const hasRange = computed(() => Boolean(props.modelValue?.start))

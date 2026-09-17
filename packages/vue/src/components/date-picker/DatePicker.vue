@@ -6,6 +6,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { format } from 'date-fns'
+import { getLocalTimeZone } from '@internationalized/date'
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 import { PopoverRoot, PopoverTrigger } from 'radix-vue'
 import { cn } from '@/lib/utils'
@@ -29,7 +30,9 @@ const emit = defineEmits<{
 }>()
 
 const displayText = computed(() =>
-  props.modelValue ? format(props.modelValue, props.dateFormat) : props.placeholder,
+  props.modelValue
+    ? format(props.modelValue.toDate(getLocalTimeZone()), props.dateFormat)
+    : props.placeholder,
 )
 </script>
 

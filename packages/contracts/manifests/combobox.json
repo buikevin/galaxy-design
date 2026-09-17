@@ -10,65 +10,130 @@
       "name": "options",
       "type": {
         "kind": "array",
-        "of": { "kind": "custom", "name": "{ value: string; label: string }" }
+        "of": {
+          "kind": "custom",
+          "name": "{ value: string; label: string }"
+        }
       },
       "description": "Available options to select from.",
-      "frameworks": ["react", "vue"]
+      "frameworks": [
+        "react",
+        "vue"
+      ]
     },
     {
       "name": "value",
-      "type": { "kind": "primitive", "name": "string" },
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
       "description": "Selected value.",
-      "frameworks": ["react", "vue"],
+      "frameworks": [
+        "react",
+        "vue"
+      ],
       "overrides": {
-        "vue": { "name": "modelValue" }
+        "vue": {
+          "name": "modelValue"
+        }
       }
     },
     {
       "name": "placeholder",
-      "type": { "kind": "primitive", "name": "string" },
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
       "default": "Select...",
       "description": "Placeholder text.",
-      "frameworks": ["react", "vue"]
+      "frameworks": [
+        "react",
+        "vue"
+      ]
     },
     {
       "name": "disabled",
-      "type": { "kind": "primitive", "name": "boolean" },
+      "type": {
+        "kind": "primitive",
+        "name": "boolean"
+      },
       "default": false,
       "description": "Disables the combobox.",
-      "frameworks": ["react", "vue"]
+      "frameworks": [
+        "react",
+        "vue"
+      ]
     },
     {
       "name": "class",
-      "type": { "kind": "primitive", "name": "string" },
-      "frameworks": ["react", "vue"],
-      "overrides": { "react": { "name": "className" } }
+      "type": {
+        "kind": "primitive",
+        "name": "string"
+      },
+      "frameworks": [
+        "react",
+        "vue"
+      ],
+      "overrides": {
+        "react": {
+          "name": "className"
+        }
+      }
     }
   ],
   "children": [],
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["Combobox.tsx", "index.ts"],
+      "files": [
+        "Combobox.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["Combobox", "ComboboxProps", "ComboboxOption"],
-      "dependencies": ["cmdk"],
-      "registryDependencies": ["command", "popover", "button"],
+      "exports": [
+        "Combobox",
+        "ComboboxProps",
+        "ComboboxOption"
+      ],
+      "dependencies": [
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "command",
+        "popover",
+        "button"
+      ],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": ["Combobox.vue", "types.ts", "index.ts"],
+      "files": [
+        "Combobox.vue",
+        "types.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["Combobox"],
+      "exports": [
+        "Combobox"
+      ],
       "dependencies": [],
       "registryDependencies": [],
       "props": []
     },
     "angular": {
-      "status": "missing",
-      "files": [],
-      "notes": "Angular combobox uses custom select implementation."
+      "status": "complete",
+      "files": [
+        "index.ts",
+        "combobox.component.ts"
+      ],
+      "entry": "index.ts",
+      "selector": "ui-combobox",
+      "exports": [
+        "ComboboxComponent",
+        "ComboboxOption"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "react-native": {
       "status": "missing",
@@ -82,7 +147,11 @@
     }
   },
   "a11y": {
-    "keyboard": ["ArrowDown/ArrowUp navigate items in the dropdown."],
-    "aria": ["Trigger exposes role=combobox with aria-expanded."]
+    "keyboard": [
+      "ArrowDown/ArrowUp navigate items in the dropdown."
+    ],
+    "aria": [
+      "Trigger exposes role=combobox with aria-expanded."
+    ]
   }
 }

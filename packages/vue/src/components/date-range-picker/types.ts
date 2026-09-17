@@ -1,11 +1,13 @@
+import type { DateValue, DateRange } from '@internationalized/date'
+
 export interface DateRangeValue {
-  start?: Date
-  end?: Date
+  start?: DateValue
+  end?: DateValue
 }
 
 export interface DateRangePickerProps {
-  /** Selected range (v-model). */
-  modelValue?: { start: Date; end: Date }
+  /** Selected range (v-model). Radix `DateRange` — `{ start, end }` of `DateValue`. */
+  modelValue?: DateRange
   /** Placeholder text. */
   placeholder?: string
   /** date-fns format string. */

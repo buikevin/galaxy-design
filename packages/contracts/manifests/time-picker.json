@@ -10,42 +10,72 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["TimePicker.tsx", "index.ts"],
+      "files": [
+        "TimePicker.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["TimePicker"],
-      "dependencies": [],
+      "exports": [
+        "TimePicker"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": ["TimePicker.vue", "index.ts"],
+      "files": [
+        "TimePicker.vue",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["TimePicker"],
-      "dependencies": ["radix-vue", "lucide-vue-next"],
+      "exports": [
+        "TimePicker"
+      ],
+      "dependencies": [
+        "radix-vue",
+        "lucide-vue-next"
+      ],
       "props": []
     },
     "angular": {
       "status": "complete",
-      "files": ["time-picker.component.ts", "index.ts"],
+      "files": [
+        "time-picker.component.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "selector": "ui-time-picker",
-      "exports": ["TimePickerComponent"],
+      "exports": [
+        "TimePickerComponent"
+      ],
       "dependencies": [],
       "props": []
     },
     "react-native": {
       "status": "complete",
-      "files": ["TimePicker.tsx", "index.ts"],
+      "files": [
+        "TimePicker.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["TimePicker"],
+      "exports": [
+        "TimePicker"
+      ],
       "dependencies": [],
       "props": []
     },
     "flutter": {
       "status": "complete",
-      "files": ["time_picker.dart", "index.dart"],
+      "files": [
+        "time_picker.dart",
+        "index.dart"
+      ],
       "entry": "index.dart",
-      "exports": ["GalaxyTimePicker"],
+      "exports": [
+        "GalaxyTimePicker"
+      ],
       "dependencies": [],
       "props": []
     }

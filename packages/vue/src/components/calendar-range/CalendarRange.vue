@@ -1,88 +1,75 @@
-<!--
- * @author Bùi Trọng Hiếu
- * @email kevinbui210191@gmail.com
- * @desc CalendarRange component - Date range picker with start and end date selection
--->
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
-import { RangeCalendarRoot } from 'radix-vue'
+import { type HTMLAttributes } from 'vue'
+import {
+  RangeCalendarRoot,
+  RangeCalendarHeader,
+  RangeCalendarHeading,
+  RangeCalendarPrev,
+  RangeCalendarNext,
+  RangeCalendarGrid,
+  RangeCalendarGridHead,
+  RangeCalendarGridBody,
+  RangeCalendarGridRow,
+  RangeCalendarHeadCell,
+  RangeCalendarCell,
+  RangeCalendarCellTrigger,
+  type RangeCalendarRootEmits,
+  type RangeCalendarRootProps,
+} from 'radix-vue'
 import { ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { cn } from '@/lib/utils'
 
-interface Props {
-  class?: string
-  modelValue?: { start: Date; end: Date }
-}
-
-const props = defineProps<Props>()
-
-const emit = defineEmits<{
-  'update:modelValue': [value: { start: Date; end: Date }]
-}>()
+const props = defineProps<RangeCalendarRootProps & { class?: HTMLAttributes['class'] }>()
+const emits = defineEmits<RangeCalendarRootEmits>()
 </script>
 
 <template>
   <RangeCalendarRoot
-    v-bind="props as any"
+    v-slot="{ grid, weekDays }"
+    v-bind="props"
     :class="cn('p-3', props.class)"
-    @update:model-value="emit('update:modelValue', $event as any)"
+    @update:model-value="emits('update:modelValue', $event)"
   >
-    <template #default="{ grid, weekDays }">
-      <div class="space-y-4">
-        <div class="flex justify-center pt-1 relative items-center">
-          <button
-            type="button"
-            class="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-1"
-          >
-            <ChevronLeft class="h-4 w-4" />
-          </button>
-          <div class="text-sm font-medium">
-            {{ (grid as any)[0]?.month }} {{ (grid as any)[0]?.year }}
-          </div>
-          <button
-            type="button"
-            class="h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-1"
-          >
-            <ChevronRight class="h-4 w-4" />
-          </button>
-        </div>
-        <table class="w-full border-collapse">
-          <thead>
-            <tr class="flex">
-              <th
-                v-for="day in weekDays"
-                :key="day"
-                class="text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]"
-              >
-                {{ day }}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(week, i) in (grid as any)[0]?.weeks || []" :key="i" class="flex w-full mt-2">
-              <td
-                v-for="day in week"
-                :key="day.date"
-                class="h-9 w-9 text-center text-sm p-0"
-              >
-                <button
-                  type="button"
-                  :class="
-                    cn(
-                      'h-9 w-9 p-0 font-normal inline-flex items-center justify-center rounded-md text-sm hover:bg-accent hover:text-accent-foreground',
-                      day.isInRange &&
-                        'bg-accent text-accent-foreground',
-                      (day.isRangeStart || day.isRangeEnd) &&
-                        'bg-primary text-primary-foreground hover:bg-primary'
-                    )
-                  "
-                >
-                  {{ day.date.getDate() }}
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </template>
+    <RangeCalendarHeader class="relative flex items-center justify-center pt-1">
+      <RangeCalendarPrev
+        class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-transparent p-0 opacity-50 hover:opacity-100"
+      >
+        <ChevronLeft class="h-4 w-4" />
+      </RangeCalendarPrev>
+      <RangeCalendarHeading class="text-sm font-medium" />
+      <RangeCalendarNext
+        class="absolute right-1 inline-flex h-7 w-7 items-center justify-center rounded-md bg-transparent p-0 opacity-50 hover:opacity-100"
+      >
+        <ChevronRight class="h-4 w-4" />
+      </RangeCalendarNext>
+    </RangeCalendarHeader>
+    <div class="pt-4">
+      <RangeCalendarGrid>
+        <RangeCalendarGridHead>
+          <RangeCalendarGridRow>
+            <RangeCalendarHeadCell
+              v-for="day in weekDays"
+              :key="day"
+              class="w-9 rounded-md text-[0.8rem] font-normal text-muted-foreground"
+            >
+              {{ day }}
+            </RangeCalendarHeadCell>
+          </RangeCalendarGridRow>
+        </RangeCalendarGridHead>
+        <RangeCalendarGridBody class="mt-2">
+          <template v-for="month in grid" :key="month.value.toString()">
+            <RangeCalendarGridRow v-for="week in month.rows" :key="`week-${week[0]}`" class="mt-2 w-full">
+              <RangeCalendarCell v-for="day in week" :key="day" :date="day" class="relative h-9 w-9 p-0 text-center text-sm">
+                <RangeCalendarCellTrigger
+                  :day="day"
+                  :month="month.value"
+                  class="inline-flex h-9 w-9 items-center justify-center rounded-md p-0 text-sm font-normal transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-[selection-start]:rounded-l-md data-[selection-end]:rounded-r-md data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[selected]:bg-primary data-[selected]:text-primary-foreground data-[today]:bg-accent data-[today]:text-accent-foreground data-[outside-view]:text-muted-foreground data-[outside-view]:opacity-50 data-[disabled]:pointer-events-none data-[unavailable]:pointer-events-none data-[unavailable]:text-muted-foreground"
+                />
+              </RangeCalendarCell>
+            </RangeCalendarGridRow>
+          </template>
+        </RangeCalendarGridBody>
+      </RangeCalendarGrid>
+    </div>
   </RangeCalendarRoot>
 </template>

@@ -12,7 +12,9 @@
         "kind": "custom",
         "name": "DateRange"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Controlled selected date range."
     },
     {
@@ -21,7 +23,9 @@
         "kind": "function",
         "signature": "(range: DateRange | undefined) => void"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "description": "Called when the selected range changes."
     },
     {
@@ -30,7 +34,9 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": "Pick a date range",
       "description": "Placeholder text shown when no range is selected."
     },
@@ -40,7 +46,9 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": "LLL dd, y",
       "description": "Date format string used to render the selected range."
     },
@@ -63,7 +71,9 @@
           }
         ]
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": "start",
       "description": "Alignment of the popover content relative to the trigger."
     },
@@ -73,7 +83,9 @@
         "kind": "primitive",
         "name": "string"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": "",
       "description": "CSS class names for the trigger button."
     },
@@ -83,7 +95,9 @@
         "kind": "primitive",
         "name": "boolean"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": false,
       "description": "Disables the trigger button."
     },
@@ -93,7 +107,9 @@
         "kind": "primitive",
         "name": "number"
       },
-      "frameworks": ["react"],
+      "frameworks": [
+        "react"
+      ],
       "default": 2,
       "description": "Number of months displayed in the range calendar."
     }
@@ -102,12 +118,25 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["DateRangePicker.tsx", "index.ts"],
-      "exports": ["DateRangePickerProps"],
-      "dependencies": ["date-fns", "lucide-react", "react-day-picker"],
+      "files": [
+        "DateRangePicker.tsx",
+        "index.ts"
+      ],
+      "exports": [
+        "DateRangePickerProps"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react",
+        "react-day-picker"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["calendar-range", "popover", "button"],
+      "registryDependencies": [
+        "calendar-range",
+        "popover",
+        "button"
+      ],
       "props": [
         {
           "name": "dateRange",
@@ -197,25 +226,51 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["index.ts", "DateRangePicker.vue", "types.ts"],
+      "files": [
+        "index.ts",
+        "DateRangePicker.vue",
+        "types.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DateRangePicker"],
-      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
+      "exports": [
+        "DateRangePicker"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-vue-next",
+        "radix-vue",
+        "@internationalized/date"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["button", "calendar-range", "popover"],
+      "registryDependencies": [
+        "button",
+        "calendar-range",
+        "popover"
+      ],
       "props": []
     },
     "angular": {
       "status": "complete",
-      "files": ["date-range-picker.component.ts", "index.ts"],
+      "files": [
+        "date-range-picker.component.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "selector": "ui-date-range-picker",
-      "exports": ["DateRangePickerComponent"],
-      "dependencies": ["date-fns"],
+      "exports": [
+        "DateRangePickerComponent"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["button", "calendar-range", "popover"],
+      "registryDependencies": [
+        "button",
+        "calendar-range",
+        "popover"
+      ],
       "props": []
     },
     "react-native": {

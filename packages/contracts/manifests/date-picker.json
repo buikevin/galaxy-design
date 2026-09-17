@@ -13,7 +13,11 @@
         "name": "Date"
       },
       "description": "Selected date.",
-      "frameworks": ["react", "react-native", "flutter"],
+      "frameworks": [
+        "react",
+        "react-native",
+        "flutter"
+      ],
       "overrides": {
         "react": {
           "name": "date"
@@ -33,7 +37,11 @@
         "signature": "(date: Date | undefined) => void"
       },
       "description": "Called when the selected date changes.",
-      "frameworks": ["react", "react-native", "flutter"],
+      "frameworks": [
+        "react",
+        "react-native",
+        "flutter"
+      ],
       "overrides": {
         "react": {
           "name": "onDateChange"
@@ -54,7 +62,11 @@
       },
       "default": "Pick a date",
       "description": "Placeholder text.",
-      "frameworks": ["react", "react-native", "flutter"]
+      "frameworks": [
+        "react",
+        "react-native",
+        "flutter"
+      ]
     },
     {
       "name": "format",
@@ -63,7 +75,11 @@
         "name": "string"
       },
       "description": "Date format string.",
-      "frameworks": ["react", "react-native", "flutter"],
+      "frameworks": [
+        "react",
+        "react-native",
+        "flutter"
+      ],
       "overrides": {
         "react": {
           "name": "dateFormat"
@@ -77,7 +93,10 @@
         "name": "Date"
       },
       "description": "Minimum selectable date.",
-      "frameworks": ["react-native", "flutter"]
+      "frameworks": [
+        "react-native",
+        "flutter"
+      ]
     },
     {
       "name": "maxDate",
@@ -86,38 +105,65 @@
         "name": "Date"
       },
       "description": "Maximum selectable date.",
-      "frameworks": ["react-native", "flutter"]
+      "frameworks": [
+        "react-native",
+        "flutter"
+      ]
     },
     {
       "name": "align",
       "type": {
         "kind": "union",
-        "values": ["start", "center", "end"]
+        "values": [
+          "start",
+          "center",
+          "end"
+        ]
       },
       "default": "start",
       "description": "Popover alignment.",
-      "frameworks": ["react"]
+      "frameworks": [
+        "react"
+      ]
     },
     {
       "name": "mode",
       "type": {
         "kind": "union",
-        "values": ["single", "range"]
+        "values": [
+          "single",
+          "range"
+        ]
       },
       "default": "single",
       "description": "Selection mode.",
-      "frameworks": ["react-native"]
+      "frameworks": [
+        "react-native"
+      ]
     }
   ],
   "children": [],
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["DatePicker.tsx", "index.ts"],
+      "files": [
+        "DatePicker.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DatePicker", "DatePickerProps"],
-      "dependencies": ["date-fns", "lucide-react"],
-      "registryDependencies": ["calendar", "popover", "button"],
+      "exports": [
+        "DatePicker",
+        "DatePickerProps"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "calendar",
+        "popover",
+        "button"
+      ],
       "props": [
         {
           "name": "date",
@@ -197,33 +243,68 @@
     },
     "vue": {
       "status": "complete",
-      "files": ["index.ts", "DatePicker.vue", "types.ts"],
+      "files": [
+        "index.ts",
+        "DatePicker.vue",
+        "types.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DatePicker"],
-      "dependencies": ["date-fns", "lucide-vue-next", "radix-vue"],
+      "exports": [
+        "DatePicker"
+      ],
+      "dependencies": [
+        "date-fns",
+        "lucide-vue-next",
+        "radix-vue",
+        "@internationalized/date"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["button", "calendar", "popover"],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "popover"
+      ],
       "props": []
     },
     "angular": {
       "status": "complete",
-      "files": ["date-picker.component.ts", "index.ts"],
+      "files": [
+        "date-picker.component.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
       "selector": "ui-date-picker",
-      "exports": ["DatePickerComponent"],
-      "dependencies": ["date-fns"],
+      "exports": [
+        "DatePickerComponent"
+      ],
+      "dependencies": [
+        "date-fns"
+      ],
       "devDependencies": [],
       "peerDependencies": [],
-      "registryDependencies": ["button", "calendar", "popover"],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "popover"
+      ],
       "props": []
     },
     "react-native": {
       "status": "complete",
-      "files": ["DatePicker.tsx", "index.ts"],
+      "files": [
+        "DatePicker.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DatePicker", "DateRangePicker", "DatePickerRange"],
-      "dependencies": ["@react-native-community/datetimepicker"],
+      "exports": [
+        "DatePicker",
+        "DateRangePicker",
+        "DatePickerRange"
+      ],
+      "dependencies": [
+        "@react-native-community/datetimepicker"
+      ],
       "notes": "Mobile-specific range mode; `DateRangePicker`/`DatePickerRange` are exports on this entry.",
       "props": [
         {
@@ -314,9 +395,16 @@
     },
     "flutter": {
       "status": "partial",
-      "files": ["date_picker.dart"],
-      "exports": ["GalaxyDatePicker", "DatePickerMode"],
-      "dependencies": ["intl"],
+      "files": [
+        "date_picker.dart"
+      ],
+      "exports": [
+        "GalaxyDatePicker",
+        "DatePickerMode"
+      ],
+      "dependencies": [
+        "intl"
+      ],
       "notes": "Range constructor exists but is marked not yet implemented in the source.",
       "props": [
         {

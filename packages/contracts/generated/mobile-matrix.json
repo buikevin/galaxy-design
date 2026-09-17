@@ -159,7 +159,7 @@
       }
     },
     "angular": {
-      "available": 63,
+      "available": 67,
       "components": {
         "accordion": "available",
         "alert": "available",

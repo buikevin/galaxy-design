@@ -10,24 +10,46 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["DataTable.tsx", "types.ts", "index.ts"],
+      "files": [
+        "DataTable.tsx",
+        "types.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DataTable"],
+      "exports": [
+        "DataTable"
+      ],
       "dependencies": [],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": ["DataTable.vue", "types.ts", "index.ts"],
+      "files": [
+        "DataTable.vue",
+        "types.ts",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["DataTable"],
+      "exports": [
+        "DataTable"
+      ],
       "dependencies": [],
       "props": []
     },
     "angular": {
-      "status": "missing",
-      "files": [],
-      "notes": "Angular data table not implemented yet."
+      "status": "complete",
+      "files": [
+        "index.ts",
+        "data-table.component.ts"
+      ],
+      "entry": "index.ts",
+      "selector": "ui-data-table",
+      "exports": [
+        "DataTableComponent",
+        "DataTableColumn"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "react-native": {
       "status": "missing",

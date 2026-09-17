@@ -11,25 +11,44 @@
   "frameworks": {
     "react": {
       "status": "complete",
-      "files": ["PricingBlock.tsx", "index.ts"],
+      "files": [
+        "PricingBlock.tsx",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["PricingBlock"],
+      "exports": [
+        "PricingBlock"
+      ],
       "dependencies": [],
       "props": []
     },
     "vue": {
       "status": "complete",
-      "files": ["PricingBlock.vue", "index.ts"],
+      "files": [
+        "PricingBlock.vue",
+        "index.ts"
+      ],
       "entry": "index.ts",
-      "exports": ["PricingBlock"],
+      "exports": [
+        "PricingBlock"
+      ],
       "dependencies": [],
       "props": []
     },
     "angular": {
-      "status": "missing",
-      "files": [],
-      "notes": "Not implemented yet.",
-      "exports": ["LoginBlockComponent"]
+      "status": "complete",
+      "files": [
+        "pricing.component.ts",
+        "index.ts"
+      ],
+      "entry": "index.ts",
+      "selector": "ui-pricing",
+      "exports": [
+        "PricingBlockComponent",
+        "PricingTier"
+      ],
+      "dependencies": [],
+      "props": []
     },
     "react-native": {
       "status": "missing",
