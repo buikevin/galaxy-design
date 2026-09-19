@@ -2,7 +2,7 @@
 
 This repository is the source workspace for Galaxy UI component packages and shared implementations.
 
-It is not the same thing as the published CLI package. The copy-paste product surface lives in `galaxy-design-cli`, where users run `init` and `add` to fetch component source from GitHub and scaffold editable files into their apps.
+It is not the same thing as the published CLI package. The copy-paste product surface lives in [`@galaxy-stack/nebula-cli`](https://github.com/galaxy-nebula/galaxy-design-cli), where users run `nebula init` and `nebula add` to fetch component source from the registry CDN and scaffold editable files into their apps.
 
 ## Scope
 
@@ -120,5 +120,5 @@ That means:
 ## Repository
 
 - Homepage: `https://galaxy-design.vercel.app`
-- Repository: `https://github.com/buikevin/galaxy-design`
-- Issues: `https://github.com/buikevin/galaxy-design/issues`
+- Repository: `https://github.com/galaxy-nebula/galaxy-design`
+- Issues: `https://github.com/galaxy-nebula/galaxy-design/issues`

@@ -1,27 +1,39 @@
 # @galaxy-stack/nebula-mcp
 
-MCP server exposing Galaxy Nebula components for AI assistants.
+[![npm version](https://img.shields.io/npm/v/@galaxy-stack/nebula-mcp.svg)](https://www.npmjs.com/package/@galaxy-stack/nebula-mcp)
+[![npm downloads](https://img.shields.io/npm/dm/@galaxy-stack/nebula-mcp.svg)](https://www.npmjs.com/package/@galaxy-stack/nebula-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> Renamed from `@galaxy-stack/design-mcp` as part of the Galaxy Stack
-> organization plan. The old package name is deprecated but continues to
-> resolve for existing installations.
+**Nebula MCP Server** — exposes [Galaxy UI](https://galaxy-design.vercel.app) components to AI assistants through the [Model Context Protocol](https://modelcontextprotocol.io). Works with Claude Desktop, Cursor, Windsurf, Cline, and any MCP-compatible client.
 
 ## Tools
 
-- `list_components` — list all components with per-framework availability
-- `get_component` — get detailed manifest for a component
-- `get_component_source` — read source code for a specific file
-- `get_coverage` — get coverage matrix across frameworks
-- `search_components` — search by name or description
+| Tool | Description |
+|---|---|
+| `list_components` | All components with per-framework availability (React, Vue, Angular, React Native, Flutter) |
+| `get_component` | Detailed manifest — props, files, dependencies, framework status |
+| `get_component_source` | Actual source code for a specific component file |
+| `get_coverage` | Coverage matrix across all 5 frameworks (67 components) |
+| `search_components` | Search by name or description |
 
-## Usage
+All component data + 700 source files are **bundled inside the package** — zero setup, works offline.
 
-Add to Claude Desktop config:
+## Install
+
+### Smithery (recommended)
+
+```bash
+npx -y @smithery/cli@latest install galaxy-stack/design-mcp --client claude
+```
+
+### npx (manual)
+
+Add to your MCP client config:
 
 ```json
 {
   "mcpServers": {
-    "galaxy-nebula": {
+    "galaxy-ui": {
       "command": "npx",
       "args": ["-y", "@galaxy-stack/nebula-mcp"]
     }
@@ -29,16 +41,37 @@ Add to Claude Desktop config:
 }
 ```
 
-## Installation
+- **Claude Desktop**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Cursor**: `~/.cursor/mcp.json`
 
-```bash
-npm install -g @galaxy-stack/nebula-mcp
-# or run directly
-npx -y @galaxy-stack/nebula-mcp
+### Remote endpoint
+
+Paste into clients that support remote MCP (Claude web Custom Connectors):
+
+```
+https://nebula-mcp--galaxy-stack.run.tools
 ```
 
-## Related
+## Try it
 
-- CLI: [@galaxy-stack/nebula-cli](https://www.npmjs.com/package/@galaxy-stack/nebula-cli)
-- Repository: [galaxy-nebula/galaxy-design](https://github.com/galaxy-nebula/galaxy-design)
-- Deprecated predecessor: `@galaxy-stack/design-mcp` (0.1.1)
+> "List Galaxy UI components for React"
+
+> "Show me the source code of the Vue Select component"
+
+> "Which components are missing in Flutter?"
+
+## Registries
+
+- **npm**: [@galaxy-stack/nebula-mcp](https://www.npmjs.com/package/@galaxy-stack/nebula-mcp)
+- **Smithery**: [smithery.ai/servers/galaxy-stack/nebula-mcp](https://smithery.ai/servers/galaxy-stack/nebula-mcp)
+- **Official MCP Registry**: [io.github.galaxy-nebula/nebula-mcp](https://registry.modelcontextprotocol.io)
+
+## Publishing (maintainers)
+
+1. Bump `version` in `package.json`
+2. Push to `main` — GitHub Actions workflow `publish-mcp.yml` builds contracts artifacts, bundles data, verifies the version is new, and publishes via **npm Trusted Publishing (OIDC)** — no NPM_TOKEN required
+3. Rebuild the MCPB bundle and run `smithery mcp publish` for Smithery
+
+## License
+
+MIT © [Bùi Trọng Hiếu (kevinbui)](https://github.com/buikevin)

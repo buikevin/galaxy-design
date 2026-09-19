@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-09-19 - Nebula Milestone 🌌
+
+### 🎉 Major
+
+- **67/67 component parity** across React, Vue, Angular, React Native, Flutter
+- **Web-only set** (9 components) documented in manifests + mobile matrix
+- **MCP Server** (`@galaxy-stack/nebula-mcp@1.0.0`): npm + Smithery + remote endpoint + official MCP Registry (`io.github.galaxy-nebula/nebula-mcp`)
+- **CLI** (`@galaxy-stack/nebula-cli@1.0.0`): renamed from `@galaxy-stack/design-cli`, command `nebula`, `--theme` presets, registry CDN + digest rotation
+- **Angular gaps closed**: combobox, data-table, login-block, pricing-block
+- **Vue fixes**: Calendar/CalendarRange rewritten on radix subcomponents (working nav), DateValue type contract, Date↔DateValue bridges in pickers
+- **Visual regression**: 39 component baselines against production (Playwright, system Chrome)
+- **Docs**: MCP guide, Tailwind v3→v4 migration guide, real demos for all components, coverage matrix auto-refresh
+
 ---
 
 ## [0.2.0] - 2025-11-04 - Blocks System 🧩
