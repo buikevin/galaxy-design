@@ -122,7 +122,7 @@ const TOOLS = [
 ];
 
 const server = new Server(
-  { name: 'galaxy-ui-mcp', version: '0.1.0' },
+  { name: 'nebula-mcp', version: '1.0.0' },
   { capabilities: { tools: {} } },
 );
 
